@@ -413,26 +413,61 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="exercise-1-5">
 <span id="fluid-mechanics-statics-ex-05"></span><h1><span class="section-number">1.8.5. </span>Exercise 1.5<a class="headerlink" href="#exercise-1-5" title="Permalink to this heading">#</a></h1>
-<hr class="docutils" />
-<p>(<span class="math notranslate nohighlight">\(p_1=159155\ Pa\)</span>, <span class="math notranslate nohighlight">\(p_2=153269\ Pa\)</span>, <span class="math notranslate nohighlight">\(\bm{F}_2=-19260.3 \hat{\bm{z}}\ N\)</span>.)   <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/01_statica/fig/leva_idraulica1.eps" />{width=»90%»}</p>
-<hr class="docutils" />
-<p>Legge di Stevino. Risultante statica. Leva idraulica.</p>
-<p>Il problema si risolve scrivendo le condizioni di equilibrio tra le
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 1.5</div>
+<p class="sd-card-text">La leva idraulica, rappresentata in figura, é formata da due
+sistemi cilindro-pistone.
+Determinare la forza che é necessario applicare al secondo pistone
+per mantenere il sistema in equilibrio
+quando sul primo agisce una forza <span class="math notranslate nohighlight">\(F_1 = 5000\ N\)</span>,
+allorch’e i pistoni si trovano nella posizione indicata in figura.</p>
+<p class="sd-card-text">Dati: diametro primo cilindro: <span class="math notranslate nohighlight">\(d_1 = 0.2\ m\)</span>; diametro secondo cilindro:
+<span class="math notranslate nohighlight">\(d_2 = 0.4\ m\)</span>; diametro del condotto che unisce i due cilindri:
+<span class="math notranslate nohighlight">\(0.025\ m\)</span>;
+densità del fluido di lavoro: <span class="math notranslate nohighlight">\(600\ kg/m^3\)</span>;
+altezza del primo pistone <span class="math notranslate nohighlight">\(h_1 = 1\ m\)</span>, altezza del secondo pistone
+<span class="math notranslate nohighlight">\(h_2=2\ m\)</span>.</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(p_1=159155\ Pa\)</span>, <span class="math notranslate nohighlight">\(p_2=153269\ Pa\)</span>, <span class="math notranslate nohighlight">\(\mathbf{F}_2=-19260.3 \hat{\mathbf{z}}\ N\)</span>.)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/leva_idraulica1.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Concetti.</strong> Legge di Stevino. Risultante statica. Leva idraulica.</p>
+<p><strong>Svolgimento.</strong> Il problema si risolve scrivendo le condizioni di equilibrio tra le
 forze esterne e la risultante dello sforzo di pressione sulle facce
 opposte dei pistoni e applicando la legge di Stevino tra le due sezioni
 <span class="math notranslate nohighlight">\(A_1\)</span> e <span class="math notranslate nohighlight">\(A_2\)</span>. Si ottiene un sistema lineare di tre equazioni in tre
-incognite <span class="math notranslate nohighlight">\(p_1, p_2, F_2\)</span>), $<span class="math notranslate nohighlight">\(\begin{cases}
+incognite <span class="math notranslate nohighlight">\(p_1, p_2, F_2\)</span>),</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
   F_1 = p_1 \pi \dfrac{d_1 ^2}{4} &amp; \text{(Equilibrio pistone 1)} \\
   p_2 = p_1 - \rho g (h_2 - h_1) &amp; \text{(Legge di Stevino)} \\
   F_2 = p_2 \pi \dfrac{d_2 ^2}{4} &amp; \text{(Equilibrio pistone 2)} \ ,
-\end{cases}\)</span><span class="math notranslate nohighlight">\( la cui soluzione è \)</span><span class="math notranslate nohighlight">\(\Rightarrow \quad
+\end{cases}\end{split}\]</div>
+<p>la cui soluzione è</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Rightarrow \quad
 \begin{cases}
   p_1 = \dfrac{4}{\pi} \dfrac{F_1}{d_1^2}  &amp; = 159155 Pa \\
   p_2 = \dfrac{4}{\pi} \dfrac{F_1}{d_1^2} - \rho g (h_2 - h_1) &amp; = 153269 Pa \\
   F_2 = \dfrac{d_1^2}{d_2^2} F_1 - \dfrac{\pi}{4}d_2^2 \ \rho g (h_2 - h_1) &amp; = 19260.3  N \ .
-\end{cases}\)</span><span class="math notranslate nohighlight">\( La componente verticale \)</span>F_2<span class="math notranslate nohighlight">\( della forza \)</span>\bm{F_2}<span class="math notranslate nohighlight">\( è
+\end{cases}\end{split}\]</div>
+<p>La componente verticale <span class="math notranslate nohighlight">\(F_2\)</span> della forza <span class="math notranslate nohighlight">\(\mathbf{F_2}\)</span> è
 positiva diretta verso il basso, come nel disegno. Si può scrivere
-quindi \)</span>\bm{F_2} = - F_2 \bm{\hat{z}}<span class="math notranslate nohighlight">\(, se il versore \)</span>\bm{\hat{z}}$ è
+quindi <span class="math notranslate nohighlight">\(\mathbf{F_2} = - F_2 \mathbf{\hat{z}}\)</span>, se il versore <span class="math notranslate nohighlight">\(\mathbf{\hat{z}}\)</span> è
 orientato verso l’alto.</p>
 </div>
 

@@ -413,59 +413,95 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="exercise-1-3">
 <span id="fluid-mechanics-statics-ex-03"></span><h1><span class="section-number">1.8.3. </span>Exercise 1.3<a class="headerlink" href="#exercise-1-3" title="Permalink to this heading">#</a></h1>
-<hr class="docutils" />
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>            ($\bm{R}_1=347100\hat{\bm{x}}\  N/m$,               
-        $\quad \bm{R}_2=- 1043200\hat{\bm{z}}\ N/m$,            
-             $\bm{R}_3=774500\hat{\bm{x}}\ N/m$,                
-</pre></div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 1.3</div>
+<p class="sd-card-text">Si consideri la sezione di diga rappresentata in figura.
+Si determini il modulo e la direzione del risultante
+delle forze per unità di apertura agente sui diversi
+tratti rettilinei della diga stessa sapendo che la pressione
+atmosferica é di <span class="math notranslate nohighlight">\(1.01 \times 10^5\ Pa\)</span>. Dimensioni: <span class="math notranslate nohighlight">\(a=10\ m\)</span>,
+<span class="math notranslate nohighlight">\(b=2\, m\)</span>, <span class="math notranslate nohighlight">\(c=8\ m\)</span>, <span class="math notranslate nohighlight">\(d=10\ m\)</span>, <span class="math notranslate nohighlight">\(e=5\ m\)</span>, <span class="math notranslate nohighlight">\(f=3\ m\)</span>.</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(\mathbf{R}_1=347100\hat{\mathbf{x}}\  N/m\)</span>,
+<span class="math notranslate nohighlight">\(\ \mathbf{R}_2=- 1043200\hat{\mathbf{z}}\ N/m\)</span>,
+<span class="math notranslate nohighlight">\(\ \mathbf{R}_3=774500\hat{\mathbf{x}}\ N/m\)</span>,
+<span class="math notranslate nohighlight">\(\ \mathbf{R}_4=2284000 N/m \mathbf{\hat{x}} + 2284000 N/m \mathbf{\hat{z}}\)</span>,
+<span class="math notranslate nohighlight">\(\ \mathbf{R}_5=2774000\hat{\mathbf{z}}\ N/m\)</span>.)</p>
 </div>
-<p><span class="math notranslate nohighlight">\(\bm{R}_4=2284000 N/m \bm{\hat{x}} + 2284000 N/m \bm{\hat{z}}\)</span>,<br />
-<span class="math notranslate nohighlight">\(\bm{R}_5=2774000\hat{\bm{z}}\ N/m\)</span>.)                <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/01_statica/fig/diga2.eps" />{width=»90%»}</p>
-<hr class="docutils" />
-<p>Legge di Stevino, <span class="math notranslate nohighlight">\(P_1 + \rho g h_1 = P_2 + \rho g h_2\)</span>. Calcolo della
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/diga2.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Concetti.</strong> Legge di Stevino, <span class="math notranslate nohighlight">\(P_1 + \rho g h_1 = P_2 + \rho g h_2\)</span>. Calcolo della
 risultante delle azioni statiche, data la distribuzione di pressione e
-la normale <span class="math notranslate nohighlight">\(\bm{\hat{n}}\)</span> uscente dal volume fluido,
-$<span class="math notranslate nohighlight">\(\bm{R} = \int_{S} P \bm{\hat{n}} \ .\)</span>$</p>
-<p>Si risolve il problema bidimensionale, al quale «manca» la dimensione
+la normale <span class="math notranslate nohighlight">\(\mathbf{\hat{n}}\)</span> uscente dal volume fluido,
+$<span class="math notranslate nohighlight">\(\mathbf{R} = \int_{S} P \mathbf{\hat{n}} \ .\)</span>$</p>
+<p><strong>Svolgimento.</strong> Si risolve il problema bidimensionale, al quale «manca» la dimensione
 perpendicolare al piano del disegno. La risultante per unità di apertura
 agente sul lato <span class="math notranslate nohighlight">\(\ell\)</span> (unità di misura nel SI, <span class="math notranslate nohighlight">\(N/m\)</span>) sarà quindi il
-risultato dell’integrale di linea
-$<span class="math notranslate nohighlight">\(\bm{R} = \int_{\ell} P \bm{\hat{n}} \ .\)</span>$ Per ogni lato si calcola la
+risultato dell’integrale di linea</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{R} = \int_{\ell} P \mathbf{\hat{n}} \ .\]</div>
+<p>Per ogni lato si calcola la
 distribuzione di pressione, grazie alla legge di Stevino. Si integra la
 distribuzione di pressione per ottenere il modulo della risultante; la
 direzione coincide con quella della normale (uscente dal volume occupato
 dal fluido). Per lo svolgimento, è stato scelto il sistema di
 riferimento rappresentato in figura, con l’asse x diretto verso destra e
 l’asse z verso il basso.</p>
-<ul class="simple">
+<ul>
 <li><p>Lato 1. Pressione lineare in z,
-<span class="math notranslate nohighlight">\(P(z) = P_O + \rho g z , \ z \in [0,f]\)</span>. Risultante
-$<span class="math notranslate nohighlight">\(\bm{R}_1 = \int_{\ell_1} P \bm{\hat{n}} = \int_{0}^{f} (P_O + \rho g z) \bm{\hat{x}} dz = 
-     \displaystyle\left(P_O  f + \frac{1}{2} \rho g f^2 \right) \bm{\hat{x}} = 347100 N/m \bm{\hat{x}}\)</span>$</p></li>
-<li><p>Lato 2. Pressione costante, <span class="math notranslate nohighlight">\(P = P_O + \rho g f\)</span>. Risultante
-$<span class="math notranslate nohighlight">\(\bm{R}_2 = \int_{\ell_2} P \bm{\hat{n}} = P\cdot c (-\bm{\hat{z}})=(P_O + \rho g f)\cdot c(-\bm{\hat{z}}) = - 1043200 N/m \bm{\hat{z}}\)</span>$</p></li>
+<span class="math notranslate nohighlight">\(P(z) = P_O + \rho g z , \ z \in [0,f]\)</span>. Risultante</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{R}_1 = \int_{\ell_1} P \mathbf{\hat{n}} = \int_{0}^{f} (P_O + \rho g z) \mathbf{\hat{x}} dz = 
+         \displaystyle\left(P_O  f + \frac{1}{2} \rho g f^2 \right) \mathbf{\hat{x}} = 347100 N/m \mathbf{\hat{x}}\]</div>
+</li>
+<li><p>Lato 2. Pressione costante, <span class="math notranslate nohighlight">\(P = P_O + \rho g f\)</span>. Risultante</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{R}_2 = \int_{\ell_2} P \mathbf{\hat{n}} = P\cdot c (-\mathbf{\hat{z}})=(P_O + \rho g f)\cdot c(-\mathbf{\hat{z}}) = - 1043200 N/m \mathbf{\hat{z}}\]</div>
+</li>
 <li><p>Lato 3. Pressione lineare in z,
-<span class="math notranslate nohighlight">\(P(z) = P_O + \rho g z , \  z \in [f,f+e]\)</span>. Risultante
-$<span class="math notranslate nohighlight">\(\bm{R}_3 = \int_{\ell_3} P \bm{\hat{n}} = \int_{f}^{f+e} (P_O + \rho g z) \bm{\hat{x}} dz = 
-     \displaystyle\left(P_O e + \frac{1}{2} \rho g \left[(f+e)^2 - f^2\right]\right) \bm{\hat{x}} = 774500 N/m \bm{\hat{x}}\)</span>$</p></li>
+<span class="math notranslate nohighlight">\(P(z) = P_O + \rho g z , \  z \in [f,f+e]\)</span>. Risultante</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{R}_3 = \int_{\ell_3} P \mathbf{\hat{n}} = \int_{f}^{f+e} (P_O + \rho g z) \mathbf{\hat{x}} dz = 
+         \displaystyle\left(P_O e + \frac{1}{2} \rho g \left[(f+e)^2 - f^2\right]\right) \mathbf{\hat{x}} = 774500 N/m \mathbf{\hat{x}}\]</div>
+</li>
 <li><p>Lato 4. Pressione lineare in z,
 <span class="math notranslate nohighlight">\(P(z)  = P_O + \rho g z , \ z \in [f+e,f+e+d]\)</span>. Poichè il tratto di
 parete è rettilineo, il vettore normale è costante e può essere
 portato fuori dall’integrale. Si calcola prima il modulo della
 risultante e poi lo si moltiplica per il versore normale. Il modulo
-della risultante vale $<span class="math notranslate nohighlight">\(\begin{aligned}
-      {R}_4 &amp; = \int_{\ell_4} P d\ell = \int_{f+e}^{f+e+d} P(z) \frac{\sqrt{(b+c)^2+d^2}}{d} dz = \qquad \qquad \text{\)</span>\displaystyle\left(d\ell = \frac{\sqrt{(b+c)^2+d^2}}{d} dz \right)<span class="math notranslate nohighlight">\(} \\
-     &amp; = \int_{f+e}^{f+e+d} (P_O + \rho g z) \frac{\sqrt{(b+c)^2+d^2}}{d} dz = \\
-     &amp; = \frac{\sqrt{(b+c)^2+d^2}}{d}\left[ P_O d + \frac{1}{2} \rho g \left((f+e+d)^2-(f+e)^2 \right)  \right] = 
-     \sqrt{2} \cdot 2284000 N/m \\
-   \end{aligned}\)</span><span class="math notranslate nohighlight">\( La forza può essere scritta come
-\)</span>\bm{R}_4 = R_4 \bm{\hat{n}}_4<span class="math notranslate nohighlight">\(, con
-\)</span>\bm{\hat{n}}_4 = 1/\sqrt{2} \ \hat{\bm{x}} + 1/\sqrt{2} \ \hat{\bm{z}}<span class="math notranslate nohighlight">\(.
-Proietttando \)</span>\bm{R}_4<span class="math notranslate nohighlight">\( lungo gli assi si ottengono le componenti
-orizzontali e verticali
-\)</span><span class="math notranslate nohighlight">\(\bm{R}_4 = 2284000 N/m \bm{\hat{x}} + 2284000 N/m \bm{\hat{z}}\)</span>$</p></li>
-<li><p>Lato 5. Pressione costante, <span class="math notranslate nohighlight">\(P = P_O + \rho g (f+e+d)\)</span>. Risultante
-$<span class="math notranslate nohighlight">\(\bm{R}_5 = P\cdot a \bm{\hat{z}} =(P_O + \rho g (f+e+d))\cdot a \bm{\hat{z}} =  2774000 N/m \bm{\hat{z}}\)</span>$</p></li>
+della risultante vale</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+          {R}_4 &amp; = \int_{\ell_4} P d\ell = \int_{f+e}^{f+e+d} P(z) \frac{\sqrt{(b+c)^2+d^2}}{d} dz = \qquad \qquad \text{$\displaystyle\left(d\ell = \frac{\sqrt{(b+c)^2+d^2}}{d} dz \right)$} \\
+         &amp; = \int_{f+e}^{f+e+d} (P_O + \rho g z) \frac{\sqrt{(b+c)^2+d^2}}{d} dz = \\
+         &amp; = \frac{\sqrt{(b+c)^2+d^2}}{d}\left[ P_O d + \frac{1}{2} \rho g \left((f+e+d)^2-(f+e)^2 \right)  \right] = 
+         \sqrt{2} \cdot 2284000 N/m \\
+       \end{aligned}\end{split}\]</div>
+<p>La forza può essere scritta come
+<span class="math notranslate nohighlight">\(\mathbf{R}_4 = R_4 \mathbf{\hat{n}}_4\)</span>, con
+<span class="math notranslate nohighlight">\(\mathbf{\hat{n}}_4 = 1/\sqrt{2} \ \hat{\mathbf{x}} + 1/\sqrt{2} \ \hat{\mathbf{z}}\)</span>.
+Proietttando <span class="math notranslate nohighlight">\(\mathbf{R}_4\)</span> lungo gli assi si ottengono le componenti
+orizzontali e verticali</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{R}_4 = 2284000 N/m \mathbf{\hat{x}} + 2284000 N/m \mathbf{\hat{z}}\]</div>
+</li>
+<li><p>Lato 5. Pressione costante, <span class="math notranslate nohighlight">\(P = P_O + \rho g (f+e+d)\)</span>. Risultante</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{R}_5 = P\cdot a \mathbf{\hat{z}} =(P_O + \rho g (f+e+d))\cdot a \mathbf{\hat{z}} =  2774000 N/m \mathbf{\hat{z}}\]</div>
+</li>
 </ul>
 </div>
 

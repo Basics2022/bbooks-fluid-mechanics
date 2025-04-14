@@ -65,6 +65,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/01_statica/exercises';</script>
     <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
@@ -411,6 +413,177 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="exercises">
 <span id="fluid-mechanics-statics-exercises"></span><h1><span class="section-number">1.8. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 1.1</div>
+<p class="sd-card-text">Si consideri, sulla superficie terrestre, un recipiente di diametro <span class="math notranslate nohighlight">\(D=2 \ m\)</span> e profondità <span class="math notranslate nohighlight">\(H=3\  m\)</span> contenente acqua di densità <span class="math notranslate nohighlight">\(\rho = 998\ kg / m^3\)</span>. Al suo interno è inserita una sfera di raggio <span class="math notranslate nohighlight">\(a=0.2\, m\)</span> e densità pari a <span class="math notranslate nohighlight">\(\rho_s=842.06\ kg / m^3\)</span>.
+Determinare in modo univoco la posizione assunta dalla sfera nel liquido. Tale posizione varia se invece che sulla terra ci si trova sulla Luna?</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(h=0.3\  m\)</span>, non varia sulla Luna.)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/recipientesfera.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 1.2</div>
+<p class="sd-card-text">Si consideri il sistema rappresentato in figura in cui un recipiente
+aperto all’atmosfera, contenente olio con densità <span class="math notranslate nohighlight">\(\rho= 800\ kg/m^3\)</span>, è
+collegato tramite una tubazione a un secondo recipiente, contenente a
+sua volta olio e aria non miscelati. Date le due altezze <span class="math notranslate nohighlight">\(h_1=1.5\ m\)</span> e <span class="math notranslate nohighlight">\(h_2= 1.8 \ m\)</span>
+del pelo libero nei due recipienti e l’altezza <span class="math notranslate nohighlight">\(H= 2.5\ m\)</span> della tubatura,
+determinare il valore della pressione nei punti A e B in figura,
+esprimendolo sia in Pascal sia in metri d’acqua. Considerare la
+pressione atmosferica standard (<span class="math notranslate nohighlight">\(101325\ Pa\)</span>).</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(p_A=93477\ Pa = 9.53\ m_{H_2O}\)</span>, <span class="math notranslate nohighlight">\(p_B=98970.6\ Pa=10.10\ m_{H_2O}\)</span>.)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/recipientiariaolio.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 1.3</div>
+<p class="sd-card-text">Si consideri la sezione di diga rappresentata in figura.
+Si determini il modulo e la direzione del risultante
+delle forze per unità di apertura agente sui diversi
+tratti rettilinei della diga stessa sapendo che la pressione
+atmosferica é di <span class="math notranslate nohighlight">\(1.01 \times 10^5\ Pa\)</span>. Dimensioni: <span class="math notranslate nohighlight">\(a=10\ m\)</span>,
+<span class="math notranslate nohighlight">\(b=2\, m\)</span>, <span class="math notranslate nohighlight">\(c=8\ m\)</span>, <span class="math notranslate nohighlight">\(d=10\ m\)</span>, <span class="math notranslate nohighlight">\(e=5\ m\)</span>, <span class="math notranslate nohighlight">\(f=3\ m\)</span>.</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(\mathbf{R}_1=347100\hat{\mathbf{x}}\  N/m\)</span>,
+<span class="math notranslate nohighlight">\(\ \mathbf{R}_2=- 1043200\hat{\mathbf{z}}\ N/m\)</span>,
+<span class="math notranslate nohighlight">\(\ \mathbf{R}_3=774500\hat{\mathbf{x}}\ N/m\)</span>,
+<span class="math notranslate nohighlight">\(\ \mathbf{R}_4=2284000 N/m \mathbf{\hat{x}} + 2284000 N/m \mathbf{\hat{z}}\)</span>,
+<span class="math notranslate nohighlight">\(\ \mathbf{R}_5=2774000\hat{\mathbf{z}}\ N/m\)</span>.)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/diga2.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 1.4</div>
+<p class="sd-card-text">Si consideri il sistema di recipienti rappresentato in figura, in cui
+la zona tratteggiata contiene acqua, di densità pari a <span class="math notranslate nohighlight">\(10^3\ kg/m^3\)</span> mentre nella restante parte é
+presente aria di densità pari a <span class="math notranslate nohighlight">\(1.2\ kg/m^3\)</span>. Determinare la pressione nei punti <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span> e <span class="math notranslate nohighlight">\(D\)</span>
+sapendo che le rispettive altezze sono <span class="math notranslate nohighlight">\(h_A=1\ m\)</span>, <span class="math notranslate nohighlight">\(h_B=1.4\ m\)</span>,
+<span class="math notranslate nohighlight">\(h_C=1.2\ m\)</span> e <span class="math notranslate nohighlight">\(h_D=1.6\ m\)</span>. Sia inoltre <span class="math notranslate nohighlight">\(h_0=1.3\ m\)</span> e la pressione
+esterna <span class="math notranslate nohighlight">\(P_0=101325\ Pa\)</span>.</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(P_A=104262\ Pa\)</span>, <span class="math notranslate nohighlight">\(P_B=100346\ Pa\)</span>, <span class="math notranslate nohighlight">\(P_C=100348\ Pa\)</span>, <span class="math notranslate nohighlight">\(P_D=97424\ Pa\)</span>.)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/tubimultipli.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 1.5</div>
+<p class="sd-card-text">La leva idraulica, rappresentata in figura, é formata da due
+sistemi cilindro-pistone.
+Determinare la forza che é necessario applicare al secondo pistone
+per mantenere il sistema in equilibrio
+quando sul primo agisce una forza <span class="math notranslate nohighlight">\(F_1 = 5000\ N\)</span>,
+allorch’e i pistoni si trovano nella posizione indicata in figura.</p>
+<p class="sd-card-text">Dati: diametro primo cilindro: <span class="math notranslate nohighlight">\(d_1 = 0.2\ m\)</span>; diametro secondo cilindro:
+<span class="math notranslate nohighlight">\(d_2 = 0.4\ m\)</span>; diametro del condotto che unisce i due cilindri:
+<span class="math notranslate nohighlight">\(0.025\ m\)</span>;
+densità del fluido di lavoro: <span class="math notranslate nohighlight">\(600\ kg/m^3\)</span>;
+altezza del primo pistone <span class="math notranslate nohighlight">\(h_1 = 1\ m\)</span>, altezza del secondo pistone
+<span class="math notranslate nohighlight">\(h_2=2\ m\)</span>.</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(p_1=159155\ Pa\)</span>, <span class="math notranslate nohighlight">\(p_2=153269\ Pa\)</span>, <span class="math notranslate nohighlight">\(\mathbf{F}_2=-19260.3 \hat{\mathbf{z}}\ N\)</span>.)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/leva_idraulica1.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 1.6</div>
+<p class="sd-card-text">Si consideri il manometro riportato in figura utilizzato per misurare la
+differenza di pressione esistente fra due sezioni diverse di un condotto.
+Determinare la differenza di pressione fra i punti <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> riportati
+sul disegno sapendo che il liquido manometrico é acqua e ha
+una densità di <span class="math notranslate nohighlight">\(998\ kg/m^3\)</span>, che il fluido che scorre all’interno
+del condotto é aria e ha una densità di <span class="math notranslate nohighlight">\(1.225\ kg/m^3\)</span>,
+che <span class="math notranslate nohighlight">\(h_A = 1\ m\)</span>, che <span class="math notranslate nohighlight">\(h_B = 1.2\ m\)</span>, che <span class="math notranslate nohighlight">\(h_0= 0.1\ m\)</span>,
+che <span class="math notranslate nohighlight">\(h_1 = 0.3\ m\)</span> e che <span class="math notranslate nohighlight">\(h_2 = 0.7\ m\)</span>.</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(p_B-p_A=-3913.75\ Pa\)</span>)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/manometro.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
