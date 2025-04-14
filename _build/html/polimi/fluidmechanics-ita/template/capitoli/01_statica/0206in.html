@@ -423,26 +423,58 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="exercise-1-6">
 <span id="fluid-mechanics-statics-ex-06"></span><h1><span class="section-number">1.8.6. </span>Exercise 1.6<a class="headerlink" href="#exercise-1-6" title="Permalink to this heading">#</a></h1>
-<hr class="docutils" />
-<p>(<span class="math notranslate nohighlight">\(p_B-p_A=-3913.75\ Pa\)</span>)   <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/01_statica/fig/manometro.eps" />{width=»90%»}</p>
-<hr class="docutils" />
-<p>Legge di Stevino. Manometro. Venturi.
-$<span class="math notranslate nohighlight">\(P_1 + \rho g h_1 = P_2 + \rho g h_2\)</span>$</p>
-<p>Si scrive la legge di Stevino tra i punti A e 1, 1 e 2, 2 e B:
-$<span class="math notranslate nohighlight">\(\label{eqn:stevino:underdet}
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 1.6</div>
+<p class="sd-card-text">Si consideri il manometro riportato in figura utilizzato per misurare la
+differenza di pressione esistente fra due sezioni diverse di un condotto.
+Determinare la differenza di pressione fra i punti <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> riportati
+sul disegno sapendo che il liquido manometrico é acqua e ha
+una densità di <span class="math notranslate nohighlight">\(998\ kg/m^3\)</span>, che il fluido che scorre all’interno
+del condotto é aria e ha una densità di <span class="math notranslate nohighlight">\(1.225\ kg/m^3\)</span>,
+che <span class="math notranslate nohighlight">\(h_A = 1\ m\)</span>, che <span class="math notranslate nohighlight">\(h_B = 1.2\ m\)</span>, che <span class="math notranslate nohighlight">\(h_0= 0.1\ m\)</span>,
+che <span class="math notranslate nohighlight">\(h_1 = 0.3\ m\)</span> e che <span class="math notranslate nohighlight">\(h_2 = 0.7\ m\)</span>.</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(p_B-p_A=-3913.75\ Pa\)</span>)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/manometro.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Concetti.</strong> Legge di Stevino. Manometro. Venturi.</p>
+<div class="math notranslate nohighlight">
+\[P_1 + \rho g h_1 = P_2 + \rho g h_2\]</div>
+<p><strong>Svolgimento.</strong> Si scrive la legge di Stevino tra i punti A e 1, 1 e 2, 2 e B:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\label{eqn:stevino:underdet}
 \begin{cases}
   P_B + \rho_a g z_B = P_2 + \rho_a g z_2  \\
   P_1 + \rho g z_1 = P_2 + \rho g z_2   \\
   P_A + \rho_a g z_A = P_1 + \rho_a g z_1 \\
   \Delta P = P_B - P_A 
-\end{cases}\)</span><span class="math notranslate nohighlight">\( Si risolve il sistema lineare (come più piace). Ad
+\end{cases}\end{split}\]</div>
+<p>Si risolve il sistema lineare (come più piace). Ad
 esempio, partendo dalla terza e inserendo nella seconda e nella prima i
-risultati trovati: \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+risultati trovati:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
  &amp; P_1 = P_A + \rho_a g (z_A - z_1) \\
  &amp; P_2 = P_A + \rho_a g (z_A - z_1) + \rho g (z_1 - z_2) \\
  &amp; P_B = P_A + \rho_a g (z_A - z_1) + \rho g (z_1 - z_2) + \rho_a g (z_2 - z_B)
-\end{aligned}\)</span><span class="math notranslate nohighlight">\( E quindi, portando \)</span>P_A<span class="math notranslate nohighlight">\( a sinistra:
-\)</span><span class="math notranslate nohighlight">\(\Delta P = -(\rho - \rho_a) g ( z_2-z_1) - \rho_a g (z_B - z_A) = -3909.8 Pa\)</span>$</p>
+\end{aligned}\end{split}\]</div>
+<p>E quindi, portando <span class="math notranslate nohighlight">\(P_A\)</span> a sinistra:</p>
+<div class="math notranslate nohighlight">
+\[\Delta P = -(\rho - \rho_a) g ( z_2-z_1) - \rho_a g (z_B - z_A) = -3909.8 Pa\]</div>
 <div class="section" id="osservazione">
 <h2><span class="section-number">1.8.6.1. </span>Osservazione.<a class="headerlink" href="#osservazione" title="Permalink to this heading">#</a></h2>
 <p>Il sistema lineare
@@ -451,8 +483,9 @@ reference=»eqn:stevino:underdet»}) è sotto determinato (se esiste una
 soluzione, ne esistono infinite), essendo un sistema lineare di 4
 equazioni in 5 incognite, <span class="math notranslate nohighlight">\(P_1\)</span>, <span class="math notranslate nohighlight">\(P_2\)</span>, <span class="math notranslate nohighlight">\(P_A\)</span>, <span class="math notranslate nohighlight">\(P_B\)</span>, <span class="math notranslate nohighlight">\(\Delta P\)</span>. Il
 sistema lineare può essere scritto usando il formalismo matriciale come
-<span class="math notranslate nohighlight">\(\underline{\underline{A}}\,\underline{x} = \underline{b}\)</span> con
-$<span class="math notranslate nohighlight">\(\underline{\underline{A}} = 
+<span class="math notranslate nohighlight">\(\underline{\underline{A}}\,\underline{x} = \underline{b}\)</span> con</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\underline{\underline{A}} = 
 \begin{bmatrix}
   0 &amp;  1 &amp;  0 &amp; -1 &amp;  0 \\
   0 &amp;  0 &amp; -1 &amp;  1 &amp;  0 \\
@@ -464,23 +497,26 @@ $<span class="math notranslate nohighlight">\(\underline{\underline{A}} =
 \end{bmatrix} , \quad
  \underline{b} = \begin{bmatrix}
   \rho_a g (h_2-h_B) \\ \rho g (h_1-h_2) \\ \rho_a g (h_A-h_1) \\ 0 
-\end{bmatrix} \ .\)</span><span class="math notranslate nohighlight">\( Poichè la matrice \)</span>\underline{\underline{A}}<span class="math notranslate nohighlight">\( ha
-rango massimo (= 4), esiste una soluzione \)</span>\underline{x}^<em><span class="math notranslate nohighlight">\( del
+\end{bmatrix} \ .\end{split}\]</div>
+<p>Poichè la matrice <span class="math notranslate nohighlight">\(\underline{\underline{A}}\)</span> ha
+rango massimo (= 4), esiste una soluzione <span class="math notranslate nohighlight">\(\underline{x}^*\)</span> del
 problema, tale che
-\)</span>\underline{\underline{A}},\underline{x}^</em> = \underline{b}<span class="math notranslate nohighlight">\(. Dal
+<span class="math notranslate nohighlight">\(\underline{\underline{A}}\,\underline{x}^* = \underline{b}\)</span>. Dal
 teorema del rango, si sa che il numero delle colonne (= 5) di una
 matrice è uguale alla dimensione del suo rango (= 4) e del suo nucleo
-(quindi = 1). Il nucleo della matrice \)</span>\underline{\underline{A}}<span class="math notranslate nohighlight">\(, tutti
-i vettori \)</span>\underline{v}<span class="math notranslate nohighlight">\( t.c.
-\)</span>\underline{\underline{A}},\underline{v} = \underline{0}<span class="math notranslate nohighlight">\(, è uno spazio
-vettoriale di dimensione uno. Se \)</span>\underline{x}^<em><span class="math notranslate nohighlight">\( è soluzione del
+(quindi = 1). Il nucleo della matrice <span class="math notranslate nohighlight">\(\underline{\underline{A}}\)</span>, tutti
+i vettori <span class="math notranslate nohighlight">\(\underline{v}\)</span> t.c.
+<span class="math notranslate nohighlight">\(\underline{\underline{A}}\,\underline{v} = \underline{0}\)</span>, è uno spazio
+vettoriale di dimensione uno. Se <span class="math notranslate nohighlight">\(\underline{x}^*\)</span> è soluzione del
 sistema, allora anche tutti i vettori
-\)</span>\underline{x}^</em> + a \underline{v}<span class="math notranslate nohighlight">\(, \)</span>a \in \mathbb{R}<span class="math notranslate nohighlight">\(, sono soluzione
+<span class="math notranslate nohighlight">\(\underline{x}^* + a \underline{v}\)</span>, <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span>, sono soluzione
 del sistema, poichè
-\)</span>\underline{\underline{A}}(\underline{x}^* + \underline{v}) = \underline{\underline{A}},\underline{x}^* + \underline{\underline{A}},\underline{v} = \underline{b} + \underline{0}<span class="math notranslate nohighlight">\(.
-Si può dimostrare il nucleo di \)</span>\underline{\underline{A}}<span class="math notranslate nohighlight">\( è generato
-dal vettore \)</span>\underline{v}=(1,1,1,1,0)^T<span class="math notranslate nohighlight">\(. Quindi le infinite soluzioni
-del problema hanno la forma \)</span><span class="math notranslate nohighlight">\(\begin{bmatrix}
+<span class="math notranslate nohighlight">\(\underline{\underline{A}}(\underline{x}^* + \underline{v}) = \underline{\underline{A}}\,\underline{x}^* + \underline{\underline{A}}\,\underline{v} = \underline{b} + \underline{0}\)</span>.
+Si può dimostrare il nucleo di <span class="math notranslate nohighlight">\(\underline{\underline{A}}\)</span> è generato
+dal vettore <span class="math notranslate nohighlight">\(\underline{v}=(1,1,1,1,0)^T\)</span>. Quindi le infinite soluzioni
+del problema hanno la forma</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
   P_A \\ P_B \\ P_1 \\ P_2 \\ \Delta P 
  \end{bmatrix} = 
  \begin{bmatrix}
@@ -488,15 +524,16 @@ del problema hanno la forma \)</span><span class="math notranslate nohighlight">
  \end{bmatrix} + 
  \begin{bmatrix}
    a \\ a \\ a \\ a \\ 0
- \end{bmatrix} \ .\)</span><span class="math notranslate nohighlight">\( Ora dovrebbe apparire chiaro come non sia possibile
-determinare il valore assoluto delle pressioni \)</span>P_1<span class="math notranslate nohighlight">\(, \)</span>P_2<span class="math notranslate nohighlight">\(, \)</span>P_A<span class="math notranslate nohighlight">\(,
-\)</span>P_B<span class="math notranslate nohighlight">\( solamente da una misura di pressione con un manometro
-*differenziale*: questi valori sono noti a meno di una costante additiva
-\)</span>a<span class="math notranslate nohighlight">\(, indeterminata. Al contrario, la differenza di due di questi valori,
-come \)</span>\Delta P = P_B - P_A<span class="math notranslate nohighlight">\(, è unica (e uguale al risultato ottenuto
-nello svolgimento del problema): l'unicità di \)</span>\Delta P<span class="math notranslate nohighlight">\( dipende dalla
-forma dei vettori del nucleo di \)</span>\underline{\underline{A}}<span class="math notranslate nohighlight">\( che hanno
-componente \)</span>\Delta P$ nulla.</p>
+ \end{bmatrix} \ .\end{split}\]</div>
+<p>Ora dovrebbe apparire chiaro come non sia possibile
+determinare il valore assoluto delle pressioni <span class="math notranslate nohighlight">\(P_1\)</span>, <span class="math notranslate nohighlight">\(P_2\)</span>, <span class="math notranslate nohighlight">\(P_A\)</span>,
+<span class="math notranslate nohighlight">\(P_B\)</span> solamente da una misura di pressione con un manometro
+<em>differenziale</em>: questi valori sono noti a meno di una costante additiva
+<span class="math notranslate nohighlight">\(a\)</span>, indeterminata. Al contrario, la differenza di due di questi valori,
+come <span class="math notranslate nohighlight">\(\Delta P = P_B - P_A\)</span>, è unica (e uguale al risultato ottenuto
+nello svolgimento del problema): l’unicità di <span class="math notranslate nohighlight">\(\Delta P\)</span> dipende dalla
+forma dei vettori del nucleo di <span class="math notranslate nohighlight">\(\underline{\underline{A}}\)</span> che hanno
+componente <span class="math notranslate nohighlight">\(\Delta P\)</span> nulla.</p>
 </div>
 </div>
 

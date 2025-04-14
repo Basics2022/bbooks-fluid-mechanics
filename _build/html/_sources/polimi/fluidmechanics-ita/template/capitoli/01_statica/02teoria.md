@@ -306,6 +306,10 @@ $$\begin{cases}
 Stabilità statica dell'equilibrio
 ---------------------------------
 
+**todo** *Ritrovare simulazione, della dipendenza della stabilità dalla posizione del centro di massa; fare riferimento a veliero Vasa*
+
+
+
 [^1]: In generale, servono delle condizioni di compabibilità dei dati
     affinché il problema sia risolvibile. Ad esempio, non dovrebbe
     essere difficile convincersi che il campo di densità deve dipendere

@@ -413,14 +413,33 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="exercise-1-1-archimede-s-law-and-buoyancy">
 <span id="fluid-mechanics-statics-ex-01"></span><h1><span class="section-number">1.8.1. </span>Exercise 1.1 <!--Archimede's law and Buoyancy--><a class="headerlink" href="#exercise-1-1-archimede-s-law-and-buoyancy" title="Permalink to this heading">#</a></h1>
-<hr class="docutils" />
-<p>(<span class="math notranslate nohighlight">\(h=0.3\  m\)</span>, non varia sulla luna.)   <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/01_statica/fig/recipientesfera.eps" />{width=»90%»}</p>
-<hr class="docutils" />
-<p>Legge di Archimede. Condizione di equilibrio. Calcolo del volume di
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 1.1</div>
+<p class="sd-card-text">Si consideri, sulla superficie terrestre, un recipiente di diametro <span class="math notranslate nohighlight">\(D=2 \ m\)</span> e profondità <span class="math notranslate nohighlight">\(H=3\  m\)</span> contenente acqua di densità <span class="math notranslate nohighlight">\(\rho = 998\ kg / m^3\)</span>. Al suo interno è inserita una sfera di raggio <span class="math notranslate nohighlight">\(a=0.2\, m\)</span> e densità pari a <span class="math notranslate nohighlight">\(\rho_s=842.06\ kg / m^3\)</span>.
+Determinare in modo univoco la posizione assunta dalla sfera nel liquido. Tale posizione varia se invece che sulla terra ci si trova sulla Luna?</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(h=0.3\  m\)</span>, non varia sulla Luna.)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/recipientesfera.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Concetti.</strong> Legge di Archimede. Condizione di equilibrio. Calcolo del volume di
 solidi (integrali di volume). Adimensionalizzazione. Soluzione di
 semplici equazioni non lineari per via grafica (studio di funzione) e/o
 numerica.</p>
-<p>Per svolgere l’esercizio bisogna calcolare la condizione di equilibrio
+<p><strong>Svolgimento.</strong> Per svolgere l’esercizio bisogna calcolare la condizione di equilibrio
 del corpo, soggetto alla propria forza peso e alla forza che il fluido
 esercita su di esso (legge di Archimede). Nell’equazione di equilibrio,
 l’incognita <span class="math notranslate nohighlight">\(h\)</span> compare nella formula del volume immerso nel fluido.
@@ -453,10 +472,13 @@ scritta in forma adimensionale, introducendo la variabile
 <span class="math notranslate nohighlight">\(x=\frac{h}{a}\)</span>, per mettere in evidenza il parametro che governa il
 problema, cioè il rapporto di densità <span class="math notranslate nohighlight">\(\rho_s/\rho\)</span>. L’equazione di
 terzo grado in x viene risolta, considerando i limiti fisici del
-problema (<span class="math notranslate nohighlight">\(0 \le x \le 2\)</span>):
-$<span class="math notranslate nohighlight">\(\rho \pi h^2 \Big(a-\frac{h}{3}\Big) = \rho_s \frac{4}{3}\pi a^3  \quad\Rightarrow\quad
-      \frac{3}{4} x^2 \Big(1 - \frac{x}{3}\Big) = \frac{\rho_s}{\rho}\)</span>$
-Alcuni metodi per risolvere equazioni non lineari possono essere ad
+problema (<span class="math notranslate nohighlight">\(0 \le x \le 2\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\rho \pi h^2 \Big(a-\frac{h}{3}\Big) = \rho_s \frac{4}{3}\pi a^3  \quad\Rightarrow\quad
+          \frac{3}{4} x^2 \Big(1 - \frac{x}{3}\Big) = \frac{\rho_s}{\rho}\]</div>
+</li>
+</ul>
+<p>Alcuni metodi per risolvere equazioni non lineari possono essere ad
 esempio:</p>
 <ul>
 <li><p>metodi iterativi. Ad esempio metodo di Newton</p>
@@ -475,8 +497,6 @@ di cosa si sta cercando). Si cercano le intersezioni delle
 funzioni <span class="math notranslate nohighlight">\(f_1(x) = \frac{3}{4} x^2 \Big(1 - \frac{x}{3}\Big)\)</span> e
 <span class="math notranslate nohighlight">\(f_2(x) = \frac{\rho_s}{\rho}\)</span>.</p></li>
 </ul>
-</li>
-</ul>
 <p><em>Osservazione.</em> Per valori di <span class="math notranslate nohighlight">\(\frac{\rho_s}{\rho}\)</span> compresi tra 0 e 1,
 esiste una e una sola soluzione fisica del problema. Per i valori di
 desità «estremi» <span class="math notranslate nohighlight">\(\rho_s = 0\)</span> (la sfera non pesa niente),
@@ -490,12 +510,14 @@ deve quindi essere rappresentata, come in figura, nulla per valori di
 <span class="math notranslate nohighlight">\(x&lt;0\)</span> (sfera completamente fuori dall’acqua), con il ramo di cubica per
 <span class="math notranslate nohighlight">\(0&lt;x&lt;2\)</span> (sfera parzialmente immersa), uguale a <span class="math notranslate nohighlight">\(1\)</span> per <span class="math notranslate nohighlight">\(x&gt;2\)</span> (sfera
 completamente immersa). La funzione <span class="math notranslate nohighlight">\(f_1(x)\)</span> può quindi essere definita
-a tratti: $<span class="math notranslate nohighlight">\(f_1(x) = 
+a tratti:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f_1(x) = 
  \begin{cases}
    0 &amp;    x &lt; 0 \\
    \frac{3}{4} x^2 \Big(1 - \frac{x}{3}\Big) &amp;    0 \leq x \leq 2 \\
    1 &amp;   x &gt; 2 \\
- \end{cases}\)</span>$</p>
+ \end{cases}\end{split}\]</div>
 <p><em>Discussione dei risultati.</em> Quando diminuisce la denistà relativa del
 solido, la linea rossa si abbassa e la soluzione <span class="math notranslate nohighlight">\(x=\frac{h}{a}\)</span>
 diminuisce (la sfera ha una porzione maggiore al di fuori dall’acqua).
@@ -506,14 +528,17 @@ negativi (la densità è una quantità positiva), mentre per valori di
 equilibrio statico (la sfera affonda…).</p>
 <p><strong>Calcolo volume cupola sferica.</strong> É comodo svolgere il calcolo in
 coordinate cilindriche <span class="math notranslate nohighlight">\((r,\theta,z)\)</span>. Il volume <span class="math notranslate nohighlight">\(V_{im}\)</span> della parte
-immersa è uguale a $<span class="math notranslate nohighlight">\(\begin{aligned}
+immersa è uguale a</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
 V_{im} = \iiint_{V_{im}} dV &amp; = \int_{\theta=0}^{2\pi} \int_{z=-a}^{l} \int_{r=0}^{\sqrt{a^2-z^2}} dV \\
                 &amp; = \int_{\theta=0}^{2\pi} \int_{z=-a}^{l} \int_{r=0}^{\sqrt{a^2-z^2}} r dr dz d\theta \\
                 &amp; = 2\pi \int_{z=-a}^{l} \frac{a^2-z^2}{2} dz \\
                 &amp; = \frac{\pi}{3} [2 a^3 + 3 a^2 l - l^3]
-\end{aligned}\)</span>$</p>
-<p>Definendo <span class="math notranslate nohighlight">\(h = R+l\)</span> come la quota immersa della sfera, si ottiene:
-$<span class="math notranslate nohighlight">\(V_{im} = \pi h^2 \displaystyle \left( a - \frac{h}{3} \right)\)</span>$</p>
+\end{aligned}\end{split}\]</div>
+<p>Definendo <span class="math notranslate nohighlight">\(h = R+l\)</span> come la quota immersa della sfera, si ottiene:</p>
+<div class="math notranslate nohighlight">
+\[V_{im} = \pi h^2 \displaystyle \left( a - \frac{h}{3} \right)\]</div>
 </div>
 
     <script type="text/x-thebe-config">
