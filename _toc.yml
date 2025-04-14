@@ -28,15 +28,55 @@ parts:
       - file: polimi/fluidmechanics-ita/template/capitoli/02_tensSup/0303in
   - file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/12teoria
     sections:
-    - 0301file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/exercises
-      0302sections:
-      0303- file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/1202in 
-      0303- file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/1201in
+    - file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/exercises
+      sections:
+      - file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/1202in 
+      - file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/1201in
       - file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/1204in_hints
       - file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/1203in_hints
   - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04teoria
+    sections:
+    - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/exercises
+      sections:
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0410in 
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0412in
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0406in
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0407in
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0402in
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0409in
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0403in
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0404in
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0405in
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0408in
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0401in
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0401SciaExp
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04ma01in
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04e01in
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04e02in
+      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04e03in
   - file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/05teoria
+    sections:
+    - file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/exercises
+      sections:
+      - file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/0503in 
+      - file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/0501in
+      - file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/0502in
+      - file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/0504in
+      - file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/0506in
+      - file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/0507in
+      - file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/0508in
   - file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0600in
+    sections:
+    - file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/exercises
+      sections:
+      - file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0604in 
+      - file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0607in
+      - file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0609in
+      - file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0603in
+      - file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0605in
+      - file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0601in
+      - file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0606in
+      - file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0608in
   - file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/07teoria
   - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/08teoria
   - file: polimi/fluidmechanics-ita/template/capitoli/09_bl/09teoria

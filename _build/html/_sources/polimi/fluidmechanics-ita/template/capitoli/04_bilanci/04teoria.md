@@ -1,4 +1,4 @@
-(fluid-mechanics:balance)=
+(fluid-mechanics:balances)=
 # Balance equations
 
 In questo capitolo vengono introdotti i bilanci di alcune quantità

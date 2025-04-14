@@ -6,59 +6,69 @@ funzione solo della densità), il teorema di Bernoulli si ottiene dal
 bilancio della quantità di moto. Si elencano qui tre forme del teorema
 di Bernoulli, ognuna caratterizzata da diverse ipotesi. Tramite
 l'identità vettoriale
-$$\bm{\nabla} (\bm{a} \cdot \bm{b}) = (\bm{a} \cdot \bm{\nabla}) \bm{b} +  (\bm{b} \cdot \bm{\nabla}) \bm{a} + \bm{a} \times (\bm{\nabla} \times \bm{b}) + \bm{b} \times (\bm{\nabla} \times \bm{a}),$$
-applicata al termine convettivo $(\bm{u} \cdot \bm{\nabla}) \bm{u}$, è
+
+$$\mathbf{\nabla} (\mathbf{a} \cdot \mathbf{b}) = (\mathbf{a} \cdot \mathbf{\nabla}) \mathbf{b} +  (\mathbf{b} \cdot \mathbf{\nabla}) \mathbf{a} + \mathbf{a} \times (\mathbf{\nabla} \times \mathbf{b}) + \mathbf{b} \times (\mathbf{\nabla} \times \mathbf{a}),$$
+
+applicata al termine convettivo $(\mathbf{u} \cdot \mathbf{\nabla}) \mathbf{u}$, è
 possible ottenere la forma del Crocco dell'equazione della quantità di
-moto $$\label{eqn:bilanci:crocco}
+moto
+
+$$\label{eqn:bilanci:crocco}
 \begin{aligned}
- & \p{\bm{u}}{t} + (\bm{u} \cdot \bm{\nabla}) \bm{u} - \nu \Delta \bm{u} + \bm{\nabla} P = \bm{g}  & \\ &  &  \bigg( (\bm{u} \cdot \bm{\nabla})\bm{u} = \bm{\nabla} \f{\bm{u} \cdot \bm{u}}{2} + (\bm{\nabla} \times \bm{u}) \times \bm{u} \bigg) \\
- & \rightarrow \p{\bm{u}}{t} + \bm{\nabla} \frac{|\bm{u}|^2}{2} + \bm{\omega} \times \bm{u} - \nu \Delta \bm{u} + \bm{\nabla} P = \bm{g} , & \\
-\end{aligned}$$ avendo indicato con $P$ il potenziale termodinamico,
+ & \dfrac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \mathbf{\nabla}) \mathbf{u} - \nu \Delta \mathbf{u} + \mathbf{\nabla} P = \mathbf{g}  & \\ &  &  \bigg( (\mathbf{u} \cdot \mathbf{\nabla})\mathbf{u} = \mathbf{\nabla} \frac{\mathbf{u} \cdot \mathbf{u}}{2} + (\mathbf{\nabla} \times \mathbf{u}) \times \mathbf{u} \bigg) \\
+ & \rightarrow \dfrac{\partial \mathbf{u}}{\partial t} + \mathbf{\nabla} \frac{|\mathbf{u}|^2}{2} + \mathbf{\omega} \times \mathbf{u} - \nu \Delta \mathbf{u} + \mathbf{\nabla} P = \mathbf{g} , & \\
+\end{aligned}$$
+
+avendo indicato con $P$ il potenziale termodinamico,
 $P =$ che si riduce al rapporto $p/\rho$ nel caso di densità costante e
-con $\bm{g}$ le forze per unità di massa.
+con $\mathbf{g}$ le forze per unità di massa.
 
 #### Prima forma del teorema di Bernoulli
 
 Nel caso di fluido non viscoso, incomprimibile o barotropico, in regime
 stazionario ($\partial / \partial t \equiv 0$), con forze di massa
-conservative $\bm{g} = -\bm{\nabla} \chi$, il trinomio di Bernoulli
-$|\bm{u}|^2/2 + P + \chi$ è costante lungo le linee di corrente e le
+conservative $\mathbf{g} = -\mathbf{\nabla} \chi$, il trinomio di Bernoulli
+$|\mathbf{u}|^2/2 + P + \chi$ è costante lungo le linee di corrente e le
 linee vorticose, cioè
-$$\bm{\hat{t}} \cdot \bm{\nabla} \left( \frac{|\bm{u}|^2}{2} + P + \chi \right) = 0 ,$$
-con $\bm{\hat{t}}$ versore tangente alle linee di corrente o alle linee
-vorticose. Infatti, il termine $\bm{\omega} \times \bm{u}$
+
+$$\mathbf{\hat{t}} \cdot \mathbf{\nabla} \left( \frac{|\mathbf{u}|^2}{2} + P + \chi \right) = 0 ,$$
+
+con $\mathbf{\hat{t}}$ versore tangente alle linee di corrente o alle linee
+vorticose. Infatti, il termine $\mathbf{\omega} \times \mathbf{u}$
 nell'equazione della quantità di moto nella forma di Crocco
 ([\[eqn:bilanci:crocco\]](#eqn:bilanci:crocco){reference-type="ref"
 reference="eqn:bilanci:crocco"}) è perpendicolare in ogni punto del
-dominio alle linee di corrente ($\bm{\hat{t}}$ parallelo al campo di
-velocità $\bm{u}$) e alle linee vorticose ($\bm{\hat{t}}$ parallelo al
-campo di vorticità $\bm{\omega}$): moltiplicando scalarmente l'equazione
+dominio alle linee di corrente ($\mathbf{\hat{t}}$ parallelo al campo di
+velocità $\mathbf{u}$) e alle linee vorticose ($\mathbf{\hat{t}}$ parallelo al
+campo di vorticità $\mathbf{\omega}$): moltiplicando scalarmente l'equazione
 ([\[eqn:bilanci:crocco\]](#eqn:bilanci:crocco){reference-type="ref"
 reference="eqn:bilanci:crocco"}) scritta per un fluido non viscoso
-($\nu = 0$) per il versore $\bm{\hat{t}}$ , il prodotto scalare
-$\bm{\hat{t}} \cdot (\bm{\omega} \times \bm{u})$ è identicamente nullo.
+($\nu = 0$) per il versore $\mathbf{\hat{t}}$ , il prodotto scalare
+$\mathbf{\hat{t}} \cdot (\mathbf{\omega} \times \mathbf{u})$ è identicamente nullo.
 
 #### Seconda forma del teorema di Bernoulli
 
-Nella corrente irrotazionale ($\bm{\omega} = \bm{0}$) di un fluido non
+Nella corrente irrotazionale ($\mathbf{\omega} = \mathbf{0}$) di un fluido non
 viscoso, incomprimibile o barotropico, in regime stazionario, con forze
-di massa conservative $\bm{g} = -\bm{\nabla} \chi$, il trinomio di
-Bernoulli $|\bm{u}|^2/2 + P + \chi$ è costante in tutto il dominio, cioè
-$$\bm{\nabla} \left( \frac{|\bm{u}|^2}{2} + P + \chi \right) = 0  \quad \rightarrow \quad 
-  \frac{|\bm{\nabla} \phi|^2}{2} + P + \chi = C.$$
+di massa conservative $\mathbf{g} = -\mathbf{\nabla} \chi$, il trinomio di
+Bernoulli $|\mathbf{u}|^2/2 + P + \chi$ è costante in tutto il dominio, cioè
+
+$$\mathbf{\nabla} \left( \frac{|\mathbf{u}|^2}{2} + P + \chi \right) = 0  \quad \rightarrow \quad 
+  \frac{|\mathbf{\nabla} \phi|^2}{2} + P + \chi = C.$$
 
 #### Terza forma del teorema di Bernoulli
 
-Nella corrente irrotazionale ($\bm{\omega} = \bm{0}$) di un fluido non
+Nella corrente irrotazionale ($\mathbf{\omega} = \mathbf{0}$) di un fluido non
 viscoso, incomprimibile o barotropico, in un dominio semplicemente
 connesso (nel quale è quindi possibile definire il potenziale cinetico
-$\phi$, t.c. $\bm{u} = \nabla \phi$, con forze di massa conservative
-$\bm{g} = -\bm{\nabla} \chi$, il quadrinomio di Bernoulli
-$\partial \phi / \partial t + |\bm{u}|^2/2 + P + \chi$ è uniforme
+$\phi$, t.c. $\mathbf{u} = \nabla \phi$, con forze di massa conservative
+$\mathbf{g} = -\mathbf{\nabla} \chi$, il quadrinomio di Bernoulli
+$\partial \phi / \partial t + |\mathbf{u}|^2/2 + P + \chi$ è uniforme
 (costante in spazio, in generale **non** in tempo) in tutto il dominio,
 cioè
-$$\bm{\nabla} \left(\p{\phi}{t} + \frac{|\bm{\nabla} \phi|^2}{2} + P + \chi \right) = 0  \quad \rightarrow \quad 
- \p{\phi}{t} + \frac{|\bm{\nabla} \phi|^2}{2} + P + \chi = C(t).$$
+
+$$ \left(\mathbf{\nabla}\dfrac{\partial \mathbf{u}}{\partial t}  + \frac{|\mathbf{\nabla} \phi|^2}{2} + P + \chi \right) = 0  \quad \rightarrow \quad 
+ \dfrac{\partial \mathbf{u}}{\partial t}  + \frac{|\mathbf{\nabla} \phi|^2}{2} + P + \chi = C(t).$$
 
 #### Teoremi di Bernoulli per fluidi viscosi incomprimibili
 
@@ -66,11 +76,14 @@ Mentre la prima forma del teorema di Bernoulli non è valida se non viene
 fatta l'ipotesi di fluido non viscoso[^1], la seconda e la terza forma
 sono ancora valide per fluidi viscosi incomprimibili. Infatti, usando
 l'identità vettoriale
-$$\Delta \bm{u} = \bm{\nabla} (\bm{\nabla}\cdot \bm{u})
-  - \bm{\nabla} \times (\bm{\nabla} \times \bm{u}) ,$$ si scopre che il
+
+$$\Delta \mathbf{u} = \mathbf{\nabla} (\mathbf{\nabla}\cdot \mathbf{u})
+  - \mathbf{\nabla} \times (\mathbf{\nabla} \times \mathbf{u}) ,$$
+
+  si scopre che il
 laplaciano del campo di velocità per correnti irrotazionali
-($\bm{\nabla} \times \bm{u} = \bm{0}$) di fluidi incomprimibili
-($\bm{\nabla} \cdot \bm{u} = 0$) è nullo.
+($\mathbf{\nabla} \times \mathbf{u} = \mathbf{0}$) di fluidi incomprimibili
+($\mathbf{\nabla} \cdot \mathbf{u} = 0$) è nullo.
 
 L'ipotesi di fluido non viscoso non è direttamente necessaria per la
 seconda e la terza forma del teorema di Bernoulli, ma lo diventa tramite
@@ -88,7 +101,8 @@ sottile (strato limite sulla superficie dei corpi solidi e scie libere).
 
 [^1]: Moltiplicando scalarmente l'equazione
     ([\[eqn:bilanci:crocco\]](#eqn:bilanci:crocco){reference-type="ref"
-    reference="eqn:bilanci:crocco"}) per il versore $\bm{\hat{t}}$, il
-    termine $\bm{\hat{t}}\cdot \nu \Delta \bm{u}$ non si annulla. Rimane
+    reference="eqn:bilanci:crocco"}) per il versore $\mathbf{\hat{t}}$, il
+    termine $\mathbf{\hat{t}}\cdot \nu \Delta \mathbf{u}$ non si annulla. Rimane
     quindi
-    $$\bm{\hat{t}} \cdot \bm{\nabla} \left( \frac{|\bm{u}|^2}{2} + P + \chi \right) - \nu \bm{\hat{t}} \cdot \Delta \bm{u} = 0$$
+
+    $$\mathbf{\hat{t}} \cdot \mathbf{\nabla} \left( \frac{|\mathbf{u}|^2}{2} + P + \chi \right) - \nu \mathbf{\hat{t}} \cdot \Delta \mathbf{u} = 0$$

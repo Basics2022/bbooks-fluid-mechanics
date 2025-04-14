@@ -1,5 +1,10 @@
+(fluid-mechanics:balances:ex-09)=
+# Exercise 4.9 - Experiment: wake defect
+
+<!--
 Attività sperimentale: difetto di scia e volume di controllo. {#attività-sperimentale-difetto-di-scia-e-volume-di-controllo. .unnumbered}
 -------------------------------------------------------------
+-->
 
 L'esercizio svolto in precedenza risulta propedeutico per l'analisi dei
 dati ottenuti tramite alcune attività sperimentali, per ottenere delle
