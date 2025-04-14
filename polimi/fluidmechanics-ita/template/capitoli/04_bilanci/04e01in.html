@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04e01in';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">1. Statics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">2. Surface tension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_cinematica/12teoria.html">3. Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04teoria.html">4. Balance equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_bernoulli/05teoria.html">5. Bernoulli theorems and vorticity dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">6. Exact solutions of Navier-Stokes equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04e01in.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <hr class="docutils" />
+<p>Viene chiesto di determinare la potenza dei motori della galleria a circuito aperto rappresentata in figura, sapendo che la velocità massima desiderata nella sezione di prova è <span class="math notranslate nohighlight">\(V_{test} = 30 \, m/s\)</span>, l’area della sezione di prova è <span class="math notranslate nohighlight">\(A_{test} = 1.0 \, m^2\)</span> e l’area della sezione in cui è alloggiato il ventilatore che mette in moto l’aria è <span class="math notranslate nohighlight">\(A_{fan} = 2.0 \, m^2\)</span>. Si supponga che la corrente sia incomprimibile e che la densità dell’aria sia <span class="math notranslate nohighlight">\(\rho = 1.1 \, kg/m^3\)</span>. In una prima fase, si trascuri la caduta di pressione attraverso il nido d’ape e gli schermi presenti tra la sezione 1 e la sezione 2 del condotto. Successivamente si ripeta il calcolo con una caduta di pressione <span class="math notranslate nohighlight">\(P_1 - P_2 = k \rho U^2\)</span>, con <span class="math notranslate nohighlight">\(k = \dots\)</span>.</p>
+<hr class="docutils" />
+<p><img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/04_bilanci/fig/wt" />{width=»90%»}</p>
+<p>Si studia la galleria a circuito aperto rappresentata in figura
+utilizzando i bilanci integrali scritti per alcuni volumi di controllo
+fissi, per ricavare l’andamento della velocità e della pressione
+all’interno della galleria e infine ricavare la potenza dei motori,
+necessaria per garantire le condizioni di progetto nella sezione di
+prova. Si ipotizza un funzionamento stazionario, si trascurano gli
+effetti viscosi nel volume e sulle pareti della galleria e le forze di
+volume. In particolare, grazie alle ipotesi fatte, si possono
+semplificare il bilancio di massa, $<span class="math notranslate nohighlight">\(\begin{aligned}
+ &amp; \dfrac{d}{dt} \int_V \rho = - \oint_{S} \rho \bm{u} \cdot \bm{\hat{n}} 
+ \hspace{1.0cm} \rightarrow \hspace{1.0cm} \oint_{S} \rho \bm{u} \cdot \bm{\hat{n}} = 0 \ ,
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( e il bilancio dell'energia cinetica, \)</span>$\begin{aligned}
+\dfrac{d}{dt} \int_V \rho \dfrac{|\bm{u}|^2}{2} &amp; = - \oint_{S} \rho \dfrac{|\bm{u}|^2}{2} \bm{u} \cdot \bm{\hat{n}} + \oint_S \bm{t_n} \cdot \bm{u} - \int_V \bm{\nabla} \bm{u} : \mathbb{T} + \int_V \rho \bm{g} \
+&amp; = - \oint_{S} \rho \dfrac{|\bm{u}|^2}{2} \bm{u} \cdot \bm{\hat{n}} + \oint_S \bm{t_n} \cdot \bm{u} +
+\underbrace{\int_V  p , \bm{\nabla} \cdot \bm{u}}_{=0 \text{, se} \bm{\nabla} \cdot \bm{u} = 0}</p>
+<ul class="simple">
+<li><p>\underbrace{ \int_V 2 \mu \mathbb{D} : \mathbb{D}}_{=0 \text{, se} \mu = 0} + \int_V \rho \bm{g} \
+\hspace{1.0cm} \rightarrow \hspace{1.0cm}  &amp;</p></li>
+<li><p>\oint_{S} \rho \dfrac{|\bm{u}|^2}{2} \bm{u} \cdot \bm{\hat{n}} + \oint_S \bm{t_n} \cdot \bm{u} = 0 \ .
+\end{aligned}$$</p></li>
+</ul>
+<p>Viene svolta la prima parte dell’esercizio, trascurando le perdite di
+pressione che avvengono tra la sezione 1 e la sezione 2, a causa della
+presenza dei nidi d’ape e delle reti. Si scrive il bilancio di massa per
+un volume di fluido che ha come superficie di contorno la superficie
+<span class="math notranslate nohighlight">\(S_0\)</span>, la superficie laterale del tubo di flusso e una superficie <span class="math notranslate nohighlight">\(S_i\)</span>
+all’interno della galleria. Assumendo grandezze uniformi sulla sezione,
+si può scrivere $<span class="math notranslate nohighlight">\(\rho A_0 U_0 = \rho A_i U_i \ ,\)</span><span class="math notranslate nohighlight">\( cioè che il flusso
+di massa \)</span>\dot{m}<span class="math notranslate nohighlight">\( che attraversa le sezioni della galleria è costante.
+Se sono note le condizioni di progetto in camera di prova, da esser si
+può calcolare il flusso di massa,
+\)</span><span class="math notranslate nohighlight">\(\dot{m} = \rho A_3 U_3 = \rho A_{test} V_{test} = \dots \ .\)</span><span class="math notranslate nohighlight">\( Poiché
+la velocità all'infinito è nulla, \)</span>U_0 \rightarrow 0<span class="math notranslate nohighlight">\(, l'area della
+sezione all'infinito a monte deve tendere all'infinito
+\)</span>A_0 \rightarrow \infty<span class="math notranslate nohighlight">\(. Si scrive poi il bilancio di energia cinetica
+per un volume di controllo che ha come contorno la superficie \)</span>S_0<span class="math notranslate nohighlight">\(
+all'infinito a monte, dove viene aspirata l'aria in uno stato di quiete,
+la superficie laterale del tubo di flusso, la superficie interna della
+galleria e la sezione \)</span>S_4<span class="math notranslate nohighlight">\( alla fine del divergente, poco prima
+dell'imbocco dei ventilatori. Poiché non ci sono organi meccanici in
+movimento, il termine \)</span>\oint_S \bm{t_n} \cdot \bm{u}<span class="math notranslate nohighlight">\( è nullo, e
+assumendo grandezze fisiche costanti sulle sezioni si può scrivere,
+\)</span><span class="math notranslate nohighlight">\(\rho A_0 U_0 \left( \dfrac{U_0^2}{2} + \dfrac{P_0}{\rho} \right) =
+ \rho A_4 U_4 \left( \dfrac{U_4^2}{2} + \dfrac{P_4}{\rho} \right) \ .\)</span><span class="math notranslate nohighlight">\(
+Poiché il flusso di massa che attraversa le sezioni considerate è
+costante, il bilancio di energia cinetica si riduce a un'espressione che
+ricorda quella del teorema di Bernoulli, così come viene enunciato alle
+scuole superiori,
+\)</span><span class="math notranslate nohighlight">\(P_0 + \dfrac{1}{2} \rho \, U_0^2  = P_4 + \dfrac{1}{2} \rho \, U_4^2
+ \qquad \rightarrow \qquad B_4 = B_0 = P_{atm} \ ,\)</span><span class="math notranslate nohighlight">\( avendo introdotto
+la definizione del &quot;binomio di Bernoulli&quot;, \)</span>B_i = P_i + \rho U_i^2 / 2<span class="math notranslate nohighlight">\(.
+Si scrive poi il bilancio di energia cinetica per il volume fluido
+\)</span>V(t)<span class="math notranslate nohighlight">\( che contiene il ventilatore, delimintato dalle superifci \)</span>S_4<span class="math notranslate nohighlight">\(,
+\)</span>S_5<span class="math notranslate nohighlight">\( e la superficie interna della galleria e dalla superficie
+(mobile!) del ventilatore. Il bilancio diventa
+\)</span><span class="math notranslate nohighlight">\(\int_{S_4} \rho \dfrac{|\bm{u}|^2}{2} \bm{u} \cdot \bm{\hat{n}} - \bm{t_n} \cdot \bm{u} + 
+\int_{S_5} \rho \dfrac{|\bm{u}|^2}{2} \bm{u} \cdot \bm{\hat{n}} - \bm{t_n} \cdot \bm{u} = \int_{S_{fan}} \bm{t_n} \cdot \bm{u} \ ,\)</span><span class="math notranslate nohighlight">\(
+essendo il termine a destra dell'uguale la potenza delle forze
+essercitata dal ventilatore sul fluido, contraria a quella esercitata
+dal fluido sul ventilatore, ma uguale a quella che deve fornire il
+motore elettrico per poter garantire la rotazione del ventialore stesso.
+Se si trascurano gli sforzi viscosi sulle superfici \)</span>S_4<span class="math notranslate nohighlight">\( ed \)</span>S_5<span class="math notranslate nohighlight">\(,
+\)</span>\bm{t_n} = \bm{s_n} - P \bm{\hat{n}}<span class="math notranslate nohighlight">\(, e se si esplicita la potenza che
+deve essere fornita dai motori, il bilancio diventa, \)</span><span class="math notranslate nohighlight">\(W_{mot} = 
+\int_{S_4} \left( \rho \dfrac{|\bm{u}|^2}{2} + P \right) \left( \bm{u} \cdot \bm{\hat{n}} \right)  + 
+\int_{S_5} \left( \rho \dfrac{|\bm{u}|^2}{2} + P \right) \left( \bm{u} \cdot \bm{\hat{n}} \right) \ ,\)</span><span class="math notranslate nohighlight">\(
+e facendo l'ipotesi di grandezze fisiche costanti sulle sezioni,
+\)</span><span class="math notranslate nohighlight">\(W_{mot} = \rho A_5 U_5 \left( \dfrac{U_5^2}{2} + \dfrac{P_5}{\rho} \right) 
+         - \rho A_4 U_4 \left( \dfrac{U_4^2}{2} + \dfrac{P_4}{\rho} \right)
+         = \dot{m} \left( B_5 - B_4 \right) \ .\)</span><span class="math notranslate nohighlight">\( Ricordando che il
+&quot;binomio di Bernoulli&quot; nelle sezioni 1:4 è uguale al &quot;binomio di
+Bernoulli&quot; nella sezione \)</span>S_0<span class="math notranslate nohighlight">\(, e quindi uguale alla pressione ambiente
+\)</span>P_{atm}<span class="math notranslate nohighlight">\(, nell'ipotesi che la pressione nella sezione \)</span>S_5<span class="math notranslate nohighlight">\( sia uguale
+alla pressione atmosferica \)</span>P_{atm}<span class="math notranslate nohighlight">\( all'esterno del tubo di flusso, la
+potenza del motore diventa, \)</span><span class="math notranslate nohighlight">\(W_{mot} = \dot{m} \dfrac{U_5^2}{2} \ ,\)</span><span class="math notranslate nohighlight">\(
+e, riferendosi alle grandezze fisiche in camera di prova, può essere
+scritta come \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ &amp; W_{mot} = \dot{m} \left( \dfrac{A_{test}}{A_{fan}} \right)^2 \dfrac{V_{test}^2}{2} \\
+ &amp; \hspace{3.0cm} \rightarrow \qquad 
+ W_{mot} = \dfrac{1}{2} \rho A_{test} \left( \dfrac{A_{test}}{A_{fan}} \right)^2 V_{test}^3 = \dots kW \ .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( La formula della potenza dei motori necessaria al
+funzionamento della galleria mette in evidenza la dipendenza dal cubo
+della velocità di prova e dal quadrato del rapporto tra l'area della
+sezione di prova e l'area della sezione all'imbocco delle ventole.
+Questo ultimo termine dovrebbe chiarire uno degli obiettivi del
+divergente della galleria: rallentare la corrente dopo la sezione di
+prova, per poter ridurre la potenza dei motori da installare per
+garantire il funzionamento dell'impianto. **Osservazione.** Potrebbe
+suscitare qualche perplessità il fatto che la corrente in uscita
+dall'impianto con velocità \)</span>U_5 \simeq V_{fan}<span class="math notranslate nohighlight">\( abbia una pressione
+uguale alla pressione ambiente, \)</span>P_{atm}<span class="math notranslate nohighlight">\(, come il fluido in quiete
+all'esterno del tubo di flusso. Provando ad applicare il teorema di
+Bernoulli tra un punto sulla sezione del tubo di flusso \)</span>S_5<span class="math notranslate nohighlight">\( e un punto
+all'esterno del tubo di flusso,
+\)</span><span class="math notranslate nohighlight">\(P_5 + \dfrac{1}{2}\rho V_{fan}^2 = P_5^{out}
+ \quad \rightarrow \quad 
+ P_{atm} + \dfrac{1}{2}\rho V_{fan}^2 = P_{atm} \ ,\)</span><span class="math notranslate nohighlight">\( si giungerebbe
+alla conclusione che \)</span>V_{fan} = 0<span class="math notranslate nohighlight">\(. L'errore risiede nell'applicazione
+del teorema di Bernoulli nella formula vista alla scuola superiore (o in
+altri corsi universitari), nonostante alcune ipotesi (che verranno
+presentate nel prosieguo del corso) non siano rispettate. In
+particolare, per collegare un punto sulla sezione \)</span>S_5<span class="math notranslate nohighlight">\( e un punto
+all'esterno del tubo di flusso viene attraversato uno strato di
+mescolamento tra la corrente in moto che esce dalla galleria e il fluido
+in quiete all'esterno: la presenza di questo strato di mescolamento, nel
+quale la corrente non è irrotazionale \)</span>\bm{\omega} \neq 0$, fa cadere le
+ipotesi del teorema di Bernoulli e lo rende quindi inapplicabile. Tutte
+le parti evidenziate in rosso devono quindi essere considerate errate.</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/04_bilanci"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

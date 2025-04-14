@@ -1,0 +1,606 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluzione {#soluzione .unnumbered} &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/0502Scivolo';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">1. Statics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">2. Surface tension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_cinematica/12teoria.html">3. Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">4. Balance equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05teoria.html">5. Bernoulli theorems and vorticity dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">6. Exact solutions of Navier-Stokes equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/0502Scivolo.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Soluzione {#soluzione .unnumbered}</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-1">Parte 1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-2">Parte 2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cosa-non-e-stato-detto">Cosa non è stato detto.</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><strong>Esercizi per il corso di Fluidodinamica</strong></p>
+<p>+:———————————:+:———————————:+
+| Si consideri il flusso d’acqua,   | <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/fig/canale.eps" />{width= |
+| <span class="math notranslate nohighlight">\(\overline{\rho}=999\ kg/m^3\)</span>,    | «90%»}                            |
+| nel canale rappresentato in       |                                   |
+| figura. Nel primo tratto l’acqua  |                                   |
+| scorre con una velocità uniforme  |                                   |
+| <span class="math notranslate nohighlight">\(U_1 = 1\ m/s\)</span> e l’altezza del    |                                   |
+| pelo libero rispetto al fondo del |                                   |
+| canale è <span class="math notranslate nohighlight">\(h_1 = 1.5\ m\)</span>.          |                                   |
+| Determinare la velocità           |                                   |
+| dell’acqua <span class="math notranslate nohighlight">\(U_2\)</span> e l’altezza del  |                                   |
+| pelo libero <span class="math notranslate nohighlight">\(h_2\)</span> nel secondo     |                                   |
+| tratto del canale, sapendo che    |                                   |
+| l’altezza del fondo del primo     |                                   |
+| tratto rispetto al fondo del      |                                   |
+| secondo tratto è <span class="math notranslate nohighlight">\(H=0.5\ m\)</span>. Si   |                                   |
+| trascuri qualunque effetto        |                                   |
+| dissipativo.                      |                                   |
+|                                   |                                   |
+| (Soluzione 1: <span class="math notranslate nohighlight">\(U_2 = 0.741\ m/s\)</span>, |                                   |
+| <span class="math notranslate nohighlight">\(h_2 = 2.022\ m\)</span>. Soluzione 2:    |                                   |
+| <span class="math notranslate nohighlight">\(U_2 = 5.940\ m/s\)</span>,               |                                   |
+| <span class="math notranslate nohighlight">\(h_2 = 0.252\ m\)</span>)                 |                                   |
++———————————–+———————————–+</p>
+<div class="section" id="soluzione-soluzione-unnumbered">
+<h1>Soluzione {#soluzione .unnumbered}<a class="headerlink" href="#soluzione-soluzione-unnumbered" title="Permalink to this heading">#</a></h1>
+<p><strong>Concetti.</strong> Teorema di Bernoulli nel caso incomprimibile, non
+viscoso, stazionario, irrotazionale. Soluzione di equazioni di terzo
+grado: metodo grafico e numerico. Correnti in canali aperti: soluzioni
+«fisiche», numero di Froude <span class="math notranslate nohighlight">\(Fr\)</span>, correnti subrcritiche e supercritiche.</p>
+<p><strong>Svolgimento.</strong></p>
+<p>L’esercizio viene risolto in due passi, che richiedono diversi livelli
+di conoscenza della dinamica dei fluidi in canali aperti: in un primo
+tempo, vengono ricavate le soluzioni ammissibili (<span class="math notranslate nohighlight">\(h_2 &gt; 0\)</span>, <span class="math notranslate nohighlight">\(U_2 &gt; 0\)</span>)
+del problema; in un secondo tempo, viene scelta la soluzione fisica del
+problema, tra le due soluzioni ammissibili trovate in precedenza.</p>
+<div class="section" id="parte-1">
+<h2>Parte 1.<a class="headerlink" href="#parte-1" title="Permalink to this heading">#</a></h2>
+<p>L’esercizio viene risolto mettendo a sistema il teorema di Bernoulli
+riferito a una linea di corrente sul pelo libero (sul quale agisce la
+pressione ambiente <span class="math notranslate nohighlight">\(P_a\)</span>, costante) e l’equazione di continuità. Grazie
+alle ipotesi elencate in precedenza, si può scrivere il sistema
+risolvente come:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\label{eqn:bern_cont}
+  \begin{cases}
+    \frac{1}{2}\rho U_1^2 + \rho g(h_1+H) = \frac{1}{2}\rho U_2^2 +
+    \rho g h_2 \\
+    h_1 U_1 = h_2 U_2
+  \end{cases}\end{split}\]</div>
+<p>Il sistema è di due equazioni (non lineari) nelle incognite <span class="math notranslate nohighlight">\(U_2\)</span> e
+<span class="math notranslate nohighlight">\(h_2\)</span>. Se si ricava una delle due incognite da un’equazione e la si
+inserisce nell’altra, si ottiene un’equazione di terzo grado. Per
+esempio, ricavando <span class="math notranslate nohighlight">\(h_2\)</span> dalla prima e inserendola nella seconda, per
+l’incognita <span class="math notranslate nohighlight">\(U_2\)</span> si ottiene l’equazione di terzo grado:</p>
+<div class="math notranslate nohighlight">
+\[h_1 U_1 = U_2 \displaystyle\left( \frac{U_1^2 - U_2^2}{2 g} + (h_1 + H)    \right)\]</div>
+<p>I metodi numerici convergono (quando convergono) a una soluzione, senza
+informazioni su quante soluzioni esistono effettivamente: prima di
+risolvere l’equazione di terzo grado con un metodo numerico è utile un
+primo approccio analitico al problema.</p>
+<p>Per questo cerchiamo le soluzioni del sistema di due equazioni per via
+grafica. Le equazioni del sistema
+<span class="xref myst">[eqn:bern_cont]</span>{reference-type=»ref»
+reference=»eqn:bern_cont»} definiscono curve nel piano <span class="math notranslate nohighlight">\((U_2,h_2)\)</span>. Se
+scegliamo di usare come asse orizzontale quello delle <span class="math notranslate nohighlight">\(U_2\)</span>, la prima
+equazione definisce una parabola con la concavità diretta verso il basso
+(<span class="math notranslate nohighlight">\(h_2 = - 0.5  U_2^2 /g +...\)</span>), mentre la seconda un’iperbole.</p>
+<p>Esistono due soluzioni con senso fisico (<span class="math notranslate nohighlight">\(h_2 \ge 0, U_2 \ge 0\)</span>). Ora
+che sappiamo quante soluzioni cercare e dove cercarle, possiamo
+procedere con un metodo numerico, dando guess iniziali in un intorno
+della soluzione. Le due soluzioni sono: $<span class="math notranslate nohighlight">\(\begin{aligned}
+  A :
+  \begin{cases}
+   U_2 = 0.741 \ m/s \\
+   h_2 = 2.022 \ m
+  \end{cases}
+   \quad
+  B :
+  \begin{cases}
+   U_2 = 5.940 \ m/s \\
+   h_2 = 0.252 \ m
+  \end{cases}
+\end{aligned}\)</span>$</p>
+</div>
+<div class="section" id="parte-2">
+<h2>Parte 2.<a class="headerlink" href="#parte-2" title="Permalink to this heading">#</a></h2>
+<p>É plausibile farsi una domanda: al netto delle ipotesi fatte sul regime
+di moto (fluido incomprimibile, non viscoso), il modello è in grado di
+descrivere il fenomeno fisico e stabilire quale delle due soluzioni
+amissibili trovate è la soluzione «fisica»? Seguendo la trattazione del
+problema svolta in <a class="reference external" href="http://heidarpour.iut.ac.ir/sites/heidarpour.iut.ac.ir/files//u32/open-chaudhry.pdf">Chaudhry, <em>Open-Channel Flow</em>, paragrafo 2-7:
+Channel transition e paragrafi
+vicini</a>,
+è possibile trovare l’unica soluzione fisica del problema. Viene
+introdotta la notazione usata da Chaudhry, che contrasta in parte con
+quella usata finora. Si tornerà alla notazione usata nella prima parte
+dell’esercizio, solo alla fine per scrivere i risultati.</p>
+<p>La variabile <span class="math notranslate nohighlight">\(z(x)\)</span> descrive la quota del fondo del canale, la variabile
+<span class="math notranslate nohighlight">\(y(x)\)</span> descrive la profondità della corrente, riferita al fondo del
+canale. Si indica con <span class="math notranslate nohighlight">\(Q = V y\)</span> la portata in volume, costante. Il
+trinomio di Bernoulli <span class="math notranslate nohighlight">\(H\)</span>, diviso per <span class="math notranslate nohighlight">\(\rho\)</span> e <span class="math notranslate nohighlight">\(g\)</span>, è costante lungo il
+canale. Si ricorda che sulla linea di corrente in corrispondenza del
+pelo libero agisce una pressione costante uguale alla pressione ambiente
+<span class="math notranslate nohighlight">\(P_a\)</span>. Se si introduce la coordinata orizzontale <span class="math notranslate nohighlight">\(x\)</span>, $<span class="math notranslate nohighlight">\(\begin{aligned}
+ 0 = \dfrac{d H}{d x} = 
+ &amp; \dfrac{d (y+z)}{d x} + \dfrac{d}{d x} \dfrac{V^2}{2 g}     = \\
+ &amp; = \dfrac{d (y+z)}{d x} + \dfrac{d}{d x} \dfrac{Q^2}{2 g y^2} = \\
+ &amp; = \dfrac{d (y+z)}{d x} - \dfrac{Q^2}{g y^3} \dfrac{d y}{d x} = \\
+ &amp; = \dfrac{d (y+z)}{d x} - \dfrac{V^2}{g y} \dfrac{d y}{d x} = \\ 
+ &amp; = \dfrac{d (y+z)}{d x} - \text{Fr}^2 \dfrac{d y}{d x} = \\ 
+ &amp; = \dfrac{d z}{d x} - (\text{Fr}^2 - 1) \dfrac{d y}{d x} \\ 
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( dove è stato introdotto il numero di Froude
+\)</span>\textit{Fr} = V(y)^2 / g y<span class="math notranslate nohighlight">\(, e qui è stata esplicitata la dipendenza
+dalla profondità \)</span>y<span class="math notranslate nohighlight">\(, funzione a sua volta funzione della coordinata
+\)</span>x<span class="math notranslate nohighlight">\(. Si trova così il legame tra la profondità della corrente \)</span>y(x)<span class="math notranslate nohighlight">\(, la
+quota del fondo \)</span>z(x)<span class="math notranslate nohighlight">\( e lo stato della corrente, descritto dal numero
+di Froude. \)</span><span class="math notranslate nohighlight">\(\label{eqn:flow_depth}
+ \dfrac{d z}{d x} = (\text{Fr}^2(y(x)) - 1) \dfrac{d y}{d x}\)</span><span class="math notranslate nohighlight">\( Vengono
+definiti due regimi di moto: subcritico \)</span>\textit{Fr} &lt; 1<span class="math notranslate nohighlight">\(, supercritico
+\)</span>\textit{Fr} &gt; 1<span class="math notranslate nohighlight">\(. Il profilo del fondo \)</span>z(x)<span class="math notranslate nohighlight">\(, e quindi la sua
+derivata, è noto dal progetto del canale. La profondità della corrente
+\)</span>y(x)$ può essere ottenuta integrando l’eq.
+<span class="xref myst">[eqn:flow_depth]</span>{reference-type=»ref»
+reference=»eqn:flow_depth»} con le condizioni iniziali note sulla
+sezione di ingresso.</p>
+<p>Per risolvere il nostro esercizio è sufficiente ragionare sui segni dei
+tre termini dell’eq.
+<span class="xref myst">[eqn:flow_depth]</span>{reference-type=»ref»
+reference=»eqn:flow_depth»}: <span class="math notranslate nohighlight">\(dz/dx \le 0\)</span>, quindi i due fattori alla
+destra dell’uguale devono essere discordi. Il numero di Froude sulla
+sezione di ingresso del problema vale
+<span class="math notranslate nohighlight">\(\text{Fr}_1 = U^2_1 / (g h_1) = 0.068\)</span>, quindi il contenuto della
+parentesi tonda è negativo (e negativo rimane, al variare di <span class="math notranslate nohighlight">\(x\)</span>; di
+questo dovete fidarvi…). Deve quindi essere <span class="math notranslate nohighlight">\(dy/dx \ge 0\)</span>. Tornando
+alla notazione usata nella prima parte dell’esercizio, dove la
+profondità della corrente è indicata con <span class="math notranslate nohighlight">\(h(x)\)</span>, <span class="math notranslate nohighlight">\(dh(x)/dx \ge 0\)</span>.
+Poichè la profondità della corrente aumenta sempre, la soluzione
+«fisica» tra le due ammissibili è la soluzione <span class="math notranslate nohighlight">\(A\)</span>, per la quale
+<span class="math notranslate nohighlight">\(h_2 &gt; h_1\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+   U_2 = 0.741 \ m/s \\
+   h_2 = 2.022 \ m
+  \end{cases}\end{split}\]</div>
+</div>
+<div class="section" id="cosa-non-e-stato-detto">
+<h2>Cosa non è stato detto.<a class="headerlink" href="#cosa-non-e-stato-detto" title="Permalink to this heading">#</a></h2>
+<p>É stato fatto solo un accenno al ragionamento che consente di
+determinare l’unica soluzione «fisica» del problema delle correnti in
+canali aperti che variano con continuità. Non si dirà nulla sui salti
+idraulici (che portano la corrente da uno stato supercritico a uno
+subcritico), dei quali si possono trovare esempi nei fiumi o sul fondo
+di un lavandino. Si accenna solo alla uguaglianza formale del problema
+del moto di un fluido incomprimibile in un canale aperto, con il moto
+monodimensionale di un fluido comprimibile, dove il ruolo del numero di
+Froude <span class="math notranslate nohighlight">\(\textit{Fr}\)</span> sarà svolto dal numero di Mach <span class="math notranslate nohighlight">\(M\)</span>, la definizione
+di stato sub- e supercritico, sarà sostituita da quella di condizione
+sub- e supersonica, il salto idraulico troverà il suo fenomeno
+corrispondente nelle onde d’urto.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/05_bernoulli"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-1">Parte 1.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-2">Parte 2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cosa-non-e-stato-detto">Cosa non è stato detto.</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

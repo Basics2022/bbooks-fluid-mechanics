@@ -1,0 +1,984 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equazioni di Boussinesq &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/07_similitudine/07boussinesq';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">Statica</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">Legge di Young-Laplace.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">Bilanci in forma integrale</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">Introduzione e linee guida per la soluzione dei problemi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07teoria.html">Teorema di Buckingham</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">Equazioni di Prandtl dello strato limite</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/07_similitudine/07boussinesq.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Equazioni di Boussinesq</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Equazioni di Boussinesq</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equazioni-di-boussinesq-problema-bidimensionale-tra-due-superfici-piane">Equazioni di Boussinesq: problema bidimensionale tra due superfici piane</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#condizioni-al-contorno">Condizioni al contorno</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soluzione-stazionaria-non-convettiva">Soluzione stazionaria non convettiva</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equazione-delle-fluttuazioni">Equazione delle fluttuazioni</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#equazioni-di-boussinesq-in-forma-adimensionale">Equazioni di Boussinesq in forma adimensionale</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#equazione-della-vorticita-e-funzione-di-corrente-nell-approssimazione-di-boussinesq">Equazione della vorticità e funzione di corrente nell’approssimazione di Boussinesq</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#approssimazione-di-fourier-galerkin-del-problema-di-boussinesq">Approssimazione di Fourier–Galerkin del problema di Boussinesq</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dal-problema-di-boussinesq-al-modello-di-lorenz">Dal problema di Boussinesq al modello di Lorenz</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="equazioni-di-boussinesq">
+<h1>Equazioni di Boussinesq<a class="headerlink" href="#equazioni-di-boussinesq" title="Permalink to this heading">#</a></h1>
+<p>Le equazioni di Boussinesq sono un modello approssimato delle equazioni
+complete del moto dei fluidi, ricavato sotto le ipotesi che:</p>
+<ul class="simple">
+<li><p>il contributo di dissipazione nell’equazione dell’energia sia
+trascurabile;</p></li>
+<li><p>la densità dipenda linearmente dalla temperatura nel termine di
+forze di volume nell’equazione della quantità di moto.</p></li>
+</ul>
+<p>La variazione della densità in funzione della densità diventa quindi
+$<span class="math notranslate nohighlight">\(d \rho(P, T) = \left(\dfrac{\partial \rho}{\partial P} \right)_T dP +  \left(\dfrac{\partial \rho}{\partial T} \right)_P dT \approx \left(\dfrac{\partial \rho}{\partial T} \right)_P dT = - \rho_0 \, \alpha \, dT \$\)</span>
+$<span class="math notranslate nohighlight">\(\rightarrow \rho = \rho_0 \left( 1 - \alpha \, (T-T_0) \right) \ ,\)</span><span class="math notranslate nohighlight">\(
+dove le derivate sono calcolate nello stato termodinamico di
+riferimento, \)</span>(\rho_0, \ T_0)<span class="math notranslate nohighlight">\(, ed è stato introdotto il coefficiente di
+dilatazione termica
+\)</span><span class="math notranslate nohighlight">\(\alpha = - \dfrac{1}{\rho_0} \left(\dfrac{\partial \rho}{\partial T} \right)_P \ .\)</span><span class="math notranslate nohighlight">\(
+Introducendo le approssimazioni elencate, l'espressione dell'energia
+interna \)</span>e = c_v T<span class="math notranslate nohighlight">\( e la legge di Fourier per il flusso di calore per
+conduzione, \)</span>\bm{q} = -k \bm{\nabla} T<span class="math notranslate nohighlight">\(, nelle equazioni complete per
+una corrente incomprimibile di un fluido newtoniano, \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+      \rho \dfrac{\partial \bm{u}}{\partial t} + \rho
+      \left( \bm{u} \cdot \bm{\nabla} \right) \bm{u} -
+      \mu \nabla^2 \bm{u} + \bm{\nabla} P = \rho \bm{g} \\
+      \bm{\nabla} \cdot \bm{u} = 0 \\
+      \rho \dfrac{\partial e}{\partial t} + \rho \bm{u} \cdot 
+      \bm{\nabla} e = 2 \mu \mathbb{D}:\mathbb{D} - \bm{\nabla} \cdot \bm{q} \ ,
+    \end{cases}\)</span><span class="math notranslate nohighlight">\( si ottengono le equazioni di Boussinesq
+\)</span><span class="math notranslate nohighlight">\(\begin{cases}
+      \dfrac{\partial \bm{u}}{\partial t} + 
+      \left( \bm{u} \cdot \bm{\nabla} \right) \bm{u} -
+      \nu \nabla^2 \bm{u} + \dfrac{1}{\rho_0}\bm{\nabla} P = \big( 1 - \alpha ( T-T_0 ) \big) \bm{g} \\
+      \bm{\nabla} \cdot \bm{u} = 0 \\
+      \dfrac{\partial T}{\partial t} + \bm{u} \cdot 
+      \bm{\nabla} T =  D \nabla^2 T \ ,
+    \end{cases}\)</span><span class="math notranslate nohighlight">\( avendo definito il coefficiente di diffusione termica
+\)</span>D = \dfrac{k}{\rho_0 c_v}$.</p>
+<div class="section" id="equazioni-di-boussinesq-problema-bidimensionale-tra-due-superfici-piane">
+<h2>Equazioni di Boussinesq: problema bidimensionale tra due superfici piane<a class="headerlink" href="#equazioni-di-boussinesq-problema-bidimensionale-tra-due-superfici-piane" title="Permalink to this heading">#</a></h2>
+<div class="section" id="condizioni-al-contorno">
+<h3>Condizioni al contorno<a class="headerlink" href="#condizioni-al-contorno" title="Permalink to this heading">#</a></h3>
+<p>Si considera ora la corrente che si sviluppa tra due superfici piane
+orizzontali infinite, a distanza <span class="math notranslate nohighlight">\(h\)</span> l’una dall’altra, mantenute a
+temperatura costante: la temperatura vale <span class="math notranslate nohighlight">\(T_w\)</span> sulla superficie
+inferiore e <span class="math notranslate nohighlight">\(T_c\)</span> sulla superficie superiore. Viene definita la
+differenza di temperatura <span class="math notranslate nohighlight">\(\Delta T = T_w - T_c\)</span>. Se le due superfici
+considerate sono superfici solide, la velocità su di esse è nulla. Se le
+due superfici sono superfici «libere» (di simmetria, a sforzo nullo) si
+annulla la derivata normale della velocità. Prendendo un sistema di assi
+ortogonali, con l’origine in corrispondenza della superficie inferiore,
+con l’asse <span class="math notranslate nohighlight">\(x\)</span> parallelo e l’asse <span class="math notranslate nohighlight">\(z\)</span> perpendicolare alla superficie, si
+possono riassumere così le condizioni al contorno, $<span class="math notranslate nohighlight">\(\text{wall: }
+    \begin{cases}
+      T(x,z=0) = T_w \\ T(x,z=h) = T_c \\
+      \bm{u}(x,z=0) = \bm{0} \\ \bm{u}(x,z=h) = \bm{0}
+    \end{cases}  \hspace{0.5cm}
+    \text{free: } \left\{
+    \begin{aligned}
+      T(x,z=0) = T_w \ &amp; \ , \ \ T(x,z=h) = T_c \\
+      \dfrac{\partial u}{\partial z}(x,z=0) = 0 \ &amp; \ , \ \ \dfrac{\partial u}{\partial z}(x,z=h) = 0 \\
+      w(x,z=0) = 0 \ &amp; \  , \  \  w(x,z=h) = 0 \ .
+    \end{aligned} \right.\)</span><span class="math notranslate nohighlight">\( Non ci sono condizioni al contorno in \)</span>x$,
+poichè la direzione è omogenea. Considereremo qui solo il problema con
+le condizioni al contorno «free».</p>
+</div>
+<div class="section" id="soluzione-stazionaria-non-convettiva">
+<h3>Soluzione stazionaria non convettiva<a class="headerlink" href="#soluzione-stazionaria-non-convettiva" title="Permalink to this heading">#</a></h3>
+<p>Esiste una soluzione stazionaria (<span class="math notranslate nohighlight">\(\partial / \partial t = 0\)</span>) del
+problema con fluido in quiete (<span class="math notranslate nohighlight">\(\bm{u} = \bm{0}\)</span>). Il vincolo di
+incomprimibilità è soddisfatto identicamente. Sfruttando l’omogeneità
+della direzione <span class="math notranslate nohighlight">\(x\)</span>, la soluzione stazionaria indipendente dalla
+coordinata <span class="math notranslate nohighlight">\(x\)</span> soddisfa le equazioni $<span class="math notranslate nohighlight">\(\begin{cases}
+        \dfrac{1}{\rho_0}\dfrac{d P}{d z} = \alpha g (T-T_0)  \vspace{0.2cm} \\
+        \dfrac{d^2 T}{d z^2} = 0 \ ,
+    \end{cases}\)</span><span class="math notranslate nohighlight">\( dotate delle opportune condizioni al contorno. La
+soluzione stazionaria del problema è \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+    \overline{T}(z) = T_w + (T_c-T_w) \dfrac{z}{h} =
+    T_w - \Delta T \dfrac{z}{h} \\
+    \overline{P}(z) = P_w + \alpha \rho_0 g \left[ (T_w-T_0) z
+    - \dfrac{1}{2} \Delta T \dfrac{z^2}{h} \right] \ ,
+\end{cases}\)</span><span class="math notranslate nohighlight">\( avendo indicato con \)</span>P_w<span class="math notranslate nohighlight">\( il valore della pressione in
+corrispondenza della superficie inferiore a \)</span>z = 0$.</p>
+</div>
+<div class="section" id="equazione-delle-fluttuazioni">
+<h3>Equazione delle fluttuazioni<a class="headerlink" href="#equazione-delle-fluttuazioni" title="Permalink to this heading">#</a></h3>
+<p>Viene definita la fluttuazione di temperatura <span class="math notranslate nohighlight">\(\tau(x,z)\)</span>,
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+    \tau(x,z) = T(x,z) - \overline{T}(z) &amp; = T(x,z) - T_w + \Delta T \dfrac{z}{h} \\
+    \quad \rightarrow \quad T(x,z) - T_w &amp; = \tau(x,z) - \Delta T \dfrac{z}{h} \ .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Scegliendo la superficie inferiore a \)</span>z = 0<span class="math notranslate nohighlight">\( per
+definire la condizione termodinamica di riferimento, \)</span>T_0 = T_w<span class="math notranslate nohighlight">\(. le
+equazioni di Boussinesq diventano \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+      \dfrac{\partial \bm{u}}{\partial t} + 
+      \left( \bm{u} \cdot \bm{\nabla} \right) \bm{u} -
+      \nu \nabla^2 \bm{u} + \dfrac{1}{\rho_0}\bm{\nabla} P = \left( 1 - \alpha \tau + \Delta T \dfrac{z}{h} \right) \bm{g} \\
+      \bm{\nabla} \cdot \bm{u} = 0 \\
+      \dfrac{\partial \tau}{\partial t} + \bm{u} \cdot 
+      \bm{\nabla} \tau + w \dfrac{\partial \overline{T}}{\partial z}=  D \nabla^2 \tau \ .
+    \end{cases}\)</span><span class="math notranslate nohighlight">\( Inoltre è possibile raccogliere il primo e il terzo
+termine delle forze di galleggiamento sotto lo stesso operatore di
+gradiente che opera sul campo di pressione. Infatti, è possibile
+scrivere il termine di galleggiamento come \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+    \left( 1 - \alpha \tau + \Delta T \dfrac{z}{h} \right) \bm{g} &amp; = \alpha \tau g \bm{\hat{z}} - \bm{\nabla} \left( gz + \Delta T \dfrac{z^2}{2 h} \right) \ .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Definendo una &quot;pressione generalizzata&quot; \)</span>P”<span class="math notranslate nohighlight">\(,
+\)</span><span class="math notranslate nohighlight">\(P' = P + \rho_0 g z + \rho_0 \Delta T \dfrac{z^2}{2 h} \ ,\)</span><span class="math notranslate nohighlight">\( le
+equazioni di Boussinesq diventano \)</span><span class="math notranslate nohighlight">\(\label{eqn:Bouss-tau}
+    \begin{cases}
+      \dfrac{\partial \bm{u}}{\partial t} + 
+      \left( \bm{u} \cdot \bm{\nabla} \right) \bm{u} -
+      \nu \nabla^2 \bm{u} + \dfrac{1}{\rho_0}\bm{\nabla} P' = \alpha  g \tau \bm{\hat{z}} \\
+      \bm{\nabla} \cdot \bm{u} = 0 \\
+      \dfrac{\partial \tau}{\partial t} + \bm{u} \cdot 
+      \bm{\nabla} \tau -\dfrac{\Delta T}{h} w =  D \nabla^2 \tau \ ,
+    \end{cases}\)</span><span class="math notranslate nohighlight">\( e le condizioni al contorno della temperatura vengono
+espresse anch'esse in funzione di \)</span>\tau<span class="math notranslate nohighlight">\(, \)</span><span class="math notranslate nohighlight">\(\label{eqn:Bouss-tau-bc}
+    \tau(x,z=0) = \tau(x,z=h) = 0 \ .\)</span>$</p>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="equazioni-di-boussinesq-in-forma-adimensionale">
+<h1>Equazioni di Boussinesq in forma adimensionale<a class="headerlink" href="#equazioni-di-boussinesq-in-forma-adimensionale" title="Permalink to this heading">#</a></h1>
+<p>Si ricava la forma adimensionale delle equazioni
+(<span class="xref myst">[eqn:Bouss-tau]</span>{reference-type=»ref»
+reference=»eqn:Bouss-tau»}) e delle condizioni al contorno
+(<span class="xref myst">[eqn:Bouss-tau-bc]</span>{reference-type=»ref»
+reference=»eqn:Bouss-tau-bc»}) utilizzando il teorema <span class="math notranslate nohighlight">\(\pi\)</span> di
+Buckingham. Nel problema di Boussinesq compaiono 12 grandezze
+dimensionali (13 se si volesse considerare la componente <span class="math notranslate nohighlight">\(w\)</span> della
+velocità <span class="math notranslate nohighlight">\(\bm{u}\)</span> in maniera indipendente),
+$<span class="math notranslate nohighlight">\(\underbrace{\bm{x}, t}_{\text{tar. indip.}}, 
+    \underbrace{\bm{u}, \tau, P'}_{\text{campi } f(\bm{x},t)},
+    \underbrace{\rho_0, \nu, D, \alpha, g}_{\substack{ \text{\footnotesize{propr. del fluido}} \\ \text{\footnotesize{e del problema}} } }, 
+    \underbrace{h, \Delta T}_{\substack{ \text{\footnotesize{dominio e}} \\ \text{\footnotesize{ condizioni al contorno}} } } \ ,\)</span><span class="math notranslate nohighlight">\(
+e 4 grandezze fisiche fondamentali: massa \)</span>M<span class="math notranslate nohighlight">\(, lunghezza \)</span>L<span class="math notranslate nohighlight">\(, tempo \)</span>T<span class="math notranslate nohighlight">\(
+e temperatura \)</span>\Theta<span class="math notranslate nohighlight">\(. Secondo il teorema di Buckingham, il problema
+può quindi essere caratterizzato da 8 numeri adimensionali. Utilizzando
+la stessa scala di lunghezze per adimensionalizzare \)</span>\bm{x}<span class="math notranslate nohighlight">\( e \)</span>h<span class="math notranslate nohighlight">\( e la
+stessa scala di temperature per adimensionalizzare \)</span>\tau<span class="math notranslate nohighlight">\( e \)</span>\Delta T<span class="math notranslate nohighlight">\(,
+sono sufficienti 6 numeri adimensionali. É necessario scegliere 4
+grandezze fisiche di riferimento indipendenti e, possibilmente,
+rappresentative del problema con le quali adimensionalizzare le altre.
+Il problema della convezione non forzata descritto dalle equazioni di
+Boussinesq è caratterizzato dalla differenza di temperatura \)</span>\Delta T<span class="math notranslate nohighlight">\( e
+dalla distanza \)</span>h<span class="math notranslate nohighlight">\( delle superfici, dal fluido considerato e
+dall'intensità delle forze di volume. I campi di velocità \)</span>\bm{u}<span class="math notranslate nohighlight">\(, di
+&quot;temperatura&quot; \)</span>\tau<span class="math notranslate nohighlight">\( e di &quot;pressione&quot; \)</span>P”<span class="math notranslate nohighlight">\( sono un risultato, una
+conseguenza, delle condizioni al contorno e del fluido impiegato: non
+esistono scale di velocità e pressione indipendenti, mentre il campo di
+temperatura può essere scalato sulla differenza \)</span>\Delta T<span class="math notranslate nohighlight">\(. Non esiste
+nemmeno una scala indipendente dei tempi, poiché l'evoluzione del
+sistema è determinata dalle condizioni al contorno e dal fluido
+utilizzato. Come grandezze dimensionali di riferimento indipendenti e
+caratteristiche del problema vengono scelte la densità del fluido, il
+coefficiente di diffusione termica, la distanza tra le superfici e la
+loro differenza di temperatura:
+\)</span><span class="math notranslate nohighlight">\(\tilde{\rho}=\rho_0, \ \tilde{D} = D, \ \tilde{L} = h, \ \tilde{\Theta} = \Delta T \ .\)</span>$</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>          $\bm{x}$   $t$   $\bm{u}$   $\tau$   $P&#39;$   $\rho_0$   $\nu$   $D$   $\alpha$   $g$   $h$   $\Delta T$
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  M                                             1        1                                           
+  L          1                1                 -1       -3        2      2                1     1   
+  T                   1       -1                -2                -1     -1               -2         
+</pre></div>
+</div>
+<p><span class="math notranslate nohighlight">\(\Theta\)</span>                                 1                                         -1                      1</p>
+<p>: Teorema di Buckingham. Grandezze dimensionali e unità
+fisiche.[]{label=»tab:Bouss-pi-thm»}</p>
+<p>Ora è possibile scrivere ogni grandezza dimensionale come prodotto di
+una grandezza omogenea di riferimento (dimensionale) e del suo valore
+adimensionale. Si può quindi scrivere, $<span class="math notranslate nohighlight">\(\label{eqn:var-adim}
+\begin{aligned}
+    \bm{x} = \tilde{L} \bm{x}^*  \quad &amp; , \quad t = \tilde{T} t^* \\
+    \bm{u} = \tilde{U} \bm{u}^* \quad , \quad \tau &amp; = \tilde{\Theta} \tau^* \quad , \quad P' = \tilde{P} P^{*'} \\
+    \rho_0 = \tilde{\rho} \rho_0^* \quad  , \quad \nu = \tilde{\nu} \nu^* \quad , \quad D &amp; = \tilde{D} D^* \quad , \quad \alpha = \tilde{\alpha} \alpha^* \quad , \quad g = \tilde{g} g^* \\
+    h = \tilde{L} h^* \quad &amp; , \quad \Delta T = \tilde{\Theta} \Delta T^* \ ,
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( avendo utilizzato la stessa scala di lunghezza
+\)</span>\tilde{L}<span class="math notranslate nohighlight">\( come riferimento per la coordinata spaziale indipendente
+\)</span>\bm{x}<span class="math notranslate nohighlight">\( e la distanza \)</span>h<span class="math notranslate nohighlight">\( tra le due superifici, e la stessa scala di
+temperatura \)</span>\tilde{\Theta}<span class="math notranslate nohighlight">\( come riferimento per il campo di
+temperatura \)</span>\tau<span class="math notranslate nohighlight">\( e la differenza di temperatura tra le due superfici
+\)</span>\Delta T<span class="math notranslate nohighlight">\(, come anticipato in precedenza. Le 12 grandezze dimensionali
+sono state adimensionalizzate usando 10 scale di riferimento: da queste
+è possibile ricavare 6 numeri adimensionali con cui descrivere il
+problema. Inserendo le espressioni
+([\[eqn:var-adim\]](#eqn:var-adim){reference-type=&quot;ref&quot;
+reference=&quot;eqn:var-adim&quot;}) nel problema di Boussinesq
+([\[eqn:Bouss-tau\]](#eqn:Bouss-tau){reference-type=&quot;ref&quot;
+reference=&quot;eqn:Bouss-tau&quot;}), si ricava \)</span><span class="math notranslate nohighlight">\(\label{eqn:Bouss-tau-adim-1}
+    \begin{cases}
+      \dfrac{\tilde{U}}{\tilde{T}}\dfrac{\partial \bm{u}^*}{\partial t^*} + \dfrac{\tilde{U}^2}{\tilde{L}}
+      \left( \bm{u}^* \cdot \bm{\nabla}^* \right) \bm{u}^* -
+      \dfrac{\tilde{\nu} \tilde{U}}{\tilde{L}^2} \nu^* \nabla^{*2} \bm{u}^* + \dfrac{\tilde{P}}{\tilde{\rho} \tilde{L}}\dfrac{1}{\rho_0^*}\bm{\nabla} P^{*'} = \tilde{\alpha} \tilde{g} \tilde{\theta} \alpha^*  g^* \tau^* \bm{\hat{z}} \\
+      \dfrac{\tilde{U}}{\tilde{L}}\bm{\nabla}^* \cdot \bm{u}^* = 0 \\
+      \dfrac{\tilde{\Theta}}{\tilde{T}}\dfrac{\partial \tau^*}{\partial t^*} + \dfrac{\tilde{U}\tilde{\Theta}}{\tilde{L}}\bm{u}^* \cdot 
+      \bm{\nabla}^* \tau^* - \dfrac{\tilde{U}\tilde{\Theta}}{\tilde{L}}\dfrac{\Delta T^*}{h^*} w^* = \dfrac{\tilde{D}\tilde{\Theta}}{\tilde{L}^2} D^* \nabla^{*2} \tau^* \ ,
+    \end{cases}\)</span><span class="math notranslate nohighlight">\( con le conzioni al contorno &quot;free&quot;
+\)</span><span class="math notranslate nohighlight">\(\text{free: } \left\{
+    \begin{aligned}
+      \tilde{\Theta}\tau^*(\tilde{L}x^*,\tilde{L}z^*=0) = 0 \quad &amp; , \quad  
+      \tilde{\Theta}\tau^*(\tilde{L}x^*,\tilde{L}z^*=\tilde{L}h^*) = 0 \\
+      \dfrac{\tilde{U}}{\tilde{L}}\dfrac{\partial u^*}{\partial z^*}(\tilde{L}x^*,\tilde{L}z^*=0) = 0 \quad  &amp; , \quad 
+      \dfrac{\tilde{U}}{\tilde{L}}\dfrac{\partial u}{\partial z^*}(\tilde{L}x^*,\tilde{L}z^*=\tilde{L}h^*) = 0 \\
+      \tilde{U} w^*(\tilde{L}x^*,\tilde{L}z^*=0) = 0 \quad  &amp; , \quad 
+      \tilde{U} w^*(\tilde{L}x^*,\tilde{L}z^*=\tilde{L}h^*) = 0
+    \end{aligned} \right.\)</span><span class="math notranslate nohighlight">\( Con un abuso di notazione, d'ora in poi si
+indicano le grandezze adimensionali senza asterisco e i campi
+adimensionali vengono definiti come funzione delle variabili
+indipendenti adimensionali,
+\)</span><span class="math notranslate nohighlight">\(\bm{u}(\bm{x},t) = \tilde{U} \bm{u}^*(\tilde{L} \bm{x}^*, \tilde{T} t^*) \quad \rightarrow \quad \tilde{U} \bm{u}(\bm{x},  t) \ .\)</span><span class="math notranslate nohighlight">\(
+Le grandezze di riferimento delle grandezze costanti vengono scelte
+coincidenti con la grandezza stessa, cosicché le grandezze adimensionali
+relative sono uguali a 1, \)</span><span class="math notranslate nohighlight">\(\label{eqn:var-adim-2}
+\begin{aligned}
+    \rho_0 = \tilde{\rho} \quad  , \quad \nu = \tilde{\nu} \quad , \quad D &amp; = \tilde{D}  \quad , \quad \alpha = \tilde{\alpha}  \quad , \quad g = \tilde{g}  \\
+    h = \tilde{L}  \quad &amp; , \quad \Delta T = \tilde{\Theta}  \ .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Dividendo l'equazione della quantità di moto per
+\)</span>\tilde{\nu}\tilde{U}/\tilde{L}^2<span class="math notranslate nohighlight">\(, il vincolo di incomprimibilità per
+\)</span>\tilde{U}/\tilde{L}<span class="math notranslate nohighlight">\( e l'equazione dell'energia per
+\)</span>\tilde{D}\tilde{\Theta}/\tilde{L}^2<span class="math notranslate nohighlight">\(, il problema di Boussinesq diventa
+\)</span><span class="math notranslate nohighlight">\(\label{eqn:Bouss-tau-adim-2}
+    \begin{cases}
+      \dfrac{\tilde{L}^2}{\tilde{\nu}\tilde{T}}\dfrac{\partial \bm{u}^*}{\partial t^*} + \dfrac{\tilde{U}\tilde{L}}{\tilde{\nu}}
+      \left( \bm{u}^* \cdot \bm{\nabla}^* \right) \bm{u}^* -
+      \nabla^{*2} \bm{u}^* + \dfrac{\tilde{P}\tilde{L}}{\tilde{\rho} \tilde{\nu} \tilde{U}}\bm{\nabla} P^{*'} = \dfrac{\tilde{\alpha} \tilde{g} \tilde{\Theta} \tilde{L}^2}{\tilde{\nu} \tilde{U}} \tau^* \bm{\hat{z}} \\
+      \bm{\nabla}^* \cdot \bm{u}^* = 0 \\
+      \dfrac{\tilde{L}^2}{\tilde{D}\tilde{T}}\dfrac{\partial \tau^*}{\partial t^*} + \dfrac{\tilde{U}\tilde{L}}{\tilde{D}}\bm{u}^* \cdot 
+      \bm{\nabla}^* \tau^* - \dfrac{\tilde{U}\tilde{L}}{\tilde{D}} w^* = \nabla^{*2} \tau^* \ ,
+    \end{cases}\)</span><span class="math notranslate nohighlight">\( con le conzioni al contorno &quot;free&quot;
+\)</span><span class="math notranslate nohighlight">\(\label{eqn:Bouss-adim-2-bc}
+    \text{free: }
+    \left\{
+    \begin{aligned}
+      \tau^*(x^*,z^*=0) = 0 \qquad  &amp; , \qquad 
+      \tau^*(x^*,z^*=1) = 0 \\
+      \dfrac{\partial u^*}{\partial z^*}(x^*,z^*=0) = 0 \qquad &amp; , \qquad 
+      \dfrac{\partial u^*}{\partial z^*}(x^*,z^*=1) = 0 \\
+      w^*(x^*,z^*=0) = 0 \qquad &amp; , \qquad w^*(x^*,z^*=1) = 0 \ .
+    \end{aligned} \right.\)</span><span class="math notranslate nohighlight">\( Nel problema
+([\[eqn:Bouss-tau-adim-2\]](#eqn:Bouss-tau-adim-2){reference-type=&quot;ref&quot;
+reference=&quot;eqn:Bouss-tau-adim-2&quot;}-[\[eqn:Bouss-adim-2-bc\]](#eqn:Bouss-adim-2-bc){reference-type=&quot;ref&quot;
+reference=&quot;eqn:Bouss-adim-2-bc&quot;}) compaiono 6 numeri adimensionali.
+Siamo arrivati al risultato previsto dal teorema di Buckingham. Prima di
+andare avanti, conviene comunque fare un'osservazione. Solo 5 dei 6
+numeri adimensionali trovati sono tra di loro indipendenti: in
+particolare solo 3 dei 4 numeri adimensionali
+\)</span><span class="math notranslate nohighlight">\(\pi_1 = \frac{\tilde{L}^2}{\tilde{D}\tilde{T}} \ , \quad
+    \pi_2 = \frac{\tilde{U}\tilde{L}}{\tilde{D}} \ , \quad
+    \pi_3 = \frac{\tilde{L}^2}{\tilde{\nu}\tilde{T}} \ , \quad 
+    \hat{\pi}_4 = \frac{\tilde{U}\tilde{L}}{\tilde{\nu}} = \pi_2 \dfrac{\pi_3}{\pi_1}\)</span><span class="math notranslate nohighlight">\(
+sono linearmente indipendenti. Sembra di aver commesso un errore poiché
+abbiamo trovato una contraddizione del teorema di Buckingham.
+L'apparente errore si nasconde nel termine adimensionale
+\)</span>\frac{\tilde{\alpha} \tilde{g} \tilde{\theta} \tilde{L}^2}{\tilde{\nu} \tilde{U}}<span class="math notranslate nohighlight">\(.
+Questo termine infatti è il prodotto dei numeri adimensionali
+\)</span>\tilde{\alpha} \tilde{\theta}<span class="math notranslate nohighlight">\( e
+\)</span>\frac{\tilde{g} \tilde{L}^2}{\tilde{\nu} \tilde{U}}<span class="math notranslate nohighlight">\(. I sei numeri
+adimensionali indipendenti che caratterizzano il problema sono quindi
+\)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+    \pi_1 = \frac{\tilde{L}^2}{\tilde{D}\tilde{T}} \quad ,\quad
+    \pi_2 &amp; = \frac{\tilde{U}\tilde{L}}{\tilde{D}} \quad ,\quad
+    \pi_3 = \frac{\tilde{L}^2}{\tilde{\nu}\tilde{T}} \\
+    \pi_4 = \frac{\tilde{P}\tilde{L}}{\tilde{\rho}\tilde{\nu}\tilde{U}} \quad ,\quad
+    \pi_5 &amp; = {\tilde{\alpha}\tilde{\Theta}} \quad ,\quad
+    \pi_6 = \frac{\tilde{g} \tilde{L}^2}{\tilde{\nu} \tilde{U}} \ .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Poiché il coefficiente di dilatazione termica \)</span>\alpha<span class="math notranslate nohighlight">\( e
+la forza per unità di volume \)</span>g<span class="math notranslate nohighlight">\( comapiono sempre attraverso il loro
+prodotto, questo si può considerare come un'unica variabile, \)</span>\alpha g<span class="math notranslate nohighlight">\(.
+In questo caso, i 5 numeri adimensionali che descrivono il problema
+composto dalle 9 (10-1) scale di riferimento sono
+\)</span><span class="math notranslate nohighlight">\(\pi'_1 = \pi_1, \  \pi'_2 = \pi_2, \ \pi'_3 = \pi_3, \ \pi'_4 = \pi_4, \ \pi'_5 = \pi_5 \pi_6 \ .\)</span><span class="math notranslate nohighlight">\(
+Non essendoci scale di velocità, tempo e pressione indipendenti, è
+possibile definire queste scale a partire dalle 4 grandezze fisiche di
+riferimento \)</span>\tilde{L}<span class="math notranslate nohighlight">\(, \)</span>\Delta \tilde{T}<span class="math notranslate nohighlight">\(, \)</span>\tilde{\rho}<span class="math notranslate nohighlight">\(,
+\)</span>\tilde{D}<span class="math notranslate nohighlight">\(, imponendo il valore unitario di alcuni parametri
+adimensionali, \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+      \pi'_1 = 1 &amp; \quad \rightarrow \quad \tilde{T} = \dfrac{\tilde{L}^2}{\tilde{D}} \\
+      \pi'_2 = 1 &amp; \quad \rightarrow \quad \tilde{U} = \dfrac{\tilde{D}}{\tilde{L}} \\
+      \pi'_4 = 1 &amp; \quad \rightarrow \quad \tilde{P} = \dfrac{\tilde{\rho}\tilde{\nu}\tilde{U}}{\tilde{L}} \ .
+    \end{aligned}\)</span><span class="math notranslate nohighlight">\( Gli unici due parametri adimensionali caratteristici
+del problema rimangono \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ \Pi_1 = \pi'_3 = \dfrac{\tilde{L^2}}{\tilde{\nu} \tilde{L}^2/\tilde{D}} \qquad \rightarrow \qquad \Pi_1  &amp; = \dfrac{\tilde{D}}{\tilde{\nu}} = \dfrac{1}{Pr} \\
+ \Pi_5 = \pi'_5 = \dfrac{\tilde{\alpha}\tilde{\Theta} \tilde{g} \tilde{L}^2}{\tilde{\nu} \tilde{D}/\tilde{L}} \qquad \rightarrow \qquad \Pi_5 &amp; = \dfrac{\tilde{\alpha}\tilde{g}\tilde{\Theta}  \tilde{L}^3}{\tilde{\nu} \tilde{D}} = Ra = \\
+ &amp; = \dfrac{\tilde{\alpha}\tilde{g}\tilde{\Theta}  \tilde{L}^3}{\tilde{\nu}^2}\dfrac{\tilde{\nu}}{\tilde{D}} = Gr \, Pr \ ,
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( nei quali si possono riconoscere i numeri di Prandtl,
+\)</span>Pr<span class="math notranslate nohighlight">\(, di Rayleigh, \)</span>Ra<span class="math notranslate nohighlight">\(, e di Grashof, \)</span>Gr<span class="math notranslate nohighlight">\(. La forma adimensionale del
+problema di Boussinesq tra due superfici piane è quindi
+\)</span><span class="math notranslate nohighlight">\(\label{eqn:Bouss-tau-adim-3}
+    \begin{cases}
+      \dfrac{1}{Pr} \left[ \dfrac{\partial \bm{u}}{\partial t} +
+      \left( \bm{u} \cdot \bm{\nabla} \right) \bm{u} \right] -
+      \nabla^2 \bm{u} + \bm{\nabla} P' = Ra \, \tau \bm{\hat{z}} \\
+      \bm{\nabla} \cdot \bm{u} = 0 \\
+      \dfrac{\partial \tau}{\partial t} + \bm{u} \cdot 
+      \bm{\nabla} \tau -  w = \nabla^{2} \tau \ ,
+    \end{cases}\)</span><span class="math notranslate nohighlight">\( con le conzioni al contorno &quot;free&quot;
+\)</span><span class="math notranslate nohighlight">\(\label{eqn:Bouss-adim-3-bc}
+    \text{free: }
+    \left\{
+    \begin{aligned}
+      \tau(x,z=0) = 0 \qquad  &amp; , \qquad 
+      \tau(x,z=1) = 0 \\
+      \dfrac{\partial u}{\partial z}(x,z=0) = 0 \qquad &amp; , \qquad 
+      \dfrac{\partial u}{\partial z}(x,z=1) = 0 \\
+      w(x,z=0) = 0 \qquad &amp; , \qquad w(x,z=1) = 0 \ .
+    \end{aligned} \right.\)</span>$</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="equazione-della-vorticita-e-funzione-di-corrente-nell-approssimazione-di-boussinesq">
+<h1>Equazione della vorticità e funzione di corrente nell’approssimazione di Boussinesq<a class="headerlink" href="#equazione-della-vorticita-e-funzione-di-corrente-nell-approssimazione-di-boussinesq" title="Permalink to this heading">#</a></h1>
+<p>Dall’equazione della quantità di moto in
+(<span class="xref myst">[eqn:Bouss-tau-adim-3]</span>{reference-type=»ref»
+reference=»eqn:Bouss-tau-adim-3»}) è possibile ricavare l’equazione
+della vorticità, applicandole l’operatore di rotore. Poichè il problema
+è piano e bidimensionale, il campo di vorticità ha componente non nulla
+solo fuori dal piano <span class="math notranslate nohighlight">\(xz\)</span>. Utilizzando un sistema di coordinate
+cartesiano, il campo di vorticità
+<span class="math notranslate nohighlight">\(\bm{\omega}(x,z,t) = \xi(x,z,t) \bm{\hat{y}}\)</span> soddisfa l’equazione
+$<span class="math notranslate nohighlight">\(\dfrac{1}{Pr} \left[ \dfrac{\partial \xi}{\partial t} +
+      \bm{u} \cdot \bm{\nabla} \xi \right] -
+      \nabla^2 \xi = - Ra \, \dfrac{\partial \tau}{\partial x} \ .\)</span><span class="math notranslate nohighlight">\( Si
+può poi introdurre la funzione di corrente \)</span>\psi<span class="math notranslate nohighlight">\(,
+\)</span><span class="math notranslate nohighlight">\(u =   \dfrac{\partial \psi}{ \partial z} \quad , \quad 
+    w = - \dfrac{\partial \psi}{ \partial x} \ ,\)</span><span class="math notranslate nohighlight">\( in modo tale da
+soddisfare identicamente il vincolo di incomprimibilità. La componente
+\)</span>y<span class="math notranslate nohighlight">\( del campo di vorticità diventa
+\)</span><span class="math notranslate nohighlight">\(\xi = \dfrac{\partial u}{\partial z} - \dfrac{\partial w}{\partial x} =
+    \dfrac{\partial^2 u}{\partial z^2} +
+    \dfrac{\partial^2 w}{\partial x^2} = 
+    \nabla^2 \psi \ ,\)</span><span class="math notranslate nohighlight">\( e il termine advettivo di una funzione \)</span>f<span class="math notranslate nohighlight">\(
+qualsiasi può essere scritta come un determinante,
+\)</span><span class="math notranslate nohighlight">\(\bm{u} \cdot \bm{\nabla} f = u \dfrac{\partial f}{\partial x} + w \dfrac{\partial f}{\partial z} =
+    \dfrac{\partial \psi}{ \partial z} \dfrac{\partial f}{\partial x} - \dfrac{\partial \psi}{ \partial x} \dfrac{\partial f}{\partial z} = \left| \begin{matrix} f_x &amp; f_z \\ \psi_x &amp; \psi_z \end{matrix} \right| =: \dfrac{\partial(f,\psi)}{\partial(x,z)} \ .\)</span><span class="math notranslate nohighlight">\(
+Il sistema di equazioni del problema di Boussinesq diventa quindi
+\)</span><span class="math notranslate nohighlight">\(\label{eqn:Bouss-vort-psi-tau}
+    \begin{cases}
+      \dfrac{\partial \xi}{\partial t} +
+      \dfrac{\partial(\xi,\psi)}{\partial(x,z)} 
+      = Pr \, \nabla^2 \xi 
+      - Pr \, Ra \, \dfrac{\partial \tau}{\partial x} \\
+      \dfrac{\partial \tau}{\partial t} +
+      \dfrac{\partial(\tau,\psi)}{\partial(x,z)} =
+      \nabla^{2} \tau + w \ .
+    \end{cases}\)</span>$</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="approssimazione-di-fourier-galerkin-del-problema-di-boussinesq">
+<h1>Approssimazione di Fourier–Galerkin del problema di Boussinesq<a class="headerlink" href="#approssimazione-di-fourier-galerkin-del-problema-di-boussinesq" title="Permalink to this heading">#</a></h1>
+<p>Utilizzando la geometria del dominio, è possibile espandere le funzioni
+che compaiono nelle equazioni
+(<span class="xref myst">[eqn:Bouss-vort-psi-tau]</span>{reference-type=»ref»
+reference=»eqn:Bouss-vort-psi-tau»}) come somma di prodotti di funzioni
+armoniche in <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(z\)</span>, la cui ampiezza dipende dal tempo
+$<span class="math notranslate nohighlight">\(\label{eqn:harm-1}
+\begin{aligned}
+    \psi(x,z,t) &amp; = \sum_m \sum_k a_{m,k}(t) \sin{(m\pi z + \phi^a_m)}\sin{(k\pi x + \phi^a_k)} \\
+    \tau(x,z,t) &amp; = \sum_m \sum_k b_{m,k}(t) \sin{(m\pi z + \phi^b_m)}\sin{(k\pi x + \phi^b_k)} \ .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Le condizioni al contorno
+([\[eqn:Bouss-adim-3-bc\]](#eqn:Bouss-adim-3-bc){reference-type=&quot;ref&quot;
+reference=&quot;eqn:Bouss-adim-3-bc&quot;}) del problema con due superfici
+infinite &quot;free&quot; impongono che la componente
+\)</span>w=-\partial{\psi}/\partial{x}<span class="math notranslate nohighlight">\( e la derivata
+\)</span>\partial u/\partial z = \partial^2 \psi/\partial z^2<span class="math notranslate nohighlight">\( siano nulle per
+\)</span>z = 0, \ 1<span class="math notranslate nohighlight">\( per ogni istante temporale e per ogni valore di \)</span>x<span class="math notranslate nohighlight">\(. Le
+condizioni al contorno su \)</span>w<span class="math notranslate nohighlight">\( impongono le seguenti condizioni
+sull'espanzione armonica delle funzioni, \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+      0 = \dfrac{\partial \psi}{\partial x}\Big|_{z=0} &amp; = \sum_m \sum_k k \pi a_{m,k}(t) \sin{ \phi^a_m }\cos{(k\pi x + \phi^a_k)} \\
+      &amp; \hspace{4.0cm} \rightarrow \qquad \phi^a_m = 0 \ , \\
+      0 = \dfrac{\partial \psi}{\partial x}\Big|_{z=1} &amp; = \sum_m \sum_k k \pi a_{m,k}(t) \sin{ m \pi }\cos{(k\pi x + \phi^a_k)} \\
+      &amp; \hspace{4.0cm} \rightarrow \qquad m \in \mathbb{Z} \ .
+    \end{aligned}\)</span><span class="math notranslate nohighlight">\( Le stesse condizioni derivano dalle condizioni al
+contorno su \)</span>\partial u/\partial z<span class="math notranslate nohighlight">\(. Le condizioni al contorno sulla
+temperatura in impongono le seguenti condizioni sull'espansione armonica
+della funzione \)</span>\tau<span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+      0 = \tau \Big|_{z=0} &amp; = \sum_m \sum_k b_{m,k}(t) \sin{ \phi^b_m }\sin{(k\pi x + \phi^b_k)} \\
+      &amp; \hspace{4.0cm} \rightarrow \qquad \phi^b_m = 0 \ ,\\
+      0 = \tau \Big|_{z=1} &amp; = \sum_m \sum_k b_{m,k}(t) \sin{ m \pi }\sin{(k\pi x + \phi^b_k)} \\
+      &amp; \hspace{4.0cm} \rightarrow \qquad m \in \mathbb{Z} \ .
+    \end{aligned}\)</span><span class="math notranslate nohighlight">\( A causa dell'omogeneità della direzione \)</span>x<span class="math notranslate nohighlight">\(, nella
+quale il dominio è infinito, non ci sono condizioni sul numero d'onda
+\)</span>k<span class="math notranslate nohighlight">\(, che può assumere tutti i valori \)</span>\in \mathbb{R}<span class="math notranslate nohighlight">\(, e sulla fase
+delle armoniche in \)</span>x<span class="math notranslate nohighlight">\(. Le espansioni
+([\[eqn:harm-1\]](#eqn:harm-1){reference-type=&quot;ref&quot;
+reference=&quot;eqn:harm-1&quot;}) possono quindi essere scritte come
+\)</span><span class="math notranslate nohighlight">\(\label{eqn:harm-2}
+\begin{aligned}
+    \psi(x,z,t) &amp; = \sum_{m \in \mathbb{Z}} \sum_k a^1_{m,k}(t) \sin{(m\pi z)} \sin{(k\pi x )} +  a^2_{m,k}(t) \sin{(m\pi z)} \cos{(k \pi x)} \\
+    \tau(x,z,t) &amp; = \sum_{m \in \mathbb{Z}} \sum_k b^1_{m,k}(t) \sin{(m\pi z)} \sin{(k\pi x )} + b^2_{m,k}(t) \sin{(m\pi z)} \cos{(k \pi x)}  \ .
+\end{aligned}\)</span>$</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="dal-problema-di-boussinesq-al-modello-di-lorenz">
+<h1>Dal problema di Boussinesq al modello di Lorenz<a class="headerlink" href="#dal-problema-di-boussinesq-al-modello-di-lorenz" title="Permalink to this heading">#</a></h1>
+<p>Le espansioni (<span class="xref myst">[eqn:harm-2]</span>{reference-type=»ref»
+reference=»eqn:harm-2»}) possono essere <em>brutalmente</em> troncate per
+ottenere un modello dinamico di dimensione <span class="math notranslate nohighlight">\(N_d = 3\)</span> partendo dal
+modello continuo, che ha dimensione infinita. Le espansioni
+(<span class="xref myst">[eqn:harm-2]</span>{reference-type=»ref»
+reference=»eqn:harm-2»}) vengono troncate mantenendo solo 3 termini
+$<span class="math notranslate nohighlight">\(\label{eqn:harm-3}
+\begin{aligned}
+    \psi(x,z,t) &amp; = a(t) \sin{(\pi z)} \sin{(k\pi x )}  \\
+    \tau(x,z,t) &amp; = b(t) \sin{(\pi z)} \cos{(k\pi x )} + c(t) \sin{(2 \pi z)}   \ ,
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( avendo definito \)</span>a(t) = a^1_{1,k}(t)<span class="math notranslate nohighlight">\(,
+\)</span>b(t) = b^2_{1,k}(t)<span class="math notranslate nohighlight">\(, \)</span>c(t) = b^1_{2,0}(t)<span class="math notranslate nohighlight">\(. Usando le espansioni
+([\[eqn:harm-3\]](#eqn:harm-3){reference-type=&quot;ref&quot;
+reference=&quot;eqn:harm-3&quot;}), la componente \)</span>y<span class="math notranslate nohighlight">\( del campo di vorticità
+\)</span>\xi = \nabla^2 \psi<span class="math notranslate nohighlight">\( diventa
+\)</span><span class="math notranslate nohighlight">\(\xi = - \pi^2 (1 + k^2) \psi = - \pi^2 (1 + k^2) a(t) \sin{(\pi z)} \sin{(k\pi x )}\)</span><span class="math notranslate nohighlight">\(
+I due determinanti che compaiono nelle equazioni
+([\[eqn:Bouss-vort-psi-tau\]](#eqn:Bouss-vort-psi-tau){reference-type=&quot;ref&quot;
+reference=&quot;eqn:Bouss-vort-psi-tau&quot;}) valgono \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+     \dfrac{\partial (\xi, \psi)}{\partial (x,z)} = &amp;
+     \left[ -\pi^3 k(1+k^2) a(t) \sin{(\pi z)}  \cos{(k \pi x)} \right]
+     \left[ a(t) \pi \cos{(\pi z)} \sin{(k \pi x)} \right] + \\
+      - &amp; \left[  -\pi^3 (1+k^2) a(t) \cos{(\pi z)}  \sin{(k \pi x)} \right]
+      \left[ a(t) \pi k \sin{(\pi z)} \cos{(k \pi x)} \right] = 0 \ ,
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( e \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+    \dfrac{\partial (\tau, \psi)}{\partial (x,z)} = &amp;
+    \left[ - \pi k b(t) \sin{(\pi z )} \sin{(k \pi x)} \right]
+    \left[ a(t) \pi \cos{(\pi z)} \sin{(k \pi x)} \right] + \\
+    - &amp; \left[ \pi b(t) \cos{(\pi z )} \cos{(k \pi x)} + 2\pi c(t) \cos{(2\pi z)} \right]
+    \left[ a(t) \pi k \sin{(\pi z)} \cos{(k \pi x)} \right] = \\
+    = &amp; - k \pi^2 a(t) b(t) \dfrac{\sin{( 2 \pi z)}}{2} -
+    2 k \pi^2 a(t)c(t) \sin(\pi z) \cos(2\pi z) \cos(k \pi x) \ .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( I laplaciani che compaiono nelle equazioni
+([\[eqn:Bouss-vort-psi-tau\]](#eqn:Bouss-vort-psi-tau){reference-type=&quot;ref&quot;
+reference=&quot;eqn:Bouss-vort-psi-tau&quot;}) valgono
+\)</span><span class="math notranslate nohighlight">\(\nabla^2 \xi = -\pi^2 (1+k^2) \xi = \pi^4 (1+k^2)^2 a(t) \sin{(\pi z)} \sin{(k \pi x)} \ ,\)</span><span class="math notranslate nohighlight">\(
+e
+\)</span><span class="math notranslate nohighlight">\(\nabla^2 \tau = -\pi^2 (1+k^2) b(t) \sin{(\pi z)}\cos{(k \pi x)} - 4 \pi^2 c(t) \sin{(2\pi x)} \ .\)</span><span class="math notranslate nohighlight">\(
+Il numero di Prantl viene indicato come \)</span>Pr = \sigma<span class="math notranslate nohighlight">\(, il numero di
+Rayleigh come \)</span>Ra = R<span class="math notranslate nohighlight">\(. Inserendo le espansioni
+([\[eqn:harm-3\]](#eqn:harm-3){reference-type=&quot;ref&quot;
+reference=&quot;eqn:harm-3&quot;}) all'interno delle equazioni
+([\[eqn:Bouss-vort-psi-tau\]](#eqn:Bouss-vort-psi-tau){reference-type=&quot;ref&quot;
+reference=&quot;eqn:Bouss-vort-psi-tau&quot;}), il problema troncato di Boussinesq
+diventa, \)</span>$\begin{cases}</p>
+<ul class="simple">
+<li><p>\sigma \pi^2 (1+k^2) \dot{a}(t) \sin{(\pi z)} \sin{(k\pi x )} = \sigma \pi^4 (1+k^2)^2 a(t) \sin{(\pi z)} \sin{(k \pi x)} + \
+\hspace{6.0cm} + \sigma R , \pi k , b(t) \sin{(\pi z)}\sin{(k \pi x)} \
+\dot{b}(t)\sin{(\pi z)} \cos{(k\pi x )} + \dot{c}(t) \sin{(2\pi x)} + \
+\hspace{2.0cm} - k \pi^2 a(t) b(t) \dfrac{\sin{(2 \pi z)}}{2} -
+2 k \pi^2 a(t)c(t) \sin(\pi z) \cos(2\pi z) \cos(k \pi x) = \
+\hspace{1.5cm} = -\pi^2 (1+k^2) b(t) \sin{(\pi z)}\cos{(k \pi x)} - 4 \pi^2 c(t) \sin{(2\pi x)} + \
+\hspace{2.0cm} - \pi k a(t) \sin{(\pi z)} \cos{(k \pi x)} \ .
+\end{cases}$<span class="math notranslate nohighlight">\( Raccogliendo il termine
+\)</span>\sin{(\pi z)} \sin{(k \pi x)}<span class="math notranslate nohighlight">\( nell'equazione della vorticità si
+ottiene l'equazione
+\)</span><span class="math notranslate nohighlight">\(- \pi^2 (1+k^2) \dot{a} = \sigma \pi^4 (1+k^2)^2 a(t) +  \sigma R \, \pi k \, b(t) \ .\)</span><span class="math notranslate nohighlight">\(
+L'equazione della temperatura viene &quot;proiettata&quot; sulle funzioni di base
+\)</span>\sin{(\pi z)} \cos{(k \pi x)}<span class="math notranslate nohighlight">\( e \)</span>\sin{(2 \pi x)}<span class="math notranslate nohighlight">\( e sfruttando
+l'ortogonalità delle funzioni armoniche. La proiezione consiste nella
+moltiplicazione dell'equazione per le funzioni di base
+\)</span>\sin{(\pi z)} \cos{(k \pi x)}<span class="math notranslate nohighlight">\( e nell'integrazione in
+\)</span>(x,z) \in \left[0,\frac{2}{k}\right]\times\left[0,1\right]<span class="math notranslate nohighlight">\(. Usando il
+valore degli integrali, \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+\int_{x=0}^{2/k} \sin{(k \pi x)}^2 dx &amp; = \dfrac{1}{2} \int_{x=0}^{2/k} \left[ 1 - \cos{(2 k \pi x)} \right] dx = \dfrac{1}{k} \\
+\int_{x=0}^{2/k} \sin{(k \pi x)}\cos{(k \pi x)} dx &amp; = \dfrac{1}{k \pi} \int_{x=0}^{2/k} \sin{(k \pi x)} d \big( \sin{(k \pi x)} \big) = 0 \\
+\int_{x=0}^{2/k} \cos{(k \pi x)}^2 dx &amp; = \dfrac{1}{k} \ ,
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( e degli integrali \)</span>$\begin{aligned}
+\int_{z=0}^{1} \sin{(\pi z)}^2 dz &amp; = \dfrac{1}{2} \int_{x=0}^{1} \left[ 1 - \cos{(2\pi z)} \right] dz = \dfrac{1}{2} \
+\int_{z=0}^{1} \sin{(\pi z)} \sin{(\pi z)} \cos{(2\pi z)} dz  &amp; =
+\dfrac{1}{2} \int_{z=0}^{1} \left[ 1 - \cos{(2\pi z)} \right]  \cos{(2\pi z)} dz = \
+&amp; = - \dfrac{1}{2} \int_{z=0}^{1} \cos^2{(2\pi z)}  dz =</p>
+<ul>
+<li><p>\dfrac{1}{4} \ .
+\end{aligned}$<span class="math notranslate nohighlight">\( La proiezione dell'equazione della vorticità sulla
+funzione \)</span>\sin{(\pi z)} \cos{(k \pi x)}<span class="math notranslate nohighlight">\( è
+\)</span><span class="math notranslate nohighlight">\(\dfrac{1}{2}\dot{b}(t) - \dfrac{1}{4} 2 k \pi^2 a(t) c(t) =
+-\dfrac{1}{2} \pi^2 (1+k^2) b(t) - \dfrac{1}{2}\pi k a(t) \ ,\)</span><span class="math notranslate nohighlight">\(
+mentre la proiezione dell'equazione della vorticità sulla funzione
+\)</span>\sin{(2 \pi z)}<span class="math notranslate nohighlight">\( è
+\)</span>$\dfrac{1}{k}\dot{c}(t) - \dfrac{1}{k} \dfrac{\pi^2 k}{2} a(t) b(t) =</p>
+<ul>
+<li><p>\dfrac{1}{k} 4 \pi^2 c(t) \ .$<span class="math notranslate nohighlight">\( Le equazioni diventano quindi
+\)</span>$\begin{cases}</p></li>
+</ul>
+</li>
+<li><p>\pi^2 (1+k^2) \dot{a} = \sigma \pi^4 (1+k^2)^2 a(t) +  \sigma R , \pi k , b(t) \
+\dot{b} = -\pi^2 (1+k^2) b(t) + \pi^2 k a(t)c(t)  - \pi k a(t)  \
+\dot{c} = \dfrac{\pi^2 k}{2} a(t) b(t) - 4 \pi^2 c(t) \ .
+\end{cases}$<span class="math notranslate nohighlight">\( Partendo da queste equazioni, si introduce qualche
+cambio di variabile per riportarsi all'espressione classica del sistema
+di Lorenz. Viene introdotto il tempo \)</span>t” = \pi^2 (k^2 + 1) t<span class="math notranslate nohighlight">\(, cosicché
+\)</span><span class="math notranslate nohighlight">\(\dot{f} = \dfrac{df}{dt} = \dfrac{dt'}{dt}\dfrac{df}{dt'} =
+\pi^2 (k^2 + 1) \dfrac{df}{dt'} \ .\)</span><span class="math notranslate nohighlight">\( Con un abuso di notazione,
+d'ora in poi si indica \)</span>\dot{(\ )}<span class="math notranslate nohighlight">\( la derivata rispetto a \)</span>t”<span class="math notranslate nohighlight">\(. La
+stessa variabile \)</span>t”<span class="math notranslate nohighlight">\( viene indicata con \)</span>t<span class="math notranslate nohighlight">\(. Le equazioni diventano
+\)</span><span class="math notranslate nohighlight">\(\begin{cases}
+\dot{a}(t) = \sigma a(t) +  \sigma R \dfrac{k}{\pi^3 (k^2+1)^2} b(t) \\
+\dot{b}(t) = - b(t) + \dfrac{ k}{k^2+1} a(t)c(t)  - \dfrac{ k}{\pi(k^2+1)} a(t)  \\
+\dot{c}(t) = \dfrac{k}{2(k^2+1)} a(t) b(t) - \dfrac{4}{k^2+1}  c(t) \ .
+\end{cases}\)</span><span class="math notranslate nohighlight">\( Viene definito infine il cambio di variabili
+\)</span><span class="math notranslate nohighlight">\(\begin{cases}
+X(t) = \dfrac{k}{\sqrt{2}(k^2+1)} a(t) \\
+Y(t) = \dfrac{k}{\sqrt{2}(k^2+1)}
+\left[-\dfrac{R k}{\pi^3 (k^2+1)^2}\right] b(t) \\
+Z(t) = \left[-\dfrac{R k^2}{\pi^3 (k^2+1)}\right] c(t)
+\end{cases}\)</span><span class="math notranslate nohighlight">\( che porta alla forma classica delle equazioni di
+Lorenz \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+ \dot{X} = - \sigma X + \sigma Y \\
+ \dot{Y} = - Y + \rho X - X Z \\
+ \dot{Z} = - \beta Z + X Y \ ,
+\end{cases}\)</span><span class="math notranslate nohighlight">\( avendo definito i parameteri
+\)</span><span class="math notranslate nohighlight">\(\rho = \dfrac{R k^2}{\pi^4 (k^2+1)^2} \qquad , \qquad
+\beta = \dfrac{4}{k^2+1} \ .\)</span>$</p></li>
+</ul>
+</li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/07_similitudine"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Equazioni di Boussinesq</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equazioni-di-boussinesq-problema-bidimensionale-tra-due-superfici-piane">Equazioni di Boussinesq: problema bidimensionale tra due superfici piane</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#condizioni-al-contorno">Condizioni al contorno</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soluzione-stazionaria-non-convettiva">Soluzione stazionaria non convettiva</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equazione-delle-fluttuazioni">Equazione delle fluttuazioni</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#equazioni-di-boussinesq-in-forma-adimensionale">Equazioni di Boussinesq in forma adimensionale</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#equazione-della-vorticita-e-funzione-di-corrente-nell-approssimazione-di-boussinesq">Equazione della vorticità e funzione di corrente nell’approssimazione di Boussinesq</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#approssimazione-di-fourier-galerkin-del-problema-di-boussinesq">Approssimazione di Fourier–Galerkin del problema di Boussinesq</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dal-problema-di-boussinesq-al-modello-di-lorenz">Dal problema di Boussinesq al modello di Lorenz</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

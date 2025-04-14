@@ -1,0 +1,802 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statica &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/01_statica/statica-flat';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="02teoria.html">1. Statics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">2. Surface tension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_cinematica/12teoria.html">3. Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">4. Balance equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_bernoulli/05teoria.html">5. Bernoulli theorems and vorticity dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">6. Exact solutions of Navier-Stokes equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/01_statica/statica-flat.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Statica</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione-di-fluido">Definizione di fluido</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equazione-di-equilibrio-forma-integrale-e-differenziale">Equazione di equilibrio: forma integrale e differenziale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-di-stevino">Legge di Stevino</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galleggiamento-di-un-corpo-immerso-in-un-fluido">Galleggiamento di un corpo immerso in un fluido</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risultante-delle-forze-legge-di-archimede">Risultante delle forze: legge di Archimede</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-di-applicazione">Punto di applicazione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stabilita-statica-dell-equilibrio">Stabilità statica dell’equilibrio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esercizi">Esercizi</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="statica">
+<h1>Statica<a class="headerlink" href="#statica" title="Permalink to this heading">#</a></h1>
+<p>[[ch:statica]]{#ch:statica label=»ch:statica»}</p>
+<div class="section" id="definizione-di-fluido">
+<h2>Definizione di fluido<a class="headerlink" href="#definizione-di-fluido" title="Permalink to this heading">#</a></h2>
+<p>Un fluido è un materiale che non è in grado di sopportare sforzi di
+taglio, quando è in quiete o in moto con velocità uniforme in un sistema
+di riferimento inerziale (invarianza galileiana). I fluidi «ordinari»
+sono isotropi, cioè sono indipendenti dall’orientazione nello spazio. Un
+fluido isotropo in quiete è quindi caratterizzato da uno stato di sforzo
+idrostatico, $<span class="math notranslate nohighlight">\(\mathbb{T}^{(s)} = - p \mathbb{I} \ ,\)</span><span class="math notranslate nohighlight">\( avendo indicato
+con \)</span>\mathbb{T}^{(s)}<span class="math notranslate nohighlight">\( il tensore degli sforzi in quiete, \)</span>p<span class="math notranslate nohighlight">\( la
+pressione all'interno del fluido e \)</span>\mathbb{I}<span class="math notranslate nohighlight">\( il tensore identità. Il
+vettore sforzo \)</span>\bm{t_n}<span class="math notranslate nohighlight">\( *agente su* una superficie di fluido con
+normale \)</span>\bm{\hat{n}}<span class="math notranslate nohighlight">\( si ottiene tramite il **teorema di Cauchy** per i
+mezzi continui \)</span><span class="math notranslate nohighlight">\(\bm{t_n} = \bm{\hat{n}} \cdot \mathbb{T} \ ,\)</span><span class="math notranslate nohighlight">\( che lega
+il vettore sforzo al tensore degli sforzi tramite il versore normale
+alla superficie considerata, e che nel caso di fluido in quiete, diventa
+\)</span><span class="math notranslate nohighlight">\(\bm{t_n}^{(s)} = \bm{\hat{n}} \cdot \mathbb{T}^{(s)}  = - p \bm{\hat{n}} \ .\)</span><span class="math notranslate nohighlight">\(
+Per il principio di azione e reazione, lo sforzo agente su un materiale
+a contatto con un fluido è di intensità uguale e direzione opposta. La
+risultante \)</span>\bm{R}<span class="math notranslate nohighlight">\( delle forze agenti su un volume di fluido \)</span>V<span class="math notranslate nohighlight">\( è data
+dalla somma dell'integrale su \)</span>V<span class="math notranslate nohighlight">\( delle forze di volume \)</span>\bm{f}<span class="math notranslate nohighlight">\( e
+dell'integrale sulla superficie \)</span>S<span class="math notranslate nohighlight">\(, contorno del volume \)</span>V<span class="math notranslate nohighlight">\(, del
+vettore sforzo \)</span>\bm{t_n}<span class="math notranslate nohighlight">\(,
+\)</span><span class="math notranslate nohighlight">\(\bm{R} = \int_V \bm{f} + \oint_S \bm{t_n} \ .\)</span>$</p>
+</div>
+<div class="section" id="equazione-di-equilibrio-forma-integrale-e-differenziale">
+<h2>Equazione di equilibrio: forma integrale e differenziale<a class="headerlink" href="#equazione-di-equilibrio-forma-integrale-e-differenziale" title="Permalink to this heading">#</a></h2>
+<p>Un sistema meccanico è in equilibrio quando la risultante delle forze
+esterne e la risultante dei momenti esterni agenti sul fluido sono
+nulle, $<span class="math notranslate nohighlight">\(\begin{cases}
+ \bm{0} = \bm{R}^{ext} \\
+ \bm{0} = \bm{M}^{ext}  \ .
+\end{cases}\)</span><span class="math notranslate nohighlight">\( Per un mezzo continuo non polare, è possibile dimostrare
+che l'equilibrio ai momenti si riduce alla condizione di simmetria del
+tensore degli sforzi. L'equilibrio delle forze agenti su un volume di
+fluido \)</span>V<span class="math notranslate nohighlight">\( in quiete, delimitato dalla superficie \)</span>\partial V = S<span class="math notranslate nohighlight">\(,
+soggetto a forze per unità di volume \)</span>\bm{f}<span class="math notranslate nohighlight">\( in \)</span>V<span class="math notranslate nohighlight">\( e forze per unità
+di superficie \)</span>\bm{t_n}=-p \bm{\hat{n}}<span class="math notranslate nohighlight">\( su \)</span>S<span class="math notranslate nohighlight">\( diventa
+\)</span><span class="math notranslate nohighlight">\(\bm{0} = \bm{R}^{ext} = \int_V \bm{f} + \oint_S \bm{t_n} = \int_V \bm{f} - \oint_S p \bm{\hat{n}} \ .\)</span><span class="math notranslate nohighlight">\(
+La condizione appena ottenuta è una **condizione di equilibrio
+integrale**, per l'intero volume fluido \)</span>V<span class="math notranslate nohighlight">\(. Se il campo di pressione
+\)</span>p<span class="math notranslate nohighlight">\( è sufficientemente regolare, è possibile applicare il teorema del
+gradiente ([\[thm:grad\]](#thm:grad){reference-type=&quot;ref&quot;
+reference=&quot;thm:grad&quot;}) all'integrale di superficie e raccogliere i
+termini a destra dell'uguale sotto un unico integrale di volume \)</span>V<span class="math notranslate nohighlight">\(,
+\)</span><span class="math notranslate nohighlight">\(\bm{0} = \int_V \left( \bm{f} - \bm{\nabla} p \right) \ .\)</span><span class="math notranslate nohighlight">\( Poiché la
+condizione di equilibrio deve essere valida indipendentemente dal volume
+\)</span>V<span class="math notranslate nohighlight">\( considerato, imponendo che l'integranda sia identicamente nulla, si
+ottiene l'**equazione di equilibrio in forma differenziale**
+\)</span><span class="math notranslate nohighlight">\(\label{eqn:statica:diff}
+ \bm{f}(\bm{r}) - \bm{\nabla} p (\bm{r}) = \bm{0} \ ,\)</span><span class="math notranslate nohighlight">\( dove è stata
+esplicitata la dipendenza dei campi \)</span>\bm{f}<span class="math notranslate nohighlight">\(, \)</span>p<span class="math notranslate nohighlight">\( dall coordinata
+spaziale \)</span>\bm{r}<span class="math notranslate nohighlight">\(. Nel caso in cui sia noto il campo di forze di volume
+\)</span>\bm{f}<span class="math notranslate nohighlight">\( all'interno del dominio considerato, l'equazione differenziale
+alle derivate parziali
+([\[eqn:statica:diff\]](#eqn:statica:diff){reference-type=&quot;ref&quot;
+reference=&quot;eqn:statica:diff&quot;}), con le opportune condizioni al contorno,
+permette di calcolare il campo di pressione \)</span>p(\bm{r})$.</p>
+</div>
+<div class="section" id="legge-di-stevino">
+<h2>Legge di Stevino<a class="headerlink" href="#legge-di-stevino" title="Permalink to this heading">#</a></h2>
+<p>La legge di Stevino descrive il campo di pressione come funzione della
+quota, nelle vicinanze della superficie terrestre. La legge di Stevino
+viene ricavata dall’integrazione dell’equilibrio in forma differenziale
+(<span class="xref myst">[eqn:statica:diff]</span>{reference-type=»ref»
+reference=»eqn:statica:diff»}), nel caso in cui le forze di volume siano
+dovute alla gravità <span class="math notranslate nohighlight">\(\bm{f}(\bm{r}) = \rho(\bm{r}) \bm{g}(\bm{r})\)</span>,
+avendo indicato con <span class="math notranslate nohighlight">\(\rho(\bm{r})\)</span> la densità del fluido e con <span class="math notranslate nohighlight">\(\bm{g}\)</span>
+il campo di accelerazione gravitazionale, $<span class="math notranslate nohighlight">\(\label{eqn:statica:diff:g}
+    - \bm{\nabla} p(\bm{r}) + \rho(\bm{r}) \bm{g}(\bm{r}) = \bm{0} \ .\)</span><span class="math notranslate nohighlight">\(
+Nell'ipotesi di essere sufficientemente vicino alla terra da poter
+considerare il campo vettoriale \)</span>\bm{g}<span class="math notranslate nohighlight">\( uniforme e diretto verso il
+basso lungo la normale alla superficie terrestre, è possibile scrivere
+l'equazione precedente in un sistema di coordinate cartesiane.
+Orientando l'asse \)</span>z<span class="math notranslate nohighlight">\( verso l'alto lungo la normale alla superficie, le
+tre componenti cartesiane dell'equazione vettoriale sono \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+ \partial p(x,y,z) / \partial x = 0 \\
+ \partial p(x,y,z) / \partial y = 0 \\ 
+ \partial p(x,y,z) / \partial z = - \rho(x,y,z) g \ .
+\end{cases}\)</span><span class="math notranslate nohighlight">\( Dalle prime due equazioni si ricava che il campo di
+pressione non può dipendere dalle coordinate \)</span>x<span class="math notranslate nohighlight">\(, \)</span>y<span class="math notranslate nohighlight">\( ed è quindi solo
+funzione di \)</span>z<span class="math notranslate nohighlight">\(. Poiché il campo di pressione dipende solo da \)</span>z<span class="math notranslate nohighlight">\(,
+\)</span>p = P(z)<span class="math notranslate nohighlight">\(, la terza equazione diventa un'equazione differenziale
+ordinaria, \)</span><span class="math notranslate nohighlight">\(\label{eqn:statica:Pz}
+  \dfrac{d P}{d z} = -\rho(x,y,z) g \ ,\)</span><span class="math notranslate nohighlight">\( alla quale deve essere
+aggiunta una condizione al contorno del tipo \)</span>P(z_0) = p_0<span class="math notranslate nohighlight">\(.[^1] Senza
+ulteriori ipotesi, il problema composto dall'equazione
+([\[eqn:statica:Pz\]](#eqn:statica:Pz){reference-type=&quot;ref&quot;
+reference=&quot;eqn:statica:Pz&quot;}) e dalla condizione al contorno necessaria
+ha come incognite il campo di pressione \)</span>P<span class="math notranslate nohighlight">\( e il campo di densità
+\)</span>\rho<span class="math notranslate nohighlight">\(. In generale, per risolvere il problema è necessario la legge di
+stato del fluido che mette in relazione i due campi. Nell'ipotesi che la
+densità \)</span>\rho<span class="math notranslate nohighlight">\( e la forza di gravità siano costanti, la soluzione del
+problema ([\[eqn:statica:Pz\]](#eqn:statica:Pz){reference-type=&quot;ref&quot;
+reference=&quot;eqn:statica:Pz&quot;}) coincide con la *legge di Stevino*,
+\)</span><span class="math notranslate nohighlight">\(p(z) + \rho g z = p_0 = \text{cost} \ ,\)</span><span class="math notranslate nohighlight">\( avendo orientato l'asse \)</span>z<span class="math notranslate nohighlight">\(
+verso l'alto e imposto la condizione al contorno in \)</span>z_0 = 0$.</p>
+<p>[[exe:stdatm:cart]]{#exe:stdatm:cart label=»exe:stdatm:cart»}
+Utilizzando la legge di stato dei gas perfetti per l’aria,
+<span class="math notranslate nohighlight">\(P = \rho R T\)</span>, e l’approssimazione lineare dell’andamento della
+temperatura con la quota <span class="math notranslate nohighlight">\(z\)</span>, con gradiente termico
+<span class="math notranslate nohighlight">\(dT/dz=a=-6.5\degree/km\)</span>, si ricavi l’andamento con la quota <span class="math notranslate nohighlight">\(z\)</span> delle
+variabili termodinamiche <span class="math notranslate nohighlight">\((P,\rho, T)\)</span> per l’atrmosfera standard. Si
+trascuri l’andamento di <span class="math notranslate nohighlight">\(g\)</span> con la quota. Trascurando la curvatura
+terrestre, si utilizzi un sistema di coordinate cartesiane per scrivere
+le componenti dell’equazione vettoriale
+(<span class="xref myst">[eqn:statica:diff:g]</span>{reference-type=»ref»
+reference=»eqn:statica:diff:g»}).</p>
+<p>[[exe:stdatm:sphe]]{#exe:stdatm:sphe label=»exe:stdatm:sphe»}
+Utilizzando la legge di stato dei gas perfetti per l’aria,
+<span class="math notranslate nohighlight">\(P = \rho R T\)</span>, e l’approssimazione lineare dell’andamento della
+temperatura con la quota <span class="math notranslate nohighlight">\(r\)</span>, con gradiente termico
+<span class="math notranslate nohighlight">\(dT/dr=a=-6.5\degree/km\)</span>, si ricavi l’andamento con la quota <span class="math notranslate nohighlight">\(r\)</span> delle
+variabili termodinamiche <span class="math notranslate nohighlight">\((P,\rho, T)\)</span> per l’atrmosfera standard, senza
+trascurare l’effetto della curvatura terrestre. Si utilizzi un sistema
+di coordinate sferiche per scrivere le componenti dell’equazione
+vettoriale
+(<span class="xref myst">[eqn:statica:diff:g]</span>{reference-type=»ref»
+reference=»eqn:statica:diff:g»}). Si valuti poi l’errore che si commette
+nell’esercizio
+<span class="xref myst">[exe:stdatm:cart]</span>{reference-type=»ref»
+reference=»exe:stdatm:cart»} trascurando la curvatura terrestre sul
+calcolo delle variabili termodinamiche a quota <span class="math notranslate nohighlight">\(z = 10 \ km\)</span>.</p>
+</div>
+<div class="section" id="galleggiamento-di-un-corpo-immerso-in-un-fluido">
+<h2>Galleggiamento di un corpo immerso in un fluido<a class="headerlink" href="#galleggiamento-di-un-corpo-immerso-in-un-fluido" title="Permalink to this heading">#</a></h2>
+<p>Un corpo immerso in fluido riceve dal basso verso l’alto una spinta
+uguale al peso della massa del fluido spostato. Se un corpo di volume
+<span class="math notranslate nohighlight">\(V_s\)</span> immerso in un fluido <span class="math notranslate nohighlight">\(\rho_f\)</span> ne sposta un volume <span class="math notranslate nohighlight">\(\tilde{V}_f\)</span>,
+su di esso agisce una forza (di Archimede o di galleggiamento)
+$<span class="math notranslate nohighlight">\(\bm{F}_{Arch} = - \rho_f \tilde{V}_f \bm{g} = - \int_{\tilde{V}_f} \rho_f \bm{g} \ .\)</span><span class="math notranslate nohighlight">\(
+La legge di Archimede vale per un sistema immerso nel campo di gravità
+\)</span>\bm{g}<span class="math notranslate nohighlight">\(, uniforme in spazio. Forze di galleggimento nascono su un corpo
+immerso in un fluido in cui c'è un gradiente di pressione. La legge di
+Archimede è solo un caso particolare di galleggiamento, forse il più
+evidente, per il quale il campo di gravità è all'origine del gradiente
+di pressione. In generale, la forza di galleggiamento su un corpo
+immerso completamente in un fluido vale
+\)</span><span class="math notranslate nohighlight">\(\bm{F}_{gall} = -\int_{S_s} p \bm{\hat{n}} = - \int_{V_s} \bm{\nabla} p \ .\)</span><span class="math notranslate nohighlight">\(
+Un esempio di galleggiamento di interesse aeronautico si incontra quando
+si svolge un esperimento in galleria del vento, se nella camera di prova
+è presente un gradiente di pressione diretto nella direzione
+\)</span>\bm{\hat{x}}<span class="math notranslate nohighlight">\( della corrente. Se in prima approssimazione si considera
+un gradiente di pressione \)</span>\bm{\nabla}p = - G_P \bm{\hat{x}}<span class="math notranslate nohighlight">\(, \)</span>G_P&gt;0<span class="math notranslate nohighlight">\( e
+costante, si può stimare la forza di galleggiamento
+\)</span>\bm{F}_{gall} = V_s G_P \bm{\hat{x}}$ dovuta al gradiente di pressione
+in galleria del vento, assente in condizioni di aria libera. Questa
+azione contribuisce al valore misurato della resistenza del modello. La
+valutazione di questa azione «spuria» sul corpo e la correzione delle
+misure effettuate rientrano nell’ambito delle <em>correzioni di galleria</em>.</p>
+<p>Si ritorna ora sulla legge di Archimede che descrive le forza di
+galleggiamento che un fluido esercita su un corpo immerso. Nel problema
+di un corpo immerso in un fluido, la risultante delle forze di
+galleggiamento entra nell’equazione di equilibrio del corpo in direzione
+verticale (direzione della gravità, <strong>g</strong>). Il punto di applicazione
+della risultante delle forze di galleggiamento e la sua posizione
+relativa rispetto al baricentro del corpo influenzano la stabilità delle
+condizioni di equilibrio.</p>
+<div class="section" id="risultante-delle-forze-legge-di-archimede">
+<h3>Risultante delle forze: legge di Archimede<a class="headerlink" href="#risultante-delle-forze-legge-di-archimede" title="Permalink to this heading">#</a></h3>
+<p><img alt="Suddivisione delle superfici e dei volumi per la dimostrazione dellalegge di Archimede." src="polimi/fluidmechanics-ita/template/capitoli/01_statica/fig/archimede_01" />{width=»50%»}</p>
+<p>[[fig:archimede_01]]{#fig:archimede_01 label=»fig:archimede_01»}</p>
+<p>Si considera il problema di un corpo immerso in un fluido di densità
+uniforme <span class="math notranslate nohighlight">\(\rho\)</span> molto maggiore della densità dell’aria: la pressione
+agente sulla superficie del corpo esposta all’aria si può considerare
+costante, uguale a <span class="math notranslate nohighlight">\(p_a\)</span>. La legge di Stevino descrive la distribuzione
+di pressione all’interno del fluido. Si sceglie l’asse <span class="math notranslate nohighlight">\(z\)</span> in direzione
+verticale, così che il campo di gravità è <span class="math notranslate nohighlight">\(\bm{g} = -g \bm{\hat{z}}\)</span>.
+Scegliendo l’origine dell’asse <span class="math notranslate nohighlight">\(z\)</span> in corrispondenza del pelo libero, la
+pressione all’interno del fluido vale <span class="math notranslate nohighlight">\(p(z) = p_a - \rho g z\)</span>, per
+<span class="math notranslate nohighlight">\(z &lt; 0\)</span>. Facendo riferimento alla figura
+<span class="xref myst">[fig:archimede_01]</span>{reference-type=»ref»
+reference=»fig:archimede_01»}, si può calcolare la risultante delle
+forze <span class="math notranslate nohighlight">\(\bm{R}\)</span> come $<span class="math notranslate nohighlight">\(\begin{aligned}
+    \bm{R} &amp; = - \oint_{S} p \bm{\hat{n}} = 
+               - \int_{S_a} p \bm{\hat{n}} - \int_{S_f} p \bm{\hat{n}} = \\
+        &amp; =    - \int_{S_a} p_a \bm{\hat{n}} - \int_{S_f} p_a \bm{\hat{n}} + 
+                 \int_{S_f} \rho g z \bm{\hat{n}} = \\
+        &amp; =    - \underbrace{\int_{S} p_a \bm{\hat{n}}}_{=0} + 
+                 \int_{S_f} \rho g z \bm{\hat{n}} = \\
+        &amp; =      \int_{S_f} \rho g z \bm{\hat{n}} + 
+                 \underbrace{\int_{S_0} \rho g z \bm{\hat{n}}}_{=0, \ z|_{S_0} = 0} =
+                 \oint_{\tilde{S}_f} \rho g z \bm{\hat{n}} = 
+                 \int_{\tilde{V}_f} \rho g \bm{\hat{z} } = 
+                 \rho \tilde{V}_f g \bm{\hat{z}} = 
+                 M_{\tilde{V}_f} g \bm{\hat{z}} \ ,
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( avendo sommato l'integrale nullo
+\)</span>\int_{S_0} \rho g z \bm{\hat{n}}<span class="math notranslate nohighlight">\(, per poter ottenere l'integrale di
+\)</span>\rho g z<span class="math notranslate nohighlight">\( sulla superficie \)</span>\tilde{S}<em>f = S_f \cup S_0<span class="math notranslate nohighlight">\( e applicare il
+teorema del gradiente ([\[thm:grad\]](#thm:grad){reference-type=&quot;ref&quot;
+reference=&quot;thm:grad&quot;}). Come stabilito dal principio di Archimede, la
+risultante delle forze di galleggiamento \)</span>\bm{R}<span class="math notranslate nohighlight">\( agenti sul corpo
+agisce dal basso verso l'alto con un'intensità pari al peso del volume
+di fluido spostato, \)</span>M</em>{\tilde{V}_f} g$.</p>
+</div>
+<div class="section" id="punto-di-applicazione">
+<h3>Punto di applicazione<a class="headerlink" href="#punto-di-applicazione" title="Permalink to this heading">#</a></h3>
+<p>Il punto di applicazione della forza di galleggiamento è il punto dove
+bisogna applicare la risultante delle forze per ottenere un sistema di
+azioni equivalente al sistema di azioni continuo generato dalla
+pressione. Dall’equivalenza ai momenti dei due sistemi di azioni, si
+ottiene $<span class="math notranslate nohighlight">\(\begin{aligned}
+\bm{r}_O \times \bm{R} &amp; = - \oint_{S} p \bm{r} \times \bm{\hat{n}} = 
+    - \int_{S_a} p \bm{r} \times \bm{\hat{n}}
+    - \int_{S_f} p \bm{r} \times \bm{\hat{n}} = \\
+&amp; = - \int_{S_a} p_a \bm{r} \times \bm{\hat{n}}
+    - \int_{S_f} p_a \bm{r} \times \bm{\hat{n}} 
+    + \int_{S_f} \rho g z \bm{r} \times \bm{\hat{n}} = \\
+&amp; = - \underbrace{\int_{S} p_a \bm{r} \times \bm{\hat{n}}}_{=0} + 
+      \int_{S_f} \rho g z \bm{r} \times \bm{\hat{n}} = \\
+&amp; =   \int_{S_f} \rho g z \bm{r} \times \bm{\hat{n}} + 
+      \underbrace{\int_{S_0} \rho g z \bm{r} \times \bm{\hat{n}}}_{=0, \ z|_{S_0} = 0} =\\
+&amp; =  \oint_{\tilde{S}_f} \rho g z \bm{r} \times \bm{\hat{n}} = 
+     \oint_{\tilde{S}_f} \rho g \delta_{\ell z} r_{\ell} \epsilon_{ijk} r_j n_k = 
+     \rho g \int_{\tilde{V}_f} \dfrac{\partial}{\partial r_k}( \delta_{\ell z} r_{\ell} \epsilon_{ijk} r_j ) = \\
+    &amp; = \rho g \int_{\tilde{V}_f} \delta_{\ell z} \epsilon_{ijk}\left(  \dfrac{\partial r_{\ell}}{\partial r_k} r_j + r_{\ell} \dfrac{\partial r_j}{\partial r_k} \right) = \\ 
+    &amp; = \rho g \int_{\tilde{V}_f} \delta_{\ell z} \epsilon_{ijk}\left( \delta_{\ell k}r_j + r_{\ell} \delta_{jk} \right) = \\
+    &amp; = \rho g \int_{\tilde{V}_f} \epsilon_{ijz} r_j + \delta_{\ell z} \underbrace{\epsilon_{ijj}}_{ = 0} r_{\ell} = \\
+    &amp; = \rho g \int_{\tilde{V}_f}  \bm{r} \times \bm{\hat{z}} \ .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Usando un sistema di assi catesiani e ricordando che
+\)</span>\bm{R} = R \bm{\hat{z}}<span class="math notranslate nohighlight">\(, si può scomprre l'equazione nelle componenti
+non nulle, \)</span>x<span class="math notranslate nohighlight">\( e \)</span>y<span class="math notranslate nohighlight">\(, \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+   x_0 R = \rho g \displaystyle\int_{\tilde{V}_f} x \\ \\
+   y_0 R = \rho g \displaystyle\int_{\tilde{V}_f} y 
+\end{cases} \qquad \rightarrow \qquad
+\begin{cases}
+    x_0 = \dfrac{\rho g}{R}  \displaystyle\int_{\tilde{V}_f} x  
+        = \dfrac{1}{\tilde{V}_f}  \displaystyle\int_{\tilde{V}_f} x 
+    \\ \\
+    y_0 = \dfrac{\rho g}{R}  \displaystyle\int_{\tilde{V}_f} y 
+        = \dfrac{1}{\tilde{V}_f}  \displaystyle\int_{\tilde{V}_f} y \ .
+\end{cases}\)</span>$</p>
+</div>
+<div class="section" id="stabilita-statica-dell-equilibrio">
+<h3>Stabilità statica dell’equilibrio<a class="headerlink" href="#stabilita-statica-dell-equilibrio" title="Permalink to this heading">#</a></h3>
+<p>…</p>
+</div>
+</div>
+<div class="section" id="esercizi">
+<h2>Esercizi<a class="headerlink" href="#esercizi" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<p>(<span class="math notranslate nohighlight">\(h=0.3\  m\)</span>, non varia sulla luna.)   <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/01_statica/fig/recipientesfera.eps" />{width=»90%»}</p>
+<hr class="docutils" />
+<p>Legge di Archimede. Condizione di equilibrio. Calcolo del volume di
+solidi (integrali di volume). Adimensionalizzazione. Soluzione di
+semplici equazioni non lineari per via grafica (studio di funzione) e/o
+numerica.</p>
+<p>Per svolgere l’esercizio bisogna calcolare la condizione di equilibrio
+del corpo, soggetto alla propria forza peso e alla forza che il fluido
+esercita su di esso (legge di Archimede). Nell’equazione di equilibrio,
+l’incognita <span class="math notranslate nohighlight">\(h\)</span> compare nella formula del volume immerso nel fluido.
+L’equazione di equilibrio è un’equazione non lineare in <span class="math notranslate nohighlight">\(h\)</span>, da
+risolvere per via grafica o numerica.</p>
+<ul>
+<li><p>Scrittura dell’equazione di equilibrio del corpo soggetto al proprio
+peso e alla forza esercitata su di esso dal fluido, diretta verso
+l’alto e pari al peso del volume del fluido spostato (legge di
+Archimede). $<span class="math notranslate nohighlight">\(\label{eqn:equil_archimede}
+      \rho_s V_s g = \rho V_c g \quad\Rightarrow\quad \rho_s V_s = \rho V_c\)</span>$</p>
+<p><em>Osservazione.</em> Si trova subito la risposta all’ultimo quesito:
+poiché <span class="math notranslate nohighlight">\(g\)</span> non compare nell’equazione di equilibrio, la condizione
+di equilibrio sulla Luna è uguale a quella che si ha sulla Terra.</p>
+</li>
+<li><p>Calcolo del volume della sfera e della calotta sferica:</p>
+<ul>
+<li><p>Volume della sfera: <span class="math notranslate nohighlight">\(V_s = \frac{4}{3}\pi a^3\)</span></p></li>
+<li><p>Volume della calotta sferica: <span class="math notranslate nohighlight">\(V_c = \pi h^2 (a - \frac{h}{3})\)</span></p>
+<p>(per credere, verificare casi limite: <span class="math notranslate nohighlight">\(h=0\)</span>, <span class="math notranslate nohighlight">\(h=a\)</span>, <span class="math notranslate nohighlight">\(h=2a\)</span>; alla
+fine dell’esercizio è riportato il calcolo, tramite un integrale
+di volume)</p>
+</li>
+</ul>
+</li>
+<li><p>Le formule per i volumi <span class="math notranslate nohighlight">\(V_c\)</span> e <span class="math notranslate nohighlight">\(V_s\)</span> sono inserite nell’eq.
+<span class="xref myst">[eqn:equil_archimede]</span>{reference-type=»ref»
+reference=»eqn:equil_archimede»}. L’equazione viene semplificata e
+scritta in forma adimensionale, introducendo la variabile
+<span class="math notranslate nohighlight">\(x=\frac{h}{a}\)</span>, per mettere in evidenza il parametro che governa il
+problema, cioè il rapporto di densità <span class="math notranslate nohighlight">\(\rho_s/\rho\)</span>. L’equazione di
+terzo grado in x viene risolta, considerando i limiti fisici del
+problema (<span class="math notranslate nohighlight">\(0 \le x \le 2\)</span>):
+$<span class="math notranslate nohighlight">\(\rho \pi h^2 \Big(a-\frac{h}{3}\Big) = \rho_s \frac{4}{3}\pi a^3  \quad\Rightarrow\quad
+      \frac{3}{4} x^2 \Big(1 - \frac{x}{3}\Big) = \frac{\rho_s}{\rho}\)</span>$
+Alcuni metodi per risolvere equazioni non lineari possono essere ad
+esempio:</p>
+<ul>
+<li><p>metodi iterativi. Ad esempio metodo di Newton</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>x          res 
+1.0000    -3.437475e-01  
+1.4583    -2.406993e-02  
+1.4990    -5.841602e-04  
+1.5000    -4.027539e-07  
+1.5000    -1.924017e-13
+</pre></div>
+</div>
+</li>
+<li><p>metodo grafico (educativo: per problemi più complicati, prima di
+calcolare le soluzioni con metodi numerici, è bene avere un’idea
+di cosa si sta cercando). Si cercano le intersezioni delle
+funzioni <span class="math notranslate nohighlight">\(f_1(x) = \frac{3}{4} x^2 \Big(1 - \frac{x}{3}\Big)\)</span> e
+<span class="math notranslate nohighlight">\(f_2(x) = \frac{\rho_s}{\rho}\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p><em>Osservazione.</em> Per valori di <span class="math notranslate nohighlight">\(\frac{\rho_s}{\rho}\)</span> compresi tra 0 e 1,
+esiste una e una sola soluzione fisica del problema. Per i valori di
+desità «estremi» <span class="math notranslate nohighlight">\(\rho_s = 0\)</span> (la sfera non pesa niente),
+<span class="math notranslate nohighlight">\(\rho_s = \rho_f\)</span> (la sfera ha la stessa densità del fluido), esistono
+infinite soluzioni: ad esempio, nel caso di <span class="math notranslate nohighlight">\(\rho_s = \rho_f\)</span> la
+posizione di equilibrio è indipendente dalla profondità alla quale è
+posta la sfera. Nel grafico, la funzione <span class="math notranslate nohighlight">\(f_1(x)\)</span> rappresenta il volume
+immerso della sfera (diviso il volume totale della sfera stessa) al
+variare della distanza <span class="math notranslate nohighlight">\(h\)</span> del punto più basso dal pelo libero: questa
+deve quindi essere rappresentata, come in figura, nulla per valori di
+<span class="math notranslate nohighlight">\(x&lt;0\)</span> (sfera completamente fuori dall’acqua), con il ramo di cubica per
+<span class="math notranslate nohighlight">\(0&lt;x&lt;2\)</span> (sfera parzialmente immersa), uguale a <span class="math notranslate nohighlight">\(1\)</span> per <span class="math notranslate nohighlight">\(x&gt;2\)</span> (sfera
+completamente immersa). La funzione <span class="math notranslate nohighlight">\(f_1(x)\)</span> può quindi essere definita
+a tratti: $<span class="math notranslate nohighlight">\(f_1(x) = 
+ \begin{cases}
+   0 &amp;    x &lt; 0 \\
+   \frac{3}{4} x^2 \Big(1 - \frac{x}{3}\Big) &amp;    0 \leq x \leq 2 \\
+   1 &amp;   x &gt; 2 \\
+ \end{cases}\)</span>$</p>
+<p><em>Discussione dei risultati.</em> Quando diminuisce la denistà relativa del
+solido, la linea rossa si abbassa e la soluzione <span class="math notranslate nohighlight">\(x=\frac{h}{a}\)</span>
+diminuisce (la sfera ha una porzione maggiore al di fuori dall’acqua).
+Esiste una e una sola soluzione che abbia senso fisico, fino a quando la
+densità relativa è compresa tra 0 e 1: non ha senso considerare valori
+negativi (la densità è una quantità positiva), mentre per valori di
+<span class="math notranslate nohighlight">\(\frac{\rho_s}{\rho}\)</span> maggiori di 1 non può esistere una condizione di
+equilibrio statico (la sfera affonda…).</p>
+<p><strong>Calcolo volume cupola sferica.</strong> É comodo svolgere il calcolo in
+coordinate cilindriche <span class="math notranslate nohighlight">\((r,\theta,z)\)</span>. Il volume <span class="math notranslate nohighlight">\(V_{im}\)</span> della parte
+immersa è uguale a $<span class="math notranslate nohighlight">\(\begin{aligned}
+V_{im} = \iiint_{V_{im}} dV &amp; = \int_{\theta=0}^{2\pi} \int_{z=-a}^{l} \int_{r=0}^{\sqrt{a^2-z^2}} dV \\
+                &amp; = \int_{\theta=0}^{2\pi} \int_{z=-a}^{l} \int_{r=0}^{\sqrt{a^2-z^2}} r dr dz d\theta \\
+                &amp; = 2\pi \int_{z=-a}^{l} \frac{a^2-z^2}{2} dz \\
+                &amp; = \frac{\pi}{3} [2 a^3 + 3 a^2 l - l^3]
+\end{aligned}\)</span>$</p>
+<p>Definendo <span class="math notranslate nohighlight">\(h = R+l\)</span> come la quota immersa della sfera, si ottiene:
+$<span class="math notranslate nohighlight">\(V_{im} = \pi h^2 \displaystyle \left( a - \frac{h}{3} \right)\)</span>$</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/01_statica"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definizione-di-fluido">Definizione di fluido</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equazione-di-equilibrio-forma-integrale-e-differenziale">Equazione di equilibrio: forma integrale e differenziale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-di-stevino">Legge di Stevino</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#galleggiamento-di-un-corpo-immerso-in-un-fluido">Galleggiamento di un corpo immerso in un fluido</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risultante-delle-forze-legge-di-archimede">Risultante delle forze: legge di Archimede</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-di-applicazione">Punto di applicazione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stabilita-statica-dell-equilibrio">Stabilità statica dell’equilibrio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esercizi">Esercizi</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

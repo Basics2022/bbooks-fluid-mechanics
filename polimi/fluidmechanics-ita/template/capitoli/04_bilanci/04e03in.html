@@ -1,0 +1,648 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formula della spinta. &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04e03in';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">1. Statics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">2. Surface tension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_cinematica/12teoria.html">3. Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04teoria.html">4. Balance equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_bernoulli/05teoria.html">5. Bernoulli theorems and vorticity dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">6. Exact solutions of Navier-Stokes equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04e03in.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Formula della spinta.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Formula della spinta.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisi-del-motore">Analisi del motore.</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>+:———————————:+:———————————:+
+| Un aereo vola alla velocità       |                                   |
+| <span class="math notranslate nohighlight">\(V=250 \, m/s\)</span> alla quota         |                                   |
+| <span class="math notranslate nohighlight">\(z=10000 \, m\)</span>, dove la pressione |                                   |
+| e la temperatura atmosferica sono |                                   |
+| <span class="math notranslate nohighlight">\(P_0 = 26500 \, Pa\)</span> e             |                                   |
+| <span class="math notranslate nohighlight">\(T_0 = 223.25 \, K\)</span>, spinto dal   |                                   |
+| motore a getto rappresentato in   |                                   |
+| figura. Sapendo che:              |                                   |
+|                                   |                                   |
+| -   <span class="math notranslate nohighlight">\(0 \rightarrow 1\)</span>: la presa   |                                   |
+|     d’aria è progettata per       |                                   |
+|     ottenere una compressione     |                                   |
+|     adiabatica ideale             |                                   |
+|     (isentropica), con            |                                   |
+|     <span class="math notranslate nohighlight">\(P_1/P_0 = 1.5\)</span>;              |                                   |
+|                                   |                                   |
+| -   <span class="math notranslate nohighlight">\(1 \rightarrow 2\)</span>: il         |                                   |
+|     compressore ideale ha una     |                                   |
+|     sezione di ingresso           |                                   |
+|     <span class="math notranslate nohighlight">\(A_1 = \dots\)</span> e produce un    |                                   |
+|     rapporto di pressione totale  |                                   |
+|     <span class="math notranslate nohighlight">\(P_2^t/P_1^t = 40.0\)</span>, tramite |                                   |
+|     una trasformazione adiabatica |                                   |
+|     ideale;                       |                                   |
+|                                   |                                   |
+| -   <span class="math notranslate nohighlight">\(2 \rightarrow 3\)</span>: il         |                                   |
+|     combustore garantisce una     |                                   |
+|     perfetta combustione          |                                   |
+|     mantenendo costante la        |                                   |
+|     pressione totale al suo       |                                   |
+|     interno <span class="math notranslate nohighlight">\(P_2^t = P_3^t\)</span>; il   |                                   |
+|     flusso di calore prodotto     |                                   |
+|     dalla combustione è uguale a  |                                   |
+|     <span class="math notranslate nohighlight">\(\dot{Q}_c = \dot{m}_f \Delta |                                   |
+|  h_c\)</span>,                            |                                   |
+|     dove <span class="math notranslate nohighlight">\(\dot{m}_f\)</span> è il flusso  |                                   |
+|     di massa di combustibile e    |                                   |
+|     <span class="math notranslate nohighlight">\(\Delta h_c = 46 \, MJ/kg\)</span> il |                                   |
+|     suo potere calorifico; la     |                                   |
+|     temperatura totale            |                                   |
+|     all’ingresso della turbina è  |                                   |
+|     <span class="math notranslate nohighlight">\(T_4^t = 1600 \, K\)</span>;          |                                   |
+|                                   |                                   |
+| -   <span class="math notranslate nohighlight">\(3 \rightarrow 4\)</span>: nella      |                                   |
+|     turbina avviene un’espansione |                                   |
+|     adiabatica ideale, in modo    |                                   |
+|     tale da garantire la potenza  |                                   |
+|     necessaria a mantenere in     |                                   |
+|     moto il compressore;          |                                   |
+|                                   |                                   |
+| -   <span class="math notranslate nohighlight">\(4 \rightarrow 5\)</span>:            |                                   |
+|     nell’ugello avviene           |                                   |
+|     un’espansione adiabatica      |                                   |
+|     ideale, che porta il gas a    |                                   |
+|     espandersi fino alla          |                                   |
+|     pressione ambiente            |                                   |
+|     <span class="math notranslate nohighlight">\(P_5 = P_0\)</span>.                  |                                   |
+|                                   |                                   |
+| Si considerino tutti i componenti |                                   |
+| meccanici ideali, si trascurino   |                                   |
+| gli effetti viscosi dove          |                                   |
+| possibile e si consideri l’aria e |                                   |
+| la miscela di gas combusti come   |                                   |
+| un gas biatomico ideale, con      |                                   |
+| costante dei gas                  |                                   |
+| <span class="math notranslate nohighlight">\(R = 287 \, J/(kg \, K)\)</span> e calori |                                   |
+| specifici costanti. Viene chiesto |                                   |
+| di calcolare:                     |                                   |
+|                                   |                                   |
+| -   il rapporto in massa tra      |                                   |
+|     flusso di combustibile e      |                                   |
+|     flusso di aria,               |                                   |
+|     <span class="math notranslate nohighlight">\(f = \dot{m}_f / \dot{m}_a\)</span>;  |                                   |
+|                                   |                                   |
+| -   la spinta <span class="math notranslate nohighlight">\(T\)</span> fornita dal     |                                   |
+|     motore.                       |                                   |
++———————————–+———————————–+</p>
+<p><img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/04_bilanci/fig/jet_engine" />{width=»95%»}</p>
+<p>Durante lo svolgimento dell’esercizio vengono utilizzati i bilanci
+integrali di massa,
+$<span class="math notranslate nohighlight">\(\dfrac{d}{dt} \displaystyle\int_{V(t)} \rho + \oint_{S(t)} \rho (\bm{u}-\bm{v}) \cdot \bm{\hat{n}} = 0 \ ,\)</span><span class="math notranslate nohighlight">\(
+quantità di moto,
+\)</span><span class="math notranslate nohighlight">\(\dfrac{d}{dt} \displaystyle\int_{V(t)} \rho \bm{u} + \oint_{S(t)} \rho \bm{u} (\bm{u}-\bm{v}) \cdot \bm{\hat{n}}= \int_{V(t)} \bm{f} + \oint_{S(t)} \bm{t_n} \ ,\)</span><span class="math notranslate nohighlight">\(
+ed energia totale,
+\)</span><span class="math notranslate nohighlight">\(\dfrac{d}{dt} \displaystyle\int_{V(t)} \rho e^t + \oint_{S(t)} \rho e^t (\bm{u}-\bm{v}) \cdot \bm{\hat{n}}= \int_{V(t)} \bm{f} \cdot \bm{u} + \oint_{S(t)} \bm{t_n} \cdot \bm{u} - \oint_{S(t)} \bm{q} \cdot \bm{\hat{n}} + \int_{V(t)} \rho r \ .\)</span>$
+In particolare, il bilancio di quantità di moto permette di ricavare la
+formula della spinta del motore in funzione del flusso di quantità di
+moto attraverso un volume di controllo opportunamente scelto. Il
+bilancio di energia totale permette di analizzare i singoli componenti
+del motore.</p>
+<p>Per risolvere il problema, è necessario ricavare la spinta del motore in
+funzione della portata massica trattata e della differenza di velocità
+del fluido in ingresso e in uscita dal motore. Successivamente viene
+analizzato il sistema motore per calcolare la velocità di efflusso dei
+gas. Si considera il problema stazionario, con forze di volume <span class="math notranslate nohighlight">\(\bm{f}\)</span>
+trascurabili. Si svolge uno studio «quasi-1D» considerando variabili
+uniformi sulle varie sezioni del motore.</p>
+<div class="section" id="formula-della-spinta">
+<h1>Formula della spinta.<a class="headerlink" href="#formula-della-spinta" title="Permalink to this heading">#</a></h1>
+<p>Nell’ipotesi che la pressione dei gas in uscita dall’ugello sia uguale
+alla pressione ambiente, il bilancio di quantità di moto del fluido
+trattato dal motore permette di ottenere la stima della trazione
+generata dal motore,
+$<span class="math notranslate nohighlight">\(T = \dot{m}_5 V_5 - \dot{m}_0 V_0 = \dot{m}_0 ( V_5 - V_0 ) + \dot{m}_f V_5 \ .\)</span><span class="math notranslate nohighlight">\(
+Per ricavare la trazione \)</span>T$ è necessario ricavare i valori del flusso
+di massa d’aria ingerito dal motore, il flusso di combustibile e la
+velocità di efflusso dei gas combusti, studiando in dettaglio il fluido
+all’interno del motore</p>
+</div>
+<div class="section" id="analisi-del-motore">
+<h1>Analisi del motore.<a class="headerlink" href="#analisi-del-motore" title="Permalink to this heading">#</a></h1>
+<p>Si studia l’evoluzione della corrente che attraversa il motore.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \rightarrow 1\)</span>, presa d’aria: l’aria che approccia l’ingresso del
+compressore <span class="math notranslate nohighlight">\(S_1\)</span> subisce una compressione libera adiabatica ideale.
+Dato lo stato termodinamico TD(0), con
+<span class="math notranslate nohighlight">\(\rho_0 = P_0/ (R T_0) = 0.414 \, kg/m^3\)</span>, e il rapporto di
+pressione <span class="math notranslate nohighlight">\(P_1 / P_0\)</span>, è possibile calcolare lo stato termodinamico
+TD(1):
+$<span class="math notranslate nohighlight">\(P_1 = \left( \dfrac{P_1}{P_0} \right) P_0 = 39750 \, Pa \qquad , \qquad
+\rho_1 = \left( \dfrac{P_1}{P_0} \right)^{\frac{1}{\gamma}} \rho_0 = 0.553 \, kg/m^3 \ .\)</span><span class="math notranslate nohighlight">\(
+Una volta note la pressione e la densità, è possibile calcolare la
+temperatura e l'entalpia del fluido,
+\)</span><span class="math notranslate nohighlight">\(T_1 = \dfrac{P_1}{R T_1} = 250.67 \, K \qquad , \qquad h_1 = c_P T_1 = 2.52 \cdot 10^5 \, J/kg \ .\)</span><span class="math notranslate nohighlight">\(
+Si calcola ora il flusso di massa che entra nel volume,
+\)</span><span class="math notranslate nohighlight">\(\dot{m}_0 = \dot{m}_1 \qquad , \qquad \rho_0 V_0 A_0 = \rho_1 V_1 A_1 \ .\)</span><span class="math notranslate nohighlight">\(
+Si calcola il flusso di massa utilizzando la sezione 1. Poiché non
+ci sono organi meccanici che assorbono o forniscono potenza, non ci
+sono sorgenti di calore e possono essere trascurati gli effetti
+viscosi, tra le sezioni 0 e 1 si conserva il flusso di entalpia
+totale, \)</span><span class="math notranslate nohighlight">\(\dot{m}_0 h_0^t = \dot{m}_1 h_1^t 
+  \quad \rightarrow \quad h_0^t = h_1^t = h_1 + \dfrac{V_1^2}{2} = 2.56 \cdot 10^5 \, J/kg \ .\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ \rightarrow \qquad V_1 &amp; = \sqrt{2(h_0^t - h_1)} = 86.09 \, m/s \\
+ \dot{m}_1 &amp; = \rho_1 A_1 V_1 = 47.57 \, kg/s \\
+\end{aligned}\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(1 \rightarrow 2\)</span>, compressore: lo stato termodinamico totale in
+uscita del compressore è legato allo stato totale in ingresso da una
+trasformazione isentropica,
+$<span class="math notranslate nohighlight">\(P_2^t = \left( \dfrac{P_2^t}{P_1^t} \right) P_1^t = 1.67 \cdot 10^6 \, Pa \qquad , \qquad
+   T_2^t = \left( \dfrac{P_2^t}{P_1^t} \right)^{\frac{\gamma-1}{\gamma}} T_1^t = 729.76 \, K \ .\)</span><span class="math notranslate nohighlight">\(
+Trascurando gli effetti viscosi sulla superficie di ingresso e di
+uscita del compressore, in assenza di scambi di calore, la potenza
+fornita dal compressore al fluido vale
+\)</span><span class="math notranslate nohighlight">\(W_{12} = \dot{m}_1 ( h_2^t - h_1^t ) = 22.72 \, MW \ .\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(2 \rightarrow 3\)</span>, combustore: la temperatura totale <span class="math notranslate nohighlight">\(T_3^t = \dots\)</span>
+in ingresso alla turbina è un dato del problema determinato dai
+limiti tecnologici legati alla realizzazione delle palette del
+rotore della turbina e al fenomeno di creeping. Nel combustore non
+ci sono organi meccanici in movimento che forniscano o assorbano
+potenza dal fluido. Si trascurano gli effetti viscosi e le forze di
+volume. Se si ipotizza la combustione completa del comustibile
+iniettato come origine del calore generato e si trascura il flusso
+di entalpia totale attraverso l’iniettore, il bilancio di energia
+totale in regime stazionario diventa
+$<span class="math notranslate nohighlight">\(\dot{m}_3 h_3^t - \dot{m}_2 h_2^t - \underbrace{\dot{m}_f h_f^t}_{\approx 0} = \dot{Q}_c = \dot{m}_f \Delta h_c
+ \ .\)</span><span class="math notranslate nohighlight">\( Poiché il flusso di massa dei gas combusti uscenti dal
+combustore \)</span>\dot{m}_3<span class="math notranslate nohighlight">\( è uguale alla somma del flusso d'aria
+\)</span>\dot{m}_2<span class="math notranslate nohighlight">\( e il flusso di combustibile \)</span>\dot{m}_f<span class="math notranslate nohighlight">\( entranti,
+\)</span><span class="math notranslate nohighlight">\(\dot{m}_3 = \dot{m}_2 + \dot{m}_f \ ,\)</span><span class="math notranslate nohighlight">\( il rapporto tra il flusso
+di massa del combustibile e dell'aria diventa,
+\)</span><span class="math notranslate nohighlight">\(f := \dfrac{\dot{m}_f}{\dot{m}_2}
+    = \dfrac{h_3^t - h_2^t}{\Delta h_c - h_3^t}
+    = \dfrac{T_3^t - T_2^t}{\Delta h_c / c_P - T_3^t} = 0.0197  \ .\)</span><span class="math notranslate nohighlight">\(
+Se si ipotizza che la pressione totale rimanga costante all'interno
+del combustore, lo stato termodinamico totale in uscita dal
+combustore è determinato dal valore della pressione e della
+temperatura totale, \)</span>P_3^t<span class="math notranslate nohighlight">\( e \)</span>T_3^t<span class="math notranslate nohighlight">\(,
+\)</span><span class="math notranslate nohighlight">\(\rho_3^t = \dfrac{P_3^t}{R T_3^t} = 3.64 \, kg/m^3 \qquad , \qquad h_3^t = c_P T_3^T = 1.61 \cdot 10^6 \, J/kg \ .\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(3 \rightarrow 4\)</span>, turbina: la turbina deve generare la potenza
+<span class="math notranslate nohighlight">\(W_{34}\)</span> necessaria a muovere il compressore,
+$<span class="math notranslate nohighlight">\(W_{12} + W_{34} = 0 \ .\)</span><span class="math notranslate nohighlight">\( Se si trascurano gli effetti viscosi e
+si ipotizza un processo adiabatico, la potenza della turbina è
+uguale alla differenza del flusso di entalpia totale tra l'uscita e
+l'ingresso della turbina,
+\)</span><span class="math notranslate nohighlight">\(W_{34} = \dot{m}_3 ( h_4^t - h_3^t ) \ .\)</span><span class="math notranslate nohighlight">\( L'entalpia totale
+all'uscita della turbina vale
+\)</span><span class="math notranslate nohighlight">\(h_4^t = h_3^t - \dfrac{1}{1+f} ( h_2^t - h_1^t ) = 1.13 \cdot 10^6 \, J/kg 
+\qquad \rightarrow \qquad T_4^t = 1124.6 \, K \ .\)</span><span class="math notranslate nohighlight">\( La
+trasformazione isentropica lega lo stato termodinamico totale TD(3)
+in ingresso alla turbina allo stato termodinamico totale TD(4) in
+uscita, \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ P_4^t &amp; = \left(\dfrac{T_4^t}{T_3^t} \right)^{\frac{\gamma}{\gamma-1}} P_3^t = 4.87 \cdot 10^5 \, Pa \\
+ \rho_4^t &amp; = 1.51 \, kg/m^3 \ .
+\end{aligned}\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(4 \rightarrow 5\)</span>, ugello: se si considera un’espansione libera
+nell’ugello ideale, trascurando gli effetti viscosi e gli scambi di
+calore, il bilancio dell’energia totale in assenza di organi
+meccanici che generino o assorbano potenza dal fluido equivale alla
+conservazione del flusso dell’entropia totale,
+$<span class="math notranslate nohighlight">\(\dot{m}_4 h_4^t = \dot{m}_5 h_5^t \qquad \rightarrow \qquad h_4^t = h_5 + \dfrac{V_5^2}{2} 
+ \qquad \rightarrow \qquad V_5 = \sqrt{2(h_4^t - h_5)} \\\)</span><span class="math notranslate nohighlight">\( Se
+l'ugello non è bloccato la pressione dei gas in uscita è uguale alla
+pressione atmosferica, \)</span>P_5 = P_0<span class="math notranslate nohighlight">\(. La trasformazione isentropica
+tra 4 e 5, permette di ricavare lo stato termodinamico TD(5),
+\)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+  \rho_5 &amp; = \left( \dfrac{P_5}{P_4^t} \right)^{\frac{1}{\gamma}} \rho_4^t = 0.189 \, kg/m^3 \\
+     T_5 &amp; = 489.5 \, K \qquad \rightarrow \qquad h_5 = 4.92 \cdot 10^5 \, J/kg .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( La velocità di efflusso dei gas combusti vale quindi
+\)</span><span class="math notranslate nohighlight">\(V_5 = \sqrt{2(h_4^t - h_5)} = 1129.6 \, m/s .\)</span>$</p></li>
+</ul>
+<p>La spinta fornita dal motore in questa condizione di volo vale
+$<span class="math notranslate nohighlight">\(T = \dot{m}_5 V_5 - \dot{m}_0 V_0 = 42.90 \, kN \ .\)</span>$</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/04_bilanci"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Formula della spinta.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analisi-del-motore">Analisi del motore.</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

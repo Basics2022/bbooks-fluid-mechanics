@@ -1,0 +1,604 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluzione {#soluzione .unnumbered} &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0603Verticale';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">Statica</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">Legge di Young-Laplace.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">Bilanci in forma integrale</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="0600in.html">Introduzione e linee guida per la soluzione dei problemi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">Teorema di Buckingham</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">Equazioni di Prandtl dello strato limite</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0603Verticale.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Soluzione {#soluzione .unnumbered}</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><strong>Esercizi per il corso di Fluidodinamica</strong></p>
+<p>+:———————————:+:———————————:+
+| Si consideri una corrente d’acqua |                                   |
+| a pelo libero, laminare e         |                                   |
+| stazionaria, che scorre su una    |                                   |
+| parete verticale piana di         |                                   |
+| lunghezza e apertura infinita. Si |                                   |
+| ipotizzi che la pressione         |                                   |
+| atmosferica che agisce sul pelo   |                                   |
+| libero sia uniforme. Si ipotizzi  |                                   |
+| inoltre che lo sforzo tangenziale |                                   |
+| fra acqua e aria in               |                                   |
+| corrispondenza del pelo libero    |                                   |
+| sia nullo.                        |                                   |
+|                                   |                                   |
+| Assegnata la portata in massa per |                                   |
+| unità di apertura                 |                                   |
+| <span class="math notranslate nohighlight">\(\overline{Q}=0.5\ kg/(ms)\)</span>,      |                                   |
+| determinare                       |                                   |
+|                                   |                                   |
+| 1.  lo spessore <span class="math notranslate nohighlight">\(h\)</span> della         |                                   |
+|     corrente d’acqua;             |                                   |
+|                                   |                                   |
+| 2.  lo sforzo tangenziale a       |                                   |
+|     parete;                       |                                   |
+|                                   |                                   |
+| 3.  la velocità in corrispondenza |                                   |
+|     del pelo libero;              |                                   |
+|                                   |                                   |
+| 4.  la velocità media e il numero |                                   |
+|     di Reynolds basato su tale    |                                   |
+|     velocità media e sullo        |                                   |
+|     spessore della corrente.      |                                   |
+|                                   |                                   |
+| Si sostituisca poi al pelo libero |                                   |
+| una parete solida. Si determini   |                                   |
+| quale dovrebbe essere la velocità |                                   |
+| di tale parete per ottenere una   |                                   |
+| portata nulla.                    |                                   |
+|                                   |                                   |
+| Dati:                             |                                   |
+| <span class="math notranslate nohighlight">\(\overline{\rho}= 999\ kg/m^3\)</span>,   |                                   |
+| <span class="math notranslate nohighlight">\(\overline{\mu}= 1.15\ 10^{-3} kg |                                   |
+| /(ms)\)</span>.                           |                                   |
+|                                   |                                   |
+| (<span class="math notranslate nohighlight">\(h=5.61\, 10^{-4}\  m\)</span>,          |                                   |
+| <span class="math notranslate nohighlight">\(\tau = 5.494\ Pa\)</span>,               |                                   |
+| <span class="math notranslate nohighlight">\(u(h)=1.339\ m/s\)</span>,                |                                   |
+| <span class="math notranslate nohighlight">\(\overline{U}=0.893\  m/s\)</span>,       |                                   |
+| <span class="math notranslate nohighlight">\(Re=434.8\)</span>, <span class="math notranslate nohighlight">\(U=-0.4464\ m/s\)</span>.)    |                                   |
++———————————–+———————————–+</p>
+<div class="section" id="soluzione-soluzione-unnumbered">
+<h1>Soluzione {#soluzione .unnumbered}<a class="headerlink" href="#soluzione-soluzione-unnumbered" title="Permalink to this heading">#</a></h1>
+<p><strong>Concetti.</strong> Semplificazione delle equazioni di NS in casi
+particolari. Soluzioni esatte in coordinate cartesiane.</p>
+<p><strong>Svolgimento.</strong> Si scelga un sistema di riferimento cartesiano con
+l’asse x orientato lungo la parete verso il basso e l’asse y
+perpendicolare ed uscente ad essa.</p>
+<p>Sulla corrente di questo problema agisce la forza di volume dovuta alla
+gravità.</p>
+<p>L’ipotesi che la pressione sia uniforme sulla superficie di interfaccia
+tra acqua e aria implica che la pressione è costante in tutto il fluido:
+si vedrà che <span class="math notranslate nohighlight">\(\frac{\partial p}{\partial y}=0\)</span>; se sulla superficie
+libera la pressione è costante e non varia nello spessore, allora la
+pressione è costante in tutto il fluido.</p>
+<ul>
+<li><p>Scrittura delle equazioni di NS in 2 dimensioni.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+      \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x}
+      + v \frac{\partial u}{\partial y} - \nu \left( 
+      \frac{\partial^2 u}{\partial x^2} +
+      \frac{\partial^2 u}{\partial y^2} \right)
+       + \frac{1}{\rho} \frac{\partial p}{\partial x} = f_x \\
+      \frac{\partial v}{\partial t} + u \frac{\partial v}{\partial x}
+      + v \frac{\partial v}{\partial y} - \nu \left( 
+      \frac{\partial^2 v}{\partial x^2} +
+      \frac{\partial^2 v}{\partial y^2} \right)
+      + \frac{1}{\rho}  \frac{\partial p}{\partial y} = f_y \\
+      \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0
+    \end{cases}\end{split}\]</div>
+</li>
+<li><p>Semplificazione delle equazioni di NS per il problema da affrontare.</p>
+<p>Ipotesi:</p>
+<ul class="simple">
+<li><p>problema stazionario: <span class="math notranslate nohighlight">\(\frac{\partial}{\partial t} = 0\)</span>;</p></li>
+<li><p>direzione x omogenea (canale infinito in direzione x):
+<span class="math notranslate nohighlight">\(\frac{\partial u}{\partial x} = \frac{\partial v}{\partial x} = 0\)</span>;
+la pressione nelle equazioni di NS incomprimibili è un
+moltiplicatore di Lagrange per imporre il vincolo di
+incomprimibilità; inoltre non appare mai, se non nelle
+condizioni al contorno, come <span class="math notranslate nohighlight">\(p\)</span> ma solo con le sue derivate
+spaziali: quindi non è corretto imporre
+<span class="math notranslate nohighlight">\(= \frac{\partial v}{\partial x} = 0\)</span>, nonostante la direzione
+<span class="math notranslate nohighlight">\(x\)</span> sia omogenea;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial u}{\partial x} = 0\)</span> inserito nel vincolo di
+incomprimibilità
+(<span class="math notranslate nohighlight">\(\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0\)</span>)
+implica <span class="math notranslate nohighlight">\(\frac{\partial v}{\partial y}=0\)</span>; poichè
+<span class="math notranslate nohighlight">\(\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}=0\)</span>
+e <span class="math notranslate nohighlight">\(v = 0\)</span> a parete per la condizione al contorno di adesione,
+segue che <span class="math notranslate nohighlight">\(v = \text{cost} = 0\)</span>;</p></li>
+<li><p>forze di volume solo in direzione verticale: per come sono stati
+orientati gli assi, <span class="math notranslate nohighlight">\(\bm{f} = g \hat{\bm{x}}\)</span>.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+      - \mu \frac{\partial^2 u}{\partial y^2} = - \frac{\partial p}{\partial x} + \rho g\\
+      \frac{\partial p}{\partial y} = 0  
+    \end{cases}\end{split}\]</div>
+<p>Dalla seconda segue che la pressione può essere funzione solo di
+<span class="math notranslate nohighlight">\(x\)</span>. Come già detto in precedenza, la pressione sulla superficie
+libera è costante e uguale alla pressione ambiente <span class="math notranslate nohighlight">\(P_a\)</span>: se la
+pressione non può variare nello spessore, allora è costante ovunque.
+La derivata parziale <span class="math notranslate nohighlight">\(\frac{\partial p}
+ {\partial x}=0\)</span>, il suo gradiente è nullo e quindi la pressione è
+costante in tutta la corrente di acqua.</p>
+<p>Nella prima, il termine a sinistra dell’uguale è funzione solo di
+<span class="math notranslate nohighlight">\(y\)</span>; quello di destra è costante e uguale a <span class="math notranslate nohighlight">\(\rho g\)</span>. Le condizioni
+al contorno sono di adesione a parete e di sforzo di taglio nullo
+all’interfaccia tra aria ed acqua:
+<span class="math notranslate nohighlight">\(0=\tau(H)=\mu \frac{\partial u}{\partial y}(H)=\mu u'(H)\)</span>, dove la
+derivata parziale in <span class="math notranslate nohighlight">\(y\)</span> è stata sostituita da quella ordinaria,
+poichè la velocità è solo funzione di <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+        - \mu u''(y) = \rho g \ , \ y \in[0,H] \\
+        u(0) = 0  \\ u'(H) = 0
+      \end{cases}\end{split}\]</div>
+</li>
+<li><p>Soluzione dell’equazione differenziale (semplice) con dati al
+contorno.</p>
+<p>Risulta:
+$<span class="math notranslate nohighlight">\(\Rightarrow u(y) = - \frac{\rho g}{2 \mu} y^2 + \frac{\rho g}{\mu} H y\)</span>$</p>
+</li>
+<li><p>Calcolo della portata come integrale della velocità; si trova così
+la relazione tra Q ed H.</p>
+<div class="math notranslate nohighlight">
+\[Q = \int_{0}^{H} \rho u(y) dy = \frac{1}{3}\frac{\rho^2 g}{\mu} H^3\]</div>
+<p>E quindi
+$<span class="math notranslate nohighlight">\(H = \left( \frac{3 Q \mu}{\rho^2 g} \right) ^ {\frac{1}{3}}
+     \quad \Rightarrow \quad H = 5.61 \cdot 10^{-4} m\)</span>$</p>
+</li>
+<li><p>Calcolo dello sforzo a parete
+$<span class="math notranslate nohighlight">\(\tau = \mu u'|_{y=0} = \rho g H \quad \Rightarrow \quad \tau = 5.494 Pa\)</span>$
+<em>Osservazione.</em> Equilibrio con la forza di gravità (problema
+stazionario).</p></li>
+<li><p>Calcolo di <span class="math notranslate nohighlight">\(u(H)\)</span>. $<span class="math notranslate nohighlight">\(u(H) = \frac{1}{2}\frac{\rho g}{\mu} H^2 
+    \quad \Rightarrow \quad u(H) = 1.342 m/s\)</span>$</p></li>
+<li><p>Calcolo velocità media e numero di Reynolds.
+$<span class="math notranslate nohighlight">\(\bar{U} = \frac{1}{H}\int_{0}^{H} u(y) dy = \frac{Q}{\rho H}
+    \quad \Rightarrow \quad \bar{U} = \frac{Q}{\rho H}
+                                    = \frac{2}{3}u(H) = 0.895 m/s\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[Re = \frac{\rho \bar{U} H}{\mu}
+        \quad \Rightarrow \quad Re = 434.8\]</div>
+</li>
+</ul>
+<p>L’ultima parte del problema chiede di sostiutire alla superficie libera,
+una parete infinita. L’equazione trovata in precedenza è ancora valida;
+è necessario però sostituire la condizione di sforzo tangenziale nullo
+con adesione su una parete mobile con velocità costante <span class="math notranslate nohighlight">\(U\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+    - \mu u''(y) = \rho g \ , \ y \in[0,H] \\
+    u(0) = 0  \\ u(H) = U
+  \end{cases}\end{split}\]</div>
+<p>Il profilo di velocità è:
+$<span class="math notranslate nohighlight">\(u(y) = \dfrac{\rho g}{2 \mu}(-y^2 + yH) +\dfrac{U}{H}y\)</span><span class="math notranslate nohighlight">\( dove la
+velocità \)</span>U<span class="math notranslate nohighlight">\( è ancora incognita. Per trovarne il valore, si calcola la
+portata e la si pone uguale a zero. La portata è uguale a
+\)</span>$Q = \int_0^H u(y) dy = \dots = \dfrac{1}{12}\dfrac{\rho g H^3}{\mu}</p>
+<ul class="simple">
+<li><p>\dfrac{1}{2}UH$<span class="math notranslate nohighlight">\( Imponendo \)</span>Q=0<span class="math notranslate nohighlight">\(,
+\)</span><span class="math notranslate nohighlight">\(U = - \dfrac{\rho g H^2}{6 \mu} \quad \Rightarrow \quad
+U = - 0.4474\ m/s\)</span>$</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

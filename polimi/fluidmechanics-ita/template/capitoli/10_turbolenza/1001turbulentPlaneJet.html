@@ -1,0 +1,727 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluzione {#soluzione .unnumbered} &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/1001turbulentPlaneJet';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">1. Statics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">2. Surface tension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_cinematica/12teoria.html">3. Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">4. Balance equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_bernoulli/05teoria.html">5. Bernoulli theorems and vorticity dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">6. Exact solutions of Navier-Stokes equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10teoria.html">10. Instability and turbulence</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/1001turbulentPlaneJet.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Soluzione {#soluzione .unnumbered}</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><strong>Esercizi per il corso di Fluidodinamica</strong></p>
+<p>Calcolare la soluzione in similitudine per un getto turbolento piano.</p>
+<p><strong>Concetti.</strong> Equazioni mediate di Reynolds. Equazioni di Prandtl
+per lo strato limite turbolento. Correnti debolmente non parallele.
+Soluzioni in similitudine. Entrainment.</p>
+<p><img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/fig/turbulentJet" />{width=»100%»}</p>
+<div class="section" id="soluzione-soluzione-unnumbered">
+<h1>Soluzione {#soluzione .unnumbered}<a class="headerlink" href="#soluzione-soluzione-unnumbered" title="Permalink to this heading">#</a></h1>
+<p>Si descrive schematicamente il procedimento:</p>
+<ul class="simple">
+<li><p>Il problema turbolento viene descritto dalle equazioni mediate di
+Reynolds.</p></li>
+<li><p>I problemi di «strato limite» possono essere ben descritti dalle
+equazioni di Prandtl, ricavabili grazie a ragionamenti sugli ordini
+di grandezza, analoghe alle equazioni di Prantdl laminari.</p></li>
+<li><p>Viene introdotta una variabile di similitudine <span class="math notranslate nohighlight">\(\eta\)</span>; si ipotizza
+la forma della soluzione: <span class="math notranslate nohighlight">\(u = U_0 f\)</span>,
+<span class="math notranslate nohighlight">\(\langle u'v' \rangle = U_0^2 g\)</span></p></li>
+<li><p>Vengono calcolati i flussi integrali di massa, quantità di moto ed
+energia cinetica.</p></li>
+<li><p>Si inserisce l’ansatz sulla soluzione nelle equazioni di Prandtl per
+ottenere un’equazione per i profili similari di velocità <span class="math notranslate nohighlight">\(f\)</span> e degli
+sforzi turbolenti <span class="math notranslate nohighlight">\(g\)</span>. Si ricava l’andamento dello spessore dello
+<span class="math notranslate nohighlight">\(\delta(x)\)</span>»strato limite», necessario affinché esista una soluzione
+similare.</p></li>
+<li><p>Per ottenere una equazione chiusa, si introduce l’ipotesi di
+Boussinesq, che lega <span class="math notranslate nohighlight">\(f\)</span> e <span class="math notranslate nohighlight">\(g\)</span>. Infine si risolve, con le opportune
+condizioni al contorno, l’equazione in <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+</ul>
+<p><strong>Svolgimento.</strong></p>
+<ul>
+<li><p>Il punto di partenza del problema sono le equazioni mediate di
+Reynolds (RANS) $$\begin{cases}
+(\bm{U} \cdot \bm{\nabla}) \bm{U}</p>
+<ul class="simple">
+<li><p>\bm{\nabla} \cdot \langle \bm{u}” \otimes \bm{u}”  \rangle</p></li>
+</ul>
+<ul class="simple">
+<li><p>\dfrac{1}{Re} \nabla^2 \bm{U} + \bm{\nabla} P = 0   \
+\bm{\nabla} \cdot \bm{U} = 0
+\end{cases}$<span class="math notranslate nohighlight">\( ottenibili inserendo la decomposizione di Reynolds
+delle variabili in moto medio e fluttuazione
+\)</span>\bm{u} = \bm{U} + \bm{u}”$ all’interno delle equazioni di
+Navier-Stokes.</p></li>
+</ul>
+<p>Se si considera un problema bidimensionale (per le grandezze medie),
+le RANS in coordinate cartesiane sono $$\begin{cases}
+U \dfrac{\partial U}{\partial x} + V \dfrac{\partial U}{\partial y}</p>
+<ul class="simple">
+<li><p>\dfrac{\partial \langle u’u” \rangle}{\partial x}</p></li>
+<li><p>\dfrac{\partial \langle u’v” \rangle}{\partial y}</p></li>
+</ul>
+<ul class="simple">
+<li><p>\dfrac{1}{Re} \left( \dfrac{\partial^2 U }{\partial x^2}
++  \dfrac{\partial^2 U }{\partial y^2} \right)
++\dfrac{\partial P}{\partial x} = 0 \
+U \dfrac{\partial V}{\partial x} + V \dfrac{\partial V}{\partial y}</p></li>
+</ul>
+<ul class="simple">
+<li><p>\dfrac{\partial \langle u’v” \rangle}{\partial x}</p></li>
+<li><p>\dfrac{\partial \langle v’v” \rangle}{\partial y}</p></li>
+</ul>
+<ul class="simple">
+<li><p>\dfrac{1}{Re} \left( \dfrac{\partial^2 V }{\partial x^2}
++  \dfrac{\partial^2 V }{\partial y^2} \right)
++\dfrac{\partial P}{\partial y} = 0 \
+\dfrac{\partial U}{\partial x} + \dfrac{\partial V}{\partial y} = 0
+\end{cases}$$</p></li>
+</ul>
+</li>
+<li><p>Per problemi «di strato limite» le equazioni RANS possono essere
+semplificate, considerando gli ordini di grandezza delle coordinate
+e dei campi che compaiono all’interno delle equazioni. Per la
+regione «interna» (la lunghezza caratteristica in y è «molto minore»
+di quella in x), assumendo che la pressione «esterna» sia costante e
+trascurando i termini di fluttuazione con contributo minore
+$$\begin{cases}
+U \dfrac{\partial U}{\partial x} + V \dfrac{\partial U}{\partial y}</p>
+<ul class="simple">
+<li><p>\dfrac{\partial \langle u’v” \rangle}{\partial y}</p></li>
+</ul>
+<ul class="simple">
+<li><p>\dfrac{1}{Re} \dfrac{\partial^2 U }{\partial y^2}
++\dfrac{\partial P}{\partial x} = 0 \
+\dfrac{\partial \langle v”^2 \rangle}{\partial y}<br />
++\dfrac{\partial P}{\partial y} = 0 \
+\dfrac{\partial U}{\partial x} + \dfrac{\partial V}{\partial y} = 0
+\end{cases}$<span class="math notranslate nohighlight">\( Da queste prime semplificazioni, a differenza delle
+equazioni di strato limite per il caso laminare, la pressione non è
+funzione solo della coordinata \)</span>x<span class="math notranslate nohighlight">\(, ma \)</span>P+\langle v”^2 \rangle<span class="math notranslate nohighlight">\( è
+funzione solo di \)</span>x<span class="math notranslate nohighlight">\(. Con ulteriori considerazioni sui termini di
+fluttuazione nel caso di getti, è possibile scrivere in prima
+approssimazione \)</span>$\begin{cases}
+U \dfrac{\partial U}{\partial x} + V \dfrac{\partial U}{\partial y}</p></li>
+</ul>
+<ul class="simple">
+<li><p>\dfrac{\partial \langle u’v” \rangle}{\partial y}</p></li>
+</ul>
+<ul class="simple">
+<li><p>\dfrac{1}{Re} \dfrac{\partial^2 U }{\partial y^2} = 0 \
+P + \langle v”^2  \rangle = P_0(x) \
+\dfrac{\partial U}{\partial x} + \dfrac{\partial V}{\partial y} = 0
+\end{cases}$<span class="math notranslate nohighlight">\( avendo indicato con \)</span>P_0(x)<span class="math notranslate nohighlight">\( la pressione del
+problema esterno e avendo usato l'approssimazione
+\)</span>\partial P/\partial x = \partial P_0 / \partial x - \partial \langle v”^2 / \partial x \rangle \simeq \partial P_0 / \partial x = 0$.
+Le fluttuazioni nel problema esterno sono considerate nulle.</p></li>
+</ul>
+<p>Prima di procedere con la ricerca di soluzioni in similitudine,
+viene fatta l’ultima ipotesi: consideriamo numeri di Reynolds
+sufficientemente alti da rendere trascurabile l’effetto degli sforzi
+viscosi del moto medio rispetto agli effetti delle fluttuazioni.
+$$\begin{cases}
+U \dfrac{\partial U}{\partial x} + V \dfrac{\partial U}{\partial y}</p>
+<ul class="simple">
+<li><p>\dfrac{\partial \langle u’v” \rangle}{\partial y} = 0 \
+P + \langle v”^2  \rangle = P_0(x) \
+\dfrac{\partial U}{\partial x} + \dfrac{\partial V}{\partial y} = 0
+\end{cases}$$</p></li>
+</ul>
+</li>
+<li><p>Partendo dalle equazioni di Prandtl turbolente semplificate, si
+introduce la variabile di similitudine
+$<span class="math notranslate nohighlight">\(\eta = \dfrac{y}{\delta(x)}\)</span><span class="math notranslate nohighlight">\( con \)</span>\delta(x)<span class="math notranslate nohighlight">\( una grandezza
+caratteristica (convenzionale) della sezione del getto; si
+ipotizzano poi il profilo di velocità della componente \)</span>x<span class="math notranslate nohighlight">\( della
+velocità e del termine di fluttuazione \)</span>\langle u’v” \rangle<span class="math notranslate nohighlight">\(:
+\)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ U(x,y) &amp; = U_0 f(\eta(x,y)) \\
+ \langle u'v' \rangle (x,y) &amp; = U^2_0 g(\eta(x,y))
+\end{aligned}\)</span>$</p>
+<p>Si calcola la derivata parziale di U in x, che verrà usata in
+seguito: $$\begin{aligned}
+\dfrac{\partial U}{\partial x} &amp; =  U’_0 (x) f(\eta)</p>
+<ul class="simple">
+<li><p>U_0(x) \frac{y \delta”(x)}{\delta^2(x)} f”(\eta) = \
+&amp; =  U’_0 (x) f(\eta)</p></li>
+<li><p>U_0(x) \frac{ \delta”(x) \eta}{\delta(x)} f”(\eta)
+\end{aligned}$$</p></li>
+</ul>
+<p>Tramite il vincolo di incomprimibilità si ricava la forma della
+componente <span class="math notranslate nohighlight">\(V\)</span> della velocità. Nel trasformare l’integrale su <span class="math notranslate nohighlight">\(y\)</span> in
+un integrale su <span class="math notranslate nohighlight">\(\eta\)</span>, si usa <span class="math notranslate nohighlight">\(y = \delta(x) \eta\)</span>,
+<span class="math notranslate nohighlight">\(d\xi = \delta(x) d\chi\)</span>. $$\begin{aligned}
+V(x,y) - \underbrace{V(x,0) }<em>{=0} &amp; =
+\int</em>{\xi=0}^y \dfrac{\partial V(x,\xi)}{\partial y} d\xi =
+-\int_{\xi=0}^y \dfrac{\partial U(x,\xi)}{\partial x}  = \
+&amp; = -\int_{\chi=0}^\eta \left[ U’_0 (x) f(\chi)</p>
+<ul class="simple">
+<li><p>U_0(x) \frac{ \delta”(x) \chi}{\delta(x)} f”(\chi) \right]
+\delta(x) d \chi = \
+&amp; = -\int_{\chi=0}^\eta \left[ \delta(x) U’_0 (x) f(\chi)</p></li>
+<li><p>U_0(x) \delta”(x) \chi f”(\chi) \right]
+d \chi
+\end{aligned}$$</p></li>
+</ul>
+</li>
+<li><p>Prima di scrivere le equazioni di Prandtl per le variabili
+adimensionali, conviene calcolare il flusso di quantità di moto in
+direzione <span class="math notranslate nohighlight">\(x\)</span> attraverso dei piani verticali. Questo consente di
+trovare una relazione tra <span class="math notranslate nohighlight">\(U_0\)</span> e <span class="math notranslate nohighlight">\(\delta\)</span> da usare in seguito.
+$<span class="math notranslate nohighlight">\(Q = \rho \int_{y=-\infty}^\infty U^2(x,y) dy\)</span><span class="math notranslate nohighlight">\( Si calcola la
+derivata in direzione \)</span>x<span class="math notranslate nohighlight">\( di \)</span>Q<span class="math notranslate nohighlight">\(, usando le equazione di Prandtl
+della componente \)</span>x<span class="math notranslate nohighlight">\( della quantità di moto:
+\)</span>$\dfrac{d Q}{d x}=\dfrac{d}{d x}\rho \int_{y=-\infty}^\infty U^2(x,y) dy =
+\rho \int_{y=-\infty}^\infty \dfrac{\partial U^2}{\partial x} dy =
+-\rho \int_{y=-\infty}^\infty \dfrac{\partial UV}{\partial y}</p>
+<ul class="simple">
+<li><p>\dfrac{\partial \langle u’v” \rangle}{\partial y} dy = 0$<span class="math notranslate nohighlight">\( se si
+considera un fluido in quiete all'infinito. Utilizzando i profili in
+similitudine \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+0 = \dfrac{d Q}{d x} &amp; = 
+\dfrac{d}{dx} \int_{y=-\infty}^\infty  U^2 dy = \\ 
+&amp; = \dfrac{d}{dx} \left( U^2_0(x) \delta(x) \right)
+\int_{\eta=-\infty}^{\infty} f^2(\eta)d\eta
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Deve quindi essere \)</span>\frac{d}{dx}(U_0^2 \delta)= 0<span class="math notranslate nohighlight">\(,
+cioè
+\)</span><span class="math notranslate nohighlight">\(2 U_0 U'_0 \delta + U^2_0 \delta' = 0 \qquad \Rightarrow \qquad
+\delta\dfrac{U'_0}{U_0} = -\dfrac{1}{2}\delta'\)</span>$</p></li>
+</ul>
+</li>
+<li><p>Inseriamo ora la forma di <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, <span class="math notranslate nohighlight">\(\langle u'v' \rangle\)</span> espresse
+in termini della variabile e delle funzioni di similitudine nella
+componente <span class="math notranslate nohighlight">\(x\)</span> dell’equazione della quantità di moto.</p>
+<div class="math notranslate nohighlight">
+\[U_0 f \left[ U'_0 f - U_0 \dfrac{\delta'}{\delta} \eta f' \right]
+     - \left[ \int_{\chi=0}^\eta \left[ \delta(x) U'_0 (x) f(\chi)
+     - U_0(x) \delta'(x) \chi f'(\chi) \right]d \chi \right]
+     \dfrac{U_0}{\delta} f' + \dfrac{U_0^2}{\delta} g' = 0\]</div>
+<p>Moltiplicando per <span class="math notranslate nohighlight">\(\dfrac{\delta}{U_0^2}\)</span> e integrando per parti
+l’integrale che contiene <span class="math notranslate nohighlight">\(\eta f'(\eta)\)</span>
+$$\delta\dfrac{U’_0}{U_0} f^2 - \delta” \eta f f”</p>
+<ul class="simple">
+<li><p>\delta\dfrac{U’_0}{U_0} f” \int_0^\eta f d \chi</p></li>
+</ul>
+<ul class="simple">
+<li><p>\delta” f”(\eta) \left[ \chi f(\chi) \right]\bigg|_0^\eta</p></li>
+</ul>
+<ul class="simple">
+<li><p>\delta”  f(\eta)\int_0^\eta f(\chi)d\chi + g”(\eta) = 0
+\label{eq:sim}$<span class="math notranslate nohighlight">\( Usando la relazione tra \)</span>U_0<span class="math notranslate nohighlight">\( e \)</span>\delta<span class="math notranslate nohighlight">\( trovata al
+punto precedente è possibile scrivere l'equazione come
+\)</span>$\dfrac{1}{2} \delta”(x) \left[ f^2(\eta)</p></li>
+</ul>
+<ul class="simple">
+<li><p>f”(\eta)\int_{\chi=0}^{\eta} f(\chi) d\chi  \right] = g”(\eta)$<span class="math notranslate nohighlight">\(
+Affinchè sia possibile trovare una soluzione in similitudine, non ci
+possono essere coefficienti dipendenti da \)</span>x<span class="math notranslate nohighlight">\( o \)</span>y<span class="math notranslate nohighlight">\( se non tramite
+\)</span>\eta<span class="math notranslate nohighlight">\(. Deve quindi essere:
+\)</span><span class="math notranslate nohighlight">\(\delta'(x) = S \qquad \Rightarrow \qquad \delta(x) = S (x-x_0)\)</span><span class="math notranslate nohighlight">\(
+Seguendo questo procedimento è stato possibile ottenere una stima
+dell'evoluzione in \)</span>x<span class="math notranslate nohighlight">\( della grandezza trasversale caratteristica
+\)</span>\delta(x)<span class="math notranslate nohighlight">\(: la grandezza trasversale caratteristica di un getto
+turbolento è lineare in \)</span>x<span class="math notranslate nohighlight">\(. Dalla costanza del flusso di quantità
+di moto \)</span>U_0^2(x)\delta(x) = \text{cost}<span class="math notranslate nohighlight">\( e quindi la velocità
+caratteristica del getto evolve come \)</span><span class="math notranslate nohighlight">\(U_0(x) \sim x^{-1/2}\)</span>$</p></li>
+</ul>
+</li>
+<li><p>Come fatto in precedenza per il flusso di quantità di moto (costante
+in <span class="math notranslate nohighlight">\(x\)</span>), vengono calcolate le derivate in <span class="math notranslate nohighlight">\(x\)</span> dei flussi di massa e
+di energia cinetica del moto medio per la soluzione in similitudine
+attraverso piani perpendicolari all’asse <span class="math notranslate nohighlight">\(x\)</span>. Il flusso di massa <span class="math notranslate nohighlight">\(M\)</span>
+è: $<span class="math notranslate nohighlight">\(\begin{aligned}
+   M &amp; = \rho \int_{y=-\infty}^{\infty} U dy =
+     \rho U_0(x)\delta(x) \int_{\eta=-\infty}^{\infty} f(\eta) d \eta \sim
+     x^{1/2}   \\ \\
+   \frac{d M}{dx} &amp; \sim x^{-1/2} &gt; 0  , \ \ \text{per \)</span>x&gt;0<span class="math notranslate nohighlight">\(}
+ \end{aligned}\)</span><span class="math notranslate nohighlight">\( Il flusso di massa aumenta allontanandosi
+dall'ugello. Il getto riesce a &quot;trascinare&quot; anche del fluido che non
+esce dall'ugello (entrainment). Il flusso di energia cinetica del
+moto medio è: \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+   E &amp; = \dfrac{1}{2} \rho \int_{y=-\infty}^{\infty} U^3 dy =
+    \dfrac{1}{2} \rho U_0^3(x)\delta(x) 
+    \int_{\eta=-\infty}^{\infty} f^3(\eta) d\eta \sim x^{-1/2} \\ \\
+   \frac{d E}{dx} &amp; \sim -x^{-3/2} &lt; 0, \ \ \text{per \)</span>x&gt;0<span class="math notranslate nohighlight">\(} 
+ \end{aligned}\)</span>$ Il flusso di energia cinetica del moto medio
+diminuisce allontanandosi dall’ugello, nonostante l’equazioni
+utilizzate nella soluzione in similitudine non contengano il termine
+dissipativo degli sforzi viscosi, che quindi non può avere nessuna
+influenza sulla diminuzione di energia cinetica del moto medio:
+l’energia del moto medio viene trasferita alle fluttuazioni di
+velocità. Scrivendo le equazioni di bilancio dell’energia cinetica
+del moto medio e dell’energia cinetica delle fluttuazioni (energia
+turbolenta) si trovano due termini opposti: il termine che in
+generale fa diminuire l’energia cinetica del moto medio, si trova
+nell’equazione dell’energia turbolenta con segno opposto.</p></li>
+<li><p>Nell’eq. <span class="xref myst">[eq:sim]</span>{reference-type=»ref»
+reference=»eq:sim»}, anche dopo aver sostituito <span class="math notranslate nohighlight">\(\delta' = S\)</span>,
+rimangono due equazioni incognite <span class="math notranslate nohighlight">\(f(\eta)\)</span>, <span class="math notranslate nohighlight">\(g(\eta)\)</span>. Così come le
+RANS non sono un problema chiuso, anche il problema semplificato non
+è chiuso. Per ottenere una soluzione si può introdurre l’ipotesi di
+Boussinesq (validità di questa ipotesi? Nessuna giustificazione
+rigorosa …) per esprimere il termine di fluttuazioni in funzione
+del moto medio. Per il getto piano, l’ipotesi di Boussinesq si
+riduce a
+$<span class="math notranslate nohighlight">\(- \langle u'v' \rangle = \nu_T \dfrac{\partial U}{\partial y}\)</span><span class="math notranslate nohighlight">\(
+avendo indicato con \)</span>\nu_T<span class="math notranslate nohighlight">\( la viscosità turbolenta.
+\)</span>$\begin{gathered}</p>
+<ul class="simple">
+<li><p>U^2_0 g(\eta) = \nu_T \dfrac{U_0}{\delta(x)} f(\eta) \
+g(\eta) = - \dfrac{\nu_T}{U_0(x)\delta(x)} f(\eta) \
+\end{gathered}$<span class="math notranslate nohighlight">\( Fatte già molte ipotesi (non tutte con fondamento
+fisico), facciamo l'ultima ipotesi che consente di ottenere una
+soluzione in forma chiusa del problema. Si ipotizza che
+\)</span><span class="math notranslate nohighlight">\(\hat{\nu}_T = \dfrac{\nu_T}{U_0(x)\delta(x)} = \text{cost}
+\qquad \Rightarrow \qquad g(\eta) = - \nu_T f'(\eta)\)</span>$</p></li>
+</ul>
+<p><strong>La validità di queste ipotesi andrà controllata a posteriori.</strong></p>
+<p>L’equazione in <span class="math notranslate nohighlight">\(f(\eta)\)</span> diventa: $<span class="math notranslate nohighlight">\(\dfrac{1}{2} S \left[ f^2(\eta)
+    + f'(\eta)\int_{\chi=0}^{\eta} f(\chi) d\chi \right] = 
+    - \hat{\nu}_T f'''(\eta)\)</span><span class="math notranslate nohighlight">\( Si introduce la funzione
+\)</span>F(\eta) = \int_{\chi=0}^{\eta} f(\chi)d\chi<span class="math notranslate nohighlight">\( per eliminare il
+termine integrale e ottenere un'equazione differenziale in \)</span>F(\eta)<span class="math notranslate nohighlight">\(
+(osservare che \)</span>F”(\eta) = f(\eta)<span class="math notranslate nohighlight">\( e \)</span>F(0)=0<span class="math notranslate nohighlight">\( poiché l'intervallo
+di integrazione ha dimensione nulla): \)</span><span class="math notranslate nohighlight">\(\begin{gathered}
+   \dfrac{1}{2}S \left( F'^2 + F'' F \right) = -\hat{\nu}_T F''' \\
+   \dfrac{1}{2}S \left( F'F \right)' = -\hat{\nu}_T F''' \\
+ \end{gathered}\)</span><span class="math notranslate nohighlight">\( Le condizioni di simmetria sull'asse del getto
+sono \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+   \frac{\partial U}{\partial y}(x,y=0) = 0 \quad \Rightarrow \quad
+     f'(\eta=0) = 0 \quad \Rightarrow \quad F''(\eta=0) = 0
+  \end{aligned}\)</span>$</p>
+<p>Si integra ora due volte. Dopo aver integrato la prima volta, la
+prima costante di integrazione è nulla dalle condizioni <span class="math notranslate nohighlight">\(F(0)=0\)</span>,
+<span class="math notranslate nohighlight">\(F''(0)=0\)</span>. Si integra la seconda volta e si definisce la velocità
+di riferimento <span class="math notranslate nohighlight">\(U_0(x)\)</span> (fino ad ora generica) con la condizione
+<span class="math notranslate nohighlight">\(F'(0) = f(0) = 1\)</span>: ricordando <span class="math notranslate nohighlight">\(U(x,y) = U_0(x) f(\eta(x,y))\)</span>, si
+ottiene che <span class="math notranslate nohighlight">\(U_0(x)\)</span> è la velocità sull’asse (<span class="math notranslate nohighlight">\(y=0\)</span>, <span class="math notranslate nohighlight">\(\eta=0\)</span>).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+     &amp; \frac{1}{2}S\ F'(\eta)F(\eta) + \hat{\nu}_T F''(\eta) = C 
+        \stackrel{\text{b.c}}{=}0  &amp; ( (F^2)' = 2FF') \\
+     &amp; \dfrac{1}{4} S (F^2)' + \hat{\nu}_T F'' = 0 &amp; ( integrare ...)  \\
+     &amp; F' = -\dfrac{S}{4\hat{\nu}_T} F^2 + B \stackrel{F'(0)=1}{=} 
+      1 - \dfrac{S}{4\hat{\nu}_T} F^2 &amp; 
+     \end{aligned}\end{split}\]</div>
+<p>Integrando un’ultima volta si ottiene la soluzione <span class="math notranslate nohighlight">\(F(\eta)\)</span>, la cui
+derivata <span class="math notranslate nohighlight">\(f(\eta)\)</span> è il profilo in similitudine della velocità <span class="math notranslate nohighlight">\(U\)</span>
+$<span class="math notranslate nohighlight">\(F(\eta) = \dfrac{1}{\alpha}\tanh{(\alpha \eta)} \quad \Rightarrow \quad
+  f(\eta) = \dfrac{1}{\cosh^2{(\alpha \eta)}} = \dfrac{U(x,y)}{U_0(x)}\)</span><span class="math notranslate nohighlight">\(
+con \)</span>\alpha = \sqrt{\dfrac{S}{4\hat{\nu}_T}}$.</p>
+<p>Mancano da determinare i valori delle costanti che compaiono nella
+soluzione, ottenibili usando dei confronti con le misure
+sperimentali e introducendo una definizione per la dimensione di
+riferimento <span class="math notranslate nohighlight">\(\delta(x)\)</span> della dimensione trasversale del getto: di
+solito si definisce <span class="math notranslate nohighlight">\(\delta(x) = r_{1/2}(x)\)</span> l’ordinata in cui la
+velocità <span class="math notranslate nohighlight">\(U(x,\delta(x))\)</span> è la meta della velocità sull’asse (o sul
+piano di simmetria), cioè
+$<span class="math notranslate nohighlight">\(U(x,r_{1/2}(x)) = \dfrac{1}{2}U(x,0) = \dfrac{1}{2}U_0(x)\)</span><span class="math notranslate nohighlight">\( Per
+questa scelta di \)</span>\delta(x)<span class="math notranslate nohighlight">\( il coefficiente S risulta \)</span>S \sim 0.1$.</p>
+</li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/10_turbolenza"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+Sia dato il campo di moto
+$$\bm{u}(x,y,z) = \frac{x}{x^2 + y^2 + z^2} \bm{\hat{x}} +
+                 \frac{y}{x^2 + y^2 + z^2} \bm{\hat{y}} +
+                 \frac{z}{x^2 + y^2 + z^2} \bm{\hat{z}}$$ Calcolare
+l'equazione delle linee di corrente, delle traiettorie e delle linee di
+fumo (curve di emissione) e disegnarle.
+
+**Suggerimento.** Per risolvere l'esercizio in maniera semplice, si
+osservi che il campo di moto è stazionario e ha simmetria sferica: è
+quindi conveniente usare un sistema di coordiante sferiche.

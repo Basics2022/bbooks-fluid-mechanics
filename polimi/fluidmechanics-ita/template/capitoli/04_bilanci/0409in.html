@@ -1,0 +1,576 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0409in';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">Statica</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">Legge di Young-Laplace.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="04teoria.html">Bilanci in forma integrale</a></li>
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0409in.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>+:———————————:+:———————————:+
+| Un getto d’acqua                  | ![image](./fig/gettoPiattello.eps |
+| (<span class="math notranslate nohighlight">\(\rho=999\ kg/m^3\)</span>) stazionario, | ){width=»90%»}                    |
+| piano e verticale viene           |                                   |
+| indirizzato su un oggetto di      |                                   |
+| massa <span class="math notranslate nohighlight">\(M\)</span>, tenuto da esso in      |                                   |
+| equilibrio. Il getto ha           |                                   |
+| distribuzione di velocità         |                                   |
+| uniforme <span class="math notranslate nohighlight">\(U\)</span> lungo lo spessore    |                                   |
+| <span class="math notranslate nohighlight">\(H\)</span>, mentre la distribuzione sul  |                                   |
+| bordo dell’oggetto è triangolare  |                                   |
+| di spessore <span class="math notranslate nohighlight">\(h\)</span> con velocità      |                                   |
+| massima <span class="math notranslate nohighlight">\(V\)</span>. Si calcoli la        |                                   |
+| velocità <span class="math notranslate nohighlight">\(V\)</span> e la massa <span class="math notranslate nohighlight">\(M\)</span>       |                                   |
+| dell’oggetto supponendo che:      |                                   |
+|                                   |                                   |
+| -   il fluido che circonda il     |                                   |
+|     getto e il solido è aria in   |                                   |
+|     quiete a pressione            |                                   |
+|     atmosferica di                |                                   |
+|     <span class="math notranslate nohighlight">\(P_a = 101325\  Pa\)</span>;          |                                   |
+|                                   |                                   |
+| -   si possa trascurare la        |                                   |
+|     gravità nel bilancio di       |                                   |
+|     quantità di moto, ma non      |                                   |
+|     nell’equilibrio del corpo.    |                                   |
+|                                   |                                   |
+| (<span class="math notranslate nohighlight">\(V = U H / h ; M = \rho U^2 H /  |                                   |
+| g\)</span>)                               |                                   |
++———————————–+———————————–+</p>
+<p>Bilanci integrali di massa e quantità di moto. Equazioni di equilibrio
+(equazioni fondamentali della dinamica classica). Principio di azione e
+reazione. Integrale della normale su una superficie chiusa è
+identicamente nullo.</p>
+<p>Ipotesi: problema stazionario; sulla superficie libera del corpo e del
+fluido agisce solo la pressione ambiente <span class="math notranslate nohighlight">\(p_a\)</span>; nessun effetto della
+gravità nei bilanci del fluido.</p>
+<p>Si sceglie un asse <span class="math notranslate nohighlight">\(y\)</span> diretto verso l’alto.</p>
+<ul>
+<li><p>Scrittura delle equazioni di bilancio per il fluido.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+           \frac{d}{d t} \int_{\Omega} \rho + \oint_{\partial \Omega} \rho \bm{u} \cdot \hat{\bm{n}} = 0 &amp; \qquad \text{(massa)} \\
+           \frac{d}{d t} \int_{\Omega} \rho \bm{u} + \oint_{\partial \Omega} \rho \bm{u} \bm{u} \cdot \hat{\bm{n}} +
+            \oint_{\partial \Omega} p \hat{\bm{n}} - \oint_{\partial \Omega} \bm{s_n} 
+            -\int_V \rho \bm{g} = 0  
+            &amp; \qquad \text{(quantità di moto)}  %\Rb^{ext}
+          \end{cases}\end{split}\]</div>
+<p>A queste, va aggiunta l’equazione di equilibrio del corpo sottoposto
+alla forza di gravità: <span class="math notranslate nohighlight">\(\bm{F} + M \bm {g} = 0\)</span>.</p>
+</li>
+<li><p>Dopo aver semplificato il bilancio di massa, da esso si ricava la
+velocità <span class="math notranslate nohighlight">\(V\)</span>. La velocità sui due bordi “di uscita” è
+<span class="math notranslate nohighlight">\(v(s) = V s/h\)</span>, avendo chiamato <span class="math notranslate nohighlight">\(s\)</span> la coordinata che descrive tale
+superficie per valori compresi tra <span class="math notranslate nohighlight">\(0\)</span> e <span class="math notranslate nohighlight">\(h\)</span>.
+$$0 = \int_{S_in} \rho \bm{u} \cdot \bm{\hat{n}} +   \int_{S_{out1}} \rho \bm{u} \cdot \bm{\hat{n}} +
+\int_{S_{out2}} \rho \bm{u} \cdot \bm{\hat{n}} =</p>
+<ul class="simple">
+<li><p>\rho U H + 2 \int_0^h \rho V \frac{s}{h} ds = \rho \displaystyle\left[</p></li>
+<li><p>U H + 2 \frac{1}{2} V h\right]$$</p></li>
+</ul>
+<p>E quindi <span class="math notranslate nohighlight">\(V = U \frac{H}{h}\)</span>.</p>
+</li>
+<li><p>Le equazioni vengono opportunamente semplificate secondo le ipotesi
+fatte (vengono eliminati i termini non stazionari e il termine
+contenente le forze di volume - gravità). Il bordo del dominio
+fluido <span class="math notranslate nohighlight">\(\partial \Omega\)</span> viene indicato con <span class="math notranslate nohighlight">\(S_f\)</span>. I contributi di
+pressione e viscosi vengono raccolti nel «vettore di sforzo»
+complessivo.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{split}
+    % &amp; \Rb = \oint_{S_{s}}  {\bm{t}}_{\bm{n}} = 
+    % \oint_{S_{s}}  {\bm{s}}_{\bm{n}} - \oint_{S_{s}} p {\hat{\bm{n}}}_{s} \\
+     &amp; \oint_{S_f} \rho \bm{u} \bm{u} \cdot \hat{\bm{n}}= 
+     \oint_{S_{f}}  {\bm{s}}_{\bm{n}} - \oint_{S_f} p {\hat{\bm{n}}}
+      = \oint_{S_{f}}  {\bm{t}}_{\bm{n}} 
+    \end{split}\end{split}\]</div>
+</li>
+<li><p>Riscrittura del termine di contorno. Si indica con <span class="math notranslate nohighlight">\(S_f\)</span> il contorno
+fluido: questo è costituito dall’unione del controno a contatto con
+il corpo <span class="math notranslate nohighlight">\(S_c\)</span> e quella «libera» <span class="math notranslate nohighlight">\(S_l\)</span>. Il contorno del corpo
+<span class="math notranslate nohighlight">\(S_{s}\)</span> è suddiviso nel contorno <span class="math notranslate nohighlight">\(S_c\)</span> a contatto con il fluido e
+nel contorno libero <span class="math notranslate nohighlight">\(S_{c_l}\)</span>.</p>
+<p>Nei passaggi successivi si ricava il legame tra sforzi sul contorno
+del dominio fluido e la forza agente sul corpo. Si usano le ipotesi
+che sulle superfici libere agisca solo la pressione ambiente. Si usa
+il fatto che l’integrale di una quantità costante per la normale su
+una superficie chiusa è nullo. Vengono definite le normali <span class="math notranslate nohighlight">\(\bm{n}\)</span>
+e <span class="math notranslate nohighlight">\(\bm{n_s}\)</span> come la normale uscente dal volume del fluido e quella
+uscente dal solido. Si definiscono <span class="math notranslate nohighlight">\(\bm{t}_{\bm{n}}\)</span> e
+<span class="math notranslate nohighlight">\(\bm{t}_{\bm{n}_{s}}\)</span> come lo sforzo agente sul fluido e quello
+agente sul solido. Si usa infine il fatto che <span class="math notranslate nohighlight">\(\bm{n}=-\bm{n}_{s}\)</span>
+(normali uscenti dai due domini, uguali e contrarie) e
+<span class="math notranslate nohighlight">\(\bm{t_n}=-\bm{t}_{\bm{n}_s}\)</span> sulla superficie in comune (sforzi
+agenti sulla superficie comune, uguali e contrari; principio di
+azione e reazione).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+      \oint_{S_f} \bm{t_n} &amp; = 
+      \int_{S_l} \bm{t_n} + \int_{S_c} \bm{t_n} = &amp; \text{($\bm{t_n} |_{S_l} = -p_a \bm{n}$ )}\\
+      &amp; = - \int_{S_l} p_a \bm{n} + \int_{S_c} \bm{t_n} = &amp; \text{(somma e sottrazione di $\int_{S_c} p_a \bm{n}$)}\\
+      &amp; = \underbrace{- \int_{S_l} p_a \bm{n} - \int_{S_c} p_a \bm{n}}_{=0}
+      + \int_{S_c} p_a \bm{n} + \int_{S_c} \bm{t_n} = &amp; \text{($\bm{n} = -\bm{n}_{s}$)} \\
+      &amp; = - \int_{S_c} p_a \bm{n}_{s} + \int_{S_c} \bm{t_n} = &amp;
+      \text{($S_{s} = S_c \cup S_{c_l}$ e $\int_{S_{s}} p_a \bm{n} = 0$)}\\
+      &amp; = \int_{{S_c}_l} p_a \bm{n}_{s} + \int_{S_c} \bm{t_n} = &amp;
+      \text{($\bm{t}_{\bm{n}_{s}}|_{S_{c_l}} = -p_a \bm{n}_{s}$, $\bm{t}_{\bm{n}_{s}}|_{S_c} = - \bm{t_n}$)} \\
+      &amp; = - \int_{{S_c}_l} \bm{t}_{\bm{n}_{s}} - \int_{S_c} \bm{t}_{\bm{n}_{s}} = \\
+      &amp; = - \int_{S_{s}} \bm{t}_{\bm{n}_{s}} \\
+      &amp; = - \bm{R}
+    \end{aligned}\end{split}\]</div>
+</li>
+<li><p>Sostituendo nell’equazione del bilancio della quantità di moto si
+ottiene:
+$<span class="math notranslate nohighlight">\(\bm{R} = - \oint_{S_f} \rho \bm{u} \bm{u} \cdot \hat{\bm{n}}\)</span>$</p></li>
+<li><p>Data la simmetria del problema si riconosce che non ci può essere
+una componente orizzontale. I contributi nel bilancio della quantità
+di moto sulla superficie di contatto tra corpo e fluido e sulla
+superficie laterale del getto sono nulli poichè è nullo il flusso su
+tali superfici. I contributi sulle sezioni “di uscita” sono uguali e
+contrari. Rimane quindi solo il contributo dalla sezione “in
+ingresso”.</p>
+<div class="math notranslate nohighlight">
+\[\bm{F} = - \oint_{S_f} \rho \bm{u} \bm{u} \cdot \bm{\hat{n}} = 
+               - \oint_{S_in} \rho \bm{u} \bm{u} \cdot \bm{\hat{n}} = 
+               \rho U^2 H \bm{\hat{y}}\]</div>
+</li>
+<li><p>Si scrive l’equilibrio del corpo <span class="math notranslate nohighlight">\(\bm{F} + M \bm{g} = 0\)</span>, con
+<span class="math notranslate nohighlight">\(\bm{g} = - g \bm{\hat{y}}\)</span>. Da questo segue che
+<span class="math notranslate nohighlight">\(M = F/g = \frac{\rho U^2 H}{g}\)</span>.</p></li>
+</ul>
+<p><em>Osservazioni.</em> Nell’elaborazione dei termini della quantità di moto è
+contenuta la forma della risultante delle forze sull’oggetto vista in
+classe.</p>
+<p>Come giustamente osservato da qualcuno in classe, la massa è per unità
+di lunghezza, poichè stiamo considerando un caso bidimensionale.</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/04_bilanci"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

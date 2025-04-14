@@ -1,0 +1,904 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. Exact solutions of Navier-Stokes equations &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0600in';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+    <link rel="next" title="7. Similitude" href="../07_similitudine/07teoria.html" />
+    <link rel="prev" title="5. Bernoulli theorems and vorticity dynamics" href="../05_bernoulli/05teoria.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">1. Statica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">2. Surface tension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_cinematica/12teoria.html">3. Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">4. Balance equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_bernoulli/05teoria.html">5. Bernoulli theorems and vorticity dynamics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Exact solutions of Navier-Stokes equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">8. Equazioni di Prandtl dello strato limite</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0600in.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exact solutions of Navier-Stokes equations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduzione-e-linee-guida-per-la-soluzione-dei-problemi">6.1. Introduzione e linee guida per la soluzione dei problemi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equazioni-di-navier-stokes-in-coordinate-cartesiane-e-cilindriche">6.2. Equazioni di Navier-Stokes in coordinate cartesiane e cilindriche</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-in-coordinate-cartesiane-corrente-di-poseuille">6.3. Esempio in coordinate cartesiane: corrente di Poseuille</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcolo-del-vettore-sforzo">6.4. Calcolo del vettore sforzo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalenza-tra-l-espressione-tensoriale-e-vettoriale-del-vettore-sforzo">6.4.1. Equivalenza tra l’espressione tensoriale e vettoriale del vettore sforzo.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osservazione-vettore-sforzo-in-coordinate-cilindriche">6.4.2. Osservazione: vettore sforzo in coordinate cilindriche.</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="exact-solutions-of-navier-stokes-equations">
+<span id="fluid-mechanics-exact-solutions"></span><h1><span class="section-number">6. </span>Exact solutions of Navier-Stokes equations<a class="headerlink" href="#exact-solutions-of-navier-stokes-equations" title="Permalink to this heading">#</a></h1>
+<p><strong>todo</strong> <em>…bla bla…</em> Low-<span class="math notranslate nohighlight">\(Re\)</span> stable flows…</p>
+<div class="section" id="introduzione-e-linee-guida-per-la-soluzione-dei-problemi">
+<h2><span class="section-number">6.1. </span>Introduzione e linee guida per la soluzione dei problemi<a class="headerlink" href="#introduzione-e-linee-guida-per-la-soluzione-dei-problemi" title="Permalink to this heading">#</a></h2>
+<p>========================================================</p>
+<p>É possibile ricavare alcune soluzioni esatte stazionarie delle equazioni
+di Navier-Stokes, che descrivono il moto di un fluido viscoso, quando il
+dominio ha una geometria «semplice». In alcuni casi, come la corrente in
+un canale piano (Newton-Couette), la corrente in un tubo a sezione
+circolare (Poiseuille), o la corrente nel setto tra due cilindri rotanti
+(Taylor-Couette), per semplificare le equazioni è possibile sfruttare
+l’omogeneità del dominio (in qualche direzione) e, per ipotesi, della
+corrente. Nella maggioranza delle soluzioni esatte, i termini non
+lineari nelle equazioni si annullano, permettendo di ricavare abbastanza
+facilmente la soluzione delle equazioni.</p>
+<p>In generale, le soluzioni stazionarie esatte presentate in questo
+capitolo sono significative quando il regime di moto è laminare. Senza
+entrare molto nel dettaglio, una soluzione stazionaria è una soluzione
+di equilibrio delle equazioni di Navier-Stokes, per la quale
+<span class="math notranslate nohighlight">\(\partial \bm{u}/\partial t = \bm{0}\)</span>. Un regime di moto instazionario
+può manifestarsi a causa di una «instabilità intrinseca» della corrente
+o a causa di una enorme amplificazione (<em>ricettività</em>) di disturbi,
+anche di intensità minima, sempre presenti in natura<a class="footnote-reference brackets" href="#id2" id="id1">1</a>. Entrambi i
+processi che allontanano la corrente dalla condizione di equilibrio
+vengono innescati o amplificati all’aumentare del numero di Reynolds
+caratteristico della corrente. Qualitativamente, si può quindi affermare
+che le soluzioni stazionarie esatte sono rappresentative del fenomeno
+fisico quando il numero di Reynolds caratteristico assume valori
+«sufficientemente bassi», per i quali non si verificano instabilità
+intrinseche nella corrente e per i quali le perturbazioni e gli effetti
+di estremità (ad esempio, all’imbocco di un tubo) vengono smorzati dalla
+viscosità, rendendo la corrente stazionaria e omogenea.</p>
+<p>In questa introduzione non c’è nessuna velleità di una descrizione
+precisa e completa di quelli che sono gli argomenti di studio della
+<em>stabilità fluidodinamica</em>, ma solamente la necessità di precisare i
+«limiti di validità» delle soluzioni esatte ricavate in questo capitolo.</p>
+</div>
+<div class="section" id="equazioni-di-navier-stokes-in-coordinate-cartesiane-e-cilindriche">
+<h2><span class="section-number">6.2. </span>Equazioni di Navier-Stokes in coordinate cartesiane e cilindriche<a class="headerlink" href="#equazioni-di-navier-stokes-in-coordinate-cartesiane-e-cilindriche" title="Permalink to this heading">#</a></h2>
+<p>Le equazioni di Navier-Stokes vengono scritte nel sistema di coordinate
+più adeguato alla descrizione del problema, come ad esempio possono
+essere le coordinate cartesiane o quelle cilindriche. Le equazioni di
+Navier-Stokes per un fluido incomprimibile $$\begin{cases}
+\rho \dfrac{\partial \bm{u}}{\partial t}</p>
+<ul class="simple">
+<li><p>\rho (\bm{u} \cdot \bm{\nabla}) \bm{u}</p></li>
+</ul>
+<ul class="simple">
+<li><p>\mu \nabla^2 \bm{u} + \bm{\nabla} p = \rho \bm{g} \
+\bm{\nabla} \cdot \bm{u} = 0
+\end{cases}$<span class="math notranslate nohighlight">\( accompagnate dalle condizioni iniziali e dalle condizioni
+al contorno opportune (e, qualora servissero, dalle condizioni di
+compatibilità dei dati), possono essere scritte ad esempio in un sistema
+di coordinate cartesiane \)</span>$\begin{cases}
+\rho \dfrac{\partial u}{\partial t}</p></li>
+</ul>
+<ul>
+<li><p>\rho \left( u \dfrac{\partial u}{\partial x}</p></li>
+<li><p>v  \dfrac{\partial u}{\partial y}</p></li>
+<li><p>w  \dfrac{\partial u}{\partial z} \right)- \mu \left(
+\dfrac{\partial^2 u}{\partial x^2} +
+\dfrac{\partial^2 u}{\partial y^2} +
+\dfrac{\partial^2 u}{\partial z^2} \right)</p></li>
+<li><p>\dfrac{\partial p}{\partial x} = \rho g_x \
+\rho \dfrac{\partial v}{\partial t}</p></li>
+<li><p>\rho \left( u \dfrac{\partial v}{\partial x}</p></li>
+<li><p>v  \dfrac{\partial v}{\partial y}</p></li>
+<li><p>w  \dfrac{\partial v}{\partial z} \right)- \mu \left(
+\dfrac{\partial^2 v}{\partial x^2} +
+\dfrac{\partial^2 v}{\partial y^2} +
+\dfrac{\partial^2 v}{\partial z^2} \right)</p></li>
+<li><p>\dfrac{\partial p}{\partial y} = \rho g_y \
+\rho \dfrac{\partial w}{\partial t} +
+\rho \left( u \dfrac{\partial w}{\partial x}</p></li>
+<li><p>v \dfrac{\partial w}{\partial y}</p></li>
+<li><p>w \dfrac{\partial w}{\partial z} \right)- \mu \left(
+\dfrac{\partial^2 w}{\partial x^2} +
+\dfrac{\partial^2 w}{\partial y^2} +
+\dfrac{\partial^2 w}{\partial z^2} \right)</p></li>
+<li><p>\dfrac{\partial p}{\partial z} = \rho g_z \
+\dfrac{\partial u}{\partial x}</p></li>
+<li><p>\dfrac{\partial v}{\partial y}</p></li>
+<li><p>\dfrac{\partial w}{\partial z} = 0
+\end{cases}$<span class="math notranslate nohighlight">\( o in un sistema di coordinate cilindriche \)</span>$\begin{cases}
+\rho \dfrac{\partial u_r}{\partial t}</p>
+<ul class="simple">
+<li><p>\rho \left( \bm{u} \cdot \bm{\nabla}u_r - \dfrac{u_\theta^2}{r} \right)</p></li>
+</ul>
+<ul>
+<li><p>\mu \left(\nabla^2 u_r</p>
+<ul class="simple">
+<li><p>\dfrac{u_r}{r^2}</p></li>
+<li><p>\dfrac{2}{r^2}\dfrac{\partial u_\theta}{\partial \theta} \right)</p></li>
+</ul>
+<ul class="simple">
+<li><p>\dfrac{\partial p}{\partial r} = \rho g_r \
+\rho \dfrac{\partial u_\theta}{\partial t}</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>\rho \left( \bm{u} \cdot \bm{\nabla} u_\theta + \dfrac{u_\theta u_r}{r} \right)</p></li>
+</ul>
+<ul>
+<li><p>\mu \left(\nabla^2 u_\theta</p>
+<ul class="simple">
+<li><p>\dfrac{u_\theta}{r^2}</p></li>
+</ul>
+<ul class="simple">
+<li><p>\dfrac{2}{r^2}\dfrac{\partial u_r}{\partial \theta}  \right)</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>\dfrac{1}{r} \dfrac{\partial p}{\partial \theta} = \rho g_\theta\
+\rho \dfrac{\partial u_z}{\partial t}</p></li>
+<li><p>\rho \bm{u} \cdot \bm{\nabla} u_z</p></li>
+</ul>
+<ul class="simple">
+<li><p>\mu \nabla^2 u_z</p></li>
+</ul>
+<ul class="simple">
+<li><p>\dfrac{\partial p}{\partial z} = \rho g_z \
+\dfrac{1}{r}\dfrac{\partial}{\partial r}\left( r u_r \right)</p></li>
+<li><p>\dfrac{1}{r}\dfrac{\partial u_\theta}{\partial \theta}</p></li>
+<li><p>\dfrac{\partial u_z}{\partial z} = 0
+\end{cases}$<span class="math notranslate nohighlight">\( dove \)</span>$\begin{aligned}
+&amp; \bm{a} \cdot \bm{\nabla} b = a_r \dfrac{\partial b}{\partial r}</p></li>
+<li><p>\dfrac{a_\theta}{r} \dfrac{\partial b}{\partial \theta}</p></li>
+<li><p>a_z \dfrac{\partial b}{\partial z} \
+&amp; \nabla^2 f = \dfrac{1}{r}\dfrac{\partial}{\partial r}
+\left(r \dfrac{\partial f}{\partial r} \right) +
+\dfrac{1}{r^2} \dfrac{\partial^2 f}{\partial \theta^2} +
+\dfrac{\partial^2 f}{\partial z^2}
+\end{aligned}$$</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="esempio-in-coordinate-cartesiane-corrente-di-poseuille">
+<h2><span class="section-number">6.3. </span>Esempio in coordinate cartesiane: corrente di Poseuille<a class="headerlink" href="#esempio-in-coordinate-cartesiane-corrente-di-poseuille" title="Permalink to this heading">#</a></h2>
+<p>Nel caso di corrente bidimensionale di Poiseuille in un canale piano, si
+usano le equazioni scritte nel sistema di coordinate cartesiane. Si
+sceglie l’asse <span class="math notranslate nohighlight">\(x\)</span> orientato lungo il canale e l’asse <span class="math notranslate nohighlight">\(y\)</span> perpendicolare
+alle pareti. Si fanno alcune ipotesi:</p>
+<ul class="simple">
+<li><p>stazionarietà: <span class="math notranslate nohighlight">\(\dfrac{\partial}{\partial t} = 0\)</span>;</p></li>
+<li><p>omogeneità della coordinata <span class="math notranslate nohighlight">\(x\)</span>: il campo di velocità è indipendente
+dalla coordinata <span class="math notranslate nohighlight">\(x\)</span>. La derivata di tutte le componenti della
+velocità rispetto ad <span class="math notranslate nohighlight">\(x\)</span> è nulla:
+<span class="math notranslate nohighlight">\(\dfrac{\partial u_i}{\partial x} = 0\)</span>. É invece ammissibile che la
+pressione vari lungo <span class="math notranslate nohighlight">\(x\)</span>: da un punto di vista fisico, è necessario
+un gradiente di pressione che equilibri gli sforzi a parete dovuti
+alla viscosità e che «spinga» il fluido nel canale; dal punto di
+vista matematico, è già stato accennato al ruolo particolare che
+svolge quel campo indicato con <span class="math notranslate nohighlight">\(p\)</span>, diverso dalla pressione
+termodinamica nel caso di fluido incomprimibile; si osservi poi che
+il campo <span class="math notranslate nohighlight">\(p\)</span> non compare mai nelle equazioni, se non sotto
+l’operatore di gradiente (o all’interno delle condizioni al
+contorno, che «fissano» un valore di <span class="math notranslate nohighlight">\(p\)</span>: è già stato sottolineato
+più volte che spesso il moto di un fluido incomprimibile è
+indipendente dal valore assoluto del campo <span class="math notranslate nohighlight">\(p\)</span>, mentre dipende da
+differenze, o dalle derivate, di <span class="math notranslate nohighlight">\(p\)</span>!).</p></li>
+<li><p>sfruttando la bidimensionalità della corrente, l’omogeneità della
+coordinata <span class="math notranslate nohighlight">\(x\)</span> e il vincolo di incomprimibilità si ottiene:
+$<span class="math notranslate nohighlight">\(\underbrace{\dfrac{\partial u}{\partial x}}_{=0} + \dfrac{\partial v}{\partial y} = 0.\)</span><span class="math notranslate nohighlight">\(
+Questo implica che la componente \)</span>v<span class="math notranslate nohighlight">\( della velocità è costante in
+tutto il canale; sfruttando le condizioni al contorno di adesione a
+parete \)</span>\bm{u} = (u,v) = \bm{0}<span class="math notranslate nohighlight">\( è evidente che la costante deve
+essere nulla: \)</span>v = 0$.</p></li>
+<li><p>supponiamo qui che, se vengono considerate le forze di volume, esse
+sono costanti e dirette lungo <span class="math notranslate nohighlight">\(-\bm{\hat{y}}\)</span>.</p></li>
+</ul>
+<p>Le equazioni diventano quindi $$\begin{cases}\label{eqn:poiseuille}</p>
+<ul class="simple">
+<li><p>\mu \left( \dfrac{d^2 u}{d y^2} \right)</p>
+<ul>
+<li><p>\dfrac{\partial p}{\partial x} = 0 \
+\dfrac{\partial p}{\partial y} = - \rho g
+\end{cases}$<span class="math notranslate nohighlight">\( dove la derivata parziale in \)</span>y<span class="math notranslate nohighlight">\( della componente \)</span>u<span class="math notranslate nohighlight">\( è
+stata sostituita dalla derivata ordinaria, poiché la velocità
+\)</span>\bm{u}(y)<span class="math notranslate nohighlight">\( (e quindi tutte le sue componenti) dipende solo dalla
+coordinata \)</span>y<span class="math notranslate nohighlight">\(. La seconda equazione integrata dà come risultato (\)</span>p<span class="math notranslate nohighlight">\(
+dipende sia da \)</span>x<span class="math notranslate nohighlight">\( sia da \)</span>y<span class="math notranslate nohighlight">\(): \)</span><span class="math notranslate nohighlight">\(p(x,y) = -\rho g y + f(x)\)</span><span class="math notranslate nohighlight">\( Inserita
+nella prima: \)</span><span class="math notranslate nohighlight">\(\mu \left( \dfrac{d^2 u}{d y^2} \right) =
+\dfrac{\partial p}{\partial x} = \dfrac{\partial f}{\partial x}\)</span><span class="math notranslate nohighlight">\(
+Nell'ultima equazione, i termini a sinistra dell'uguale sono funzione
+solo della variabile indipendente \)</span>y<span class="math notranslate nohighlight">\(, quelli a destra dell'uguale solo
+di \)</span>x<span class="math notranslate nohighlight">\(: affinché l'uguaglianza possa essere sempre valida, i due termini
+devono essere costanti; si sceglie di definire questa costante \)</span>-G_P<span class="math notranslate nohighlight">\(
+(con questa \)</span>G_P<span class="math notranslate nohighlight">\( assumerà valore positivo). Si possono quindi risolvere
+le due equazioni \)</span><span class="math notranslate nohighlight">\(\label{eqn:poiseuille2}
+\begin{cases}
+\mu \left( \dfrac{d^2 u}{d y^2} \right) = - G_P \\
+\dfrac{\partial p}{\partial x} = -G_P
+\end{cases}\)</span><span class="math notranslate nohighlight">\( accompagnate dalle opportune condizioni al contorno.
+Osservando il sistema
+([\[eqn:poiseuille\]](#eqn:poiseuille){reference-type=&quot;ref&quot;
+reference=&quot;eqn:poiseuille&quot;}), nelle equazioni compare la derivata
+seconda in \)</span>y<span class="math notranslate nohighlight">\( della componente \)</span>u<span class="math notranslate nohighlight">\( della velocità, la derivata prima
+sia in \)</span>x<span class="math notranslate nohighlight">\( sia in \)</span>y<span class="math notranslate nohighlight">\( di \)</span>p<span class="math notranslate nohighlight">\(: è ragionevole pensare che servano due
+condizioni al contorno in \)</span>y<span class="math notranslate nohighlight">\( per \)</span>u<span class="math notranslate nohighlight">\(, una condizione al contorno per
+\)</span>p<span class="math notranslate nohighlight">\( in \)</span>x<span class="math notranslate nohighlight">\( e una in \)</span>y<span class="math notranslate nohighlight">\(. In particolare, sulle pareti del canale (alto
+\)</span>H<span class="math notranslate nohighlight">\() la velocità del fluido deve essere nulla, per le condizioni al
+contorno di adesione. Per quando riguarda la pressione, si può fissare
+il valore in un punto del dominio, ad esempio l'origine degli assi
+\)</span>p(0,0) = p_0<span class="math notranslate nohighlight">\(. \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+u(x,0) = 0 \\
+u(x,H) = 0 \\
+p(0,0) = p_0
+\end{cases}\)</span><span class="math notranslate nohighlight">\( Le equazioni
+([\[eqn:poiseuille2\]](#eqn:poiseuille2){reference-type=&quot;ref&quot;
+reference=&quot;eqn:poiseuille2&quot;}) con le condizioni al contorno appena
+elencate danno come risultato: \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+u(y) = -\dfrac{G_P}{2 \mu} y (y - H) \\
+p(x,y) = p_0 - \rho g y - G_P x
+\end{cases}\)</span>$</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="calcolo-del-vettore-sforzo">
+<h2><span class="section-number">6.4. </span>Calcolo del vettore sforzo<a class="headerlink" href="#calcolo-del-vettore-sforzo" title="Permalink to this heading">#</a></h2>
+<p>Se vengono chieste azioni (risultanti di forze o momenti) esercitate dal
+fluido sul solido, è necessario calcolare lo sforzo a parete
+<span class="math notranslate nohighlight">\(\bm{t}_{n,s}\)</span> esercitato sul solido, uguale e contrario allo sforzo
+esercitato dal solido sul fluido <span class="math notranslate nohighlight">\(\bm{t}_{n}\)</span>. Il vettore sforzo
+<span class="math notranslate nohighlight">\(\bm{t}_n\)</span> su una superficie con giacitura definita dal versore normale
+<span class="math notranslate nohighlight">\(\bm{\hat{n}}\)</span> si può esprimere come il prodotto del versore
+<span class="math notranslate nohighlight">\(\bm{\hat{n}}\)</span> e il tensore degli sforzi <span class="math notranslate nohighlight">\(\mathbb{T}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\label{eqn:stress_tensor}
+ \bm{t}_n = \bm{\hat{n}} \cdot \mathbb{T} =
+ \bm{\hat{n}} \cdot \big[-p\mathbb{I} + 2\mu\mathbb{D} \big] = 
+  - p\bm{\hat{n}} + \bm{s}_n \ ,\]</div>
+<p>avendo utilizzato la relazione costitutiva
+<span class="math notranslate nohighlight">\(\mathbb{S} = 2 \mu \mathbb{D}\)</span> per un fluido incomprimibile newtoniano,
+che lega il tensore degli sforzi viscosi <span class="math notranslate nohighlight">\(\mathbb{S}\)</span> al tensore
+velocità di deformazione <span class="math notranslate nohighlight">\(\mathbb{D}\)</span> tramite il coefficiente di
+viscosità dinamica <span class="math notranslate nohighlight">\(\mu\)</span>. Il vettore
+<span class="math notranslate nohighlight">\(\bm{s_n} = \bm{\hat{n}} \cdot \mathbb{S}\)</span> è il vettore degli sforzi
+viscosi. É possibile trasformare la relazione
+(<span class="xref myst">[eqn:stress_tensor]</span>{reference-type=»ref»
+reference=»eqn:stress_tensor»}) in una relazione che contenga solamente
+operazioni tra vettori,</p>
+<div class="math notranslate nohighlight">
+\[\label{eqn:stress_vector}
+ \bm{t}_n = -p \bm{\hat{n}} +
+ \mu \big[2 (\bm{\hat{n}} \cdot \bm{\nabla}) \bm{u} +
+  \bm{\hat{n}} \times (\bm{\nabla} \times \bm{u}) \big]  = 
+  - p\bm{\hat{n}} + \bm{s}_n \ .\]</div>
+<p>Questa espressione può risultare vantaggiosa quando è richiesto il
+calcolo del vettore degli sforzi in sistemi di coordinate non
+cartesiani. Mentre esistono molte tabelle che raccolgono l’espressione
+delle operazioni vettoriali in sistemi di coordinate non cartesiane,
+sono più rare tabelle che raccolgano la forma in componenti di
+operazioni tensoriali.</p>
+<p>In sistemi di coordinate cartesiane, è facile calcolare il vettore
+sforzo come prodotto tensoriale tra il versore normale <span class="math notranslate nohighlight">\(\bm{\hat{n}}\)</span> e
+il tensore degli sforzi, le cui componenti sono facili da calcolare
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+ \mathbb{T} &amp; = -p\mathbb{I} + 2\mu\mathbb{D} = -p\mathbb{I} + 2\mu \left[ \dfrac{1}{2} \left( \bm{\nabla}\bm{u} +\bm{\nabla}^T \bm{u} \right) \right] \\
+ T_{ij} &amp; = -p \delta_{ij} + 2 \mu D_{ij} = -p \delta_{ij} + 2 \mu \left[ \dfrac{1}{2} \left( \dfrac{\partial u_i}{\partial x_j} + \dfrac{\partial u_j}{\partial x_i} \right) \right] \ .
+ \end{aligned}\)</span><span class="math notranslate nohighlight">\( Ad esempio, per una corrente in uno spazio
+bidimensionale descritto dalle coordinate cartesiane \)</span>(x,y)<span class="math notranslate nohighlight">\( le
+componenti del tensore degli sforzi possono essere raccolte in forma
+matriciale, \)</span><span class="math notranslate nohighlight">\(\mathbb{T} =
+ -p \begin{bmatrix}
+   1 &amp; 0 \\ 0 &amp; 1
+ \end{bmatrix} +
+ 2 \mu \begin{bmatrix}
+  \dfrac{\partial u}{\partial x} &amp; 
+  \dfrac{1}{2}\bigg(\dfrac{\partial u}{\partial y} + \dfrac{\partial v}{\partial x}\bigg) \\
+  \dfrac{1}{2}\bigg(\dfrac{\partial u}{\partial y} + \dfrac{\partial u}{\partial y}\bigg) &amp;
+  \dfrac{\partial v}{\partial y} &amp; 
+ \end{bmatrix}\)</span><span class="math notranslate nohighlight">\( Sfruttando la simmetria del tensore degli sforzi,
+\)</span>T_{ij} = T_{ji}<span class="math notranslate nohighlight">\(, il vettore sforzo \)</span>t_i = n_j T_{ji} = T_{ij} n_j<span class="math notranslate nohighlight">\( può
+essere calcolato come prodotto matrice vettore. Come esempio, viene
+calcolato lo sforzo a parete in un canale piano, nel quale scorre un
+fluido con un campo di velocità che ha solamente la componente parallela
+alle pareti che dipende dalla coordinata perpendicolare ad esse,
+\)</span>\bm{u}(\bm{r}) = u(y) \bm{\hat{x}}<span class="math notranslate nohighlight">\(. Facendo riferimento alla corrente
+di Poiseuille della sezione precedente, il vettore sforzo agente sul
+fluido in corrispondenza della parete interiore a \)</span>y=0<span class="math notranslate nohighlight">\(, si ottiene
+moltiplicando il versore normale uscente dal fluido
+\)</span>\bm{\hat{n}} = - \bm{\hat{y}}<span class="math notranslate nohighlight">\( per il tensore degli sforzi,
+\)</span>$\begin{aligned}
+\begin{bmatrix} t_x \ t_y \end{bmatrix} &amp; =
+\begin{bmatrix}
+-p &amp; \mu \dfrac{\partial u}{\partial y} \ \mu \dfrac{\partial u}{\partial y} &amp; -p
+\end{bmatrix}
+\begin{bmatrix} n_x \ n_y \end{bmatrix} =</p>
+<p>\begin{bmatrix}
+-p &amp; \mu \dfrac{\partial u}{\partial y} \ \mu \dfrac{\partial u}{\partial y} &amp; -p
+\end{bmatrix}
+\begin{bmatrix} 0 \ -1 \end{bmatrix} =
+\begin{bmatrix} - \mu \dfrac{\partial u}{\partial y} \ p \end{bmatrix} \
+&amp; \qquad \rightarrow \qquad \bm{t_n} =  - \mu \dfrac{\partial u}{\partial y} \bm{\hat{x}} + p \bm{\hat{y}} = - \dfrac{G_P H}{2} \bm{\hat{x}} + p \bm{\hat{y}} \ .
+\end{aligned}$<span class="math notranslate nohighlight">\( Lo sforzo sulla parete inferiore è l'opposto
+\)</span>\bm{t}<em>{n,s} = \frac{G_P H}{2} \bm{\hat{x}} - p \bm{\hat{y}}<span class="math notranslate nohighlight">\(. Sulla
+parete superiore, a \)</span>y=H<span class="math notranslate nohighlight">\(, la normale uscente dal fluido è
+\)</span>\bm{\hat{n}} = \bm{\hat{y}}<span class="math notranslate nohighlight">\(, la derivata
+\)</span>\partial u/\partial y (x,H) = -G_P/(2\mu)<span class="math notranslate nohighlight">\(. Svolgendo i conti, come
+fatto per la parete inferiore, si ottiene che lo sforzo agente sulla
+parete superiore è
+\)</span>\bm{t}</em>{n,s} = \frac{G_P H}{2} \bm{\hat{x}} + p \bm{\hat{y}}$.</p>
+<div class="section" id="equivalenza-tra-l-espressione-tensoriale-e-vettoriale-del-vettore-sforzo">
+<h3><span class="section-number">6.4.1. </span>Equivalenza tra l’espressione tensoriale e vettoriale del vettore sforzo.<a class="headerlink" href="#equivalenza-tra-l-espressione-tensoriale-e-vettoriale-del-vettore-sforzo" title="Permalink to this heading">#</a></h3>
+<p>Per i più curiosi e i più «matematici», si dimostra infine l’equivalenza
+tra (<span class="xref myst">[eqn:stress_tensor]</span>{reference-type=»ref»
+reference=»eqn:stress_tensor»}) e
+(<span class="xref myst">[eqn:stress_vector]</span>{reference-type=»ref»
+reference=»eqn:stress_vector»}). Questa dimostrazione viene fatta
+ricorrendo alla notazione indiciale, sfruttando le proprietà di
+permutazione degli indici del simbolo <span class="math notranslate nohighlight">\(\epsilon_{ijk}\)</span> e la proprietà
+dei simboli <span class="math notranslate nohighlight">\(\epsilon_{ijk}\)</span> e <span class="math notranslate nohighlight">\(\delta_{a,b}\)</span>,
+$<span class="math notranslate nohighlight">\(\epsilon_{kij}\epsilon_{klm} = \delta_{il}\delta_{jm} - \delta_{im}\delta_{jl} \ .\)</span><span class="math notranslate nohighlight">\(
+La componente \)</span>i<span class="math notranslate nohighlight">\(-esima di
+\)</span>\bm{\hat{n}} \times \bm{\nabla} \times \bm{u}<span class="math notranslate nohighlight">\( è \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ \left\{ \bm{\hat{n}} \times \bm{\nabla} \times \bm{u} \right\}_i &amp; =
+ \epsilon_{ijk} n_j \left\{ \bm{\nabla} \times \bm{u} \right\}_k = \\
+  &amp; = \epsilon_{ijk} n_j \epsilon_{klm} \partial_l u_m = \\
+  &amp; = \epsilon_{kij} \epsilon_{klm} n_j \partial_l u_m = \\
+  &amp; = (\delta_{il}\delta_{jm} - \delta_{im}\delta_{jl} ) n_j \partial_l u_m = \\
+  &amp; = n_j \partial_i u_j - n_j \partial_j u_i = \\
+  &amp; = n_j \partial_i u_j + n_j \partial_j u_i - 2 n_j \partial_j u_i = \\
+  &amp; = 2 n_j \dfrac{1}{2}\left(\partial_i u_j + n_j \partial_j u_i \right) - 2 n_j \partial_j u_i = \\
+  &amp; = \left\{2 \bm{\hat{n}} \cdot \mathbb{D} - 2 ( \bm{\hat{n}} \cdot \bm{\nabla} ) \bm{u} \right\}_i
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Il contributo viscoso al vettore sforzo è uguale al
+primo termine a destra dell'uguale moltiplicato per la viscosità
+dinamica \)</span>\mu<span class="math notranslate nohighlight">\(, \)</span>\bm{s}_n =
+2 \mu \bm{\hat{n}} \cdot \mathbb{D}<span class="math notranslate nohighlight">\(; il vettore sforzo \)</span>\bm{t}_n<span class="math notranslate nohighlight">\( è la
+somma del vettore degli sforzi viscosi \)</span>\bm{s}_n<span class="math notranslate nohighlight">\( e del vettore degli
+sforzi (normali) dovuti alla &quot;pressione&quot;, \)</span>\bm{t}_n = \bm{s}_n</p>
+<ul class="simple">
+<li><p>p \bm{\hat{n}}<span class="math notranslate nohighlight">\(. Si ottiene così l'identità desiderata
+\)</span>$\label{eqn:stress_tensor-3}
+\bm{t}_n = \bm{\hat{n}} \cdot \mathbb{T} =
+\bm{\hat{n}} \cdot \big[-p\mathbb{I} + 2\mu\mathbb{D} \big] =
+-p \bm{\hat{n}} +
+\mu \big[2 (\bm{\hat{n}} \cdot \bm{\nabla}) \bm{u} +
+\bm{\hat{n}} \times (\bm{\nabla} \times \bm{u}) \big] =</p></li>
+<li><p>p\bm{\hat{n}} + \bm{s}_n.$$</p></li>
+</ul>
+<p>Si ricorda che le identità vettoriali e tensoriali sono indipendenti dal
+sistema di riferimento in cui vengono scritte le componenti: per la loro
+dimostrazione si può utilizzare un sistema di coordinate qualsiasi
+(spesso le coordinate cartesiani sono un sistema di coordinate
+conveniente, poiché le espressioni delle operazioni e degli operatori
+differenziali sono semplici da ricordare e utilizzare).</p>
+</div>
+<div class="section" id="osservazione-vettore-sforzo-in-coordinate-cilindriche">
+<h3><span class="section-number">6.4.2. </span>Osservazione: vettore sforzo in coordinate cilindriche.<a class="headerlink" href="#osservazione-vettore-sforzo-in-coordinate-cilindriche" title="Permalink to this heading">#</a></h3>
+<p>É possibile calcolare le componenti del prodotto
+<span class="math notranslate nohighlight">\(\bm{\hat{n}} \cdot \mathbb{T}\)</span> svolgendo un prodotto matrice-vettore
+anche per sistemi di coordinate non cartesiani. In questo caso, però, la
+forma delle operazioni vettoriali e tensoriali e le componenti del
+tensore sono «non banali». Per esempio le coordinate cartesiane del
+gradiente <span class="math notranslate nohighlight">\(\bm{\nabla} \bm{v}\)</span> di un campo vettoriale <span class="math notranslate nohighlight">\(\bm{v}\)</span> sono
+uguali a <span class="math notranslate nohighlight">\(\partial v_i / \partial x_j\)</span>, mentre le componenti in
+coordinate cilindriche sono raccolte nella seguente matrice <span class="math notranslate nohighlight">\(3\times 3\)</span>,
+$<span class="math notranslate nohighlight">\(\begin{bmatrix}
+\frac{\partial v_r}{\partial r} &amp; 
+ \frac{1}{r}\left( \frac{\partial v_r}{\partial \theta}-v_\theta \right) &amp;
+ \frac{\partial v_r}{\partial z}   \\
+\frac{\partial v_\theta}{\partial r} &amp; 
+ \frac{1}{r}\left( \frac{\partial v_\theta}{\partial \theta}+v_r \right) &amp; 
+ \frac{\partial v_\theta}{\partial z} \\
+\frac{\partial v_z}{\partial r} &amp;
+ \frac{1}{r}\frac{\partial v_z}{\partial \theta} &amp;
+ \frac{\partial v_z}{\partial z}
+\end{bmatrix} \ ,\)</span><span class="math notranslate nohighlight">\( se riferite alla base fisica
+\)</span>(\bm{\hat{r}},\bm{\hat{\theta}},\bm{\hat{z}})<span class="math notranslate nohighlight">\(. Bisogna quindi prestare
+attenzione nella scrittura delle componenti di tensori e operatori
+quando si usano sistemi di coordinate non cartesiane. Per il calcolo del
+vettore sforzo si consiglia quindi di usare, la formula
+(\)</span>\ref{eqn:stress_vector}$) che contiene solo operazioni vettoriali, per
+le quali è più facile trovare tavole che ne raccolgano le espressioni in
+componenti in diversi sistemi di coordinate.</p>
+<p>Per concludere questa sezione, viene ricavata l’espressione del vettore
+degli sforzi viscosi in coordinate cartesiane come prodotto
+<span class="math notranslate nohighlight">\(2 \mu \bm{\hat{n}} \cdot \mathbb{D}\)</span>. Poichè il sistema di coordinate
+cilindriche (fisiche, riferite alla base
+<span class="math notranslate nohighlight">\((\bm{\hat{r}},\bm{\hat{\theta}},\bm{\hat{z}})\)</span>) è un sistema
+ortogonale, le componenti del vettore degli sforzi viscosi possono
+essere calcolate con il prodotto matrice vettore,
+$<span class="math notranslate nohighlight">\(\begin{bmatrix} t_{r} \\ t_{\theta} \\ t_z \end{bmatrix} = \mu
+ \begin{bmatrix}
+ 2 \frac{\partial v_r}{\partial r} &amp; 
+ \frac{\partial v_\theta}{\partial r} + \frac{1}{r}\left( \frac{\partial v_r}{\partial \theta}-v_\theta \right) &amp;
+ \frac{\partial v_z}{\partial r} + \frac{\partial v_r}{\partial z}   \\
+ sym &amp; 
+ \frac{2}{r}\left( \frac{\partial v_\theta}{\partial \theta}+v_r \right) &amp; 
+ \frac{\partial v_\theta}{\partial z} +  \frac{1}{r}\frac{\partial v_z}{\partial \theta} \\
+ sym &amp;
+ sym &amp;
+ 2 \frac{\partial v_z}{\partial z}
+\end{bmatrix}
+ \begin{bmatrix} n_{r} \\ n_{\theta} \\ n_z \end{bmatrix} \ .\)</span>$ Come
+esercizio, è possibile utilizzare l’espressione vettoriale
+(<span class="xref myst">[eqn:stress_vector]</span>{reference-type=»ref»
+reference=»eqn:stress_vector»}) per verificare la validità
+dell’espressione appena trovata del vettore sforzo in coordinate
+cilindriche.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Il regime di moto periodico (e ordinato) che si manifesta nella
+corrente attorno a un cilindro quando il numero di Reynolds supera
+un valore critico (<span class="math notranslate nohighlight">\(Re_c \approx 46\)</span>) è il risultato di una
+«instabilità intrinseca» (<em>globale</em>) parametrica del sistema. La
+soluzione stazionaria stabile esistente per <span class="math notranslate nohighlight">\(Re &lt; Re_c\)</span> diventa
+instabile quando il parametro <span class="math notranslate nohighlight">\(Re\)</span> eccede il valore critico e nasce
+un ciclo limite (stabile) nel piano delle fasi del sistema. Il moto
+periodico e ordinato del sistema osservato nello sviluppo della
+<em>scia di Von Karman</em> a valle del cilindro, corrisponde alla dinamica
+del sistema sul ciclo limite. Mentre la corrente attorno a un corpo
+tozzo risulta abbastanza insensibile ai disturbi e perturbazioni
+esterni, altre correnti possono amplificare perturbazioni di
+intensità ridotta di diversi ordini di grandezza. Alcuni esempi sono
+uno strato limite, uno strato di mescolamento o un getto. In queste
+correnti dominate dalla convezione, l’enorme amplificazione può
+avvenire tramite meccanismi <em>non-modali</em>, che caratterizzano di
+sistemi dinamici lineari stabili non simmetrici.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../05_bernoulli/05teoria.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">precedente</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Bernoulli theorems and vorticity dynamics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../07_similitudine/07teoria.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">successivo</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Similitude</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduzione-e-linee-guida-per-la-soluzione-dei-problemi">6.1. Introduzione e linee guida per la soluzione dei problemi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equazioni-di-navier-stokes-in-coordinate-cartesiane-e-cilindriche">6.2. Equazioni di Navier-Stokes in coordinate cartesiane e cilindriche</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-in-coordinate-cartesiane-corrente-di-poseuille">6.3. Esempio in coordinate cartesiane: corrente di Poseuille</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcolo-del-vettore-sforzo">6.4. Calcolo del vettore sforzo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equivalenza-tra-l-espressione-tensoriale-e-vettoriale-del-vettore-sforzo">6.4.1. Equivalenza tra l’espressione tensoriale e vettoriale del vettore sforzo.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osservazione-vettore-sforzo-in-coordinate-cilindriche">6.4.2. Osservazione: vettore sforzo in coordinate cilindriche.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

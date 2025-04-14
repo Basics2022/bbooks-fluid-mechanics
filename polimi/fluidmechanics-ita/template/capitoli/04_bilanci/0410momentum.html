@@ -1,0 +1,573 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Richiami di geometria delle curve nello spazio. &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0410momentum';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">1. Statics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">2. Surface tension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_cinematica/12teoria.html">3. Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04teoria.html">4. Balance equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_bernoulli/05teoria.html">5. Bernoulli theorems and vorticity dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">6. Exact solutions of Navier-Stokes equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0410momentum.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Richiami di geometria delle curve nello spazio.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Richiami di geometria delle curve nello spazio.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ritorno-al-bilancio-della-quantita-di-moto">Ritorno al bilancio della quantità di moto.</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>L’equazione della quantità di moto è
+$<span class="math notranslate nohighlight">\(\rho \left\{ \frac{\partial \bm{u}}{\partial t} +
+   \left( \bm{u} \cdot \bm{\nabla} \right) \bm{u} \right\} = 
+   \bm{\nabla} \cdot \mathbb{T} + \bm{f}\)</span><span class="math notranslate nohighlight">\( dove con \)</span>\mathbb{T}<span class="math notranslate nohighlight">\( è stato
+indicato il tensore degli sforzi, che per un fluido newtoniano è
+\)</span>\mathbb{T} = -p \mathbb{I} + \mathbb{S}<span class="math notranslate nohighlight">\( con
+\)</span>\mathbb{S} = 2 \mu \mathbb{D} + \lambda \left(
+\bm{\nabla} \cdot \bm{u} \right) \mathbb{I}<span class="math notranslate nohighlight">\( e
+\)</span>\mathbb{D} = \frac{1}{2}
+\left[ \bm{\nabla}\bm{u} + \bm{\nabla}^T \bm{u} \right]<span class="math notranslate nohighlight">\( il tensore
+velocità di deformazione, parte simmetrica del gradiente della velocità.
+Introducendo la derivata materiale, si ritrova una forma &quot;familiare&quot; del
+secondo principio della dinamica
+\)</span><span class="math notranslate nohighlight">\(\rho\frac{D\bm{u}}{D t} = \bm{\nabla} \cdot \mathbb{T} + \bm{f}
+  \qquad \Rightarrow \qquad
+ \rho\bm{a} = \bm{\nabla} \cdot \mathbb{T} + \bm{f}\)</span>$</p>
+<div class="section" id="richiami-di-geometria-delle-curve-nello-spazio">
+<h1>Richiami di geometria delle curve nello spazio.<a class="headerlink" href="#richiami-di-geometria-delle-curve-nello-spazio" title="Permalink to this heading">#</a></h1>
+<p>Una curva è un luogo di punti che può essere parametrizzato tramite un
+parametro solo. La parametrizzazione <span class="math notranslate nohighlight">\(\bm{r}(t)\)</span> della curva <span class="math notranslate nohighlight">\(\bm{r}\)</span> è
+definita regolare se <span class="math notranslate nohighlight">\(d\bm{r}/dt \ne 0\)</span>. Si definisce poi una
+parametrizzazione regolare particolare, l’ascissa curvilinea <span class="math notranslate nohighlight">\(s\)</span> tale
+per cui <span class="math notranslate nohighlight">\(\left| d\bm{r}(s)/ds
+ \right| = 1, \forall s \in (a,b)\)</span>.</p>
+<p>Nel seguito si introduce brevemente la <strong>terna di Frenet</strong>
+<span class="math notranslate nohighlight">\(\left\{\bm{\hat{t}}, \bm{\hat{n}}, \bm{\hat{b}} \right\}\)</span>, formata dai
+versori tangente, normale e binormale, in funzione dell’ascissa
+curvilinea. Si dimostra che $<span class="math notranslate nohighlight">\(\bm{\hat{t}}(s) = \dfrac{d\bm{r}}{ds}\)</span><span class="math notranslate nohighlight">\( La
+derivata seconda della posizione \)</span>\bm{r}<span class="math notranslate nohighlight">\(, cioè la derivata prima del
+versore tangente \)</span>\bm{\hat{t}}<span class="math notranslate nohighlight">\( è legata al versore normale
+\)</span>\bm{\hat{t}}<span class="math notranslate nohighlight">\(, tramite la curvatura \)</span>k = \left| \frac{d\bm{\hat{t}}}{
+ds} \right|<span class="math notranslate nohighlight">\(. \)</span><span class="math notranslate nohighlight">\(\bm{\hat{n}} = \dfrac{\frac{d\bm{\hat{t}}}{ds}}
+    {\left|\frac{d\bm{\hat{t}}}{ds} \right|} 
+  \qquad \Rightarrow \qquad
+ \dfrac{d\bm{\hat{t}}}{ds} = k \bm{\hat{n}}\)</span><span class="math notranslate nohighlight">\( Il versore binormale è
+definito a completare la terna ortonormale destrorsa
+\)</span><span class="math notranslate nohighlight">\(\bm{\hat{b}} = \bm{\hat{t}} \times \bm{\hat{n}}\)</span><span class="math notranslate nohighlight">\( Per completezza e
+senza troppo sforzo si calcolano anche le derivate di tali versori,
+ricordando che hanno modulo unitario e costante, e formano una terna
+ortogonale in ogni punto, introducendo la definizione della torsione
+\)</span>\tau = \frac{d \bm{\hat{n}}}{ds}\cdot \bm{b}<span class="math notranslate nohighlight">\(. \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+&amp; \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad 
+  \qquad \qquad \qquad \qquad \quad
+ \frac{d \bm{\hat{t}}}{ds} = k \bm{\hat{n}} \\
+&amp; \begin{cases}
+ \bm{\hat{n}}'\cdot \bm{\hat{n}} = 0 \\
+ \bm{\hat{n}}'\cdot \bm{\hat{t}}+\bm{\hat{t}}'\cdot \bm{\hat{n}} = 0 \\
+ \bm{\hat{n}}'\cdot \bm{\hat{b}} = \tau \\
+ \end{cases} \Rightarrow \quad
+ \begin{cases}
+ \bm{\hat{n}}'\cdot \bm{\hat{n}} = 0   \\
+ \bm{\hat{n}}'\cdot \bm{\hat{t}} = -k  \\
+ \bm{\hat{n}}'\cdot \bm{\hat{b}} = \tau \\
+ \end{cases} \qquad \quad \quad \Rightarrow \quad 
+  \frac{d \bm{\hat{n}}}{ds} = - k \bm{\hat{t}} + \tau \bm{\hat{b}} \\
+&amp; \begin{cases}
+ \bm{\hat{b}}'\cdot \bm{\hat{b}} = 0 \\
+ \bm{\hat{b}}'\cdot \bm{\hat{t}} + \bm{\hat{t}}'\cdot \bm{\hat{b}} = 0 \\
+ \bm{\hat{b}}'\cdot \bm{\hat{n}} + \bm{\hat{n}}'\cdot \bm{\hat{b}} = 0 \\
+ \end{cases} \Rightarrow \quad
+ \begin{cases}
+ \bm{\hat{b}}'\cdot \bm{\hat{b}} = 0 \\
+ \bm{\hat{b}}'\cdot \bm{\hat{t}} = -\bm{\hat{t}}'\cdot \bm{\hat{b}} = 0 \\
+ \bm{\hat{b}}'\cdot \bm{\hat{n}} = -\bm{\hat{n}}'\cdot \bm{\hat{b}} = -k\\
+ \end{cases} \Rightarrow \quad
+  \frac{d \bm{\hat{b}}}{ds} = - \tau \bm{\hat{n}} \\
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Se la parametrizzazione regolare della curva non è
+l'ascissa curvilinea, si può ricavare
+\)</span><span class="math notranslate nohighlight">\(\frac{d\bm{r}}{dt} = \frac{ds}{dt}\frac{d\bm{r}}{ds} = 
+  v \bm{\hat{t}}\)</span><span class="math notranslate nohighlight">\( dove si è introdotto il modulo \)</span>v<span class="math notranslate nohighlight">\( di quella che sarà
+la velocità \)</span>\bm{v}<span class="math notranslate nohighlight">\( quando \)</span>\bm{r}<span class="math notranslate nohighlight">\( e \)</span>t<span class="math notranslate nohighlight">\( saranno spazio e tempo. In
+maniera analoga
+\)</span><span class="math notranslate nohighlight">\(\frac{d\bm{\hat{t}}}{dt} = \frac{ds}{dt}\frac{d\bm{\hat{t}}}{ds} = 
+  v k \bm{\hat{n}}\)</span><span class="math notranslate nohighlight">\( Se \)</span>\bm{r}<span class="math notranslate nohighlight">\( e \)</span>t<span class="math notranslate nohighlight">\( sono spazio e tempo, la velocità
+e l'accelerazione di un punto che ha come legge oraria \)</span>\bm{r}(t)<span class="math notranslate nohighlight">\( sono
+\)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+  \bm{v} &amp; = \frac{d\bm{r}}{dt} = \frac{ds}{dt}\frac{d\bm{r}}{ds} = 
+    v \bm{\hat{t}} \\
+  \bm{a} &amp; = \frac{d\bm{v}}{dt} =
+   \frac{dv}{dt} \bm{\hat{t}} + v \frac{d\bm{\hat{t}}}{dt} =
+   \frac{dv}{dt} \bm{\hat{t}} + v^2 k \bm{\hat{n}}
+ \end{aligned}\)</span>$</p>
+</div>
+<div class="section" id="ritorno-al-bilancio-della-quantita-di-moto">
+<h1>Ritorno al bilancio della quantità di moto.<a class="headerlink" href="#ritorno-al-bilancio-della-quantita-di-moto" title="Permalink to this heading">#</a></h1>
+<p>Inserendo la forma dell’accelerazione nell’equazione della quantità di
+moto e proiettando lungo i versori della terna di Frenet $<span class="math notranslate nohighlight">\(\begin{cases}
+  \rho \frac{dv}{dt} =  \bm{\hat{t}} \cdot \left(
+     \bm{\nabla} \cdot \mathbb{T} + \bm{f} \right) \\
+  \rho v^2 k = \bm{\hat{n}} \cdot \left(
+     \bm{\nabla} \cdot \mathbb{T} + \bm{f} \right) \\
+  0 = \bm{\hat{b}} \cdot \left(
+     \bm{\nabla} \cdot \mathbb{T} + \bm{f} \right) \\
+ \end{cases}\)</span>$ L’analisi per componenti locali dell’equazione della
+quantità di moto permette di riconoscere che:</p>
+<p><img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/04_bilanci/fig/frenet.eps" />{width=»100%»}</p>
+<ul class="simple">
+<li><p>la proiezione del termine forzante lungo la tangente alla
+traiettoria è la responsabile dell’accelerazione tangenziale della
+particella materiale;</p></li>
+<li><p>la proiezione del termine forzante lungo la normale alla traiettoria
+è la responsabile dell’accelerazione centripeta della particella
+maetriale e, di conseguenza, della curvatura della traiettoria;</p></li>
+<li><p>la proiezione della forzante lungo la direzione binormale è nulla.</p></li>
+</ul>
+<p>In assenza di forze di volume (<span class="math notranslate nohighlight">\(\bm{f}=0\)</span>) e sforzi viscosi
+(<span class="math notranslate nohighlight">\(\mathbb{T}=\mathbb{S}-p\mathbb{I}=-p\mathbb{I}\)</span>): $<span class="math notranslate nohighlight">\(\begin{cases}
+  \rho \frac{dv}{dt} = - \bm{\hat{t}} \cdot \bm{\nabla} p \\
+  \rho v^2 k         = - \bm{\hat{n}} \cdot \bm{\nabla} p \\
+  0                  = - \bm{\hat{b}} \cdot \bm{\nabla} p \\
+ \end{cases}\)</span>$ e quindi:</p>
+<ul class="simple">
+<li><p>l’accelerazione tangenziale è proporzionale alla proiezione del
+gradiente di pressione in direzione tangente alla tratiettoria;</p></li>
+<li><p>l’accelerazione centripeta, <span class="math notranslate nohighlight">\(v^2/r = v^2 k\)</span>, è proporzionale alla
+proiezione del gradiente di pressione in direzione normale alla
+tratiettoria. Il termine <span class="math notranslate nohighlight">\(\rho v^2 k\)</span> è sempre positivo poichè
+prodotto di quantità positive: la curvatura di una linea è non
+negativa per come è definita, la densità è positiva, il modulo di un
+vettore è anch’esso non negativo. Il prodotto scalare tra la normale
+e il gradiente della pressione (derivata direzionale della pressione
+in direzione <span class="math notranslate nohighlight">\(\bm{\hat{n}}\)</span>) deve quindi essere negativo. La
+pressione quindi diminuisce, andando verso il centro del cerchio
+osculatore. Sempre dalla seconda equazione è immediato notare che la
+curvatura della traiettoria è proporzionale alla componente del
+gradiente di pressione lungo il versore normale;</p></li>
+<li><p>la proiezione del gradiente di pressione in direzione binormale a
+una traiettoria è nullo.</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/04_bilanci"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Richiami di geometria delle curve nello spazio.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ritorno-al-bilancio-della-quantita-di-moto">Ritorno al bilancio della quantità di moto.</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
