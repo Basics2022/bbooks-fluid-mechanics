@@ -1,4 +1,4 @@
-# basics-book template
+# Introduction to Fluid Mechanics
 
 If you want ot start a new basics-book, it could be a good idea to start from this template.
 

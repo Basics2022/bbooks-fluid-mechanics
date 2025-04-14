@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
-    <link rel="next" title="2. Surface tension" href="../02_tensSup/03teoria.html" />
-    <link rel="prev" title="basics-book template" href="../../../../../intro.html" />
+    <link rel="next" title="1.8. Exercises" href="exercises.html" />
+    <link rel="prev" title="Introduction to Fluid Mechanics" href="../../../../../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -175,8 +175,20 @@ const thebe_selector_output = ".output, .cell_output"
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Statics</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Incompressible Fluid Mechanics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. Statics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">1.8. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="0201in.html">1.8.1. Exercise 1.1 <!--Archimede's law and Buoyancy--></a></li>
+<li class="toctree-l3"><a class="reference internal" href="0202in.html">1.8.2. Exercise 1.2 <!--Stevino' law: pressure in a vessel--></a></li>
+<li class="toctree-l3"><a class="reference internal" href="0203in.html">1.8.3. Exercise 1.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0204in.html">1.8.4. Exercise 1.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0205in.html">1.8.5. Exercise 1.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0206in.html">1.8.6. Exercise 1.6</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">2. Surface tension</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03_cinematica/12teoria.html">3. Kinematics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">4. Balance equations</a></li>
@@ -361,56 +373,72 @@ taglio, quando è in quiete o in moto con velocità uniforme in un sistema
 di riferimento inerziale (invarianza galileiana). I fluidi «ordinari»
 sono isotropi, cioè sono indipendenti dall’orientazione nello spazio. Un
 fluido isotropo in quiete è quindi caratterizzato da uno stato di sforzo
-idrostatico, $<span class="math notranslate nohighlight">\(\mathbb{T}^{(s)} = - p \mathbb{I} \ ,\)</span><span class="math notranslate nohighlight">\( avendo indicato
-con \)</span>\mathbb{T}^{(s)}<span class="math notranslate nohighlight">\( il tensore degli sforzi in quiete, \)</span>p<span class="math notranslate nohighlight">\( la
-pressione all'interno del fluido e \)</span>\mathbb{I}<span class="math notranslate nohighlight">\( il tensore identità. Il
-vettore sforzo \)</span>\bm{t_n}<span class="math notranslate nohighlight">\( *agente su* una superficie di fluido con
-normale \)</span>\bm{\hat{n}}<span class="math notranslate nohighlight">\( si ottiene tramite il **teorema di Cauchy** per i
-mezzi continui \)</span><span class="math notranslate nohighlight">\(\bm{t_n} = \bm{\hat{n}} \cdot \mathbb{T} \ ,\)</span><span class="math notranslate nohighlight">\( che lega
+idrostatico,</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{T}^{(s)} = - p \mathbb{I} \ ,\]</div>
+<p>avendo indicato
+con <span class="math notranslate nohighlight">\(\mathbb{T}^{(s)}\)</span> il tensore degli sforzi in quiete, <span class="math notranslate nohighlight">\(p\)</span> la
+pressione all’interno del fluido e <span class="math notranslate nohighlight">\(\mathbb{I}\)</span> il tensore identità. Il
+vettore sforzo <span class="math notranslate nohighlight">\(\mathbf{t_n}\)</span> <em>agente su</em> una superficie di fluido con
+normale <span class="math notranslate nohighlight">\(\mathbf{\hat{n}}\)</span> si ottiene tramite il <strong>teorema di Cauchy</strong> per i
+mezzi continui</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{t_n} = \mathbf{\hat{n}} \cdot \mathbb{T} \ ,\]</div>
+<p>che lega
 il vettore sforzo al tensore degli sforzi tramite il versore normale
-alla superficie considerata, e che nel caso di fluido in quiete, diventa
-\)</span><span class="math notranslate nohighlight">\(\bm{t_n}^{(s)} = \bm{\hat{n}} \cdot \mathbb{T}^{(s)}  = - p \bm{\hat{n}} \ .\)</span><span class="math notranslate nohighlight">\(
-Per il principio di azione e reazione, lo sforzo agente su un materiale
+alla superficie considerata, e che nel caso di fluido in quiete, diventa</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{t_n}^{(s)} = \mathbf{\hat{n}} \cdot \mathbb{T}^{(s)}  = - p \mathbf{\hat{n}} \ .\]</div>
+<p>Per il principio di azione e reazione, lo sforzo agente su un materiale
 a contatto con un fluido è di intensità uguale e direzione opposta. La
-risultante \)</span>\bm{R}<span class="math notranslate nohighlight">\( delle forze agenti su un volume di fluido \)</span>V<span class="math notranslate nohighlight">\( è data
-dalla somma dell'integrale su \)</span>V<span class="math notranslate nohighlight">\( delle forze di volume \)</span>\bm{f}<span class="math notranslate nohighlight">\( e
-dell'integrale sulla superficie \)</span>S<span class="math notranslate nohighlight">\(, contorno del volume \)</span>V<span class="math notranslate nohighlight">\(, del
-vettore sforzo \)</span>\bm{t_n}<span class="math notranslate nohighlight">\(,
-\)</span><span class="math notranslate nohighlight">\(\bm{R} = \int_V \bm{f} + \oint_S \bm{t_n} \ .\)</span>$</p>
+risultante <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> delle forze agenti su un volume di fluido <span class="math notranslate nohighlight">\(V\)</span> è data
+dalla somma dell’integrale su <span class="math notranslate nohighlight">\(V\)</span> delle forze di volume <span class="math notranslate nohighlight">\(\mathbf{f}\)</span> e
+dell’integrale sulla superficie <span class="math notranslate nohighlight">\(S\)</span>, contorno del volume <span class="math notranslate nohighlight">\(V\)</span>, del
+vettore sforzo <span class="math notranslate nohighlight">\(\mathbf{t_n}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{R} = \int_V \mathbf{f} + \oint_S \mathbf{t_n} \ .\]</div>
 </div>
 <div class="section" id="equazione-di-equilibrio-forma-integrale-e-differenziale">
 <span id="fluid-mechanics-statics-equil"></span><h2><span class="section-number">1.2. </span>Equazione di equilibrio: forma integrale e differenziale<a class="headerlink" href="#equazione-di-equilibrio-forma-integrale-e-differenziale" title="Permalink to this heading">#</a></h2>
 <p>Un sistema meccanico è in equilibrio quando la risultante delle forze
 esterne e la risultante dei momenti esterni agenti sul fluido sono
-nulle, $<span class="math notranslate nohighlight">\(\begin{cases}
- \bm{0} = \bm{R}^{ext} \\
- \bm{0} = \bm{M}^{ext}  \ .
-\end{cases}\)</span><span class="math notranslate nohighlight">\( Per un mezzo continuo non polare, è possibile dimostrare
-che l'equilibrio ai momenti si riduce alla condizione di simmetria del
-tensore degli sforzi. L'equilibrio delle forze agenti su un volume di
-fluido \)</span>V<span class="math notranslate nohighlight">\( in quiete, delimitato dalla superficie \)</span>\partial V = S<span class="math notranslate nohighlight">\(,
-soggetto a forze per unità di volume \)</span>\bm{f}<span class="math notranslate nohighlight">\( in \)</span>V<span class="math notranslate nohighlight">\( e forze per unità
-di superficie \)</span>\bm{t_n}=-p \bm{\hat{n}}<span class="math notranslate nohighlight">\( su \)</span>S<span class="math notranslate nohighlight">\( diventa
-\)</span><span class="math notranslate nohighlight">\(\bm{0} = \bm{R}^{ext} = \int_V \bm{f} + \oint_S \bm{t_n} = \int_V \bm{f} - \oint_S p \bm{\hat{n}} \ .\)</span><span class="math notranslate nohighlight">\(
-La condizione appena ottenuta è una **condizione di equilibrio
-integrale**, per l'intero volume fluido \)</span>V<span class="math notranslate nohighlight">\(. Se il campo di pressione
-\)</span>p<span class="math notranslate nohighlight">\( è sufficientemente regolare, è possibile applicare il teorema del
-gradiente ([\[thm:grad\]](#thm:grad){reference-type=&quot;ref&quot;
-reference=&quot;thm:grad&quot;}) all'integrale di superficie e raccogliere i
-termini a destra dell'uguale sotto un unico integrale di volume \)</span>V<span class="math notranslate nohighlight">\(,
-\)</span><span class="math notranslate nohighlight">\(\bm{0} = \int_V \left( \bm{f} - \bm{\nabla} p \right) \ .\)</span><span class="math notranslate nohighlight">\( Poiché la
+nulle,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+ \mathbf{0} = \mathbf{R}^{ext} \\
+ \mathbf{0} = \mathbf{M}^{ext}  \ .
+\end{cases}\end{split}\]</div>
+<p>Per un mezzo continuo non polare, è possibile dimostrare
+che l’equilibrio ai momenti si riduce alla condizione di simmetria del
+tensore degli sforzi. L’equilibrio delle forze agenti su un volume di
+fluido <span class="math notranslate nohighlight">\(V\)</span> in quiete, delimitato dalla superficie <span class="math notranslate nohighlight">\(\partial V = S\)</span>,
+soggetto a forze per unità di volume <span class="math notranslate nohighlight">\(\mathbf{f}\)</span> in <span class="math notranslate nohighlight">\(V\)</span> e forze per unità
+di superficie <span class="math notranslate nohighlight">\(\mathbf{t_n}=-p \mathbf{\hat{n}}\)</span> su <span class="math notranslate nohighlight">\(S\)</span> diventa</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{0} = \mathbf{R}^{ext} = \int_V \mathbf{f} + \oint_S \mathbf{t_n} = \int_V \mathbf{f} - \oint_S p \mathbf{\hat{n}} \ .\]</div>
+<p>La condizione appena ottenuta è una <strong>condizione di equilibrio
+integrale</strong>, per l’intero volume fluido <span class="math notranslate nohighlight">\(V\)</span>. Se il campo di pressione
+<span class="math notranslate nohighlight">\(p\)</span> è sufficientemente regolare, è possibile applicare il teorema del
+gradiente (<span class="xref myst">[thm:grad]</span>{reference-type=»ref»
+reference=»thm:grad»}) all’integrale di superficie e raccogliere i
+termini a destra dell’uguale sotto un unico integrale di volume <span class="math notranslate nohighlight">\(V\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{0} = \int_V \left( \mathbf{f} - \mathbf{\nabla} p \right) \ .\]</div>
+<p>Poiché la
 condizione di equilibrio deve essere valida indipendentemente dal volume
-\)</span>V<span class="math notranslate nohighlight">\( considerato, imponendo che l'integranda sia identicamente nulla, si
-ottiene l'**equazione di equilibrio in forma differenziale**
-\)</span><span class="math notranslate nohighlight">\(\label{eqn:statica:diff}
- \bm{f}(\bm{r}) - \bm{\nabla} p (\bm{r}) = \bm{0} \ ,\)</span><span class="math notranslate nohighlight">\( dove è stata
-esplicitata la dipendenza dei campi \)</span>\bm{f}<span class="math notranslate nohighlight">\(, \)</span>p<span class="math notranslate nohighlight">\( dall coordinata
-spaziale \)</span>\bm{r}<span class="math notranslate nohighlight">\(. Nel caso in cui sia noto il campo di forze di volume
-\)</span>\bm{f}<span class="math notranslate nohighlight">\( all'interno del dominio considerato, l'equazione differenziale
+<span class="math notranslate nohighlight">\(V\)</span> considerato, imponendo che l’integranda sia identicamente nulla, si
+ottiene l”<strong>equazione di equilibrio in forma differenziale</strong></p>
+<div class="math notranslate nohighlight">
+\[\label{eqn:statica:diff}
+ \mathbf{f}(\mathbf{r}) - \mathbf{\nabla} p (\mathbf{r}) = \mathbf{0} \ ,\]</div>
+<p>dove è stata
+esplicitata la dipendenza dei campi <span class="math notranslate nohighlight">\(\mathbf{f}\)</span>, <span class="math notranslate nohighlight">\(p\)</span> dall coordinata
+spaziale <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>. Nel caso in cui sia noto il campo di forze di volume
+<span class="math notranslate nohighlight">\(\mathbf{f}\)</span> all’interno del dominio considerato, l’equazione differenziale
 alle derivate parziali
-([\[eqn:statica:diff\]](#eqn:statica:diff){reference-type=&quot;ref&quot;
-reference=&quot;eqn:statica:diff&quot;}), con le opportune condizioni al contorno,
-permette di calcolare il campo di pressione \)</span>p(\bm{r})$.</p>
+(<span class="xref myst">[eqn:statica:diff]</span>{reference-type=»ref»
+reference=»eqn:statica:diff»}), con le opportune condizioni al contorno,
+permette di calcolare il campo di pressione <span class="math notranslate nohighlight">\(p(\mathbf{r})\)</span>.</p>
 </div>
 <div class="section" id="legge-di-stevino">
 <span id="fluid-mechanics-statics-stevino"></span><h2><span class="section-number">1.3. </span>Legge di Stevino<a class="headerlink" href="#legge-di-stevino" title="Permalink to this heading">#</a></h2>
@@ -419,53 +447,72 @@ quota, nelle vicinanze della superficie terrestre. La legge di Stevino
 viene ricavata dall’integrazione dell’equilibrio in forma differenziale
 (<span class="xref myst">[eqn:statica:diff]</span>{reference-type=»ref»
 reference=»eqn:statica:diff»}), nel caso in cui le forze di volume siano
-dovute alla gravità <span class="math notranslate nohighlight">\(\bm{f}(\bm{r}) = \rho(\bm{r}) \bm{g}(\bm{r})\)</span>,
-avendo indicato con <span class="math notranslate nohighlight">\(\rho(\bm{r})\)</span> la densità del fluido e con <span class="math notranslate nohighlight">\(\bm{g}\)</span>
-il campo di accelerazione gravitazionale, $<span class="math notranslate nohighlight">\(\label{eqn:statica:diff:g}
-    - \bm{\nabla} p(\bm{r}) + \rho(\bm{r}) \bm{g}(\bm{r}) = \bm{0} \ .\)</span><span class="math notranslate nohighlight">\(
-Nell'ipotesi di essere sufficientemente vicino alla terra da poter
-considerare il campo vettoriale \)</span>\bm{g}<span class="math notranslate nohighlight">\( uniforme e diretto verso il
+dovute alla gravità <span class="math notranslate nohighlight">\(\mathbf{f}(\mathbf{r}) = \rho(\mathbf{r}) \mathbf{g}(\mathbf{r})\)</span>,
+avendo indicato con <span class="math notranslate nohighlight">\(\rho(\mathbf{r})\)</span> la densità del fluido e con <span class="math notranslate nohighlight">\(\mathbf{g}\)</span>
+il campo di accelerazione gravitazionale,</p>
+<div class="math notranslate nohighlight">
+\[\label{eqn:statica:diff:g}
+    - \mathbf{\nabla} p(\mathbf{r}) + \rho(\mathbf{r}) \mathbf{g}(\mathbf{r}) = \mathbf{0} \ .\]</div>
+<p>Nell’ipotesi di essere sufficientemente vicino alla terra da poter
+considerare il campo vettoriale <span class="math notranslate nohighlight">\(\mathbf{g}\)</span> uniforme e diretto verso il
 basso lungo la normale alla superficie terrestre, è possibile scrivere
-l'equazione precedente in un sistema di coordinate cartesiane.
-Orientando l'asse \)</span>z<span class="math notranslate nohighlight">\( verso l'alto lungo la normale alla superficie, le
-tre componenti cartesiane dell'equazione vettoriale sono \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+l’equazione precedente in un sistema di coordinate cartesiane.
+Orientando l’asse <span class="math notranslate nohighlight">\(z\)</span> verso l’alto lungo la normale alla superficie, le
+tre componenti cartesiane dell’equazione vettoriale sono</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
  \partial p(x,y,z) / \partial x = 0 \\
  \partial p(x,y,z) / \partial y = 0 \\ 
  \partial p(x,y,z) / \partial z = - \rho(x,y,z) g \ .
-\end{cases}\)</span><span class="math notranslate nohighlight">\( Dalle prime due equazioni si ricava che il campo di
-pressione non può dipendere dalle coordinate \)</span>x<span class="math notranslate nohighlight">\(, \)</span>y<span class="math notranslate nohighlight">\( ed è quindi solo
-funzione di \)</span>z<span class="math notranslate nohighlight">\(. Poiché il campo di pressione dipende solo da \)</span>z<span class="math notranslate nohighlight">\(,
-\)</span>p = P(z)<span class="math notranslate nohighlight">\(, la terza equazione diventa un'equazione differenziale
-ordinaria, \)</span><span class="math notranslate nohighlight">\(\label{eqn:statica:Pz}
-  \dfrac{d P}{d z} = -\rho(x,y,z) g \ ,\)</span><span class="math notranslate nohighlight">\( alla quale deve essere
-aggiunta una condizione al contorno del tipo \)</span>P(z_0) = p_0<span class="math notranslate nohighlight">\(.[^1] Senza
-ulteriori ipotesi, il problema composto dall'equazione
-([\[eqn:statica:Pz\]](#eqn:statica:Pz){reference-type=&quot;ref&quot;
-reference=&quot;eqn:statica:Pz&quot;}) e dalla condizione al contorno necessaria
-ha come incognite il campo di pressione \)</span>P<span class="math notranslate nohighlight">\( e il campo di densità
-\)</span>\rho<span class="math notranslate nohighlight">\(. In generale, per risolvere il problema è necessario la legge di
-stato del fluido che mette in relazione i due campi. Nell'ipotesi che la
-densità \)</span>\rho<span class="math notranslate nohighlight">\( e la forza di gravità siano costanti, la soluzione del
-problema ([\[eqn:statica:Pz\]](#eqn:statica:Pz){reference-type=&quot;ref&quot;
-reference=&quot;eqn:statica:Pz&quot;}) coincide con la *legge di Stevino*,
-\)</span><span class="math notranslate nohighlight">\(p(z) + \rho g z = p_0 = \text{cost} \ ,\)</span><span class="math notranslate nohighlight">\( avendo orientato l'asse \)</span>z<span class="math notranslate nohighlight">\(
-verso l'alto e imposto la condizione al contorno in \)</span>z_0 = 0$.</p>
-<p>[[exe:stdatm:cart]]{#exe:stdatm:cart label=»exe:stdatm:cart»}
-Utilizzando la legge di stato dei gas perfetti per l’aria,
+\end{cases}\end{split}\]</div>
+<p>Dalle prime due equazioni si ricava che il campo di
+pressione non può dipendere dalle coordinate <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> ed è quindi solo
+funzione di <span class="math notranslate nohighlight">\(z\)</span>. Poiché il campo di pressione dipende solo da <span class="math notranslate nohighlight">\(z\)</span>,
+<span class="math notranslate nohighlight">\(p = P(z)\)</span>, la terza equazione diventa un’equazione differenziale
+ordinaria,</p>
+<div class="math notranslate nohighlight">
+\[\label{eqn:statica:Pz}
+  \dfrac{d P}{d z} = -\rho(x,y,z) g \ ,\]</div>
+<p>alla quale deve essere
+aggiunta una condizione al contorno del tipo <span class="math notranslate nohighlight">\(P(z_0) = p_0\)</span>.<a class="footnote-reference brackets" href="#id2" id="id1">1</a> Senza
+ulteriori ipotesi, il problema composto dall’equazione
+(<span class="xref myst">[eqn:statica:Pz]</span>{reference-type=»ref»
+reference=»eqn:statica:Pz»}) e dalla condizione al contorno necessaria
+ha come incognite il campo di pressione <span class="math notranslate nohighlight">\(P\)</span> e il campo di densità
+<span class="math notranslate nohighlight">\(\rho\)</span>. In generale, per risolvere il problema è necessario la legge di
+stato del fluido che mette in relazione i due campi. Nell’ipotesi che la
+densità <span class="math notranslate nohighlight">\(\rho\)</span> e la forza di gravità siano costanti, la soluzione del
+problema (<span class="xref myst">[eqn:statica:Pz]</span>{reference-type=»ref»
+reference=»eqn:statica:Pz»}) coincide con la <em>legge di Stevino</em>,</p>
+<div class="math notranslate nohighlight">
+\[p(z) + \rho g z = p_0 = \text{cost} \ ,\]</div>
+<p>avendo orientato l’asse <span class="math notranslate nohighlight">\(z\)</span>
+verso l’alto e imposto la condizione al contorno in <span class="math notranslate nohighlight">\(z_0 = 0\)</span>.</p>
+<div class="exercise admonition" id="polimi/fluidmechanics-ita/template/capitoli/01_statica/02teoria-exercise-0">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1.1 </span></p>
+<div class="section" id="exercise-content">
+<p>Utilizzando la legge di stato dei gas perfetti per l’aria,
 <span class="math notranslate nohighlight">\(P = \rho R T\)</span>, e l’approssimazione lineare dell’andamento della
 temperatura con la quota <span class="math notranslate nohighlight">\(z\)</span>, con gradiente termico
-<span class="math notranslate nohighlight">\(dT/dz=a=-6.5\degree/km\)</span>, si ricavi l’andamento con la quota <span class="math notranslate nohighlight">\(z\)</span> delle
+<span class="math notranslate nohighlight">\(dT/dz=a=-6.5^\circ/km\)</span>, si ricavi l’andamento con la quota <span class="math notranslate nohighlight">\(z\)</span> delle
 variabili termodinamiche <span class="math notranslate nohighlight">\((P,\rho, T)\)</span> per l’atrmosfera standard. Si
 trascuri l’andamento di <span class="math notranslate nohighlight">\(g\)</span> con la quota. Trascurando la curvatura
 terrestre, si utilizzi un sistema di coordinate cartesiane per scrivere
 le componenti dell’equazione vettoriale
 (<span class="xref myst">[eqn:statica:diff:g]</span>{reference-type=»ref»
 reference=»eqn:statica:diff:g»}).</p>
+</div>
+</div>
+<div class="exercise admonition" id="polimi/fluidmechanics-ita/template/capitoli/01_statica/02teoria-exercise-1">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1.2 </span></p>
+<div class="section" id="exercise-content">
 <p>[[exe:stdatm:sphe]]{#exe:stdatm:sphe label=»exe:stdatm:sphe»}
 Utilizzando la legge di stato dei gas perfetti per l’aria,
 <span class="math notranslate nohighlight">\(P = \rho R T\)</span>, e l’approssimazione lineare dell’andamento della
 temperatura con la quota <span class="math notranslate nohighlight">\(r\)</span>, con gradiente termico
-<span class="math notranslate nohighlight">\(dT/dr=a=-6.5\degree/km\)</span>, si ricavi l’andamento con la quota <span class="math notranslate nohighlight">\(r\)</span> delle
+<span class="math notranslate nohighlight">\(dT/dr=a=-6.5^\circ/km\)</span>, si ricavi l’andamento con la quota <span class="math notranslate nohighlight">\(r\)</span> delle
 variabili termodinamiche <span class="math notranslate nohighlight">\((P,\rho, T)\)</span> per l’atrmosfera standard, senza
 trascurare l’effetto della curvatura terrestre. Si utilizzi un sistema
 di coordinate sferiche per scrivere le componenti dell’equazione
@@ -477,28 +524,32 @@ nell’esercizio
 reference=»exe:stdatm:cart»} trascurando la curvatura terrestre sul
 calcolo delle variabili termodinamiche a quota <span class="math notranslate nohighlight">\(z = 10 \ km\)</span>.</p>
 </div>
+</div>
+</div>
 <div class="section" id="galleggiamento-di-un-corpo-immerso-in-un-fluido">
 <span id="fluid-mechanics-statics-buoyancy"></span><h2><span class="section-number">1.4. </span>Galleggiamento di un corpo immerso in un fluido<a class="headerlink" href="#galleggiamento-di-un-corpo-immerso-in-un-fluido" title="Permalink to this heading">#</a></h2>
 <p>Un corpo immerso in fluido riceve dal basso verso l’alto una spinta
 uguale al peso della massa del fluido spostato. Se un corpo di volume
 <span class="math notranslate nohighlight">\(V_s\)</span> immerso in un fluido <span class="math notranslate nohighlight">\(\rho_f\)</span> ne sposta un volume <span class="math notranslate nohighlight">\(\tilde{V}_f\)</span>,
-su di esso agisce una forza (di Archimede o di galleggiamento)
-$<span class="math notranslate nohighlight">\(\bm{F}_{Arch} = - \rho_f \tilde{V}_f \bm{g} = - \int_{\tilde{V}_f} \rho_f \bm{g} \ .\)</span><span class="math notranslate nohighlight">\(
-La legge di Archimede vale per un sistema immerso nel campo di gravità
-\)</span>\bm{g}<span class="math notranslate nohighlight">\(, uniforme in spazio. Forze di galleggimento nascono su un corpo
-immerso in un fluido in cui c'è un gradiente di pressione. La legge di
+su di esso agisce una forza (di Archimede o di galleggiamento)</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F}_{Arch} = - \rho_f \tilde{V}_f \mathbf{g} = - \int_{\tilde{V}_f} \rho_f \mathbf{g} \ .\]</div>
+<p>La legge di Archimede vale per un sistema immerso nel campo di gravità
+<span class="math notranslate nohighlight">\(\mathbf{g}\)</span>, uniforme in spazio. Forze di galleggimento nascono su un corpo
+immerso in un fluido in cui c’è un gradiente di pressione. La legge di
 Archimede è solo un caso particolare di galleggiamento, forse il più
-evidente, per il quale il campo di gravità è all'origine del gradiente
+evidente, per il quale il campo di gravità è all’origine del gradiente
 di pressione. In generale, la forza di galleggiamento su un corpo
-immerso completamente in un fluido vale
-\)</span><span class="math notranslate nohighlight">\(\bm{F}_{gall} = -\int_{S_s} p \bm{\hat{n}} = - \int_{V_s} \bm{\nabla} p \ .\)</span><span class="math notranslate nohighlight">\(
-Un esempio di galleggiamento di interesse aeronautico si incontra quando
+immerso completamente in un fluido vale</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F}_{gall} = -\int_{S_s} p \mathbf{\hat{n}} = - \int_{V_s} \mathbf{\nabla} p \ .\]</div>
+<p>Un esempio di galleggiamento di interesse aeronautico si incontra quando
 si svolge un esperimento in galleria del vento, se nella camera di prova
 è presente un gradiente di pressione diretto nella direzione
-\)</span>\bm{\hat{x}}<span class="math notranslate nohighlight">\( della corrente. Se in prima approssimazione si considera
-un gradiente di pressione \)</span>\bm{\nabla}p = - G_P \bm{\hat{x}}<span class="math notranslate nohighlight">\(, \)</span>G_P&gt;0<span class="math notranslate nohighlight">\( e
+<span class="math notranslate nohighlight">\(\mathbf{\hat{x}}\)</span> della corrente. Se in prima approssimazione si considera
+un gradiente di pressione <span class="math notranslate nohighlight">\(\mathbf{\nabla}p = - G_P \mathbf{\hat{x}}\)</span>, <span class="math notranslate nohighlight">\(G_P&gt;0\)</span> e
 costante, si può stimare la forza di galleggiamento
-\)</span>\bm{F}_{gall} = V_s G_P \bm{\hat{x}}$ dovuta al gradiente di pressione
+<span class="math notranslate nohighlight">\(\mathbf{F}_{gall} = V_s G_P \mathbf{\hat{x}}\)</span> dovuta al gradiente di pressione
 in galleria del vento, assente in condizioni di aria libera. Questa
 azione contribuisce al valore misurato della resistenza del modello. La
 valutazione di questa azione «spuria» sul corpo e la correzione delle
@@ -514,40 +565,48 @@ condizioni di equilibrio.</p>
 </div>
 <div class="section" id="risultante-delle-forze-legge-di-archimede">
 <h2><span class="section-number">1.5. </span>Risultante delle forze: legge di Archimede<a class="headerlink" href="#risultante-delle-forze-legge-di-archimede" title="Permalink to this heading">#</a></h2>
-<p><img alt="Suddivisione delle superfici e dei volumi per la dimostrazione dellalegge di Archimede." src="polimi/fluidmechanics-ita/template/capitoli/01_statica/fig/archimede_01" />{width=»50%»}</p>
-<p>[[fig:archimede_01]]{#fig:archimede_01 label=»fig:archimede_01»}</p>
+<!--
+```{figure} ./../../fig/archimede_01.png
+:name: fig:archimede_01
+Suddivisione delle superfici e dei volumi per la dimostrazione della
+legge di Archimede.
+```
+-->
 <p>Si considera il problema di un corpo immerso in un fluido di densità
 uniforme <span class="math notranslate nohighlight">\(\rho\)</span> molto maggiore della densità dell’aria: la pressione
 agente sulla superficie del corpo esposta all’aria si può considerare
 costante, uguale a <span class="math notranslate nohighlight">\(p_a\)</span>. La legge di Stevino descrive la distribuzione
 di pressione all’interno del fluido. Si sceglie l’asse <span class="math notranslate nohighlight">\(z\)</span> in direzione
-verticale, così che il campo di gravità è <span class="math notranslate nohighlight">\(\bm{g} = -g \bm{\hat{z}}\)</span>.
+verticale, così che il campo di gravità è <span class="math notranslate nohighlight">\(\mathbf{g} = -g \mathbf{\hat{z}}\)</span>.
 Scegliendo l’origine dell’asse <span class="math notranslate nohighlight">\(z\)</span> in corrispondenza del pelo libero, la
 pressione all’interno del fluido vale <span class="math notranslate nohighlight">\(p(z) = p_a - \rho g z\)</span>, per
 <span class="math notranslate nohighlight">\(z &lt; 0\)</span>. Facendo riferimento alla figura
 <span class="xref myst">[fig:archimede_01]</span>{reference-type=»ref»
 reference=»fig:archimede_01»}, si può calcolare la risultante delle
-forze <span class="math notranslate nohighlight">\(\bm{R}\)</span> come $<span class="math notranslate nohighlight">\(\begin{aligned}
-    \bm{R} &amp; = - \oint_{S} p \bm{\hat{n}} = 
-               - \int_{S_a} p \bm{\hat{n}} - \int_{S_f} p \bm{\hat{n}} = \\
-        &amp; =    - \int_{S_a} p_a \bm{\hat{n}} - \int_{S_f} p_a \bm{\hat{n}} + 
-                 \int_{S_f} \rho g z \bm{\hat{n}} = \\
-        &amp; =    - \underbrace{\int_{S} p_a \bm{\hat{n}}}_{=0} + 
-                 \int_{S_f} \rho g z \bm{\hat{n}} = \\
-        &amp; =      \int_{S_f} \rho g z \bm{\hat{n}} + 
-                 \underbrace{\int_{S_0} \rho g z \bm{\hat{n}}}_{=0, \ z|_{S_0} = 0} =
-                 \oint_{\tilde{S}_f} \rho g z \bm{\hat{n}} = 
-                 \int_{\tilde{V}_f} \rho g \bm{\hat{z} } = 
-                 \rho \tilde{V}_f g \bm{\hat{z}} = 
-                 M_{\tilde{V}_f} g \bm{\hat{z}} \ ,
-\end{aligned}\)</span><span class="math notranslate nohighlight">\( avendo sommato l'integrale nullo
-\)</span>\int_{S_0} \rho g z \bm{\hat{n}}<span class="math notranslate nohighlight">\(, per poter ottenere l'integrale di
-\)</span>\rho g z<span class="math notranslate nohighlight">\( sulla superficie \)</span>\tilde{S}<em>f = S_f \cup S_0<span class="math notranslate nohighlight">\( e applicare il
-teorema del gradiente ([\[thm:grad\]](#thm:grad){reference-type=&quot;ref&quot;
-reference=&quot;thm:grad&quot;}). Come stabilito dal principio di Archimede, la
-risultante delle forze di galleggiamento \)</span>\bm{R}<span class="math notranslate nohighlight">\( agenti sul corpo
-agisce dal basso verso l'alto con un'intensità pari al peso del volume
-di fluido spostato, \)</span>M</em>{\tilde{V}_f} g$.</p>
+forze <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> come</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+    \mathbf{R} &amp; = - \oint_{S} p \mathbf{\hat{n}} = 
+               - \int_{S_a} p \mathbf{\hat{n}} - \int_{S_f} p \mathbf{\hat{n}} = \\
+        &amp; =    - \int_{S_a} p_a \mathbf{\hat{n}} - \int_{S_f} p_a \mathbf{\hat{n}} + 
+                 \int_{S_f} \rho g z \mathbf{\hat{n}} = \\
+        &amp; =    - \underbrace{\int_{S} p_a \mathbf{\hat{n}}}_{=0} + 
+                 \int_{S_f} \rho g z \mathbf{\hat{n}} = \\
+        &amp; =      \int_{S_f} \rho g z \mathbf{\hat{n}} + 
+                 \underbrace{\int_{S_0} \rho g z \mathbf{\hat{n}}}_{=0, \ z|_{S_0} = 0} =
+                 \oint_{\tilde{S}_f} \rho g z \mathbf{\hat{n}} = 
+                 \int_{\tilde{V}_f} \rho g \mathbf{\hat{z} } = 
+                 \rho \tilde{V}_f g \mathbf{\hat{z}} = 
+                 M_{\tilde{V}_f} g \mathbf{\hat{z}} \ ,
+\end{aligned}\end{split}\]</div>
+<p>avendo sommato l’integrale nullo
+<span class="math notranslate nohighlight">\(\int_{S_0} \rho g z \mathbf{\hat{n}}\)</span>, per poter ottenere l’integrale di
+<span class="math notranslate nohighlight">\(\rho g z\)</span> sulla superficie <span class="math notranslate nohighlight">\(\tilde{S}_f = S_f \cup S_0\)</span> e applicare il
+teorema del gradiente (<span class="xref myst">[thm:grad]</span>{reference-type=»ref»
+reference=»thm:grad»}). Come stabilito dal principio di Archimede, la
+risultante delle forze di galleggiamento <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> agenti sul corpo
+agisce dal basso verso l’alto con un’intensità pari al peso del volume
+di fluido spostato, <span class="math notranslate nohighlight">\(M_{\tilde{V}_f} g\)</span>.</p>
 </div>
 <div class="section" id="punto-di-applicazione">
 <h2><span class="section-number">1.6. </span>Punto di applicazione<a class="headerlink" href="#punto-di-applicazione" title="Permalink to this heading">#</a></h2>
@@ -555,27 +614,32 @@ di fluido spostato, \)</span>M</em>{\tilde{V}_f} g$.</p>
 bisogna applicare la risultante delle forze per ottenere un sistema di
 azioni equivalente al sistema di azioni continuo generato dalla
 pressione. Dall’equivalenza ai momenti dei due sistemi di azioni, si
-ottiene $<span class="math notranslate nohighlight">\(\begin{aligned}
-\bm{r}_O \times \bm{R} &amp; = - \oint_{S} p \bm{r} \times \bm{\hat{n}} = 
-    - \int_{S_a} p \bm{r} \times \bm{\hat{n}}
-    - \int_{S_f} p \bm{r} \times \bm{\hat{n}} = \\
-&amp; = - \int_{S_a} p_a \bm{r} \times \bm{\hat{n}}
-    - \int_{S_f} p_a \bm{r} \times \bm{\hat{n}} 
-    + \int_{S_f} \rho g z \bm{r} \times \bm{\hat{n}} = \\
-&amp; = - \underbrace{\int_{S} p_a \bm{r} \times \bm{\hat{n}}}_{=0} + 
-      \int_{S_f} \rho g z \bm{r} \times \bm{\hat{n}} = \\
-&amp; =   \int_{S_f} \rho g z \bm{r} \times \bm{\hat{n}} + 
-      \underbrace{\int_{S_0} \rho g z \bm{r} \times \bm{\hat{n}}}_{=0, \ z|_{S_0} = 0} =\\
-&amp; =  \oint_{\tilde{S}_f} \rho g z \bm{r} \times \bm{\hat{n}} = 
+ottiene</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\mathbf{r}_O \times \mathbf{R} &amp; = - \oint_{S} p \mathbf{r} \times \mathbf{\hat{n}} = 
+    - \int_{S_a} p \mathbf{r} \times \mathbf{\hat{n}}
+    - \int_{S_f} p \mathbf{r} \times \mathbf{\hat{n}} = \\
+&amp; = - \int_{S_a} p_a \mathbf{r} \times \mathbf{\hat{n}}
+    - \int_{S_f} p_a \mathbf{r} \times \mathbf{\hat{n}} 
+    + \int_{S_f} \rho g z \mathbf{r} \times \mathbf{\hat{n}} = \\
+&amp; = - \underbrace{\int_{S} p_a \mathbf{r} \times \mathbf{\hat{n}}}_{=0} + 
+      \int_{S_f} \rho g z \mathbf{r} \times \mathbf{\hat{n}} = \\
+&amp; =   \int_{S_f} \rho g z \mathbf{r} \times \mathbf{\hat{n}} + 
+      \underbrace{\int_{S_0} \rho g z \mathbf{r} \times \mathbf{\hat{n}}}_{=0, \ z|_{S_0} = 0} =\\
+&amp; =  \oint_{\tilde{S}_f} \rho g z \mathbf{r} \times \mathbf{\hat{n}} = 
      \oint_{\tilde{S}_f} \rho g \delta_{\ell z} r_{\ell} \epsilon_{ijk} r_j n_k = 
      \rho g \int_{\tilde{V}_f} \dfrac{\partial}{\partial r_k}( \delta_{\ell z} r_{\ell} \epsilon_{ijk} r_j ) = \\
     &amp; = \rho g \int_{\tilde{V}_f} \delta_{\ell z} \epsilon_{ijk}\left(  \dfrac{\partial r_{\ell}}{\partial r_k} r_j + r_{\ell} \dfrac{\partial r_j}{\partial r_k} \right) = \\ 
     &amp; = \rho g \int_{\tilde{V}_f} \delta_{\ell z} \epsilon_{ijk}\left( \delta_{\ell k}r_j + r_{\ell} \delta_{jk} \right) = \\
     &amp; = \rho g \int_{\tilde{V}_f} \epsilon_{ijz} r_j + \delta_{\ell z} \underbrace{\epsilon_{ijj}}_{ = 0} r_{\ell} = \\
-    &amp; = \rho g \int_{\tilde{V}_f}  \bm{r} \times \bm{\hat{z}} \ .
-\end{aligned}\)</span><span class="math notranslate nohighlight">\( Usando un sistema di assi catesiani e ricordando che
-\)</span>\bm{R} = R \bm{\hat{z}}<span class="math notranslate nohighlight">\(, si può scomprre l'equazione nelle componenti
-non nulle, \)</span>x<span class="math notranslate nohighlight">\( e \)</span>y<span class="math notranslate nohighlight">\(, \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+    &amp; = \rho g \int_{\tilde{V}_f}  \mathbf{r} \times \mathbf{\hat{z}} \ .
+\end{aligned}\end{split}\]</div>
+<p>Usando un sistema di assi catesiani e ricordando che
+<span class="math notranslate nohighlight">\(\mathbf{R} = R \mathbf{\hat{z}}\)</span>, si può scomprre l’equazione nelle componenti
+non nulle, <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
    x_0 R = \rho g \displaystyle\int_{\tilde{V}_f} x \\ \\
    y_0 R = \rho g \displaystyle\int_{\tilde{V}_f} y 
 \end{cases} \qquad \rightarrow \qquad
@@ -585,10 +649,21 @@ non nulle, \)</span>x<span class="math notranslate nohighlight">\( e \)</span>y<
     \\ \\
     y_0 = \dfrac{\rho g}{R}  \displaystyle\int_{\tilde{V}_f} y 
         = \dfrac{1}{\tilde{V}_f}  \displaystyle\int_{\tilde{V}_f} y \ .
-\end{cases}\)</span>$</p>
+\end{cases}\end{split}\]</div>
 </div>
 <div class="section" id="stabilita-statica-dell-equilibrio">
 <h2><span class="section-number">1.7. </span>Stabilità statica dell’equilibrio<a class="headerlink" href="#stabilita-statica-dell-equilibrio" title="Permalink to this heading">#</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>In generale, servono delle condizioni di compabibilità dei dati
+affinché il problema sia risolvibile. Ad esempio, non dovrebbe
+essere difficile convincersi che il campo di densità deve dipendere
+solo dalla coordinata <span class="math notranslate nohighlight">\(z\)</span> nel caso considerato.</p>
+</dd>
+</dl>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -628,15 +703,15 @@ non nulle, \)</span>x<span class="math notranslate nohighlight">\( e \)</span>y<
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title">basics-book template</p>
+        <p class="prev-next-title">Introduction to Fluid Mechanics</p>
       </div>
     </a>
     <a class="right-next"
-       href="../02_tensSup/03teoria.html"
+       href="exercises.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Surface tension</p>
+        <p class="prev-next-title"><span class="section-number">1.8. </span>Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

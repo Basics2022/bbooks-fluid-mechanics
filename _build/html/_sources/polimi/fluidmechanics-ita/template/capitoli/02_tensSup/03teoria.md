@@ -12,7 +12,9 @@ viene definità *tensione superificiale*. La legge di Young-Laplace lega
 la tensione superficiale, il salto di pressione attraverso la superficie
 di interfaccia e la curvatura della superficie stessa. Nel caso di
 tensione superficiale costante, vale
+
 $$p_b - p_a = \gamma \displaystyle\left( \frac{1}{R_1} + \frac{1}{R_2} \right) = 2 \gamma H$$
+
 dove con $R_1$ e $R_2$ sono stati indicati i due raggi di curvatura
 della superficie e con $H$ si è indicata la curvatura media.
 
@@ -34,11 +36,11 @@ $\Delta x \sim R \Delta \theta$. Anche l'angolo $\Delta \theta$ è
 "piccolo" ($\cos \Delta \theta \sim 1$,
 $\sin \Delta\theta \sim \Delta\theta$, la dimensione dell'elemento di
 superficie è approssimabile con la sua proiezione su un piano normale a
-$\bm{\hat{n}}$, \...). Con $R$ viene indicato il raggio di curvatura
+$\mathbf{\hat{n}}$, \...). Con $R$ viene indicato il raggio di curvatura
 della superficie.
 
 Si scrive l'equilibrio.
-$$\bm{t_a} \Delta x + \bm{t_b} \Delta x - \bm{\gamma}(x) + \bm{\gamma}(x) + \Delta \bm{\gamma} = 0$$
+$$\mathbf{t_a} \Delta x + \mathbf{t_b} \Delta x - \mathbf{\gamma}(x) + \mathbf{\gamma}(x) + \Delta \mathbf{\gamma} = 0$$
 
 Proiettando nelle direzioni normale e tangente alla superficie,
 
@@ -72,13 +74,13 @@ $$\label{eqn:equil_young_laplace}
 
 Nel caso in cui si consideri un problema di statica, lo sforzo **sul**
 fluido è dovuto solo al contributo di pressione, che agisce in direzione
-normale alla superficie: $\bm{t}_a = -P_a \bm{\hat{n}_a}$,
-$\bm{t}_b = -P_b \bm{\hat{n}_b}$. Lo sforzo che il fluido esercita sulla
+normale alla superficie: $\mathbf{t}_a = -P_a \mathbf{\hat{n}_a}$,
+$\mathbf{t}_b = -P_b \mathbf{\hat{n}_b}$. Lo sforzo che il fluido esercita sulla
 superficie di interfaccia è uguale in modulo e opposto in direzione. Le
 due normali sono tra di loro opposte: si sceglie di definire la normale
-$\bm{\hat{n}} = \bm{\hat{n}_a} = -\bm{\hat{n}_b}$. Di conseguenza, le
+$\mathbf{\hat{n}} = \mathbf{\hat{n}_a} = -\mathbf{\hat{n}_b}$. Di conseguenza, le
 componenti degli sforzi agenti sulla superficie di interfaccia,
-proiettati lungo $\bm{\hat{n}}$ e un versore tangente sono:
+proiettati lungo $\mathbf{\hat{n}}$ e un versore tangente sono:
 ${{t_a}_n} = P_a$, ${{t_b}_n} = - P_b$, ${{t_a}_t} = 0$,
 ${{t_b}_n} = 0$. Se $\gamma$ è costante (la tensione superficiale può
 avere gradienti non nulli a causa di gradienti di temperatura o di

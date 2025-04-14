@@ -1,3 +1,6 @@
+(fluid-mechanics:kinematics:ex-03)=
+# Exercise 3.3
+
 Sia dato il campo di moto
 $$\bm{u}(x,y,z) = 3y \bm{\hat{x}} - 3x \bm{\hat{y}} +t\bm{\hat{z}}$$
 Calcolare l'equazione delle linee di corrente, delle traiettorie e delle

@@ -5,17 +5,44 @@ format: jb-book
 root: intro
 options:
   numbered: True
-chapters:
-- file: polimi/fluidmechanics-ita/template/capitoli/01_statica/02teoria
-- file: polimi/fluidmechanics-ita/template/capitoli/02_tensSup/03teoria
-- file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/12teoria
-- file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04teoria
-- file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/05teoria
-- file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0600in
-- file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/07teoria
-- file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/08teoria
-- file: polimi/fluidmechanics-ita/template/capitoli/09_bl/09teoria
-- file: polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/10teoria
+parts:
+- caption: Incompressible Fluid Mechanics
+  numbered: True
+  chapters:
+  - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/02teoria
+    sections:
+    - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/exercises
+      sections:
+      - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0201in 
+      - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0202in
+      - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0203in
+      - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0204in
+      - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0205in
+      - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0206in
+  - file: polimi/fluidmechanics-ita/template/capitoli/02_tensSup/03teoria
+    sections:
+    - file: polimi/fluidmechanics-ita/template/capitoli/02_tensSup/exercises
+      sections:
+      - file: polimi/fluidmechanics-ita/template/capitoli/02_tensSup/0301in 
+      - file: polimi/fluidmechanics-ita/template/capitoli/02_tensSup/0302in
+      - file: polimi/fluidmechanics-ita/template/capitoli/02_tensSup/0303in
+  - file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/12teoria
+    sections:
+    - 0301file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/exercises
+      0302sections:
+      0303- file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/1202in 
+      0303- file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/1201in
+      - file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/1204in_hints
+      - file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/1203in_hints
+  - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04teoria
+  - file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/05teoria
+  - file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0600in
+  - file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/07teoria
+  - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/08teoria
+  - file: polimi/fluidmechanics-ita/template/capitoli/09_bl/09teoria
+  - file: polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/10teoria
+# - caption: Incompressible Fluid Mechanics
+#   numbered: True
 # sections:
 # - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0201in
 # - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0202in
