@@ -1,10 +1,23 @@
 (fluid-mechanics:kinematics:ex-03)=
 # Exercise 3.3
 
-Sia dato il campo di moto
-$$\bm{u}(x,y,z) = 3y \bm{\hat{x}} - 3x \bm{\hat{y}} +t\bm{\hat{z}}$$
-Calcolare l'equazione delle linee di corrente, delle traiettorie e delle
-linee di fumo (curve di emissione) e disegnarle.
+::::{grid}
+:gutter: 2
+
+:::{grid-item-card} Exercise 3.3
+:columns: 12
+
+ Sia dato il campo di moto
+
+$$
+ \mathbf{u}(x,y,z) = 3y \mathbf{\hat{x}} - 3x \mathbf{\hat{y}} +t\mathbf{\hat{z}}
+$$
+
+Calcolare l'equazione delle linee di corrente, delle traiettorie e delle linee di fumo (curve di emissione) e disegnarle.
+
+:::
+
+::::
 
 **Suggerimento.** Le componenti $x$ e $y$ del sistema sono accoppiate
 tra di loro. Risolvendo il sistema per le **linee di corrente**,
