@@ -1,3 +1,6 @@
+(fluid-mechanics:kinematics:ex-04)=
+# Exercise 3.4
+
 Sia dato il campo di moto
 $$\bm{u}(x,y,z) = \frac{x}{x^2 + y^2 + z^2} \bm{\hat{x}} +
                  \frac{y}{x^2 + y^2 + z^2} \bm{\hat{y}} +
