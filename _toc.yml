@@ -36,10 +36,10 @@ parts:
       - file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/1203in_hints
   - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04teoria
     sections:
+    - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0410in 
+    - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0412in
     - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/exercises
       sections:
-      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0410in 
-      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0412in
       - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0406in
       - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0407in
       - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0402in
