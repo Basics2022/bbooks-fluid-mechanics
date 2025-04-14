@@ -5,7 +5,7 @@ Manually add Google analytics script to all .html files
 import os
 
 # Define Google Analytics tracking ID
-GA_ID = "G-R3GS2LVD8M"  # Replace with your actual ID
+GA_ID = "G-ESMWKL80JZ"  # Replace with your actual ID
 
 # Directory where Jupyter Book builds HTML files
 BUILD_DIR = "_build/html"
