@@ -65,6 +65,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/02_tensSup/exercises';</script>
     <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
@@ -411,6 +413,81 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="exercises">
 <span id="fluid-mechanics-surface-tension-exercises"></span><h1><span class="section-number">2.3. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 2.1</div>
+<p class="sd-card-text">Sia <span class="math notranslate nohighlight">\(\theta\)</span> l’angolo di contatto all’interfaccia tra aria, liquido e solido;
+sia <span class="math notranslate nohighlight">\(\gamma\)</span> la tensione superficiale tra aria e liquido; sia <span class="math notranslate nohighlight">\(\rho\)</span> la densità del liquido.
+Determinare l’altezza <span class="math notranslate nohighlight">\(h\)</span> dal liquido in una colonnina cilindrica di raggio <span class="math notranslate nohighlight">\(r = 0.5 \ mm\)</span>  rispetto al livello
+nella vasca. Calcolare poi la pressione all’interno della colonnina.
+(Si può considerare valida l’approssimazione che la pressione agente sulla vasca e sulla superficie
+superiore del liquido all’interno della colonnina sia uguale).</p>
+<p class="sd-card-text">Si considerino condizioni termodinamiche e materiale della colonnina tali che:
+se il liquido è acqua: <span class="math notranslate nohighlight">\(\rho = 999 \ kg/m^3\)</span>, <span class="math notranslate nohighlight">\(\theta={1}^\circ\)</span>, <span class="math notranslate nohighlight">\(\gamma=0.073 N/m\)</span>.
+se il liquido è mercurio: <span class="math notranslate nohighlight">\(\rho = 13579 \ kg/m^3\)</span>, <span class="math notranslate nohighlight">\(\theta={140}^\circ\)</span>, <span class="math notranslate nohighlight">\(\gamma=0.559 N/m\)</span>.</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(h_{H_2O} = 2.97 \ cm\)</span>, <span class="math notranslate nohighlight">\(P_{H_20} - P_0 =  - 291.95 \ Pa\)</span>; <span class="math notranslate nohighlight">\(h_{Hg} = -1.28 \ cm\)</span>, <span class="math notranslate nohighlight">\(P_{Hg} - P_0 =  1712.87 \ Pa\)</span>)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/cap01.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 2.2</div>
+<p class="sd-card-text">Due lamine piane uguali parallele sono separate da una distanza <span class="math notranslate nohighlight">\(d\)</span>. Tra le lamine è
+presente un sottile strato di liquido. Sono note l’area della superficie <span class="math notranslate nohighlight">\(A\)</span> e il perimetro <span class="math notranslate nohighlight">\(L\)</span> delle due lamine,
+la pressione ambiente <span class="math notranslate nohighlight">\(p_a\)</span>, la tensione superficiale del liquido <span class="math notranslate nohighlight">\(\gamma\)</span> e l’angolo di contatto <span class="math notranslate nohighlight">\(\theta\)</span>.
+Si chiede di determinare la componente perpendicolare alle lamine della forza agente su ciascuna delle due lamine.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/Plates4.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 2.3</div>
+<p class="sd-card-text">Si vuole calcolare la forma del pelo libero tra aria ed acqua, di densità <span class="math notranslate nohighlight">\(\rho\)</span>, nelle vicinanze di una parete piana infinita, conoscendo la tensione superficiale <span class="math notranslate nohighlight">\(\gamma\)</span> e l’angolo di contatto a parete <span class="math notranslate nohighlight">\(\theta\)</span>. La pressione dell’aria è uniforme e uguale a <span class="math notranslate nohighlight">\(P_a\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/freeSurfaceShape.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="toctree-wrapper compound">
 </div>
 </div>

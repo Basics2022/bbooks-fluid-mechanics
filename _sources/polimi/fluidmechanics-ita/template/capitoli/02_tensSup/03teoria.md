@@ -18,7 +18,8 @@ $$p_b - p_a = \gamma \displaystyle\left( \frac{1}{R_1} + \frac{1}{R_2} \right) =
 dove con $R_1$ e $R_2$ sono stati indicati i due raggi di curvatura
 della superficie e con $H$ si è indicata la curvatura media.
 
-![image](./fig/laplaceYoung2Ddim.eps){width="95%"}
+
+![image](../../fig/laplaceYoung2Ddim.png)
 
 (fluid-mechanics:surface-tension:young-laplace:2d)=
 ## Legge di Young-Laplace in due dimensioni
