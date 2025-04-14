@@ -1,0 +1,523 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diagramma di Moody. &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/07_similitudine/0706in';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">1. Statics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">2. Surface tension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_cinematica/12teoria.html">3. Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">4. Balance equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_bernoulli/05teoria.html">5. Bernoulli theorems and vorticity dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">6. Exact solutions of Navier-Stokes equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07teoria.html">7. Similitude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/07_similitudine/0706in.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Diagramma di Moody.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>Si deve progettare un condotto che trasporti un fluido con densità
+<span class="math notranslate nohighlight">\(\rho_1\)</span> e viscosità <span class="math notranslate nohighlight">\(\mu_1\)</span>, di diametro <span class="math notranslate nohighlight">\(d_1\)</span> e lunghezza <span class="math notranslate nohighlight">\(L_1\)</span>. Si
+suppone che la rugosità della superficie interna del condotto possa
+essere descritta interamente dall’altezza media <span class="math notranslate nohighlight">\(\epsilon_1\)</span> delle
+asperità. Il condotto deve garantire una portata massica <span class="math notranslate nohighlight">\(Q_1\)</span>. Viene
+realizzato un modello in scala <span class="math notranslate nohighlight">\(\lambda = d_2 / d_1\)</span> del condotto di
+lunghezza <span class="math notranslate nohighlight">\(L_2\)</span>, nel quale viene fatto scorrere lo stesso fluido alle
+stesse condizioni termodinamiche. Si chiede di determinare:</p>
+<ul class="simple">
+<li><p>la finitura superficiale della superficie interna del modello, in
+termini di dimensione caratteristica della rugosità <span class="math notranslate nohighlight">\(\epsilon_2\)</span>;</p></li>
+<li><p>la velocità media di prova <span class="math notranslate nohighlight">\(U_2\)</span>;</p></li>
+<li><p>la differenza di pressione da imporre alle estremità del condotto al
+vero, conoscendo che la differenza di pressione <span class="math notranslate nohighlight">\(\Delta P_2\)</span>
+misurata in laboratorio.</p></li>
+</ul>
+<p>Si supponga il fluido incomprimibile.</p>
+<p><img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/07_similitudine/fig/pipe" />{width=»100%»}</p>
+<p>Teorema di Buckingham. Similitudine fluidodinamica.</p>
+<p>Il problema è caratterizzato dal fluido utilizzato, dalla geometria del
+condotto e dal gradiente di pressione necessario a garantire la portata
+desiderata. Si può scrivere in maniera implicita
+$<span class="math notranslate nohighlight">\(f\left( \dfrac{\Delta P}{\Delta x}, U, \rho, \mu, d, \epsilon \right) = 0\)</span><span class="math notranslate nohighlight">\(
+avendo scelto come grandezza fisica caratteristica del problema il
+gradiente di pressione \)</span>\dfrac{\Delta P}{\Delta x}<span class="math notranslate nohighlight">\( e non il salto di
+pressione e la lunghezza del tubo prese indipendentemente. Il teorema di
+Buckingham garantisce che il problema può essere caratterizzato da 3
+numeri adimensionali (6 grandezze fisiche - 3 grandezze fondamentali
+(M,L,T)). Se si scelgono \)</span>\rho<span class="math notranslate nohighlight">\(, \)</span>U<span class="math notranslate nohighlight">\(, \)</span>d<span class="math notranslate nohighlight">\( come grandezze di riferimento,
+si possono costruire i tre numeri adimensionali come
+\)</span><span class="math notranslate nohighlight">\(\pi_1 = \dfrac{\Delta P}{\Delta x} \dfrac{d}{\rho U^2} = f_D \qquad
+   \pi_2 = \dfrac{\mu}{\rho U d} = 1/Re \qquad
+   \pi_3 = \dfrac{\epsilon}{d} = \epsilon'
+  \label{eqn:pi}\)</span><span class="math notranslate nohighlight">\( Il problema può essere quindi scritto in forma
+implicita come: \)</span><span class="math notranslate nohighlight">\(g(f_D,Re,\epsilon') = 0.\)</span><span class="math notranslate nohighlight">\( Esplicitando \)</span>f_D<span class="math notranslate nohighlight">\(:
+\)</span><span class="math notranslate nohighlight">\(f_D = h(Re,\epsilon') \qquad
+  \dfrac{\Delta P}{\Delta x} = \dfrac{\rho U^2}{d} f_D(Re,\epsilon').\)</span><span class="math notranslate nohighlight">\(
+Affinchè sia verificata la similitudine fluidodinamica, ci deve essere
+l'uguaglianza dei numeri di Reynolds \)</span>Re<span class="math notranslate nohighlight">\( e delle rugosità
+adimensionalizzate \)</span>\epsilon”$.</p>
+<ul class="simple">
+<li><p>Dall’uguaglianza delle rugosità adimensionalizzate
+$<span class="math notranslate nohighlight">\(\epsilon'_1 = \epsilon'_2=:\epsilon' \quad \Rightarrow \quad \epsilon_2 = \epsilon_1 \dfrac{d_2}{d_1} = \lambda \epsilon_1.\)</span><span class="math notranslate nohighlight">\(
+Per il modello è quindi necessaria una lavorazione che garantisca
+una finitura superficiale migliore rispetto al condotto al vero
+(\)</span>\lambda \le 1$).</p></li>
+<li><p>La velocità media al vero <span class="math notranslate nohighlight">\(U_1\)</span> viene ricavata grazie alla richiesta
+dellaportata desiderata.
+$<span class="math notranslate nohighlight">\(U_1 = \dfrac{Q}{\rho \frac{\pi}{4} d_1^2}\)</span><span class="math notranslate nohighlight">\( Per ottenere la
+similitudine fluidodinamica si impone l'uguaglianza dei numeri di
+Reynolds \)</span><span class="math notranslate nohighlight">\(Re_1 = Re_2=:Re \quad \Rightarrow \quad U_2 = U_1
+       \dfrac{\rho_1 d_1 \nu_2}{\rho_2 d_2 \nu_1} = U_1 \dfrac{d_1}{d_2}\)</span>$
+poichè la densità e la viscosità del fluido «di prova» sono le
+stesse di quelle del fluido «al vero».</p></li>
+<li><p>Il rapporto tra la differenza di pressione <span class="math notranslate nohighlight">\(\Delta P_2\)</span> misurata sul
+condotto modello e la lunghezza del condotto modello <span class="math notranslate nohighlight">\(L_2\)</span> permette
+di stimare il gradiente di pressione
+<span class="math notranslate nohighlight">\(\dfrac{\Delta P}{\Delta x}\Big|_2 =
+   \dfrac{\Delta P_2}{L_2}\)</span>. Sfruttando ancora una volta la
+similitudine fluidodinamica $<span class="math notranslate nohighlight">\(\begin{cases}
+    \dfrac{\Delta P_2}{L_2} = \dfrac{\rho_2 U_2^2}{d_2} f_D(Re,\epsilon') \\
+    \dfrac{\Delta P_1}{L_1} = \dfrac{\rho_1 U_1^2}{d_1} f_D(Re,\epsilon') \\
+   \end{cases}
+    \Rightarrow \Delta P_1 = \Delta P_2 \dfrac{\rho_1 U_1^2}{\rho_2 U_2^2}
+     \dfrac{d_2}{d_1} \dfrac{L_1}{L_2}\)</span><span class="math notranslate nohighlight">\( Dall'uguaglianza delle
+densità \)</span>\rho_1/\rho_2 = 1<span class="math notranslate nohighlight">\(; dall'uguaglianza dei numeri di Reynolds
+(e delle densità e viscosità) \)</span>U_1^2/U_2^2 =
+d_2^2/d_1^2<span class="math notranslate nohighlight">\(. La formula può quindi essere semplificata
+\)</span><span class="math notranslate nohighlight">\(\Delta P_1 = \Delta P_2 \dfrac{d^3_2}{d^3_1} \dfrac{L_1}{L_2} =
+                  \Delta P_2 \lambda^3 \dfrac{L_1}{L_2}\)</span>$</p></li>
+</ul>
+<div class="section" id="diagramma-di-moody">
+<h1>Diagramma di Moody.<a class="headerlink" href="#diagramma-di-moody" title="Permalink to this heading">#</a></h1>
+<p>Il diagramma di Moody riporta il coefficiente <span class="math notranslate nohighlight">\(f_D\)</span> in funzione del
+numero di <span class="math notranslate nohighlight">\(Re\)</span> e della rugosità del tubo. Si possono individuare due
+regimi estremi del problema. Per «basse velocità» (o meglio, bassi
+numeri di Reynolds), si può intuire che gli effetti della viscosità
+prevalgano sugli effetti inerziali; inoltre, gli effetti della rugosità
+sono minimi. Si può quindi pensare che il problema sia indipendente
+dalla densità del fluido e dalla rugosità del tubo e descrivibile in
+forma implicita come $<span class="math notranslate nohighlight">\(f_L (\Delta P / \Delta x, \mu, U, d) = 0\)</span><span class="math notranslate nohighlight">\( Si può
+descrivere il problema solo con un numero adimensionale. Scegliendo
+\)</span>\mu<span class="math notranslate nohighlight">\(, \)</span>U<span class="math notranslate nohighlight">\(, \)</span>d<span class="math notranslate nohighlight">\( come grandezze di riferimento, si può scrivere
+\)</span><span class="math notranslate nohighlight">\(\pi_{1,L} = \dfrac{\Delta P}{\Delta x} \dfrac{d^2}{\mu U}\)</span><span class="math notranslate nohighlight">\( Il
+problema può essere scritto in forma implicita \)</span>g_L(\pi_{1,L}) = 0<span class="math notranslate nohighlight">\(.
+Poichè la funzione \)</span>g_L<span class="math notranslate nohighlight">\( dipende solo dal coefficiente \)</span>\pi_{1,L}<span class="math notranslate nohighlight">\(, il
+coefficiente \)</span>\pi_{1,L}<span class="math notranslate nohighlight">\( deve essere costante. Il gradiente di pressione
+può essere scritto
+\)</span><span class="math notranslate nohighlight">\(\dfrac{\Delta P}{\Delta x} = \pi_{1,L} \dfrac{\mu U}{d^2} = 
+      \dfrac{\rho U^2}{d} f_D\)</span><span class="math notranslate nohighlight">\( avendo usato la definizione di \)</span>f_D<span class="math notranslate nohighlight">\(
+introdotta nell'equazione ([\[eqn:pi\]](#eqn:pi){reference-type=&quot;ref&quot;
+reference=&quot;eqn:pi&quot;}). É quindi possibile stimare l'andamento del
+coefficiente \)</span>f_D<span class="math notranslate nohighlight">\(, per bassi numeri di Reynolds, invertendo l'equazione
+precedente. Si scopre che il coefficiente \)</span>f_D<span class="math notranslate nohighlight">\( è inversamente
+proporzionale al numero di Reynolds.
+\)</span><span class="math notranslate nohighlight">\(f_D = \pi_{1,L} \dfrac{\mu}{\rho U d} = \pi_{1,L} \dfrac{1}{Re}\)</span><span class="math notranslate nohighlight">\(. Per
+bassi numeri di Reynolds, il parametro \)</span>f_D<span class="math notranslate nohighlight">\( in funzione di \)</span>Re$ mostra
+un andamento lineare in un diagramma con assi logaritmici, a conferma
+della correttezza della stima appena svolta.</p>
+<p>Si può ragionare in maniera analoga per il regime di moto estremo
+opposto, dove gli effetti della viscosità sono trascurabili. Si scopre
+che il coefficiente <span class="math notranslate nohighlight">\(f_D\)</span> è funzione solo della rugosità adimensionale
+<span class="math notranslate nohighlight">\(\epsilon\)</span>, mentre non dipende dal numero di Reynolds. Per alti numeri
+di Reynolds, il parametro <span class="math notranslate nohighlight">\(f_D\)</span> è descritto da curve che tendono a un
+valore costante, che dipende dal valore della rugosità adimensionale
+<span class="math notranslate nohighlight">\(\epsilon'\)</span>.</p>
+<p><img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/07_similitudine/fig/MoodyChart.jpg" />{width=»100%»}</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/07_similitudine"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

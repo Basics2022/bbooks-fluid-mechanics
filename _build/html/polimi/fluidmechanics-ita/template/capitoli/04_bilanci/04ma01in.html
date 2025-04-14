@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04ma01in';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">Statica</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">Legge di Young-Laplace.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="04teoria.html">Bilanci in forma integrale</a></li>
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04ma01in.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>+:———————————:+:———————————:+
+| Viene dato l’irrigatore           |                                   |
+| rappresentato in figura, del      |                                   |
+| quale sono note le sue dimensioni |                                   |
+| geometriche, <span class="math notranslate nohighlight">\(R_0\)</span>, <span class="math notranslate nohighlight">\(R_1\)</span>,        |                                   |
+| <span class="math notranslate nohighlight">\(\ell\)</span>, <span class="math notranslate nohighlight">\(h\)</span>. L’irrigatore è       |                                   |
+| libero di ruotrare attorno        |                                   |
+| all’asse <span class="math notranslate nohighlight">\(z\)</span>. Si conosce la       |                                   |
+| densità del fluido <span class="math notranslate nohighlight">\(\rho\)</span> e la    |                                   |
+| velocità «di ingresso» <span class="math notranslate nohighlight">\(U_0\)</span>      |                                   |
+| uniforme sulla sezione <span class="math notranslate nohighlight">\(S_0\)</span>.     |                                   |
+| Supponendo                        |                                   |
+|                                   |                                   |
+| -   la pressione uniforme sulle   |                                   |
+|     sezioni <span class="math notranslate nohighlight">\(S_0\)</span>, <span class="math notranslate nohighlight">\(S_1\)</span>, <span class="math notranslate nohighlight">\(S_2\)</span> e |                                   |
+|     uguale alla pressione         |                                   |
+|     atmosferica dell’aria attorno |                                   |
+|     all’irrigatore                |                                   |
+|                                   |                                   |
+| -   la <strong>velocità relativa</strong>      |                                   |
+|     rispetto al moto              |                                   |
+|     dell’irrigatore uniforme      |                                   |
+|     sulle sezioni <span class="math notranslate nohighlight">\(S_1\)</span>, <span class="math notranslate nohighlight">\(S_2\)</span>,   |                                   |
+|                                   |                                   |
+| -   gli effetti gravitazionali    |                                   |
+|     trascurabili                  |                                   |
+|                                   |                                   |
+| viene chiesto di calcolare la     |                                   |
+| velocità <span class="math notranslate nohighlight">\(V\)</span> e la velocità di     |                                   |
+| rotazione dell’irrigatore         |                                   |
+| <span class="math notranslate nohighlight">\(\Omega\)</span>, a regime.               |                                   |
++———————————–+———————————–+</p>
+<p>Si scrivono i bilanci integrali di massa e momento della quantità di
+moto per il volume fluido <span class="math notranslate nohighlight">\(V_t\)</span> contenuto all’interno dell’irrigatore,
+delimitato dalla parete interna dell’irrigatore <span class="math notranslate nohighlight">\(S_{f,s}\)</span>, dalla sezione
+di ingresso <span class="math notranslate nohighlight">\(S_0\)</span> e dalle due di uscita <span class="math notranslate nohighlight">\(S_1\)</span>, <span class="math notranslate nohighlight">\(S_2\)</span>. Si introducono due
+sistemi di riferimento cartesiani, uno inerziale,
+<span class="math notranslate nohighlight">\(\left\{ \bm{\hat{x}}, \bm{\hat{y}}, \bm{\hat{z}} \right\}\)</span>, l’altro
+solidale con l’irrigatore,
+<span class="math notranslate nohighlight">\(\left\{ \bm{\hat{X}}, \bm{\hat{Y}}, \bm{\hat{Z}} \right\}\)</span>, con l’asse
+<span class="math notranslate nohighlight">\(Z\)</span> coincidente con l’asse <span class="math notranslate nohighlight">\(z\)</span>. Il bilancio di massa per un volume
+<span class="math notranslate nohighlight">\(V_t\)</span>,
+$<span class="math notranslate nohighlight">\(\dfrac{d}{dt} \int_{V_t} \rho + \oint_{\partial V_t} \rho \left(\bm{u} - \bm{b} \right) \cdot \bm{\hat{n}} = 0 \ ,\)</span>$
+viene semplificato</p>
+<ul class="simple">
+<li><p>utilizzando l’ipotesi di stazionarietà<a class="footnote-reference brackets" href="#id2" id="id1">1</a> del problema</p></li>
+<li><p>riconoscendo che la superficie <span class="math notranslate nohighlight">\(S_{s,f}\)</span> non dà contributo al
+bilancio, poiché la velocità del fluido sul contorno solido deve
+essere uguale alla velocità del corpo, per la condizione al contorno
+di <strong>adesione</strong>: <span class="math notranslate nohighlight">\(\bm{u} = \bm{b}\)</span> in ogni punto di <span class="math notranslate nohighlight">\(S_{s,f}\)</span>. Anche
+se fosse stato utilizzato un modello non viscoso per rappresentare
+il problema, sarebbe valida la condizione al contorno di <strong>non
+penetrazione</strong>:
+<span class="math notranslate nohighlight">\(\bm{u} \cdot \bm{\hat{n}} = \bm{b} \cdot \bm{\hat{n}}\)</span> su tutti i
+punti di <span class="math notranslate nohighlight">\(S_{s,f}\)</span>;</p></li>
+<li><p>la velocità della superficie <span class="math notranslate nohighlight">\(S_0\)</span> è nulla, <span class="math notranslate nohighlight">\(\bm{b} = \bm{0}\)</span> su
+<span class="math notranslate nohighlight">\(S_0\)</span> e quindi la velocità relativa coincide con la velocità
+assoluta <span class="math notranslate nohighlight">\(\bm{U_0} = U_0 \bm{\hat{z}}\)</span>, dato del problema;</p></li>
+<li><p>per i dati del problema, la velocità relativa del fluido sulle
+sezioni <span class="math notranslate nohighlight">\(S_1\)</span>, <span class="math notranslate nohighlight">\(S_2\)</span> è uniforme: <span class="math notranslate nohighlight">\(\bm{u}-\bm{b} = V \bm{\hat{X}}\)</span> su
+<span class="math notranslate nohighlight">\(S_1\)</span>, <span class="math notranslate nohighlight">\(\bm{u}-\bm{b} = -V \bm{\hat{X}}\)</span> su <span class="math notranslate nohighlight">\(S_2\)</span></p></li>
+</ul>
+<p>Dal bilancio di massa si trova quindi il modulo della velocità relativa
+della corrente sulle sezioni <span class="math notranslate nohighlight">\(S_1\)</span>, <span class="math notranslate nohighlight">\(S_2\)</span>,
+$<span class="math notranslate nohighlight">\(0 = - \rho U_0 \pi R_0^2 + 2 \rho V \pi R_1^2 \qquad \rightarrow \qquad
+  V = \dfrac{1}{2} \left(\dfrac{R_0}{R_1}\right)^2 U_0 \ .\)</span>$</p>
+<p>Il bilancio del momento della quantità di moto per il volume fluido
+<span class="math notranslate nohighlight">\(V_t\)</span>, $<span class="math notranslate nohighlight">\(\dfrac{d}{dt} \int_{V_t} \rho \bm{r} \times \bm{u} +
+ \int_{\partial V_t} \rho \bm{r} \times \bm{u} \left( \bm{u} - \bm{b} \right) \cdot \bm{\hat{n}} =
+ \int_{V_t} \rho \bm{r} \times \bm{g} + \int_{\partial V_t} \bm{r} \times \bm{t_n} \ .\)</span><span class="math notranslate nohighlight">\(
+Senza riportare i dettagli (TODO: riportare i dettagli) usando l'ipotesi
+che gli effetti gravitazionali trascurabili e che la pressione sia
+uniforme sulle superfici \)</span>S_0<span class="math notranslate nohighlight">\(, \)</span>S_1<span class="math notranslate nohighlight">\(, \)</span>S_2<span class="math notranslate nohighlight">\( e uguale alla pressione
+atmosferica attorno al'irrigatore, il bilancio del momento di quantità
+di moto diventa
+\)</span><span class="math notranslate nohighlight">\(\bm{M}^s = - \dfrac{d}{dt} \int_{V_t} \rho \bm{r} \times \bm{u} - \oint_{\partial V_t} \rho \bm{r} \times \bm{u} \left( \bm{u} - \bm{b} \right) \cdot \bm{\hat{n}} \ ,\)</span><span class="math notranslate nohighlight">\(
+avendo messo in evidenza la risultante dei momenti \)</span>\bm{M}^s<span class="math notranslate nohighlight">\( agenti sul
+solido, rispetto all'origine dei sistemi di riferimento. Il contributo
+della superficie laterale \)</span>S_{s,f}<span class="math notranslate nohighlight">\( è nullo, poiché è nullo il termine
+\)</span>(\bm{u}-\bm{b}) \cdot \bm{\hat{n}}<span class="math notranslate nohighlight">\(; il contributo della superficie
+\)</span>S_0<span class="math notranslate nohighlight">\( è nullo per simmetria. Si può dimostrare (TODO: riportare i
+dettagli) che il termine con la derivata temporale non genera un momento
+attorno all'asse \)</span>z<span class="math notranslate nohighlight">\( di rotazione dell'irrigatore, e scrivere
+\)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+  M^s_z &amp; = - \bm{\hat{z}} \cdot \oint_{\partial V_t} \rho \bm{r} \times \bm{u} \left( \bm{u} - \bm{b} \right) \cdot \bm{\hat{n}} = {\color{red} (...)} \\
+   &amp; = - 2 \, \bm{\hat{z}} \cdot \oint_{S_1} \rho \bm{r} \times \bm{u} \left( \bm{u} - \bm{b} \right) \cdot \bm{\hat{n}} \ ,
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( avendo riconosciuto che i contributi al momento delle
+superfici \)</span>S_1<span class="math notranslate nohighlight">\( e \)</span>S_2<span class="math notranslate nohighlight">\( sono uguali. Calcoliamo ora il termine di
+superficie, esprimendo tutti i termini nel sistema di coordinate
+solidale con l'irrigatore, \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ \bm{b} = \bm{\Omega} \times \bm{r} &amp; = \Omega \bm{\hat{Z}} \times \left( X \bm{\hat{X}} + Y \bm{\hat{Y}} + Z \bm{\hat{Z}}  \right) = -\Omega Y \bm{\hat{X}} + \Omega X \bm{\hat{Y}} \\
+ \left( \bm{u} - \bm{b} \right) \cdot \bm{\hat{n}} = \bm{u}_{rel} \cdot \bm{\hat{n}} &amp; =  V \bm{\hat{X}} \cdot \bm{\hat{X}} = V \\
+ \bm{r} \times \bm{u} = \bm{r} \times (\bm{u}_{rel} + \bm{b} ) &amp; = \left( X \bm{\hat{X}} + Y \bm{\hat{Y}} + Z \bm{\hat{Z}} \right) \times \left[ \left(V-\Omega Y\right)\bm{\hat{X}} + \Omega X \bm{\hat{Y}} \right] = \\
+  &amp; = - \Omega X Z \bm{\hat{X}} + \left( V - \Omega Y \right) Z \bm{\hat{Y}} + 
+  \left[ \Omega \left( X^2 + Y^2 \right) - V \, Y \right] \bm{\hat{Z}} \ , 
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( e usando un sistema di coordinate polari con origine nel
+centro della sezione circolare \)</span>S_1<span class="math notranslate nohighlight">\(, \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+ X = h \\
+ Y = \ell + r \cos\theta \\
+ Z = r \sin\theta \\
+\end{cases}\)</span><span class="math notranslate nohighlight">\( \)</span>$\begin{aligned}</p>
+<ul class="simple">
+<li><p>\dfrac{M_z^s}{2} &amp; = \bm{\hat{z}} \cdot \oint_{S_1} \rho \bm{r} \times \bm{u} \left( \bm{u} - \bm{b} \right) \cdot \bm{\hat{n}} = \
+&amp; = \rho \int_{\theta=0}^{2\pi}\int_{r=0}^{R_1}
+\left[ \Omega\left( h^2 + (\ell + r \cos\theta)^2 \right) - V \left( \ell + r \cos \theta \right)  \right] , V ,  r , dr , d\theta = \
+&amp; = \rho \left[ \Omega \left( h^2 + \ell^2 \right) - V \ell \right] , V , 2 \pi \dfrac{R_1^2}{2} +
+\Omega , V , \dfrac{R_1^4}{4}, \pi = \
+&amp; = \pi R_1^2 \rho , V \left[ \Omega \left( h^2 + \ell^2 + \dfrac{R_1^2}{4} \right) - V \ell \right] \ .
+\end{aligned}$<span class="math notranslate nohighlight">\( A regime, la componente \)</span>z<span class="math notranslate nohighlight">\( della risultante dei momenti
+deve essere nulla e la velocità angolare deve essere uguale a
+\)</span><span class="math notranslate nohighlight">\(\Omega = \dfrac{\ell}{h^2 + \ell^2 + \dfrac{R_1^2}{4}} V
+\qquad \rightarrow \qquad
+\Omega = \dfrac{1}{2}\dfrac{\ell}{h^2 + \ell^2 + \dfrac{R_1^2}{4}} \left( \dfrac{R_0}{R_1} \right)^2 \, U_0 \ .\)</span>$</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Dovrebbe essere chiaro che il concetto di «stazionarietà» dipende
+dal tipo di descrizione adottata per rappresentare il problema,
+euleriana, lagrangiana o arbitraria. Come esempio, in questo
+esercizio utilizziamo una descrizione arbitraria, utilizzando un
+volume di controllo che ruota insieme all’irrigatore. Per un
+osservatore inerziale il problema a regime non è stazionario, ma
+periodico. Per un’osservatore non inerziale solidale con
+l’irrigatore, le quantità del problema non variano con il tempo e
+quindi a lui il problema a regime risulta stazionario;</p>
+</dd>
+</dl>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/04_bilanci"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

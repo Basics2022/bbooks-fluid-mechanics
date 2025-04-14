@@ -1,0 +1,601 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluzione {#soluzione .unnumbered} &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/09_bl/0904Blasius';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">Statica</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">Legge di Young-Laplace.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">Bilanci in forma integrale</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">Introduzione e linee guida per la soluzione dei problemi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">Teorema di Buckingham</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="09teoria.html">Equazioni di Prandtl dello strato limite</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/09_bl/0904Blasius.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Soluzione {#soluzione .unnumbered}</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dalle-equazioni-di-prandtl-al-modello-di-blasius">Dalle equazioni di Prandtl al modello di Blasius.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sforzo-viscoso-a-parete">Sforzo viscoso a parete.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spessori-integrali-dello-strato-limite">Spessori integrali dello strato limite.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soluzione-numerica-shooting-method">Soluzione numerica: shooting method.</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><strong>Esercizi per il corso di Fluidodinamica</strong></p>
+<p>Partendo dalle equazioni di Prandtl per lo strato limite bidimensionale
+stazionario laminare, ricavare l’equazione di Blasius per lo strato
+limite laminare e le condizioni al contorno per la corrente di stato
+limite su una lamina semi-infinita. Ricavare poi l’espresisone dello
+sforzo viscoso a parete e gli spessori integrali di spostamento
+<span class="math notranslate nohighlight">\(\delta^*\)</span> e di quantità di moto <span class="math notranslate nohighlight">\(\theta\)</span>. Infine, ricavare la soluzione
+dell’equazione di Blasius con un metodo numerico.</p>
+<div class="section" id="soluzione-soluzione-unnumbered">
+<h1>Soluzione {#soluzione .unnumbered}<a class="headerlink" href="#soluzione-soluzione-unnumbered" title="Permalink to this heading">#</a></h1>
+<p><strong>Concetti.</strong> Equazioni di Prandtl. Equazione di Blasius. Soluzione
+in similitudine. Shooting method.</p>
+<p><strong>Svolgimento.</strong></p>
+<div class="section" id="dalle-equazioni-di-prandtl-al-modello-di-blasius">
+<h2>Dalle equazioni di Prandtl al modello di Blasius.<a class="headerlink" href="#dalle-equazioni-di-prandtl-al-modello-di-blasius" title="Permalink to this heading">#</a></h2>
+<p>Le equazioni di Prandtl dello strato limite possono essere ricavate
+tramite un’analisi degli ordini di grandezza delle quantità fisiche che
+compaiono nelle equazioni di Navier–Stokes. $<span class="math notranslate nohighlight">\(\begin{cases}
+      u\dfrac{\partial u}{\partial x} + v\dfrac{\partial u}{\partial y} - \nu \dfrac{\partial^2 u}{\partial y^2} = - \dfrac{1}{\rho} \dfrac{d P(x)}{d x} = U(x) U'(x) \\
+    \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y} = 0 \ ,
+  \end{cases}\)</span><span class="math notranslate nohighlight">\( avendo indicato con \)</span>U(x)<span class="math notranslate nohighlight">\( la componente parallela alla
+parete della lamina semi infinita del campo di velocità della corrente
+esterna. Il modello di Blasius dello strato limite ipotizza che la
+corrente esterna sia uniforme, \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+      u\dfrac{\partial u}{\partial x} + v\dfrac{\partial u}{\partial y} - \nu \dfrac{\partial^2 u}{\partial y^2} = 0 \\
+    \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y} = 0 \ .
+  \end{cases}\)</span><span class="math notranslate nohighlight">\( Si può ridurre il sistema di due equazioni nelle
+incognite \)</span>(u,\ v)<span class="math notranslate nohighlight">\( a un'equazione sola in una incognita introducendo la
+funzione di corrente \)</span>\psi<span class="math notranslate nohighlight">\(,
+\)</span><span class="math notranslate nohighlight">\(u = \partial \psi / \partial y \qquad , \qquad v = - \partial \psi / \partial x \ .\)</span><span class="math notranslate nohighlight">\(
+Il vincolo di incomprimibilità è soddisfatto identicamente, mentre la
+componente \)</span>x<span class="math notranslate nohighlight">\( dell'equazione della quantità di moto diventa
+\)</span><span class="math notranslate nohighlight">\(\psi_y \psi_{yx} - \psi_x \psi_{yy} - \nu \, \psi_{yyy} = 0 \ .\)</span><span class="math notranslate nohighlight">\(
+Poiché il problema non ha una scala di lunghezza, si cerca una soluzione
+similare. Si introduce la variabile di similitudine
+\)</span>\eta = y/\delta(x)<span class="math notranslate nohighlight">\(, dove \)</span>\delta(x)<span class="math notranslate nohighlight">\( rappresenta lo spessore
+convenzionale dello strato limite, e si cerca la soluzione del problema
+imponendo l'espressione della funzione di corrente
+\)</span><span class="math notranslate nohighlight">\(\psi(x,y) = U \delta(x) g(\eta(x,y)) \ .\)</span><span class="math notranslate nohighlight">\( Utilizzando le derivate
+della funzione di corrente, \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+    \psi_y &amp; = U g'(\eta) \qquad , \qquad \psi_{yy} = \dfrac{U}{\delta(x)}g''(\eta) \qquad ,
+    \qquad \psi_{yyy} = \dfrac{U}{\delta^2(x)}g'''(\eta) \ ,  \\
+    \psi_x &amp; = U \delta'(x) \left[ g - \eta \, g'(\eta) \right]  \qquad , \qquad
+    \psi_{xy} = U \left[ - \dfrac{\delta'(x)}{\delta(x)} \, \eta \, g''(\eta) \right] \ ,
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( all'interno dell'equazione della quantitàdi moto, si
+ottiene \)</span>$\begin{aligned}
+&amp; - U^2 \dfrac{\delta”}{\delta} , \eta , g”  g””</p>
+<ul class="simple">
+<li><p>U^2 \dfrac{\delta”}{\delta} [ g , g”” - \eta , g” g”” ] - \dfrac{ \nu U }{\delta^2} g””” = 0 \ ,\ \
+&amp; \qquad \qquad \qquad \rightarrow \qquad
+\dfrac{U , \delta”(x) \delta(x)}{ \nu } g(\eta) , g””(\eta) + g”””(\eta) = 0 \ .
+\end{aligned}$<span class="math notranslate nohighlight">\( Affinché la funzione \)</span>g(\eta)<span class="math notranslate nohighlight">\( dipenda solo da
+\)</span>\eta(x,y)<span class="math notranslate nohighlight">\( e non dalle due variabili \)</span>x<span class="math notranslate nohighlight">\(, \)</span>y<span class="math notranslate nohighlight">\( in maniera indipendente,
+il coefficiente \)</span>U \delta”(x) \delta(x) / \nu<span class="math notranslate nohighlight">\( deve essere uguale a una
+costante, \)</span><span class="math notranslate nohighlight">\(\dfrac{U \delta'(x) \delta(x)}{ \nu } = \alpha \  .\)</span><span class="math notranslate nohighlight">\(
+Scegliendo in maniera arbitraria \)</span>\alpha = \frac{1}{2}<span class="math notranslate nohighlight">\( e integrando
+questa ultima relazione in \)</span>x<span class="math notranslate nohighlight">\( (con condizioni al contorno
+\)</span>\delta(0) = 0<span class="math notranslate nohighlight">\(), si ottiene l'andamento dello spessore dello strato
+limite laminare di Blasius,
+\)</span><span class="math notranslate nohighlight">\(\delta(x) = \sqrt{ \dfrac{ \nu x }{ U } } \ ,\)</span><span class="math notranslate nohighlight">\( e l'equazione di
+Blasius per la funzione \)</span>g(\eta)<span class="math notranslate nohighlight">\(, \)</span><span class="math notranslate nohighlight">\(g''' + \frac{1}{2} g g'' = 0 \ ,\)</span><span class="math notranslate nohighlight">\(
+con le condizioni al contorno per il problema dello strato limite su
+lamina piana \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+g(0) = 0 \\
+g'(0) = 0 \\
+\lim_{\eta\to \infty}
+g'(\eta) = 1 \ .
+\end{cases}\)</span>$</p></li>
+</ul>
+</div>
+<div class="section" id="sforzo-viscoso-a-parete">
+<h2>Sforzo viscoso a parete.<a class="headerlink" href="#sforzo-viscoso-a-parete" title="Permalink to this heading">#</a></h2>
+<p>La formula per lo sforzo viscoso a parete è:
+$<span class="math notranslate nohighlight">\(\tau_w = \mu \frac{\partial u}{\partial y}\Bigg|_{y=0} = \mu \frac{\partial^2 \psi}{\partial y^2}\Bigg|_{\eta=0} =  \mu \frac{U}{\delta(x)} g''(0) \ ,\)</span><span class="math notranslate nohighlight">\(
+dove \)</span>g””(0) \approx 0.332$.</p>
+</div>
+<div class="section" id="spessori-integrali-dello-strato-limite">
+<h2>Spessori integrali dello strato limite.<a class="headerlink" href="#spessori-integrali-dello-strato-limite" title="Permalink to this heading">#</a></h2>
+<p>Si calcolano gli spessori integrali dello strato limite di Blasius.
+Usando le relazioni dello strato limite di Blasius, si trova
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+ &amp; \delta^* = \int_0^\infty (1 - g'(\eta(y))) dy = 
+     \delta(x) \int_0^\infty (1 - g'(\eta)) d\eta \ , \\
+ &amp; \theta   = \int_0^\infty g'(\eta) (1 - g'(\eta(y))) dy = 
+     \delta(x) \int_0^\infty g'(\eta) (1 - g'(\eta)) d\eta \ .
+ \end{aligned}\)</span><span class="math notranslate nohighlight">\( Per lo spessore di spostamento si ha: \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+  \delta^* &amp; = \delta(x) \int_0^\infty (1 - g'(\eta)) d\eta = 
+         &amp; \\
+           &amp; = \delta(x) [\eta - g(\eta)]|_0^\infty = 
+         &amp; \text{(\)</span>g(0) = 0<span class="math notranslate nohighlight">\()} \\
+           &amp; = \delta(x) \lim_{\eta \to \infty} [\eta - g(\eta)] = 
+         &amp; \text{(\)</span>\lim_{\eta \to \infty} [\eta - g(\eta)] = 1.721<span class="math notranslate nohighlight">\()} \\
+           &amp; = 1.721 \cdot \delta = 
+         &amp; \text{(\)</span>\delta = \sqrt{\nu x / U}<span class="math notranslate nohighlight">\()} \\
+           &amp; = 1.721 \sqrt{\frac{\nu x}{U}} \ .
+ \end{aligned}\)</span><span class="math notranslate nohighlight">\( Per lo spessore di quantità di moto: \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+  \theta   &amp; = \delta(x) \int_0^\infty g'(\eta) (1 - g'(\eta)) d\eta = &amp; \\
+           &amp; = \delta \int_0^\infty g'(\eta) d\eta 
+                - \delta \int_0^\infty g'^2(\eta) d\eta = &amp; \\
+           &amp; = \delta [g(\eta)]|_0^\infty 
+                - \delta \int_0^\infty g'^2(\eta) d\eta = 
+         &amp; \text{(\)</span>g(0)=0<span class="math notranslate nohighlight">\( e IxP)} \\
+           &amp; = \delta \lim_{\eta \to \infty}  g(\eta) 
+                - \delta \int_0^\infty [(g g')' - g g''] d\eta = 
+         &amp; \text{(eq. di Blasius: \)</span>\frac{1}{2}g g”” + g””” = 0<span class="math notranslate nohighlight">\()} \\
+           &amp; = \delta \lim_{\eta \to \infty}  g(\eta) 
+                - \delta [g g']|_0^\infty 
+                - \delta \int_0^\infty 2 g''' d\eta = 
+         &amp; \text{(\)</span>g(0) = 0<span class="math notranslate nohighlight">\()}\\
+           &amp; = \delta \lim_{\eta \to \infty}  g(\eta)
+                - \delta \lim_{\eta \to \infty}  g(\eta)g'(\eta)
+                - 2 \delta [g''(\eta)]|_0^\infty = 
+         &amp; \text{(\)</span>\lim_{\eta \to \infty} g”(\eta) = 1<span class="math notranslate nohighlight">\(, 
+           \)</span>\lim_{\eta \to \infty} g””(\eta) = 0<span class="math notranslate nohighlight">\()} \\
+           &amp; = 2 \delta(x) g''(0) = \\
+           &amp; = 0.664 \sqrt{\frac{\nu x}{U}} \ .
+ \end{aligned}\)</span><span class="math notranslate nohighlight">\( Il rapporto di forma vale quindi
+\)</span>H = \delta^* / \theta = 1.721 / 0.664<span class="math notranslate nohighlight">\(, cioè \)</span>H = 2.59$.</p>
+</div>
+<div class="section" id="soluzione-numerica-shooting-method">
+<h2>Soluzione numerica: shooting method.<a class="headerlink" href="#soluzione-numerica-shooting-method" title="Permalink to this heading">#</a></h2>
+<p>Per risolvere l’equazione di Blasius con metodi numerici, si può
+incontrare qualche difficoltà nell’imporre la condizione al contorno per
+<span class="math notranslate nohighlight">\(\eta \to \infty\)</span>. Tramite uno <em>shooting method</em> si può risolvere il
+problema ai valori al contorno, tramite la soluzione di problemi ai
+valori iniziali insieme a un metodo per trovare gli zeri di una funzione
+(es. Newton). Il dominio semi-infinito viene troncato. Il dominio
+numerico è quindi <span class="math notranslate nohighlight">\([0,\bar{\eta}]\)</span>. L’equazione scalare di terzo ordine,
+viene scritta come sistema del primo ordine. Invece di imporre la
+condizione all’infinito, viene imposto il valore di <span class="math notranslate nohighlight">\(g''(0)=\alpha\)</span>. Si
+risolve l’equazione. Si trova il valore di <span class="math notranslate nohighlight">\(g'_n\)</span>in <span class="math notranslate nohighlight">\(\bar{\eta}\)</span>. Si
+itera fino a quando il valore assoluto di
+<span class="math notranslate nohighlight">\(F(\alpha) = g'_n(\bar{\eta};\alpha) - \lim_{\eta\to \infty} g'(\eta)\)</span>
+non è inferiore a una tolleranza stabilita. Per esempio, partendo da
+<span class="math notranslate nohighlight">\(\alpha=0.1\)</span>, con una tolleranza <span class="math notranslate nohighlight">\(tol = 1E-09\)</span>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nIter    g&quot;(0)    res 
+  1     0.1000  5.508e-01 
+  2     0.2836  9.975e-02 
+  3     0.3308  2.575e-03 
+  4     0.3320  1.660e-06 
+  5     0.3320  1.804e-12
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/09_bl"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dalle-equazioni-di-prandtl-al-modello-di-blasius">Dalle equazioni di Prandtl al modello di Blasius.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sforzo-viscoso-a-parete">Sforzo viscoso a parete.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spessori-integrali-dello-strato-limite">Spessori integrali dello strato limite.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soluzione-numerica-shooting-method">Soluzione numerica: shooting method.</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

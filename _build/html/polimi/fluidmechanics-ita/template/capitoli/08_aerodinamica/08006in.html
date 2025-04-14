@@ -1,0 +1,592 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confronto con i risultati ottenuti con il metodo di Hess Smith: effetto suolo. &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/08006in';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">1. Statics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">2. Surface tension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_cinematica/12teoria.html">3. Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">4. Balance equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_bernoulli/05teoria.html">5. Bernoulli theorems and vorticity dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">6. Exact solutions of Navier-Stokes equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08teoria.html">8. Aerodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/08006in.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Confronto con i risultati ottenuti con il metodo di Hess Smith: effetto suolo.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Confronto con i risultati ottenuti con il metodo di Hess Smith: effetto suolo.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#confronto-con-i-risultati-ottenuti-con-il-metodo-di-hess-smith-due-profili">Confronto con i risultati ottenuti con il metodo di Hess Smith: due profili.</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>Il metodo di Pistolesi è un primo metodo rudimentale per la modellazione
+di profili bidimensionali nell’ambito della teoria a potenziale. Il
+profilo viene approssimato con una lamina piana. L’effetto del profilo
+viene modellato tramite la sovrapposizione a una corrente asintotica di
+un vortice posto a un quarto di corda (corrispondente all’incirca con la
+posizione del centro aerodinamico - def…). Il valore della
+circolazione (e quindi della portanza) viene ricavato imponendo le
+condizioni al contorno in un punto di controllo sul profilo.</p>
+<p>Assumendo sia valida l’approssimazione per piccoli angoli
+<span class="math notranslate nohighlight">\(\sin \alpha \sim \alpha\)</span>, confrontando la formula della portanza
+<span class="math notranslate nohighlight">\(l = \frac{1}{2} \rho U^2 c c_L\)</span> con quella ottenuta dal teorema di
+Kutta-Joukowski, ipotizzando un valore di <span class="math notranslate nohighlight">\(c_{L_\alpha} = 2\pi\)</span>, si
+trovi il punto di controllo nel quale deve essere imposta la condizione
+al contorno.</p>
+<p>Quale condizione al contorno va imposta e perchè?</p>
+<p>Metodi a pannelli. Metodo di Pistolesi. Aerodinamica potenziale.</p>
+<p>La condizione da imporre è quella di tangenza: la velocità nel punto di
+controllo deve essere tangente alla lamina piana.</p>
+<p>Definita <span class="math notranslate nohighlight">\(b\)</span> la distanza del punto di controllo dal centro aerodinamico,
+si impone la condizione al contorno in tale punto: deve essere nulla la
+componente normale alla lamina della velocità ottenuta come
+sovrapposizione della corrente asintotica e della corrente indotta dal
+vortice.</p>
+<div class="math notranslate nohighlight">
+\[0 = \frac{\Gamma}{2\pi b} + U_\infty \sin \alpha \qquad \Rightarrow \qquad 
+  \Gamma = - 2\pi b U_\infty \alpha\]</div>
+<p>Inserita nel teorema di Kutta-Joukowski
+<span class="math notranslate nohighlight">\(l = -\rho \Gamma U_\infty = \rho U_\infty^2 b 2\pi \alpha\)</span> e
+confrontata alla formula della portanza
+<span class="math notranslate nohighlight">\(l = \frac{1}{2} \rho U^2 c c_L\)</span>, si ottiene</p>
+<div class="math notranslate nohighlight">
+\[b = \frac{c}{2}\]</div>
+<p>Quindi nel metodo di Pistolesi, il centro aerodinamico è posizionato
+<span class="math notranslate nohighlight">\(\frac{1}{4}\)</span> di corda, mentre il punto di controllo è posizionato a
+<span class="math notranslate nohighlight">\(\frac{3}{4}\)</span> di corda.</p>
+<p><em>Osservazioni.</em></p>
+<ul class="simple">
+<li><p>É possibile simulare l’interazione tra più profili. Con metodi a
+pannelli un po” più raffinati (Hess Smith, Morino,…) è possibile
+simulare l’interazione tra corpi aerodinamici di forma qualsiasi,
+ricordandosi che le informazioni ottenute sono valide sotto le
+ipotesi dell’aerodinamica a potenziale: non devono verificarsi
+grandi separazioni, la vorticità deve essere confinata in una
+regione sottile (numero di Reynolds elevato).</p></li>
+<li><p>Quale può essere un metodo per simulare l’effetto di una superficie
+piana infinita (effetto suolo)?</p></li>
+</ul>
+<p>Usare il metodo di Pistolesi per ottenere delle informazioni qualitative
+sul coefficiente di portanza</p>
+<ul class="simple">
+<li><p>di un profilo in effetto suolo</p></li>
+<li><p>di due profili, in funzione della posizione reciproca</p></li>
+</ul>
+<div class="section" id="confronto-con-i-risultati-ottenuti-con-il-metodo-di-hess-smith-effetto-suolo">
+<h1>Confronto con i risultati ottenuti con il metodo di Hess Smith: effetto suolo.<a class="headerlink" href="#confronto-con-i-risultati-ottenuti-con-il-metodo-di-hess-smith-effetto-suolo" title="Permalink to this heading">#</a></h1>
+<p>Con il metodo delle immagini è possibile calcolare l’effetto che ha la
+presenza di una parete orizzontale (parallela alla velocità asintotica)
+sul coefficiente di portanza di un profilo NACA2412 con incidenza
+<span class="math notranslate nohighlight">\(\theta = 2\degree\)</span>. Il coefficiente di portanza in «aria libera» è
+<span class="math notranslate nohighlight">\(c_{L0} = 0.481\)</span>. La distanza del profilo dalla parete è
+adimensionalizzata sulla corda.</p>
+<p>+:———————————:+::+
+|       h/c      cL     DcL/cL0     |  |
+|     —————————– |  |
+|      0.500   0.680     0.261      |  |
+|      1.000   0.536     0.112      |  |
+|      1.500   0.508     0.054      |  |
+|      2.000   0.498     0.033      |  |
+|      2.500   0.493     0.022      |  |
+|      3.000   0.490     0.016      |  |
+|      3.500   0.488     0.012      |  |
++———————————–+–+</p>
+</div>
+<div class="section" id="confronto-con-i-risultati-ottenuti-con-il-metodo-di-hess-smith-due-profili">
+<h1>Confronto con i risultati ottenuti con il metodo di Hess Smith: due profili.<a class="headerlink" href="#confronto-con-i-risultati-ottenuti-con-il-metodo-di-hess-smith-due-profili" title="Permalink to this heading">#</a></h1>
+<p>Quando due profili sono investiti da una corrente, ognuno di essi
+influenza l’altro. Come primo esempio vengono usati due profili
+NACA0012, con la stessa corda. Il secondo profilo viene messo in scia al
+primo a distanza di 3 corde. La prima prova consiste nel mantenere il
+secondo profilo a incidenza nulla rispetto alla velocità asintotica,
+aumentando l’incidenza del primo. Il primo profilo genera una portanza
+inferiore a un profilo in aria libera, mentre il secondo è deportante:
+il primo profilo induce una velocità verso il basso sul profilo in coda,
+che quindi vede un’incidenza non nulla, ma negativa.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> theta2 = 0.0\degree
+-------------------------------
+ theta1    cL1     cL2    cL10 
+-------------------------------
+   2.5°  0.286  -0.045   0.297 
+   5.0°  0.571  -0.089   0.594 
+</pre></div>
+</div>
+<p>La seconda prova consiste nel mantenere il primo profilo a incidenza
+nulla rispetto alla velocità asintotica e aumentare l’incidenza del
+profilo in scia. Il secondo profilo ha un coefficiente di portanza
+minore rispetto a quello di un profilo in aria libera; il primo profilo
+è anch’esso portante: il profilo in scia induce una velocità verso
+l’alto sul primo profilo che quindi vede un’indicenza positiva.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> theta1 = 0.0°
+-------------------------------
+ theta2    cL1     cL2    cL20 
+-------------------------------
+   2.5°  0.064   0.287   0.297 
+   5.0°  0.128   0.573   0.594 
+</pre></div>
+</div>
+<p>La portanza risultante è maggiore a quella che si otterrebbe
+considerando la somma della portanza generata singolarmente dai due
+profili. Per esempio, per <span class="math notranslate nohighlight">\(\theta = 2.5°\)</span>: $<span class="math notranslate nohighlight">\(\begin{aligned}
+ c_{L1} + c_{L2} &amp; &gt; c_{L01} + c_{L02} \\
+  0.064 + 0.287  &amp; &gt;  0.000  +  0.297  \\
+          0.351  &amp; &gt;  0.297
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Lo stesso effetto viene osservato con due profili più
+vicini tra loro. La corda del profilo secondario è la metà di quella del
+profilo principale. Il profilo principale ha incidenza
+\)</span>\theta_1 = -0.5°<span class="math notranslate nohighlight">\( rispetto alla velocità asintotica, quello secondario
+\)</span>\theta_2 = 12°$. La presenza del secondo profilo fa aumentare
+significativamente la portanza del profilo principale.</p>
+<p>+:———————————-+:———————————-+
+|               +—————— | <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/fig/Aileron.pdf" />{width |
+| ——                            | =»95%»}                           |
+|               | theta  |   cL  |  |                                   |
+|  cL0                              |                                   |
+|     ———-+——–+——-+- |                                   |
+| ——                            |                                   |
+|     airfoil 1 |  -0.5° | 1.099 |  |                                   |
+| 0.184                             |                                   |
+|     airfoil 2 |  12.0° | 0.975 |  |                                   |
+| 1.656                             |                                   |
+|     ———-+——–+——-+- |                                   |
+| ——                            |                                   |
+|                                   |                                   |
+| La colonna <span class="math notranslate nohighlight">\(\mathtt{cL}\)</span> contiene |                                   |
+| i coefficienti di portanza dei    |                                   |
+| profili disposti come in figura.  |                                   |
+| La colonna <span class="math notranslate nohighlight">\(\mathtt{cL0}\)</span>         |                                   |
+| contiene i coefficienti di        |                                   |
+| portanza dei profili presi        |                                   |
+| singolarmente, senza influenza    |                                   |
+| reciproca, alla stessa incidenza. |                                   |
++———————————–+———————————–+</p>
+<p>Come ultimo esempio si considerano due profili NACA0012 uguali
+sovrapposti, con angolo di incidenza <span class="math notranslate nohighlight">\(\theta=5.0°\)</span>, separati da una
+distanza adimensionalizzata <span class="math notranslate nohighlight">\(y/c\)</span> compresa tra 1 e 15. Il coefficiente
+di portanza del singolo profilo è <span class="math notranslate nohighlight">\(c_L = 0.594\)</span>.</p>
+<p><img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/fig/vanes.pdf" />{width=»60%»}</p>
+<p>Esistono alcuni esempi «esotici»: ekranoplano sovietico…; esempi
+meno esotici:…</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Confronto con i risultati ottenuti con il metodo di Hess Smith: effetto suolo.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#confronto-con-i-risultati-ottenuti-con-il-metodo-di-hess-smith-due-profili">Confronto con i risultati ottenuti con il metodo di Hess Smith: due profili.</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

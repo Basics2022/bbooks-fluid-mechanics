@@ -1,0 +1,781 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alcuni concetti di stabilità &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/07_similitudine/07lorenz';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">Statica</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">Legge di Young-Laplace.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">Bilanci in forma integrale</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">Introduzione e linee guida per la soluzione dei problemi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07teoria.html">Teorema di Buckingham</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">Equazioni di Prandtl dello strato limite</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/07_similitudine/07lorenz.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Alcuni concetti di stabilità</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Alcuni concetti di stabilità</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-dinamico-di-lorenz">Sistema dinamico di Lorenz</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#punti-di-equilibrio">Punti di equilibrio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stabilita-dell-equilibrio-e1">Stabilità dell’equilibrio E1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stabilita-degli-equilibri-e2-e3">Stabilità degli equilibri E2, E3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biforcazioni-cicli-limite-e-attrattori-strani">Biforcazioni, cicli limite e attrattori strani</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="section" id="alcuni-concetti-di-stabilita">
+<h1>Alcuni concetti di stabilità<a class="headerlink" href="#alcuni-concetti-di-stabilita" title="Permalink to this heading">#</a></h1>
+<p>Prima di indagare il sistema di Lorenz vengono introdotti alcuni
+concetti utili per studiare la stabilità di un generico sistema
+dinamico,
+$<span class="math notranslate nohighlight">\(\dfrac{d \bm{x}}{d t } = \bm{f}(\bm{x}(t),t) \qquad , \qquad \bm{x}(0) = \bm{x}_0 \ .\)</span>$
+Alcuni di questi concetti non sono nuovi; tutte queste definizioni
+verranno usate (e risulteranno più chiare) nella sezione successiva
+dedicata al sistema di Lorenz.</p>
+<p><strong>Spazio delle fasi e stati di un sistema.</strong> Lo spazio delle fasi è uno
+spazio nel quale i punti rappresentano i possibili stati del sistema. Lo
+stato di un sistema dinamico è identificato dal valore delle sue
+variabili di stato, ovvero le variabili che lo descrivono in maniera
+esaustiva da poterne prevederne l’evoluzione.<a class="footnote-reference brackets" href="#id2" id="id1">1</a> L’evoluzione libera di
+un sistema dinamico viene descritta dalle traiettorie nel suo spazio
+delle fasi.</p>
+<p><strong>Equilibri e cicli limite.</strong> Un equilibrio <span class="math notranslate nohighlight">\(\overline{\bm{x}}\)</span> del
+sistema è una soluzione stazionaria delle equazioni del sistema
+dinamico, cioè $<span class="math notranslate nohighlight">\(\bm{0} = \bm{f}(\overline{\bm{x}}) \ .\)</span><span class="math notranslate nohighlight">\( Un ciclo
+limite di periodo \)</span>T<span class="math notranslate nohighlight">\( è una traiettoria periodica del sistema, tale per
+cui \)</span><span class="math notranslate nohighlight">\(\bm{x}(t+T) = \bm{x}(t) \quad , \quad \forall t \ ,\)</span>$
+rappresentata nello spazio delle fasi da un’orbita chiusa (e isolata).</p>
+<p><strong>Stabilità alla Lyapunov.</strong> Lo studio di stabilità alla Lyapunov
+riguarda l’evoluzione locale del sistema dinamico con <strong>condizioni
+iniziali perturbate</strong>. Qualitativamente, un punto di equilibrio è
+stabile se, partendo da uno stato «vicino» all’equilibrio, lo stato del
+sistema rimane per sempre «vicino» all’equilibrio. Inoltre, l’equilibrio
+è asinotiticamente stabile se lo stato converge verso il punto di
+equilibrio, <span class="math notranslate nohighlight">\(\bm{x} \rightarrow \bm{\overline{x}}\)</span> per
+<span class="math notranslate nohighlight">\(t \rightarrow \infty\)</span>. La stabilità di Lyapunov di un equilibrio può
+essere indagata attraverso l’analisi degli autovalori del sistema
+linearizzato attorno al punto di equilibrio.</p>
+<p><strong>Stabilità strutturale.</strong> La stabilità strutturale considera
+l’evoluzione del sistema in seguito a perturbazioni del sistema stesso.
+Un sistema dinamico è strutturalmente stabile se le traiettorie nel suo
+spazio delle fasi non cambiano qualitativamente: ad esempio, in un
+sistema strutturalmente stabile alla perturbazione di un parametro, non
+cambiano il numero dei punti di equilibrio e cicli limite.</p>
+</div>
+<div class="section" id="sistema-dinamico-di-lorenz">
+<h1>Sistema dinamico di Lorenz<a class="headerlink" href="#sistema-dinamico-di-lorenz" title="Permalink to this heading">#</a></h1>
+<p>In questa sezione si descrive, senza nessuna pretesa di completezza, lo
+di studio di stabilità del sistema dinamico di Lorenz, $<span class="math notranslate nohighlight">\(\begin{cases}
+      \dot{X} = - \sigma X + \sigma Y \\
+      \dot{Y} = - Y + \rho X - X Z \\
+      \dot{Z} = - \beta Z + X Y \ ,
+    \end{cases}\)</span><span class="math notranslate nohighlight">\( come primo esempio di studio di stabilità di un
+sistema fluidodinamico. Si studia la stabilità del sistema di Lorenz al
+variare del parametro \)</span>\rho<span class="math notranslate nohighlight">\(, mantenendo costante il valore dei
+parametri \)</span>\sigma<span class="math notranslate nohighlight">\( e \)</span>\beta<span class="math notranslate nohighlight">\(. Lorenz usò come valori \)</span>\sigma = 10<span class="math notranslate nohighlight">\( e
+\)</span>\beta = 8/3<span class="math notranslate nohighlight">\(. Il numero di Prantdl assume un valore paragonabile a
+quello dell'acqua alla temperatura di \)</span>20^\circ C<span class="math notranslate nohighlight">\(, che vale circa
+\)</span>Pr \approx 7<span class="math notranslate nohighlight">\(. Il numero di Prandtl per l'aria e altri gas vale circa
+\)</span>0.7<span class="math notranslate nohighlight">\(. Il valore \)</span>\beta = 8/3<span class="math notranslate nohighlight">\( corrisponde a un numero d'onda
+fondamentale in direzione \)</span>x<span class="math notranslate nohighlight">\( uguale a
+\)</span>\frac{k}{2} = \frac{1}{2} \sqrt{\frac{4}{\beta} - 1} = \frac{\sqrt{2}}{2} =
+0.3536$.</p>
+<div class="section" id="punti-di-equilibrio">
+<h2>Punti di equilibrio<a class="headerlink" href="#punti-di-equilibrio" title="Permalink to this heading">#</a></h2>
+<p>I punti di equilibrio del sistema di Lorenz soddisfano le equazioni
+stazionarie $<span class="math notranslate nohighlight">\(\begin{cases}
+      0 = - \sigma X + \sigma Y  &amp; \rightarrow Y = X \\
+      0 = - Y + \rho X - X Z &amp; \hspace{2.0cm} \searrow \hspace{2.0cm}\rightarrow  X[X^2-(\rho-1)] = 0 \\
+      0 = - \beta Z + X Y  &amp; \hspace{1.0cm} \rightarrow \hspace{1.0cm}  X^2 = \beta Z \hspace{0.5cm} \nearrow 
+    \end{cases}\)</span><span class="math notranslate nohighlight">\( L'equazione \)</span>X(X^2 - \rho) = 0<span class="math notranslate nohighlight">\( ha una sola soluzione
+reale se \)</span>\rho &lt; 1<span class="math notranslate nohighlight">\(, tre soluzioni per \)</span>\rho \geq 1<span class="math notranslate nohighlight">\(. Quindi per valori
+di \)</span>\rho &lt; 1<span class="math notranslate nohighlight">\( esiste un unico punto di equilibrio,
+\)</span><span class="math notranslate nohighlight">\(\text{\textbf{E1}: } (\overline{X}_1, \overline{Y}_1, \overline{Z}_1) = (0,0,0) \ .\)</span><span class="math notranslate nohighlight">\(
+Per valori di \)</span>\rho \geq 1<span class="math notranslate nohighlight">\( esistono tre punti di equilibrio,
+\)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ \text{\textbf{E1}: } &amp;  (\overline{X}_1, \overline{Y}_1, \overline{Z}_1) = (0,0,0) \ , \\
+ \text{\textbf{E2}: } &amp;  (\overline{X}_2, \overline{Y}_2, \overline{Z}_2) =
+ (-\sqrt{\beta(\rho-1)},-\sqrt{\beta(\rho-1)},\rho-1) \ , \\
+ \text{\textbf{E3}: } &amp;  (\overline{X}_3, \overline{Y}_3, \overline{Z}_3) =
+ (+\sqrt{\beta(\rho-1)},+\sqrt{\beta(\rho-1)},\rho-1) \ .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( I campi di velocità e temperatura degli equilibri del
+sistema fisico corrispondenti ai punti di equilibrio del sistema di
+Lorenz sono raffigurati in figura
+([\[fig:lorenz-equil\]](#fig:lorenz-equil){reference-type=&quot;ref&quot;
+reference=&quot;fig:lorenz-equil&quot;}). L'equilibrio **E1** rappresenta la
+soluzione statica, il cui il campo di velocità è nullo: non sono
+presenti moti convettivi e la trasmissione della temperatura avviene
+solo per conduzione (diffusione). Questo equilibrio è stabile per valori
+del parametro \)</span>\rho&lt;1<span class="math notranslate nohighlight">\(. Per valori \)</span>\rho &gt; 1<span class="math notranslate nohighlight">\( questo equilibrio diventa
+instabile e nascono i due equilibri &quot;simmetrici&quot; **E2,3** che
+rappresentano dei moti convettivi stabili, traslati tra di loro di metà
+della lunghezza d'onda \)</span>\frac{k}{2}<span class="math notranslate nohighlight">\(: i moti convettivi tendono a
+portare il fluido caldo dalla parete inferiore (a temperatura maggiore,
+per \)</span>\rho&gt;0<span class="math notranslate nohighlight">\(, corrispondente a \)</span>Ra &gt; 0<span class="math notranslate nohighlight">\(, e quindi
+\)</span>\Delta T = T_w - T_c &gt;0<span class="math notranslate nohighlight">\() verso la parete superiore. La nascita di due
+equilibri stabili in corrispondenza del un cambio di stabilità di un
+equilibrio esistente è caratteristico dei sistemi dotati di
+simmetria.[^2] Questo cambiamento qualitativo nel piano delle fasi,
+corrisponde alla *biforcazione pitchfork* che verrà descritta, almeno
+brevemente, nelle sezioni successive. I moti convettivi rappresentati
+dagli equilibri **E2,3** contribuiscono al mescolamento del fluido e a
+una maggiore trasimissione del calore tra le due superfici. Calcolando
+il flusso di calore trasmesso attraverso le superfici che delimitano il
+dominio in \)</span>z=0<span class="math notranslate nohighlight">\( e \)</span>z=1<span class="math notranslate nohighlight">\(, si può verificare che la convezione è un
+fenomeno fisico più efficiente per la trasmissione del calore nei fluidi
+rispetto alla conduzione. Per esempio, il problema della trasmissione
+del calore tra due superfici parallele separate da un fluido si trova
+nella costruzione di infissi con **doppi vetri**: lo scopo dei doppi
+vetri separati da una sottile intercapedine d'aria è quello di sfruttare
+l'aria (ferma!) come ottimo isolante termico. L'intercapedine tra i due
+vetri deve essere sufficiente piccola da impedire la nascita dei moti
+convettivi, che ridurrebbero l'efficienza dell'infisso (e l'efficienza
+energetica della casa). Le soluzioni convettive nel problema di Lorenz
+nascono quando il parametro \)</span>\rho<span class="math notranslate nohighlight">\( supera il valore critico
+\)</span>\rho_{cr} = 1<span class="math notranslate nohighlight">\(. Il parametro \)</span>\rho<span class="math notranslate nohighlight">\( è proporzionale al numero di
+Rayleigh, \)</span><span class="math notranslate nohighlight">\(\rho \sim Ra = \frac{\alpha g \Delta T h^3}{\nu D} \ ,\)</span><span class="math notranslate nohighlight">\( e
+quindi proporzionale al cubo della distanza tra le due superfici,
+\)</span>\rho \sim h^3<span class="math notranslate nohighlight">\(. Si ricava la stessa conclusione utilizzata nella
+costruzione dei doppi vetri: per distanze \)</span>h<span class="math notranslate nohighlight">\( tra le due superfici
+limitate, il parametro \)</span>\rho$ è inferiore del valore critico e l’unica
+soluzione stabile esistente è quella isolante di fluido in quiete.</p>
+<hr class="docutils" />
+<hr class="docutils" />
+<p>Prima di studiare la stabilità locale «alla Lyapunov» dei punti di
+equilibrio, riprendendo la definizione di <em>stabilità strutturale</em> si
+scopre che il sistema di Lorenz non è strutturalmente stabile a
+perturbazioni del valore di <span class="math notranslate nohighlight">\(\rho\)</span>, quando <span class="math notranslate nohighlight">\(\rho = 1\)</span>: infatti per
+<span class="math notranslate nohighlight">\(\rho &lt; 1\)</span> esiste un solo punto di equilibrio, per <span class="math notranslate nohighlight">\(\rho &gt; 1\)</span> esistono
+tre punti di equilibrio e di conseguenza le traiettorie nel piano delle
+fasi subiscono un cambiamento qualitativo.</p>
+</div>
+<div class="section" id="stabilita-dell-equilibrio-e1">
+<h2>Stabilità dell’equilibrio E1<a class="headerlink" href="#stabilita-dell-equilibrio-e1" title="Permalink to this heading">#</a></h2>
+<p>Si studia la stabilità «alla Lyapunov» dell’equilibrio <strong>E1</strong>:
+<span class="math notranslate nohighlight">\((0,0,0)\)</span>. Linearizzando il sistema non lineare di Lorenz attorno
+all’equilibrio <strong>E1</strong>, si ottiene il sistema linear(izzato)
+$<span class="math notranslate nohighlight">\(\begin{bmatrix} \delta \dot{x} \\ \delta \dot{y} \\ \delta \dot{z} \end{bmatrix} = 
+ \begin{bmatrix}-\sigma &amp; \sigma &amp; 0 \\ \rho &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; - \beta \end{bmatrix}  
+ \begin{bmatrix} \delta x \\ \delta y \\ \delta z \end{bmatrix} \quad , \quad
+ \delta \dot{\bm{x}} = \bm{J}|_{\bm{E1}} \, \delta \bm{x}\)</span><span class="math notranslate nohighlight">\( il cui
+polinomio caratteristico è \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ p(\lambda) = det(\bm{J}- \lambda \bm{I}) &amp; = -(\beta+\lambda)[(\sigma+\lambda)(1+\lambda)-\sigma\rho] = \\ 
+  &amp; = -(\beta+\lambda) [ \lambda^2 + (\sigma+1)\lambda + \sigma(1-\rho)] \ . 
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Gli autovalori del sistema linearizzato attorno al primo
+equilibrio sono quindi \)</span><span class="math notranslate nohighlight">\(\lambda^{E1}_1 = - \beta \quad , \quad  
+  \lambda^{E1}_{2,3} = - \dfrac{\sigma+1}{2} \mp \dfrac{\sqrt{(\sigma+1)^2-4\sigma(1-\rho)}}{2} \ .\)</span><span class="math notranslate nohighlight">\(
+Per valori positivi dei parametri, tutti gli autovalori sono reali. Gli
+autovalori \)</span>\lambda^{E1}_1<span class="math notranslate nohighlight">\( e \)</span>\lambda^{E1}_2<span class="math notranslate nohighlight">\( sono negativi per ogni
+valore di \)</span>\rho<span class="math notranslate nohighlight">\(, mentre l'autovalore \)</span>\lambda^{E1}_3<span class="math notranslate nohighlight">\( cambia segno per
+\)</span>\rho = 1<span class="math notranslate nohighlight">\(, come mostrato in figura
+([\[fig:lorenz-eig\]](#fig:lorenz-eig){reference-type=&quot;ref&quot;
+reference=&quot;fig:lorenz-eig&quot;})(a.1). L'analisi lineare di stabilità
+permette di concludere che l'equilibrio **E1** è linearmente stabile per
+\)</span>\rho&lt;1<span class="math notranslate nohighlight">\( e instabile per \)</span>\rho &gt; 1<span class="math notranslate nohighlight">\(, mentre non permette di affermare
+nulla sul caso \)</span>\rho = 1$.</p>
+<hr class="docutils" />
+<hr class="docutils" />
+</div>
+<div class="section" id="stabilita-degli-equilibri-e2-e3">
+<h2>Stabilità degli equilibri E2, E3<a class="headerlink" href="#stabilita-degli-equilibri-e2-e3" title="Permalink to this heading">#</a></h2>
+<p>Per valori di <span class="math notranslate nohighlight">\(\rho \geq 1\)</span> esistono i due equilibri <strong>E2</strong>, <strong>E3</strong>. Si
+studia la loro stabilità «alla Lyapunov» tramite lo studio degli
+autovalori del sistema linearizzato attorno ai punti di equilibrio,
+$<span class="math notranslate nohighlight">\(\begin{bmatrix} \delta \dot{x} \\ \delta \dot{y} \\ \delta \dot{z} \end{bmatrix} = 
+ \begin{bmatrix}-\sigma &amp; \sigma &amp; 0 \\ 1 &amp; -1 &amp; \mp \sqrt{\beta(\rho-1)} \\
+ \pm \sqrt{\beta(\rho-1)} &amp; \pm \sqrt{\beta(\rho-1)} &amp; - \beta \end{bmatrix}  
+ \begin{bmatrix} \delta x \\ \delta y \\ \delta z \end{bmatrix} \quad , \quad
+ \delta \dot{\bm{x}} = \bm{J}|_{\bm{E2,3}} \, \delta \bm{x} \ .\)</span><span class="math notranslate nohighlight">\( Si può
+dimostrare (con il criterio di Routh-Hurwitz analiticamente, o
+calcolandone numericamente il valore) che i due punti di equilibrio sono
+stabili se
+\)</span>\rho &lt; \frac{\sigma(\sigma+\beta+3)}{\sigma-1-\beta} \approx 24.7368<span class="math notranslate nohighlight">\(,
+utilizzando i valori \)</span>\sigma = 10<span class="math notranslate nohighlight">\(, \)</span>\beta = 8/3$.</p>
+<hr class="docutils" />
+<hr class="docutils" />
+</div>
+<div class="section" id="biforcazioni-cicli-limite-e-attrattori-strani">
+<h2>Biforcazioni, cicli limite e attrattori strani<a class="headerlink" href="#biforcazioni-cicli-limite-e-attrattori-strani" title="Permalink to this heading">#</a></h2>
+<p>L’analisi degli autovalori del sistema linearizzato attorno ai punti di
+equilibrio permette di determinarne le caratteristiche locali quando gli
+autovalori hanno parte reale diversa da zero. In corrispondenza del
+cambio di stabilità di un punto di equilibrio e/o della
+comparsa/scomparsa di punti di equilibrio (ma non solo!), le traiettorie
+nello spazio delle fasi del sistema subiscono un cambiamento
+qualitativo: il sistema non è strutturalmente stabile e si verifica una
+<strong>biforcazione</strong>. Per studiare la stabità locale di un equilibrio in
+presenza di autovalori a parte reale nulla è necessario costruire
+un’approssimazione non lineare del sistema. Si considera un punto di
+equilibrio per il quale il sistema linearizzato non ha autovalori
+instabili, ha <span class="math notranslate nohighlight">\(N_s\)</span> autovalori stabili e <span class="math notranslate nohighlight">\(N_c\)</span> autovalori a parte reale
+nulla e si vuole determinare l’evoluzione del sistema nelle vicinanze
+del punto di equilibrio. Si può dimostrare che la dinamica del sistema
+<span class="math notranslate nohighlight">\(N=N_s+N_c\)</span>-dimensionale si riduce velocemente alla dinamica di un
+sistema <span class="math notranslate nohighlight">\(N_c\)</span> dimensionale: le <span class="math notranslate nohighlight">\(N_s\)</span> dinamiche asintoticamente stabili
+associate agli autovalori con parte reale negativa tendono
+asintoticamente ad annullarsi nell’intorno dell’equilibrio, mentre
+rimangono solo le dinamiche associate alle <span class="math notranslate nohighlight">\(N_c\)</span> dinamiche marginalmente
+stabili. Si può usare un’espansione polinomiale per approssimare il
+sistema non lineare originale e costruire la <strong>varietà centrale</strong>, cioè
+la regione dello spazio delle fasi nella quale si svolgono le dinamiche
+marginalmente stabili. Ad esempio, quando <span class="math notranslate nohighlight">\(\rho = 1\)</span> il sistema di
+Lorenz nell’intorno dell’equilibrio <strong>E1</strong> (e dei nascenti equilibri
+<strong>E2,3</strong>) può essere ricondotto alla dinamica del sistema
+monodimensionale $<span class="math notranslate nohighlight">\(\label{eqn:lorenz:pitchfork}
+ \dot{a}(t) = f(a(t)) = a(t) [ \alpha \varepsilon - \beta a(t)^2 ] \quad , \quad
+ \text{con } \varepsilon := \rho-1 \ ,\)</span><span class="math notranslate nohighlight">\( con \)</span>\alpha \approx 0.909<span class="math notranslate nohighlight">\( e
+\)</span>\beta \approx 0.170<span class="math notranslate nohighlight">\(. Questo sistema coincide alla **forma normale**
+della biforcazione, cioè il sistema più semplice in grado di descrivere
+il cambiamento qualitativo del sistema. Lo studio della forma normale
+della biforcazione rivela l'esistenza di un unico equilibrio stabile
+\)</span>\overline{a}_1 = 0.0<span class="math notranslate nohighlight">\( per \)</span>\epsilon \leq 0<span class="math notranslate nohighlight">\(, cioé \)</span>\rho \leq 1<span class="math notranslate nohighlight">\(. Per
+\)</span>\rho &gt; 1<span class="math notranslate nohighlight">\( l'equilibrio \)</span>\overline{a}<em>1<span class="math notranslate nohighlight">\( diventa instabile e nascono due
+equilibri stabili
+\)</span>\overline{a}</em>{2,3} = \mp \sqrt{\alpha \varepsilon / \beta}<span class="math notranslate nohighlight">\(.
+L'equazione
+([\[eqn:lorenz:pitchfork\]](#eqn:lorenz:pitchfork){reference-type=&quot;ref&quot;
+reference=&quot;eqn:lorenz:pitchfork&quot;}) rappresenta la forma normale di una
+*biforcazione pitchfork*. Poiché \)</span>\beta &gt; 0<span class="math notranslate nohighlight">\(, la biforcazione si
+definisce *supercritica*. Analogamente, quando \)</span>\rho \approx 24.7368<span class="math notranslate nohighlight">\( i
+due equilibri **E2,3** cambiano stabilità: u coppia di autovalori
+complessi coniugati attraversano l'asse immaginario e la loro parte
+reale diventa positiva. Questo tipo di instabilità strutturale viene
+definita *biforcazione di Hopf*: cambia la stabilità del punto di
+equilibrio considerato e nasce/sparisce un ciclo limite nel suo intorno
+(il ciclo limite nasce da o riduce al punto di equilibrio).
+L'approssimazione alla varietà centrale del sistema attorno a uno dei
+due equilibri conduce al sistema di equazioni \)</span><span class="math notranslate nohighlight">\(\label{eqn:lorenz:hopf}
+\begin{cases}
+ \dot{r}(t) = \alpha_r r \varepsilon - \beta_r r^3 \\
+ \dot{\theta}(t) = \omega + \alpha_i \varepsilon + \beta_i r^2 \ 
+\end{cases} \quad , \quad 
+ \text{con } \varepsilon := \rho-24.7368 \ ,\)</span><span class="math notranslate nohighlight">\( dove è stata utilizzata
+la rappresentazione polare complessa \)</span>a(t) = r(t) e^{i \theta(t)}<span class="math notranslate nohighlight">\( della
+variabile \)</span>a(t)<span class="math notranslate nohighlight">\( che descrive la dinamica del sistema ridotta alla
+varietà centrale. Il parametro \)</span>\omega = 9.6245<span class="math notranslate nohighlight">\( coincide con la parte
+immaginaria degli autovalori marginalmente stabili e gli altri parametri
+valgono: \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ &amp; \alpha_r = 0.0302 \qquad , \qquad \beta_r =-0.003 \\
+ &amp; \alpha_i = 0.1815 \qquad , \qquad \beta_i =-0.028 \ . 
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( La prima equazione delle
+([\[eqn:lorenz:hopf\]](#eqn:lorenz:hopf){reference-type=&quot;ref&quot;
+reference=&quot;eqn:lorenz:hopf&quot;}) è identica all'equazione che descrive la
+biforcazione pitchfork. In questo caso, però, il coefficiente \)</span>\beta_r<span class="math notranslate nohighlight">\(
+è minore di zero. Questo tipo di biforcazione si definisce *subcritica*.
+Si può facilmente dimostrare che per \)</span>\varepsilon &lt; 0<span class="math notranslate nohighlight">\( esistono due (il
+raggio \)</span>r<span class="math notranslate nohighlight">\( di una rappresentazione polare deve essere \)</span>\geq 0<span class="math notranslate nohighlight">\()
+equilibri
+\)</span><span class="math notranslate nohighlight">\(\overline{\rho}_1 = 0 \quad , \quad \overline{\rho}_2 = \sqrt{-\alpha_r \varepsilon / \beta_r} \ .\)</span><span class="math notranslate nohighlight">\(
+Il primo equilibrio dell'equazione in \)</span>r<span class="math notranslate nohighlight">\( corrisponde a un punto fisso,
+poichè il raggio è nullo. Il secondo equilibrio corrisponde al raggio
+\)</span>\overline{\rho}_2<span class="math notranslate nohighlight">\( del ciclo limite esistente per \)</span>\varepsilon &lt; 0<span class="math notranslate nohighlight">\(. Si
+dimostra quindi che un ciclo limite instabile coesiste con ognuno dei
+due punti di equilibri stabili **E2,3** per \)</span>\varepsilon &lt; 0<span class="math notranslate nohighlight">\( (cioè
+\)</span>\rho &lt; 24.7368<span class="math notranslate nohighlight">\(), almeno in un intervallo finito di valori di \)</span>\rho<span class="math notranslate nohighlight">\(.
+Quando \)</span>\varepsilon = 0<span class="math notranslate nohighlight">\( (cioè \)</span>\rho &lt; 24.7368<span class="math notranslate nohighlight">\(), il ciclo limite
+instabile si riduce al punto di equilibrio. Per \)</span>\varepsilon &gt; 0$ il
+punto di equilibrio diventa instabile, mentre scompare il ciclo limite.</p>
+<hr class="docutils" />
+<hr class="docutils" />
+<p>Rimangono aperte alcune questioni: è possibile descrivere i cicli limite
+esistenti per (alcuni) valori del parametro <span class="math notranslate nohighlight">\(\rho &lt; 24.7368\)</span>? Qual è
+l’evoluzione del sistema per valori di <span class="math notranslate nohighlight">\(\rho &gt; 24.7368\)</span>? Ha senso
+utilizzare il modello di Lorenz, un brutale troncamento di un sistema
+continuo che dà origine a un sistema tridimensionale, per descrivere
+l’evoluzione del sistema fisico per valori crescenti del numero di
+Rayleigh <span class="math notranslate nohighlight">\(Ra\)</span>, e quindi del parametro <span class="math notranslate nohighlight">\(\rho\)</span>?</p>
+<p>Partendo dall’espressione approssimata del ciclo limite ottenuta dalla
+forma normale della biforcazione di Hopf per <span class="math notranslate nohighlight">\(\rho \lesssim 24.7368\)</span> è
+possibile calcolare la forma del ciclo limite per valori inferiori del
+parametro, tramite tecniche di <strong>continuazione</strong>: negli algoritmi di
+continuazione la soluzione di un problema, nota per un valore del
+parametro, viene utilizzata per stimare la guess iniziale dello stesso
+problema per un valore diverso del parametro. In particolare, per
+identificare la traiettoria periodica corrispondente a un ciclo limite
+si può utilizzare una tecnica di <strong>bilanciamento armonico</strong>: la
+traiettoria periodica viene scritta come serie di Fourier, della quale è
+necessario determinare i coefficienti.</p>
+<p>Per valori di <span class="math notranslate nohighlight">\(\rho &gt; 24.7368\)</span> non esistono punti di equilibrio stabili
+punti di equilibrio stabili e non esistono cicli limite stabili. La
+dinamica del sistema rimane confinata in una regione limitata dello
+spazio delle fasi, senza divergere. L’evoluzione del sistema
+rappresentata in figura
+(<span class="xref myst">[fig:lorenz-chaos]</span>{reference-type=»ref»
+reference=»fig:lorenz-chaos»}) dimostra l’elevata sensibilità della
+soluzione alle condizioni iniziali e l’assenza di equilibri o dinamiche
+periodiche stabili, caratteristici di un <strong>regime caotico</strong>.
+L’evoluzione di lungo tempo del sistema avviene «nelle vicinanze»
+dell’attrattore di Lorenz, del quale si può intuire la forma grazie alle
+traiettorie rappresentate in figura
+(<span class="xref myst">[fig:lorenz-chaos]</span>{reference-type=»ref»
+reference=»fig:lorenz-chaos»})(b). La figura
+(<span class="xref myst">[fig:lorenz-chaos-cm]</span>{reference-type=»ref»
+reference=»fig:lorenz-chaos-cm»}) rappresenta la traiettoria del sistema
+di Lorenz e le <em>varietà centrali</em> dei due equilibri <span class="math notranslate nohighlight">\(\textbf{E2,3}\)</span>
+marginalmente stabili per <span class="math notranslate nohighlight">\(\rho = 24.7368\)</span>. Qualitativamente, lo stato
+del sistema viene attratto su queste superfici, lungo le direzioni
+stabili. Su queste superfici poi, si può osservare la dinamica
+marginalmente stabile (di dimensione ridotta: per il sistema di Lorenz,
+di dimensione 2, invece della dimensione 3 del sistema completo) del
+sistema: lo stato del sistema inizialmente oscilla attorno all”
+equilibrio <strong>E2</strong> (ad esempio), prima di essere attratta in maniera
+«difficilmente prevedibile» dalla varietà centrale dell’equilibrio
+<strong>E3</strong> e iniziare ad oscillare attorno a quest’ultimo equilibrio.</p>
+<p>L’approssimazione di Lorenz di dimensioni ridotte del sistema fisico
+continuo (e quindi di dimensione infinita) perde significato
+all’aumentare del numero di Rayliegh: all’aumentare del numero di
+Rayleigh infatti si attivano delle dinamiche più complesse, di
+dimensione maggiore, non descrivibili a un sistema tridimensionale.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Conoscendo lo stato del sistema <strong>con esattezza</strong> è possibile
+descrivere l’evoluzione libera del sistema, in assenza di
+perturbazioni e forze esterne. In fondo a questa sezione, sarà più
+chiara la necessità di conoscere <em>con esattezza</em> lo stato iniziale
+del sistema, per prevederne l’evoluzione.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/07_similitudine"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Alcuni concetti di stabilità</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-dinamico-di-lorenz">Sistema dinamico di Lorenz</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#punti-di-equilibrio">Punti di equilibrio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stabilita-dell-equilibrio-e1">Stabilità dell’equilibrio E1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stabilita-degli-equilibri-e2-e3">Stabilità degli equilibri E2, E3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biforcazioni-cicli-limite-e-attrattori-strani">Biforcazioni, cicli limite e attrattori strani</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

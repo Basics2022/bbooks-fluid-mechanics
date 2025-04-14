@@ -3,5 +3,23 @@
 
 format: jb-book
 root: intro
+options:
+  numbered: True
 chapters:
-- file: markdown
+- file: polimi/fluidmechanics-ita/template/capitoli/01_statica/02teoria
+- file: polimi/fluidmechanics-ita/template/capitoli/02_tensSup/03teoria
+- file: polimi/fluidmechanics-ita/template/capitoli/03_cinematica/12teoria
+- file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04teoria
+- file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/05teoria
+- file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0600in
+- file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/07teoria
+- file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/08teoria
+- file: polimi/fluidmechanics-ita/template/capitoli/09_bl/09teoria
+- file: polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/10teoria
+# sections:
+# - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0201in
+# - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0202in
+# - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0203in
+# - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0204in
+# - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0205in
+# - file: polimi/fluidmechanics-ita/template/capitoli/01_statica/0206in

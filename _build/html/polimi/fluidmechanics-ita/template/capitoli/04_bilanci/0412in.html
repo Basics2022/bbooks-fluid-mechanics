@@ -1,0 +1,618 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bilancio della quantità di moto e risultante delle forze. &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0412in';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">Statica</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">Legge di Young-Laplace.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="04teoria.html">Bilanci in forma integrale</a></li>
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0412in.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bilancio della quantità di moto e risultante delle forze.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Bilancio della quantità di moto e risultante delle forze.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilancio-del-momento-della-quantita-di-moto-e-risultante-dei-momenti">Bilancio del momento della quantità di moto e risultante dei momenti.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilancio-dell-energia-totale">Bilancio dell’energia totale.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemi-aperti">Sistemi aperti</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemi-chiusi">Sistemi chiusi</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>I bilanci integrali consentono di valutare le azioni integrali (forze,
+momenti, potenza) scambiati tra un fluido e un corpo a contatto con
+esso, senza conoscere nel dettaglio il campo di moto del fluido di
+interesse, ma valutando il flusso netto delle quantità meccaniche di
+interesse (massa, quantità di moto, momento della quantità di moto,
+energia, entalpia e calore) attraverso la superficie di contorno del
+volume fluido di interesse. Il contorno del dominio fluido <span class="math notranslate nohighlight">\(v(t)\)</span> viene
+suddiviso nella parte a contatto con il corpo di interesse <span class="math notranslate nohighlight">\(s_{f,s}(t)\)</span>
+e nella parte rimanente
+<span class="math notranslate nohighlight">\(s_{f,free}(t) = \partial v(t) \backslash s_{f,s}(t)\)</span>.</p>
+<div class="section" id="bilancio-della-quantita-di-moto-e-risultante-delle-forze">
+<h1>Bilancio della quantità di moto e risultante delle forze.<a class="headerlink" href="#bilancio-della-quantita-di-moto-e-risultante-delle-forze" title="Permalink to this heading">#</a></h1>
+<p>La risultante delle forze agenti sul corpo<a class="footnote-reference brackets" href="#id3" id="id1">1</a> sarà uguale all’integrale
+del vettore sforzo agente sulla superficie <span class="math notranslate nohighlight">\(s_{s,f}(t)\)</span>,
+$<span class="math notranslate nohighlight">\(\bm{R}^s = \oint_{s_{s,f}(t)} \bm{t}_{n,s} \ ,\)</span><span class="math notranslate nohighlight">\( avendo indicato con
+\)</span>s_{s,f}(t)<span class="math notranslate nohighlight">\( la superficie del solido con normale uscente dalla
+superficie solida ed entrante nel solido e con \)</span>\bm{t}<em>{n,s}<span class="math notranslate nohighlight">\( il vettore
+sforzo agente sul solido, uguale e contrario allo sforzo agente sul
+fluido nello stesso punto, \)</span>\bm{t}</em>{n,s} = - \bm{t}<em>n<span class="math notranslate nohighlight">\(, per il principio
+di azione e reazione (terzo principio della dinamica). Non è stato
+aggiunto il pedice \)</span>f<span class="math notranslate nohighlight">\( al vettore sforzo agente sul fluido, poiché siamo
+in un corso di fluidodinamica e il soggetto è il fluido, quando è
+sottointeso. Si può riconoscere la risultante \)</span>\bm{R}^s<span class="math notranslate nohighlight">\( all'interno del
+bilancio integrale della quantità di moto per il volume fluido \)</span>v(t)<span class="math notranslate nohighlight">\(,
+\)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ \dfrac{d}{dt} \displaystyle\int_{v(t)} \rho \bm{u} + \oint_{\partial v(t)} \rho \bm{u} (\bm{u}-\bm{v}) \cdot \bm{\hat{n}}= \int_{v(t)} \bm{f} + \oint_{\partial v(t)} \bm{t_n} \ .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Si analizzano i termini di superficie, considerando
+separatamente i contributi delle superfici \)</span>s</em>{f,s}<span class="math notranslate nohighlight">\( e \)</span>s_{f,free}<span class="math notranslate nohighlight">\(. Se
+il solido ha una superficie impermeabile al fluido e non c'è flusso di
+massa, la velocità del fluido e del solido sono uguali,
+\)</span>\bm{u} = \bm{v}<span class="math notranslate nohighlight">\(, sulla superficie \)</span>s_{f,s}<span class="math notranslate nohighlight">\(. Di conseguenza rimane
+solo il contributo del flusso della quantità di moto attraverso la
+superficie \)</span>s_{f,free}<span class="math notranslate nohighlight">\(, mentre il termine di flusso attraverso
+\)</span>s_{f,s}<span class="math notranslate nohighlight">\( è nullo. L'integrale sul contorno \)</span>\partial v(t)<span class="math notranslate nohighlight">\( del vettore
+sforzo può essere suddiviso nella somma dell'integrale svolto sulla
+superficie a contatto con il solido e sulla superficie libera,
+\)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ \oint_{\partial v(t)} \bm{t_n} &amp; = 
+ \oint_{s_{f,s}(t)} \bm{t_n} + \oint_{s_{f,free}(t)} \bm{t_n} = \\
+ &amp; = - \oint_{s_{s,f}(t)} \bm{t}_{n,s} + \oint_{s_{f,free}(t)} \bm{t_n} =
+ -\bm{R}^s + \oint_{s_{f,free}(t)} \bm{t_n} \ .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Spesso sulla superficie libera \)</span>s_{f,free}(t)<span class="math notranslate nohighlight">\( possono
+essere trascurati gli sforzi viscosi: in questo caso, il vettore sforzo
+si riduce al solo effetto della pressione \)</span>\bm{t_n} = -p \bm{\hat{n}}$.</p>
+<p>Ritornando al bilancio della quantità di moto, si può scrivere
+$$\bm{R}^s = - \int_{s_{f,free}} \rho \bm{u} (\bm{u}-\bm{v}) \cdot \bm{\hat{n}}</p>
+<ul class="simple">
+<li><p>\int_{s_{f,free}(t)} \bm{t_n}</p></li>
+<li><p>\int_{v(t)} \bm{f} - \dfrac{d}{dt} \int_{v(t)} \rho \bm{u}$<span class="math notranslate nohighlight">\( Nel caso
+in cui il problema sia stazionario e che le forze di volume nel fluido
+siano trascurabili, gli ultimi due termini is annullano. Se poi si
+possono trascurare gli sforzi viscosi su \)</span>s_{f,free}<span class="math notranslate nohighlight">\(, la superficie
+\)</span>s_{s,free}<span class="math notranslate nohighlight">\( è una superficie chiusa (si pensi alla superficie
+&quot;all'infinito&quot; attorno a un corpo, come esempio) e la pressione è
+costante su questa superficie chiusa, l'integrale degli sforzi su
+\)</span>s_{f,free}<span class="math notranslate nohighlight">\( è anch'esso nullo, poiché
+\)</span><span class="math notranslate nohighlight">\(\oint_{s_{f,free}(t)} \bm{t_n} = - \oint_{s_{f,free}(t)} p \bm{\hat{n}} = - p \oint_{s_{f,free}(t)} \bm{\hat{n}} \equiv 0 \ ,\)</span><span class="math notranslate nohighlight">\(
+e la risultante delle forze agenti sul solido si riduce a
+\)</span><span class="math notranslate nohighlight">\(\bm{R}^s = - \int_{s_{f,free}} \rho \bm{u} (\bm{u}-\bm{v}) \cdot \bm{\hat{n}} \ .\)</span>$</p></li>
+</ul>
+</div>
+<div class="section" id="bilancio-del-momento-della-quantita-di-moto-e-risultante-dei-momenti">
+<h1>Bilancio del momento della quantità di moto e risultante dei momenti.<a class="headerlink" href="#bilancio-del-momento-della-quantita-di-moto-e-risultante-dei-momenti" title="Permalink to this heading">#</a></h1>
+<p>Riproponendo un ragionamento analogo, dal bilancio del momento della
+quantità di moto si può ricavare la risultante dei momenti agenti su un
+corpo, $<span class="math notranslate nohighlight">\(\bm{M} = \oint_{s_{s,f}} \bm{r} \times \bm{t}_{n,s} \ .\)</span><span class="math notranslate nohighlight">\( Nel
+caso semplificato in cui il problema sia stazionario, le forze di volume
+sono trascurabili, gli sforzi viscosi sono trascurabili sulla superficie
+\)</span>s_{f,free}(t)<span class="math notranslate nohighlight">\( chiusa, sulla quale agisce una pressione costante, la
+risultante dei momenti agenti sul solido si riduce a
+\)</span><span class="math notranslate nohighlight">\(\bm{M}^s = - \int_{s_{f,free}} \rho \bm{r} \times \bm{u} (\bm{u}-\bm{v}) \cdot \bm{\hat{n}} \ ,\)</span><span class="math notranslate nohighlight">\(
+dove \)</span>\bm{r}<span class="math notranslate nohighlight">\( è il raggio vettore tra i punti sulla superficie
+\)</span>s_{f,free}(t)$ e il polo rispetto al quale si calcolano i momenti.</p>
+</div>
+<div class="section" id="bilancio-dell-energia-totale">
+<h1>Bilancio dell’energia totale.<a class="headerlink" href="#bilancio-dell-energia-totale" title="Permalink to this heading">#</a></h1>
+<p>Tramite il bilancio dell’energia totale si può ricavare la potenza
+fornita (o assorbita) da un corpo al fluido, e/o il calore scambiato con
+esso. Gli esercizi che utilizzeranno il bilancio di energia totale
+ricorderanno alcuni esercizi di Fisica Tecnica. Lo scopo di questi
+esercizi è quello di proporre un punto di vista più maturo a tali
+problemi, partendo ai bilanci integrali nella loro forma più generale e
+opportunamente semplificati considerando grandezze uniformi sulle
+sezioni (o equivalenti grandezze medie) e ipotesi sullo scambio di
+calore tra il fluido e l’esterno. Verranno analizzati sistemi aperti e
+chiusi, nella speranza di fornire un approccio di validità generale a
+problemi già trattati durante il corso di Fisica Tecnica, senza alcuna
+pretesa di coprire tutti gli argomenti e i dettagli trattati in quel
+corso, ma piuttosto consentire una visione del problema generale che
+coinvolga scambi di massa, lavoro e calore del sistema con l’esterno,
+facilmente specializzabile a casi particolari, che riduca al minimo lo
+sforzo mnemonico richiesto da molti casi particolari, apparentemente
+scorrelati l’uno dall’altro, a vantaggio di una maggiore «sensibilità»
+sul fenomeno fisico.</p>
+<p>Sfruttando la suddivisione della superficie del volume fluido
+<span class="math notranslate nohighlight">\(\partial v = s_{f,free} \cup s_{f,s}\)</span>, si può riscrivere il bilancio
+dell’energia totale,
+$<span class="math notranslate nohighlight">\(\dfrac{d}{dt} \displaystyle\int_{v(t)} \rho e^t + \oint_{\partial v(t)} \rho e^t (\bm{u}-\bm{v}) \cdot \bm{\hat{n}}= \int_{v(t)} \bm{f} \cdot \bm{u} + \oint_{\partial v(t)} \bm{t_n} \cdot \bm{u} - \oint_{\partial v(t)} \bm{q} \cdot \bm{\hat{n}} + \int_{v(t)} \rho r \ .\)</span><span class="math notranslate nohighlight">\(
+riconoscendo la potenza
+\)</span><span class="math notranslate nohighlight">\(W = \oint_{s_{f,s}} \bm{t_n} \cdot \bm{u} \ ,\)</span><span class="math notranslate nohighlight">\( fornita da un corpo
+solido al fluido, \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ \dfrac{d}{dt} \displaystyle\int_{v(t)} \rho e^t &amp; + \oint_{\partial v(t)} \rho e^t (\bm{u}-\bm{v}) \cdot \bm{\hat{n}} = \\
+  &amp; = \int_{v(t)} \bm{f} \cdot \bm{u} + \oint_{s_{f,free}(t)} \bm{t_n} \cdot \bm{u} + W - \oint_{\partial v(t)} \bm{q} \cdot \bm{\hat{n}} + \int_{v(t)} \rho r \ .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Se non c'è flusso di massa attraverso la superficie
+solida, \)</span>\bm{u} = \bm{v}<span class="math notranslate nohighlight">\( su \)</span>s_{f,s}<span class="math notranslate nohighlight">\(. Se la superficie libera
+\)</span>s_{f,free}<span class="math notranslate nohighlight">\( del volume di controllo è fissa, \)</span>\bm{v}= \bm{0}<span class="math notranslate nohighlight">\( su
+\)</span>s_{f,free}<span class="math notranslate nohighlight">\(. Separando il contributo degli sforzi di pressione da
+quelli viscosi, \)</span>\bm{t_n} = -p\bm{\hat{n}} + \bm{s_n}<span class="math notranslate nohighlight">\( sulla superficie
+\)</span>s_{s,free}<span class="math notranslate nohighlight">\(, il bilancio dell'energia totale diventa, \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ \dfrac{d}{dt} \displaystyle\int_{v(t)} \rho e^t &amp; + \oint_{s_{f,free}(t)} \rho h^t \bm{u} \cdot \bm{\hat{n}} = \\
+  &amp; = \int_{v(t)} \bm{f} \cdot \bm{u} + \oint_{s_{f,free}(t)} \bm{s_n} \cdot \bm{u} + W - \oint_{\partial v(t)} \bm{q} \cdot \bm{\hat{n}} + \int_{v(t)} \rho r \ ,
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( avendo introdotto l'entalpia totale
+\)</span>h^t = e^t + \frac{p}{\rho} = e + \frac{p}{\rho} + \frac{|\bm{u}|^2}{2}<span class="math notranslate nohighlight">\(.
+Se si trascurano la potenza degli sforzi viscosi su \)</span>s_{s,free}<span class="math notranslate nohighlight">\( e la
+potenza delle forze di volume \)</span>\bm{f}<span class="math notranslate nohighlight">\(, il bilancio dell'energia totale
+del fluido contenuto nel volume \)</span>v(t)<span class="math notranslate nohighlight">\( diventa
+\)</span><span class="math notranslate nohighlight">\(\dfrac{d}{dt} \displaystyle\int_{v(t)} \rho e^t + \oint_{s_{f,free}(t)} \rho h^t \bm{u} \cdot \bm{\hat{n}}
+ \, = \,
+  W - \oint_{\partial v(t)} \bm{q} \cdot \bm{\hat{n}} + \int_{v(t)} \rho r \ .\)</span>$</p>
+</div>
+<div class="section" id="sistemi-aperti">
+<h1>Sistemi aperti<a class="headerlink" href="#sistemi-aperti" title="Permalink to this heading">#</a></h1>
+<p>Per un sistema aperto in cui sono soddisfatte le ipotesi già elencate,
+si può scrivere
+$$\dfrac{d}{dt} \displaystyle\int_{v(t)} \rho e^t = - \oint_{s_{f,free}(t)} \rho h^t \bm{u} \cdot \bm{\hat{n}}</p>
+<ul class="simple">
+<li><p>W - \oint_{\partial v(t)} \bm{q} \cdot \bm{\hat{n}} + \int_{v(t)} \rho r \ ,$<span class="math notranslate nohighlight">\(
+e sinteticamente \)</span><span class="math notranslate nohighlight">\(\dfrac{d E^t}{d t} = \Phi_{h^t} + W + \dot{Q} \ ,\)</span><span class="math notranslate nohighlight">\(
+avendo definito l'energia totale interna \)</span>E^t<span class="math notranslate nohighlight">\( al volume \)</span>v(t)<span class="math notranslate nohighlight">\(
+studiato, il flusso netto di entalpia totale \)</span>\Phi_{h^t}<span class="math notranslate nohighlight">\( attraverso la
+superficie \)</span>s_{s,free}<span class="math notranslate nohighlight">\(, e il flusso di calore \)</span>\dot{Q}<span class="math notranslate nohighlight">\( fornito al
+fluido contenuto all'interno di \)</span>v(t)<span class="math notranslate nohighlight">\(, \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+E &amp; = \int_{v(t)} \rho e \\
+\Phi_{h^t} &amp; = \int_{s_{f,free}} \rho h^t \bm{u} \cdot \bm{\hat{n}}
+           = \int_{s_{f,free}} \rho \left( e + \dfrac{p}{\rho} + \dfrac{|\bm{u}|^2}{2} \right) \bm{u} \cdot \bm{\hat{n}} \\
+\dot{Q} &amp; = - \oint_{\partial v(t)} \bm{q} \cdot \bm{\hat{n}} + \int_{v(t)} \rho r \ . 
+\end{aligned}\)</span>$</p></li>
+</ul>
+</div>
+<div class="section" id="sistemi-chiusi">
+<h1>Sistemi chiusi<a class="headerlink" href="#sistemi-chiusi" title="Permalink to this heading">#</a></h1>
+<p>Per un sistema chiuso (nessuno scambio di massa con l’esterno) in cui i
+termini cinetici sono trascurabili, <span class="math notranslate nohighlight">\(e^t = e\)</span>, il bilancio di energia
+diventa sintenticamente,
+$$%\dfrac{d}{dt} \displaystyle\int_{v(t)} \rho e</p>
+<p>\dfrac{d E}{dt} = W + \dot{Q} \ ,$<span class="math notranslate nohighlight">\( avendo definito
+\)</span>E = \displaystyle\int_{v(t)} \rho e<span class="math notranslate nohighlight">\(, come l'energia interna del fluido
+contenuto nel volume \)</span>v(t)$. Questa formula corrisponde al primo
+principio della Termodinamica, formulato in termini di potenza e non di
+energia, in cui è stata utilizzata la convenzione di potenza delle forze
+positiva e flusso di calore positivo se fornito al fluido.<a class="footnote-reference brackets" href="#id4" id="id2">2</a></p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>La risultante delle forze delle azioni scambiate con il fluido. A
+questa andranno sommate le forze di volume, come ad esempio il peso
+del corpo stesso.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>In Termodinamica, che studia sistemi in equilibrio, il primo
+principio è formulato in termini di energia come,
+$<span class="math notranslate nohighlight">\(\Delta E = Q - L \ ,\)</span><span class="math notranslate nohighlight">\( in cui la variazione di energia \)</span>\Delta E<span class="math notranslate nohighlight">\(
+tra due stati termodinamici del sistema corrisponde alla differenza
+del calore \)</span>Q<span class="math notranslate nohighlight">\( fornito al sistema e al lavoro \)</span>L$ svolto <strong>dal</strong>
+sistema.</p>
+</dd>
+</dl>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/04_bilanci"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Bilancio della quantità di moto e risultante delle forze.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilancio-del-momento-della-quantita-di-moto-e-risultante-dei-momenti">Bilancio del momento della quantità di moto e risultante dei momenti.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilancio-dell-energia-totale">Bilancio dell’energia totale.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemi-aperti">Sistemi aperti</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemi-chiusi">Sistemi chiusi</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

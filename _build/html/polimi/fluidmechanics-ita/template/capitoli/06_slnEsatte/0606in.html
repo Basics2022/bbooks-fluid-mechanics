@@ -1,0 +1,557 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0606in';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">Statica</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">Legge di Young-Laplace.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">Bilanci in forma integrale</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="0600in.html">Introduzione e linee guida per la soluzione dei problemi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">Teorema di Buckingham</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">Equazioni di Prandtl dello strato limite</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0606in.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>+:———————————:+:———————————:+
+| Si consideri la corrente piana di | ![image](./fig/slnEsatte-taylor-c |
+| un fluido di densità <span class="math notranslate nohighlight">\(\rho\)</span> fra   | ouette){width=»95%»}              |
+| due cilindri coassiali di raggio  |                                   |
+| <span class="math notranslate nohighlight">\(R_1\)</span> e <span class="math notranslate nohighlight">\(R_2\)</span>. Il cilindro        |                                   |
+| esterno è fermo, mentre quello    |                                   |
+| interno è messo in rotazione da   |                                   |
+| un motore con curva               |                                   |
+| caratteristica                    |                                   |
+| <span class="math notranslate nohighlight">\(C_{disp}(\Omega) = \alpha - \bet |                                   |
+| a \Omega\)</span>.                        |                                   |
+| Si determini il punto di          |                                   |
+| equilibrio del sistema (<span class="math notranslate nohighlight">\(\Omega\)</span>  |                                   |
+| costante).                        |                                   |
+|                                   |                                   |
+| (…)                             |                                   |
++———————————–+———————————–+</p>
+<p>Soluzione esatte delle equazioni di Navier-Stokes in geometria
+cilindrica. Corrente di Taylor-Couette.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+    \rho \dfrac{\partial u_r}{\partial t}
+    + \rho \left( \bm{u} \cdot \bm{\nabla}u_r - \dfrac{u_\theta^2}{r} \right)
+    - \mu \left(\nabla^2 u_r 
+       - \dfrac{u_r}{r^2} 
+       - \dfrac{2}{r^2}\dfrac{\partial u_\theta}{\partial \theta} \right)  
+       + \dfrac{\partial p}{\partial r} = f_r \\
+    \rho \dfrac{\partial u_\theta}{\partial t}
+    + \rho \left( \bm{u} \cdot \bm{\nabla} u_\theta + \dfrac{u_\theta u_r}{r} \right)
+    - \mu \left(\nabla^2 u_\theta 
+       - \dfrac{u_\theta}{r^2} 
+       + \frac{2}{r^2}\dfrac{\partial u_r}{\partial \theta}  \right) 
+    + \dfrac{1}{r} \frac{\partial p}{\partial \theta} = f_\theta\\
+    \rho \dfrac{\partial u_z}{\partial t}
+    + \rho \bm{u} \cdot \bm{\nabla} u_z
+    - \mu \nabla^2 u_z
+    + \dfrac{\partial p}{\partial z} = f_z \\ \\
+    \dfrac{1}{r}\dfrac{\partial}{\partial r}\left( r u_r \right) 
+    + \dfrac{1}{r}\dfrac{\partial u_\theta}{\partial \theta} 
+    + \dfrac{\partial u_z}{\partial z} = 0
+  \end{cases}$$ con $$\begin{aligned}
+  &amp; \bm{a} \cdot \bm{\nabla} b = a_r \dfrac{\partial b}{\partial r} 
+     + \dfrac{a_\theta}{r} \dfrac{\partial b}{\partial \theta}  
+     + a_z \dfrac{\partial b}{\partial z} \\
+  &amp; \nabla^2 f = \dfrac{1}{r}\dfrac{\partial}{\partial r}
+                      \left(r \frac{\partial f}{\partial r} \right) +
+               \frac{1}{r^2} \frac{\partial^2 f}{\partial \theta^2} + 
+               \frac{\partial^2 f}{\partial z^2} 
+  \end{aligned}\end{split}\]</div>
+<p>Espressione vettoriale del contributo viscoso del vettore sforzo,
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+  \bm{s_n} &amp; = \mathbb{S} \cdot \bm{\hat{n}} = \\
+           &amp; = \mu [\bm{\nabla} \bm{u} + \bm{\nabla}^T \bm{u}] \cdot \bm{\hat{n}} = \\
+           &amp; = \mu \left[ 2 (\bm{\hat{n}} \cdot \bm{\nabla} ) \bm{u} + \bm{\hat{n}} \times \bm{\nabla} \times \bm{u}  \right]
+\end{aligned}\)</span>$</p>
+<p>Viene risolto il problema piano, nel quale i campi di velocità e di
+pressione hanno la forma
+$<span class="math notranslate nohighlight">\(\bm{u}(\bm{r}) = u_r(r,\theta) \bm{\hat{r}} + u_{\theta}(r,\theta) \bm{\hat{\theta}} \quad , \quad P(\bm{r}) = P(r,\theta) \ ,\)</span>$
+e le azioni integrali (come la coppia fornita e quella incognita) sono
+intese per unità di lunghezza, essendo la «dimensione mancante» quella
+fuori dal piano del disegno.</p>
+<ul>
+<li><p>Calcolo delle velocità angolari dei cilindri. Nota la forma del
+campo di moto e le velocità in due punti a diversi raggi, è
+possibile calcolare <span class="math notranslate nohighlight">\(\Omega_1\)</span>, <span class="math notranslate nohighlight">\(\Omega_2\)</span> risolvendo un sistema
+lineare di due equazioni nelle due incognite. Il campo di moto tra
+due cilindri coassiali rotanti è:
+$<span class="math notranslate nohighlight">\(u_\theta(r) = A r + \dfrac{B}{r} = \frac{\Omega_2 R_2^2 - \Omega_1 R_1^2}{R_2^2-R_1^2} r +
+   \frac{(\Omega_1 - \Omega_2)R_1^2 R_2^2}{R_2^2-R_1^2}\frac{1}{r} \ .\)</span><span class="math notranslate nohighlight">\(
+Se il cilindro esterno è fermo e la velocità angolare del cilindro
+interno vale \)</span>\Omega_1 = \Omega<span class="math notranslate nohighlight">\(, i coefficienti \)</span>A<span class="math notranslate nohighlight">\( e \)</span>B<span class="math notranslate nohighlight">\( valgono
+\)</span><span class="math notranslate nohighlight">\(A = - \frac{R_1^2}{R_2^2-R_1^2} \Omega  &lt; 0 \qquad , \qquad B = \frac{R_1^2 R_2^2}{R_2^2-R_1^2} \Omega &gt; 0 \ .\)</span>$</p>
+<p>La soluzione esatta di Taylor-Couette è facile da ricavare, se si
+ricorda che è la somma di una rotazione rigida e un vortice
+irrotazionale: imponendo la forma <span class="math notranslate nohighlight">\(u_\theta (r) = A r + B/r\)</span> e le
+condizioni al contorno,
+$<span class="math notranslate nohighlight">\(u_{\theta}(R_1) = \Omega_1 R_1 \qquad , \qquad  u_{\theta}(R_2) = \Omega_2 R_2\)</span>$
+si ottiene la formula voluta.</p>
+</li>
+<li><p>Calcolo dello sforzo tangenziale a parete per determinare il puto di
+equilibrio del sistema. Si determina la componente tangenziale
+(quella che contribuisce alla coppia resistente) dello sforzo sul
+cilindro interno. Il contributo viscoso del vettore sforzo può
+essere scritto come: $<span class="math notranslate nohighlight">\(\begin{aligned}
+  \bm{s_n} &amp; = \mathbb{S} \cdot \bm{\hat{n}} = \\
+           &amp; = \mu [\bm{\nabla} \bm{u} + \bm{\nabla}^T \bm{u}] \cdot \bm{\hat{n}} = \\
+           &amp; = \mu \left[ 2 (\bm{\hat{n}} \cdot \bm{\nabla} ) \bm{u} + \bm{\hat{n}} \times \bm{\nabla} \times \bm{u}  \right] = &amp;  \text{(verificare con le tabelle)} \\
+           &amp; = \mu \left[ 2 \dfrac{\partial u_\theta}{\partial r} - \dfrac{1}{r} 
+    \dfrac{\partial}{\partial r} (r u_\theta) \right] \bm{\hat{\theta}} = \\
+           &amp; = \mu \left[ \dfrac{\partial u_\theta}{\partial r} - \dfrac{u_\theta}{r} \right] \bm{\hat{\theta}} = &amp;  \text{(\)</span>u_\theta = A r + B / r<span class="math notranslate nohighlight">\()}\\
+           &amp; = - 2 \mu \dfrac{B}{r^2} \bm{\hat{\theta}} 
+\end{aligned}\)</span>$</p>
+<p>La formula dello sforzo tangenziale a parete per la corrente di
+Taylor-Couette è
+<span class="math notranslate nohighlight">\(\tau_w = \mu \left[ \frac{\partial u_\theta}{\partial r} - \frac{u_\theta}{r} \right]\)</span>,</p>
+<p>La parte tangenziale dello sforzo a parete sul cilindro interno è
+quindi <span class="math notranslate nohighlight">\(\tau_w = 
+2 \mu {B}/{R_1^2}\)</span>. Integrando il prodotto tra vettore sforzo e
+raggio <span class="math notranslate nohighlight">\(R_1\)</span> sulla superficie laterale del cilindro si ottiene la
+coppia resistente, $<span class="math notranslate nohighlight">\(\begin{aligned}
+ C_{res}(\Omega) &amp; = \int_{\theta=0}^{2\pi} \tau_w(R_1) R_1 R_1 d\theta  = \\ &amp; = 2\pi \tau_w(R_1) R_1^2 = -4\pi \mu \dfrac{B(\Omega)}{R_1^2}R_1^2 =  -4\pi \mu  \frac{R_1^2 R_2^2}{R_2^2-R_1^2} \Omega  = - \gamma \Omega \ .
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( All'equilibrio, la somma della coppia disponibile e
+di quella resistente deve essere uguale a zero,
+\)</span><span class="math notranslate nohighlight">\(0 = C_{disp}(\Omega) + C_{res}(\Omega) = \alpha - \beta \Omega -  \gamma \Omega \ ,\)</span><span class="math notranslate nohighlight">\(
+e quindi \)</span>\Omega = \dfrac{\alpha}{\beta + \gamma}$.</p>
+</li>
+</ul>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

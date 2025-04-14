@@ -1,0 +1,763 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metodo di Hess-Smith &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/0810in_hessSmith';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">Statica</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">Legge di Young-Laplace.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">Bilanci in forma integrale</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">Introduzione e linee guida per la soluzione dei problemi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">Teorema di Buckingham</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">Equazioni di Prandtl dello strato limite</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/0810in_hessSmith.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Metodo di Hess-Smith</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descrizione-della-geometria">Descrizione della geometria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principio-di-sovrapposizione-delle-cause-e-degli-effetti-campo-di-velocita">Principio di sovrapposizione delle cause e degli effetti: campo di velocità</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Metodo di Hess-Smith</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-lineare-condizioni-al-contorno">Sistema lineare: condizioni al contorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-lineare-condizione-di-kutta">Sistema lineare: condizione di Kutta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-lineare-in-forma-matriciale">Sistema lineare in forma matriciale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ricostruzione-delle-grandezze-fisiche">Ricostruzione delle grandezze fisiche</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="metodo-di-hess-smith">
+<h1>Metodo di Hess-Smith<a class="headerlink" href="#metodo-di-hess-smith" title="Permalink to this heading">#</a></h1>
+<p>Si vuole calcolare la corrente incomprimibile irrotazionale
+bidimensionale attorno a un profilo aerodinamico, utilizzando il
+principio di sovrapposizione delle cause e degli effetti per ottenere il
+campo di moto attorno al profilo come somma della velocità uniforme e
+della velocità di alcune soluzioni elementari dell’equazione di Laplace
+per il potenziale, come sorgenti e vortici. Per motivi di accuratezza
+del metodo, non vengono utilizzate singolarità puntiformi (come sorgenti
+o vortici puntiformi), ma vengono utilizzate delle singolarità
+distribuite su i segmenti che descrivono la geometria discretizzata del
+profilo.</p>
+<div class="section" id="descrizione-della-geometria">
+<h2>Descrizione della geometria<a class="headerlink" href="#descrizione-della-geometria" title="Permalink to this heading">#</a></h2>
+<p>Il profilo aerodinamico viene suddiviso da <span class="math notranslate nohighlight">\(N+1\)</span> punti in <span class="math notranslate nohighlight">\(N\)</span> elementi
+(o pannelli). Per ogni elemento, vengono definite alcune grandezze
+geometriche: la lunghezza <span class="math notranslate nohighlight">\(\ell_k\)</span>, i versori normali e tangenti
+<span class="math notranslate nohighlight">\(\bm{\hat{n}}_k\)</span>, <span class="math notranslate nohighlight">\(\bm{\hat{t}}_k\)</span>, i punti estremi del pannello
+<span class="math notranslate nohighlight">\(\bm{x}^1_k\)</span>, <span class="math notranslate nohighlight">\(\bm{x}^2_k\)</span> (che verrano utilizzate per calcolare le
+velocità indotte dai pannelli) e il punto di controllo coincidente con
+il centro del pannello <span class="math notranslate nohighlight">\(\bm{x}^c_k\)</span> (che sarà il punto nel quale
+verranno imposte le condizioni al contorno).</p>
+<p>La funzione <code class="docutils literal notranslate"><span class="pre">build_geometry()</span></code> legge i dati di un profilo NACA, le sue
+dimensioni e posizione nello spazio e resitituisce la struttura <code class="docutils literal notranslate"><span class="pre">elems</span></code>
+che contiene le informazioni sui pannelli, insieme alle matrici che
+contengono coordinate dei punti <code class="docutils literal notranslate"><span class="pre">rr</span></code>, la connettività nodi-elementi
+<code class="docutils literal notranslate"><span class="pre">ee</span></code>, l’indice dei pannelli al bordo di uscita <code class="docutils literal notranslate"><span class="pre">ii_te</span></code>, il numero
+<code class="docutils literal notranslate"><span class="pre">nelems</span></code> di elementi e <code class="docutils literal notranslate"><span class="pre">npoints</span></code> di punti.
+<code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">rr,</span> <span class="pre">ee,</span> <span class="pre">ii_te,</span> <span class="pre">elems,</span> <span class="pre">nelems,</span> <span class="pre">npoints</span> <span class="pre">]</span> <span class="pre">=</span> <span class="pre">build_geometry(</span> <span class="pre">airfoil)</span> </code></p>
+</div>
+<div class="section" id="principio-di-sovrapposizione-delle-cause-e-degli-effetti-campo-di-velocita">
+<h2>Principio di sovrapposizione delle cause e degli effetti: campo di velocità<a class="headerlink" href="#principio-di-sovrapposizione-delle-cause-e-degli-effetti-campo-di-velocita" title="Permalink to this heading">#</a></h2>
+<p>Vengono utilizzate i seguenti campi di velocità irrotazionali:</p>
+<ul class="simple">
+<li><p>corrente uniforme <span class="math notranslate nohighlight">\(\bm{U}_{\infty}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> distribuzioni costanti di sorgenti su ogni pannello, di
+intensità <span class="math notranslate nohighlight">\(\sigma_k\)</span>, <span class="math notranslate nohighlight">\(k=1:N\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> distribuzioni costanti di vortici su ogni pannello, di intensità
+<span class="math notranslate nohighlight">\(\gamma_k\)</span>, <span class="math notranslate nohighlight">\(k=1:N\)</span>.</p></li>
+</ul>
+<p>La velocità indotta nel punto <span class="math notranslate nohighlight">\(\bm{x}\)</span> da una distribuzione costante di
+sorgente su un pannello di intensità <span class="math notranslate nohighlight">\(\sigma_k\)</span> è
+$$\bm{u}^s_k(\bm{x}) = \left[</p>
+<ul class="simple">
+<li><p>\dfrac{1}{2\pi} \ln \dfrac{|\bm{r}_2|}{|\bm{r}_1|} \bm{\hat{t}}_k</p></li>
+</ul>
+<ul class="simple">
+<li><p>\dfrac{1}{2\pi} \beta \bm{\hat{n}}_k \right] \sigma_k =
+\bm{u}^{s,1}_k(\bm{x}) \sigma_k \ ,$<span class="math notranslate nohighlight">\( essendo \)</span>\bm{\hat{t}}_k<span class="math notranslate nohighlight">\(,
+\)</span>\bm{\hat{n}}_k<span class="math notranslate nohighlight">\( i versori tangente e normale[^1] al \)</span>k<span class="math notranslate nohighlight">\(-esimo pannello,
+i vettori \)</span>\bm{r}_i = \bm{x} - \bm{x}^i_k<span class="math notranslate nohighlight">\(, \)</span>i = 1:2<span class="math notranslate nohighlight">\( e \)</span>\beta<span class="math notranslate nohighlight">\( l'angolo
+compreso tra il vettore \)</span>\bm{r}_1<span class="math notranslate nohighlight">\( e il vettore \)</span>\bm{r}_2<span class="math notranslate nohighlight">\(, positivo se
+si deve ruotare il vettore \)</span>\bm{r}_1<span class="math notranslate nohighlight">\( in senso antiorario per farlo
+coincidere con \)</span>\bm{r}_2<span class="math notranslate nohighlight">\(. Infine é stata espressa la velocità indotta
+dalla sorgente di intensità \)</span>\sigma_k<span class="math notranslate nohighlight">\( come prodotto della velocità
+indotta da una sorgente unitaria \)</span>\bm{u}^{s,1}<em>k<span class="math notranslate nohighlight">\( e dell'intensità
+\)</span>\sigma_k<span class="math notranslate nohighlight">\(. Allo stesso modo, si può scrivere la velocità indotta da una
+distribuzione di vortici come
+\)</span><span class="math notranslate nohighlight">\(\bm{u}^v_k(\bm{x}) = \bm{u}^{v,1}_k(\bm{x}) \gamma_k \ .\)</span><span class="math notranslate nohighlight">\( Il campo di
+velocità risultante dalla sovrapposizione della corrente uniforme e
+delle singolarità introdotte è \)</span>$\bm{u}(\bm{x}) = \bm{U}</em>{\infty}</p></li>
+<li><p>\displaystyle\sum_{k=1}^{N}\bm{u}^{s,1}_k(\bm{x}) \sigma_k</p></li>
+<li><p>\displaystyle\sum_{k=1}^{N}\bm{u}^{v,1}_k(\bm{x}) \gamma_k \ .$<span class="math notranslate nohighlight">\(
+Questa espressione del campo di velocità contiene \)</span>2,N<span class="math notranslate nohighlight">\( incognite, le
+intensità delle sorgenti \)</span>\sigma_k<span class="math notranslate nohighlight">\( e dei vortici \)</span>\gamma_k<span class="math notranslate nohighlight">\(, \)</span>k=1:N$.</p></li>
+</ul>
+<p>Le funzioni</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   v = compute_velocity_source( elems_k , rr_i )
+   v = compute_velocity_vortex( elems_k , rr_i )
+</pre></div>
+</div>
+<p>calcolano la velocità <code class="docutils literal notranslate"><span class="pre">v</span></code> nel punto <code class="docutils literal notranslate"><span class="pre">rr_i</span></code> indotta da singolarità di
+intensità unitaria distribuita sull’elemento <code class="docutils literal notranslate"><span class="pre">elems_k</span></code>. Il vettore
+colonna <code class="docutils literal notranslate"><span class="pre">v</span></code> contiene le componenti <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span> della velocità, nel sistema
+di riferimento globale.</p>
+</div>
+<div class="section" id="id1">
+<h2>Metodo di Hess-Smith<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Il metodo di Hess-Smith consiste nell’imporre che le intensità dei
+vortici siano tutte uguali, <span class="math notranslate nohighlight">\(\gamma_k = \gamma\)</span>, <span class="math notranslate nohighlight">\(k=1:N\)</span>. L’espressione
+della velocità contiene ora <span class="math notranslate nohighlight">\(N+1\)</span> incognite.
+$$\bm{u}(\bm{x}) = \bm{U}_{\infty}</p>
+<ul class="simple">
+<li><p>\displaystyle\sum_{k=1}^{N}\bm{u}^{s,1}_k(\bm{x}) \sigma_k</p></li>
+<li><p>\displaystyle\sum_{k=1}^{N}\bm{u}^{v,1}_k(\bm{x}) \gamma \ .$$</p></li>
+</ul>
+</div>
+<div class="section" id="sistema-lineare-condizioni-al-contorno">
+<h2>Sistema lineare: condizioni al contorno<a class="headerlink" href="#sistema-lineare-condizioni-al-contorno" title="Permalink to this heading">#</a></h2>
+<p>Si possono scrivere <span class="math notranslate nohighlight">\(N\)</span> equazioni imponendo la condizione al contorno di
+non penetrazione <span class="math notranslate nohighlight">\(\bm{u}(\bm{x}_i) \cdot \bm{\hat{n}}_i = 0\)</span> nei punti
+di controllo dei pannelli <span class="math notranslate nohighlight">\(\bm{x}^c_i\)</span>,
+$$0 = \bm{\hat{n}}_i \cdot \bm{u}(\bm{x}^c_i) = \bm{\hat{n}}<em>i \cdot \bm{U}</em>{\infty}</p>
+<ul class="simple">
+<li><p>\displaystyle\sum_{k=1}^{N}\bm{\hat{n}}_i \cdot \bm{u}^{s,1}_k(\bm{x}^c_i) \sigma_k</p></li>
+<li><p>\displaystyle\sum_{\ell=1}^{N}\bm{\hat{n}}<em>i \cdot \bm{u}^{v,1}</em>{\ell}(\bm{x}^c_i) \gamma \ , \qquad\qquad i=1:N \ .$$
+Manca ora un’altra equazione che renda il sistema determinato e
+garantisca l’unicità della soluzione del problema aerodinamico in un
+dominio non semplicemente connesso.</p></li>
+</ul>
+</div>
+<div class="section" id="sistema-lineare-condizione-di-kutta">
+<h2>Sistema lineare: condizione di Kutta<a class="headerlink" href="#sistema-lineare-condizione-di-kutta" title="Permalink to this heading">#</a></h2>
+<p>La condizione di Kutta stabilisce il criterio per recuperare l’unicità
+della soluzione, scegliendo la «soluzione più fisica» tra le infinite
+soluzioni del problema aerodinamico con dominio non semplicmente
+connesso. Si può approssimare al condizione di Kutta imponendo
+l’uguaglianza delle componenti tangenziali della velocità dei pannelli
+in corrispondenza del bordo di uscita,
+$<span class="math notranslate nohighlight">\(\bm{u}(\bm{x}^c_1) \cdot \bm{\hat{t}}_1 +
+ \bm{u}(\bm{x}^c_N) \cdot \bm{\hat{t}}_N = 0 \ .\)</span><span class="math notranslate nohighlight">\( come \)</span>N+1<span class="math notranslate nohighlight">\(-esima
+equazione per ottenere un sistema lineare determinato. Esplicitando
+l'espressione della velocità, si può scrivere
+\)</span><span class="math notranslate nohighlight">\(0 = \bm{\hat{t}}_1 \cdot \bm{U}_{\infty} + 
+     \bm{\hat{t}}_N \cdot \bm{U}_{\infty} + 
+ \displaystyle\sum_{k=1}^{N} \left[ \bm{\hat{t}}_1 \cdot \bm{u}^{s,1}_k(\bm{x}^c_1) + 
+   \bm{\hat{t}}_N \cdot \bm{u}^{s,1}_k(\bm{x}^c_N) \right] \sigma_k +
+ \displaystyle\sum_{\ell=1}^N \left[\bm{\hat{t}}_1 \cdot \bm{u}^{v,1}_{\ell}(\bm{x}^c_1) +
+   \bm{\hat{t}}_N \cdot \bm{u}^{v,1}_{\ell}(\bm{x}^c_N) \right] \gamma \ .\)</span>$</p>
+</div>
+<div class="section" id="sistema-lineare-in-forma-matriciale">
+<h2>Sistema lineare in forma matriciale<a class="headerlink" href="#sistema-lineare-in-forma-matriciale" title="Permalink to this heading">#</a></h2>
+<p>Si può scrivere il sistema lineare in forma matriciale
+<span class="math notranslate nohighlight">\(\underline{\underline{A}}\,\underline{x} = \underline{b}\)</span> distingunedo
+i contributi delle sorgenti da quello del vortice e le condizioni al
+contorno di non penetrazione dalla condizione di Kutta, partizionando la
+matrice <span class="math notranslate nohighlight">\({\underline{\underline{A}}}\)</span>, il vettore incognito
+<span class="math notranslate nohighlight">\(\underline{x}\)</span> e il termine noto <span class="math notranslate nohighlight">\(\underline{b}\)</span>, $<span class="math notranslate nohighlight">\(\left[
+\begin{array}{ccc|c}
+ &amp; &amp; &amp; \\ 
+ &amp; {\underline{\underline{A}}}^{bc,s} &amp; &amp; \underline{A}^{bc,v} \\ 
+ &amp; &amp; &amp; \\ \hline  
+ &amp; {\underline{A}^{K,s}}^T &amp; &amp; A^{K,v} \vspace{0.1cm} \\
+\end{array} \right]
+\left[
+\begin{array}{c}
+ \\
+ \underline{\sigma} \\
+ \\
+ \hline
+ \gamma \vspace{0.1cm} \\
+\end{array}
+\right] =
+\left[
+\begin{array}{c}
+ \\
+ \underline{b}^{bc} \\
+ \\
+ \hline
+ b^{K} \vspace{0.1cm} \\
+\end{array}
+\right] \ .\)</span><span class="math notranslate nohighlight">\( Le componenti della matrice \)</span>\underline{\underline{A}}<span class="math notranslate nohighlight">\(
+sono \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+ \left\{ {\underline{\underline{A}}}^{bc,s}  \right\}_{ik} =
+      \bm{\hat{n}}_i \cdot \bm{u}^{s,1}_k(\bm{x}^c_i) \quad &amp; , \quad
+ \left\{ {          {\underline{A}}}^{bc,v}  \right\}_{i} =
+      \displaystyle\sum_{k=1}^{N}\bm{\hat{n}}_i \cdot \bm{u}^{v,1}_k(\bm{x}^c_i) \quad , \\
+ \left\{ {          {\underline{A}}}^{K,s}  \right\}_{k} =
+      \bm{\hat{t}}_1 \cdot \bm{u}^{s,1}_k(\bm{x}^c_1) +
+      \bm{\hat{t}}_N \cdot \bm{u}^{s,1}_k(\bm{x}^c_N) 
+      \quad &amp; , \quad
+         {          {          {A}}}^{K,v} =
+     \displaystyle\sum_{k=1}^{N}
+      \bm{\hat{t}}_1 \cdot \bm{u}^{v,1}_k(\bm{x}^c_1) +
+      \bm{\hat{t}}_N \cdot \bm{u}^{v,1}_k(\bm{x}^c_N) 
+      \quad ,
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( il vettore delle incognite contiene le intensità delle
+sorgenti e del vortice, mentre le componenti del termine noto sono
+\)</span><span class="math notranslate nohighlight">\(\left\{ \underline{b}^{bc} \right\}_i = - \bm{\hat{n}}_i \cdot \bm{U}_{\infty} \quad , \quad 
+ b^{K} = - \bm{\hat{t}}_1 \cdot \bm{U}_{\infty} - \bm{\hat{t}}_N \cdot \bm{U}_{\infty} \ .\)</span>$</p>
+</div>
+<div class="section" id="ricostruzione-delle-grandezze-fisiche">
+<h2>Ricostruzione delle grandezze fisiche<a class="headerlink" href="#ricostruzione-delle-grandezze-fisiche" title="Permalink to this heading">#</a></h2>
+<p>Una volta risolto il sistema lineare, sono note le intensità delle
+singolarità distribuite sul corpo ed è quindi possibile ricostruire il
+campo di velocità in un punto <span class="math notranslate nohighlight">\(\bm{x}\)</span> qualsiasi del dominio. Si possono
+utilizzare le funzioni <span class="math notranslate nohighlight">\(\texttt{compute\_velocity\_source()}\)</span>,
+<span class="math notranslate nohighlight">\(\texttt{compute\_velocity\_vortex()}\)</span>, per calcolare i contributi di
+velocità <span class="math notranslate nohighlight">\(\bm{u}^{s,1}_k(\bm{x})\)</span>, <span class="math notranslate nohighlight">\(\bm{u}^{v,1}_k(\bm{x})\)</span> del
+<span class="math notranslate nohighlight">\(k\)</span>-esimo elemento da modulare con le intensità delle singolarità, come
+descritto dalla formula del campo di velocità,
+$$\bm{u}(\bm{x}) = \bm{U}_{\infty}</p>
+<ul class="simple">
+<li><p>\displaystyle\sum_{k=1}^{N}\bm{u}^{s,1}_k(\bm{x}) \sigma_k</p></li>
+<li><p>\displaystyle\sum_{k=1}^{N}\bm{u}^{v,1}<em>k(\bm{x}) \gamma \ .$<span class="math notranslate nohighlight">\( Per
+calcolare la velocità in corrispondenza dei punti di controllo
+\)</span>\bm{x}^c_i<span class="math notranslate nohighlight">\(, si può evitare di eseguire il ciclo su tutti gli elementi,
+se si salvano le matrici \)</span>{\underline{\underline{A_u}}}<span class="math notranslate nohighlight">\(,
+\)</span>{\underline{\underline{A_v}}}<span class="math notranslate nohighlight">\( dei coefficienti aerodinamici durante la
+costruzione del sistema lineare che permettono di ottenere le due
+componenti della velocità, tramite il prodotto con il vettore
+\)</span>\underline{x}<span class="math notranslate nohighlight">\( delle intensità delle singolarità. Le due componenti \)</span>x<span class="math notranslate nohighlight">\(
+e \)</span>y<span class="math notranslate nohighlight">\( della velocità sono infatti uguali a \)</span>$\begin{aligned}
+u^c(\bm{x}<em>i) &amp; = U</em>{\infty} + \displaystyle\sum</em>{k=1}^{N} u^{s,1}_k(\bm{x}^c_i) \sigma_k</p></li>
+<li><p>\displaystyle\sum_{\ell=1}^{N} u^{v,1}<em>{\ell}(\bm{x}^c_i) \gamma \ , \qquad\qquad i=1:N \
+v^c(\bm{x}<em>i) &amp; = V</em>{\infty} + \displaystyle\sum</em>{k=1}^{N} v^{s,1}_k(\bm{x}^c_i) \sigma_k</p></li>
+<li><p>\displaystyle\sum_{\ell=1}^{N} v^{v,1}_{\ell}(\bm{x}^c_i) \gamma \ , \qquad\qquad i=1:N \ ,
+\end{aligned}$<span class="math notranslate nohighlight">\( e possono essere ricavate come \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+\underline{u} = U_{\infty} \underline{1} + \underline{\underline{A_u}} \, \underline{x} \ , \\
+\underline{v} = V_{\infty} \underline{1} + \underline{\underline{A_v}} \, \underline{x} \ . 
+\end{aligned}\)</span>$</p></li>
+</ul>
+<p>Infine il campo di pressione può essere ricavato utilizzando il teorema
+di Bernoulli, nella forma valida per correnti stazionarie incomprimibili
+irrotazionali di fluidi non viscosi,
+$<span class="math notranslate nohighlight">\(P + \dfrac{1}{2} \rho |\bm{u}|^2 = P_{\infty} + \dfrac{1}{2} \rho |\bm{U}_{\infty}|^2 \ ,\)</span>$
+avendo trascurato le forze di volume.</p>
+<p>Viene riportato lo pseudo-codice della funzione <code class="docutils literal notranslate"><span class="pre">build_linsys()</span></code> per
+costruire il sistema lineare.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[ A , b , Au , Av ] = build_linsys( freeStream , elems , ii_te )
+
+nelems = length(elems)
+
+% === Initialize matrices to zero ===
+A = zeros(nelems,nelems)   ; b = zeros(nelems,1) ;
+Au= zeros(nelems,nelems+1) ; Av= zeros(nelems,nelems+1) ;
+
+% === Fill A matrix and RHS b vector ===
+% =&gt; 1. assign the non-penetration b.c. ( u.n = 0 ),
+%       filling A(1:nelems,1:nelems+1) and b(1:nelems)
+
+for ii = 1 : nelems    % elems where velocity is induced
+    for jj = 1 : nelems    % inducing elems
+
+      % === Compute induced velocity ===
+      %  and store it in vs(:,:).v, vv(:,:).v (memory inefficient!)
+      vs(ii,jj).v = compute_velocity_source(elems(jj),elems(ii).cen);
+      vv(ii,jj).v = compute_velocity_vortex(elems(jj),elems(ii).cen);
+
+      % === Fill b.c. block of the matrix A with source AIC ===
+      A (ii,jj) = elems(ii).nver&#39; * vs(ii,jj).v ;
+      % === Accumulate vortex AIC in the b.c. block of the matrix A === 
+      A( ii,nelems+1 ) += elems(ii).nver&#39; * vv(ii,jj).v ; 
+
+      % === Fill matrices to retrieve the velocity field ===
+      % as before, fill sources block, accumulate vortex contributions
+      % -&gt; component x of the velocity field
+      Au(ii,jj)         = vs(ii,jj).v(1) ; % sources
+      Au(ii,nelems+1 ) += vv(ii,jj).v(1) ; % vortices
+      % -&gt; component y of the velocity field
+      Av(ii,jj)         = vs(ii,jj).v(2) ; % sources
+      Av(ii,nelems+1 ) += vv(ii,jj).v(2) ; % vortices
+
+    end
+
+    % === Fill the b.c. block of the rhs vector b ===
+    b(ii) = - elems(ii).nver&#39; * freeStream.vvec ;
+
+end
+
+% ... continue ...
+
+% ... continue ...
+
+% =&gt; 2. assign Kutta condition
+%       ( U_TE_upper . tTE_upper + U_TE_lower . tTE_lower = 0 ),
+%       filling A(nelems+1,:) and b(nelems+1)
+
+% indices of the elems at the te
+i_te_1 = ii_te(1,1) ;  i_te_N = ii_te(1,2) ;
+
+for jj = 1  : nelems
+
+  % === Fill the Kutta condition row for sources ===
+  A(nelems+1, jj ) = elems(i_te_1).tver&#39; * vs(i_te_1,jj).v + ...
+                     elems(i_te_N).tver&#39; * vs(i_te_N,jj).v ;
+  % === Accumulate the contribution of the vortex ===
+  A(nelems+1,nelems+1) += ...
+            elems(i_te_1).tver&#39; * vv(i_te_1,jj).v +  ...
+            elems(i_te_N).tver&#39; * vv(i_te_N,jj).v ; 
+end
+
+% fill the last component of the rhs ( -(t1+tN).U_inf )
+b(nelems+ia) = - ( elems( i_te_1 ).tver + elems( i_te_2 ).tver )&#39; * ...
+                   freeStream.vvec ;
+</pre></div>
+</div>
+<p>Infine viene riportato lo pseudo-codice del programma.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>% === Input ===
+% -&gt; freeStream
+freeStream.rho = ... ; .P = ... ; .v = ... ; .alpha = ... ;
+freeStream.vvec  = freeStream.v * [ cos(freeStream.alpha) ; ...
+                                    sin(freeStream.alpha) ] ;
+% -&gt; airfoil
+airfoil.id    = 1   ; airfoil.airfoil_str = &#39;NACA0012&#39;
+airfoil.chord = 1.0 ; airfoil.theta = 2.0 *pi/180.0 ; % ...
+
+% === Build geometry ===
+[ rr, ee, ii_te, elems, nelems, npoints ] = build_geometry(airfoil)
+% === Build the linear system ===
+[ A , b , Au , Av ] = build_linsys( freeStream , elems , ii_te ) ;
+% === Solve the linear system ===
+x = A \ b ;
+% === Retrieve physical fields ===
+% -&gt; Compute velocity at control points
+u = Au * x + freeStream.v * cos(freeStream.alpha);
+v = Av * x + freeStream.v * sin(freeStream.alpha); % ...
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descrizione-della-geometria">Descrizione della geometria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principio-di-sovrapposizione-delle-cause-e-degli-effetti-campo-di-velocita">Principio di sovrapposizione delle cause e degli effetti: campo di velocità</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Metodo di Hess-Smith</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-lineare-condizioni-al-contorno">Sistema lineare: condizioni al contorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-lineare-condizione-di-kutta">Sistema lineare: condizione di Kutta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-lineare-in-forma-matriciale">Sistema lineare in forma matriciale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ricostruzione-delle-grandezze-fisiche">Ricostruzione delle grandezze fisiche</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

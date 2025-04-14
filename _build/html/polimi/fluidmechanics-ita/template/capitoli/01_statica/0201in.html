@@ -1,0 +1,540 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/01_statica/0201in';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="02teoria.html">1. Statics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">2. Surface tension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_cinematica/12teoria.html">3. Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">4. Balance equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_bernoulli/05teoria.html">5. Bernoulli theorems and vorticity dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">6. Exact solutions of Navier-Stokes equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/01_statica/0201in.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <hr class="docutils" />
+<p>(<span class="math notranslate nohighlight">\(h=0.3\  m\)</span>, non varia sulla luna.)   <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/01_statica/fig/recipientesfera.eps" />{width=»90%»}</p>
+<hr class="docutils" />
+<p>Legge di Archimede. Condizione di equilibrio. Calcolo del volume di
+solidi (integrali di volume). Adimensionalizzazione. Soluzione di
+semplici equazioni non lineari per via grafica (studio di funzione) e/o
+numerica.</p>
+<p>Per svolgere l’esercizio bisogna calcolare la condizione di equilibrio
+del corpo, soggetto alla propria forza peso e alla forza che il fluido
+esercita su di esso (legge di Archimede). Nell’equazione di equilibrio,
+l’incognita <span class="math notranslate nohighlight">\(h\)</span> compare nella formula del volume immerso nel fluido.
+L’equazione di equilibrio è un’equazione non lineare in <span class="math notranslate nohighlight">\(h\)</span>, da
+risolvere per via grafica o numerica.</p>
+<ul>
+<li><p>Scrittura dell’equazione di equilibrio del corpo soggetto al proprio
+peso e alla forza esercitata su di esso dal fluido, diretta verso
+l’alto e pari al peso del volume del fluido spostato (legge di
+Archimede). $<span class="math notranslate nohighlight">\(\label{eqn:equil_archimede}
+      \rho_s V_s g = \rho V_c g \quad\Rightarrow\quad \rho_s V_s = \rho V_c\)</span>$</p>
+<p><em>Osservazione.</em> Si trova subito la risposta all’ultimo quesito:
+poiché <span class="math notranslate nohighlight">\(g\)</span> non compare nell’equazione di equilibrio, la condizione
+di equilibrio sulla Luna è uguale a quella che si ha sulla Terra.</p>
+</li>
+<li><p>Calcolo del volume della sfera e della calotta sferica:</p>
+<ul>
+<li><p>Volume della sfera: <span class="math notranslate nohighlight">\(V_s = \frac{4}{3}\pi a^3\)</span></p></li>
+<li><p>Volume della calotta sferica: <span class="math notranslate nohighlight">\(V_c = \pi h^2 (a - \frac{h}{3})\)</span></p>
+<p>(per credere, verificare casi limite: <span class="math notranslate nohighlight">\(h=0\)</span>, <span class="math notranslate nohighlight">\(h=a\)</span>, <span class="math notranslate nohighlight">\(h=2a\)</span>; alla
+fine dell’esercizio è riportato il calcolo, tramite un integrale
+di volume)</p>
+</li>
+</ul>
+</li>
+<li><p>Le formule per i volumi <span class="math notranslate nohighlight">\(V_c\)</span> e <span class="math notranslate nohighlight">\(V_s\)</span> sono inserite nell’eq.
+<span class="xref myst">[eqn:equil_archimede]</span>{reference-type=»ref»
+reference=»eqn:equil_archimede»}. L’equazione viene semplificata e
+scritta in forma adimensionale, introducendo la variabile
+<span class="math notranslate nohighlight">\(x=\frac{h}{a}\)</span>, per mettere in evidenza il parametro che governa il
+problema, cioè il rapporto di densità <span class="math notranslate nohighlight">\(\rho_s/\rho\)</span>. L’equazione di
+terzo grado in x viene risolta, considerando i limiti fisici del
+problema (<span class="math notranslate nohighlight">\(0 \le x \le 2\)</span>):
+$<span class="math notranslate nohighlight">\(\rho \pi h^2 \Big(a-\frac{h}{3}\Big) = \rho_s \frac{4}{3}\pi a^3  \quad\Rightarrow\quad
+      \frac{3}{4} x^2 \Big(1 - \frac{x}{3}\Big) = \frac{\rho_s}{\rho}\)</span>$
+Alcuni metodi per risolvere equazioni non lineari possono essere ad
+esempio:</p>
+<ul>
+<li><p>metodi iterativi. Ad esempio metodo di Newton</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>x          res 
+1.0000    -3.437475e-01  
+1.4583    -2.406993e-02  
+1.4990    -5.841602e-04  
+1.5000    -4.027539e-07  
+1.5000    -1.924017e-13
+</pre></div>
+</div>
+</li>
+<li><p>metodo grafico (educativo: per problemi più complicati, prima di
+calcolare le soluzioni con metodi numerici, è bene avere un’idea
+di cosa si sta cercando). Si cercano le intersezioni delle
+funzioni <span class="math notranslate nohighlight">\(f_1(x) = \frac{3}{4} x^2 \Big(1 - \frac{x}{3}\Big)\)</span> e
+<span class="math notranslate nohighlight">\(f_2(x) = \frac{\rho_s}{\rho}\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p><em>Osservazione.</em> Per valori di <span class="math notranslate nohighlight">\(\frac{\rho_s}{\rho}\)</span> compresi tra 0 e 1,
+esiste una e una sola soluzione fisica del problema. Per i valori di
+desità «estremi» <span class="math notranslate nohighlight">\(\rho_s = 0\)</span> (la sfera non pesa niente),
+<span class="math notranslate nohighlight">\(\rho_s = \rho_f\)</span> (la sfera ha la stessa densità del fluido), esistono
+infinite soluzioni: ad esempio, nel caso di <span class="math notranslate nohighlight">\(\rho_s = \rho_f\)</span> la
+posizione di equilibrio è indipendente dalla profondità alla quale è
+posta la sfera. Nel grafico, la funzione <span class="math notranslate nohighlight">\(f_1(x)\)</span> rappresenta il volume
+immerso della sfera (diviso il volume totale della sfera stessa) al
+variare della distanza <span class="math notranslate nohighlight">\(h\)</span> del punto più basso dal pelo libero: questa
+deve quindi essere rappresentata, come in figura, nulla per valori di
+<span class="math notranslate nohighlight">\(x&lt;0\)</span> (sfera completamente fuori dall’acqua), con il ramo di cubica per
+<span class="math notranslate nohighlight">\(0&lt;x&lt;2\)</span> (sfera parzialmente immersa), uguale a <span class="math notranslate nohighlight">\(1\)</span> per <span class="math notranslate nohighlight">\(x&gt;2\)</span> (sfera
+completamente immersa). La funzione <span class="math notranslate nohighlight">\(f_1(x)\)</span> può quindi essere definita
+a tratti: $<span class="math notranslate nohighlight">\(f_1(x) = 
+ \begin{cases}
+   0 &amp;    x &lt; 0 \\
+   \frac{3}{4} x^2 \Big(1 - \frac{x}{3}\Big) &amp;    0 \leq x \leq 2 \\
+   1 &amp;   x &gt; 2 \\
+ \end{cases}\)</span>$</p>
+<p><em>Discussione dei risultati.</em> Quando diminuisce la denistà relativa del
+solido, la linea rossa si abbassa e la soluzione <span class="math notranslate nohighlight">\(x=\frac{h}{a}\)</span>
+diminuisce (la sfera ha una porzione maggiore al di fuori dall’acqua).
+Esiste una e una sola soluzione che abbia senso fisico, fino a quando la
+densità relativa è compresa tra 0 e 1: non ha senso considerare valori
+negativi (la densità è una quantità positiva), mentre per valori di
+<span class="math notranslate nohighlight">\(\frac{\rho_s}{\rho}\)</span> maggiori di 1 non può esistere una condizione di
+equilibrio statico (la sfera affonda…).</p>
+<p><strong>Calcolo volume cupola sferica.</strong> É comodo svolgere il calcolo in
+coordinate cilindriche <span class="math notranslate nohighlight">\((r,\theta,z)\)</span>. Il volume <span class="math notranslate nohighlight">\(V_{im}\)</span> della parte
+immersa è uguale a $<span class="math notranslate nohighlight">\(\begin{aligned}
+V_{im} = \iiint_{V_{im}} dV &amp; = \int_{\theta=0}^{2\pi} \int_{z=-a}^{l} \int_{r=0}^{\sqrt{a^2-z^2}} dV \\
+                &amp; = \int_{\theta=0}^{2\pi} \int_{z=-a}^{l} \int_{r=0}^{\sqrt{a^2-z^2}} r dr dz d\theta \\
+                &amp; = 2\pi \int_{z=-a}^{l} \frac{a^2-z^2}{2} dz \\
+                &amp; = \frac{\pi}{3} [2 a^3 + 3 a^2 l - l^3]
+\end{aligned}\)</span>$</p>
+<p>Definendo <span class="math notranslate nohighlight">\(h = R+l\)</span> come la quota immersa della sfera, si ottiene:
+$<span class="math notranslate nohighlight">\(V_{im} = \pi h^2 \displaystyle \left( a - \frac{h}{3} \right)\)</span>$</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/01_statica"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

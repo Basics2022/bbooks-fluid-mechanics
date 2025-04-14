@@ -1,0 +1,585 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bilancio di massa &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0411in';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">Statica</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">Legge di Young-Laplace.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="04teoria.html">Bilanci in forma integrale</a></li>
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0411in.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bilancio di massa</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Bilancio di massa</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilancio-di-quantita-di-moto">Bilancio di quantità di moto</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilancio-di-energia">Bilancio di energia</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>Si ricavano le condizioni di salto di velocità e sforzo in
+corrispondenza di superfici di interfaccia. Si sottolinea che queste
+superfici possono essere superfici introdotte dalla modellazione del
+problema, come ad esempio la superficie di separazione tra due fluidi
+all’interno della quale in generale agisce una tensione superficiale o
+una superficie di discontinuità tangenziale nel caso di fluido non
+viscoso, oppure superfici fittizie.</p>
+<p>Si parte dai bilanci in forma integrale scritti per un volume in moto
+arbitrario. I bilanci di massa e quantità di moto del volume in moto
+arbitrario si ottengono dalle regole di derivazione su domini mobili
+delle funzioni <span class="math notranslate nohighlight">\(f = \rho\)</span> e <span class="math notranslate nohighlight">\(\bm{f} = \rho \bm{u}\)</span>,
+$<span class="math notranslate nohighlight">\(\frac{d}{dt} \int_{V(t)} f dV 
+    = \frac{d}{dt} \int_{v(t)=V(t)} f dv + \oint_{\partial v(t)=\partial V(t)} f(\bm{v}-\bm{w}) \cdot \bm{\hat{n}} ds\)</span><span class="math notranslate nohighlight">\(
+dove \)</span>\bm{u}<span class="math notranslate nohighlight">\( è la velocità del fluido, \)</span>\bm{w}$ è la velocità della
+superficie di discontinuità.</p>
+<p>Il billancio integrale viene fatto su un elemento di volume
+infinitesimo, «allungato» nelle direzioni della superficie. Quando il
+volume dell’elemento infinitesimo tende a zero, tende a zero più
+velocemente dei contributi sulle superfici parallele alla superficie di
+salto.</p>
+<p>L’elemento di volume <span class="math notranslate nohighlight">\(dv\)</span> è il parallelepipedo di superfici laterali
+<span class="math notranslate nohighlight">\(dS\)</span>, paralleli alla superficie, e basi <span class="math notranslate nohighlight">\(dh\)</span> perpendicolari alla
+superficie. Se si ipotizza che le superfici <span class="math notranslate nohighlight">\(dh \ll dS\)</span> i contributi nei
+bilanci dei termini agenti sulle superfici <span class="math notranslate nohighlight">\(dh\)</span> (tranne che nel caso
+della tensione superficiale, che ha le dimensioni di uno sforzo per una
+lunghezza) sono trascurabili.</p>
+<div class="section" id="bilancio-di-massa">
+<h1>Bilancio di massa<a class="headerlink" href="#bilancio-di-massa" title="Permalink to this heading">#</a></h1>
+<p>Il bilancio di massa per il volume <span class="math notranslate nohighlight">\(dv\)</span> in moto con velocità <span class="math notranslate nohighlight">\(\bm{w}\)</span> è
+$<span class="math notranslate nohighlight">\(\dfrac{d}{dt}\int_{v} \rho + \oint_{\partial v} \rho (\bm{u} - \bm{w} ) \cdot \bm{\hat{n}} = 0\)</span><span class="math notranslate nohighlight">\(
+Trascurando i contributi di volume e quelli delle superfici \)</span>dh<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\rho_1 (\bm{u}_1 - \bm{w} ) \cdot \bm{\hat{n}}_1 dS +  \rho_2 (\bm{u}_2 - \bm{w} ) \cdot \bm{\hat{n}}_2 dS = 0\)</span><span class="math notranslate nohighlight">\(
+dove le normali \)</span>\bm{\hat{n}}_1 = \bm{\hat{n}}<span class="math notranslate nohighlight">\( e
+\)</span>\bm{\hat{n}}_2 = -\bm{\hat{n}}<span class="math notranslate nohighlight">\( sono opposte. La quantità tra parentesi
+è la velocità relativa del fluido rispetto alla superficie. Si definisce
+quindi il flusso di massa \)</span>m<span class="math notranslate nohighlight">\( attraverso la superficie.
+\)</span>$\begin{aligned}</p>
+<ul class="simple">
+<li><p>m &amp; = \rho_1 (\bm{u}<em>1 - \bm{w} ) \cdot \bm{\hat{n}} = \rho_2 (\bm{u}<em>2 - \bm{w} ) \cdot \bm{\hat{n}} \
+&amp; = \rho_1  \bm{u}</em>{r1} \cdot \bm{\hat{n}} = \rho_2 \bm{u}</em>{r2} \cdot \bm{\hat{n}} \
+\end{aligned}$$</p></li>
+</ul>
+<p>Nel caso di densità uniforme <span class="math notranslate nohighlight">\(\rho_1 = \rho_2 = \rho\)</span> si «conservano» le
+componenti normali della velocità relativa e della velocità.
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+  \bm{u}_{r1} \cdot \bm{\hat{n}} &amp; = \bm{u}_{r2} \cdot \bm{\hat{n}} \\
+  \bm{u}_{1}  \cdot \bm{\hat{n}} &amp; = \bm{u}_{2}  \cdot \bm{\hat{n}} \\
+\end{aligned}\)</span>$</p>
+</div>
+<div class="section" id="bilancio-di-quantita-di-moto">
+<h1>Bilancio di quantità di moto<a class="headerlink" href="#bilancio-di-quantita-di-moto" title="Permalink to this heading">#</a></h1>
+<p>Il bilancio della quantità di moto per l’elemento <span class="math notranslate nohighlight">\(dv\)</span> è
+$<span class="math notranslate nohighlight">\(\dfrac{d}{dt}\int_{v} \rho\bm{u} + \oint_{\partial v} \rho \bm{u}(\bm{u} - \bm{w} ) \cdot \bm{\hat{n}} = \oint_{\partial v} \bm{t_n} + \int_{v} \rho \bm{g} + \int_{l} \bm{\gamma}\)</span><span class="math notranslate nohighlight">\(
+avendo incluso anche eventuali termini di tensione superficiale, svolto
+sulla curva che separa tre sostanze (come ad esempio il &quot;perimetro&quot; del
+menisco visto nell'esercizio sul capillare: in quel caso la curva \)</span>l<span class="math notranslate nohighlight">\(
+separa il liquido, dall'aria, dalle pareti solide del capillare).
+Trascurando i termini di volume, il bilancio per l'elemento infinitesimo
+(per semplicità pensato in 2 dimensioni) è
+\)</span><span class="math notranslate nohighlight">\(\rho_1 \bm{u}_1 (\bm{u}_1 - \bm{w})\cdot \bm{\hat{n}}_1 ds + \rho_2 \bm{u}_2 (\bm{u}_2 -\bm{w}) \cdot \bm{\hat{n}}_2 ds =
+    \bm{t_{n1}} ds + \bm{\gamma}_1  + \bm{t_{n2}} ds + \bm{\gamma}_2\)</span><span class="math notranslate nohighlight">\(
+con \)</span>\bm{\gamma}_1 = \gamma \bm{\hat{t}_1}<span class="math notranslate nohighlight">\(,
+\)</span>\bm{\gamma}<em>2 = (\gamma + \gamma</em>{/s} ds) \bm{\hat{t}_2}<span class="math notranslate nohighlight">\(. I versori
+tangenti \)</span>\bm{\hat{t}}_1<span class="math notranslate nohighlight">\(, \)</span>\bm{\hat{t}}_2<span class="math notranslate nohighlight">\( agli estremi dell'elementino
+di superficie non sono allineati a causa della curvatura della
+superficie (si rimanda alla &quot;dimostrazione&quot; della legge di
+Young-Laplace). Si tiene conto di una possibile variazione della
+tensione superficiale. Questa di solito può essere dovuta a differenze
+di temperatura o composizioni chimiche (perchè si usa il sapone per
+lavarsi le mani?): si rimanda al simpatico (?) video delle barchette sul
+fondo del documento della dimostrazione della legge di Young-Laplace,
+nel quale viene usata una &quot;propulsione a effetto Marangoni&quot; per
+barchette di carta. Il contributo della tensione superficiale si può
+scrivere come
+\)</span><span class="math notranslate nohighlight">\(\bm{\gamma}_2 + \bm{\gamma}_1 = (2 \gamma H \bm{\hat{n}} + \bm{\nabla}_2 \gamma )ds\)</span>$
+dove</p>
+<ul class="simple">
+<li><p>H è la curvatura media
+<span class="math notranslate nohighlight">\(H = \frac{1}{2}\left(\frac{1}{R_1} + \frac{1}{R_2}\right)\)</span> nel caso
+tridimensionale, che nel caso bidimensionale coincide con
+<span class="math notranslate nohighlight">\(\frac{1}{2 R}\)</span> (uno dei due raggi di curvatura diventa infinito).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bm{\hat{n}}\)</span> è il vettore normale che punta verso i centri di
+curvatura.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bm{\nabla}_2\)</span> è il gradiente ristretto alla superficie, tangente
+ad essa.</p></li>
+</ul>
+<p>Ricordando la definizione di <span class="math notranslate nohighlight">\(m\)</span> e inserendola nel bilancio
+$<span class="math notranslate nohighlight">\(m ( \bm{u}_1 - \bm{u}_2 ) =
+    \bm{t_{n1}} + \bm{t_{n2}} + 2 \gamma H \bm{\hat{n}} + \bm{\nabla}_2 \gamma\)</span>$</p>
+<p>Si analizzano ora alcuni casi particolari:</p>
+<ul class="simple">
+<li><p>Statica con tensione superficiale. La velocità è nulla ovunque, i
+vettori di sforzo hanno solo il contributo della pressione
+<span class="math notranslate nohighlight">\(\bm{t_n} = -p \bm{\hat{n}}\)</span>. Secondo queste ipotesi, non si possono
+avere contributi tangenziali nemmeno a causa della tensione
+superficiale e quindi <span class="math notranslate nohighlight">\(\gamma\)</span> deve essere uniforme sulla
+superficie. Nel caso bidimensionale si ricorda che la normale
+<span class="math notranslate nohighlight">\(\bm{\hat{n}}\)</span> punta verso il centro del cerchio osculatore e
+coincide quindi con la normale <span class="math notranslate nohighlight">\(\bm{\hat{n}}_1\)</span> dell’immagine e il
+raggio di curvatura <span class="math notranslate nohighlight">\(R\)</span> è positivo. Il bilancio della quantità di
+moto si riduce all’equilibrio statico della superficie
+$<span class="math notranslate nohighlight">\(p_1 - p_2 = \frac{\gamma}{R}\)</span><span class="math notranslate nohighlight">\( Si osserva quindi che la pressione
+&quot;interna&quot; \)</span>p_1<span class="math notranslate nohighlight">\( deve essere maggiore di \)</span>p_2$.</p></li>
+<li><p>Fluido inviscido, superficie senza tensione superficiale. Il
+bilancio si riduce a
+$<span class="math notranslate nohighlight">\(m ( \bm{u}_1 - \bm{u}_2 ) = - (p_1 - p_2) \bm{\hat{n}}\)</span>$</p></li>
+<li><p>Fluido inviscido, superficie senza tensione superficiale, densità
+uniforme. Si è visto come la velocità (e le velocità relative)
+normali alla superficie devono essere uguali da entrambe le parti
+della superficie. Se si ipotizza che la superifice non sia
+attraversata da flusso di massa (si impone che la componente normale
+della velocità relativa sia nulla, non la velocità relativa nel suo
+complesso). In questo caso non è possibile trovare una relazione di
+salto per la velocità tangenziale (o almeno questo non è possibile
+se non si aggiungono altre ipotesi o altre equazioni …vedremo un
+caso semplificato applicando il teorema di Bernoulli a un problema
+aerodinamico bidimensionale stazionario …): poichè <span class="math notranslate nohighlight">\(m=0\)</span> la
+superficie è «scarica» (capiterà nei prossimi corsi di sentir
+parlare o aver direttamente a che fare con » l’ipotesi di scia
+scarica»: questa non dovrà quindi essere una novità o una sorpresa
+in futuro) $<span class="math notranslate nohighlight">\(p_1 = p_2\)</span><span class="math notranslate nohighlight">\( ma non si riesce a ricavare nessuna
+informazione dalla componente tangenziale dell'equazione poichè è
+un'identità \)</span>0=0<span class="math notranslate nohighlight">\( a prescindere dal valore di
+\)</span>( \bm{u}_1 - \bm{u}_2 )\cdot \bm{\hat{t}}$. Attraverso tale
+superficie (di spessore nullo) ci può essere un salto finito di
+velocità tangenziale: in questo caso la superficie è una superficie
+di vorticità infinita</p></li>
+</ul>
+<p>L’ultimo caso particolare verrà utilizzato in qualche esercizio in cui
+un dominio occupato da un fluido può essere suddiviso in un sottodominio
+nel quale è valido il teorema di Bernoulli (in qualche forma …) e in
+un sottodominio dove sono valide le relazioni della statica: le
+condizioni di salto serviranno a far comunicare tra di loro i due
+sottodomini (e a risolvere correttamente l’esercizio).</p>
+</div>
+<div class="section" id="bilancio-di-energia">
+<h1>Bilancio di energia<a class="headerlink" href="#bilancio-di-energia" title="Permalink to this heading">#</a></h1>
+<p>Non verrà detto nulla sulle relazioni di salto delle altre quantità …</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/04_bilanci"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Bilancio di massa</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilancio-di-quantita-di-moto">Bilancio di quantità di moto</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bilancio-di-energia">Bilancio di energia</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

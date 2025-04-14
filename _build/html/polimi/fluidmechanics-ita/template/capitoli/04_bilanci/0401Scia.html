@@ -1,0 +1,571 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0401Scia';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">1. Statics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">2. Surface tension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_cinematica/12teoria.html">3. Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04teoria.html">4. Balance equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_bernoulli/05teoria.html">5. Bernoulli theorems and vorticity dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">6. Exact solutions of Navier-Stokes equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0401Scia.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><strong>Esercizi per il corso di Fluidodinamica</strong></p>
+<p>+:———————————:+:———————————:+
+| Calcolare la resistenza di un     | <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/04_bilanci/fig/airfoil.eps" />{width |
+| profilo immerso in una corrente   | =»90%»}                           |
+| stazionaria con velocità          |                                   |
+| asintotica <span class="math notranslate nohighlight">\({\bm{V}}_\infty\)</span>,     |                                   |
+| sapendo la distribuzione della    |                                   |
+| componente di velocità <span class="math notranslate nohighlight">\(u(y)\)</span>     |                                   |
+| parallela a <span class="math notranslate nohighlight">\({\bm{V}}_\infty\)</span> a   |                                   |
+| valle del profilo e assumendo     |                                   |
+| che:                              |                                   |
+|                                   |                                   |
+| -   la pressione statica sul      |                                   |
+|     contorno del volume di        |                                   |
+|     controllo sia costante e pari |                                   |
+|     a quella della corrente       |                                   |
+|     indisturbata a monte del      |                                   |
+|     profilo;                      |                                   |
+|                                   |                                   |
+| -   sul lato superiore e          |                                   |
+|     inferiore del volume di       |                                   |
+|     controllo sia possibile       |                                   |
+|     trascurare la componente      |                                   |
+|     lungo l’asse <span class="math notranslate nohighlight">\(x\)</span> della        |                                   |
+|     perturbazione della velocità  |                                   |
+|     dovuta alla presenza del      |                                   |
+|     profilo:                      |                                   |
+|     <span class="math notranslate nohighlight">\(\bm{V} = (V_{\infty}+u,v) \s |                                   |
+| imeq (V_{\infty},v).\)</span>             |                                   |
+|                                   |                                   |
+| (<span class="math notranslate nohighlight">\(R = \int_0^{ H}\rho \, u(y) [V_ |                                   |
+| {\infty}-u(y)] dy.\)</span>)              |                                   |
++———————————–+———————————–+</p>
+<p>Bilanci integrali di massa e quantità di moto. Equazioni di equilibrio
+(equazioni fondamentali della dinamica classica). Principio di azione e
+reazione. Integrale della normale su una superficie chiusa è
+identicamente nullo. Esperienza in laboratorio sul <em>difetto di scia</em>.</p>
+<p>Vengono scritti i bilanci integrali di massa e quantità di moto,
+opportunamente semplificati (ipotesi di stazionarietà
+<span class="math notranslate nohighlight">\(\frac{d}{dt} \equiv 0\)</span>, densità costante <span class="math notranslate nohighlight">\(\rho = \bar{\rho}\)</span>, ipotesi
+sulle condizioni sul bordo esterno del dominio); all’interno dei bilanci
+si possono riconoscere i termini legati alle azioni scambiate dal fluido
+con il profilo (l’incognita del problema); si sfrutta infine la
+geometria rettangolare del contorno esterno e le ipotesi su di esso per
+ottenere una forma ulteriormente semplificata dei bilanci e trovare la
+soluzione del problema.</p>
+<ul>
+<li><p>Scrittura e semplificazione dei bilanci di massa e quantità di moto.
+$<span class="math notranslate nohighlight">\(\begin{cases}
+       \frac{d}{d t} \int_{\Omega} \rho + \oint_{\partial \Omega} \rho \bm{u} \cdot \hat{\bm{n}} = 0 &amp; \qquad \text{(massa)} \\
+       \frac{d}{d t} \int_{\Omega} \rho \bm{u} + \oint_{\partial \Omega} \rho \bm{u} \bm{u} \cdot \hat{\bm{n}} +
+        \oint_{\partial \Omega} p \hat{\bm{n}} - \oint_{\partial \Omega} \bm{s_n} = 0  
+        &amp; \qquad \text{(quantità di moto)}  %\Rb^{ext}
+      \end{cases}\)</span>$</p>
+<p>Nel problema, il controno del dominio fluido <span class="math notranslate nohighlight">\(\partial \Omega\)</span> è
+costituito dal bordo rettangolare <span class="math notranslate nohighlight">\(\gamma_\infty\)</span> lontano dal
+profilo e dal bordo <span class="math notranslate nohighlight">\(\gamma_p\)</span> coincidente con il profilo stesso. La
+forza <span class="math notranslate nohighlight">\(\bm{F}\)</span> agente sul profilo è l’integrale degli sforzi
+generati dal fluido (uguali e contrari agli sforzi agenti sul
+fluido) sul contorno del profilo. Inoltre si può fare l’ipotesi di
+sforzi viscosi nulli e pressione costante sul bordo esterno:
+l’integrale sul dominio esterno si riduce all’integrale della
+normale su una superficie chiusa ed è quindi nullo. Si può dunque
+scrivere:
+$<span class="math notranslate nohighlight">\(\oint_{\partial \Omega} (-p \hat{\bm{n}} + \bm{s_n}) = \oint_{\partial \Omega} \bm{t_n} = \underbrace{\oint_{\gamma_p} \bm{t_n}}_{=-\bm{F}} + \underbrace{\oint_{\gamma_\infty} \bm{t_n}}_{=0} = -\bm{F}\)</span>$</p>
+<p><em>Osservazione. A differenza di quanto fatto in classe, non è stata
+fatta l’ipotesi di fluido non viscoso; il contributo all’infinito si
+annulla con l’ipotesi di pressione costante all’infinito e sforzi
+viscosi trascurabili. Per ritrovarsi con gli appunti, sostituire
+<span class="math notranslate nohighlight">\(\bm{t_n}\)</span> con <span class="math notranslate nohighlight">\(-p\bm{\hat{n}}\)</span></em>.</p>
+<p>Dopo aver fatto l’ipotesi di stazionarietà e aver inserito la
+definizione di <span class="math notranslate nohighlight">\(\bm{F}\)</span> appena data, le equazioni di bilancio
+possono essere scritte come: $<span class="math notranslate nohighlight">\(\begin{cases}
+      &amp; \oint_{\partial \Omega} \rho \bm{u} \cdot \hat{\bm{n}} = 0  \\
+      &amp; \bm{F} = - \oint_{\partial \Omega} \rho \bm{u} \bm{u} \cdot \hat{\bm{n}} 
+      \end{cases}
+    \label{eqn:airfoil_bil_int}\)</span>$</p>
+<p>Il bilancio di quantità di moto può essere scritto esplicitando e
+separando le componenti vettoriali. $<span class="math notranslate nohighlight">\(\begin{aligned}
+       F_x\bm{\hat{x}} + F_y\bm{\hat{y}} 
+&amp; = - \oint_{\partial \Omega} \rho (u \bm{x} + v \bm{y}) \bm{u} \cdot \hat{\bm{n}} \\
+&amp; =       - \bm{\hat{x}} \oint_{\partial \Omega} \rho u \bm{u} \cdot \hat{\bm{n}} -  \bm{\hat{y}} \oint_{\partial \Omega} \rho v  \bm{u} \cdot \hat{\bm{n}}
+    \end{aligned}\)</span>$</p>
+</li>
+<li><p>Scrittura delle equazioni di bilancio in componenti (sfruttando la
+geometria rettangolare del bordo esterno: <span class="math notranslate nohighlight">\(\gamma_1\)</span> indica il bordo
+di sinistra, <span class="math notranslate nohighlight">\(\gamma_2\)</span> il bordo inferiore, <span class="math notranslate nohighlight">\(\gamma_3\)</span> quello di
+destra, <span class="math notranslate nohighlight">\(\gamma_4\)</span> quello superiore).</p>
+<p><em>Attenzione: la normale è quella uscente dal dominio fluido. Sul
+contorno del profilo, la normale è entrante nel profilo. In più: non
+fare confusione tra azioni del profilo agenti sul fluido e azioni
+del fluido agenti sul profilo!</em> $<span class="math notranslate nohighlight">\(\begin{cases}
+      &amp; 0 = \oint_{\partial \Omega} \rho \bm{u} \cdot \hat{\bm{n}} = -\int_{\gamma_1} \rho u
+      -\int_{\gamma_2} \rho v +\int_{\gamma_3} \rho u +\int_{\gamma_4} \rho v \\
+      &amp; F_x = +\int_{\gamma_1} \rho u^2 +\int_{\gamma_2} \rho u v -\int_{\gamma_3} \rho u^2 -\int_{\gamma_4} \rho u v \\
+      &amp; F_y = +\int_{\gamma_1} \rho u v +\int_{\gamma_2} \rho v^2 -\int_{\gamma_3} \rho u v -\int_{\gamma_4} \rho v^2
+     \end{cases}\)</span>$</p>
+</li>
+<li><p>Ipotesi sulla velocità sui lati orizzontali
+(<span class="math notranslate nohighlight">\(u|_{\gamma_2} = u|_{\gamma_4} = V_\infty\)</span> costante), per poter
+ulteriormente semplificare il risultato. $<span class="math notranslate nohighlight">\(\begin{cases}
+        \int_{\gamma_2} \rho v  -\int_{\gamma_4} \rho v = -\int_{\gamma_1} \rho u+\int_{\gamma_3} \rho u\\
+       F_x = +\int_{\gamma_1} \rho u^2 -\int_{\gamma_3} \rho u^2 + V_\infty \left[ \int_{\gamma_2} \rho v  -\int_{\gamma_4} \rho v \right]
+     \end{cases}\)</span><span class="math notranslate nohighlight">\( E inserendo la prima nella seconda:
+\)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+       F_x  &amp; = \int_{\gamma_1} \rho u^2 -\int_{\gamma_3} \rho u^2 + V_\infty \left[-\int_{\gamma_1} \rho u+\int_{\gamma_3} \rho u \right] = \\
+       &amp; = \int_{\gamma_1} \rho u (u-V_\infty) + \int_{\gamma_3} \rho u (V_\infty-u) = \quad \text{(\)</span>u|<em>{\gamma_1} = V</em>\infty  \Rightarrow <span class="math notranslate nohighlight">\( il primo integrale è nullo)} \\
+       &amp; = \int_{\gamma_3} \rho u (V_\infty-u) = \\
+       &amp; = \int_{0}^{H} \rho u(y) (V_\infty - u(y)) dy
+  \end{aligned}
+\label{eqn:difetto_scia}\)</span>$</p></li>
+</ul>
+<p><strong>Osservazioni.</strong> Tramite la misura del campo di velocità in galleria è
+possibile stimare la resistenza del corpo. Le condizioni di «aria
+libera» e in galleria sono diverse. In generale, in galleria il fluido è
+confinato dalle pareti di galleria, maggiormente «vincolato». Inoltre
+sulle pareti della galleria esiste una condizione di adesione,
+<span class="math notranslate nohighlight">\(\bm{u}=\bm{0}\)</span>: per la conservazione della massa, il rallentamento del
+fluido in corrispondenza delle pareti della galleria viene compensato da
+un incremento della velocità nella regione «più lontana» dalla parete,
+rispetto a un corpo in aria libera. Per tenere conto di effetti di
+<strong>bloccaggio</strong> dovuti al confinamento in galleria, è necessario compiere
+delle correzioni delle misure sperimentali. Agli effetti di bloccaggio,
+vanno aggiunti gli effetti di <strong>galleggiamento</strong> dovuti al gradiente di
+pressione lungo la galleria, che danno un effetto di resistenza
+aggiuntiva. Inoltre è importante che la dimensione del corpo rispetto
+alla dimensione della galleria non sia né «troppo grosso» (per problemi
+di “bloccaggio”), né, di solito, «troppo piccolo» (per motivi di
+similitudine; ma sarà argomento di puntate successive del corso…). É
+importante avere in mente la necessità di prestare attenzione a questi
+aspetti, quando vengono svolte attività sperimentali. Ma questo sarà
+argomento di altri capitoli o di altri corsi…</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/04_bilanci"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

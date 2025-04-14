@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/09_bl/0903_vkie';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">Statica</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">Legge di Young-Laplace.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">Bilanci in forma integrale</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../06_slnEsatte/0600in.html">Introduzione e linee guida per la soluzione dei problemi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">Teorema di Buckingham</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="09teoria.html">Equazioni di Prandtl dello strato limite</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/09_bl/0903_vkie.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>L’equazione integrale di Von Karman per lostrato limite viene ricavata
+integrando in <span class="math notranslate nohighlight">\(y\)</span> tra <span class="math notranslate nohighlight">\(0\)</span> e <span class="math notranslate nohighlight">\(\infty\)</span> la componente <span class="math notranslate nohighlight">\(x\)</span> della quantità di
+moto delle equazioni di Prandtl per lo strato limite $<span class="math notranslate nohighlight">\(\label{eqn:VKint}
+ \underbrace{\int_{y=0}^{\infty} u \dfrac{\partial u}{\partial x} dy}_{(a)} +
+ \underbrace{\int_{y=0}^{\infty} v \dfrac{\partial u}{\partial y} dy}_{(b)} -
+ \underbrace{\int_{y=0}^{\infty} \nu \dfrac{\partial^2 u}{\partial y^2} dy}_{(c)} -
+ \underbrace{\int_{y=0}^{\infty} U U'(x)dy}_{(d)} = 0\)</span><span class="math notranslate nohighlight">\( dove è stata
+indicata con \)</span>U(x)<span class="math notranslate nohighlight">\( la velocità della corrente esterna allo strato
+limite. Si calcolano ora i termini (c), (b). Da (c) si ricava un termine
+nel quale compare lo sforzo tangenziale a parete \)</span>\tau_w<span class="math notranslate nohighlight">\(
+\)</span>$\label{eqn:VKc}</p>
+<ul class="simple">
+<li><p>\int_{y=0}^{\infty} \nu \dfrac{\partial^2 u}{\partial y^2}(x,y) dy =</p></li>
+<li><p>\nu \left[ \dfrac{\partial u}{\partial y}  \right]\Bigg|<em>{y=0}^{\infty} =
+\nu \dfrac{\partial u}{\partial y} (x,0) = \dfrac{\tau_w(x)}{\rho}$<span class="math notranslate nohighlight">\(
+Il termine (b) richiede un po' di lavoro e attenzione in più (IxP indica
+l'integrazione per parti). \)</span><span class="math notranslate nohighlight">\(\label{eqn:VKb}
+\begin{aligned}
+&amp; \int_{y=0}^{\infty} v (x,y) \dfrac{\partial u}{\partial y}(x,y) dy = \\
+&amp; \hspace{7.0cm}  \left(\text{IxP}: \int_{0}^{\infty} v \dfrac{\partial u}{\partial y} = \left[ v u \right]\Bigg|_{y=0}^{\infty} - \int_{0}^{\infty} \dfrac{\partial v}{\partial y} u \right) \\
+&amp; \quad = v(x,\infty) u(x,\infty) - \underbrace{v(x,0) u(x,0)}_{=0} - \int_{0}^{\infty} \dfrac{\partial v}{\partial y} u = \\
+&amp; \hspace{7.5cm}
+\qquad \left( u(x,\infty) = U(x) ; \dfrac{\partial v}{\partial y} = -\dfrac{\partial u}{\partial x}\quad \right) \\
+&amp; \quad = v(x,\infty) U(x) + \int_{y=0}^{\infty}  \dfrac{\partial u}{\partial x} u = \\ 
+&amp; \hspace{4.5cm} \qquad \left( v(x,\infty) = \int_{y=0}^{\infty} \dfrac{\partial v}{\partial y}(x,y) dy =-\int_{y=0}^{\infty} \dfrac{\partial u}{\partial x}(x,y) dy\right) \\
+&amp; \quad =-\int_{y=0}^{\infty} U(x) \dfrac{\partial u}{\partial x} dy + \int_{y=0}^{\infty}  \dfrac{\partial u}{\partial x}(x,y) u(x,y) dy \ . 
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Inserendo le espressioni
+([\[eqn:VKc\]](#eqn:VKc){reference-type=&quot;ref&quot; reference=&quot;eqn:VKc&quot;}),
+([\[eqn:VKb\]](#eqn:VKb){reference-type=&quot;ref&quot; reference=&quot;eqn:VKb&quot;})
+nell'equazione ([\[eqn:VKint\]](#eqn:VKint){reference-type=&quot;ref&quot;
+reference=&quot;eqn:VKint&quot;}), si ottiene \)</span>$\begin{aligned}
+0 &amp; = \int</em>{0}^{\infty} \left[ 2 u \dfrac{\partial u}{\partial x} -  U \dfrac{\partial u}{\partial x} - U \dfrac{d U}{d x} \right] dy + \dfrac{\tau_w}{\rho} = \
+&amp; = \int_{0}^{\infty} \left[ \dfrac{\partial u^2}{\partial x}
+- \dfrac{\partial (U u)}{\partial x} + u \dfrac{d U}{d x} - u \dfrac{d U}{d x} \right] dy + \dfrac{\tau_w}{\rho} = \
+&amp; = \int_{0}^{\infty}  \dfrac{\partial}{\partial x} \left[ u^2 - U u \right] dy</p>
+<ul>
+<li><p>\dfrac{dU}{dx} \int_{0}^{\infty} \left[ U - u \right]dy + \dfrac{\tau_w}{\rho} = \
+&amp; = \dfrac{d}{d x} \int_{0}^{\infty}   \left[ u^2 - U u \right] dy</p></li>
+<li><p>\dfrac{dU}{dx} \int_{0}^{\infty} \left[ U - u \right]dy + \dfrac{\tau_w}{\rho} = \
+&amp; = - \dfrac{d}{d x} \left( U^2(x) \int_{0}^{\infty}  \dfrac{u}{U}  \left[ 1 -  \dfrac{u}{U} \right] dy \right)</p></li>
+<li><p>\dfrac{dU}{dx} U \int_{0}^{\infty} \left[ 1 - \dfrac{u}{U} \right] dy + \dfrac{\tau_w}{\rho} = \
+&amp; = - \dfrac{d}{d x} \left[ U^2(x) \theta(x) \right] - U (x)U” (x)\delta^<em>(x)+ \dfrac{\tau_w(x)}{\rho} \
+\end{aligned}$<span class="math notranslate nohighlight">\( e quindi
+\)</span><span class="math notranslate nohighlight">\(\dfrac{d}{d x} \left[ U^2(x) \theta(x) \right] + U (x)U' (x)\delta^*(x) = \dfrac{\tau_w(x)}{\rho}\)</span><span class="math notranslate nohighlight">\(
+Infine espandendo i termini, ricordando la definizione di rapporto di
+forma \)</span>H = \delta^</em> / \theta<span class="math notranslate nohighlight">\(, coefficiente di attrito
+\)</span>c_f = \dfrac{\tau_w}{\frac{1}{2}\rho U^2}<span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+&amp; 2 U U' \theta + U^2 \theta' + U U' \delta^*(x) = \dfrac{\tau_w(x)}{\rho} \\
+&amp; [ 2 \theta + \delta^*] U U' + U^2 \theta' = \dfrac{\tau_w(x)}{\rho} \\
+&amp; [ 2 + H ]\theta \dfrac{U'}{U}  +  \theta' = \dfrac{\tau_w}{\rho U^2} = \dfrac{c_f}{2}
+\end{aligned}\)</span>$</p></li>
+</ul>
+</li>
+</ul>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/09_bl"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

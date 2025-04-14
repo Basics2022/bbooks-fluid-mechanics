@@ -1,0 +1,584 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0601in';</script>
+    <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_statica/02teoria.html">Statica</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../02_tensSup/03teoria.html">Legge di Young-Laplace.</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../04_bilanci/04teoria.html">Bilanci in forma integrale</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="0600in.html">Introduzione e linee guida per la soluzione dei problemi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">Teorema di Buckingham</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">Equazioni di Prandtl dello strato limite</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0601in.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>+:———————————:+:———————————:+
+| Si consideri la corrente piana    | ![image](./fig/slnEsatte-taylor-c |
+| fra due cilindri coassiali        | ouette-2){width=»90%»}            |
+| rotanti. Si misura la velocità in |                                   |
+| due punti posti rispettivamente a |                                   |
+| <span class="math notranslate nohighlight">\(1/4\)</span> e <span class="math notranslate nohighlight">\(3/4\)</span> del gap fra i due   |                                   |
+| cilindri:                         |                                   |
+| <span class="math notranslate nohighlight">\(u_{\theta,1/4} = 0.5\ m/s\)</span>,      |                                   |
+| <span class="math notranslate nohighlight">\(u_{\theta,3/4} = 0.8\ m/s\)</span>. Si   |                                   |
+| determini la velocità di          |                                   |
+| rotazione dei due cilindri nonché |                                   |
+| la pressione in corrispondenza    |                                   |
+| del cilindro interno sapendo che  |                                   |
+| la pressione in corrispondenza    |                                   |
+| del cilindro esterno vale         |                                   |
+| <span class="math notranslate nohighlight">\(5\ Pa\)</span>, che la densità del       |                                   |
+| fluido è pari a <span class="math notranslate nohighlight">\(1.225\ kg/m^3\)</span>,  |                                   |
+| che il diametro del cilindro      |                                   |
+| interno è <span class="math notranslate nohighlight">\(d =2 R_1=0.1 \ m\)</span> e    |                                   |
+| che il diametro del cilindro      |                                   |
+| esterno è <span class="math notranslate nohighlight">\(D = 2 R_2 = 0.16 \ m\)</span>. |                                   |
+|                                   |                                   |
+| (<span class="math notranslate nohighlight">\(\Omega_{1}=6.663\ s^{-1}\)</span>,      |                                   |
+| <span class="math notranslate nohighlight">\(\Omega_{2}=11.743\ s^{-1}\)</span>       |                                   |
+| <span class="math notranslate nohighlight">\(P(r) = P_2 - \rho \left[ \dfrac{ |                                   |
+| 1}{2} A^2 (R_2^2 - r^2) + 2 A B l |                                   |
+| n \dfrac{R_2}{r} -                |                                   |
+|       \dfrac{1}{2}B^2 \left( \dfr |                                   |
+| ac{1}{R^2} - \dfrac{1}{r^2} \righ |                                   |
+| t)  \right]\)</span>,                     |                                   |
+| con <span class="math notranslate nohighlight">\(u_{\theta}(r) = A r + B/r\)</span> . |                                   |
+| )                                 |                                   |
++———————————–+———————————–+</p>
+<p>Soluzione esatte delle equazioni di Navier-Stokes in geometria
+cilindrica. Corrente di Taylor-Couette.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+    \rho \dfrac{\partial u_r}{\partial t}
+    + \rho \left( \bm{u} \cdot \bm{\nabla}u_r - \dfrac{u_\theta^2}{r} \right)
+    - \mu \left(\nabla^2 u_r 
+       - \dfrac{u_r}{r^2} 
+       - \dfrac{2}{r^2}\dfrac{\partial u_\theta}{\partial \theta} \right)  
+       + \dfrac{\partial p}{\partial r} = f_r \\
+    \rho \dfrac{\partial u_\theta}{\partial t}
+    + \rho \left( \bm{u} \cdot \bm{\nabla} u_\theta + \dfrac{u_\theta u_r}{r} \right)
+    - \mu \left(\nabla^2 u_\theta 
+       - \dfrac{u_\theta}{r^2} 
+       + \frac{2}{r^2}\dfrac{\partial u_r}{\partial \theta}  \right) 
+    + \dfrac{1}{r} \frac{\partial p}{\partial \theta} = f_\theta\\
+    \rho \dfrac{\partial u_z}{\partial t}
+    + \rho \bm{u} \cdot \bm{\nabla} u_z
+    - \mu \nabla^2 u_z
+    + \dfrac{\partial p}{\partial z} = f_z \\ \\
+    \dfrac{1}{r}\dfrac{\partial}{\partial r}\left( r u_r \right) 
+    + \dfrac{1}{r}\dfrac{\partial u_\theta}{\partial \theta} 
+    + \dfrac{\partial u_z}{\partial z} = 0
+  \end{cases}$$ con $$\begin{aligned}
+  &amp; \bm{a} \cdot \bm{\nabla} b = a_r \dfrac{\partial b}{\partial r} 
+     + \dfrac{a_\theta}{r} \dfrac{\partial b}{\partial \theta}  
+     + a_z \dfrac{\partial b}{\partial z} \\
+  &amp; \nabla^2 f = \dfrac{1}{r}\dfrac{\partial}{\partial r}
+                      \left(r \frac{\partial f}{\partial r} \right) +
+               \frac{1}{r^2} \frac{\partial^2 f}{\partial \theta^2} + 
+               \frac{\partial^2 f}{\partial z^2} 
+  \end{aligned}\end{split}\]</div>
+<p>Il problema viene risolto calcolando prima le velocità angolari dei
+cilindri e successivamente la pressione.</p>
+<ul>
+<li><p>La soluzione di Taylor-Couette viene ricavata dall’espressione
+semplificata delle equazioni di Navier-Stokes, $<span class="math notranslate nohighlight">\(\begin{cases}
+  -\rho \dfrac{u^2_\theta}{r} + \dfrac{\partial P}{\partial r} = 0 \\
+  -\dfrac{1}{r}\dfrac{\partial}{\partial r} \left( r \dfrac{\partial u_\theta}{\partial r}  \right)  + \dfrac{u_\theta}{r^2}= 0 \ ,
+\end{cases}\)</span><span class="math notranslate nohighlight">\( ottenute imponendo che il campo di moto sia
+bidimensionale
+\)</span>\bm{u}(\bm{r}) = u_{\theta}(r,\theta) \bm{\hat{\theta}} + u_r (r,\theta) \bm{\hat{r}}<span class="math notranslate nohighlight">\(,
+che la soluzione sia omogenea rispetto alla coordinata \)</span>\theta<span class="math notranslate nohighlight">\( e
+sfruttando le condizioni al contorno e il vincolo di
+incomprimibilità per ricavare \)</span>u_r(\theta) = 0<span class="math notranslate nohighlight">\(. Sia il campo di
+pressione sia il campo di velocità dipendono solamente dalla
+coordinata radiale, \)</span>P = P(r)<span class="math notranslate nohighlight">\(, \)</span>u_\theta = u_\theta (r)<span class="math notranslate nohighlight">\(. Le
+derivate parziali possono essere quindi trasformate in derivate
+ordinarie. La seconda equazione è disaccoppiata dalla prima e può
+essere risolta, una volta imposte le condizioni al contorno. Trovato
+il campo di moto da questa equazione, la prima viene usata per
+calcolare il campo di pressione. La seconda equazione può essere
+riscritta come (svolgere le derivate per credere!) \)</span><span class="math notranslate nohighlight">\(\begin{cases}
+  -\left(\dfrac{1}{r} \left(r u_\theta\right)'\right)' = 0 \\
+  u_\theta(R_1) = \Omega_1 R_1 \\
+  u_\theta(R_2) = \Omega_2 R_2 \\
+\end{cases}
+\Rightarrow
+\begin{cases}
+  u_\theta(r) = A r + \dfrac{B}{r} \ \ \ \text{A,B from b.c.} \\
+  u_\theta(R_1) = \Omega_1 R_1 \\
+  u_\theta(R_2) = \Omega_2 R_2 \\
+\end{cases}\)</span><span class="math notranslate nohighlight">\( Il campo di moto tra due cilindri coassiali rotanti è
+\)</span><span class="math notranslate nohighlight">\(u_\theta(r) = \frac{\Omega_2 R_2^2 - \Omega_1 R_1^2}{R_2^2-R_1^2} r +
+   \frac{(\Omega_1 - \Omega_2)R_1^2 R_2^2}{R_2^2-R_1^2}\frac{1}{r} \ .\)</span>$</p>
+<p>La soluzione esatta di Taylor-Couette è facile da ricavare, se si
+ricorda che è la somma di una rotazione rigida e un vortice
+irrotazionale: imponendo la forma <span class="math notranslate nohighlight">\(u_\theta (r) = A r + B/r\)</span> e le
+condizioni al contorno,
+$<span class="math notranslate nohighlight">\(u_{\theta}(R_1) = \Omega_1 R_1 \qquad , \qquad  u_{\theta}(R_2) = \Omega_2 R_2\)</span>$
+si ottiene la formula voluta.</p>
+</li>
+<li><p>Calcolo delle velocità angolari dei cilindri. Nota la forma del
+campo di moto e le velocità in due punti a diversi raggi, è
+possibile calcolare <span class="math notranslate nohighlight">\(\Omega_1\)</span>, <span class="math notranslate nohighlight">\(\Omega_2\)</span> risolvendo un sistema
+lineare di due equazioni nelle due incognite. Note le misure di
+velocità <span class="math notranslate nohighlight">\(u_{\theta,1/4} = u_{\theta}(r_{1/4})\)</span>,
+<span class="math notranslate nohighlight">\(u_{\theta,3/4} = u_{\theta}(r_{3/4})\)</span>, il sistema risolvente
+diventa: $<span class="math notranslate nohighlight">\(\displaystyle\begin{bmatrix}
+  -\frac{R_1^2}{R_2^2-R_1^2}r_{1/4} + \frac{R_1^2 R_2^2}{R_2^2-R_1^2}\frac{1}{r_{1/4}} &amp; \quad
+   \frac{R_2^2}{R_2^2-R_1^2}r_{1/4} - \frac{R_1^2 R_2^2}{R_2^2-R_1^2}\frac{1}{r_{1/4}} \\ 
+  -\frac{R_1^2}{R_2^2-R_1^2}r_{3/4} + \frac{R_1^2 R_2^2}{R_2^2-R_1^2}\frac{1}{r_{3/4}} &amp; \quad
+   \frac{R_2^2}{R_2^2-R_1^2}r_{3/4} - \frac{R_1^2 R_2^2}{R_2^2-R_1^2}\frac{1}{r_{3/4}} \\
+ \end{bmatrix}
+ \displaystyle\begin{bmatrix}
+  \Omega_1 \\ \Omega_2
+ \end{bmatrix} =
+ \displaystyle\begin{bmatrix}
+  u_{\theta,1/4} \\ u_{\theta,3/4}
+ \end{bmatrix}\)</span>$</p></li>
+<li><p>Calcolo della pressione. Una volta noto il campo di moto, è
+possibile calcolare il campo di pressione dalla componente radiale
+dell’equazione della quantità di moto, $<span class="math notranslate nohighlight">\(\begin{aligned}
+  P'(r) &amp; = \rho \dfrac{u_\theta^2}{r} \quad , \quad \text{con \)</span>P(R_2) = P_2<span class="math notranslate nohighlight">\(} \\
+ &amp; \quad \rightarrow \quad
+ \int_{r}^{R_2} \dfrac{dP}{dr} dr 
+      = \int_r^{R_2} \rho \dfrac{1}{r} \left( A r + \dfrac{B}{r} \right)^2 dr
+\end{aligned}\)</span><span class="math notranslate nohighlight">\( Da questa si ricava
+\)</span><span class="math notranslate nohighlight">\(P(r) = P_2 - \rho \left[ \dfrac{1}{2} A^2 (R_2^2 - r^2) + 2 A B ln \dfrac{R_2}{r} - 
+      \dfrac{1}{2}B^2 \left( \dfrac{1}{R^2} - \dfrac{1}{r^2} \right)  \right] \ .\)</span>$</p></li>
+</ul>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
