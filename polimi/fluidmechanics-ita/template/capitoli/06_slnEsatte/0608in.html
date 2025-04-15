@@ -413,99 +413,114 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="exercise-6-8">
 <span id="fluid-mechanics-exact-solutions-ex08"></span><h1><span class="section-number">6.5.8. </span>Exercise 6.8<a class="headerlink" href="#exercise-6-8" title="Permalink to this heading">#</a></h1>
-<p>+:———————————:+:———————————:+
-| Un contenitore cilindrico (raggio |                                   |
-| <span class="math notranslate nohighlight">\(R\)</span>, altezza <span class="math notranslate nohighlight">\(H\)</span>) è riempito fino |                                   |
-| ad una quota <span class="math notranslate nohighlight">\(h_1 =H/2\)</span> di un     |                                   |
-| liquido di densità <span class="math notranslate nohighlight">\(\rho\)</span>. Il     |                                   |
-| contenitore è messo poi in        |                                   |
-| rotazione con velocità angolare   |                                   |
-| costante <span class="math notranslate nohighlight">\(\Omega\)</span>. Una volta      |                                   |
-| esaurito il transitorio, viene    |                                   |
-| chiesto di trovare:               |                                   |
-|                                   |                                   |
-| -   la forma che assume il        |                                   |
-|     liquido all’interno del       |                                   |
-|     contenitore;                  |                                   |
-|                                   |                                   |
-| -   la velocità <span class="math notranslate nohighlight">\(\Omega_{max}\)</span>    |                                   |
-|     alla quale il liquido inizia  |                                   |
-|     a uscire dal contenitore;     |                                   |
-|                                   |                                   |
-| -   il campo di pressione quando  |                                   |
-|     il corpo ruota con velocità   |                                   |
-|     angolare <span class="math notranslate nohighlight">\(\Omega_{max}\)</span>.      |                                   |
-|                                   |                                   |
-| (R:                               |                                   |
-| <span class="math notranslate nohighlight">\(z_{free}(r) = \dfrac{\Omega^2 r^ |                                   |
-| 2}{2 g} - \dfrac{\Omega^2 R^2}{4  |                                   |
-| g} + \dfrac{H}{2}\)</span>                |                                   |
-| <span class="math notranslate nohighlight">\(\Omega_{max} = \sqrt{\dfrac{2 g  |                                   |
-| H}{R^2}}\)</span>                         |                                   |
-| <span class="math notranslate nohighlight">\(P(r) = \dots\)</span>)                   |                                   |
-|                                   |                                   |
-| <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/fig/vessel" />{width=»90% |                                   |
-| «}                                |                                   |
-+———————————–+———————————–+</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 6.8</div>
+<p class="sd-card-text">Un contenitore cilindrico (raggio <span class="math notranslate nohighlight">\(R\)</span>, altezza <span class="math notranslate nohighlight">\(H\)</span>) è riempito fino ad una
+quota <span class="math notranslate nohighlight">\(h_1 =H/2\)</span> di un liquido di densità <span class="math notranslate nohighlight">\(\rho\)</span>. Il contenitore è messo
+poi in rotazione con velocità angolare costante <span class="math notranslate nohighlight">\(\Omega\)</span>.
+Una volta esaurito il transitorio, viene chiesto di trovare:</p>
+<ul class="simple">
+<li><p class="sd-card-text">la forma che assume il liquido all’interno del contenitore;</p></li>
+<li><p class="sd-card-text">la velocità <span class="math notranslate nohighlight">\(\Omega_{max}\)</span> alla quale il liquido inizia a uscire dal contenitore;</p></li>
+<li><p class="sd-card-text">il campo di pressione quando il corpo ruota con velocità angolare <span class="math notranslate nohighlight">\(\Omega_{max}\)</span>.</p></li>
+</ul>
+<p class="sd-card-text">(R: <span class="math notranslate nohighlight">\(z_{free}(r) = \dfrac{\Omega^2 r^2}{2 g} - \dfrac{\Omega^2 R^2}{4 g} + \dfrac{H}{2}\)</span> \newline
+\hspace{0.5cm} <span class="math notranslate nohighlight">\(\Omega_{max} = \sqrt{\dfrac{2 g H}{R^2}} \)</span> \newline
+\hspace{0.5cm} <span class="math notranslate nohighlight">\(P(r) = \dots\)</span>)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/vessel.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>Soluzione esatte delle equazioni di Navier-Stokes. Fluido in rotazione
 rigida, con superficie superiore libera.</p>
 <ul>
 <li><p>Si usano le equazioni di NS in coordinate cilindriche. Seguendo un
 procedimento analogo a quello svolto per ottenere la soluzione
 esatta di Taylor-Couette, ma senza trascurare l’effetto della
-gravità, si ottiene la seguente coppia di equazioni
-$<span class="math notranslate nohighlight">\(\label{eqn:vessel_cyl}
- \begin{cases}
-  \dfrac{\partial P}{\partial z} = - \rho g \\
-  \dfrac{\partial P}{\partial r} = \rho \dfrac{u_{\theta}^2}{r}
- \end{cases}\)</span><span class="math notranslate nohighlight">\( Il campo di moto descrive una rotazione rigida,
-poichè il termine \)</span>1/r<span class="math notranslate nohighlight">\( della soluzione di Taylor-Couette non è
-ammissibile (l'asse appartiene al dominio, non ha senso una velocità
-che tende all'infinito). La costante di proporzionalità tra
-\)</span>u_{\theta}<span class="math notranslate nohighlight">\( ed \)</span>r<span class="math notranslate nohighlight">\( è la velocità angolare \)</span>\Omega<span class="math notranslate nohighlight">\( per soddisfare
-le condizioni al controno a parete, \)</span>u_{\theta}(R) = \Omega R<span class="math notranslate nohighlight">\(.
-\)</span><span class="math notranslate nohighlight">\(u_{\theta}(r) = \Omega r\)</span><span class="math notranslate nohighlight">\( Dall'integrazione delle due equazioni
-([\[eqn:vessel\_cyl\]](#eqn:vessel_cyl){reference-type=&quot;ref&quot;
-reference=&quot;eqn:vessel_cyl&quot;}) si ottiene il campo di pressione
-\)</span>P(r,z)<span class="math notranslate nohighlight">\(, a meno di una costante di integrazione \)</span>C<span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(\label{eqn:p}
- P(r,z) = -\rho g z + \rho \dfrac{\Omega^2 r^2}{2} + C\)</span><span class="math notranslate nohighlight">\( La
-condizione al contorno necessaria è \)</span>P(r,z_{free}(r)) = P_a<span class="math notranslate nohighlight">\(; sulla
+gravità, si ottiene la seguente coppia di equazioni</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\label{eqn:vessel_cyl}
+     \begin{cases}
+      \dfrac{\partial P}{\partial z} = - \rho g \\
+      \dfrac{\partial P}{\partial r} = \rho \dfrac{u_{\theta}^2}{r}
+     \end{cases}\end{split}\]</div>
+<p>Il campo di moto descrive una rotazione rigida,
+poichè il termine <span class="math notranslate nohighlight">\(1/r\)</span> della soluzione di Taylor-Couette non è
+ammissibile (l’asse appartiene al dominio, non ha senso una velocità
+che tende all’infinito). La costante di proporzionalità tra
+<span class="math notranslate nohighlight">\(u_{\theta}\)</span> ed <span class="math notranslate nohighlight">\(r\)</span> è la velocità angolare <span class="math notranslate nohighlight">\(\Omega\)</span> per soddisfare
+le condizioni al controno a parete, <span class="math notranslate nohighlight">\(u_{\theta}(R) = \Omega R\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[u_{\theta}(r) = \Omega r\]</div>
+<p>Dall’integrazione delle due equazioni
+(<span class="xref myst">[eqn:vessel_cyl]</span>{reference-type=»ref»
+reference=»eqn:vessel_cyl»}) si ottiene il campo di pressione
+<span class="math notranslate nohighlight">\(P(r,z)\)</span>, a meno di una costante di integrazione <span class="math notranslate nohighlight">\(C\)</span></p>
+<div class="math notranslate nohighlight">
+\[\label{eqn:p}
+     P(r,z) = -\rho g z + \rho \dfrac{\Omega^2 r^2}{2} + C\]</div>
+<p>La
+condizione al contorno necessaria è <span class="math notranslate nohighlight">\(P(r,z_{free}(r)) = P_a\)</span>; sulla
 superficie libera, la cui quota è descritta dalla funzione
-\)</span>z_{free}(r)<span class="math notranslate nohighlight">\( (ancora incognita), agisce la pressione ambiente \)</span>P_a<span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(P(r,z_{free}(r)) = -\rho g z_{free} + \rho \dfrac{\Omega^2 r^2}{2} + C = P_a \\\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\ \ \ \ \ \  \Downarrow\)</span><span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(\label{eqn:zfree}
- z_{free}(r) = \dfrac{\Omega^2 r^2}{2 g} - \dfrac{P_a - C}{\rho g}\)</span>$</p>
+<span class="math notranslate nohighlight">\(z_{free}(r)\)</span> (ancora incognita), agisce la pressione ambiente <span class="math notranslate nohighlight">\(P_a\)</span>
+$<span class="math notranslate nohighlight">\(P(r,z_{free}(r)) = -\rho g z_{free} + \rho \dfrac{\Omega^2 r^2}{2} + C = P_a \\\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\ \ \ \ \ \  \Downarrow\]</div>
+<div class="math notranslate nohighlight">
+\[\label{eqn:zfree}
+     z_{free}(r) = \dfrac{\Omega^2 r^2}{2 g} - \dfrac{P_a - C}{\rho g}\]</div>
 <p>Per determinare la costante <span class="math notranslate nohighlight">\(C\)</span> bisogna ricorrere alla conservazione
 della massa. La massa contenuta all’interno del recipiente non varia
 (fino a quando il liquido non esce). Se si considera densità
 costante <span class="math notranslate nohighlight">\(\rho\)</span>, bisogna scrivere la conservazione del volume tra
 istante iniziale <span class="math notranslate nohighlight">\(V_0 = \pi R^2 H/2\)</span> e condizione a regime <span class="math notranslate nohighlight">\(V\)</span>. Il
 volume <span class="math notranslate nohighlight">\(V\)</span> viene calcolato tramite un’integrale di volume, comodo da
-descrivere in coordinate cilindriche: $<span class="math notranslate nohighlight">\(\begin{aligned}
- V &amp; = \int_{\theta=0}^{2\pi} \int_{r=0}^{R} \int_{z=0}^{z=z_{free}(r)} r dr dz d\theta = \\
-   &amp; = 2 \pi \int_{r=0}^{r=R} z_free(r) r dr  = \\
-   &amp; = 2 \pi \int_{r=0}^{r=R} \dfrac{\Omega^2 r^3}{2 g} - \dfrac{P_a - C}{\rho g}r dr = \\
-   &amp; = 2 \pi \left[ \dfrac{\Omega^2 R^4}{8 g} - \dfrac{(P_a - C)}{2 \rho g} R^2  \right] = \\
-   &amp; =   \pi \left[ \dfrac{\Omega^2 R^4}{4 g} - \dfrac{(P_a - C)}{  \rho g} R^2  \right] = \\
-\end{aligned}\)</span><span class="math notranslate nohighlight">\( Uguagliando \)</span>V_0<span class="math notranslate nohighlight">\( e \)</span>V<span class="math notranslate nohighlight">\( si ottiene
-\)</span><span class="math notranslate nohighlight">\(- \dfrac{(P_a - C)R}{  \rho g} = - \dfrac{\Omega^2 R^4}{4 g} + R^2 \dfrac{H}{2}\)</span><span class="math notranslate nohighlight">\(
-termine che può essere sotituito in
-([\[eqn:zfree\]](#eqn:zfree){reference-type=&quot;ref&quot;
-reference=&quot;eqn:zfree&quot;}) \)</span><span class="math notranslate nohighlight">\(\label{eqn:zfree2}
- z_{free}(r) = \dfrac{\Omega^2 r^2}{2 g} - \dfrac{\Omega^2 R^2}{4 g} + \dfrac{H}{2}\)</span><span class="math notranslate nohighlight">\(
-La superficie libera ha la forma di un parabolide. La concavità del
-paraboloide è diretta verso l'alto e aumenta all'aumentare di
-\)</span>|\Omega|<span class="math notranslate nohighlight">\( (il risultato è indipendente dal verso di rotazione, e
-quindi dal segno di \)</span>\Omega<span class="math notranslate nohighlight">\(, poichè compare con potenze pari). La
+descrivere in coordinate cilindriche:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+     V &amp; = \int_{\theta=0}^{2\pi} \int_{r=0}^{R} \int_{z=0}^{z=z_{free}(r)} r dr dz d\theta = \\
+       &amp; = 2 \pi \int_{r=0}^{r=R} z_free(r) r dr  = \\
+       &amp; = 2 \pi \int_{r=0}^{r=R} \dfrac{\Omega^2 r^3}{2 g} - \dfrac{P_a - C}{\rho g}r dr = \\
+       &amp; = 2 \pi \left[ \dfrac{\Omega^2 R^4}{8 g} - \dfrac{(P_a - C)}{2 \rho g} R^2  \right] = \\
+       &amp; =   \pi \left[ \dfrac{\Omega^2 R^4}{4 g} - \dfrac{(P_a - C)}{  \rho g} R^2  \right] = \\
+    \end{aligned}\end{split}\]</div>
+<p>Uguagliando <span class="math notranslate nohighlight">\(V_0\)</span> e <span class="math notranslate nohighlight">\(V\)</span> si ottiene</p>
+<div class="math notranslate nohighlight">
+\[- \dfrac{(P_a - C)R}{  \rho g} = - \dfrac{\Omega^2 R^4}{4 g} + R^2 \dfrac{H}{2}\]</div>
+<p>termine che può essere sotituito in
+(<span class="xref myst">[eqn:zfree]</span>{reference-type=»ref»
+reference=»eqn:zfree»})</p>
+<div class="math notranslate nohighlight">
+\[\label{eqn:zfree2}
+     z_{free}(r) = \dfrac{\Omega^2 r^2}{2 g} - \dfrac{\Omega^2 R^2}{4 g} + \dfrac{H}{2}\]</div>
+<p>La superficie libera ha la forma di un parabolide. La concavità del
+paraboloide è diretta verso l’alto e aumenta all’aumentare di
+<span class="math notranslate nohighlight">\(|\Omega|\)</span> (il risultato è indipendente dal verso di rotazione, e
+quindi dal segno di <span class="math notranslate nohighlight">\(\Omega\)</span>, poichè compare con potenze pari). La
 quota del vertice
-\)</span>z_v = - \dfrac{\Omega^2 R^2}{4 g} +  \dfrac{H}{2}$ invece
+<span class="math notranslate nohighlight">\(z_v = - \dfrac{\Omega^2 R^2}{4 g} +  \dfrac{H}{2}\)</span> invece
 diminuisce.</p>
 </li>
 <li><p>Per determinare la <span class="math notranslate nohighlight">\(\Omega_{max}\)</span>, bisogna imporre la condizione
-<span class="math notranslate nohighlight">\(z_{free}(r=R) = H\)</span>.
-$<span class="math notranslate nohighlight">\(z_{free}(R) = \dfrac{\Omega_{max}^2 R^2}{4 g} + R^2 \dfrac{H}{2} = H 
- \Rightarrow
-  \Omega_{max} = \sqrt{\dfrac{2 g H}{R^2}}\)</span>$</p></li>
+<span class="math notranslate nohighlight">\(z_{free}(r=R) = H\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[z_{free}(R) = \dfrac{\Omega_{max}^2 R^2}{4 g} + R^2 \dfrac{H}{2} = H 
+     \Rightarrow
+      \Omega_{max} = \sqrt{\dfrac{2 g H}{R^2}}\]</div>
+</li>
 <li><p>Per ottenere il campo di pressione, basta inserire il il valore di
 <span class="math notranslate nohighlight">\(C\)</span> e <span class="math notranslate nohighlight">\(\Omega_{max}\)</span> nella formula
 (<span class="xref myst">[eqn:p]</span>{reference-type=»ref» reference=»eqn:p»}).</p></li>

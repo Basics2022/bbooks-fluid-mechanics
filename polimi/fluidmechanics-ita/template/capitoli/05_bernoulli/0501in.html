@@ -413,32 +413,41 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="exercise-5-2">
 <span id="fluid-mechanics-bernoulli-ex-02"></span><h1><span class="section-number">5.5.2. </span>Exercise 5.2<a class="headerlink" href="#exercise-5-2" title="Permalink to this heading">#</a></h1>
-<p>+:———————————:+:———————————:+
-| Si consideri il serbatoio         | <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/fig/serbatoio.eps" />{wid |
-| rappresentato in figura,          | th=»90%»}                         |
-| <span class="math notranslate nohighlight">\(D=2\ m\)</span>, <span class="math notranslate nohighlight">\(H=4.4\ m\)</span> al cui       |                                   |
-| interno è contenuta acqua,        |                                   |
-| <span class="math notranslate nohighlight">\(\overline{\rho}=999\,{kg/m^3}\)</span>.  |                                   |
-| Supponendo il fluido non viscoso, |                                   |
-| determinare la velocità di        |                                   |
-| efflusso del fluido dall’ugello   |                                   |
-| del serbatoio, <span class="math notranslate nohighlight">\(h=0.4\ m\)</span> e       |                                   |
-| <span class="math notranslate nohighlight">\(d = 1\ cm\)</span>, e la sua portata,    |                                   |
-| sia in massa sia in volume.       |                                   |
-|                                   |                                   |
-| (<span class="math notranslate nohighlight">\(U = 8.86\ m/s\)</span>,                 |                                   |
-| <span class="math notranslate nohighlight">\(Q=6.96\, 10^{-4}\ m^3/s\)</span>,        |                                   |
-| <span class="math notranslate nohighlight">\(\overline{Q}=0.695\ kg/s\)</span>)       |                                   |
-+———————————–+———————————–+</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 5.2</div>
+<p class="sd-card-text">Si consideri il serbatoio rappresentato in figura, <span class="math notranslate nohighlight">\(D=2\ m\)</span>,
+<span class="math notranslate nohighlight">\(H=4.4\ m\)</span> al cui interno è contenuta acqua,
+<span class="math notranslate nohighlight">\(\overline{\rho}=999\,{kg/m^3}\)</span>.
+Supponendo il fluido non viscoso, determinare la velocit`{a} di
+efflusso del fluido dall’ugello del serbatoio, <span class="math notranslate nohighlight">\(h=0.4\ m\)</span>
+e <span class="math notranslate nohighlight">\(d = 1\ cm\)</span>, e la sua portata, sia in massa sia in volume.</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(U = 8.86\ m/s\)</span>, <span class="math notranslate nohighlight">\(Q=6.96\, 10^{-4}\ m^3/s\)</span>, <span class="math notranslate nohighlight">\(\overline{Q}=0.695\ kg/s\)</span>)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/serbatoio.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>Teorema di Bernoulli, nel caso incomprimibile, non viscoso,
 «stazionario» (da come è fatto il disegno, il livello del serbatorio
 sembra diminuire…assumiamo che così non sia), con forze che ammettono
 potenziale e dominio semplicemente connesso. Se si fa l’ipotesi che il
 flusso sia irrotazionale sulla sezione di ingresso, nel caso non
 viscoso, si mantiene irrotazionale ovunque (equazione della vorticità).
-$<span class="math notranslate nohighlight">\(\frac{D \bm{\omega}}{Dt} = (\bm{\omega} \cdot \bm{\nabla}) \bm{u}\)</span>$</p>
+$<span class="math notranslate nohighlight">\(\frac{D \mathbf{\omega}}{Dt} = (\mathbf{\omega} \cdot \mathbf{\nabla}) \mathbf{u}\)</span>$</p>
 <p>Si può quindi scrivere il teorema di Bernoulli nella forma:
-$<span class="math notranslate nohighlight">\(\frac{P}{\rho} + \frac{|\bm{u}|^2}{2} + gh = \text{cost}\)</span>$</p>
+$<span class="math notranslate nohighlight">\(\frac{P}{\rho} + \frac{|\mathbf{u}|^2}{2} + gh = \text{cost}\)</span>$</p>
 <p>Il problema si risolve mettendo a sistema il teorema di Bernoulli
 (opportunamente semplificato; vedi sopra) con il bilancio integrale di
 massa. Si ipotizza che sulle due sezioni agisca la stessa pressione
