@@ -65,6 +65,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/exercises';</script>
     <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
@@ -411,6 +413,247 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="exercises">
 <span id="fluid-mechanics-exact-solutions-exercises"></span><h1><span class="section-number">6.5. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h1>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 6.1</div>
+<p class="sd-card-text">In un canale piano, di lunghezza e apertura infinita,
+orizzontale, di altezza <span class="math notranslate nohighlight">\(H=1.51\ mm\)</span>,
+delimitato da una parete inferiore fissa e da una parete superiore
+mobile con velocità orizzontale, costante e positiva <span class="math notranslate nohighlight">\(U=0.31\ m/s\)</span>.
+scorre acqua in condizioni standard.
+Per quale valore del gradiente di pressione <span class="math notranslate nohighlight">\(G_P = -\partial P/\partial x\)</span> la portata nel canale risulta nulla? \newline
+Si trascurino le forze di volume.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/slnEsatte-newton-couette.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 6.2</div>
+<p class="sd-card-text">Una corrente di Poiseuille di acqua (<span class="math notranslate nohighlight">\(\rho = 1000 / kg/m^3\)</span>, <span class="math notranslate nohighlight">\(\mu = 
+ 10^{-3} \ kg/(m s)\)</span>) scorre in
+un canale di altezza <span class="math notranslate nohighlight">\(H = 1 \ cm\)</span>. Un manometro misura la differenza di
+pressione tra le sezioni in <span class="math notranslate nohighlight">\(x_A = 1.0 \ m\)</span> e <span class="math notranslate nohighlight">\(x_B= 2.0 \ m\)</span>.
+Determinare:</p>
+<ul class="simple">
+<li><p class="sd-card-text">il gradiente di pressione all’interno del condotto, conoscendo la
+densità del liquido barometrico <span class="math notranslate nohighlight">\(\bar{\rho} = 1200 \ kg/m^3\)</span> e la
+differenza di quote <span class="math notranslate nohighlight">\(h = 5 \ mm\)</span>;</p></li>
+<li><p class="sd-card-text">la velocità massima all’interno del canale;</p></li>
+<li><p class="sd-card-text">la risultante <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> delle forze esercitata dal fluido sul tratto
+di parete superiore compreso tra A e B, sapendo che sulla sezione
+<span class="math notranslate nohighlight">\(x = 0 \ m\)</span> la pressione vale <span class="math notranslate nohighlight">\(p_0 = 10^5 \ Pa\)</span>. Qual è la relazione
+tra <span class="math notranslate nohighlight">\(R_x\)</span> e <span class="math notranslate nohighlight">\(p_A - p_B\)</span>? Commento.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/manometro_Poiseuille.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 6.3</div>
+<p class="sd-card-text">Si consideri una corrente d’acqua a pelo libero, laminare e stazionaria, che
+scorre su una parete piana di lunghezza e apertura infinita  inclinata di un angolo <span class="math notranslate nohighlight">\(\alpha\)</span> rispetto all’orizzontale.
+Sul pelo libero la pressione è uniforme e uguale a <span class="math notranslate nohighlight">\(P_a\)</span>. Lo sforzo tangenziale fra acqua e aria viene considerato nullo.</p>
+<p class="sd-card-text">Si calcoli il profilo di velocità nello strato di acqua e il campo di pressione.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/slnEsatte-scivolo.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 6.4</div>
+<p class="sd-card-text">Si consideri una corrente d’acqua a pelo libero, laminare e stazionaria, che
+scorre su una parete verticale piana di lunghezza e apertura infinita.
+Si ipotizzi che la pressione atmosferica che agisce sul pelo libero sia
+uniforme. Si ipotizzi inoltre che lo sforzo tangenziale fra acqua e aria in
+corrispondenza del pelo libero sia nullo.</p>
+<p class="sd-card-text">Assegnata la portata in massa per unità di apertura
+<span class="math notranslate nohighlight">\(\overline{Q}=0.5\ kg/(ms)\)</span>, determinare</p>
+<ul class="simple">
+<li><p class="sd-card-text">lo spessore <span class="math notranslate nohighlight">\(h\)</span> della corrente d’acqua;</p></li>
+<li><p class="sd-card-text">lo sforzo tangenziale a parete;</p></li>
+<li><p class="sd-card-text">la velocit`a in corrispondenza del pelo libero;</p></li>
+<li><p class="sd-card-text">la velocit`a media e il numero di Reynolds basato su tale velocit`a
+media e sullo spessore della corrente.</p></li>
+</ul>
+<p class="sd-card-text">Si sostituisca poi al pelo libero una parete solida.
+Si determini quale dovrebbe essere la velocit`a di tale parete per ottenere
+una portata nulla.</p>
+<p class="sd-card-text">Dati: <span class="math notranslate nohighlight">\(\overline{\rho}= 999\ kg/m^3\)</span>,
+<span class="math notranslate nohighlight">\(\overline{\mu}= 1.15\ 10^{-3} kg/(ms)\)</span>.</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(h=5.61\, 10^{-4}\  m\)</span>, <span class="math notranslate nohighlight">\(\tau = 5.494\ Pa\)</span>, <span class="math notranslate nohighlight">\(u(h)=1.339\ m/s\)</span>,</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 6.5</div>
+<p class="sd-card-text">Un manometro a mercurio (<span class="math notranslate nohighlight">\(\rho_{hg} = 13610 \  kg/m^3\)</span>)
+collega due prese di pressione posizionate a una distanza di <span class="math notranslate nohighlight">\(l = 2 \ 
+m\)</span> l’una dall’altra lungo un tubo orizzontale di diametro <span class="math notranslate nohighlight">\(2R = 5 \ cm\)</span>
+in cui scorre un fluido con densità <span class="math notranslate nohighlight">\(\rho_{f} = 950 \
+kg/m^3\)</span>. Se la differenza fra le altezze dei peli liberi del
+liquido manometrico nelle due colonne
+vale <span class="math notranslate nohighlight">\(\Delta h = 4 \ cm\)</span> e la portata volumetrica che scorre nel tubo è
+<span class="math notranslate nohighlight">\(Q= 6\ m^3/s\)</span>,
+quanto valgono la viscosità <span class="math notranslate nohighlight">\(\mu\)</span> del fluido e lo sforzo a parete
+<span class="math notranslate nohighlight">\(\tau_w\)</span>?</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(\mu = 6.36\,10^{-5} \ kg/(m\, s)\)</span>,
+<span class="math notranslate nohighlight">\(\tau_w = 31.05\, \mathbf{z}\ N/m^2\)</span>)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/slnEsatte-poiseuille.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 6.6</div>
+<p class="sd-card-text">Si consideri la corrente piana fra due cilindri coassiali rotanti.
+Si misura la velocit`a in due punti posti rispettivamente a <span class="math notranslate nohighlight">\(1/4\)</span> e
+<span class="math notranslate nohighlight">\(3/4\)</span> del gap fra i due cilindri:
+<span class="math notranslate nohighlight">\(u_{\theta,1/4} = 0.5\ m/s\)</span>,
+<span class="math notranslate nohighlight">\(u_{\theta,3/4} = 0.8\ m/s\)</span>.
+Si determini la velocit`a di rotazione dei due cilindri nonch’e
+la pressione in corrispondenza del cilindro interno sapendo che
+la pressione in corrispondenza del cilindro esterno vale <span class="math notranslate nohighlight">\(5\ Pa\)</span>,
+che la densit`a del fluido `e pari a <span class="math notranslate nohighlight">\(1.225\ kg/m^3\)</span>,
+che il diametro del cilindro interno `e <span class="math notranslate nohighlight">\(d =2 R_1=0.1 \ m\)</span> e che il diametro
+del cilindro esterno `e <span class="math notranslate nohighlight">\(D = 2 R_2 = 0.16 \ m\)</span>.</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(\Omega_{1}=6.663\ s^{-1}\)</span>, <span class="math notranslate nohighlight">\(\Omega_{2}=11.743\ s^{-1}\)</span> \newline
+<span class="math notranslate nohighlight">\(P(r) = P_2 - \rho \left[ \dfrac{1}{2} A^2 (R_2^2 - r^2) + 2 A B ln \dfrac{R_2}{r} - 
+      \dfrac{1}{2}B^2 \left( \dfrac{1}{R^2} - \dfrac{1}{r^2} \right)  \right]\)</span>, \newline
+con <span class="math notranslate nohighlight">\(u_{\theta}(r) = A r + B/r\)</span>\ .
+)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/slnEsatte-taylor-couette-2.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 6.7</div>
+<p class="sd-card-text">Si consideri la corrente piana di un fluido di densità <span class="math notranslate nohighlight">\(\rho\)</span> fra due cilindri coassiali di raggio <span class="math notranslate nohighlight">\(R_1\)</span> e <span class="math notranslate nohighlight">\(R_2\)</span>. Il cilindro esterno è fermo, mentre quello interno è messo in rotazione da un motore con curva caratteristica <span class="math notranslate nohighlight">\(C_{disp}(\Omega) = \alpha - \beta \Omega\)</span>.
+Si determini il punto di equilibrio del sistema (<span class="math notranslate nohighlight">\(\Omega\)</span> costante).</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/slnEsatte-taylor-couette.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 6.8</div>
+<p class="sd-card-text">Un contenitore cilindrico (raggio <span class="math notranslate nohighlight">\(R\)</span>, altezza <span class="math notranslate nohighlight">\(H\)</span>) è riempito fino ad una
+quota <span class="math notranslate nohighlight">\(h_1 =H/2\)</span> di un liquido di densità <span class="math notranslate nohighlight">\(\rho\)</span>. Il contenitore è messo
+poi in rotazione con velocità angolare costante <span class="math notranslate nohighlight">\(\Omega\)</span>.
+Una volta esaurito il transitorio, viene chiesto di trovare:</p>
+<ul class="simple">
+<li><p class="sd-card-text">la forma che assume il liquido all’interno del contenitore;</p></li>
+<li><p class="sd-card-text">la velocità <span class="math notranslate nohighlight">\(\Omega_{max}\)</span> alla quale il liquido inizia a uscire dal contenitore;</p></li>
+<li><p class="sd-card-text">il campo di pressione quando il corpo ruota con velocità angolare <span class="math notranslate nohighlight">\(\Omega_{max}\)</span>.</p></li>
+</ul>
+<p class="sd-card-text">(R: <span class="math notranslate nohighlight">\(z_{free}(r) = \dfrac{\Omega^2 r^2}{2 g} - \dfrac{\Omega^2 R^2}{4 g} + \dfrac{H}{2}\)</span> \newline
+\hspace{0.5cm} <span class="math notranslate nohighlight">\(\Omega_{max} = \sqrt{\dfrac{2 g H}{R^2}} \)</span> \newline
+\hspace{0.5cm} <span class="math notranslate nohighlight">\(P(r) = \dots\)</span>)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/vessel.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 <div class="toctree-wrapper compound">
 </div>
 </div>

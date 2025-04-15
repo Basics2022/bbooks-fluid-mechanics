@@ -413,34 +413,40 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="exercise-5-1">
 <span id="fluid-mechanics-bernoulli-ex-01"></span><h1><span class="section-number">5.5.1. </span>Exercise 5.1<a class="headerlink" href="#exercise-5-1" title="Permalink to this heading">#</a></h1>
-<p>+:———————————:+:———————————:+
-| Determinare la portata d’acqua    | <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/fig/venturi.eps" />{width |
-| che scorre all’interno del tubo   | =»90%»}                           |
-| di Venturi rappresentato in       |                                   |
-| figura, quando sia trascurabile   |                                   |
-| ogni effetto dissipativo          |                                   |
-| all’interno della corrente e la   |                                   |
-| velocità uniforme nelle sezioni   |                                   |
-| considerate e a monte del         |                                   |
-| Venturi. Dati: densità dell’acqua |                                   |
-| <span class="math notranslate nohighlight">\(\overline{\rho}= 999\ kg/m^3\)</span>,   |                                   |
-| densità dell’aria                 |                                   |
-| <span class="math notranslate nohighlight">\(\overline{\rho}= 1.225\ kg/m^3\)</span>, |                                   |
-| diametro del tubo <span class="math notranslate nohighlight">\(D=2\  cm\)</span>,     |                                   |
-| diametro della sezione di gola    |                                   |
-| <span class="math notranslate nohighlight">\(d=1\ cm\)</span>, altezze:               |                                   |
-| <span class="math notranslate nohighlight">\(z_1 = 10\ cm\)</span>, <span class="math notranslate nohighlight">\(z_2 = 1.2\  m\)</span>,  |                                   |
-| <span class="math notranslate nohighlight">\(z_3 = 5\ cm\)</span>, <span class="math notranslate nohighlight">\(z_4 = 0.5\ m\)</span>.    |                                   |
-|                                   |                                   |
-| (<span class="math notranslate nohighlight">\(Q=3.01\, 10^{-4}\ m/s\)</span>,         |                                   |
-| <span class="math notranslate nohighlight">\(\overline{Q}=3.005\, 10^{-1}\ kg |                                   |
-| /s\)</span>)                              |                                   |
-+———————————–+———————————–+</p>
-<p>Teorema di Bernoulli. Equazione della vorticità. Conseguenze delle
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 5.1</div>
+<p class="sd-card-text">Determinare la portata d’acqua che scorre all’interno del tubo di Venturi
+rappresentato in figura, quando sia trascurabile ogni effetto dissipativo
+all’interno della corrente e la velocità uniforme nelle sezioni considerate e
+a monte del Venturi.
+Dati: densità dell’acqua <span class="math notranslate nohighlight">\(\overline{\rho}= 999\ kg/m^3\)</span>,
+densità dell’aria <span class="math notranslate nohighlight">\(\overline{\rho}= 1.225\ kg/m^3\)</span>,
+diametro del tubo <span class="math notranslate nohighlight">\(D=2\ cm\)</span>, diametro della sezione di gola
+<span class="math notranslate nohighlight">\(d=1\ cm \)</span>, altezze: <span class="math notranslate nohighlight">\(z_1 = 10\ cm \)</span>, <span class="math notranslate nohighlight">\(z_2 = 1.2\ m \)</span>,
+<span class="math notranslate nohighlight">\(z_3 = 5\ cm \)</span>, <span class="math notranslate nohighlight">\(z_4 = 0.5\ m \)</span>.</p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(Q=3.01\, 10^{-4}\ m/s\)</span>, <span class="math notranslate nohighlight">\(\overline{Q}=3.005\, 10^{-1}\ kg/s\)</span>)</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/venturi.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Cocnetti.</strong> Teorema di Bernoulli. Equazione della vorticità. Conseguenze delle
 ipotesi di stazionarietà, fluido incomprimibile, non viscoso,
 irrotazionale. Dominio di applicabilità del teorema di Bernoulli.
 Condizioni all’interfaccia. Legge di Stevino.</p>
-<p>Il problema viene risolto in diversi passi successivi: in principio
+<p><strong>Svolgimento.</strong> Il problema viene risolto in diversi passi successivi: in principio
 vengono fatte alcune ipotesi semplificative (<span class="math notranslate nohighlight">\(\rho = \bar{\rho}\)</span>,
 <span class="math notranslate nohighlight">\(\mu=0\)</span>, <span class="math notranslate nohighlight">\(\frac{\partial}{\partial t}=0\)</span>); poi si utilizza l’equazione
 della vorticità per semplificare ulteriormente il problema; si determina
@@ -457,7 +463,7 @@ monte permettono di definire il domino all’interno del quale è
 possibile applicare il teorema di Bernoulli, aggiungendo l’ipotesi
 di irrotazionalità alle tre ipotesi precedenti. Infatti, l’equazione
 della vorticità può essere scritta come:
-$<span class="math notranslate nohighlight">\(\frac{D \bm{\omega}}{Dt} = (\bm{\omega} \cdot \bm{\nabla}) \bm{u}\)</span><span class="math notranslate nohighlight">\(
+$<span class="math notranslate nohighlight">\(\frac{D \mathbf{\omega}}{Dt} = (\mathbf{\omega} \cdot \mathbf{\nabla}) \mathbf{u}\)</span><span class="math notranslate nohighlight">\(
 La derivata materiale rappresenta la variazione di una quantità
 associata a una particella materiale che segue il moto del fluido.
 Poiché la vorticità nella sezione a monte è nulla (il profilo di

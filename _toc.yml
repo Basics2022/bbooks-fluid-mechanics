@@ -78,9 +78,26 @@ parts:
       - file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0606in
       - file: polimi/fluidmechanics-ita/template/capitoli/06_slnEsatte/0608in
   - file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/07teoria
+    sections:
+    - file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/exercises
+      sections:
+      - file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/0703in 
+      - file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/0701in
+      - file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/0702in
+      - file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/0704in
+      - file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/0706in
+      - file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/0707in
   - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/08teoria
+    sections:
+    - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/exercises
+      sections:
+      - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/0807in 
   - file: polimi/fluidmechanics-ita/template/capitoli/09_bl/09teoria
+    sections:
+    - file: polimi/fluidmechanics-ita/template/capitoli/09_bl/exercises
   - file: polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/10teoria
+    sections:
+    - file: polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/exercises
 # - caption: Incompressible Fluid Mechanics
 #   numbered: True
 # sections:
