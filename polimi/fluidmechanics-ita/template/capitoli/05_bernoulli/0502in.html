@@ -257,10 +257,27 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../07_similitudine/exercises.html">7.14. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0706in.html">7.14.1. Diagramma di Moody.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../08_aerodinamica/exercises.html">8.1. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_bl/exercises.html">9.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.1. Exercises</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -499,7 +516,9 @@ equazione definisce una parabola con la concavità diretta verso il basso
 <p>Esistono due soluzioni con senso fisico (<span class="math notranslate nohighlight">\(h_2 \ge 0, U_2 \ge 0\)</span>). Ora
 che sappiamo quante soluzioni cercare e dove cercarle, possiamo
 procedere con un metodo numerico, dando guess iniziali in un intorno
-della soluzione. Le due soluzioni sono: $<span class="math notranslate nohighlight">\(\begin{aligned}
+della soluzione. Le due soluzioni sono:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
   A :
   \begin{cases}
    U_2 = 0.741 \ m/s \\
@@ -511,7 +530,7 @@ della soluzione. Le due soluzioni sono: $<span class="math notranslate nohighlig
    U_2 = 5.940 \ m/s \\
    h_2 = 0.252 \ m
   \end{cases}
-\end{aligned}\)</span>$</p>
+\end{aligned}\end{split}\]</div>
 </div>
 <div class="section" id="parte-2">
 <h2><span class="section-number">5.5.3.2. </span>Parte 2.<a class="headerlink" href="#parte-2" title="Permalink to this heading">#</a></h2>
@@ -532,7 +551,9 @@ canale. Si indica con <span class="math notranslate nohighlight">\(Q = V y\)</sp
 trinomio di Bernoulli <span class="math notranslate nohighlight">\(H\)</span>, diviso per <span class="math notranslate nohighlight">\(\rho\)</span> e <span class="math notranslate nohighlight">\(g\)</span>, è costante lungo il
 canale. Si ricorda che sulla linea di corrente in corrispondenza del
 pelo libero agisce una pressione costante uguale alla pressione ambiente
-<span class="math notranslate nohighlight">\(P_a\)</span>. Se si introduce la coordinata orizzontale <span class="math notranslate nohighlight">\(x\)</span>, $<span class="math notranslate nohighlight">\(\begin{aligned}
+<span class="math notranslate nohighlight">\(P_a\)</span>. Se si introduce la coordinata orizzontale <span class="math notranslate nohighlight">\(x\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
  0 = \dfrac{d H}{d x} = 
  &amp; \dfrac{d (y+z)}{d x} + \dfrac{d}{d x} \dfrac{V^2}{2 g}     = \\
  &amp; = \dfrac{d (y+z)}{d x} + \dfrac{d}{d x} \dfrac{Q^2}{2 g y^2} = \\
@@ -540,17 +561,21 @@ pelo libero agisce una pressione costante uguale alla pressione ambiente
  &amp; = \dfrac{d (y+z)}{d x} - \dfrac{V^2}{g y} \dfrac{d y}{d x} = \\ 
  &amp; = \dfrac{d (y+z)}{d x} - \text{Fr}^2 \dfrac{d y}{d x} = \\ 
  &amp; = \dfrac{d z}{d x} - (\text{Fr}^2 - 1) \dfrac{d y}{d x} \\ 
-\end{aligned}\)</span><span class="math notranslate nohighlight">\( dove è stato introdotto il numero di Froude
-\)</span>\textit{Fr} = V(y)^2 / g y<span class="math notranslate nohighlight">\(, e qui è stata esplicitata la dipendenza
-dalla profondità \)</span>y<span class="math notranslate nohighlight">\(, funzione a sua volta funzione della coordinata
-\)</span>x<span class="math notranslate nohighlight">\(. Si trova così il legame tra la profondità della corrente \)</span>y(x)<span class="math notranslate nohighlight">\(, la
-quota del fondo \)</span>z(x)<span class="math notranslate nohighlight">\( e lo stato della corrente, descritto dal numero
-di Froude. \)</span><span class="math notranslate nohighlight">\(\label{eqn:flow_depth}
- \dfrac{d z}{d x} = (\text{Fr}^2(y(x)) - 1) \dfrac{d y}{d x}\)</span><span class="math notranslate nohighlight">\( Vengono
-definiti due regimi di moto: subcritico \)</span>\textit{Fr} &lt; 1<span class="math notranslate nohighlight">\(, supercritico
-\)</span>\textit{Fr} &gt; 1<span class="math notranslate nohighlight">\(. Il profilo del fondo \)</span>z(x)<span class="math notranslate nohighlight">\(, e quindi la sua
+\end{aligned}\end{split}\]</div>
+<p>dove è stato introdotto il numero di Froude
+<span class="math notranslate nohighlight">\(\textit{Fr} = V(y)^2 / g y\)</span>, e qui è stata esplicitata la dipendenza
+dalla profondità <span class="math notranslate nohighlight">\(y\)</span>, funzione a sua volta funzione della coordinata
+<span class="math notranslate nohighlight">\(x\)</span>. Si trova così il legame tra la profondità della corrente <span class="math notranslate nohighlight">\(y(x)\)</span>, la
+quota del fondo <span class="math notranslate nohighlight">\(z(x)\)</span> e lo stato della corrente, descritto dal numero
+di Froude.</p>
+<div class="math notranslate nohighlight">
+\[\label{eqn:flow_depth}
+ \dfrac{d z}{d x} = (\text{Fr}^2(y(x)) - 1) \dfrac{d y}{d x}\]</div>
+<p>Vengono
+definiti due regimi di moto: subcritico <span class="math notranslate nohighlight">\(\textit{Fr} &lt; 1\)</span>, supercritico
+<span class="math notranslate nohighlight">\(\textit{Fr} &gt; 1\)</span>. Il profilo del fondo <span class="math notranslate nohighlight">\(z(x)\)</span>, e quindi la sua
 derivata, è noto dal progetto del canale. La profondità della corrente
-\)</span>y(x)$ può essere ottenuta integrando l’eq.
+<span class="math notranslate nohighlight">\(y(x)\)</span> può essere ottenuta integrando l’eq.
 <span class="xref myst">[eqn:flow_depth]</span>{reference-type=»ref»
 reference=»eqn:flow_depth»} con le condizioni iniziali note sulla
 sezione di ingresso.</p>
