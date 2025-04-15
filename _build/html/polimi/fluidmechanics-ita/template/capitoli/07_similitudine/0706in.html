@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7.14.1. Diagramma di Moody. &#8212; Fluid Mechanics</title>
+    <title>7.14.5. Exercise 7.5 &#8212; Fluid Mechanics</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../../../../_static/favicon.svg"/>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="0707in.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="0704in.html" />
+    <link rel="next" title="7.14.6. Exercise 7.6" href="0707in.html" />
+    <link rel="prev" title="7.14.4. Exercise 7.4" href="0704in.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -259,7 +259,12 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="07teoria.html">7. Similitude</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="exercises.html">7.14. Exercises</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">7.14.1. Diagramma di Moody.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0703in.html">7.14.1. Exercise 7.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0701in.html">7.14.2. Exercise 7.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0702in.html">7.14.3. Exercise 7.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0704in.html">7.14.4. Exercise 7.4</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">7.14.5. Exercise 7.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0707in.html">7.14.6. Exercise 7.6</a></li>
 </ul>
 </li>
 </ul>
@@ -403,7 +408,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -414,11 +421,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Diagramma di Moody.</h1>
+    <h1>Exercise 7.5</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramma-di-moody">7.14.5.1. Diagramma di Moody.</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -428,79 +443,114 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>Si deve progettare un condotto che trasporti un fluido con densità
-<span class="math notranslate nohighlight">\(\rho_1\)</span> e viscosità <span class="math notranslate nohighlight">\(\mu_1\)</span>, di diametro <span class="math notranslate nohighlight">\(d_1\)</span> e lunghezza <span class="math notranslate nohighlight">\(L_1\)</span>. Si
-suppone che la rugosità della superficie interna del condotto possa
-essere descritta interamente dall’altezza media <span class="math notranslate nohighlight">\(\epsilon_1\)</span> delle
-asperità. Il condotto deve garantire una portata massica <span class="math notranslate nohighlight">\(Q_1\)</span>. Viene
-realizzato un modello in scala <span class="math notranslate nohighlight">\(\lambda = d_2 / d_1\)</span> del condotto di
-lunghezza <span class="math notranslate nohighlight">\(L_2\)</span>, nel quale viene fatto scorrere lo stesso fluido alle
-stesse condizioni termodinamiche. Si chiede di determinare:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="exercise-7-5">
+<span id="fluid-mechanics-similitude-ex-05"></span><h1><span class="section-number">7.14.5. </span>Exercise 7.5<a class="headerlink" href="#exercise-7-5" title="Permalink to this heading">#</a></h1>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row sd-col-8 sd-col-xs-8 sd-col-sm-8 sd-col-md-8 sd-col-lg-8 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Exercise 7.5</div>
+<p class="sd-card-text">Si deve progettare un condotto che trasporti un fluido con densità
+<span class="math notranslate nohighlight">\(\rho_1\)</span> e viscosità <span class="math notranslate nohighlight">\(\mu_1\)</span>, di diametro <span class="math notranslate nohighlight">\(d_1\)</span> e lunghezza <span class="math notranslate nohighlight">\(L_1\)</span>.
+Si suppone che la rugosità della superficie interna del condotto possa
+essere descritta interamente dall’altezza media <span class="math notranslate nohighlight">\(\epsilon_1\)</span>
+delle asperità. Il condotto deve garantire una portata massica <span class="math notranslate nohighlight">\(Q_1\)</span>.
+Viene realizzato un modello in scala <span class="math notranslate nohighlight">\(\lambda = d_2 / d_1\)</span> del condotto
+di lunghezza <span class="math notranslate nohighlight">\(L_2\)</span>, nel quale viene fatto scorrere lo stesso fluido
+alle stesse condizioni termodinamiche. Si chiede di determinare:</p>
 <ul class="simple">
-<li><p>la finitura superficiale della superficie interna del modello, in
-termini di dimensione caratteristica della rugosità <span class="math notranslate nohighlight">\(\epsilon_2\)</span>;</p></li>
-<li><p>la velocità media di prova <span class="math notranslate nohighlight">\(U_2\)</span>;</p></li>
-<li><p>la differenza di pressione da imporre alle estremità del condotto al
-vero, conoscendo che la differenza di pressione <span class="math notranslate nohighlight">\(\Delta P_2\)</span>
+<li><p class="sd-card-text">la finitura superficiale della superficie interna del modello,
+in termini di dimensione caratteristica della rugosità <span class="math notranslate nohighlight">\(\epsilon_2\)</span>;</p></li>
+<li><p class="sd-card-text">la velocità media di prova <span class="math notranslate nohighlight">\(U_2\)</span>;</p></li>
+<li><p class="sd-card-text">la differenza di pressione da imporre alle estremità del condotto
+al vero, conoscendo che la differenza di pressione <span class="math notranslate nohighlight">\(\Delta P_2\)</span>
 misurata in laboratorio.</p></li>
 </ul>
-<p>Si supponga il fluido incomprimibile.</p>
-<p><img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/07_similitudine/fig/pipe" />{width=»100%»}</p>
+<p class="sd-card-text">Si supponga il fluido incomprimibile.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../../../../../_images/pipe.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>Teorema di Buckingham. Similitudine fluidodinamica.</p>
 <p>Il problema è caratterizzato dal fluido utilizzato, dalla geometria del
 condotto e dal gradiente di pressione necessario a garantire la portata
-desiderata. Si può scrivere in maniera implicita
-$<span class="math notranslate nohighlight">\(f\left( \dfrac{\Delta P}{\Delta x}, U, \rho, \mu, d, \epsilon \right) = 0\)</span><span class="math notranslate nohighlight">\(
-avendo scelto come grandezza fisica caratteristica del problema il
-gradiente di pressione \)</span>\dfrac{\Delta P}{\Delta x}<span class="math notranslate nohighlight">\( e non il salto di
+desiderata. Si può scrivere in maniera implicita</p>
+<div class="math notranslate nohighlight">
+\[f\left( \dfrac{\Delta P}{\Delta x}, U, \rho, \mu, d, \epsilon \right) = 0\]</div>
+<p>avendo scelto come grandezza fisica caratteristica del problema il
+gradiente di pressione <span class="math notranslate nohighlight">\(\dfrac{\Delta P}{\Delta x}\)</span> e non il salto di
 pressione e la lunghezza del tubo prese indipendentemente. Il teorema di
 Buckingham garantisce che il problema può essere caratterizzato da 3
 numeri adimensionali (6 grandezze fisiche - 3 grandezze fondamentali
-(M,L,T)). Se si scelgono \)</span>\rho<span class="math notranslate nohighlight">\(, \)</span>U<span class="math notranslate nohighlight">\(, \)</span>d<span class="math notranslate nohighlight">\( come grandezze di riferimento,
-si possono costruire i tre numeri adimensionali come
-\)</span><span class="math notranslate nohighlight">\(\pi_1 = \dfrac{\Delta P}{\Delta x} \dfrac{d}{\rho U^2} = f_D \qquad
+(M,L,T)). Se si scelgono <span class="math notranslate nohighlight">\(\rho\)</span>, <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(d\)</span> come grandezze di riferimento,
+si possono costruire i tre numeri adimensionali come</p>
+<div class="math notranslate nohighlight">
+\[\pi_1 = \dfrac{\Delta P}{\Delta x} \dfrac{d}{\rho U^2} = f_D \qquad
    \pi_2 = \dfrac{\mu}{\rho U d} = 1/Re \qquad
    \pi_3 = \dfrac{\epsilon}{d} = \epsilon'
-  \label{eqn:pi}\)</span><span class="math notranslate nohighlight">\( Il problema può essere quindi scritto in forma
-implicita come: \)</span><span class="math notranslate nohighlight">\(g(f_D,Re,\epsilon') = 0.\)</span><span class="math notranslate nohighlight">\( Esplicitando \)</span>f_D<span class="math notranslate nohighlight">\(:
-\)</span><span class="math notranslate nohighlight">\(f_D = h(Re,\epsilon') \qquad
-  \dfrac{\Delta P}{\Delta x} = \dfrac{\rho U^2}{d} f_D(Re,\epsilon').\)</span><span class="math notranslate nohighlight">\(
-Affinchè sia verificata la similitudine fluidodinamica, ci deve essere
-l'uguaglianza dei numeri di Reynolds \)</span>Re<span class="math notranslate nohighlight">\( e delle rugosità
-adimensionalizzate \)</span>\epsilon”$.</p>
-<ul class="simple">
+  \label{eqn:pi}\]</div>
+<p>Il problema può essere quindi scritto in forma
+implicita come:</p>
+<div class="math notranslate nohighlight">
+\[g(f_D,Re,\epsilon') = 0.$$ Esplicitando $f_D$:
+$$f_D = h(Re,\epsilon') \qquad
+  \dfrac{\Delta P}{\Delta x} = \dfrac{\rho U^2}{d} f_D(Re,\epsilon').\]</div>
+<p>Affinchè sia verificata la similitudine fluidodinamica, ci deve essere
+l’uguaglianza dei numeri di Reynolds <span class="math notranslate nohighlight">\(Re\)</span> e delle rugosità
+adimensionalizzate <span class="math notranslate nohighlight">\(\epsilon'\)</span>.</p>
+<ul>
 <li><p>Dall’uguaglianza delle rugosità adimensionalizzate
 $<span class="math notranslate nohighlight">\(\epsilon'_1 = \epsilon'_2=:\epsilon' \quad \Rightarrow \quad \epsilon_2 = \epsilon_1 \dfrac{d_2}{d_1} = \lambda \epsilon_1.\)</span><span class="math notranslate nohighlight">\(
 Per il modello è quindi necessaria una lavorazione che garantisca
 una finitura superficiale migliore rispetto al condotto al vero
 (\)</span>\lambda \le 1$).</p></li>
 <li><p>La velocità media al vero <span class="math notranslate nohighlight">\(U_1\)</span> viene ricavata grazie alla richiesta
-dellaportata desiderata.
-$<span class="math notranslate nohighlight">\(U_1 = \dfrac{Q}{\rho \frac{\pi}{4} d_1^2}\)</span><span class="math notranslate nohighlight">\( Per ottenere la
-similitudine fluidodinamica si impone l'uguaglianza dei numeri di
-Reynolds \)</span><span class="math notranslate nohighlight">\(Re_1 = Re_2=:Re \quad \Rightarrow \quad U_2 = U_1
-       \dfrac{\rho_1 d_1 \nu_2}{\rho_2 d_2 \nu_1} = U_1 \dfrac{d_1}{d_2}\)</span>$
-poichè la densità e la viscosità del fluido «di prova» sono le
-stesse di quelle del fluido «al vero».</p></li>
+dellaportata desiderata.</p>
+<div class="math notranslate nohighlight">
+\[U_1 = \dfrac{Q}{\rho \frac{\pi}{4} d_1^2}\]</div>
+<p>Per ottenere la
+similitudine fluidodinamica si impone l’uguaglianza dei numeri di
+Reynolds</p>
+<div class="math notranslate nohighlight">
+\[Re_1 = Re_2=:Re \quad \Rightarrow \quad U_2 = U_1
+           \dfrac{\rho_1 d_1 \nu_2}{\rho_2 d_2 \nu_1} = U_1 \dfrac{d_1}{d_2}\]</div>
+<p>poichè la densità e la viscosità del fluido «di prova» sono le
+stesse di quelle del fluido «al vero».</p>
+</li>
 <li><p>Il rapporto tra la differenza di pressione <span class="math notranslate nohighlight">\(\Delta P_2\)</span> misurata sul
 condotto modello e la lunghezza del condotto modello <span class="math notranslate nohighlight">\(L_2\)</span> permette
 di stimare il gradiente di pressione
 <span class="math notranslate nohighlight">\(\dfrac{\Delta P}{\Delta x}\Big|_2 =
    \dfrac{\Delta P_2}{L_2}\)</span>. Sfruttando ancora una volta la
-similitudine fluidodinamica $<span class="math notranslate nohighlight">\(\begin{cases}
-    \dfrac{\Delta P_2}{L_2} = \dfrac{\rho_2 U_2^2}{d_2} f_D(Re,\epsilon') \\
-    \dfrac{\Delta P_1}{L_1} = \dfrac{\rho_1 U_1^2}{d_1} f_D(Re,\epsilon') \\
-   \end{cases}
-    \Rightarrow \Delta P_1 = \Delta P_2 \dfrac{\rho_1 U_1^2}{\rho_2 U_2^2}
-     \dfrac{d_2}{d_1} \dfrac{L_1}{L_2}\)</span><span class="math notranslate nohighlight">\( Dall'uguaglianza delle
-densità \)</span>\rho_1/\rho_2 = 1<span class="math notranslate nohighlight">\(; dall'uguaglianza dei numeri di Reynolds
-(e delle densità e viscosità) \)</span>U_1^2/U_2^2 =
-d_2^2/d_1^2<span class="math notranslate nohighlight">\(. La formula può quindi essere semplificata
-\)</span><span class="math notranslate nohighlight">\(\Delta P_1 = \Delta P_2 \dfrac{d^3_2}{d^3_1} \dfrac{L_1}{L_2} =
-                  \Delta P_2 \lambda^3 \dfrac{L_1}{L_2}\)</span>$</p></li>
+similitudine fluidodinamica</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+        \dfrac{\Delta P_2}{L_2} = \dfrac{\rho_2 U_2^2}{d_2} f_D(Re,\epsilon') \\
+        \dfrac{\Delta P_1}{L_1} = \dfrac{\rho_1 U_1^2}{d_1} f_D(Re,\epsilon') \\
+       \end{cases}
+        \Rightarrow \Delta P_1 = \Delta P_2 \dfrac{\rho_1 U_1^2}{\rho_2 U_2^2}
+         \dfrac{d_2}{d_1} \dfrac{L_1}{L_2}\end{split}\]</div>
+<p>Dall’uguaglianza delle
+densità <span class="math notranslate nohighlight">\(\rho_1/\rho_2 = 1\)</span>; dall’uguaglianza dei numeri di Reynolds
+(e delle densità e viscosità) <span class="math notranslate nohighlight">\(U_1^2/U_2^2 =
+   d_2^2/d_1^2\)</span>. La formula può quindi essere semplificata</p>
+<div class="math notranslate nohighlight">
+\[\Delta P_1 = \Delta P_2 \dfrac{d^3_2}{d^3_1} \dfrac{L_1}{L_2} =
+                      \Delta P_2 \lambda^3 \dfrac{L_1}{L_2}\]</div>
+</li>
 </ul>
 <div class="section" id="diagramma-di-moody">
-<h1><span class="section-number">7.14.1. </span>Diagramma di Moody.<a class="headerlink" href="#diagramma-di-moody" title="Permalink to this heading">#</a></h1>
+<h2><span class="section-number">7.14.5.1. </span>Diagramma di Moody.<a class="headerlink" href="#diagramma-di-moody" title="Permalink to this heading">#</a></h2>
 <p>Il diagramma di Moody riporta il coefficiente <span class="math notranslate nohighlight">\(f_D\)</span> in funzione del
 numero di <span class="math notranslate nohighlight">\(Re\)</span> e della rugosità del tubo. Si possono individuare due
 regimi estremi del problema. Per «basse velocità» (o meglio, bassi
@@ -508,23 +558,27 @@ numeri di Reynolds), si può intuire che gli effetti della viscosità
 prevalgano sugli effetti inerziali; inoltre, gli effetti della rugosità
 sono minimi. Si può quindi pensare che il problema sia indipendente
 dalla densità del fluido e dalla rugosità del tubo e descrivibile in
-forma implicita come $<span class="math notranslate nohighlight">\(f_L (\Delta P / \Delta x, \mu, U, d) = 0\)</span><span class="math notranslate nohighlight">\( Si può
-descrivere il problema solo con un numero adimensionale. Scegliendo
-\)</span>\mu<span class="math notranslate nohighlight">\(, \)</span>U<span class="math notranslate nohighlight">\(, \)</span>d<span class="math notranslate nohighlight">\( come grandezze di riferimento, si può scrivere
-\)</span><span class="math notranslate nohighlight">\(\pi_{1,L} = \dfrac{\Delta P}{\Delta x} \dfrac{d^2}{\mu U}\)</span><span class="math notranslate nohighlight">\( Il
-problema può essere scritto in forma implicita \)</span>g_L(\pi_{1,L}) = 0<span class="math notranslate nohighlight">\(.
-Poichè la funzione \)</span>g_L<span class="math notranslate nohighlight">\( dipende solo dal coefficiente \)</span>\pi_{1,L}<span class="math notranslate nohighlight">\(, il
-coefficiente \)</span>\pi_{1,L}<span class="math notranslate nohighlight">\( deve essere costante. Il gradiente di pressione
-può essere scritto
-\)</span><span class="math notranslate nohighlight">\(\dfrac{\Delta P}{\Delta x} = \pi_{1,L} \dfrac{\mu U}{d^2} = 
-      \dfrac{\rho U^2}{d} f_D\)</span><span class="math notranslate nohighlight">\( avendo usato la definizione di \)</span>f_D<span class="math notranslate nohighlight">\(
-introdotta nell'equazione ([\[eqn:pi\]](#eqn:pi){reference-type=&quot;ref&quot;
-reference=&quot;eqn:pi&quot;}). É quindi possibile stimare l'andamento del
-coefficiente \)</span>f_D<span class="math notranslate nohighlight">\(, per bassi numeri di Reynolds, invertendo l'equazione
-precedente. Si scopre che il coefficiente \)</span>f_D<span class="math notranslate nohighlight">\( è inversamente
-proporzionale al numero di Reynolds.
-\)</span><span class="math notranslate nohighlight">\(f_D = \pi_{1,L} \dfrac{\mu}{\rho U d} = \pi_{1,L} \dfrac{1}{Re}\)</span><span class="math notranslate nohighlight">\(. Per
-bassi numeri di Reynolds, il parametro \)</span>f_D<span class="math notranslate nohighlight">\( in funzione di \)</span>Re$ mostra
+forma implicita come</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}f_L (\Delta P / \Delta x, \mu, U, d) = 0$$ Si può\\descrivere il problema solo con un numero adimensionale. Scegliendo
+$\mu$, $U$, $d$ come grandezze di riferimento, si può scrivere\\$$\pi_{1,L} = \dfrac{\Delta P}{\Delta x} \dfrac{d^2}{\mu U}\end{aligned}\end{align} \]</div>
+<p>Il
+problema può essere scritto in forma implicita <span class="math notranslate nohighlight">\(g_L(\pi_{1,L}) = 0\)</span>.
+Poichè la funzione <span class="math notranslate nohighlight">\(g_L\)</span> dipende solo dal coefficiente <span class="math notranslate nohighlight">\(\pi_{1,L}\)</span>, il
+coefficiente <span class="math notranslate nohighlight">\(\pi_{1,L}\)</span> deve essere costante. Il gradiente di pressione
+può essere scritto</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{\Delta P}{\Delta x} = \pi_{1,L} \dfrac{\mu U}{d^2} = 
+      \dfrac{\rho U^2}{d} f_D\]</div>
+<p>avendo usato la definizione di <span class="math notranslate nohighlight">\(f_D\)</span>
+introdotta nell’equazione (<span class="xref myst">[eqn:pi]</span>{reference-type=»ref»
+reference=»eqn:pi»}). É quindi possibile stimare l’andamento del
+coefficiente <span class="math notranslate nohighlight">\(f_D\)</span>, per bassi numeri di Reynolds, invertendo l’equazione
+precedente. Si scopre che il coefficiente <span class="math notranslate nohighlight">\(f_D\)</span> è inversamente
+proporzionale al numero di Reynolds.</p>
+<p>$<span class="math notranslate nohighlight">\(f_D = \pi_{1,L} \dfrac{\mu}{\rho U d} = \pi_{1,L} \dfrac{1}{Re}\)</span>$.</p>
+<p>Per
+bassi numeri di Reynolds, il parametro <span class="math notranslate nohighlight">\(f_D\)</span> in funzione di <span class="math notranslate nohighlight">\(Re\)</span> mostra
 un andamento lineare in un diagramma con assi logaritmici, a conferma
 della correttezza della stima appena svolta.</p>
 <p>Si può ragionare in maniera analoga per il regime di moto estremo
@@ -535,6 +589,7 @@ di Reynolds, il parametro <span class="math notranslate nohighlight">\(f_D\)</sp
 valore costante, che dipende dal valore della rugosità adimensionale
 <span class="math notranslate nohighlight">\(\epsilon'\)</span>.</p>
 <p><img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/07_similitudine/fig/MoodyChart.jpg" />{width=»100%»}</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -573,7 +628,7 @@ valore costante, che dipende dal valore della rugosità adimensionale
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title"><span class="section-number">7.14.4. </span>Exercise 7.4</p>
       </div>
     </a>
     <a class="right-next"
@@ -581,7 +636,7 @@ valore costante, che dipende dal valore della rugosità adimensionale
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title"><span class="section-number">7.14.6. </span>Exercise 7.6</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -591,6 +646,20 @@ valore costante, che dipende dal valore della rugosità adimensionale
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramma-di-moody">7.14.5.1. Diagramma di Moody.</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
