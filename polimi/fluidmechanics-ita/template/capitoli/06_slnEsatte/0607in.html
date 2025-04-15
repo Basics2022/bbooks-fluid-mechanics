@@ -76,15 +76,6 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESMWKL80JZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ESMWKL80JZ');
-</script>
-
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -257,10 +248,27 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../07_similitudine/exercises.html">7.14. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0706in.html">7.14.1. Diagramma di Moody.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../08_aerodinamica/exercises.html">8.1. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_bl/exercises.html">9.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.1. Exercises</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -457,44 +465,60 @@ di Poiseuille) risolve il problema di statica all’interno del
 manometro. Facendo riferimento al disegno, si utilizza Stevino tra i
 punti <span class="math notranslate nohighlight">\(A'-Q_1\)</span>, <span class="math notranslate nohighlight">\(Q_1-Q_2\)</span>, <span class="math notranslate nohighlight">\(Q_2-B'\)</span> e l’informazione di derivata
 della pressione costante in direzione <span class="math notranslate nohighlight">\(x\)</span> all’interno del canale,
-tra <span class="math notranslate nohighlight">\(A'\)</span> e <span class="math notranslate nohighlight">\(B'\)</span>. $<span class="math notranslate nohighlight">\(\begin{cases}
-  p_{A'} = p_{Q_1} - \rho g z_{Q_1} \\
-  p_{Q_1} - \bar{\rho} g z_{Q_1} =   p_{Q_2} - \bar{\rho} g z_{Q_2} \\
-  p_{B'} = p_{Q_2} - \rho g z_{Q_2} \\
-  p_{A'} - p_{B'} = G_P \Delta x
- \end{cases} \Rightarrow
-  G_P = \dfrac{1}{\Delta x}(\bar{\rho}-\rho) g \Delta h\)</span><span class="math notranslate nohighlight">\( avendo
-svolto correttamente i conti e riconosciuto \)</span>z_{Q_2} - z_{Q_1} =
-\Delta h$.</p></li>
+tra <span class="math notranslate nohighlight">\(A'\)</span> e <span class="math notranslate nohighlight">\(B'\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+      p_{A'} = p_{Q_1} - \rho g z_{Q_1} \\
+      p_{Q_1} - \bar{\rho} g z_{Q_1} =   p_{Q_2} - \bar{\rho} g z_{Q_2} \\
+      p_{B'} = p_{Q_2} - \rho g z_{Q_2} \\
+      p_{A'} - p_{B'} = G_P \Delta x
+     \end{cases} \Rightarrow
+      G_P = \dfrac{1}{\Delta x}(\bar{\rho}-\rho) g \Delta h\end{split}\]</div>
+<p>avendo
+svolto correttamente i conti e riconosciuto <span class="math notranslate nohighlight">\(z_{Q_2} - z_{Q_1} =
+ \Delta h\)</span>.</p>
+</li>
 <li><p>Ricordando che il profilo di velocità di Poiseuille risulta
-<span class="math notranslate nohighlight">\(\mathbf{u} = \mathbf{\hat{x}} u(y)\)</span>, con
-$<span class="math notranslate nohighlight">\(u(y) = -\dfrac{G_P}{2 \mu} y (y-H),\)</span><span class="math notranslate nohighlight">\( la velocità massima
-all'interno del canale è \)</span>V = u(H/2) =
-\dfrac{G_P}{8 \mu} H^2$</p></li>
+<span class="math notranslate nohighlight">\(\mathbf{u} = \mathbf{\hat{x}} u(y)\)</span>, con</p>
+<div class="math notranslate nohighlight">
+\[u(y) = -\dfrac{G_P}{2 \mu} y (y-H),\]</div>
+<p>la velocità massima
+all’interno del canale è <span class="math notranslate nohighlight">\(V = u(H/2) =
+ \dfrac{G_P}{8 \mu} H^2\)</span></p>
+</li>
 <li><p>Per calcolare la risultante degli sforzi sul tratto <span class="math notranslate nohighlight">\(A-B\)</span> della
 parete superiore, è necessario calcolare il vettore sforzo agente su
 di essa e svolgere un semplice integrale. Il vettore sforzo agente
-sulla parete superiore risulta
-$<span class="math notranslate nohighlight">\(\mathbf{t} = - \mu \dfrac{\partial u}{\partial y}\bigg|_{y=H} \mathbf{\hat{x}} +
-           p(x,H) \mathbf{\hat{y}} \ .\)</span><span class="math notranslate nohighlight">\( La pressione \)</span>p(x,H)<span class="math notranslate nohighlight">\( sulla
-parete superiore, per \)</span>x \in [x_A,x_B]<span class="math notranslate nohighlight">\( si calcola come segue: si
-parte dall'origine del sistema di riferimento \)</span>O<span class="math notranslate nohighlight">\(, in corrispondenza
-della quale è noto il valore della pressione \)</span>p_0<span class="math notranslate nohighlight">\( e ci si muove in
-orizzontale ricordando che \)</span>\partial P/\partial x = -G_P<span class="math notranslate nohighlight">\( e in
-verticale ricordando che \)</span>\partial P/\partial y = -\rho g<span class="math notranslate nohighlight">\(.
-\)</span>$\begin{aligned}
-p_{A”} &amp; = p_0 - G_P x_A \
-p_{A } &amp; = p_{A”} - \rho g H  \</p>
-<p>\end{aligned}
-\qquad \rightarrow  \qquad p(x,H)  = p_{A} - G_P ( x  -x_A )$<span class="math notranslate nohighlight">\( Lo
-sforzo tangenziale sulla parete è costante e vale
-\)</span><span class="math notranslate nohighlight">\(- \mu \dfrac{\partial u}{\partial y}\bigg|_{y=H} =
-    \dfrac{G_P}{2} H\)</span><span class="math notranslate nohighlight">\( La risultante delle forze (per unità di
+sulla parete superiore risulta</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{t} = - \mu \dfrac{\partial u}{\partial y}\bigg|_{y=H} \mathbf{\hat{x}} +
+               p(x,H) \mathbf{\hat{y}} \ .\]</div>
+<p>La pressione <span class="math notranslate nohighlight">\(p(x,H)\)</span> sulla
+parete superiore, per <span class="math notranslate nohighlight">\(x \in [x_A,x_B]\)</span> si calcola come segue: si
+parte dall’origine del sistema di riferimento <span class="math notranslate nohighlight">\(O\)</span>, in corrispondenza
+della quale è noto il valore della pressione <span class="math notranslate nohighlight">\(p_0\)</span> e ci si muove in
+orizzontale ricordando che <span class="math notranslate nohighlight">\(\partial P/\partial x = -G_P\)</span> e in
+verticale ricordando che <span class="math notranslate nohighlight">\(\partial P/\partial y = -\rho g\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+      p_{A'} &amp; = p_0 - G_P x_A \\
+      p_{A } &amp; = p_{A'} - \rho g H  \\
+    %  p_{B } &amp; = p_{A}  - G_P (x_B - x_A)  \\ \\
+     \end{aligned}
+     \qquad \rightarrow  \qquad p(x,H)  = p_{A} - G_P ( x  -x_A )\end{split}\]</div>
+<p>Lo
+sforzo tangenziale sulla parete è costante e vale</p>
+<div class="math notranslate nohighlight">
+\[- \mu \dfrac{\partial u}{\partial y}\bigg|_{y=H} =
+        \dfrac{G_P}{2} H\]</div>
+<p>La risultante delle forze (per unità di
 lunghezza, poichè il problema è bidimensionale) si ottiene
-integrando lo sforzo tra \)</span>A<span class="math notranslate nohighlight">\( e \)</span>B<span class="math notranslate nohighlight">\(. Facendo comparire il valore
-\)</span>p_B<span class="math notranslate nohighlight">\( della pressione in \)</span>B<span class="math notranslate nohighlight">\(, l'espressione della risultante delle
-forze diventa \)</span><span class="math notranslate nohighlight">\(\mathbf{R} = \dfrac{G_P}{2} H \Delta x \mathbf{\hat{x}} + 
-           \dfrac{1}{2}(p_A + p_B) \Delta x \mathbf{\hat{y}} \ .\)</span>$</p>
+integrando lo sforzo tra <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span>. Facendo comparire il valore
+<span class="math notranslate nohighlight">\(p_B\)</span> della pressione in <span class="math notranslate nohighlight">\(B\)</span>, l’espressione della risultante delle
+forze diventa</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{R} = \dfrac{G_P}{2} H \Delta x \mathbf{\hat{x}} + 
+               \dfrac{1}{2}(p_A + p_B) \Delta x \mathbf{\hat{y}} \ .\]</div>
 </li>
 </ul>
 </div>

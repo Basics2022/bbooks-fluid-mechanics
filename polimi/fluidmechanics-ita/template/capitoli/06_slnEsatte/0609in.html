@@ -76,15 +76,6 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESMWKL80JZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ESMWKL80JZ');
-</script>
-
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -257,10 +248,27 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../07_similitudine/exercises.html">7.14. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0706in.html">7.14.1. Diagramma di Moody.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../08_aerodinamica/exercises.html">8.1. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_bl/exercises.html">9.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.1. Exercises</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -446,21 +454,21 @@ superficie di interfaccia tra acqua e aria implica che la pressione è
 indipendente dalla coordinata <span class="math notranslate nohighlight">\(x\)</span> in tutto il fluido.</p>
 <ul>
 <li><p>Scrittura delle equazioni di NS in coordinate cartesiane in 2
-dimensioni. $$\begin{cases}
-\dfrac{\partial u}{\partial t} + u \dfrac{\partial u}{\partial x}</p>
-<ul class="simple">
-<li><p>v \dfrac{\partial u}{\partial y} - \nu \left(
-\dfrac{\partial^2 u}{\partial x^2} +
-\dfrac{\partial^2 u}{\partial y^2} \right)</p></li>
-<li><p>\dfrac{1}{\rho} \dfrac{\partial p}{\partial x} = f_x \
-\dfrac{\partial v}{\partial t} + u \dfrac{\partial v}{\partial x}</p></li>
-<li><p>v \dfrac{\partial v}{\partial y} - \nu \left(
-\dfrac{\partial^2 v}{\partial x^2} +
-\dfrac{\partial^2 v}{\partial y^2} \right)</p></li>
-<li><p>\dfrac{1}{\rho} \dfrac{\partial p}{\partial y} = f_y \
-\dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y} = 0
-\end{cases}$$</p></li>
-</ul>
+dimensioni.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+      \dfrac{\partial u}{\partial t} + u \dfrac{\partial u}{\partial x}
+      + v \dfrac{\partial u}{\partial y} - \nu \left( 
+      \dfrac{\partial^2 u}{\partial x^2} +
+      \dfrac{\partial^2 u}{\partial y^2} \right)
+      + \dfrac{1}{\rho} \dfrac{\partial p}{\partial x} = f_x \\
+      \dfrac{\partial v}{\partial t} + u \dfrac{\partial v}{\partial x}
+      + v \dfrac{\partial v}{\partial y} - \nu \left( 
+      \dfrac{\partial^2 v}{\partial x^2} +
+      \dfrac{\partial^2 v}{\partial y^2} \right)
+      + \dfrac{1}{\rho} \dfrac{\partial p}{\partial y} = f_y \\
+      \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y} = 0
+    \end{cases}\end{split}\]</div>
 </li>
 <li><p>Semplificazione delle equazioni di NS per il problema considerato.
 Vengono fatte le seguenti ipotesi:</p>
@@ -487,35 +495,46 @@ condizione al contorno di adesione, <span class="math notranslate nohighlight">\
 <li><p>no forze di volume:
 <span class="math notranslate nohighlight">\(\mathbf{f} = \rho \mathbf{g} = \rho g \sin \alpha \mathbf{\hat{x}} - \rho g \cos \alpha \mathbf{\hat{y}}\)</span>.</p></li>
 </ul>
-<p>Le equazioni di NS possono essere semplificate $$\begin{cases}</p>
-<ul class="simple">
-<li><p>\mu \dfrac{\partial^2 u}{\partial y^2} = - \dfrac{\partial p}{\partial x} + \rho g \sin \alpha \
-\dfrac{\partial p}{\partial y} = - \rho g \cos \alpha \ .
-\end{cases}$$</p></li>
-</ul>
-<p>Dalla seconda segue che l’espressione del campo di pressione è
-$<span class="math notranslate nohighlight">\(p(x,y) = -\rho g y \cos \alpha + f(x) \ .\)</span><span class="math notranslate nohighlight">\( L'espressione di
-\)</span>f(x)<span class="math notranslate nohighlight">\( può essere calcolata imponendo la condizione al contorno sul
-pelo libero, \)</span>p(x,H) = P_a<span class="math notranslate nohighlight">\(,
-\)</span><span class="math notranslate nohighlight">\(P_a = -\rho g H \cos \alpha + f(x) \qquad \rightarrow \qquad f(x) = P_a + \rho g H \cos \alpha \ .\)</span><span class="math notranslate nohighlight">\(
-La funzione \)</span>f(x)<span class="math notranslate nohighlight">\( è costante, senza dipendere dalla coordinata \)</span>x<span class="math notranslate nohighlight">\(.
+<p>Le equazioni di NS possono essere semplificate</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+      - \mu \dfrac{\partial^2 u}{\partial y^2} = - \dfrac{\partial p}{\partial x} + \rho g \sin \alpha \\
+      \dfrac{\partial p}{\partial y} = - \rho g \cos \alpha \ .
+    \end{cases}\end{split}\]</div>
+<p>Dalla seconda segue che l’espressione del campo di pressione è</p>
+<div class="math notranslate nohighlight">
+\[p(x,y) = -\rho g y \cos \alpha + f(x) \ .\]</div>
+<p>L’espressione di
+<span class="math notranslate nohighlight">\(f(x)\)</span> può essere calcolata imponendo la condizione al contorno sul
+pelo libero, <span class="math notranslate nohighlight">\(p(x,H) = P_a\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[P_a = -\rho g H \cos \alpha + f(x) \qquad \rightarrow \qquad f(x) = P_a + \rho g H \cos \alpha \ .\]</div>
+<p>La funzione <span class="math notranslate nohighlight">\(f(x)\)</span> è costante, senza dipendere dalla coordinata <span class="math notranslate nohighlight">\(x\)</span>.
 Di conseguenza, il campo di pressione dipende solo dalla coordinata
-\)</span>y<span class="math notranslate nohighlight">\( \)</span><span class="math notranslate nohighlight">\(p(x,y) = P_a + \rho g ( H - y ) \cos \alpha \ ,\)</span><span class="math notranslate nohighlight">\( e la
-derivata di \)</span>\partial p / \partial x<span class="math notranslate nohighlight">\( è nulla. La componente \)</span>x<span class="math notranslate nohighlight">\(
-dell'equazione della quantità di moto diventa quindi un'equazione
-ordinaria del secondo ordine \)</span><span class="math notranslate nohighlight">\(\begin{cases}
-    - \mu u''(y) = \rho g  \sin \alpha  \ , \ y \in[0,H] \\
-    u(0) = 0  \\ u'(H) = 0 \ ,
-  \end{cases}\)</span><span class="math notranslate nohighlight">\( con le condizioni al contorno di adesione a parete e
-di sforzo di taglio nullo all'interfaccia tra aria ed acqua,
-\)</span>0=\tau(H)=\mu \dfrac{\partial u}{\partial y}(H)=\mu u”(H)<span class="math notranslate nohighlight">\(. La
-derivata parziale in \)</span>y<span class="math notranslate nohighlight">\( è stata sostituita da quella ordinaria,
-poichè la velocità è solo funzione di \)</span>y$.</p>
+<span class="math notranslate nohighlight">\(y\)</span></p>
+<div class="math notranslate nohighlight">
+\[p(x,y) = P_a + \rho g ( H - y ) \cos \alpha \ ,\]</div>
+<p>e la
+derivata di <span class="math notranslate nohighlight">\(\partial p / \partial x\)</span> è nulla. La componente <span class="math notranslate nohighlight">\(x\)</span>
+dell’equazione della quantità di moto diventa quindi un’equazione
+ordinaria del secondo ordine</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+        - \mu u''(y) = \rho g  \sin \alpha  \ , \ y \in[0,H] \\
+        u(0) = 0  \\ u'(H) = 0 \ ,
+      \end{cases}\end{split}\]</div>
+<p>con le condizioni al contorno di adesione a parete e
+di sforzo di taglio nullo all’interfaccia tra aria ed acqua,
+<span class="math notranslate nohighlight">\(0=\tau(H)=\mu \dfrac{\partial u}{\partial y}(H)=\mu u'(H)\)</span>. La
+derivata parziale in <span class="math notranslate nohighlight">\(y\)</span> è stata sostituita da quella ordinaria,
+poichè la velocità è solo funzione di <span class="math notranslate nohighlight">\(y\)</span>.</p>
 </li>
 <li><p>Soluzione dell’equazione differenziale con dati al contorno: si
 integra due volte e si impongono le condizioni al contorno per
-ottenere la componente <span class="math notranslate nohighlight">\(u\)</span> del campo di velocità.
-$<span class="math notranslate nohighlight">\(u(y) = - \dfrac{\rho g}{2 \mu} y( y - H ) \sin \alpha \ .\)</span>$</p></li>
+ottenere la componente <span class="math notranslate nohighlight">\(u\)</span> del campo di velocità.</p>
+<div class="math notranslate nohighlight">
+\[u(y) = - \dfrac{\rho g}{2 \mu} y( y - H ) \sin \alpha \ .\]</div>
+</li>
 </ul>
 </div>
 
