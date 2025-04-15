@@ -76,15 +76,6 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESMWKL80JZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ESMWKL80JZ');
-</script>
-
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -257,10 +248,27 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../07_similitudine/exercises.html">7.14. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0706in.html">7.14.1. Diagramma di Moody.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../08_aerodinamica/exercises.html">8.1. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_bl/exercises.html">9.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.1. Exercises</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -524,27 +532,35 @@ poichè la velocità è solo funzione di <span class="math notranslate nohighlig
 </li>
 <li><p>Soluzione dell’equazione differenziale (semplice) con dati al
 contorno.</p>
-<p>Risulta:
-$<span class="math notranslate nohighlight">\(\Rightarrow u(y) = - \frac{\rho g}{2 \mu} y^2 + \frac{\rho g}{\mu} H y\)</span>$</p>
+<p>Risulta:</p>
+<div class="math notranslate nohighlight">
+\[\Rightarrow u(y) = - \frac{\rho g}{2 \mu} y^2 + \frac{\rho g}{\mu} H y\]</div>
 </li>
 <li><p>Calcolo della portata come integrale della velocità; si trova così
 la relazione tra Q ed H.</p>
 <div class="math notranslate nohighlight">
 \[Q = \int_{0}^{H} \rho u(y) dy = \frac{1}{3}\frac{\rho^2 g}{\mu} H^3\]</div>
-<p>E quindi
-$<span class="math notranslate nohighlight">\(H = \left( \frac{3 Q \mu}{\rho^2 g} \right) ^ {\frac{1}{3}}
-     \quad \Rightarrow \quad H = 5.61 \cdot 10^{-4} m\)</span>$</p>
+<p>E quindi</p>
+<div class="math notranslate nohighlight">
+\[H = \left( \frac{3 Q \mu}{\rho^2 g} \right) ^ {\frac{1}{3}}
+         \quad \Rightarrow \quad H = 5.61 \cdot 10^{-4} m\]</div>
 </li>
-<li><p>Calcolo dello sforzo a parete
-$<span class="math notranslate nohighlight">\(\tau = \mu u'|_{y=0} = \rho g H \quad \Rightarrow \quad \tau = 5.494 Pa\)</span>$
-<em>Osservazione.</em> Equilibrio con la forza di gravità (problema
-stazionario).</p></li>
-<li><p>Calcolo di <span class="math notranslate nohighlight">\(u(H)\)</span>. $<span class="math notranslate nohighlight">\(u(H) = \frac{1}{2}\frac{\rho g}{\mu} H^2 
-    \quad \Rightarrow \quad u(H) = 1.342 m/s\)</span>$</p></li>
-<li><p>Calcolo velocità media e numero di Reynolds.
-$<span class="math notranslate nohighlight">\(\bar{U} = \frac{1}{H}\int_{0}^{H} u(y) dy = \frac{Q}{\rho H}
-    \quad \Rightarrow \quad \bar{U} = \frac{Q}{\rho H}
-                                    = \frac{2}{3}u(H) = 0.895 m/s\)</span>$</p>
+<li><p>Calcolo dello sforzo a parete</p>
+<div class="math notranslate nohighlight">
+\[\tau = \mu u'|_{y=0} = \rho g H \quad \Rightarrow \quad \tau = 5.494 Pa\]</div>
+<p><em>Osservazione.</em> Equilibrio con la forza di gravità (problema
+stazionario).</p>
+</li>
+<li><p>Calcolo di <span class="math notranslate nohighlight">\(u(H)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[u(H) = \frac{1}{2}\frac{\rho g}{\mu} H^2 
+        \quad \Rightarrow \quad u(H) = 1.342 m/s\]</div>
+</li>
+<li><p>Calcolo velocità media e numero di Reynolds.</p>
+<div class="math notranslate nohighlight">
+\[\bar{U} = \frac{1}{H}\int_{0}^{H} u(y) dy = \frac{Q}{\rho H}
+        \quad \Rightarrow \quad \bar{U} = \frac{Q}{\rho H}
+                                        = \frac{2}{3}u(H) = 0.895 m/s\]</div>
 <div class="math notranslate nohighlight">
 \[Re = \frac{\rho \bar{U} H}{\mu}
         \quad \Rightarrow \quad Re = 434.8\]</div>
@@ -559,16 +575,19 @@ con adesione su una parete mobile con velocità costante <span class="math notra
     - \mu u''(y) = \rho g \ , \ y \in[0,H] \\
     u(0) = 0  \\ u(H) = U
   \end{cases}\end{split}\]</div>
-<p>Il profilo di velocità è:
-$<span class="math notranslate nohighlight">\(u(y) = \dfrac{\rho g}{2 \mu}(-y^2 + yH) +\dfrac{U}{H}y\)</span><span class="math notranslate nohighlight">\( dove la
-velocità \)</span>U<span class="math notranslate nohighlight">\( è ancora incognita. Per trovarne il valore, si calcola la
-portata e la si pone uguale a zero. La portata è uguale a
-\)</span>$Q = \int_0^H u(y) dy = \dots = \dfrac{1}{12}\dfrac{\rho g H^3}{\mu}</p>
-<ul class="simple">
-<li><p>\dfrac{1}{2}UH$<span class="math notranslate nohighlight">\( Imponendo \)</span>Q=0<span class="math notranslate nohighlight">\(,
-\)</span><span class="math notranslate nohighlight">\(U = - \dfrac{\rho g H^2}{6 \mu} \quad \Rightarrow \quad
-U = - 0.4474\ m/s\)</span>$</p></li>
-</ul>
+<p>Il profilo di velocità è:</p>
+<div class="math notranslate nohighlight">
+\[u(y) = \dfrac{\rho g}{2 \mu}(-y^2 + yH) +\dfrac{U}{H}y\]</div>
+<p>dove la
+velocità <span class="math notranslate nohighlight">\(U\)</span> è ancora incognita. Per trovarne il valore, si calcola la
+portata e la si pone uguale a zero. La portata è uguale a</p>
+<div class="math notranslate nohighlight">
+\[Q = \int_0^H u(y) dy = \dots = \dfrac{1}{12}\dfrac{\rho g H^3}{\mu}
+ + \dfrac{1}{2}UH\]</div>
+<p>Imponendo <span class="math notranslate nohighlight">\(Q=0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[U = - \dfrac{\rho g H^2}{6 \mu} \quad \Rightarrow \quad
+ U = - 0.4474\ m/s\]</div>
 </div>
 
     <script type="text/x-thebe-config">

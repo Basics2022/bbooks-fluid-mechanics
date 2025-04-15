@@ -76,15 +76,6 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESMWKL80JZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ESMWKL80JZ');
-</script>
-
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -257,10 +248,27 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../07_similitudine/exercises.html">7.14. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0706in.html">7.14.1. Diagramma di Moody.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../08_aerodinamica/exercises.html">8.1. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_bl/exercises.html">9.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.1. Exercises</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -454,21 +462,21 @@ necessario ad avere portata nulla. La geometria del problema suggerisce
 di utilizzare un sistema di coordinate cartesiane.</p>
 <ul>
 <li><p>Scrittura delle equazioni di NS in coordinate cartesiane in 2
-dimensioni. $$\begin{cases}
-\dfrac{\partial u}{\partial t} + u \dfrac{\partial u}{\partial x}</p>
-<ul class="simple">
-<li><p>v \dfrac{\partial u}{\partial y} - \nu \left(
-\dfrac{\partial^2 u}{\partial x^2} +
-\dfrac{\partial^2 u}{\partial y^2} \right)</p></li>
-<li><p>\dfrac{1}{\rho} \dfrac{\partial p}{\partial x} = f_x \
-\dfrac{\partial v}{\partial t} + u \dfrac{\partial v}{\partial x}</p></li>
-<li><p>v \dfrac{\partial v}{\partial y} - \nu \left(
-\dfrac{\partial^2 v}{\partial x^2} +
-\dfrac{\partial^2 v}{\partial y^2} \right)</p></li>
-<li><p>\dfrac{1}{\rho} \dfrac{\partial p}{\partial y} = f_y \
-\dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y} = 0
-\end{cases}$$</p></li>
-</ul>
+dimensioni.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+      \dfrac{\partial u}{\partial t} + u \dfrac{\partial u}{\partial x}
+      + v \dfrac{\partial u}{\partial y} - \nu \left( 
+      \dfrac{\partial^2 u}{\partial x^2} +
+      \dfrac{\partial^2 u}{\partial y^2} \right)
+      + \dfrac{1}{\rho} \dfrac{\partial p}{\partial x} = f_x \\
+      \dfrac{\partial v}{\partial t} + u \dfrac{\partial v}{\partial x}
+      + v \dfrac{\partial v}{\partial y} - \nu \left( 
+      \dfrac{\partial^2 v}{\partial x^2} +
+      \dfrac{\partial^2 v}{\partial y^2} \right)
+      + \dfrac{1}{\rho} \dfrac{\partial p}{\partial y} = f_y \\
+      \dfrac{\partial u}{\partial x} + \dfrac{\partial v}{\partial y} = 0
+    \end{cases}\end{split}\]</div>
 </li>
 <li><p>Semplificazione delle equazioni di NS per il problema considerato.
 Vengono fatte le seguenti ipotesi:</p>
@@ -494,10 +502,12 @@ segue che <span class="math notranslate nohighlight">\(v = \text{cost} = 0\)</sp
 condizione al contorno di adesione, <span class="math notranslate nohighlight">\(\mathbf{u} = \mathbf{0}\)</span>.</p></li>
 <li><p>no forze di volume: <span class="math notranslate nohighlight">\(\mathbf{f} = 0\)</span>.</p></li>
 </ul>
-<p>Le equazioni di NS possono essere semplificate $<span class="math notranslate nohighlight">\(\begin{cases}
-  \nu \dfrac{\partial^2 u}{\partial y^2} = \dfrac{\partial p}{\partial x} \\
-  \dfrac{\partial p}{\partial y} = 0  
-\end{cases}\)</span>$</p>
+<p>Le equazioni di NS possono essere semplificate</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+      \nu \dfrac{\partial^2 u}{\partial y^2} = \dfrac{\partial p}{\partial x} \\
+      \dfrac{\partial p}{\partial y} = 0  
+    \end{cases}\end{split}\]</div>
 <p>Dalla seconda segue che la pressione può essere funzione solo di
 <span class="math notranslate nohighlight">\(x\)</span>. Nella prima, il termine a sinistra dell’uguale è funzione solo
 di <span class="math notranslate nohighlight">\(y\)</span>; quello di destra può essere funzione solo di x:
@@ -511,14 +521,19 @@ cambiato di segno. $<span class="math notranslate nohighlight">\(\begin{cases}
 </li>
 <li><p>Soluzione dell’equazione differenziale con dati al contorno: si
 integra due volte e si impongono le condizioni al contorno per
-ottenere la componente <span class="math notranslate nohighlight">\(u\)</span> del campo di velocità.
-$<span class="math notranslate nohighlight">\(\Rightarrow u(y) = -\dfrac{G_P}{2 \mu} y^2 + \left( \dfrac{G_P}{2 \mu}H
-    + \dfrac{U}{H} \right) y \ .\)</span>$</p></li>
-<li><p>Calcolo della portata come integrale della velocità.
-$<span class="math notranslate nohighlight">\(Q = \int_{0}^{H} u(y) dy = \dfrac{G_P}{12 \mu} H^3 + \dfrac{1}{2} U H\)</span><span class="math notranslate nohighlight">\(
-Infine, imponendo la condizione di portata nulla \)</span>Q=0<span class="math notranslate nohighlight">\(, si ottiene
-il valore di \)</span>G_P<span class="math notranslate nohighlight">\(:
-\)</span><span class="math notranslate nohighlight">\(G_P = -6\dfrac{\mu U}{H^2} \qquad \Rightarrow \qquad G_P = - 930 Pa/m\)</span>$</p></li>
+ottenere la componente <span class="math notranslate nohighlight">\(u\)</span> del campo di velocità.</p>
+<div class="math notranslate nohighlight">
+\[\Rightarrow u(y) = -\dfrac{G_P}{2 \mu} y^2 + \left( \dfrac{G_P}{2 \mu}H
+        + \dfrac{U}{H} \right) y \ .\]</div>
+</li>
+<li><p>Calcolo della portata come integrale della velocità.</p>
+<div class="math notranslate nohighlight">
+\[Q = \int_{0}^{H} u(y) dy = \dfrac{G_P}{12 \mu} H^3 + \dfrac{1}{2} U H\]</div>
+<p>Infine, imponendo la condizione di portata nulla <span class="math notranslate nohighlight">\(Q=0\)</span>, si ottiene
+il valore di <span class="math notranslate nohighlight">\(G_P\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[G_P = -6\dfrac{\mu U}{H^2} \qquad \Rightarrow \qquad G_P = - 930 Pa/m\]</div>
+</li>
 </ul>
 </div>
 
