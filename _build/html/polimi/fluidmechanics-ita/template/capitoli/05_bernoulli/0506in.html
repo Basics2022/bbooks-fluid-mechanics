@@ -257,10 +257,27 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../07_similitudine/exercises.html">7.14. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0706in.html">7.14.1. Diagramma di Moody.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../08_aerodinamica/exercises.html">8.1. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_bl/exercises.html">9.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.1. Exercises</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -454,17 +471,22 @@ nel caso non viscoso.</p>
 <ul>
 <li><p>Il primo quesito del problema viene risolto mettendo a sistema
 l’equazione di Bernoulli (ipotesi…) e l’equazione della
-continuità. $<span class="math notranslate nohighlight">\(\begin{cases}
-  \frac{1}{2} \rho V^2  = \frac{1}{2}\rho u^2(z) + \rho g z\\
-  V d^2 = u(z) D^2
-\end{cases} \qquad \Rightarrow \qquad D = \frac{d}
-{\displaystyle\left[1 - \frac{2 g z}{V^2}\right]^{\frac{1}{4}}}\)</span><span class="math notranslate nohighlight">\(
-Inserendo i valori numerici \)</span>D = 6.97 \text{cm}$.</p></li>
+continuità.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+      \frac{1}{2} \rho V^2  = \frac{1}{2}\rho u^2(z) + \rho g z\\
+      V d^2 = u(z) D^2
+    \end{cases} \qquad \Rightarrow \qquad D = \frac{d}
+    {\displaystyle\left[1 - \frac{2 g z}{V^2}\right]^{\frac{1}{4}}}\end{split}\]</div>
+<p>Inserendo i valori numerici <span class="math notranslate nohighlight">\(D = 6.97 \text{cm}\)</span>.</p>
+</li>
 <li><p>Il secondo quesito si ottiene ricavando dal teorema di Bernoulli la
 quota alla quale la velocità è nulla.</p>
-<p>$<span class="math notranslate nohighlight">\(\frac{1}{2} \rho V^2 = \rho g H \qquad \Rightarrow \qquad 
-  H = \frac{1}{2} \frac{V^2}{g}\)</span><span class="math notranslate nohighlight">\( Inserendo i valori numerici
-\)</span>H = 20.39 \text{m}$.</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2} \rho V^2 = \rho g H \qquad \Rightarrow \qquad 
+      H = \frac{1}{2} \frac{V^2}{g}\]</div>
+<p>Inserendo i valori numerici
+<span class="math notranslate nohighlight">\(H = 20.39 \text{m}\)</span>.</p>
 </li>
 </ul>
 </div>

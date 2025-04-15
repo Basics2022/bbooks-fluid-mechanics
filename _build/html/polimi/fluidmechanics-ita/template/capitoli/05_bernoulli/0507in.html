@@ -257,10 +257,27 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../07_similitudine/exercises.html">7.14. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0706in.html">7.14.1. Diagramma di Moody.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../08_aerodinamica/exercises.html">8.1. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_bl/exercises.html">9.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.1. Exercises</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -452,17 +469,22 @@ tra la quota <span class="math notranslate nohighlight">\(H\)</span> e la quota 
 incomprimibile, non viscoso, irrotazionale. Bilanci integrali.</p>
 <ul>
 <li><p>Il primo punto viene risolto mettendo a sistema il teorema di
-Bernoulli e la continuità. $<span class="math notranslate nohighlight">\(\begin{cases}
-  \frac{1}{2} \rho V_0^2  = \frac{1}{2}\rho V_1^2(z) + \rho g H\\
-  V_0 d_0^2 = V_1 d_1^2
-\end{cases} \qquad \Rightarrow \qquad 
-\begin{cases}
-  V_1 = V_0\sqrt{1 - 2 g H / V_0^2} \\
-  d_1 = \displaystyle\left[1 - \frac{2 g H}{V_0^2}\right]^{-\frac{1}{4}} d_0
-\end{cases}\)</span>$</p></li>
+Bernoulli e la continuità.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+      \frac{1}{2} \rho V_0^2  = \frac{1}{2}\rho V_1^2(z) + \rho g H\\
+      V_0 d_0^2 = V_1 d_1^2
+    \end{cases} \qquad \Rightarrow \qquad 
+    \begin{cases}
+      V_1 = V_0\sqrt{1 - 2 g H / V_0^2} \\
+      d_1 = \displaystyle\left[1 - \frac{2 g H}{V_0^2}\right]^{-\frac{1}{4}} d_0
+    \end{cases}\end{split}\]</div>
+</li>
 <li><p>Il secondo punto viene risolto utilizzando solamente il bilancio di
-massa.
-$<span class="math notranslate nohighlight">\(Q = \frac{\pi}{4} \rho V_0 d_0^2 = \frac{\pi}{4} \rho V_1 d_1^2 = \frac{\pi}{2} D h V_2 \qquad \Rightarrow \qquad h = \frac{d_1^2}{2 D}\)</span>$</p></li>
+massa.</p>
+<div class="math notranslate nohighlight">
+\[Q = \frac{\pi}{4} \rho V_0 d_0^2 = \frac{\pi}{4} \rho V_1 d_1^2 = \frac{\pi}{2} D h V_2 \qquad \Rightarrow \qquad h = \frac{d_1^2}{2 D}\]</div>
+</li>
 <li><p>Il terzo punto viene risolto applicando il bilancio della quantità
 di moto in direzione verticale per trovare la forza applicata dal
 disco al fluido. Infine si scrive l’equilibrio del disco soggetto

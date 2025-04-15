@@ -257,10 +257,27 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../07_similitudine/exercises.html">7.14. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0706in.html">7.14.1. Diagramma di Moody.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../08_aerodinamica/exercises.html">8.1. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_bl/exercises.html">9.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.1. Exercises</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -444,10 +461,12 @@ e <span class="math notranslate nohighlight">\(d = 1\ cm\)</span>, e la sua port
 sembra diminuire…assumiamo che così non sia), con forze che ammettono
 potenziale e dominio semplicemente connesso. Se si fa l’ipotesi che il
 flusso sia irrotazionale sulla sezione di ingresso, nel caso non
-viscoso, si mantiene irrotazionale ovunque (equazione della vorticità).
-$<span class="math notranslate nohighlight">\(\frac{D \mathbf{\omega}}{Dt} = (\mathbf{\omega} \cdot \mathbf{\nabla}) \mathbf{u}\)</span>$</p>
-<p>Si può quindi scrivere il teorema di Bernoulli nella forma:
-$<span class="math notranslate nohighlight">\(\frac{P}{\rho} + \frac{|\mathbf{u}|^2}{2} + gh = \text{cost}\)</span>$</p>
+viscoso, si mantiene irrotazionale ovunque (equazione della vorticità).</p>
+<div class="math notranslate nohighlight">
+\[\frac{D \mathbf{\omega}}{Dt} = (\mathbf{\omega} \cdot \mathbf{\nabla}) \mathbf{u}\]</div>
+<p>Si può quindi scrivere il teorema di Bernoulli nella forma:</p>
+<div class="math notranslate nohighlight">
+\[\frac{P}{\rho} + \frac{|\mathbf{u}|^2}{2} + gh = \text{cost}\]</div>
 <p>Il problema si risolve mettendo a sistema il teorema di Bernoulli
 (opportunamente semplificato; vedi sopra) con il bilancio integrale di
 massa. Si ipotizza che sulle due sezioni agisca la stessa pressione
@@ -458,12 +477,15 @@ esterna.</p>
   \frac{u_1^2}{2} + g h_1 = \frac{u_2^2}{2} + g h_2 &amp; (Bernoulli)
 \end{cases}\end{split}\]</div>
 <p>Svolgendo i passaggi, ricordando che le superfici sono circolari,
-risulta:
-$<span class="math notranslate nohighlight">\(u_2 = \sqrt{\frac{2 g (h_1-h_2)}{1-\displaystyle\left(\frac{d_2}{d_1}\right)^4}}\)</span>$</p>
-<p>Si calcolano poi le portate volumetriche e di massa. $<span class="math notranslate nohighlight">\(\begin{aligned}
+risulta:</p>
+<div class="math notranslate nohighlight">
+\[u_2 = \sqrt{\frac{2 g (h_1-h_2)}{1-\displaystyle\left(\frac{d_2}{d_1}\right)^4}}\]</div>
+<p>Si calcolano poi le portate volumetriche e di massa.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
   &amp; Q = A_2 u_2 \\
   &amp; \dot{m} = \rho Q
-\end{aligned}\)</span>$</p>
+\end{aligned}\end{split}\]</div>
 </div>
 
     <script type="text/x-thebe-config">
