@@ -189,7 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="03teoria.html">2. Surface tension</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="03teoria.html">2. Surface Tension</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="exercises.html">2.3. Exercises</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">2.3.1. Exercise 2.1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="0302in.html">2.3.2. Exercise 2.2</a></li>
@@ -442,16 +442,15 @@ document.write(`
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Exercise 2.1</div>
-<p class="sd-card-text">Sia <span class="math notranslate nohighlight">\(\theta\)</span> l’angolo di contatto all’interfaccia tra aria, liquido e solido;
-sia <span class="math notranslate nohighlight">\(\gamma\)</span> la tensione superficiale tra aria e liquido; sia <span class="math notranslate nohighlight">\(\rho\)</span> la densità del liquido.
-Determinare l’altezza <span class="math notranslate nohighlight">\(h\)</span> dal liquido in una colonnina cilindrica di raggio <span class="math notranslate nohighlight">\(r = 0.5 \ mm\)</span>  rispetto al livello
-nella vasca. Calcolare poi la pressione all’interno della colonnina.
-(Si può considerare valida l’approssimazione che la pressione agente sulla vasca e sulla superficie
-superiore del liquido all’interno della colonnina sia uguale).</p>
-<p class="sd-card-text">Si considerino condizioni termodinamiche e materiale della colonnina tali che:
-se il liquido è acqua: <span class="math notranslate nohighlight">\(\rho = 999 \ kg/m^3\)</span>, <span class="math notranslate nohighlight">\(\theta={1}^\circ\)</span>, <span class="math notranslate nohighlight">\(\gamma=0.073 N/m\)</span>.
-se il liquido è mercurio: <span class="math notranslate nohighlight">\(\rho = 13579 \ kg/m^3\)</span>, <span class="math notranslate nohighlight">\(\theta={140}^\circ\)</span>, <span class="math notranslate nohighlight">\(\gamma=0.559 N/m\)</span>.</p>
-<p class="sd-card-text">(<span class="math notranslate nohighlight">\(h_{H_2O} = 2.97 \ cm\)</span>, <span class="math notranslate nohighlight">\(P_{H_20} - P_0 =  - 291.95 \ Pa\)</span>; <span class="math notranslate nohighlight">\(h_{Hg} = -1.28 \ cm\)</span>, <span class="math notranslate nohighlight">\(P_{Hg} - P_0 =  1712.87 \ Pa\)</span>)</p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(\theta\)</span> be the contact angle at the interface between air, liquid, and solid;<br />
+let <span class="math notranslate nohighlight">\(\gamma\)</span> be the surface tension between air and liquid; let <span class="math notranslate nohighlight">\(\rho\)</span> be the density of the liquid.<br />
+Determine the height <span class="math notranslate nohighlight">\(h\)</span> of the liquid in a cylindrical capillary tube of radius <span class="math notranslate nohighlight">\(r = 0.5 \ mm\)</span> relative to the level in the reservoir.<br />
+Then calculate the pressure inside the column.<br />
+(We can assume the approximation that the pressure acting on the reservoir and on the top surface of the liquid in the capillary is equal.)</p>
+<p class="sd-card-text">Assume thermodynamic conditions and tube material such that:<br />
+if the liquid is water: <span class="math notranslate nohighlight">\(\rho = 999 \ kg/m^3\)</span>, <span class="math notranslate nohighlight">\(\theta={1}^\circ\)</span>, <span class="math notranslate nohighlight">\(\gamma=0.073 \ N/m\)</span><br />
+if the liquid is mercury: <span class="math notranslate nohighlight">\(\rho = 13579 \ kg/m^3\)</span>, <span class="math notranslate nohighlight">\(\theta={140}^\circ\)</span>, <span class="math notranslate nohighlight">\(\gamma=0.559 \ N/m\)</span></p>
+<p class="sd-card-text">(<span class="math notranslate nohighlight">\(h_{H_2O} = 2.97 \ cm\)</span>, <span class="math notranslate nohighlight">\(P_{H_2O} - P_0 =  - 291.95 \ Pa\)</span>; <span class="math notranslate nohighlight">\(h_{Hg} = -1.28 \ cm\)</span>, <span class="math notranslate nohighlight">\(P_{Hg} - P_0 =  1712.87 \ Pa\)</span>)</p>
 </div>
 </div>
 </div>
@@ -464,58 +463,43 @@ se il liquido è mercurio: <span class="math notranslate nohighlight">\(\rho = 1
 </div>
 </div>
 </div>
-<p><strong>Concetti.</strong> Tensione superficiale. Angolo di contatto. Capillarità. Menisco.</p>
-<p><strong>Svolgimento.</strong> Scrivendo l’equilibrio per il volume di fluido nel capillare si trova
-l’altezza <span class="math notranslate nohighlight">\(h\)</span>. Successivamente si trova la <span class="math notranslate nohighlight">\(p\)</span> usando la legge di
-Stevino. Infine si fanno osservazioni su angolo di contatto, menisco e
-salto di pressione all’interfaccia.</p>
+<p><strong>Concepts.</strong> Surface tension. Contact angle. Capillarity. Meniscus.</p>
+<p><strong>Solution.</strong> By writing the equilibrium for the volume of fluid in the capillary, the height <span class="math notranslate nohighlight">\(h\)</span> is obtained.  Then the pressure <span class="math notranslate nohighlight">\(p\)</span> is found using Stevin’s law. Finally, observations are made about the contact angle, meniscus, and pressure jump across the interface.</p>
 <ul>
-<li><p>Si scrive l’equilibrio del volume di fluido. Il problema è di
-statica. Le forze agenti sono la forza dovuta alla tensione
-superficiale (che agisce sul perimetro della superficie superiore) e
-la forza peso, poichè per ipotesi la pressione agente sulla
-superficie superiore è uguale alla pressione ambiente <span class="math notranslate nohighlight">\(P_a\)</span>; e
-quindi??? Perchè la componente verticale della risultante dovuta
-alla pressione esterna è zero??? Vedere immagine…).</p>
+<li><p>Write the equilibrium for the fluid volume. This is a statics problem.The acting forces are the surface tension (acting on the perimeter of the top surface)  and the weight force, since by assumption the pressure acting on the top surface equals ambient pressure <span class="math notranslate nohighlight">\(P_a\)</span>  (So??? Why is the vertical component of the external pressure resultant zero??? See figure below).</p>
 <div class="math notranslate nohighlight">
 \[F_{\gamma} = F_g \quad \Rightarrow \quad 2\pi r \gamma  \cos \theta = \pi r^2 h \rho g\]</div>
-<p>E quindi:</p>
+<p>And therefore:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}h = \frac{2 \gamma \cos \theta}{\rho g r}
       \quad \Rightarrow \quad
       \begin{cases}
-        h_{H_20} = 2.97 \ cm \\
+        h_{H_2O} = 2.97 \ cm \\
         h_{Hg} = -1.28 \ cm
       \end{cases}\end{split}\]</div>
-<p><em>Commenti sul risultato.</em> L’effetto della
-capillarità è più evidente per tubi stretti (proporzionalità con
-<span class="math notranslate nohighlight">\(1/r\)</span>). La quota <span class="math notranslate nohighlight">\(h\)</span> può assumere sia valori positivi, sia valori
-negativi, in base al valore dell’angolo di contatto: <span class="math notranslate nohighlight">\(h \le 0\)</span>, per
-<span class="math notranslate nohighlight">\(\theta \ge \pi/2\)</span>.</p>
+<p><em>Comments on the result.</em><br />
+The capillarity effect is more significant for narrow tubes (inverse proportionality with <span class="math notranslate nohighlight">\(1/r\)</span>). The height <span class="math notranslate nohighlight">\(h\)</span> can be either positive or negative depending on the contact angle: <span class="math notranslate nohighlight">\(h \le 0\)</span> for <span class="math notranslate nohighlight">\(\theta \ge \pi/2\)</span>.</p>
 </li>
-<li><p>Si calcola la pressione nel fluido in cima alla colonnina sfruttando
-la legge di Stevino.</p>
+<li><p>Calculate the pressure in the fluid at the top of the column using Stevin’s law:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}P = P_0 - \rho g h = P_0 - \frac{2 \gamma \cos \theta}{r}
       \quad \Rightarrow \quad
       \begin{cases}
-        P_{H_20} - P_0 =  - 291.95 \ Pa \\
+        P_{H_2O} - P_0 =  - 291.95 \ Pa \\
         P_{Hg}   - P_0 =  1712.87 \ Pa
       \end{cases}\end{split}\]</div>
-<p><em>Commenti sul risultato.</em> <span class="math notranslate nohighlight">\(P-P_0 \le 0\)</span>, per
-<span class="math notranslate nohighlight">\(\theta \le \pi/2\)</span>. Al contrario <span class="math notranslate nohighlight">\(P-P_0 \ge 0\)</span>, per
-<span class="math notranslate nohighlight">\(\theta \ge \pi/2\)</span>. Questi risultati sono compatibili (meno male)
-con le relazioni tra curvatura (stretta parente del menisco e
-dell’angolo di contatto) e il salto di pressione.</p>
+<p><em>Comments on the result.</em> These results are consistent (thankfully!) with the relationships between curvature  (closely related to the meniscus and contact angle) and the pressure jump. See pictures below for a comparison of the experiment using either water (<span class="math notranslate nohighlight">\(\theta &lt;\pi/2\)</span>) or mercury (<span class="math notranslate nohighlight">\(\theta &gt; \pi/2\)</span>)</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\theta \le \pi/2\)</span></p></th>
+<tr class="row-odd"><th class="head"><p>water</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\theta \le \pi/2\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(h \ge 0\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(P \le P_a\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\theta \ge \pi/2\)</span></p></td>
+<tr class="row-even"><td><p>mercury</p></td>
+<td><p><span class="math notranslate nohighlight">\(\theta \ge \pi/2\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(h \le 0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(P \ge P_a\)</span></p></td>
 </tr>
@@ -523,6 +507,52 @@ dell’angolo di contatto) e il salto di pressione.</p>
 </table>
 </li>
 </ul>
+<!-- 
+# :container: container-fluid 
+# :column: 4 4 4
+# :card: shadow-none border-0
+-->
+<!-- :column: col-lg-6 col-md-6 col-sm-6 col-xs-12 -->
+<table class="table">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><img alt="Difference between meniscus formed by air-water and air-meercury" src="../../../../../_images/menisco-0.png" /></p></td>
+<td><p><img alt="Sketch of the system with mercury instead of water" src="../../../../../_images/cap02-0.png" /></p></td>
+<td><p><img alt="Equilibrium. Why does  not appear in the equilibrium?" src="../../../../../_images/equil-0.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<!--
+````{panels}
+
+```{figure} ../../fig/menisco-0.png
+:width: 100%
+:name: example1
+
+Sub-caption 1
+```
+
+```{figure} ../../fig/cap02-0.png
+:width: 100%
+:name: example1
+
+Sub-caption 1
+```
+
+---
+
+```{figure} ../../fig/equil-0.png
+:width: 100%
+:name: example2
+
+Sub-caption 2
+```
+````
+-->
 </div>
 
     <script type="text/x-thebe-config">
