@@ -7,18 +7,17 @@
 :::{grid-item-card} Exercise 2.1
 :columns: 8
 
-Sia $\theta$ l'angolo di contatto all'interfaccia tra aria, liquido e solido; 
-sia $\gamma$ la tensione superficiale tra aria e liquido; sia $\rho$ la densità del liquido.
-Determinare l'altezza $h$ dal liquido in una colonnina cilindrica di raggio $r = 0.5 \ mm$  rispetto al livello
-nella vasca. Calcolare poi la pressione all'interno della colonnina.
-(Si può considerare valida l'approssimazione che la pressione agente sulla vasca e sulla superficie
-superiore del liquido all'interno della colonnina sia uguale).
+Let $\theta$ be the contact angle at the interface between air, liquid, and solid;  
+let $\gamma$ be the surface tension between air and liquid; let $\rho$ be the density of the liquid.  
+Determine the height $h$ of the liquid column in a cylindrical tube of radius $r = 0.5 \ mm$ relative to the level  
+in the reservoir. Then calculate the pressure inside the column.  
+(It can be assumed that the pressure acting on the reservoir and on the top surface of the liquid in the tube is the same.)
 
-Si considerino condizioni termodinamiche e materiale della colonnina tali che:
-se il liquido è acqua: $\rho = 999 \ kg/m^3$, $\theta={1}^\circ$, $\gamma=0.073 N/m$.
-se il liquido è mercurio: $\rho = 13579 \ kg/m^3$, $\theta={140}^\circ$, $\gamma=0.559 N/m$.
+Assume thermodynamic conditions and tube material such that:  
+if the liquid is water: $\rho = 999 \ kg/m^3$, $\theta={1}^\circ$, $\gamma=0.073 \ N/m$.  
+if the liquid is mercury: $\rho = 13579 \ kg/m^3$, $\theta={140}^\circ$, $\gamma=0.559 \ N/m$.
 
-($h_{H_2O} = 2.97 \ cm$, $P_{H_20} - P_0 =  - 291.95 \ Pa$; $h_{Hg} = -1.28 \ cm$, $P_{Hg} - P_0 =  1712.87 \ Pa$)
+($h_{H_2O} = 2.97 \ cm$, $P_{H_2O} - P_0 =  - 291.95 \ Pa$; $h_{Hg} = -1.28 \ cm$, $P_{Hg} - P_0 =  1712.87 \ Pa$)
 
 :::
 
@@ -39,10 +38,11 @@ se il liquido è mercurio: $\rho = 13579 \ kg/m^3$, $\theta={140}^\circ$, $\gamm
 :::{grid-item-card} Exercise 2.2
 :columns: 8
 
-Due lamine piane uguali parallele sono separate da una distanza $d$. Tra le lamine è 
-presente un sottile strato di liquido. Sono note l'area della superficie $A$ e il perimetro $L$ delle due lamine,
-la pressione ambiente $p_a$, la tensione superficiale del liquido $\gamma$ e l'angolo di contatto $\theta$.
-Si chiede di determinare la componente perpendicolare alle lamine della forza agente su ciascuna delle due lamine.
+Two identical flat parallel plates are separated by a distance $d$.  
+A thin layer of liquid is present between the plates. The surface area $A$ and perimeter $L$  
+of the two plates are known, as well as the ambient pressure $p_a$, the surface tension $\gamma$  
+of the liquid, and the contact angle $\theta$.  
+Determine the component of the force acting **perpendicular** to the plates on each of them.
 
 :::
 
@@ -63,7 +63,9 @@ Si chiede di determinare la componente perpendicolare alle lamine della forza ag
 :::{grid-item-card} Exercise 2.3
 :columns: 8
 
-Si vuole calcolare la forma del pelo libero tra aria ed acqua, di densità $\rho$, nelle vicinanze di una parete piana infinita, conoscendo la tensione superficiale $\gamma$ e l'angolo di contatto a parete $\theta$. La pressione dell'aria è uniforme e uguale a $P_a$.
+Determine the shape of the free surface between air and water, with density $\rho$,  
+near an infinite flat wall, given the surface tension $\gamma$ and the contact angle $\theta$ at the wall.  
+The air pressure is uniform and equal to $P_a$.
 
 :::
 
@@ -77,3 +79,4 @@ Si vuole calcolare la forma del pelo libero tra aria ed acqua, di densità $\rho
 ::::
 
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+

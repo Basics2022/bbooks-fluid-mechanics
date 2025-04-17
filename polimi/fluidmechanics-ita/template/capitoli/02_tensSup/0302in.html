@@ -189,7 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="03teoria.html">2. Surface tension</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="03teoria.html">2. Surface Tension</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="exercises.html">2.3. Exercises</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="0301in.html">2.3.1. Exercise 2.1</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">2.3.2. Exercise 2.2</a></li>
@@ -442,10 +442,11 @@ document.write(`
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Exercise 2.2</div>
-<p class="sd-card-text">Due lamine piane uguali parallele sono separate da una distanza <span class="math notranslate nohighlight">\(d\)</span>. Tra le lamine è
-presente un sottile strato di liquido. Sono note l’area della superficie <span class="math notranslate nohighlight">\(A\)</span> e il perimetro <span class="math notranslate nohighlight">\(L\)</span> delle due lamine,
-la pressione ambiente <span class="math notranslate nohighlight">\(p_a\)</span>, la tensione superficiale del liquido <span class="math notranslate nohighlight">\(\gamma\)</span> e l’angolo di contatto <span class="math notranslate nohighlight">\(\theta\)</span>.
-Si chiede di determinare la componente perpendicolare alle lamine della forza agente su ciascuna delle due lamine.</p>
+<p class="sd-card-text">Two equal, parallel flat plates are separated by a distance <span class="math notranslate nohighlight">\(d\)</span>.<br />
+A thin layer of liquid is present between the plates.<br />
+The area of the surfaces <span class="math notranslate nohighlight">\(A\)</span> and the perimeter <span class="math notranslate nohighlight">\(L\)</span> of the plates are known,<br />
+as well as the ambient pressure <span class="math notranslate nohighlight">\(p_a\)</span>, the surface tension of the liquid <span class="math notranslate nohighlight">\(\gamma\)</span>, and the contact angle <span class="math notranslate nohighlight">\(\theta\)</span>.<br />
+The task is to determine the component of the force acting on each plate that is perpendicular to the plates.</p>
 </div>
 </div>
 </div>
@@ -458,29 +459,26 @@ Si chiede di determinare la componente perpendicolare alle lamine della forza ag
 </div>
 </div>
 </div>
-<p>**Concetti.**Tensione superficiale. Angolo di contatto.</p>
-<p><strong>Svolgimento.</strong> La condizione descritta nell’esercizio è una condizione equilibrio. La
-forza agente su una lamina è dovuta a due fenomeni: la tensione
-superficiale sul perimetro del fluido e la differenza di pressione tra
-fluido e ambiente. Si consideri positiva la forza se è una forza di
-attrazione.</p>
+<p><strong>Concepts.</strong> Surface tension. Contact angle.</p>
+<p><strong>Solution.</strong> The setup described in the exercise is an equilibrium condition.<br />
+The force acting on a plate is due to two effects: surface tension at the fluid perimeter,<br />
+and the pressure difference between the fluid and the ambient.<br />
+We consider the force positive if it is attractive.</p>
 <div class="math notranslate nohighlight">
 \[F = F_\gamma + F_p\]</div>
-<ul class="simple">
-<li><p>Calcolo di <span class="math notranslate nohighlight">\(F_\gamma\)</span>.</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[F_\gamma = \gamma L \sin\gamma\]</div>
 <ul>
-<li><p>Calcolo di <span class="math notranslate nohighlight">\(F_p\)</span>. Il salto di pressione viene calcolato scrivendo
-l’equilibrio all’interfaccia.</p>
+<li><p>Calculation of <span class="math notranslate nohighlight">\(F_\gamma\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[F_\gamma = \gamma L \sin \theta\]</div>
+</li>
+<li><p>Calculation of <span class="math notranslate nohighlight">\(F_p\)</span>. The pressure jump is obtained by applying interfacial equilibrium:</p>
 <div class="math notranslate nohighlight">
 \[F_p = (p_a - p) A\]</div>
-<p>con:</p>
+<p>with:</p>
 <div class="math notranslate nohighlight">
 \[(p_a - p) d = 2 \gamma \cos \theta\]</div>
 </li>
-<li><p>La componente totale richiesta risulta quindi:</p>
+<li><p>The total requested component is thus:</p>
 <div class="math notranslate nohighlight">
 \[F = \frac{2 \gamma A \cos \theta}{d} + L \gamma \sin \theta\]</div>
 <p><img alt="image" src="../../../../../_images/sup01.png" /></p>

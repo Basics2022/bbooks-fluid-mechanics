@@ -189,7 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="03teoria.html">2. Surface tension</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="03teoria.html">2. Surface Tension</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="exercises.html">2.3. Exercises</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="0301in.html">2.3.1. Exercise 2.1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="0302in.html">2.3.2. Exercise 2.2</a></li>
@@ -442,7 +442,7 @@ document.write(`
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Exercise 2.3</div>
-<p class="sd-card-text">Si vuole calcolare la forma del pelo libero tra aria ed acqua, di densità <span class="math notranslate nohighlight">\(\rho\)</span>, nelle vicinanze di una parete piana infinita, conoscendo la tensione superficiale <span class="math notranslate nohighlight">\(\gamma\)</span> e l’angolo di contatto a parete <span class="math notranslate nohighlight">\(\theta\)</span>. La pressione dell’aria è uniforme e uguale a <span class="math notranslate nohighlight">\(P_a\)</span>.</p>
+<p class="sd-card-text">We want to calculate the shape of the free surface between air and water, of density <span class="math notranslate nohighlight">\(\rho\)</span>, near an infinite flat wall, knowing the surface tension <span class="math notranslate nohighlight">\(\gamma\)</span> and the contact angle <span class="math notranslate nohighlight">\(\theta\)</span> at the wall. The air pressure is uniform and equal to <span class="math notranslate nohighlight">\(P_a\)</span>.</p>
 </div>
 </div>
 </div>
@@ -455,87 +455,45 @@ Exercise 2.3</div>
 </div>
 </div>
 </div>
-<p>Poiché si studia il problema nelle vicinanze di una parete piana
-infinita, è lecito assumere che la soluzione non dipenda dalla
-coordinata che descrive la lunghezza della parete, la coordinata <span class="math notranslate nohighlight">\(z\)</span>
-facendo riferimento al disegno (TODO). L’equazione di Young-Laplace per
-una superficie bidmensionale in uno spazio tridimensionale,</p>
+<p>Since the problem is studied near an infinite flat wall, it is reasonable to assume that the solution does not depend on the coordinate describing the wall’s length, namely the <span class="math notranslate nohighlight">\(z\)</span> coordinate (see diagram, TODO). The <strong>Young-Laplace equation</strong> for a 2D surface in 3D space,</p>
 <div class="math notranslate nohighlight">
 \[P_1 - P_2 = \gamma \left[ \dfrac{1}{R_1} + \dfrac{1}{R_2} \right] \ ,\]</div>
-<p>si riduce al caso di una superficie monodimensionale in uno spazio
-bidimensionale, la superficie di contatto è piatta nella direzione <span class="math notranslate nohighlight">\(z\)</span>.
-Se <span class="math notranslate nohighlight">\(R:=R_1\)</span> è il raggio della superficie nei piani paralleli al piano
-<span class="math notranslate nohighlight">\(x-y\)</span> e <span class="math notranslate nohighlight">\(R_2\)</span> il raggio della superficie nei piani paralleli al piano
-<span class="math notranslate nohighlight">\(z-y\)</span>, l’equazione di Young-Laplace si riduce a</p>
+<p>reduces to the case of a 1D surface in 2D space, where the contact surface is flat in the <span class="math notranslate nohighlight">\(z\)</span> direction.</p>
+<p>If <span class="math notranslate nohighlight">\(R := R_1\)</span> is the curvature radius in the <span class="math notranslate nohighlight">\(x\)</span>–<span class="math notranslate nohighlight">\(y\)</span> plane and <span class="math notranslate nohighlight">\(R_2\)</span> is the radius in the <span class="math notranslate nohighlight">\(z\)</span>–<span class="math notranslate nohighlight">\(y\)</span> plane, the Young-Laplace equation simplifies to:</p>
 <div class="math notranslate nohighlight">
 \[P_1 - P_2 = \dfrac{\gamma}{R} =: \gamma \, k  \ ,\]</div>
-<p>poiché
-<span class="math notranslate nohighlight">\(R_2 \rightarrow \infty\)</span>, poiché la quota della superficie di contatto
-non varia al variare di <span class="math notranslate nohighlight">\(z\)</span>, mantenendo <span class="math notranslate nohighlight">\(x\)</span> fissato, e quindi il raggio
-di curvatura della superficie in quella direzione è infinito. É stata
-introdotta la definizione della curvatura <span class="math notranslate nohighlight">\(k := 1/R\)</span>.</p>
-<p>La pressione nell’aria è costante e uguale al valore della pressione
-ambiente <span class="math notranslate nohighlight">\(P_2 = P_a\)</span>. Si può calcolare la pressione <span class="math notranslate nohighlight">\(P_1(x)\)</span> dell’acqua
-a contatto con la superficie utilizzando la legge di Stevino,</p>
+<p>since <span class="math notranslate nohighlight">\(R_2 \rightarrow \infty\)</span> — because the surface height does not vary with <span class="math notranslate nohighlight">\(z\)</span> at fixed <span class="math notranslate nohighlight">\(x\)</span> — the radius of curvature in that direction is infinite. We define the curvature <span class="math notranslate nohighlight">\(k := 1/R\)</span>.</p>
+<p>The pressure in the air is constant, <span class="math notranslate nohighlight">\(P_2 = P_a\)</span>. The pressure <span class="math notranslate nohighlight">\(P_1(x)\)</span> in the water at the interface can be calculated using <strong>Stevino’s law</strong>:</p>
 <div class="math notranslate nohighlight">
 \[P_1(x) - P_a = \rho g y(x) \ ,\]</div>
-<p>essendo <span class="math notranslate nohighlight">\(y(x)\)</span> la quota della
-superficie, rispetto alla quota di riferimento <span class="math notranslate nohighlight">\(y=0\)</span>, scelta come la
-quota alla quale la pressione dell’acqua è uguale alla pressione <span class="math notranslate nohighlight">\(P_a\)</span>.
-Utilizzando l’espressione di <span class="math notranslate nohighlight">\(P_1\)</span> e <span class="math notranslate nohighlight">\(P_2\)</span>, l’equazione di Laplace-Young
-diventa</p>
+<p>where <span class="math notranslate nohighlight">\(y(x)\)</span> is the height of the free surface, relative to the reference level <span class="math notranslate nohighlight">\(y = 0\)</span>, which is chosen such that the water pressure is equal to <span class="math notranslate nohighlight">\(P_a\)</span>. Substituting into the Young-Laplace equation gives:</p>
 <div class="math notranslate nohighlight">
 \[\rho g y(x) = \gamma k(x) \ .\]</div>
-<p>Ricordando che la curvatura di
-una superficie rappresentata dalla funzione <span class="math notranslate nohighlight">\(y(x)\)</span> può essere espressa
-come (TODO: aggiungere i dettagli ?),</p>
+<p>Recall that the curvature of a surface described by <span class="math notranslate nohighlight">\(y(x)\)</span> is given by (TODO: add derivation?):</p>
 <div class="math notranslate nohighlight">
 \[k(x) = \dfrac{y''(x)}{\left( 1 + y'(x)^2 \right)^{3/2}} \ ,\]</div>
-<p>si
-ricava il problema differenziale che descrive la forma della superficie
-di contatto,</p>
+<p>leading to the nonlinear differential equation governing the free surface shape:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
  \rho g y(x) - \dfrac{y''(x)}{\left( 1 + y'(x)^2 \right)^{3/2}} = 0 \\
  y'(x=0) = -\dfrac{1}{\tan\theta} \\
  y(x\rightarrow \infty) \rightarrow 0
 \end{cases}\end{split}\]</div>
-<p>con l’equazione di Young-Laplace accompagnata dalla
-condizione al contorno a parete, in <span class="math notranslate nohighlight">\(x=0\)</span>, che lega la derivata della
-superficie all’angolo di contatto, e dalla condizione all’infinito che
-identifica la quota del pelo libero lontano dalla parete come la quota
-alla quale la pressione è uguale alla pressione ambiente. Definendo la
-costante <span class="math notranslate nohighlight">\(a^2:=\frac{2\gamma}{\rho g}\)</span> e integrando una volta
-l’equazione differenziale si ottiene</p>
+<p>This is the Young-Laplace equation with boundary conditions: one at the wall (<span class="math notranslate nohighlight">\(x=0\)</span>), relating the surface slope to the contact angle, and one at infinity ensuring the surface returns to the flat level where the pressure equals <span class="math notranslate nohighlight">\(P_a\)</span>.</p>
+<p>Letting <span class="math notranslate nohighlight">\(a^2 := \frac{2\gamma}{\rho g}\)</span>, and integrating the equation once, we get:</p>
 <div class="math notranslate nohighlight">
 \[\dfrac{y^2}{a^2} + \dfrac{1}{(1 + y'(x)^2)^{1/2}} = A \ ,\]</div>
-<p>dove <span class="math notranslate nohighlight">\(A\)</span>
-rappresenta la costante di integrazione. Affinchè la quota della
-superficie tenda alla quota di riferimento a grande distanza della
-parete, <span class="math notranslate nohighlight">\(y(x\rightarrow\infty) \rightarrow 0\)</span>, «con una sensata
-regolarità», è necessario che anche la sua pendenza si annulli,
-<span class="math notranslate nohighlight">\(y'(x\rightarrow\infty) \rightarrow 0\)</span>. Questa condizione impone il
-valore della costante di integrazione, <span class="math notranslate nohighlight">\(A = 1\)</span>. Integrando nuovamente
-l’equazione,</p>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is the integration constant. To ensure <span class="math notranslate nohighlight">\(y(x\rightarrow\infty) \rightarrow 0\)</span> with a «reasonable smoothness,» we also require <span class="math notranslate nohighlight">\(y'(x\rightarrow\infty) \rightarrow 0\)</span>, which implies <span class="math notranslate nohighlight">\(A = 1\)</span>.</p>
+<p>A second integration of the equation:</p>
 <div class="math notranslate nohighlight">
 \[\dfrac{y^2}{a^2} + \dfrac{1}{(1 + y'(x)^2)^{1/2}} = 1 \ ,\]</div>
-<p>si ottiene
-la soluzione del problema (TODO: aggiungere i dettagli),</p>
+<p>yields the analytical solution (TODO: add derivation):</p>
 <div class="math notranslate nohighlight">
 \[\dfrac{1}{\sqrt{2 a^2 - y(x)^2}} +
  \dfrac{a}{\sqrt{2}} \, \text{Ch}^{-1} \left( \dfrac{\sqrt{2} a}{y(x)} \right) = x + B \ ,\]</div>
-<p>con la costante di integrazione <span class="math notranslate nohighlight">\(B\)</span> da calcolare utilizzando la
-condizione al contorno a parete.</p>
-<p><strong>Osservazione.</strong> Questo problema fornisce un esempio di calcolo della
-forma della superficie di contatto tra due fluidi. Nonostante il
-problema studiato sia uno dei più semplici che si possano immaginare, la
-sua soluzione analitica richiede già un notevole impegno. Coloro che
-nutrono passione per l’argomento, sono invitati a calcolare la forma
-dell’interfaccia tra acqua e aria in un dominio delimitato da due pareti
-verticali, risolvendo numericamente (esiste una soluzione analitica
-anche per questo problema, ma risulta ancora più «criptica» di quella
-ricavata per il problema con una sola parete) il problema differenziale
-non lineare,</p>
+<p>with <span class="math notranslate nohighlight">\(B\)</span> determined from the wall boundary condition.</p>
+<p><strong>Remark.</strong><br />
+This problem provides an example of how to compute the shape of a fluid interface. Despite being one of the simplest imaginable cases, its analytical solution already requires significant effort. Enthusiasts are invited to compute the interface shape between air and water confined between two vertical walls, by numerically solving the nonlinear differential problem (an analytical solution exists, but is even more “cryptic” than the one derived above):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
  \rho g y(x) - \dfrac{y''(x)}{\left( 1 + y'(x)^2 \right)^{3/2}} = 0 \quad , \qquad x \in [0,\,L] \\
