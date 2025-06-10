@@ -98,6 +98,10 @@ parts:
   - file: polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/10teoria
     sections:
     - file: polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/exercises
+- caption: Compressible Fluid Mechanics
+  numbered: true
+  chapters:
+  - file: ch/compressible/bernoulli
 # - caption: Incompressible Fluid Mechanics
 #   numbered: True
 # sections:
