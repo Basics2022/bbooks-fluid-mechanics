@@ -47,7 +47,6 @@ Governing equations of fluid mechanics can be recast to get a dynamical equation
 
 $$\rho \dfrac{D h^t}{D t} = - \rho \mathbf{u} \cdot \nabla \chi + \rho \dfrac{\partial P}{\partial t} + \nabla \cdot \left( \mathbb{S} \cdot \mathbf{u} - \mathbf{q} \right) \ . $$
 
-Conservative form is obtained summing $h^t \frac{D \rho}{D t} = - \rho h^t \nabla \cdot \mathbf{u}$
 
 ```
 

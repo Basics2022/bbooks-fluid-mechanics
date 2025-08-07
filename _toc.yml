@@ -89,6 +89,7 @@ parts:
       - file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/0707in
   - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/08teoria
     sections:
+    - file: code/notebooks/weissinger
     - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/exercises
       sections:
       - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/0807in 
