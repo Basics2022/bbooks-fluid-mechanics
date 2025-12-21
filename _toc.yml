@@ -99,7 +99,7 @@ parts:
   - file: polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/10teoria
     sections:
     - file: polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/rans_energy
-    - file: polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/kolomogorov
+    - file: polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/kolmogorov
     - file: polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/exercises
 - caption: Compressible Fluid Mechanics
   numbered: true
