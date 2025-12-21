@@ -518,7 +518,7 @@ document.write(`
   <div class="tex2jax_ignore mathjax_ignore section" id="rans-and-energy-equations">
 <span id="fluid-mechanics-turbulence-rans-energy"></span><h1><span class="section-number">10.1. </span>RANS and energy equations<a class="headerlink" href="#rans-and-energy-equations" title="Permalink to this heading">#</a></h1>
 <div class="section" id="rans">
-<h2><span class="section-number">10.1.1. </span>RANS<a class="headerlink" href="#rans" title="Permalink to this heading">#</a></h2>
+<span id="fluid-mechanics-turbulence-rans-energy-rans"></span><h2><span class="section-number">10.1.1. </span>RANS<a class="headerlink" href="#rans" title="Permalink to this heading">#</a></h2>
 <p><strong>Incompressible Navier—Stokes equations.</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
@@ -575,7 +575,7 @@ Proof<div class="sd-summary-down docutils">
 \end{cases}\end{split}\]</div>
 </div>
 <div class="section" id="energy-equations">
-<h2><span class="section-number">10.1.2. </span>Energy equations<a class="headerlink" href="#energy-equations" title="Permalink to this heading">#</a></h2>
+<span id="fluid-mechanics-turbulence-rans-energy-energy"></span><h2><span class="section-number">10.1.2. </span>Energy equations<a class="headerlink" href="#energy-equations" title="Permalink to this heading">#</a></h2>
 <p>Here, kinetic energy equation, average kinetic energy, kinetic energy of the average field, kinetic energy of the fluctuation and its average,…
 Kinetic energy per unit-mass is</p>
 <div class="math notranslate nohighlight">
@@ -595,6 +595,8 @@ Kinetic energy per unit-mass is</p>
 <div class="math notranslate nohighlight">
 \[\partial_t \frac{\mathbf{u} \cdot \mathbf{u}}{2} + ( \mathbf{u} \cdot \nabla ) \frac{\mathbf{u} \cdot \mathbf{u}}{2} - \mathbf{u} \cdot \nabla \cdot \mathbb{S} + \mathbf{u} \cdot \nabla P = 0\]</div>
 <p>As shown in the box below, the last two contributions can be rearranged to get</p>
+<div class="math notranslate nohighlight">
+\[\frac{D K}{Dt} = \nabla \cdot \left( \nu \nabla K - P \mathbf{u} \right) - \nu | \nabla \mathbf{u} |^2 \ .\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Rearranging terms<div class="sd-summary-down docutils">
@@ -608,7 +610,8 @@ Rearranging terms<div class="sd-summary-down docutils">
   \mathbf{u} \cdot \nabla \cdot \mathbb{S} 
   &amp; = \nu \mathbf{u} \cdot \nabla \cdot \left( \nabla \mathbf{u} + \nabla^T \mathbf{u} \right) = \\
   &amp; = \nu \mathbf{u} \cdot \Delta \mathbf{u} = \\
-  &amp; = \nu \nabla \cdot \left( \left( \nabla \mathbf{u} \right) \cdot \mathbf{u} \right) - \nu |\nabla \mathbf{u}|^2
+  &amp; = \nu \nabla \cdot \left( \left( \nabla \mathbf{u} \right) \cdot \mathbf{u} \right) - \nu \nabla \mathbf{u} : \nabla \mathbf{u} = \\
+  &amp; = \nabla \cdot \left(  \nu \nabla \frac{\mathbf{u} \cdot \mathbf{u}}{2} \right) - \nu |\nabla \mathbf{u}|^2 \ ,
 \end{aligned}\end{split}\]</div>
 <p class="sd-card-text">as <span class="math notranslate nohighlight">\(\nabla \cdot \nabla^T \mathbf{u} = \partial_i \partial_j u_i = \partial_j u_{i/i} = 0\)</span>.</p>
 <p class="sd-card-text">Pressure term can be recast as a divergence contribution as</p>
@@ -633,15 +636,21 @@ Rearranging terms<div class="sd-summary-down docutils">
 <p class="sd-card-text"><strong>todo</strong></p>
 </div>
 </details><p><strong>Kinetic energy of the average field, <span class="math notranslate nohighlight">\(K_{\overline{\mathbf{u}}}\)</span>.</strong> Taking the scalar product <span class="math notranslate nohighlight">\(\overline{\mathbf{u}} \cdot \text{RANS}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  \dfrac{\overline{D} K_{\overline{\mathbf{u}}}}{\overline{D}t} 
+  = \nabla \cdot \left( \nu \nabla K_{\overline{\mathbf{u}}} - \overline{\mathbf{u}' \otimes \mathbf{u}'} \cdot \overline{\mathbf{u}} - \overline{P} \overline{\mathbf{u}} \right) 
+  + \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} - \nu \nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}}
+\end{aligned}\]</div>
 <p>Source contributions:</p>
 <ul class="simple">
 <li><p>turbulent energy «production» (as it will be more clear later), <span class="math notranslate nohighlight">\(\nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'}\)</span>. This contribution has no defined sign. It appears with the opposite side in the equation of the turbulent energy: it could be interpreted as a term that (mainly?) removes energy from the average flow to produce turbulent kinetic energy</p></li>
-<li><p>viscous dissipation from the average flow (always non positive), <span class="math notranslate nohighlight">\(- \nu \overline{\nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}}} \le 0\)</span>. Is this relevant for large Reynolds number?</p></li>
+<li><p>viscous dissipation from the average flow (always non positive), <span class="math notranslate nohighlight">\(- \nu \nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}} \le 0\)</span>. Is this relevant for large Reynolds number?</p></li>
 </ul>
 <p>Flux contributions: …</p>
 <div class="math notranslate nohighlight">
 \[\dfrac{\overline{D} K_{\overline{\mathbf{u}}}}{\overline{D} t} = \nabla \cdot \boldsymbol\Phi_{K_{\overline{\mathbf{u}}}} - \mathscr{P} - \mathscr{D}_{\overline{\mathbf{u}}}\]</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Rearranging terms<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -676,6 +685,11 @@ Rearranging terms<div class="sd-summary-down docutils">
 \end{aligned}\]</div>
 </div>
 </details><p><strong>Kinetic energy of the fluctuation, <span class="math notranslate nohighlight">\(k'\)</span>.</strong> Taking the scalar product <span class="math notranslate nohighlight">\(\mathbf{u}' \cdot \text{Fluctuation equations}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\frac{D k'}{Dt} =
+  - \nabla \overline{\mathbf{u}} : \mathbf{u}' \otimes \mathbf{u}' - \overline{\mathbf{u}'\otimes \mathbf{u}'} : \nabla \mathbf{u}' - \nu \nabla \mathbf{u}' : \nabla \mathbf{u}' 
+  + \nabla \cdot \left( \overline{\mathbf{u}' \otimes \mathbf{u}'} \cdot \mathbf{u}' +  \nu \nabla k' - P' \mathbf{u}' \right)
+\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Rearranging terms<div class="sd-summary-down docutils">

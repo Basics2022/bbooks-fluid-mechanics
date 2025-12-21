@@ -1,6 +1,7 @@
 (fluid-mechanics:turbulence:rans-energy)=
 # RANS and energy equations
 
+(fluid-mechanics:turbulence:rans-energy:rans)=
 ## RANS
 
 **Incompressible Navier&mdash;Stokes equations.**
@@ -69,6 +70,7 @@ $$\begin{cases}
 \end{cases}$$
 
 
+(fluid-mechanics:turbulence:rans-energy:energy)=
 ## Energy equations
 
 Here, kinetic energy equation, average kinetic energy, kinetic energy of the average field, kinetic energy of the fluctuation and its average,...
@@ -95,6 +97,8 @@ $$\partial_t \frac{\mathbf{u} \cdot \mathbf{u}}{2} + ( \mathbf{u} \cdot \nabla )
 
 As shown in the box below, the last two contributions can be rearranged to get
 
+$$\frac{D K}{Dt} = \nabla \cdot \left( \nu \nabla K - P \mathbf{u} \right) - \nu | \nabla \mathbf{u} |^2 \ .$$
+
 ```{dropdown} Rearranging terms
 
 Assuming uniform viscosity $\nu$
@@ -103,7 +107,8 @@ $$\begin{aligned}
   \mathbf{u} \cdot \nabla \cdot \mathbb{S} 
   & = \nu \mathbf{u} \cdot \nabla \cdot \left( \nabla \mathbf{u} + \nabla^T \mathbf{u} \right) = \\
   & = \nu \mathbf{u} \cdot \Delta \mathbf{u} = \\
-  & = \nu \nabla \cdot \left( \left( \nabla \mathbf{u} \right) \cdot \mathbf{u} \right) - \nu |\nabla \mathbf{u}|^2
+  & = \nu \nabla \cdot \left( \left( \nabla \mathbf{u} \right) \cdot \mathbf{u} \right) - \nu \nabla \mathbf{u} : \nabla \mathbf{u} = \\
+  & = \nabla \cdot \left(  \nu \nabla \frac{\mathbf{u} \cdot \mathbf{u}}{2} \right) - \nu |\nabla \mathbf{u}|^2 \ ,
 \end{aligned}$$
 
 as $\nabla \cdot \nabla^T \mathbf{u} = \partial_i \partial_j u_i = \partial_j u_{i/i} = 0$.
@@ -134,16 +139,21 @@ $$\overline{\mathbf{u} \cdot \nabla K} = \overline{u}$$
 
 **Kinetic energy of the average field, $K_{\overline{\mathbf{u}}}$.** Taking the scalar product $\overline{\mathbf{u}} \cdot \text{RANS}$
 
+$$\begin{aligned}
+  \dfrac{\overline{D} K_{\overline{\mathbf{u}}}}{\overline{D}t} 
+  = \nabla \cdot \left( \nu \nabla K_{\overline{\mathbf{u}}} - \overline{\mathbf{u}' \otimes \mathbf{u}'} \cdot \overline{\mathbf{u}} - \overline{P} \overline{\mathbf{u}} \right) 
+  + \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} - \nu \nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}}
+\end{aligned}$$
+
 Source contributions:
 - turbulent energy "production" (as it will be more clear later), $\nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'}$. This contribution has no defined sign. It appears with the opposite side in the equation of the turbulent energy: it could be interpreted as a term that (mainly?) removes energy from the average flow to produce turbulent kinetic energy
-- viscous dissipation from the average flow (always non positive), $- \nu \overline{\nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}}} \le 0$. Is this relevant for large Reynolds number?
+- viscous dissipation from the average flow (always non positive), $- \nu \nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}} \le 0$. Is this relevant for large Reynolds number?
 
 Flux contributions: ...
 
 $$\dfrac{\overline{D} K_{\overline{\mathbf{u}}}}{\overline{D} t} = \nabla \cdot \boldsymbol\Phi_{K_{\overline{\mathbf{u}}}} - \mathscr{P} - \mathscr{D}_{\overline{\mathbf{u}}}$$
 
 ```{dropdown} Rearranging terms
-:open:
 
 $$\begin{cases}
   \partial_t \overline{\mathbf{u}} + ( \overline{\mathbf{u}} \cdot \nabla ) \overline{\mathbf{u}} + \nabla \cdot \overline{\mathbf{u}' \otimes  \mathbf{u}'} - \nu \Delta \overline{\mathbf{u}} + \nabla \overline{P} = \mathbf{0} \\
@@ -173,14 +183,15 @@ $$\begin{aligned}
   + \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} - \nu \nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}}
 \end{aligned}$$
 
-
-
-
-
 ```
 
 
 **Kinetic energy of the fluctuation, $k'$.** Taking the scalar product $\mathbf{u}' \cdot \text{Fluctuation equations}$
+
+$$\frac{D k'}{Dt} =
+  - \nabla \overline{\mathbf{u}} : \mathbf{u}' \otimes \mathbf{u}' - \overline{\mathbf{u}'\otimes \mathbf{u}'} : \nabla \mathbf{u}' - \nu \nabla \mathbf{u}' : \nabla \mathbf{u}' 
+  + \nabla \cdot \left( \overline{\mathbf{u}' \otimes \mathbf{u}'} \cdot \mathbf{u}' +  \nu \nabla k' - P' \mathbf{u}' \right)
+$$
 
 ```{dropdown} Rearranging terms
 

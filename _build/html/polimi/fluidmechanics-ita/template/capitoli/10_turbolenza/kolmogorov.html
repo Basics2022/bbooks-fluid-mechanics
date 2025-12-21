@@ -66,6 +66,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/kolmogorov';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
@@ -506,6 +508,53 @@ document.write(`
 <span id="fluid-mechanics-turbulence-rans-energy"></span><h1><span class="section-number">10.2. </span>Scales of turbulence<a class="headerlink" href="#scales-of-turbulence" title="Permalink to this heading">#</a></h1>
 <p>Kolmogorov scales: large, inertial, viscous scales</p>
 <p>Power-law for inertial scales…</p>
+<p>Turbulence involves different characteristic scales<a class="footnote-reference brackets" href="#scale-qualitative" id="id1">1</a>, with their own characteristic length, time and relevant physical processes. While large scales usually depends on teh geometry of the flow, smaller scales have universal features for different flows: within this universal range, inertial subrange and dissipation range can be identified.</p>
+<p><strong>Large scales.</strong></p>
+<p><strong>Inertial subrange.</strong> Assumption: turbulence in equilibrium. Spectral energy density <span class="math notranslate nohighlight">\(E(\kappa)\)</span><a class="footnote-reference brackets" href="#spectral-energy-density" id="id2">2</a> is written as a function of dissipation <span class="math notranslate nohighlight">\(\varepsilon\)</span> (equal to production, in equilibrium), and a length scale <span class="math notranslate nohighlight">\(\ell\)</span> or a wave number <span class="math notranslate nohighlight">\(\kappa\)</span>. From dimensional analysis</p>
+<div class="math notranslate nohighlight">
+\[[ E(\kappa) ] = \text{L}^3 \text{T}^{-2} \quad , \quad [ \varepsilon ] = \text{L}^2 \text{T}^{-3} \quad , \quad [ \kappa ] = \text{L}^{-1} \ ,\]</div>
+<p>it follows</p>
+<div class="math notranslate nohighlight">
+\[E \propto \varepsilon^{\frac{2}{3}} \kappa^{-\frac{5}{3}}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Dimensional analysis<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">From</p>
+<div class="math notranslate nohighlight">
+\[E = \varepsilon^\alpha \kappa^\beta \ ,\]</div>
+<p class="sd-card-text">it follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+   3 = 2 \alpha - \beta \\
+  -2 =-3 \alpha 
+\end{cases}\end{split}\]</div>
+<p class="sd-card-text">and thus <span class="math notranslate nohighlight">\(\alpha = \frac{2}{3}\)</span> and <span class="math notranslate nohighlight">\(\beta = \frac{4}{3} - 3 = - \frac{5}{3}\)</span>.</p>
+</div>
+</details><p><strong>Kolmogorov scales.</strong> Two relevant physical quantities: <span class="math notranslate nohighlight">\(\nu\)</span> kinematic viscosity, average rate of dissipation per unit-mass <span class="math notranslate nohighlight">\(\varepsilon\)</span> or <span class="math notranslate nohighlight">\(\mathscr{D}\)</span>, with physical dimensions</p>
+<div class="math notranslate nohighlight">
+\[[\nu] = \frac{\text{L}^2}{\text{T}} \quad , \quad [ \mathscr{D} ] = \frac{\text{L}^2}{\text{T}^3} \ .\]</div>
+<p>With these two relevant physical quantities, it’s possible to build characteristic length, time, velocity and Reynolds number (built with the characteristic dimensions, no surprise it goes to 1)</p>
+<div class="math notranslate nohighlight">
+\[
+\ell_{\eta} := \left( \frac{\nu^3}{\varepsilon} \right)^{\frac{1}{4}}  \quad , \quad 
+\tau_{\eta} := \left( \frac{\nu}{\varepsilon} \right)^{\frac{1}{2}}  \quad , \quad 
+   U_{\eta} := \frac{\ell_{\eta}}{\tau_{\eta}} = \left( \nu \varepsilon \right)^{\frac{1}{4}}  \quad , \quad 
+  Re_{\eta} := \frac{U_{\eta} \ell_{\mu}}{\nu} = 1
+\]</div>
+<p><strong>todo</strong> evaluate the ratio of characteristic dimension of the viscous range with the chacteristic dimension of the problem in terms of Reynolds” number. Which assumptions to be made to get a Reynolds number of the large scales? Especially about <span class="math notranslate nohighlight">\(\varepsilon\)</span>.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="scale-qualitative"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Roughly speaking, the characteristic dimension, velocity,… of the vortices. But what’s a vortex?</p>
+</dd>
+<dt class="label" id="spectral-energy-density"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Spectral energy density is defined as the energy density per unit wave-length, <span class="math notranslate nohighlight">\(E = \int_{\kappa = 0}^{+\infty} E(\kappa) \, d \kappa\)</span>, and so it has physical dimension <span class="math notranslate nohighlight">\([ E(\kappa) ] = [ E ][ L ] = L^3 T^{-2}\)</span>.</p>
+</dd>
+</dl>
 </div>
 
     <script type="text/x-thebe-config">
