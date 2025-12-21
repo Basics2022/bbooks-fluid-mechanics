@@ -71,20 +71,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/rans_energy';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
-    <link rel="next" title="10.2. Exercises" href="exercises.html" />
+    <link rel="next" title="10.2. Scales of turbulence" href="kolmogorov.html" />
     <link rel="prev" title="10. Instability and turbulence" href="10teoria.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESMWKL80JZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ESMWKL80JZ');
-</script>
-
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -282,7 +273,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="10teoria.html">10. Instability and turbulence</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">10.1. RANS and energy equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercises.html">10.2. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kolmogorov.html">10.2. Scales of turbulence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">10.3. Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -541,7 +533,7 @@ Proof<div class="sd-summary-down docutils">
 </div>
 </details><p><strong>Incompressible Reynolds-averaged Navier—Stokes equations, RANS.</strong> Applying average operator<a class="footnote-reference brackets" href="#avg-operator" id="id1">1</a> to NS equations</p>
 <div class="math notranslate nohighlight">
-\[\overline{\text{NSE}} \ ,\]</div>
+\[\overline{\text{NS}} \ ,\]</div>
 <p>after having defined the relation between the realization of a field, its average and fluctuation,</p>
 <div class="math notranslate nohighlight">
 \[f = \overline{f} + f' \ ,\]</div>
@@ -566,12 +558,178 @@ Proof<div class="sd-summary-down docutils">
   \partial_t \mathbf{u}' + \nabla \cdot (\mathbf{u} \otimes \mathbf{u}) - \nabla \cdot (\overline{\mathbf{u}} \otimes \overline{\mathbf{u}}) - \nabla \cdot \overline{ (\mathbf{u}' \otimes \mathbf{u}')} -  \nu \Delta \mathbf{u}' + \nabla P' = \mathbf{0} \\
   \nabla \cdot \mathbf{u}' = 0 \ ,
 \end{cases}\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  \partial_t \mathbf{u}' + \nabla \cdot (\overline{\mathbf{u}} \otimes \mathbf{u}') + \nabla \cdot (\mathbf{u}' \otimes \overline{\mathbf{u}}) + \nabla \cdot (\mathbf{u}' \otimes \mathbf{u}' ) - \nabla \cdot \overline{ (\mathbf{u}' \otimes \mathbf{u}')} -  \nu \Delta \mathbf{u}' + \nabla P' = \mathbf{0} \\
+  \nabla \cdot \mathbf{u}' = 0 \ ,
+\end{cases}\end{split}\]</div>
 </div>
 <div class="section" id="energy-equations">
 <h2><span class="section-number">10.1.2. </span>Energy equations<a class="headerlink" href="#energy-equations" title="Permalink to this heading">#</a></h2>
-<p>Here, kinetic energy equation, average kinetic energy, kinetic energy of the average field, kinetic energy of the fluctuation,…</p>
-<p><strong>Kinetic energy equation.</strong> Ta</p>
-<hr class="footnotes docutils" />
+<p>Here, kinetic energy equation, average kinetic energy, kinetic energy of the average field, kinetic energy of the fluctuation and its average,…
+Kinetic energy per unit-mass is</p>
+<div class="math notranslate nohighlight">
+\[K := \frac{\mathbf{u} \cdot \mathbf{u}}{2} \ ,\]</div>
+<p>and it can be recast using the average and the fluctuation fields</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ K
+ &amp; = \frac{\mathbf{u} \cdot \mathbf{u}}{2} = \\
+ &amp; = \frac{( \overline{\mathbf{u}} + \mathbf{u}') \cdot (\overline{\mathbf{u}} + \mathbf{u}')}{2} = \\
+ &amp; = \frac{\overline{\mathbf{u}} \cdot \overline{\mathbf{u}}}{2} + \frac{\mathbf{u}' \cdot \mathbf{u}'}{2} + \overline{\mathbf{u}} \cdot \mathbf{u}'
+\end{aligned}\end{split}\]</div>
+<p>being the first tern the kinetic energy of the average flow, the second term the kinetic energy of the fluctuations, and the last term the cross-effects. Taking average, to get the average kinetic energy <span class="math notranslate nohighlight">\(\overline{K}\)</span> the last term disappears, and a relation between the average kinetic energy, the energy of the average flow and the turbulent energy (defined as the average of the kinetic energy of the fluctuations) arises</p>
+<div class="math notranslate nohighlight">
+\[\overline{K} = K_{\overline{\mathbf{u}}} + k \ .\]</div>
+<p><strong>Kinetic energy, <span class="math notranslate nohighlight">\(K\)</span>.</strong> Taking the dot-product of the NS equations with the velocity field, <span class="math notranslate nohighlight">\(\mathbf{u} \cdot \text{NS}\)</span>, and exploiting product rule for derivatives,</p>
+<div class="math notranslate nohighlight">
+\[\partial_t \frac{\mathbf{u} \cdot \mathbf{u}}{2} + ( \mathbf{u} \cdot \nabla ) \frac{\mathbf{u} \cdot \mathbf{u}}{2} - \mathbf{u} \cdot \nabla \cdot \mathbb{S} + \mathbf{u} \cdot \nabla P = 0\]</div>
+<p>As shown in the box below, the last two contributions can be rearranged to get</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Rearranging terms<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Assuming uniform viscosity <span class="math notranslate nohighlight">\(\nu\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbf{u} \cdot \nabla \cdot \mathbb{S} 
+  &amp; = \nu \mathbf{u} \cdot \nabla \cdot \left( \nabla \mathbf{u} + \nabla^T \mathbf{u} \right) = \\
+  &amp; = \nu \mathbf{u} \cdot \Delta \mathbf{u} = \\
+  &amp; = \nu \nabla \cdot \left( \left( \nabla \mathbf{u} \right) \cdot \mathbf{u} \right) - \nu |\nabla \mathbf{u}|^2
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">as <span class="math notranslate nohighlight">\(\nabla \cdot \nabla^T \mathbf{u} = \partial_i \partial_j u_i = \partial_j u_{i/i} = 0\)</span>.</p>
+<p class="sd-card-text">Pressure term can be recast as a divergence contribution as</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{u} \cdot \nabla P = \nabla \cdot ( P \mathbf{u} ) - P \underbrace{ \nabla \cdot \mathbf{u} }_{=0} = \nabla \cdot ( P \mathbf{u} ) \ .\]</div>
+</div>
+</details><p><strong>Average kinetic energy, <span class="math notranslate nohighlight">\(\overline{K}\)</span>.</strong> Taking the average of the kinetic energy equation,</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Rearranging terms<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\partial_t \frac{\mathbf{u} \cdot \mathbf{u}}{2} + ( \mathbf{u} \cdot \nabla ) \frac{\mathbf{u} \cdot \mathbf{u}}{2} - \mathbf{u} \cdot \nabla \cdot \mathbb{S} + \mathbf{u} \cdot \nabla P = 0\]</div>
+<div class="math notranslate nohighlight">
+\[\overline{\partial_t \frac{\mathbf{u} \cdot \mathbf{u}}{2}} = \partial_t \overline{K}\]</div>
+<div class="math notranslate nohighlight">
+\[\overline{\mathbf{u} \cdot \nabla K} = \overline{u}\]</div>
+<p class="sd-card-text">…</p>
+<p class="sd-card-text"><strong>todo</strong></p>
+</div>
+</details><p><strong>Kinetic energy of the average field, <span class="math notranslate nohighlight">\(K_{\overline{\mathbf{u}}}\)</span>.</strong> Taking the scalar product <span class="math notranslate nohighlight">\(\overline{\mathbf{u}} \cdot \text{RANS}\)</span></p>
+<p>Source contributions:</p>
+<ul class="simple">
+<li><p>turbulent energy «production» (as it will be more clear later), <span class="math notranslate nohighlight">\(\nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'}\)</span>. This contribution has no defined sign. It appears with the opposite side in the equation of the turbulent energy: it could be interpreted as a term that (mainly?) removes energy from the average flow to produce turbulent kinetic energy</p></li>
+<li><p>viscous dissipation from the average flow (always non positive), <span class="math notranslate nohighlight">\(- \nu \overline{\nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}}} \le 0\)</span>. Is this relevant for large Reynolds number?</p></li>
+</ul>
+<p>Flux contributions: …</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{\overline{D} K_{\overline{\mathbf{u}}}}{\overline{D} t} = \nabla \cdot \boldsymbol\Phi_{K_{\overline{\mathbf{u}}}} - \mathscr{P} - \mathscr{D}_{\overline{\mathbf{u}}}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Rearranging terms<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  \partial_t \overline{\mathbf{u}} + ( \overline{\mathbf{u}} \cdot \nabla ) \overline{\mathbf{u}} + \nabla \cdot \overline{\mathbf{u}' \otimes  \mathbf{u}'} - \nu \Delta \overline{\mathbf{u}} + \nabla \overline{P} = \mathbf{0} \\
+  \nabla \cdot \overline{\mathbf{u}} = 0 \ ,
+\end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\partial_t K_{\overline{\mathbf{u}}}\]</div>
+<div class="math notranslate nohighlight">
+\[\overline{\mathbf{u}} \cdot (\overline{\mathbf{u}} \cdot \nabla ) \overline{\mathbf{u}} = \overline{\mathbf{u}} \cdot \nabla K_{\overline{\mathbf{u}}}\]</div>
+<div class="math notranslate nohighlight">
+\[\overline{\mathbf{u}} \cdot \nabla \cdot \overline{\mathbf{u}' \otimes \mathbf{u}'} = U_j ( \overline{ u'_i u'_j } )_{/i} = \nabla \cdot \left( \overline{\mathbf{u}' \otimes \mathbf{u}'} \cdot \overline{\mathbf{u}} \right) - \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} \]</div>
+<p class="sd-card-text">…</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0 &amp; = \dfrac{\overline{D} K_{\overline{\mathbf{u}}}}{\overline{D}t} + \\
+    &amp; + \nabla \cdot \left( \overline{\mathbf{u}' \otimes \mathbf{u}'} \cdot \overline{\mathbf{u}} \right) - \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} + \\
+    &amp; - \nabla \cdot \left( \nu \nabla K_{\overline{\mathbf{u}}} \right) + \nu \nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}} + \\
+    &amp; + \nabla \cdot \left( \overline{P} \overline{\mathbf{u}} \right)
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">or collecting divergence (or flux, in an integral formulation) terms and volume source terms</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  \dfrac{\overline{D} K_{\overline{\mathbf{u}}}}{\overline{D}t} 
+  = \nabla \cdot \left( \nu \nabla K_{\overline{\mathbf{u}}} - \overline{\mathbf{u}' \otimes \mathbf{u}'} \cdot \overline{\mathbf{u}} - \overline{P} \overline{\mathbf{u}} \right) 
+  + \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} - \nu \nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}}
+\end{aligned}\]</div>
+</div>
+</details><p><strong>Kinetic energy of the fluctuation, <span class="math notranslate nohighlight">\(k'\)</span>.</strong> Taking the scalar product <span class="math notranslate nohighlight">\(\mathbf{u}' \cdot \text{Fluctuation equations}\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Rearranging terms<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  \partial_t \mathbf{u}' + \nabla \cdot (\overline{\mathbf{u}} \otimes \mathbf{u}') + \nabla \cdot (\mathbf{u}' \otimes \overline{\mathbf{u}}) + \nabla \cdot (\mathbf{u}' \otimes \mathbf{u}' ) - \nabla \cdot \overline{ (\mathbf{u}' \otimes \mathbf{u}')} -  \nu \Delta \mathbf{u}' + \nabla P' = \mathbf{0} \\
+  \nabla \cdot \mathbf{u}' = 0
+\end{cases}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{u}' \cdot \partial_t \mathbf{u}' = \partial_t \frac{\mathbf{u}' \cdot \mathbf{u}'}{2}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{u}' \cdot \nabla \cdot \left( \overline{\mathbf{u}} \otimes \mathbf{u}' \right) = u'_i ( U_j u'_i )_{/j} = U_j \{( u'_i u'_i ) / 2\}_{/j} \]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{u}' \cdot \nabla \cdot \left( \mathbf{u}' \otimes \overline{\mathbf{u}} \right) = u'_i ( u'_j U_i )_{/j} = u'_i u'_j U_{i/j}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{u}' \cdot \nabla \cdot \left( \mathbf{u}' \otimes \mathbf{u}' \right) = u'_i ( u'_j u'_i )_{/j} = u'_j \left\{ \frac{u'_i u'_i}{ 2 }\right\}_{/j} = \left\{ u'_j \frac{u'_i u'_i}{2} \right\}_{/j}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{u}' \cdot \nabla \cdot\overline{ \left( \mathbf{u}' \otimes \mathbf{u}' \right) } = u'_i \overline{ ( u'_j u'_i )}_{/j}  = (u'_i \overline{u'_j u'_i})_{/j} - u'_{i/j} \overline{u'_j u'_i}  \]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  u'_i u'_{i/jj} 
+  &amp; = ( u'_i u'_{i/j} )_{/j} - u'_{i/j} u'_{i/j} &amp;&amp; = \left(\frac{u'_i u'_i}{2}\right)_{/jj} - u'_{i/j} u'_{i/j} = \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">and putting everything together</p>
+<div class="math notranslate nohighlight">
+\[\partial_t k' + \mathbf{u} \cdot \nabla k' + \nabla \overline{\mathbf{u}} : \mathbf{u}' \otimes \mathbf{u}' - \nabla \cdot \left( \overline{\mathbf{u}' \otimes \mathbf{u}'} \cdot \mathbf{u}' \right) + \overline{\mathbf{u}'\otimes \mathbf{u}'} : \nabla \mathbf{u}' - \Delta ( \nu k' ) + \nu \nabla \mathbf{u}' : \nabla \mathbf{u}' + \nabla \cdot \left( P' \mathbf{u}' \right) = 0\]</div>
+</div>
+</details><p><strong>Average kinetic energy of the fluctuation, <span class="math notranslate nohighlight">\(k\)</span>.</strong> Taking the average of the equation for the kinetic energy of the fluctuation…</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{\overline{D} k}{\overline{D} t} = \nabla \cdot \left( \nu \nabla k - \overline{\mathbf{u}' k'} - \overline{ P' \mathbf{u}'}  \right) - \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} - \nu \overline{\nabla \mathbf{u}' : \nabla \mathbf{u}'}
+\]</div>
+<p>Source contributions:</p>
+<ul class="simple">
+<li><p>turbulent energy «production», <span class="math notranslate nohighlight">\(\mathscr{P} := - \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'}\)</span>. This contribution has no defined sign. It appears with the opposite side in the equation of the kinetic eenrgy of the average field: thus, it could be interpreted as a term that (mainly?) removes energy from the average flow to produce turbulent kinetic energy</p></li>
+<li><p>viscous dissipation (always non positive), <span class="math notranslate nohighlight">\(\mathscr{D} := - \nu \overline{\nabla \mathbf{u}' : \nabla \mathbf{u}'} \le 0\)</span></p></li>
+</ul>
+<p>Flux contributions: …</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{\overline{D} k}{\overline{D} t} = \nabla \cdot \boldsymbol\Phi_k + \mathscr{P} - \mathscr{D}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Rearranging terms<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\partial_t k + \overline{\mathbf{u}} \cdot \nabla k +  \nabla \cdot \overline{( \mathbf{u}' k' ) } + \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} - \Delta ( \nu k ) + \nu \overline{ \nabla \mathbf{u}' : \nabla \mathbf{u}' } + \nabla \cdot \overline{ \left( P' \mathbf{u}' \right)} = 0\]</div>
+<p class="sd-card-text">as</p>
+<div class="math notranslate nohighlight">
+\[\overline{\mathbf{u} \cdot \nabla k'} = \overline{ ( \overline{\mathbf{u}} + \mathbf{u}' ) \cdot \nabla k'} = \overline{\mathbf{u}} \cdot \nabla k + \overline{ \mathbf{u}' \cdot \nabla k'} = \overline{\mathbf{u}} \cdot \nabla k + \nabla \cdot \overline{ ( \mathbf{u}' k' ) }\]</div>
+<p class="sd-card-text">Rearranging terms collecting divergence contributions,</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{\overline{D} k}{\overline{D} t} = \nabla \cdot \left( \nu \nabla k - \overline{\mathbf{u}' k'} - \overline{ P' \mathbf{u}'}  \right) - \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} - \nu \overline{\nabla \mathbf{u}' : \nabla \mathbf{u}'}
+\]</div>
+</div>
+</details><hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="avg-operator"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>What’s a proper definition? Can equations be time-dependent? It looks so, if fields are interpreted as stochastic fields and average is an average in probability and not time.</p>
@@ -623,11 +781,11 @@ Proof<div class="sd-summary-down docutils">
       </div>
     </a>
     <a class="right-next"
-       href="exercises.html"
+       href="kolmogorov.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">10.2. </span>Exercises</p>
+        <p class="prev-next-title"><span class="section-number">10.2. </span>Scales of turbulence</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
