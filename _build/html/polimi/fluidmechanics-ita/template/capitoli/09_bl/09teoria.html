@@ -66,6 +66,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/09_bl/09teoria';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
@@ -279,7 +281,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.1. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/rans_energy.html">10.1. RANS and energy equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/kolmogorov.html">10.2. Scales of turbulence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.3. Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -499,13 +503,16 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equazioni-di-prandtl-dello-strato-limite">9.1. Equazioni di Prandtl dello strato limite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spessori-integrali-dello-strato-limite">9.2. Spessori integrali dello strato limite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equazione-integrale-di-von-karman">9.3. Equazione integrale di Von Karman</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrazione-dell-equazione-integrale-di-von-karman">9.3.1. Integrazione dell’equazione integrale di Von Karman</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-thwaites">9.3.2. Metodo di Thwaites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-thicknesses">9.2. Integral thicknesses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#von-karman-integral-equation">9.3. Von Karman integral equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-of-von-karman-integral-equation">9.3.1. Integration of Von Karman integral equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thwaites-method">9.3.2. Thwaites method</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strato-limite-laminare-su-lamina-piana-soluzione-di-blasius">9.4. Strato limite laminare su lamina piana: soluzione di Blasius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-similar-laminar-boundary-layer-flows">9.4. Self-similar laminar boundary layer flows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-layer-on-flat-plate-blasius-solution">9.4.1. Boundary layer on flat plate: Blasius solution</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -520,22 +527,139 @@ document.write(`
   <div class="tex2jax_ignore mathjax_ignore section" id="boundary-layer">
 <span id="fluid-mechanics-bl"></span><h1><span class="section-number">9. </span>Boundary layer<a class="headerlink" href="#boundary-layer" title="Permalink to this heading">#</a></h1>
 <div class="section" id="equazioni-di-prandtl-dello-strato-limite">
-<h2><span class="section-number">9.1. </span>Equazioni di Prandtl dello strato limite<a class="headerlink" href="#equazioni-di-prandtl-dello-strato-limite" title="Permalink to this heading">#</a></h2>
+<span id="fluid-mechanics-bl-prandtl-eq"></span><h2><span class="section-number">9.1. </span>Equazioni di Prandtl dello strato limite<a class="headerlink" href="#equazioni-di-prandtl-dello-strato-limite" title="Permalink to this heading">#</a></h2>
+<p>Steady Navier—Stokes equations for a 2-dimensional flow using Cartesian coordinates read</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  u \partial_x u + v \partial_y u - \nu \left( \partial_{xx} u + \partial_{yy} u \right) + \frac{1}{\rho} \partial_x P = 0 \\
+  u \partial_x v + v \partial_y v - \nu \left( \partial_{xx} v + \partial_{yy} v \right) + \frac{1}{\rho} \partial_y P = 0 \\
+  \partial_x u + \partial_y v = 0
+\end{cases}\end{split}\]</div>
+<p>Let’s assume the flow of interest has a main stream-wise direction, here identified by <span class="math notranslate nohighlight">\(x\)</span> coordinate, while <span class="math notranslate nohighlight">\(y\)</span> runs in the orthogonal direction. Let <span class="math notranslate nohighlight">\(U\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(\delta\)</span> be characteristic <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>- components of the velocity field and lengths. Non-dimensional equations become</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  \frac{U^2}{X} u \partial_x u + \frac{U V}{\delta} v \partial_y u - \frac{\nu U}{X^2} \partial_{xx} u - \frac{\nu U}{\delta^2} \partial_{yy} u + \frac{P}{\rho X} \partial_x P = 0 \\
+  \frac{U V}{X} u \partial_x v + \frac{V^2}{\delta} v \partial_y v - \frac{\nu V}{X^2} \partial_{xx} v - \frac{\nu V}{\delta^2} \partial_{yy} v + \frac{P}{\rho \delta} \partial_y P = 0 \\
+  \frac{U}{X} \partial_x u + \frac{V}{\delta} \partial_y v = 0
+\end{cases}\end{split}\]</div>
+<p>Let the 2 terms in the incompressibility constraint have the same order of magnitude. It follows that <span class="math notranslate nohighlight">\(V \sim \frac{\delta}{X} U\)</span>. Using this relation, and assuming <span class="math notranslate nohighlight">\(P \sim \rho U^2\)</span>, the non-dimensional equations become</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  \frac{U^2}{X} \left[ \left( u \partial_x u + v \partial_y u - \partial_{yy} u + \partial_x P \right) - \left(\frac{\delta}{X}\right)^2 \left( \partial_{xx} u  \right) \right] = 0 \\
+  \frac{U^2}{X} \left[ \frac{X}{\delta} \left( \partial_y P \right) + \frac{\delta}{X} \left( u \partial_x v + v \partial_y v - \partial_{yy} v \right) - \left( \frac{\delta}{X} \right)^3 \partial_{xx} v  \right] = 0 \\
+  \frac{U}{X} \left(  \partial_x u + \partial_y v \right) = 0 \ ,
+\end{cases}\end{split}\]</div>
+<p>If <span class="math notranslate nohighlight">\(X \gg \delta\)</span> (or equivalently <span class="math notranslate nohighlight">\(U \gg V\)</span>),</p>
+<ul>
+<li><p>in the <span class="math notranslate nohighlight">\(x\)</span>-component of the momentum equation <span class="math notranslate nohighlight">\(\partial_{yy} u\)</span> prevails over <span class="math notranslate nohighlight">\(\partial_{xx} u\)</span>; the convective term and the <span class="math notranslate nohighlight">\(x\)</span>-component of the pressure gradient has the same order of magnitude, given <span class="math notranslate nohighlight">\(P \sim \rho U^2\)</span>; the leading contribution of the viscous term has the same order of magnitude if <span class="math notranslate nohighlight">\(\frac{\nu X}{U \delta^2} \sim 1\)</span>, and thus</p>
+<div class="math notranslate nohighlight">
+\[\delta(x) \sim \left( \frac{\nu x}{U} \right)^{\frac{1}{2}} = x \left( \frac{\nu}{x U} \right)^{\frac{1}{2}} = x \, \text{Re}_x^{-\frac{1}{2}} \ ,\]</div>
+<p>i.e.</p>
+<div class="math notranslate nohighlight">
+\[\delta(x) \sim x^{\frac{1}{2}} \ .\]</div>
+<p>In order to have thin boundary layers, <span class="math notranslate nohighlight">\(\delta(x) \ll x\)</span>, i.e. viscoisty should be «small enough» to be dominated by convection, except for the <span class="math notranslate nohighlight">\(\nu \partial_{yy} u\)</span> contribution in the thin boundary layer region. Once divided by <span class="math notranslate nohighlight">\(\frac{U^2}{X}\)</span> the leading order of the <span class="math notranslate nohighlight">\(x\)</span>-component of the momentum equation is <span class="math notranslate nohighlight">\(\sim 1\)</span>.</p>
+</li>
+<li><p>in the <span class="math notranslate nohighlight">\(y\)</span>-component of the momentum equation, the leading term is the <span class="math notranslate nohighlight">\(y\)</span>-component of the pressure gradient, <span class="math notranslate nohighlight">\(\partial_y P\)</span>, with order <span class="math notranslate nohighlight">\(\varepsilon^{-1}\)</span>, being <span class="math notranslate nohighlight">\(\varepsilon := \frac{\delta}{X}\)</span></p></li>
+</ul>
+<p>Retaining the leading components of the equations, Navier-Stokes equation reduces to Prandtl equations, whose non-dimensional form reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  u \partial_x u + v \partial_y u - \partial_{yy} u + \partial_x P = 0 \\
+  \partial_y P = 0 \\
+  \partial_x u + \partial_y v = 0 \ ,
+\end{cases}\end{split}\]</div>
+<p><strong>todo</strong></p>
+<ul class="simple">
+<li><p><em>Discuss the mathematical nature of Prandtl equations (parabolic equation?): which boundary conditions? Examples for different flows: b.l. on flat surface, jet flows, shear layers, wakes behing a body,…</em></p></li>
+<li><p>Pressure across boundary layers is approximately constant, as <span class="math notranslate nohighlight">\(\partial_y P = 0\)</span></p></li>
+</ul>
 </div>
-<div class="section" id="spessori-integrali-dello-strato-limite">
-<h2><span class="section-number">9.2. </span>Spessori integrali dello strato limite<a class="headerlink" href="#spessori-integrali-dello-strato-limite" title="Permalink to this heading">#</a></h2>
+<div class="section" id="integral-thicknesses">
+<span id="fluid-mechanics-bl-integral-thickness"></span><h2><span class="section-number">9.2. </span>Integral thicknesses<a class="headerlink" href="#integral-thicknesses" title="Permalink to this heading">#</a></h2>
 </div>
-<div class="section" id="equazione-integrale-di-von-karman">
-<h2><span class="section-number">9.3. </span>Equazione integrale di Von Karman<a class="headerlink" href="#equazione-integrale-di-von-karman" title="Permalink to this heading">#</a></h2>
-<div class="section" id="integrazione-dell-equazione-integrale-di-von-karman">
-<h3><span class="section-number">9.3.1. </span>Integrazione dell’equazione integrale di Von Karman<a class="headerlink" href="#integrazione-dell-equazione-integrale-di-von-karman" title="Permalink to this heading">#</a></h3>
+<div class="section" id="von-karman-integral-equation">
+<span id="fluid-mechanics-bl-vk-integral-eq"></span><h2><span class="section-number">9.3. </span>Von Karman integral equation<a class="headerlink" href="#von-karman-integral-equation" title="Permalink to this heading">#</a></h2>
+<div class="section" id="integration-of-von-karman-integral-equation">
+<span id="fluid-mechanics-bl-vk-integral-eq-integration"></span><h3><span class="section-number">9.3.1. </span>Integration of Von Karman integral equation<a class="headerlink" href="#integration-of-von-karman-integral-equation" title="Permalink to this heading">#</a></h3>
 </div>
-<div class="section" id="metodo-di-thwaites">
-<h3><span class="section-number">9.3.2. </span>Metodo di Thwaites<a class="headerlink" href="#metodo-di-thwaites" title="Permalink to this heading">#</a></h3>
+<div class="section" id="thwaites-method">
+<span id="fluid-mechanics-bl-vk-integral-eq-thwaites"></span><h3><span class="section-number">9.3.2. </span>Thwaites method<a class="headerlink" href="#thwaites-method" title="Permalink to this heading">#</a></h3>
 </div>
 </div>
-<div class="section" id="strato-limite-laminare-su-lamina-piana-soluzione-di-blasius">
-<h2><span class="section-number">9.4. </span>Strato limite laminare su lamina piana: soluzione di Blasius<a class="headerlink" href="#strato-limite-laminare-su-lamina-piana-soluzione-di-blasius" title="Permalink to this heading">#</a></h2>
+<div class="section" id="self-similar-laminar-boundary-layer-flows">
+<span id="fluid-mechanics-bl-self-similar"></span><h2><span class="section-number">9.4. </span>Self-similar laminar boundary layer flows<a class="headerlink" href="#self-similar-laminar-boundary-layer-flows" title="Permalink to this heading">#</a></h2>
+<div class="section" id="boundary-layer-on-flat-plate-blasius-solution">
+<span id="fluid-mechanics-bl-self-similar-blasius"></span><h3><span class="section-number">9.4.1. </span>Boundary layer on flat plate: Blasius solution<a class="headerlink" href="#boundary-layer-on-flat-plate-blasius-solution" title="Permalink to this heading">#</a></h3>
+<p>Boundary conditions read</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  u(x=0, y        ) &amp; = U \\
+  u(x  , y=0      ) &amp; = 0 \\
+  v(x  , y=0      ) &amp; = 0 \\
+  u(x  , y=+\infty) &amp; = U \\
+\end{aligned}\end{split}\]</div>
+<p>Assuming irrotational flow outside the b.l., pressure is uniform in the whole domain: as the velocity is uniform in the irrotational region, pressure is uniform there, as a consequence of Bernoulli’s theorems. As pressure is constant across the boundary layer in the orthogonal direction, pressure is uniform both inside and outside the boundary layer, <span class="math notranslate nohighlight">\(P(x,y) = \overline{P}\)</span>.</p>
+<p>Without any reference length scale, a self-similar solution may exist: for a self-similar flow, fields are function of a self-similarity coordindate <span class="math notranslate nohighlight">\(\eta(x,y) = \frac{y}{\delta(x)}\)</span> and not of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> independently.</p>
+<p>Using stream-function <span class="math notranslate nohighlight">\(\psi\)</span>, <span class="math notranslate nohighlight">\(u = \psi_{/y}\)</span>, <span class="math notranslate nohighlight">\(v = - \psi_{/x}\)</span>, incompressibility constraint is identically satisfied. The last equation to deal with is the <span class="math notranslate nohighlight">\(x\)</span>-component of the momentum equation, that becomes</p>
+<div class="math notranslate nohighlight">
+\[\psi_{/y} \psi_{/yx} - \psi_{/x} \psi_{/yy} - \nu \psi_{/yyy} = 0 \ .\]</div>
+<p>Let <span class="math notranslate nohighlight">\(\psi(x,y) = U \delta(x) g\left( \eta(x,y) \right)\)</span>, the components of the velocity field becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \frac{u}{U} = \psi_{/y}
+    &amp; = \delta(x) g'(\eta) \eta_{/y} = \\
+    &amp; = \delta(x) g'(\eta) \frac{1}{\delta(x)} = \\
+    &amp; = g'(\eta) \\
+  \frac{v}{U} = - \psi_{/x} 
+    &amp; = \delta'(x) g(\eta) + \delta(x) g'(\eta) \eta_{/x} = \\
+    &amp; = \delta'(x) g(\eta) - \delta(x) g'(\eta) \frac{y \delta'(x)}{\delta^2(x)} = \\
+    &amp; = \delta'(x) g(\eta) - \eta g'(\eta) \delta'(x)
+\end{aligned}\end{split}\]</div>
+<p>while all the other derivatives appearing in the <span class="math notranslate nohighlight">\(x\)</span>-component of the momentum equation read</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \psi_{/yy}  &amp; = g''(\eta) \frac{1}{\delta(x)} \\
+  \psi_{/yyy} &amp; = g'''(\eta) \frac{1}{\delta^2(x)} \\
+  \psi_{/yx}  &amp; = - g''(\eta) \frac{y \delta'(x)}{\delta^2(x)} = - \eta g''(\eta) \frac{\delta'(x)}{\delta(x)} \\
+\end{aligned}\end{split}\]</div>
+<p>Inserting these expression in the <span class="math notranslate nohighlight">\(x\)</span>-component of the momentum equation,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ 0 
+ &amp; = - U^2 g' g'' \eta \frac{\delta'}{\delta} - \left( \delta' g - \eta g' \delta' \right) g'' \frac{1}{\delta} - \nu U g''' \frac{1}{\delta^2} = \\
+ &amp; = - U^2 g  g'' \frac{\delta'}{\delta} - \nu U g''' \frac{1}{\delta^2} \ ,
+\end{aligned}\end{split}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[0 = \frac{U \delta'(x) \delta(x)}{\nu} g(\eta) g''(\eta) + g'''(\eta) \ .\]</div>
+<p>In order to get a self-similar solution, no term depending only on <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> may appear in the equation. Thus, the coefficient of the first term must be constant,</p>
+<div class="math notranslate nohighlight">
+\[C = \frac{U \delta'(x) \delta(x)}{\nu} = \frac{U}{\nu} \dfrac{d}{dx} \dfrac{\delta^2(x)}{2} \ ,\]</div>
+<p>and usually <span class="math notranslate nohighlight">\(C\)</span> is chosen to be <span class="math notranslate nohighlight">\(C = \frac{1}{2}\)</span> (this choice just changes the definition of the arbitrary thickness of the b.l. <span class="math notranslate nohighlight">\(\delta(x)\)</span> by a multiplicative factor. Solving this equation, the arbitrary thickness of the b.l. goes as</p>
+<div class="math notranslate nohighlight">
+\[\delta(x) - \delta(x_0) = \sqrt{ \frac{\nu}{U} ( x - x_0 ) } \ ,\]</div>
+<p>while the <span class="math notranslate nohighlight">\(x\)</span>-component of the momentum equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2} g g'' + g''' = 0 \ ,\]</div>
+<p>supplied with the boundary conditions</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  g(0) &amp; = 0 \\
+  g'(0) &amp; = 0 \\
+  g'(+\infty) &amp; = 1 \ ,
+\end{aligned}\end{split}\]</div>
+<p>for the b.l. on a flat plate.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Proof of the boundary conditions for the b.l on the flat plate<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Proof that the 4 boundary conditions written as a function of the velocity field or the stream-function are equivalent to teh 3 boundary conditions written in terms of the similarity function <span class="math notranslate nohighlight">\(g(\eta)\)</span></p>
+<p class="sd-card-text"><strong>todo</strong></p>
+</div>
+</details></div>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -605,13 +729,16 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equazioni-di-prandtl-dello-strato-limite">9.1. Equazioni di Prandtl dello strato limite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spessori-integrali-dello-strato-limite">9.2. Spessori integrali dello strato limite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equazione-integrale-di-von-karman">9.3. Equazione integrale di Von Karman</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrazione-dell-equazione-integrale-di-von-karman">9.3.1. Integrazione dell’equazione integrale di Von Karman</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-thwaites">9.3.2. Metodo di Thwaites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-thicknesses">9.2. Integral thicknesses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#von-karman-integral-equation">9.3. Von Karman integral equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-of-von-karman-integral-equation">9.3.1. Integration of Von Karman integral equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thwaites-method">9.3.2. Thwaites method</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strato-limite-laminare-su-lamina-piana-soluzione-di-blasius">9.4. Strato limite laminare su lamina piana: soluzione di Blasius</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-similar-laminar-boundary-layer-flows">9.4. Self-similar laminar boundary layer flows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-layer-on-flat-plate-blasius-solution">9.4.1. Boundary layer on flat plate: Blasius solution</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
