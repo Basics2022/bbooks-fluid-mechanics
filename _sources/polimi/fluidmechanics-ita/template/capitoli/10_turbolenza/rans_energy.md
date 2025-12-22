@@ -255,4 +255,40 @@ $$
 
 ```
 
+(fluid-mechanics:turbulence:rans-energy:turbulence-in-equilibrium)=
+## Dimensional analysis and the assumption of turbulence in equilibrium
+
+A dimensional analysis of the equations of the kinetic energy of the average flow and turbulent energy helps in stating the concept of *turbulence in equilibrium* and its consequences.
+
+**Kinetic energy of the average field.**
+
+$$\begin{aligned}
+  \frac{U^2}{T} \dfrac{\overline{D} K_{\overline{\mathbf{u}}}}{\overline{D}t} 
+  = \frac{1}{L} \nabla \cdot \left( \frac{\nu U^2}{L} \nabla K_{\overline{\mathbf{u}}} - \mathscr{P} L \, \overline{\mathbf{u}' \otimes \mathbf{u}'} \cdot \overline{\mathbf{u}} - P U \overline{P} \overline{\mathbf{u}} \right) 
+  + \mathscr{P} \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} - \frac{\nu U^2}{L^2} \nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}}
+\end{aligned}$$
+
+Without an independent time scale, $T = \frac{L}{U}$, and in incompressible flows $P = U^2$[^p-notation], and dividing for $\frac{U^3}{L}$
+
+$$\begin{aligned}
+ \dfrac{\overline{D} K_{\overline{\mathbf{u}}}}{\overline{D}t}
+  = - \nabla \cdot \left( \overline{P} \overline{\mathbf{u}} \right) + \frac{\nu}{U L} \left\{ \nabla \cdot \left( \nabla K_{\overline{\mathbf{u}}}  \right) - \nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}} \right\} - \frac{\mathscr{P} L}{U^3} \left\{ \nabla \cdot \left( \overline{\mathbf{u}' \otimes \mathbf{u}'} \cdot \overline{\mathbf{u}} \right) + \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} \right\}
+\end{aligned}$$
+
+Turbulence is a phenomenon that occurs at high Reynolds numbers, i.e. with $\frac{\nu}{U L} = \frac{1}{Re} \rightarrow 0$. If the other contributions have the same order of magnitude, it follows that $\mathscr{P} = \frac{U^3}{L}$.
+
+
+[^p-notation]: Remember that, with some notational abuse, in this section $P = \frac{P}{\rho}$.
+
+**Turbulent energy.**
+
+$$
+\dfrac{u^2}{T} \dfrac{\overline{D} k}{\overline{D} t} = \frac{1}{L} \nabla \cdot \left( \frac{\nu u^2}{L} \nabla k - u^3 \overline{\mathbf{u}' k'} - p u \overline{ P' \mathbf{u}'}  \right) - \mathscr{P} \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} - \mathscr{D} \overline{\nabla \mathbf{u}' : \nabla \mathbf{u}'} \ ,
+$$
+
+with $\mathscr{D} = \frac{\nu U^2}{L^2}$.
+
+**Turbulence in equilibrium** means $\mathscr{P} = \mathscr{D}$ and thus
+
+$$\mathscr{P} = \mathscr{D} = \frac{U^3}{L} \ .$$
 

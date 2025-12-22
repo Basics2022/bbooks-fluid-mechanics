@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Fluid Mechanics</title>
+    <title>10.3. Boundary layer flows &#8212; Fluid Mechanics</title>
   
   
   
@@ -68,9 +68,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0408Alette';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/boundary_layers';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
+    <link rel="next" title="10.4. Exercises" href="exercises.html" />
+    <link rel="prev" title="10.2. Scales of turbulence" href="kolmogorov.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -174,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Incompressible Fluid Mechanics</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01_statica/02teoria.html">1. Statics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../01_statica/exercises.html">1.8. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../01_statica/0201in.html">1.8.1. Exercise 1.1 <!--Archimede's law and Buoyancy--></a></li>
@@ -206,24 +208,24 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="04teoria.html">4. Balance equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="0410in.html">4.16. Approfondimenti su alcuni bilanci</a></li>
-<li class="toctree-l2"><a class="reference internal" href="0412in.html">4.17. Introduction to exercises</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">4.18. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="0406in.html">4.18.1. Exercise 4.1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0407in.html">4.18.2. Exercise 4.2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0402in.html">4.18.3. Exercise 4.3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0409in.html">4.18.4. Exercise 4.4</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0403in.html">4.18.5. Exercise 4.5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0404in.html">4.18.6. Exercise 4.6</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0405in.html">4.18.7. Exercise 4.7</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0408in.html">4.18.8. Exercise 4.8</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0401in.html">4.18.9. Exercise 4.9</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0401SciaExp.html">4.18.10. Exercise 4.9 - Experiment: wake defect</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04ma01in.html">4.18.11. Exercise 4.10</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04e01in.html">4.18.12. Exercise 4.11</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04e02in.html">4.18.13. Exercise 4.12</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04e03in.html">4.18.14. Exercise 4.13</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_bilanci/04teoria.html">4. Balance equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_bilanci/0410in.html">4.16. Approfondimenti su alcuni bilanci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_bilanci/0412in.html">4.17. Introduction to exercises</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../04_bilanci/exercises.html">4.18. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0406in.html">4.18.1. Exercise 4.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0407in.html">4.18.2. Exercise 4.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0402in.html">4.18.3. Exercise 4.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0409in.html">4.18.4. Exercise 4.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0403in.html">4.18.5. Exercise 4.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0404in.html">4.18.6. Exercise 4.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0405in.html">4.18.7. Exercise 4.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0408in.html">4.18.8. Exercise 4.8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0401in.html">4.18.9. Exercise 4.9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0401SciaExp.html">4.18.10. Exercise 4.9 - Experiment: wake defect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04ma01in.html">4.18.11. Exercise 4.10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04e01in.html">4.18.12. Exercise 4.11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04e02in.html">4.18.13. Exercise 4.12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04e03in.html">4.18.14. Exercise 4.13</a></li>
 </ul>
 </li>
 </ul>
@@ -278,11 +280,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../09_bl/exercises.html">9.5. Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/rans_energy.html">10.1. RANS and energy equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/kolmogorov.html">10.2. Scales of turbulence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/boundary_layers.html">10.3. Boundary layer flows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.4. Exercises</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="10teoria.html">10. Instability and turbulence</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="rans_energy.html">10.1. RANS and energy equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kolmogorov.html">10.2. Scales of turbulence</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">10.3. Boundary layer flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">10.4. Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -360,7 +362,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0408Alette.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/boundary_layers.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -377,7 +379,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fpolimi/fluidmechanics-ita/template/capitoli/04_bilanci/0408Alette.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fpolimi/fluidmechanics-ita/template/capitoli/10_turbolenza/boundary_layers.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -407,7 +409,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0408Alette.md" target="_blank"
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/boundary_layers.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -491,7 +493,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Boundary layer flows</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -500,9 +502,13 @@ document.write(`
                 <h2> Contenuti </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prandtl-equations">10.3.1. Prandtl equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-similar-boundary-layer-flows">10.3.2. Self-similar boundary layer flows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planar-jet">10.3.2.1. Planar jet</a></li>
 </ul>
-
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -513,50 +519,188 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p><strong>Esercizi per il corso di Fluidodinamica</strong></p>
-<p>+:———————————:+:———————————:+
-| Un numero elevato di profili è    | <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/04_bilanci/fig/wings.eps" />{width=» |
-| disposto come in figura. Il       | 95%»}                             |
-| profilo di ingresso è uniforme    |                                   |
-| <span class="math notranslate nohighlight">\(\bm{u} = U_\infty \bm{\hat{x}}\)</span>, |                                   |
-| mentre il profilo di uscita ha    |                                   |
-| andamento                         |                                   |
-| <span class="math notranslate nohighlight">\(\bm{u} = \beta U_\infty (\cos \t |                                   |
-| heta \bm{\hat{x}} - \sin \theta \ |                                   |
-| bm{\hat{y}})                      |                                   |
-| \sin{\frac{\pi \eta}{H}}\)</span> in ogni |                                   |
-| canale (sia <span class="math notranslate nohighlight">\(\eta\)</span> la coordinata  |                                   |
-| che descrive la sezione di        |                                   |
-| uscita). Sulla sezione di         |                                   |
-| ingresso la pressione media vale  |                                   |
-| <span class="math notranslate nohighlight">\(P_1\)</span>, sulla sezione di uscita    |                                   |
-| <span class="math notranslate nohighlight">\(P_2\)</span>.                            |                                   |
-|                                   |                                   |
-| Calcolare il fattore <span class="math notranslate nohighlight">\(\beta\)</span> del  |                                   |
-| profilo di velocità in uscita e   |                                   |
-| la risultante delle forze (per    |                                   |
-| unità di apertura) agente sul     |                                   |
-| singolo profilo.                  |                                   |
-|                                   |                                   |
-| (Risultati:                       |                                   |
-| <span class="math notranslate nohighlight">\(\beta = \frac{\pi}{2 \cos \theta |                                   |
-| }, \bm{F} = [(P_1 - P_2) H + \rho |                                   |
-|  U^2 H ((1-\pi^2/8) ]\bm{\hat{x}} |                                   |
-|  + \pi^2/8 \tan \theta \bm{\hat{y |                                   |
-| }})\)</span>)                             |                                   |
-+———————————–+———————————–+</p>
-<p>Bilanci integrali di massa e quantità di moto. Equazioni di equilibrio
-(equazioni fondamentali della dinamica classica). Principio di azione e
-reazione. Integrale della normale su una superficie chiusa è
-identicamente nullo. Simmetria.</p>
-<ul class="simple">
-<li><p>Ricavare il coefficiente <span class="math notranslate nohighlight">\(\beta\)</span> dal bilancio di massa</p></li>
-<li><p>Usare le ipotesi di simmetria nel bilancio di quantità di moto per
-annullare alcuni termini</p></li>
-</ul>
-<p>Si ricava il coefficiente <span class="math notranslate nohighlight">\(\beta\)</span> dal bilancio di massa in forma
-integrale. Si utilizza la simmetria del problema nel bilancio di
-quantità moto per ricavare le azioni sui profili.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="boundary-layer-flows">
+<span id="fluid-mechanics-turbulence-boundary-layer-flows"></span><h1><span class="section-number">10.3. </span>Boundary layer flows<a class="headerlink" href="#boundary-layer-flows" title="Permalink to this heading">#</a></h1>
+<div class="section" id="prandtl-equations">
+<span id="fluid-mechanics-turbulence-boundary-layer-flows-prandtl-eq"></span><h2><span class="section-number">10.3.1. </span>Prandtl equations<a class="headerlink" href="#prandtl-equations" title="Permalink to this heading">#</a></h2>
+<p>Steady RANS equations for a 2-dimensional flow using Cartesian coordinates read</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  u \partial_x u + v \partial_y u + \partial_x \overline{u'u'} + \partial_y \overline{u'v'} - \nu \left( \partial_{xx} u + \partial_{yy} u \right) + \frac{1}{\rho} \partial_x P = 0 \\
+  u \partial_x v + v \partial_y v + \partial_x \overline{u'v'} + \partial_y \overline{v'v'} - \nu \left( \partial_{xx} v + \partial_{yy} v \right) + \frac{1}{\rho} \partial_y P = 0 \\
+  \partial_x u + \partial_y v = 0
+\end{cases}\end{split}\]</div>
+<!--
+Let's assume the flow of interest has a main stream-wise direction, here identified by $x$ coordinate, while $y$ runs in the orthogonal direction. Let $U$, $V$, $X$, $\delta$ be characteristic $x$- and $y$- components of the velocity field and lengths. Non-dimensional equations become
+
+$$\begin{cases}
+  \frac{U^2}{X} u \partial_x u + \frac{U V}{\delta} v \partial_y u - \frac{\nu U}{X^2} \partial_{xx} u - \frac{\nu U}{\delta^2} \partial_{yy} u + \frac{P}{\rho X} \partial_x P = 0 \\
+  \frac{U V}{X} u \partial_x v + \frac{V^2}{\delta} v \partial_y v - \frac{\nu V}{X^2} \partial_{xx} v - \frac{\nu V}{\delta^2} \partial_{yy} v + \frac{P}{\rho \delta} \partial_y P = 0 \\
+  \frac{U}{X} \partial_x u + \frac{V}{\delta} \partial_y v = 0
+\end{cases}$$
+
+Let the 2 terms in the incompressibility constraint have the same order of magnitude. It follows that $V \sim \frac{\delta}{X} U$. Using this relation, and assuming $P \sim \rho U^2$, the non-dimensional equations become
+
+$$\begin{cases}
+  \frac{U^2}{X} \left[ \left( u \partial_x u + v \partial_y u - \partial_{yy} u + \partial_x P \right) - \left(\frac{\delta}{X}\right)^2 \left( \partial_{xx} u  \right) \right] = 0 \\
+  \frac{U^2}{X} \left[ \frac{X}{\delta} \left( \partial_y P \right) + \frac{\delta}{X} \left( u \partial_x v + v \partial_y v - \partial_{yy} v \right) - \left( \frac{\delta}{X} \right)^3 \partial_{xx} v  \right] = 0 \\
+  \frac{U}{X} \left(  \partial_x u + \partial_y v \right) = 0 \ ,
+\end{cases}$$
+
+If $X \gg \delta$ (or equivalently $U \gg V$),
+- in the $x$-component of the momentum equation $\partial_{yy} u$ prevails over $\partial_{xx} u$; the convective term and the $x$-component of the pressure gradient has the same order of magnitude, given $P \sim \rho U^2$; the leading contribution of the viscous term has the same order of magnitude if $\frac{\nu X}{U \delta^2} \sim 1$, and thus 
+
+   $$\delta(x) \sim \left( \frac{\nu x}{U} \right)^{\frac{1}{2}} = x \left( \frac{\nu}{x U} \right)^{\frac{1}{2}} = x \, \text{Re}_x^{-\frac{1}{2}} \ ,$$
+
+   i.e.
+
+   $$\delta(x) \sim x^{\frac{1}{2}} \ .$$
+
+   In order to have thin boundary layers, $\delta(x) \ll x$, i.e. viscoisty should be "small enough" to be dominated by convection, except for the $\nu \partial_{yy} u$ contribution in the thin boundary layer region. Once divided by $\frac{U^2}{X}$ the leading order of the $x$-component of the momentum equation is $\sim 1$.
+
+- in the $y$-component of the momentum equation, the leading term is the $y$-component of the pressure gradient, $\partial_y P$, with order $\varepsilon^{-1}$, being $\varepsilon := \frac{\delta}{X}$
+
+Retaining the leading components of the equations, Navier-Stokes equation reduces to Prandtl equations, whose non-dimensional form reads
+-->
+<p>…</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  u \partial_x u + v \partial_y u + \partial_y \left( \overline{u' v'} \right) - \nu \partial_{yy} u + \partial_x P = 0 \\
+  \partial_y \overline{v'^2} + \partial_y P = 0 \\
+  \partial_x u + \partial_y v = 0 \ ,
+\end{cases}\end{split}\]</div>
+<p>As the Reynolds” number increases, the effect of the viscosity in the average flow may become negligible (for flows without solid surfaces, where viscous sublayer exists) if compared with the Reynolds” stress. In these situations, Prandtl equations become</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  u \partial_x u + v \partial_y u + \partial_y \left( \overline{u' v'} \right) + \partial_x P = 0 \\
+  \partial_y \overline{v'^2} + \partial_y P = 0 \\
+  \partial_x u + \partial_y v = 0 \ ,
+\end{cases}\end{split}\]</div>
+</div>
+<div class="section" id="self-similar-boundary-layer-flows">
+<span id="fluid-mechanics-turbulence-boundary-layer-flows-self-similar"></span><h2><span class="section-number">10.3.2. </span>Self-similar boundary layer flows<a class="headerlink" href="#self-similar-boundary-layer-flows" title="Permalink to this heading">#</a></h2>
+<div class="section" id="planar-jet">
+<span id="fluid-mechanics-turbulence-boundary-layer-flows-self-similar-planar-jet"></span><h3><span class="section-number">10.3.2.1. </span>Planar jet<a class="headerlink" href="#planar-jet" title="Permalink to this heading">#</a></h3>
+<p>From the <span class="math notranslate nohighlight">\(y\)</span>-component of the momentum, <span class="math notranslate nohighlight">\(P + \overline{v'^2} = P_0(x)\)</span>, and 1) if the fluctuation becomes negligible in the outer flow and 2) the outer flow is irrotational with unifrom velocity, then pressure is uniform in the whole domain, <span class="math notranslate nohighlight">\(P_0(x) = P_0\)</span>, and Prandtl equations from turbulent flows become</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  u \partial_x u + v \partial_y u + \partial_y \left( \overline{u' v'} \right) = 0 \\
+  \partial_x u + \partial_y v = 0 \ ,
+\end{cases}\end{split}\]</div>
+<p><strong>Self-similar solution.</strong> Looking for a self-similar solution</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  u(x,y) &amp; = U(x) f(\eta(x,y)) \\
+  \overline{u'v'}(x,y) &amp; = U^2(x) g(\eta(x,y)) \ ,
+\end{aligned}\end{split}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\eta(x,y) = \frac{y}{\delta(x)}\)</span>. Through the incompressibility constraint, the <span class="math notranslate nohighlight">\(y\)</span>-component of the velocity reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  v(x,y) - \underbrace{v(x,0)}_{=0}
+  &amp; = \int_{t = 0}^{y} \partial_y v(x,t) \, dt = \\
+  &amp; = - \int_{t=0}^{y} \partial_x u(x,t) \, dt = \\
+  &amp; = \int_{t=0}^{y} \left\{ -U'(x) f(\eta(x,t)) + U(x) \dfrac{df}{d \eta}(\eta(x,t)) \frac{t \delta'(x)}{\delta^2(x)} \right\} \, dt = \\
+  &amp; = \int_{\chi=0}^{\eta} \left\{ -U'(x) f(\eta(x,\delta(x) \chi)) \delta(x) + U(x) \dfrac{d f}{d \eta}(\eta(x, \delta(x) \chi)) \chi \delta'(x) \right\} \, d \chi \ ,
+\end{aligned}\end{split}\]</div>
+<p>being</p>
+<div class="math notranslate nohighlight">
+\[\partial_x u(x,y) = U'(x) f(\eta(x,y)) - U(x) f'(\eta(x,y)) \frac{y \delta'(x)}{\delta^2(x)} \ ,\]</div>
+<p>and having transformed the variable <span class="math notranslate nohighlight">\(\chi = \frac{t}{\delta}\)</span>, and the extremes of integration accordingly.</p>
+<p><strong>Mass, momentum and energy fluxes across normal planes.</strong> Momentum flux reads</p>
+<div class="math notranslate nohighlight">
+\[Q(x) = \int_{y=0}^{+\infty} u^2(x,y) \, dy \ .\]</div>
+<p>Its derivative w.r.t. <span class="math notranslate nohighlight">\(x\)</span> reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \dfrac{d}{dx} Q(x)
+  &amp; = \dfrac{d}{dx} \int_{y=-\infty}^{+\infty} u^2(x,y) \, dy = \\
+  &amp; = \int_{y=-\infty}^{+\infty} \partial_x u^2 \, dy = \\
+  &amp; = - \int_{y=-\infty}^{+\infty} \partial_y \left\{ uv + \overline{u'v'}  \right\} \, dy = 0 \ ,
+\end{aligned}\end{split}\]</div>
+<p>if the flow is at rest at infinity. Using the self-similar assumption, this derivative reads</p>
+<div class="math notranslate nohighlight">
+\[0 = \dfrac{d Q}{dx} = \dfrac{d}{dx} \left[ U^2(x) \delta(x) \int_{\eta=-\infty}^{+\infty} f^2(\eta) \, d \eta \right] \ ,\]</div>
+<p>so that it follows</p>
+<div class="math notranslate nohighlight">
+\[0 = \dfrac{d}{dx} \left( U^2(x) \delta(x) \right) = 2 U U' \delta + U^2 \delta' \ ,\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[U' = - \dfrac{\delta'}{2\delta} U \ .\]</div>
+<p>Mass flux.</p>
+<div class="math notranslate nohighlight">
+\[M(x) = \int_{y=-\infty}^{+\infty} u(x,y) \, dy \ , \]</div>
+<p>and, if the self-similarity assumption holds, its derivative reads</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{d }{dx}M(x) = \dfrac{d}{dx} \left( U(x) \delta(x) \right) \int_{\eta=-\infty}^{+\infty} f(\eta) \, d\eta \ .\]</div>
+<p>Energy flux.</p>
+<div class="math notranslate nohighlight">
+\[E(x) = \int_{y=-\infty}^{+\infty} \dfrac{1}{2} u^3(x,y) \, dy \ , \]</div>
+<p>and, if the self-similarity assumption holds, its derivative reads</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{d }{dx}E(x) = \dfrac{d}{dx} \left( \dfrac{1}{2} U^3(x) \delta(x) \right) \int_{\eta=-\infty}^{+\infty} f(\eta) \, d\eta \ .\]</div>
+<p><strong>Solving for the self-similar solution.</strong> Inserting the expressions of the velocity components and the turbulent stress into the <span class="math notranslate nohighlight">\(x\)</span>-component of the momentum equation,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0
+  &amp; = ( U f ) \left( U' f - U f' \eta \frac{\delta'}{\delta} \right) + \int_{\chi = 0}^{\eta} \left\{ -U' f \delta + U f' \chi \delta'  \right\} \, d\chi \, U f' \frac{1}{\delta} + U^2 g' \frac{1}{\delta} = \\
+  &amp; = U U' f^2 - U^2 f f' \eta \frac{\delta'}{\delta} - U U' f' \int_{\chi=0}^{\eta} f d \chi + U^2 f' \frac{\delta'}{\delta} \left(\left. \chi f \right|_{0}^{\eta} - \int_{\chi=0}^{\eta} f \, d \chi  \right)+ U^2 g' \frac{1}{\delta} = \\
+  &amp; = U U' f^2 - U U' f' \int_{\chi=0}^{\eta} f d \chi - U^2 f' \frac{\delta'}{\delta} \int_{\chi=0}^{\eta} f \, d \chi + U^2 g' \frac{1}{\delta}\ ,
+\end{aligned}\end{split}\]</div>
+<p>and introducing the relation between the derivative of <span class="math notranslate nohighlight">\(U(x)\)</span> and <span class="math notranslate nohighlight">\(\delta(x)\)</span>, and dividing by <span class="math notranslate nohighlight">\(\frac{U^2}{\delta}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\frac{\delta'(x)}{2} \left[ f^2(\eta) + f'(\eta) \int_{\chi=0}^{\eta} f(\chi) d \chi \right] = g'(\eta) \ .\]</div>
+<p>For the existence of a self-similar solution, no coefficient can explicitly depend on <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span>, so the derivative of the boundary layer thickness must be constant</p>
+<div class="math notranslate nohighlight">
+\[\delta'(x) = S \ ,\]</div>
+<p>and thus a linear spreading is found,</p>
+<div class="math notranslate nohighlight">
+\[\delta(x) - \delta(x_0) = S ( x - x_0 ) \ .\]</div>
+<p>As the momentum flux is constant in <span class="math notranslate nohighlight">\(x\)</span>, it follows that — setting the origin of the coordinates so that <span class="math notranslate nohighlight">\(\delta(x) = S x\)</span> — the maximum velocity (velocity on the symmetry line of the jet) decreases as</p>
+<div class="math notranslate nohighlight">
+\[U(x) \propto \delta(x)^{-\frac{1}{2}} \propto x^{-\frac{1}{2}} \ .\]</div>
+<p>Mass flux goes with <span class="math notranslate nohighlight">\(M(x) \sim x^{\frac{1}{2}}\)</span> (increases, <strong>entrainment</strong>), while the energy flux goes with <span class="math notranslate nohighlight">\(E(x) \sim x^{-\frac{1}{2}}\)</span> (decreases due to dissipation).</p>
+<p><strong>Solution with constant turbulent viscosity as closure model.</strong> With the assumption</p>
+<div class="math notranslate nohighlight">
+\[- \overline{u'v'} = \nu_T \partial_y u \ ,\]</div>
+<p>using self-similarity ansatz</p>
+<div class="math notranslate nohighlight">
+\[-U^2 g = \nu_T U f' \frac{1}{\delta} \ ,\]</div>
+<p>and with the additional assumption (<strong>non-physical</strong>, just to get a problem that can be solved analytically. An assumption more, an assumption less…),</p>
+<div class="math notranslate nohighlight">
+\[\hat{\nu}_T := \frac{\nu_T}{\delta(x) U(x)} = \text{const.} \ ,\]</div>
+<p>the two non-dimensional functions <span class="math notranslate nohighlight">\(f(\eta)\)</span> and <span class="math notranslate nohighlight">\(g(\eta)\)</span> are related as</p>
+<div class="math notranslate nohighlight">
+\[g(\eta) = - \hat{\nu}_T f'(\eta) \ .\]</div>
+<p>Thus, the solution of the equation</p>
+<div class="math notranslate nohighlight">
+\[\frac{S}{2} \left[ f^2(\eta) + f'(\eta) \int_{\chi=0}^{\eta} f(\chi) d \chi  \right] + \hat{nu}_T f''(\eta) = 0 \ ,\]</div>
+<p>with the proper boundary conditions provides the non-dimensional velocity profile. Introducing the function <span class="math notranslate nohighlight">\(F(\eta) = \int_{\chi=0}^{\eta} f(\chi) d \chi\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ 0
+ &amp; = \frac{S}{2} \left( F'^{2}(\eta) + F''(\eta) F(\eta) \right) + \hat{\nu}T  F'''(\eta) = \\
+ &amp; = \frac{S}{2} \left( F(\eta) F'(\eta) \right)' + \hat{\nu}_T  F'''(\eta) \ .
+\end{aligned}\end{split}\]</div>
+<p>Integrating once, and exploiting the boundary conditions (<strong>todo</strong>…)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0 
+  &amp; = \frac{S}{2} F(\eta) F'(\eta) + \hat{\nu}_T F''(\eta) =  \\
+  &amp; = \frac{S}{4} \left( F^2(\eta) \right)' + \hat{\nu}_T F''(\eta) \ ,
+\end{aligned}\end{split}\]</div>
+<p>and integrating once again with the boundary condition <span class="math notranslate nohighlight">\(F'(0) = 1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\frac{S}{4} F^2(\eta) = \hat{\nu}_T \left( 1 - F'(\eta) \right) \ ,\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[F'(\eta) = 1 - \frac{S}{4 \hat{\nu}_T} F^2(\eta) \ .\]</div>
+<p>Integrating one last time,</p>
+<div class="math notranslate nohighlight">
+\[F(\eta) = \frac{1}{\alpha} \text{tanh} \left( \alpha \eta \right) \ ,\]</div>
+<p>with <span class="math notranslate nohighlight">\(\alpha = \sqrt{\frac{S}{4 \hat{\nu}_T}}\)</span>.</p>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -571,7 +715,7 @@ quantità moto per ricavare le azioni sui profili.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./polimi/fluidmechanics-ita/template/capitoli/04_bilanci"
+            path: "./polimi/fluidmechanics-ita/template/capitoli/10_turbolenza"
         },
         predefinedOutput: true
     }
@@ -588,6 +732,24 @@ quantità moto per ricavare le azioni sui profili.</p>
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="kolmogorov.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">precedente</p>
+        <p class="prev-next-title"><span class="section-number">10.2. </span>Scales of turbulence</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exercises.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">successivo</p>
+        <p class="prev-next-title"><span class="section-number">10.4. </span>Exercises</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -602,9 +764,13 @@ quantità moto per ricavare le azioni sui profili.</p>
     <i class="fa-solid fa-list"></i> Contenuti
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prandtl-equations">10.3.1. Prandtl equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-similar-boundary-layer-flows">10.3.2. Self-similar boundary layer flows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planar-jet">10.3.2.1. Planar jet</a></li>
 </ul>
-
+</li>
+</ul>
   </nav></div>
 
 </div></div>

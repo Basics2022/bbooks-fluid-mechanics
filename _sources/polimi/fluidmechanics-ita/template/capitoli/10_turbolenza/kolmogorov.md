@@ -39,9 +39,6 @@ and thus $\alpha = \frac{2}{3}$ and $\beta = \frac{4}{3} - 3 = - \frac{5}{3}$.
 
 ```
 
-
-
-
 **Kolmogorov scales.** Two relevant physical quantities: $\nu$ kinematic viscosity, average rate of dissipation per unit-mass $\varepsilon$ or $\mathscr{D}$, with physical dimensions
 
 $$[\nu] = \frac{\text{L}^2}{\text{T}} \quad , \quad [ \mathscr{D} ] = \frac{\text{L}^2}{\text{T}^3} \ .$$
@@ -56,3 +53,17 @@ $$
 $$
 
 **todo** evaluate the ratio of characteristic dimension of the viscous range with the chacteristic dimension of the problem in terms of Reynolds' number. Which assumptions to be made to get a Reynolds number of the large scales? Especially about $\varepsilon$.
+
+Under the assumption of [turbulence in equilibrium](fluid-mechanics:turbulence:rans-energy:turbulence-in-equilibrium), dimensional analysis gives
+
+$$\varepsilon = \frac{U^3}{L} \ ,$$
+
+and thus
+
+$$
+\frac{\ell_{\eta}}{L} = \text{Re}^{-\frac{3}{4}} \quad , \quad
+\frac{\tau_{\eta}}{T} = \text{Re}^{-\frac{1}{2}} \quad , \quad
+\frac{U_{\eta}}{U} = \text{Re}^{-frac{1}{4}} \ .
+$$
+
+These relation gives an estimate of the spatial resolution &mdash; i.e. the dimension of the mathematical problem &mdash; required by a numerical methods to fully resolve all the structures in the flow. In a 3-dimensional domain of side $L$, grid spacing should be of order $\Delta x \sim \ell_{\eta} \sim L \, \text{Re}^{-\frac{3}{4}}$, and thus the number of grid cells approximately $N \sim \left\frac{L}{\ell_{\tau}}\right)^3 = \text{Re}^{\frac{9}{4}}$.

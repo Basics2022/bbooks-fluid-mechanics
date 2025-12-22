@@ -504,6 +504,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rans">10.1.1. RANS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-equations">10.1.2. Energy equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-analysis-and-the-assumption-of-turbulence-in-equilibrium">10.1.3. Dimensional analysis and the assumption of turbulence in equilibrium</a></li>
 </ul>
             </nav>
         </div>
@@ -752,13 +753,43 @@ Rearranging terms<div class="sd-summary-down docutils">
 \dfrac{\overline{D} k}{\overline{D} t} = \nabla \cdot \left( \nu \nabla k - \overline{\mathbf{u}' k'} - \overline{ P' \mathbf{u}'}  \right) - \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} - \nu \overline{\nabla \mathbf{u}' : \nabla \mathbf{u}'}
 \]</div>
 </div>
-</details><hr class="footnotes docutils" />
+</details></div>
+<div class="section" id="dimensional-analysis-and-the-assumption-of-turbulence-in-equilibrium">
+<span id="fluid-mechanics-turbulence-rans-energy-turbulence-in-equilibrium"></span><h2><span class="section-number">10.1.3. </span>Dimensional analysis and the assumption of turbulence in equilibrium<a class="headerlink" href="#dimensional-analysis-and-the-assumption-of-turbulence-in-equilibrium" title="Permalink to this heading">#</a></h2>
+<p>A dimensional analysis of the equations of the kinetic energy of the average flow and turbulent energy helps in stating the concept of <em>turbulence in equilibrium</em> and its consequences.</p>
+<p><strong>Kinetic energy of the average field.</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  \frac{U^2}{T} \dfrac{\overline{D} K_{\overline{\mathbf{u}}}}{\overline{D}t} 
+  = \frac{1}{L} \nabla \cdot \left( \frac{\nu U^2}{L} \nabla K_{\overline{\mathbf{u}}} - \mathscr{P} L \, \overline{\mathbf{u}' \otimes \mathbf{u}'} \cdot \overline{\mathbf{u}} - P U \overline{P} \overline{\mathbf{u}} \right) 
+  + \mathscr{P} \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} - \frac{\nu U^2}{L^2} \nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}}
+\end{aligned}\]</div>
+<p>Without an independent time scale, <span class="math notranslate nohighlight">\(T = \frac{L}{U}\)</span>, and in incompressible flows <span class="math notranslate nohighlight">\(P = U^2\)</span><a class="footnote-reference brackets" href="#p-notation" id="id3">3</a>, and dividing for <span class="math notranslate nohighlight">\(\frac{U^3}{L}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+ \dfrac{\overline{D} K_{\overline{\mathbf{u}}}}{\overline{D}t}
+  = - \nabla \cdot \left( \overline{P} \overline{\mathbf{u}} \right) + \frac{\nu}{U L} \left\{ \nabla \cdot \left( \nabla K_{\overline{\mathbf{u}}}  \right) - \nabla \overline{\mathbf{u}} : \nabla \overline{\mathbf{u}} \right\} - \frac{\mathscr{P} L}{U^3} \left\{ \nabla \cdot \left( \overline{\mathbf{u}' \otimes \mathbf{u}'} \cdot \overline{\mathbf{u}} \right) + \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} \right\}
+\end{aligned}\]</div>
+<p>Turbulence is a phenomenon that occurs at high Reynolds numbers, i.e. with <span class="math notranslate nohighlight">\(\frac{\nu}{U L} = \frac{1}{Re} \rightarrow 0\)</span>. If the other contributions have the same order of magnitude, it follows that <span class="math notranslate nohighlight">\(\mathscr{P} = \frac{U^3}{L}\)</span>.</p>
+<p><strong>Turbulent energy.</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{u^2}{T} \dfrac{\overline{D} k}{\overline{D} t} = \frac{1}{L} \nabla \cdot \left( \frac{\nu u^2}{L} \nabla k - u^3 \overline{\mathbf{u}' k'} - p u \overline{ P' \mathbf{u}'}  \right) - \mathscr{P} \nabla \overline{\mathbf{u}} : \overline{\mathbf{u}' \otimes \mathbf{u}'} - \mathscr{D} \overline{\nabla \mathbf{u}' : \nabla \mathbf{u}'} \ ,
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\mathscr{D} = \frac{\nu U^2}{L^2}\)</span>.</p>
+<p><strong>Turbulence in equilibrium</strong> means <span class="math notranslate nohighlight">\(\mathscr{P} = \mathscr{D}\)</span> and thus</p>
+<div class="math notranslate nohighlight">
+\[\mathscr{P} = \mathscr{D} = \frac{U^3}{L} \ .\]</div>
+<hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="avg-operator"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>What’s a proper definition? Can equations be time-dependent? It looks so, if fields are interpreted as stochastic fields and average is an average in probability and not time.</p>
 </dd>
 <dt class="label" id="avg-operator-properties"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>Is it possible to swap average operator and differential operators? Let’s assume it is.</p>
+</dd>
+<dt class="label" id="p-notation"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Remember that, with some notational abuse, in this section <span class="math notranslate nohighlight">\(P = \frac{P}{\rho}\)</span>.</p>
 </dd>
 </dl>
 </div>
@@ -829,6 +860,7 @@ Rearranging terms<div class="sd-summary-down docutils">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rans">10.1.1. RANS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-equations">10.1.2. Energy equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-analysis-and-the-assumption-of-turbulence-in-equilibrium">10.1.3. Dimensional analysis and the assumption of turbulence in equilibrium</a></li>
 </ul>
   </nav></div>
 

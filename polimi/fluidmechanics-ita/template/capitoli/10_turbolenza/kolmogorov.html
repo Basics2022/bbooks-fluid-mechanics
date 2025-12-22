@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/kolmogorov';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
-    <link rel="next" title="10.3. Exercises" href="exercises.html" />
+    <link rel="next" title="10.3. Boundary layer flows" href="boundary_layers.html" />
     <link rel="prev" title="10.1. RANS and energy equations" href="rans_energy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
@@ -283,7 +283,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="10teoria.html">10. Instability and turbulence</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="rans_energy.html">10.1. RANS and energy equations</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">10.2. Scales of turbulence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercises.html">10.3. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boundary_layers.html">10.3. Boundary layer flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">10.4. Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -546,6 +547,17 @@ Dimensional analysis<div class="sd-summary-down docutils">
   Re_{\eta} := \frac{U_{\eta} \ell_{\mu}}{\nu} = 1
 \]</div>
 <p><strong>todo</strong> evaluate the ratio of characteristic dimension of the viscous range with the chacteristic dimension of the problem in terms of Reynolds” number. Which assumptions to be made to get a Reynolds number of the large scales? Especially about <span class="math notranslate nohighlight">\(\varepsilon\)</span>.</p>
+<p>Under the assumption of <a class="reference internal" href="rans_energy.html#fluid-mechanics-turbulence-rans-energy-turbulence-in-equilibrium"><span class="std std-ref">turbulence in equilibrium</span></a>, dimensional analysis gives</p>
+<div class="math notranslate nohighlight">
+\[\varepsilon = \frac{U^3}{L} \ ,\]</div>
+<p>and thus</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\ell_{\eta}}{L} = \text{Re}^{-\frac{3}{4}} \quad , \quad
+\frac{\tau_{\eta}}{T} = \text{Re}^{-\frac{1}{2}} \quad , \quad
+\frac{U_{\eta}}{U} = \text{Re}^{-frac{1}{4}} \ .
+\]</div>
+<p>These relation gives an estimate of the spatial resolution — i.e. the dimension of the mathematical problem — required by a numerical methods to fully resolve all the structures in the flow. In a 3-dimensional domain of side <span class="math notranslate nohighlight">\(L\)</span>, grid spacing should be of order <span class="math notranslate nohighlight">\(\Delta x \sim \ell_{\eta} \sim L \, \text{Re}^{-\frac{3}{4}}\)</span>, and thus the number of grid cells approximately <span class="math notranslate nohighlight">\(N \sim \left\frac{L}{\ell_{\tau}}\right)^3 = \text{Re}^{\frac{9}{4}}\)</span>.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="scale-qualitative"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -597,11 +609,11 @@ Dimensional analysis<div class="sd-summary-down docutils">
       </div>
     </a>
     <a class="right-next"
-       href="exercises.html"
+       href="boundary_layers.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">10.3. </span>Exercises</p>
+        <p class="prev-next-title"><span class="section-number">10.3. </span>Boundary layer flows</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
