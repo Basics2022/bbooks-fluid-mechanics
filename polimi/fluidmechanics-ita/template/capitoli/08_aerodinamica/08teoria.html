@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8. Aerodynamics &#8212; Fluid Mechanics</title>
+    <title>8. Incompressible Aerodynamics &#8212; Fluid Mechanics</title>
   
   
   
@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/08teoria';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
-    <link rel="next" title="8.1. Weissinger method" href="../../../../../code/notebooks/weissinger.html" />
+    <link rel="next" title="8.1. Steady Aerodynamics" href="steady-aerodynamics.html" />
     <link rel="prev" title="7.14.6. Exercise 7.6" href="../07_similitudine/0707in.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
@@ -269,9 +269,10 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">8. Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.1. Weissinger method</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">8.2. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">8. Incompressible Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="steady-aerodynamics.html">8.1. Steady Aerodynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.2. Weissinger method</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">8.3. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -281,7 +282,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.1. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/rans_energy.html">10.1. RANS and energy equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/kolmogorov.html">10.2. Scales of turbulence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/boundary_layers.html">10.3. Boundary layer flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.4. Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -488,7 +492,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Aerodynamics</h1>
+    <h1>Incompressible Aerodynamics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -502,9 +506,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="aerodynamics">
-<span id="fluid-mechanics-aerodynamics"></span><h1><span class="section-number">8. </span>Aerodynamics<a class="headerlink" href="#aerodynamics" title="Permalink to this heading">#</a></h1>
-<p>Per correnti irrotazionali (<span class="math notranslate nohighlight">\(\omega = \mathbf{0}\)</span>) in un dominio
+  <div class="tex2jax_ignore mathjax_ignore section" id="incompressible-aerodynamics">
+<span id="fluid-mechanics-aerodynamics"></span><h1><span class="section-number">8. </span>Incompressible Aerodynamics<a class="headerlink" href="#incompressible-aerodynamics" title="Permalink to this heading">#</a></h1>
+<p><strong>todo</strong> <em>Update the introduction</em></p>
+<p>In many situations in aeronautics, the flow of interest can be modelled as irrotational in the whole domain, except for very thin regions where vorticity and viscous effects are lumped. This is the case of <strong>high-<span class="math notranslate nohighlight">\(\text{Re}\)</span></strong> flows, with uniform free-stream velocity (so that incoming vorticity is zero), around <strong>streamlined bodies</strong> with small angles between their «longitudinal» direction and the free-stream velocity: if all these conditions are met, it’s likely no large separation and recirculation regions occur and the vorticity and viscosity effects are only relevant in the thin <strong>boundary layer</strong> at the solid surface of the body and in thin <strong>wakes</strong> shed downstream<a class="footnote-reference brackets" href="#thin-bl-high-re" id="id1">1</a>.</p>
+<p><strong>Steady aerodynamics.</strong></p>
+<p><strong>Unsteady aerodynamics.</strong></p>
+<ul class="simple">
+<li><p><em>Deal with equations, wakes and shape and connection of the domain</em></p></li>
+<li><p><em>2-dimensional vs. 3-dimensional flows</em></p></li>
+<li><p><em>Thin airfoil and wing theory</em></p></li>
+</ul>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<strong>Old introduction</strong><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Per correnti irrotazionali (<span class="math notranslate nohighlight">\(\omega = \mathbf{0}\)</span>) in un dominio
 semplicemente connesso (<span class="math notranslate nohighlight">\(\mathbf{u} = \mathbf{\nabla} \phi\)</span>) di fluidi
 incomprimibili (<span class="math notranslate nohighlight">\(\mathbf{\nabla} \cdot \mathbf{u} = 0\)</span>), il potenziale cinetico
 soddisfa l’equazione di Laplace <span class="math notranslate nohighlight">\(\Delta \phi = 0\)</span>. Infatti, inserendo
@@ -512,7 +533,7 @@ nel vincolo di incomprimibilità la relazione che lega il potenziale
 cinetico alla velocità si ottiene</p>
 <div class="math notranslate nohighlight">
 \[0 = \mathbf{\nabla} \cdot \mathbf{u} = \mathbf{\nabla} \cdot (\mathbf{\nabla} \phi) = \nabla^2 \phi = \Delta \phi .\]</div>
-<p>Come nel caso della seconda e della terza forma del teorema di Bernoulli
+<p class="sd-card-text">Come nel caso della seconda e della terza forma del teorema di Bernoulli
 per fluidi viscosi, vedi introduzione al capitolo
 §<span class="xref myst">[ch:bernoulli]</span>{reference-type=»ref»
 reference=»ch:bernoulli»}, l’ipotesi di fluido non viscoso non è
@@ -522,23 +543,23 @@ che la corrente sia irrotazionale. L’equazione della vorticità per
 fluido incomprimibile è</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial \mathbf{\omega}}{\partial t} + (\mathbf{u} \cdot \mathbf{\nabla}) \mathbf{\omega} = (\mathbf{\omega} \cdot \mathbf{\nabla}) \mathbf{u} + \nu \Delta \mathbf{\omega} ,\]</div>
-<p>che per un fluido non viscoso, si riduce a</p>
+<p class="sd-card-text">che per un fluido non viscoso, si riduce a</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial \mathbf{\omega}}{\partial t} + (\mathbf{u} \cdot \mathbf{\nabla}) \mathbf{\omega} = (\mathbf{\omega} \cdot \mathbf{\nabla}) \mathbf{u}  \qquad , \qquad
  \dfrac{D \mathbf{\omega}}{D t} = (\mathbf{\omega} \cdot \mathbf{\nabla}) \mathbf{u} ,\]</div>
-<p>dove è stata messa in evidenza la derivata materiale della vorticità,
+<p class="sd-card-text">dove è stata messa in evidenza la derivata materiale della vorticità,
 che rappresenta la variazione della vorticità di una particella fluida,
 che si muove con la velocità del fluido. Se si considera un problema in
 cui un corpo aerodinamico è investito da una corrente che è uniforme
 all’infinito a monte, la vorticità all’infinito a monte è nulla: si può
 dimostrare facilmente allora che <span class="math notranslate nohighlight">\(D\mathbf{\omega} / D t = \mathbf{0}\)</span>, e quindi
 la vorticità si mantiene costante e nulla, sulle linee di corrente che
-partono dall’infinito a monte<a class="footnote-reference brackets" href="#id2" id="id1">1</a>. Per correnti ad alto numero di
+partono dall’infinito a monte<a class="footnote-reference brackets" href="#free-stream-vorticity" id="id2">2</a>. Per correnti ad alto numero di
 Reynolds attorno a corpi affusolati, nelle quali non si verificano
 separazioni, gli effetti viscosi e la vorticità sono confinati in strati
 limite «sottili» attorno ai corpi solidi e in scie «sottili» che si
 staccano da essi.</p>
-<p>É quindi possibile descrivere una corrente di un fluido incomprimibile
+<p class="sd-card-text">É quindi possibile descrivere una corrente di un fluido incomprimibile
 ad alto numero di Reynolds, all”<em>esterno</em> di queste sottili regioni
 vorticose, con un modello di fluido non viscoso. Partendo dalle
 equazioni di Navier–Stokes che governano la dinamica di un fluido
@@ -562,7 +583,7 @@ pressione utilizzando il teorema di Bernoulli.</p>
   \Delta \phi = 0 \\
   \frac{\partial phi}{\partial n} = \mathbf{u}\cdot\mathbf{\hat{n}} \big|_{wall} = \mathbf{b}\cdot\mathbf{\hat{n}} \qquad +  \textit{altre b.c} \\
  \end{cases}\end{split}\]</div>
-<p>Il problema di Laplace è lineare ed è quindi valido il
+<p class="sd-card-text">Il problema di Laplace è lineare ed è quindi valido il
 principio di sovrapposizione di cause ed effetti, se la geometria del
 dominio è fissata. Questa considerazione può sembrare strana, ma è
 determinata dalla possibile presenza di scie che si distaccano dai corpi
@@ -576,14 +597,14 @@ precendenti è contenuta all’interno delle scie, la cui vorticità è
 legata al valore di circolazione attorno al corpo (e quindi di portanza)
 e la cui dinamica è determinata dalle equazioni di governo della
 vorticità.</p>
-<hr class="footnotes docutils" />
+</div>
+</details><hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>É immediato convincersi del fatto, utilizzando la descrizione
-lagrangiana
-(<span class="xref myst">[eqn:bilanci:vorticitàLagrange]</span>{reference-type=»ref»
-reference=»eqn:bilanci:vorticitàLagrange»}) della vorticità per un
-fluido non viscoso.</p>
+<dt class="label" id="thin-bl-high-re"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>As an example, the relation between thickness of boundary layer flows and Reynolds number in this book is shown with <span class="xref myst">Prandtl equations for the laminar boundary layer</span>, <span class="math notranslate nohighlight">\(\delta(x) \sim x \text{Re}_x^{-\frac{1}{2}}\)</span>, <strong>todo</strong> <em>add examples with turbulent flows</em>.</p>
+</dd>
+<dt class="label" id="free-stream-vorticity"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>É immediato convincersi del fatto, utilizzando la descrizione lagrangiana <code class="xref eq docutils literal notranslate"><span class="pre">eqn:bilanci:vorticitàLagrange</span></code> della vorticità per un fluido non viscoso.</p>
 </dd>
 </dl>
 <div class="toctree-wrapper compound">
@@ -630,11 +651,11 @@ fluido non viscoso.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../../../../code/notebooks/weissinger.html"
+       href="steady-aerodynamics.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">8.1. </span>Weissinger method</p>
+        <p class="prev-next-title"><span class="section-number">8.1. </span>Steady Aerodynamics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

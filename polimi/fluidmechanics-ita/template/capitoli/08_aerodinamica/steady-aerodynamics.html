@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Fluid Mechanics</title>
+    <title>8.1. Steady Aerodynamics &#8212; Fluid Mechanics</title>
   
   
   
@@ -68,9 +68,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/09_bl/0906in';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
+    <link rel="next" title="8.2. Weissinger method" href="../../../../../code/notebooks/weissinger.html" />
+    <link rel="prev" title="8. Incompressible Aerodynamics" href="08teoria.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -174,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Incompressible Fluid Mechanics</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01_statica/02teoria.html">1. Statics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../01_statica/exercises.html">1.8. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../01_statica/0201in.html">1.8.1. Exercise 1.1 <!--Archimede's law and Buoyancy--></a></li>
@@ -267,16 +269,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Incompressible Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../08_aerodinamica/steady-aerodynamics.html">8.1. Steady Aerodynamics</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="08teoria.html">8. Incompressible Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.1. Steady Aerodynamics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.2. Weissinger method</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../08_aerodinamica/exercises.html">8.3. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">8.3. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="09teoria.html">9. Boundary layer</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="exercises.html">9.5. Exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_bl/exercises.html">9.5. Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -361,7 +363,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/polimi/fluidmechanics-ita/template/capitoli/09_bl/0906in.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,7 +380,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fpolimi/fluidmechanics-ita/template/capitoli/09_bl/0906in.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fpolimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -408,7 +410,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/09_bl/0906in.md" target="_blank"
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -492,7 +494,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Steady Aerodynamics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -501,9 +503,20 @@ document.write(`
                 <h2> Contenuti </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.1.1. Mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method">8.1.2. Green’s function method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-problems">8.1.2.1. 2-dimensional problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.1.2.2. 3-dimensional problems</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.1.3. Wake and the shape of the domain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.1.4. Theorems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-jukowski-theorem">8.1.4.1. Kutta-Jukowski theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-alembert-paradox-2-dimensional-flow">8.1.4.2. D’Alembert paradox - 2 dimensional flow</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -514,53 +527,107 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>Nella figura accanto una lastra piana di corda <span class="math notranslate nohighlight">\(c=30\ cm\)</span>, apertura
-<span class="math notranslate nohighlight">\(b=75\ cm\)</span> e spessore trascurabile è investita da una corrente esterna
-d’aria (<span class="math notranslate nohighlight">\(\rho=1.225\ kg/ m^3\)</span>, <span class="math notranslate nohighlight">\(\mu=1.76\times10^{-5}\ kg/(ms)\)</span>)
-uniforme in corda e variabile in apertura secondo la legge
-$<span class="math notranslate nohighlight">\(\bm{U}_e(z) = U_e(z) \mathbf{\hat{\bm{x}}} = \overline{U} \left( \frac{z}{b} \right)^{2/3} \mathbf{\hat{\bm{x}}}\)</span><span class="math notranslate nohighlight">\(
-con \)</span>\overline{U}=5\ m/s<span class="math notranslate nohighlight">\(. Assumendo la corrente laminare, stazionaria e
-bidimensionale su ciascuna sezione \)</span>z$ in apertura, e potendone
-approssimare lo strato limite attraverso la soluzione di Blasius, si
-richiede di:</p>
-<ul class="simple">
-<li><p>calcolare la resistenza <span class="math notranslate nohighlight">\(D\)</span> della lastra ed il corrispondente
-momento all’incastro <span class="math notranslate nohighlight">\(M_y\)</span>;</p></li>
-<li><p>calcolare lo spessore di spostamento <span class="math notranslate nohighlight">\(\delta^*(x,z)\)</span> e di quantità
-di moto <span class="math notranslate nohighlight">\(\theta(x,z)\)</span> dello strato limite sulla superficie della
-lamina;</p></li>
-</ul>
-<p><img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/09_bl/fig/sheet" />{width=»100%»}</p>
-<p>Soluzione di Blasius dello strato limite. Spessori di strato limite.</p>
-<p>Assumendo valido il modello 2D di Blasius per lo strato limite
-<em>quasi-3D</em> del problema, lo spessore convenzionale dello strato limite
-vale $<span class="math notranslate nohighlight">\(\delta(x,z) = \sqrt{ \dfrac{x \nu}{ U_e(z)} } \ ,\)</span><span class="math notranslate nohighlight">\( e lo sforzo
-viscoso a parete in direzione \)</span>x<span class="math notranslate nohighlight">\( vale
-\)</span><span class="math notranslate nohighlight">\(\tau_w(x,z) = \mu \dfrac{\partial u}{\partial y}\Bigg|_{y=0} = 
-     \mu \, g''(0) \dfrac{U_e(z)}{\delta(x,z)} = 
-     g''(0) \mu \dfrac{U_e^{3/2}(z)}{\sqrt{\nu x}}  \ .
-     = g''(0) \sqrt{ \mu \rho } \dfrac{U_e^{3/2}(z)}{\sqrt{x}}  \ .\)</span><span class="math notranslate nohighlight">\(
-Utilizzando il profilo di velocità fornito dal problema,
-\)</span><span class="math notranslate nohighlight">\(\delta(x,z) = \sqrt{\dfrac{x \nu b^{1/3}}{ \overline{U} z^{1/3} }} \qquad , \qquad
-     \tau_w(x,z) = g''(0) \sqrt{ \mu \rho } \, \dfrac{\overline{U}^{3/2}}{b} \dfrac{z}{\sqrt{x}}  \ .\)</span>$</p>
-<ul class="simple">
-<li><p>Per il calcolo della resistenza e del momento alla radice è
-necessario calcolare lo sforzo a parete sulla lamina piana
-<span class="math notranslate nohighlight">\(\tau_w (x,z)\)</span>. La resistenza è l’integrale di <span class="math notranslate nohighlight">\(\tau_w\)</span> sulla
-superficie; il momento <span class="math notranslate nohighlight">\(M_y\)</span> è l’integrale di <span class="math notranslate nohighlight">\(z \tau_w (x,z)\)</span>
-esteso alla superficie,
-$<span class="math notranslate nohighlight">\(D = \int_{x=0}^{c} \int_{z=0}^b \tau_w(x,z) dx \, dz = 
-    g''(0) \sqrt{ \mu \rho } \, \overline{U}^{3/2} \, b \, \sqrt{c} \ ,\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(M_y = \int_{x=0}^{c} \int_{z=0}^b z \tau_w(x,z) dx \, dz = 
-    \dfrac{2}{3} g''(0) \sqrt{ \mu \rho } \, \overline{U}^{3/2} \, b^2 \, \sqrt{c} \ .\)</span>$</p></li>
-<li><p>Nel modello <em>quasi-3D</em> dello strato limite, gli spessori integrali
-sono funzione di <span class="math notranslate nohighlight">\((x,z)\)</span>,
-$<span class="math notranslate nohighlight">\(\delta^*(x,z) = \int_0^\infty \displaystyle\left[ 1 - \frac{u(x,y,z)}{U_e(x,z)} \right] dy ,\qquad
-   \theta(x,z) = \int_0^\infty \frac{u(x,y,z)}{U_e(x,z)} \displaystyle\left[ 1 - \frac{u(x,y,z)}{U_e(x,z)} \right] dy \ ,\)</span><span class="math notranslate nohighlight">\(
-e utilizzando le relazioni dello strato limite di Blasius
-\)</span><span class="math notranslate nohighlight">\(\delta^*(x,z) = 1.721 \, \delta(x,z) \qquad , \qquad
-       \theta(x,z) = 0.644 \, \delta(x,z) \ .\)</span>$</p></li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="steady-aerodynamics">
+<span id="fluid-mechanics-aerodynamics-steady"></span><h1><span class="section-number">8.1. </span>Steady Aerodynamics<a class="headerlink" href="#steady-aerodynamics" title="Permalink to this heading">#</a></h1>
+<div class="section" id="mathematical-model">
+<h2><span class="section-number">8.1.1. </span>Mathematical model<a class="headerlink" href="#mathematical-model" title="Permalink to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ - \Delta \phi &amp; = 0  &amp;&amp; \mathbf{r} \in \Omega \\
+ \hat{\mathbf{n}} \cdot \boldsymbol\nabla \phi &amp; = 0 &amp;&amp; \mathbf{r} \in S_{body} \\
+ \phi &amp; = \dots &amp;&amp; \mathbf{r} \in S_{\infty}
+\end{aligned}\end{split}\]</div>
+<p>In order to build a domain where the flow is irrotational, wake regions must be cut from the domain: both sides of these regions become part of the boundary of the domain. As shown below, there’s no physical wake for 2-dimensional steady flows, while wakes exist in 3-dimensional flows.</p>
+</div>
+<div class="section" id="green-s-function-method">
+<h2><span class="section-number">8.1.2. </span>Green’s function method<a class="headerlink" href="#green-s-function-method" title="Permalink to this heading">#</a></h2>
+<div class="section" id="dimensional-problems">
+<h3><span class="section-number">8.1.2.1. </span>2-dimensional problems<a class="headerlink" href="#dimensional-problems" title="Permalink to this heading">#</a></h3>
+<p><strong>Green’s function.</strong> Green’s function of a 2-dimensional Poisson problem reads</p>
+<div class="math notranslate nohighlight">
+\[G(\mathbf{r}; \mathbf{r}_0) = - \frac{1}{2\pi} \ln |\mathbf{r} - \mathbf{r}_0| \ .\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Derivation of the Green’s function for 2-dimensional Poisson problem.<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Solutions with spherical symmetry of the Poisson equation in 2-dimensional domains, in the whole domain except for the origin of the coordinates (or the position of the <em>active</em> point, <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span>, as the problem is independent from translation of coordinates under the assumption of homogeneous domain)</p>
+<div class="math notranslate nohighlight">
+\[-\Delta G = \delta(r) \ .\]</div>
+<p class="sd-card-text">The problem is regular for <span class="math notranslate nohighlight">\(r \ne 0\)</span></p>
+<div class="math notranslate nohighlight">
+\[-\Delta G \quad , \quad |\mathbf{r}| \ne 0 \ ,\]</div>
+<p class="sd-card-text">and it can be solved using the expression of the Laplacian for spherical symmetric scalar fields</p>
+<div class="math notranslate nohighlight">
+\[0 = \frac{1}{r} \left( r G'(r) \right)' \ ,\]</div>
+<p class="sd-card-text">and integrating twice</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  G'(r) &amp; = \frac{A}{r} \\
+  G (r) &amp; = A \ln r + B \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">The additive constant <span class="math notranslate nohighlight">\(B\)</span> is set to zero, while the constant <span class="math notranslate nohighlight">\(A\)</span> is evalauted by the condition</p>
+<div class="math notranslate nohighlight">
+\[1 = \int_{\Omega} \delta(r) = - \int_{\Omega} \Delta G = - \oint_{\partial \Omega} \hat{\mathbf{n}} \cdot \boldsymbol\nabla G = - \oint_{C_r} \hat{\mathbf{r}} \cdot \hat{\mathbf{r}} \partial_r G = - \oint_{C_r} \frac{A}{r} = - \int_{\theta=0}^{2\pi} \frac{A}{r} \, r d\theta = - 2 \pi A \ ,\]</div>
+<p class="sd-card-text">so that <span class="math notranslate nohighlight">\(A = -\frac{1}{2 \pi}\)</span>, and</p>
+<div class="math notranslate nohighlight">
+\[G(\mathbf{r}; \mathbf{r}_0) = - \frac{1}{2\pi} \ln |\mathbf{r} - \mathbf{r}_0| \ .\]</div>
+</div>
+</details><p><strong>Solution.</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  E(\mathbf{r}_0) \phi(\mathbf{r}_0) 
+  &amp; = \int_{\mathbf{r}\in\Omega} \delta(\mathbf{r}-\mathbf{r}_0) \phi(\mathbf{r}) = \\
+  &amp; = - \int_{\mathbf{r}\in\Omega} \nabla^2_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \phi(\mathbf{r}) = \\
+  &amp; = - \int_{\mathbf{r}\in\Omega} \nabla_\mathbf{r} \cdot \left( \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \phi(\mathbf{r}) -  G(\mathbf{r}; \mathbf{r}_0)  \nabla_{\mathbf{r}} \phi(\mathbf{r}) \right) - \int_{\mathbf{r}\in\Omega} G(\mathbf{r};\mathbf{r}_0) \underbrace{\nabla^2_{\mathbf{r}} \phi(\mathbf{r})}_{=0 \text{ , Poisson eq}} = \\
+  &amp; = - \int_{\mathbf{r}\in \partial \Omega} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \phi(\mathbf{r}) -  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \phi(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \right\}  \ .
+\end{aligned}\end{split}\]</div>
+<p>As shown below, in 2-dimensional steady problems there’s no physical wake, i.e. <span class="math notranslate nohighlight">\(\partial \Omega = S_{body} \cup S_{\infty}\)</span>, or equivalently on <span class="math notranslate nohighlight">\(S^+_w\)</span>and <span class="math notranslate nohighlight">\(S^-_w\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[0 = \hat{\mathbf{n}}^- \cdot \mathbf{u}^- + \hat{\mathbf{n}}^+ \cdot \mathbf{u}^+ = \ ...\]</div>
+<p>…</p>
+<p>For the perturbation potential, <span class="math notranslate nohighlight">\(\varphi := \phi - \phi_\infty = \phi - \mathbf{U}_\infty \cdot \mathbf{r}\)</span>, with <span class="math notranslate nohighlight">\(\varphi|_{S_\infty} = 0\)</span> (<strong>todo</strong> prove it! And find the trend <span class="math notranslate nohighlight">\(\propto r^{\alpha}\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  E(\mathbf{r}_0) \varphi(\mathbf{r}_0) 
+  &amp; = - \int_{\mathbf{r}\in \partial \Omega} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) -  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \right\} = \\
+  &amp; = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) -  \mathbf{U}_\infty \cdot \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0)  \ .
+\end{aligned}\end{split}\]</div>
+</div>
+<div class="section" id="id1">
+<h3><span class="section-number">8.1.2.2. </span>3-dimensional problems<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p><strong>Green’s function</strong> <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/bem-poisson-helmholtz-waves.html#poisson-equation">Green’s function of a 3-dimensional Poisson problem</a> reads</p>
+<div class="math notranslate nohighlight">
+\[G(\mathbf{r}; \mathbf{r}_0) = \frac{1}{4\pi} \frac{1}{|\mathbf{r} - \mathbf{r}_0|} \ .\]</div>
+<p><strong>Solution</strong></p>
+</div>
+</div>
+<div class="section" id="wake-and-the-shape-of-the-domain">
+<h2><span class="section-number">8.1.3. </span>Wake and the shape of the domain<a class="headerlink" href="#wake-and-the-shape-of-the-domain" title="Permalink to this heading">#</a></h2>
+<p><em>Physical conditions, with jump conditions</em></p>
+<p><em>No physical wake in 2-dimensional steady flows</em></p>
+</div>
+<div class="section" id="theorems">
+<h2><span class="section-number">8.1.4. </span>Theorems<a class="headerlink" href="#theorems" title="Permalink to this heading">#</a></h2>
+<div class="section" id="kutta-jukowski-theorem">
+<h3><span class="section-number">8.1.4.1. </span>Kutta-Jukowski theorem<a class="headerlink" href="#kutta-jukowski-theorem" title="Permalink to this heading">#</a></h3>
+<p><strong>2-dimensional flows.</strong> Circulation is defined as</p>
+<div class="math notranslate nohighlight">
+\[\Gamma = \oint_{\gamma} \mathbf{u} \cdot \hat{\mathbf{t}} \ .\]</div>
+<p>Using integral balance equations</p>
+<p>If a set of Cartesian coordinates is used and the free-stream velocity is aligned with the <span class="math notranslate nohighlight">\(\hat{\mathbf{x}}\)</span> unit vector, the lift reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  L = \hat{\mathbf{y}} \cdot \mathbf{F} 
+\end{aligned}\]</div>
+</div>
+<div class="section" id="d-alembert-paradox-2-dimensional-flow">
+<h3><span class="section-number">8.1.4.2. </span>D’Alembert paradox - 2 dimensional flow<a class="headerlink" href="#d-alembert-paradox-2-dimensional-flow" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -575,7 +642,7 @@ e utilizzando le relazioni dello strato limite di Blasius
         },
         kernelOptions: {
             name: "python3",
-            path: "./polimi/fluidmechanics-ita/template/capitoli/09_bl"
+            path: "./polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica"
         },
         predefinedOutput: true
     }
@@ -592,6 +659,24 @@ e utilizzando le relazioni dello strato limite di Blasius
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="08teoria.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">precedente</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Incompressible Aerodynamics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../../../../code/notebooks/weissinger.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">successivo</p>
+        <p class="prev-next-title"><span class="section-number">8.2. </span>Weissinger method</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -606,9 +691,20 @@ e utilizzando le relazioni dello strato limite di Blasius
     <i class="fa-solid fa-list"></i> Contenuti
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.1.1. Mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method">8.1.2. Green’s function method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-problems">8.1.2.1. 2-dimensional problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.1.2.2. 3-dimensional problems</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.1.3. Wake and the shape of the domain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.1.4. Theorems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-jukowski-theorem">8.1.4.1. Kutta-Jukowski theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-alembert-paradox-2-dimensional-flow">8.1.4.2. D’Alembert paradox - 2 dimensional flow</a></li>
+</ul>
+</li>
+</ul>
   </nav></div>
 
 </div></div>
