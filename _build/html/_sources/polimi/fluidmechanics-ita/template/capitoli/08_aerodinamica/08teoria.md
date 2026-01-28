@@ -1,5 +1,24 @@
 (fluid-mechanics:aerodynamics)=
-# Aerodynamics
+# Incompressible Aerodynamics
+
+**todo** *Update the introduction*
+
+In many situations in aeronautics, the flow of interest can be modelled as irrotational in the whole domain, except for very thin regions where vorticity and viscous effects are lumped. This is the case of **high-$\text{Re}$** flows, with uniform free-stream velocity (so that incoming vorticity is zero), around **streamlined bodies** with small angles between their "longitudinal" direction and the free-stream velocity: if all these conditions are met, it's likely no large separation and recirculation regions occur and the vorticity and viscosity effects are only relevant in the thin **boundary layer** at the solid surface of the body and in thin **wakes** shed downstream[^thin-bl-high-Re].
+
+[^thin-bl-high-Re]: As an example, the relation between thickness of boundary layer flows and Reynolds number in this book is shown with [Prandtl equations for the laminar boundary layer](), $\delta(x) \sim x \text{Re}_x^{-\frac{1}{2}}$, **todo** *add examples with turbulent flows*.
+
+
+**Steady aerodynamics.**
+
+**Unsteady aerodynamics.**
+
+- *Deal with equations, wakes and shape and connection of the domain*
+- *2-dimensional vs. 3-dimensional flows*
+- *Thin airfoil and wing theory*
+
+---
+
+```{dropdown} **Old introduction**
 
 Per correnti irrotazionali ($\omega = \mathbf{0}$) in un dominio
 semplicemente connesso ($\mathbf{u} = \mathbf{\nabla} \phi$) di fluidi
@@ -33,7 +52,7 @@ cui un corpo aerodinamico è investito da una corrente che è uniforme
 all'infinito a monte, la vorticità all'infinito a monte è nulla: si può
 dimostrare facilmente allora che $D\mathbf{\omega} / D t = \mathbf{0}$, e quindi
 la vorticità si mantiene costante e nulla, sulle linee di corrente che
-partono dall'infinito a monte[^1]. Per correnti ad alto numero di
+partono dall'infinito a monte[^free-stream-vorticity]. Per correnti ad alto numero di
 Reynolds attorno a corpi affusolati, nelle quali non si verificano
 separazioni, gli effetti viscosi e la vorticità sono confinati in strati
 limite "sottili" attorno ai corpi solidi e in scie "sottili" che si
@@ -79,8 +98,6 @@ legata al valore di circolazione attorno al corpo (e quindi di portanza)
 e la cui dinamica è determinata dalle equazioni di governo della
 vorticità.
 
-[^1]: É immediato convincersi del fatto, utilizzando la descrizione
-    lagrangiana
-    ([\[eqn:bilanci:vorticitàLagrange\]](#eqn:bilanci:vorticitàLagrange){reference-type="ref"
-    reference="eqn:bilanci:vorticitàLagrange"}) della vorticità per un
-    fluido non viscoso.
+[^free-stream-vorticity]: É immediato convincersi del fatto, utilizzando la descrizione lagrangiana {eq}`eqn:bilanci:vorticitàLagrange` della vorticità per un fluido non viscoso.
+
+```
