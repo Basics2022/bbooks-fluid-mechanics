@@ -512,7 +512,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.1.3. Wake and the shape of the domain</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.1.4. Theorems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-jukowski-theorem">8.1.4.1. Kutta-Jukowski theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-joukowski-theorem">8.1.4.1. Kutta-Joukowski theorem</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-alembert-paradox-2-dimensional-flow">8.1.4.2. D’Alembert paradox - 2 dimensional flow</a></li>
 </ul>
 </li>
@@ -546,6 +546,7 @@ document.write(`
 <p><strong>Green’s function.</strong> Green’s function of a 2-dimensional Poisson problem reads</p>
 <div class="math notranslate nohighlight">
 \[G(\mathbf{r}; \mathbf{r}_0) = - \frac{1}{2\pi} \ln |\mathbf{r} - \mathbf{r}_0| \ .\]</div>
+<p><strong>Note!</strong> When taking the logarithm of a physical quantity, that quantity must be non-dimensional. Here, the problem must be made non-dimensional, as an example scaling all the lengths with a reference length.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Derivation of the Green’s function for 2-dimensional Poisson problem.<div class="sd-summary-down docutils">
@@ -595,7 +596,88 @@ Derivation of the Green’s function for 2-dimensional Poisson problem.<div clas
   &amp; = - \int_{\mathbf{r}\in \partial \Omega} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) -  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \right\} = \\
   &amp; = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) -  \mathbf{U}_\infty \cdot \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0)  \ .
 \end{aligned}\end{split}\]</div>
+<p>This equation can be recast as an <strong>integro-differential equation</strong> for the perturbation potential on the surface of the body <span class="math notranslate nohighlight">\(\mathbf{r}_0 \in S_{b}\)</span> that can be solved by collocation, as an example using <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/bem.html"><strong>boundary element methods</strong></a>. Once this problem is solved, the perturbation potential on <span class="math notranslate nohighlight">\(S_b\)</span> is known, and the perturbation potential can be computed in every point of the domain.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="math notranslate nohighlight">\(E(\mathbf{r}_0)\)</span><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The term <span class="math notranslate nohighlight">\(E(\mathbf{r}_0)\)</span> comes from the computation of the integral with the Dirac delta.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}E(\mathbf{r}_0) = \begin{cases} 1 &amp;&amp; \mathbf{r}_0 \in \Omega \\ \frac{1}{2} &amp;&amp; \mathbf{r}_0 \in \partial \Omega \\ 0 &amp;&amp; \mathbf{r}_0 \notin \Omega \cup \partial \Omega \end{cases}\end{split}\]</div>
+<p class="sd-card-text">The value <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> is a particular case indeed, if the point <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> is on a locally flat - no sharp angles - of the boundary. If the point is at a sharp angle - being <span class="math notranslate nohighlight">\(\theta\)</span> the angle outside the domain - <span class="math notranslate nohighlight">\(E(\mathbf{r}_0) = \frac{\theta}{2 \pi}\)</span>.</p>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Asymptotic behavior of the perturbation velocity<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">For <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg |\mathbf{r}|\)</span>, Taylor expansion of the Green’s function <span class="math notranslate nohighlight">\(G(\mathbf{r}; \mathbf{r}_0)\)</span> and its gradient <span class="math notranslate nohighlight">\(\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)\)</span> read</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ G(\mathbf{r}; \mathbf{r}_0)
+ &amp; \simeq G(\mathbf{r}; \mathbf{r}_0)|_{\mathbf{r} = \mathbf{0}} + \mathbf{r} \cdot \nabla_{\mathbf{r}} G(\mathbf{r}, \mathbf{r}_0)|_{\mathbf{r} = \mathbf{0}} = \\
+ &amp; = - \frac{1}{2 \pi} \ln |\mathbf{r}_0| + \mathbf{r} \cdot \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} \ .
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ \boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)
+ &amp; \simeq \boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)|_{\mathbf{r} = \mathbf{0}} + \mathbf{r} \cdot \nabla_{\mathbf{r}} \nabla_{\mathbf{r}} G(\mathbf{r}, \mathbf{r}_0)|_{\mathbf{r} = \mathbf{0}} = \\
+ &amp; = \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + \frac{1}{2\pi} \left[ - \dfrac{\mathbf{r}}{|\mathbf{r}_0|^2} + 2 \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4} \right] = \\
+ &amp; = \frac{1}{2 \pi} \frac{\mathbf{r}_0 - \mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4} \ .
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">First and second space derivatives of the Green’s function read</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  - \nabla_{\mathbf{r}} \ln |\mathbf{r}_0 - \mathbf{r}| 
+  &amp; = - \mathbf{\hat{x}}_i \dfrac{\partial}{\partial x_i} \ln | \mathbf{r}_0 - \mathbf{r} | = \\
+  &amp; = - \mathbf{\hat{x}}_i \frac{x_{i} - x_{0,i}}{| \mathbf{r}_0 - \mathbf{r} |^2} = \\
+  &amp; = - \frac{\mathbf{r} - \mathbf{r}_0}{| \mathbf{r}_0 - \mathbf{r} |^2} \ .
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  - \nabla_{\mathbf{r}} \frac{\mathbf{r} - \mathbf{r}_0}{| \mathbf{r}_0 - \mathbf{r} |^2} 
+  &amp; = - \mathbf{\hat{x}}_k \dfrac{\partial}{\partial x_k} \left( \mathbf{\hat{x}}_i \frac{x_{i} - x_{0,i}}{| \mathbf{r}_0 - \mathbf{r} |^2} \right) = \\
+  &amp; = - \mathbf{\hat{x}}_k \mathbf{\hat{x}}_i \left[ \dfrac{\delta_{ij} |\mathbf{r}_0 - \mathbf{r}|^2 - 2 (x_i - x_{0,i})(x_k - x_{0,k}) }{| \mathbf{r}_0 - \mathbf{r} |^4} \right] = \\ 
+  &amp; = - \frac{1}{| \mathbf{r}_0 - \mathbf{r} |^2} \, \mathbb{I} + 2 \frac{(\mathbf{r}-\mathbf{r}_{0}) \otimes (\mathbf{r}-\mathbf{r}_{0})}{| \mathbf{r}_0 - \mathbf{r} |^4} \ .
+\end{aligned}\end{split}\]</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Asymptotic behavior of the perturbation potential<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">For <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg |\mathbf{r}|\)</span>, using Taylor expansion of the Green’s function <span class="math notranslate nohighlight">\(G(\mathbf{r}; \mathbf{r}_0)\)</span> and its gradient <span class="math notranslate nohighlight">\(\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)\)</span>, the perturbation potential reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  E(\mathbf{r}_0) \varphi(\mathbf{r}_0) 
+  &amp; = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) -  \mathbf{U}_\infty \cdot \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) = \\
+  &amp; \simeq - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0 - \mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] \varphi(\mathbf{r}) -  \mathbf{U}_\infty \cdot \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) \left[ - \frac{1}{2 \pi} \ln |\mathbf{r}_0| + \mathbf{r} \cdot \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} \right] = \\
+  &amp; = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0 - \mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] \varphi(\mathbf{r}) -  \mathbf{U}_\infty \cdot \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) \left[ \mathbf{r} \cdot \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} \right] = \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">if the <strong>surface</strong> <span class="math notranslate nohighlight">\(S_b\)</span> is <strong>closed</strong>, as <span class="math notranslate nohighlight">\(\oint_{S_b} \hat{\mathbf{n}} = \mathbf{0}\)</span>.</p>
+<p class="sd-card-text">Thus the perturbation potential as <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg 1\)</span> goes with</p>
+<div class="math notranslate nohighlight">
+\[\varphi(\mathbf{r}_0) \sim \frac{1}{|\mathbf{r}_0|} \ ,\]</div>
+<p class="sd-card-text">and the perturbation velocity goes with</p>
+<div class="math notranslate nohighlight">
+\[|\mathbf{u}'(\mathbf{r}_0)| = \nabla_{\mathbf{r}_0} \varphi(\mathbf{r}_0) \sim \frac{1}{|\mathbf{r}_0|^2} \ .\]</div>
+<p class="sd-card-text">Circulation reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ \Gamma 
+ &amp; = \oint_{S} \hat{\mathbf{t}} \cdot \mathbf{u} = \\
+ &amp; = \oint_{S} \hat{\mathbf{t}} \cdot \mathbf{u}' = \\
+ &amp; = \oint_{S} \hat{\mathbf{t}} \cdot \nabla \varphi = 
+\end{aligned}\end{split}\]</div>
+</div>
+</details></div>
 <div class="section" id="id1">
 <h3><span class="section-number">8.1.2.2. </span>3-dimensional problems<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p><strong>Green’s function</strong> <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/bem-poisson-helmholtz-waves.html#poisson-equation">Green’s function of a 3-dimensional Poisson problem</a> reads</p>
@@ -611,13 +693,85 @@ Derivation of the Green’s function for 2-dimensional Poisson problem.<div clas
 </div>
 <div class="section" id="theorems">
 <h2><span class="section-number">8.1.4. </span>Theorems<a class="headerlink" href="#theorems" title="Permalink to this heading">#</a></h2>
-<div class="section" id="kutta-jukowski-theorem">
-<h3><span class="section-number">8.1.4.1. </span>Kutta-Jukowski theorem<a class="headerlink" href="#kutta-jukowski-theorem" title="Permalink to this heading">#</a></h3>
-<p><strong>2-dimensional flows.</strong> Circulation is defined as</p>
+<div class="section" id="kutta-joukowski-theorem">
+<h3><span class="section-number">8.1.4.1. </span>Kutta-Joukowski theorem<a class="headerlink" href="#kutta-joukowski-theorem" title="Permalink to this heading">#</a></h3>
+<p><strong>2-dimensional flows.</strong> Circulation along a path <span class="math notranslate nohighlight">\(\gamma\)</span> is defined as the integral</p>
 <div class="math notranslate nohighlight">
 \[\Gamma = \oint_{\gamma} \mathbf{u} \cdot \hat{\mathbf{t}} \ .\]</div>
-<p>Using integral balance equations</p>
-<p>If a set of Cartesian coordinates is used and the free-stream velocity is aligned with the <span class="math notranslate nohighlight">\(\hat{\mathbf{x}}\)</span> unit vector, the lift reads</p>
+<p>Let’s define here a circuilation vector <span class="math notranslate nohighlight">\(\boldsymbol\Gamma = \Gamma\hat{\mathbf{z}}\)</span>, with <span class="math notranslate nohighlight">\(\hat{\mathbf{z}}\)</span> orthogonal w.r.t. the plane of the 2-dimensional flow.</p>
+<p>Using integral <a class="reference internal" href="../04_bilanci/04teoria.html#fluid-mechanics-balances"><span class="std std-ref">balance equations</span></a> of mass and momentum</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \frac{d}{dt} \int_V \rho + \oint_{\partial V} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = 0 \\
+  &amp; \frac{d}{dt} \int_V \rho \mathbf{u} + \oint_{\partial V} \rho \mathbf{u} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_V \rho \mathbf{g} + \oint_{\partial V} \mathbf{t}_{\hat{\mathbf{n}}} \ ,
+\end{aligned}\end{split}\]</div>
+<p>under the assumptions of steady flow and control volume, <span class="math notranslate nohighlight">\(\frac{d}{dt} \equiv 0\)</span> and <span class="math notranslate nohighlight">\(\mathbf{u}^{rel} = \mathbf{u}\)</span>, negligible volume force «<span class="math notranslate nohighlight">\(\mathbf{g} \sim \mathbf{0}\)</span>», and negligible viscous stress, <span class="math notranslate nohighlight">\(\mathbf{t}_{\hat{\mathbf{n}}} = - p \hat{\mathbf{n}}\)</span>, and rearranging the surface integrals of stress to get the force <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> acting on solid body <span class="math notranslate nohighlight">\(S_b\)</span>, it follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp;  \oint_{\partial V} \rho \mathbf{u} \cdot \hat{\mathbf{n}} = 0 \\
+  &amp;  \oint_{\partial V} \rho \mathbf{u} \mathbf{u} \cdot \hat{\mathbf{n}} = - \mathbf{F} + \oint_{S_{\infty}} \mathbf{t}_{\hat{\mathbf{n}}} \ .
+\end{aligned}\end{split}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Details<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">…</p>
+</div>
+</details><p>The velocity field as the sum of the free-stream velocity and the perturbation velocity,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{u} = \mathbf{U}_{\infty} + \mathbf{u}' = \mathbf{U}_{\infty} + \nabla \varphi \ .\]</div>
+<p>Under the additional assumption of uniform free-stream velocity, zero vorticity follows and the second <a class="reference internal" href="../05_bernoulli/05teoria.html#fluid-mechanics-bernoulli"><span class="std std-ref">Bernoulli theorem</span></a> holds,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  P_{\infty} + \frac{1}{2} \rho U_{\infty}^2 
+  &amp; = P + \frac{1}{2} \rho |\mathbf{u}|^2 = \\
+  &amp; = P + \frac{1}{2} \rho U_\infty^2 + \rho \mathbf{U}_\infty \cdot \mathbf{u}' + \frac{1}{2} \rho |\mathbf{u}'|^2 \ ,
+\end{aligned}\end{split}\]</div>
+<p>being <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> the pressure and velocity in any point of the fluid that is reached by a streamline coming from the free-stream. The expression of the aerodynamic force acting on the body can be recast as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbf{F}
+  &amp; = - \oint_{S_\infty} \rho \mathbf{u} \mathbf{u} \cdot \hat{\mathbf{n}} - \oint_{S_\infty} P \hat{\mathbf{n}} = \\
+  &amp; = - \underbrace{\oint_{S_\infty} \rho \mathbf{U}_\infty \mathbf{U}_\infty \cdot \hat{\mathbf{n}}}_{ = \mathbf{0} \ , \ \ \oint_{S} \mathbf{const} \cdot \hat{\mathbf{n}} = 0 }
+      - \underbrace{\oint_{S_\infty} \rho \mathbf{U}_\infty \mathbf{u}'       \cdot \hat{\mathbf{n}}}_{ = \mathbf{0} \text{ , from mass balance}}
+      - \oint_{S_\infty} \rho \mathbf{u}'       \mathbf{U}_\infty \cdot \hat{\mathbf{n}}
+      - \underbrace{\oint_{S_\infty} \rho \mathbf{u}'       \mathbf{u}'       \cdot \hat{\mathbf{n}}}_{ \rightarrow \ \mathbf{0} \text{ as } |S_{\infty}| \rightarrow \ \infty }
+      - \oint_{S_\infty} P \hat{\mathbf{n}} = \\
+  &amp; \simeq - \oint_{S_\infty} \rho \mathbf{u}' \, \mathbf{U}_\infty \cdot \hat{\mathbf{n}} - \underbrace{\oint_{S_\infty} P_\infty \hat{\mathbf{n}}}_{= \mathbf{0} \ , \ \ \oint_{S} \hat{\mathbf{n}} = \mathbf{0}} + \oint_{S_\infty} \rho \mathbf{U}_\infty \cdot \mathbf{u}' \ \hat{\mathbf{n}} + \underbrace{\oint_{S_\infty} \frac{1}{2} \rho |\mathbf{u}'|^2 \, \hat{\mathbf{n}}}_{ \rightarrow \ \mathbf{0} \text{ as } |S_{\infty}| \rightarrow \ \infty } = \\
+  &amp; \simeq - \rho \mathbf{U}_\infty \cdot \oint_{S_\infty} \left( \hat{\mathbf{n}} \, \mathbf{u}' -  \mathbf{u}' \, \hat{\mathbf{n}} \right) = \\
+  &amp; = \rho \mathbf{U}_\infty \times \boldsymbol\Gamma \ .
+\end{aligned}\end{split}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Circulation in Kutta-Joukowski theorem<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbf{U}_\infty \times \boldsymbol\Gamma 
+  &amp; = \mathbf{U}_\infty \times \hat{\mathbf{z}} \oint_{S} \mathbf{u} \cdot \hat{\mathbf{t}} = \\
+  &amp; = \mathbf{U}_\infty \times \hat{\mathbf{z}} \oint_{S} \left( \mathbf{U}_\infty + \mathbf{u}' \right) \cdot \hat{\mathbf{t}} = \\
+  &amp; = \mathbf{U}_\infty \times \hat{\mathbf{z}} \oint_{S} \mathbf{u}' \cdot \hat{\mathbf{t}} = \\
+  &amp; = \mathbf{U}_\infty \times \hat{\mathbf{z}} \oint_{S} \mathbf{u}' \cdot \left( \hat{\mathbf{z}} \times \hat{\mathbf{n}} \right) \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Using a Cartesian basis, the <span class="math notranslate nohighlight">\(i^{th}\)</span> component of the vector reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \left\{ \mathbf{U}_\infty \times \boldsymbol\Gamma \right\}_i 
+  &amp; = \varepsilon_{ijk} U_j \delta_{kz} \oint_{S} u'_l \varepsilon_{lpq} \delta_{zp} n_q = \\
+  &amp; = \varepsilon_{ijz} \varepsilon_{qlz} U_j \oint_{S} u'_l n_q = \\
+  &amp; = \left( \delta_{iq} \delta_{jl} - \delta_{il} \delta_{jq} \right) U_j \oint_{S} u'_l n_q = \\
+  &amp; = U_j \oint_{S} \left( u'_j n_i - n_j u'_i \right) = \\
+  &amp; = \left\{ - \mathbf{U}_\infty \cdot \oint_{S} \left( \hat{\mathbf{n}} \, \mathbf{u}' - \mathbf{u}' \hat{\mathbf{n}} \right) \right\}_i \ .
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">having used the properties of the Ricci symbols, <span class="math notranslate nohighlight">\(\varepsilon_{ijk} = \varepsilon_{jki}\)</span>, and the identity <span class="math notranslate nohighlight">\(\varepsilon_{ijk} \varepsilon_{ilm} = \delta_{jl} \delta_{km} - \delta_{jm} \delta_{kl}\)</span>.</p>
+</div>
+</details><p>If a set of Cartesian coordinates is used and the free-stream velocity is aligned with the <span class="math notranslate nohighlight">\(\hat{\mathbf{x}}\)</span> unit vector, the lift reads</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
   L = \hat{\mathbf{y}} \cdot \mathbf{F} 
@@ -700,7 +854,7 @@ Derivation of the Green’s function for 2-dimensional Poisson problem.<div clas
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.1.3. Wake and the shape of the domain</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.1.4. Theorems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-jukowski-theorem">8.1.4.1. Kutta-Jukowski theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-joukowski-theorem">8.1.4.1. Kutta-Joukowski theorem</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-alembert-paradox-2-dimensional-flow">8.1.4.2. D’Alembert paradox - 2 dimensional flow</a></li>
 </ul>
 </li>
