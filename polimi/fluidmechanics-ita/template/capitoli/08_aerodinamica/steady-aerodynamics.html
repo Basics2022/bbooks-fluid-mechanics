@@ -710,7 +710,7 @@ having used the vector identity, <span class="math notranslate nohighlight">\(\n
 <p class="sd-card-text">The perturbation velocity is retrieve from the vector potential as <span class="math notranslate nohighlight">\(\mathbf{u}(\mathbf{r}_0) = \nabla_0 \times \boldsymbol\psi(\mathbf{r}_0)\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-  \mathbf{u}(\mathbf{r}_0)
+  \mathbf{u}'(\mathbf{r}_0)
   &amp; = \nabla_0 \times \boldsymbol\psi(\mathbf{r}_0) = \\
   &amp; = \nabla_0 \times \left[ 
        \oint_{\mathbf{r}\in \partial S} \mu(\mathbf{r}) \hat{\mathbf{t}}(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0)
@@ -736,13 +736,17 @@ Relationship between doublet/vortex distribution and the circulation - 2-dimensi
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">In 2-dimensional steady problems there’s no physical wake, i.e. no velocity discontinuities. For closed surfaces <span class="math notranslate nohighlight">\(|\partial S_b| = 0\)</span>, and thus the velocity field reads</p>
+<p class="sd-card-text">In 2-dimensional steady problems there’s no physical wake, i.e. no velocity discontinuities. For closed surfaces <span class="math notranslate nohighlight">\(|\partial S_b| = 0\)</span>, and thus the velocity field reads (with the unit normal vector pointing into the fluid domain, reversed w.r.t. the original expression at the beginning of this section),</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-  \mathbf{u}(\mathbf{r}_0) 
+  \mathbf{u}'(\mathbf{r}_0) 
   &amp; = - \int_{\mathbf{r}\in S_b} \left[ \hat{\mathbf{n}}(\mathbf{r}) \times \nabla \mu(\mathbf{r} ) \right] \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) 
-      - \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+      + \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
 \end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Circulation along a line <span class="math notranslate nohighlight">\(\ell_0\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[\Gamma_{\ell_0} = \oint_{\ell_0} \mathbf{u}'(\mathbf{r}_0) \cdot \hat{\mathbf{t}}(\mathbf{r}_0) \ ,\]</div>
+<p class="sd-card-text">…</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
@@ -751,29 +755,33 @@ Asymptotic behavior of the perturbation potential<div class="sd-summary-down doc
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">For <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg |\mathbf{r}|\)</span>, using Taylor expansion of the Green’s function <span class="math notranslate nohighlight">\(G(\mathbf{r}; \mathbf{r}_0)\)</span> and its gradient <span class="math notranslate nohighlight">\(\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)\)</span>, the perturbation potential reads</p>
+<p class="sd-card-text">For <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg |\mathbf{r}|\)</span>, using Taylor expansion of the Green’s function <span class="math notranslate nohighlight">\(G(\mathbf{r}; \mathbf{r}_0)\)</span> and its gradient <span class="math notranslate nohighlight">\(\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)\)</span>, the perturbation velocity reads</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
+  \mathbf{u}'(\mathbf{r}_0) 
+  &amp; = - \int_{\mathbf{r}\in S_b} \left[ \hat{\mathbf{n}}(\mathbf{r}) \times \nabla \mu(\mathbf{r} ) \right] \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)
+      + \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+  &amp; \simeq - \int_{\mathbf{r}\in S_b} \left[ \hat{\mathbf{n}}(\mathbf{r}) \times \nabla \mu(\mathbf{r}) \right] \times \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} - \frac{1}{2 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] 
+           + \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} - \frac{1}{2 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] = \\
+\end{aligned}\end{split}\]</div>
+<!--
+For $|\mathbf{r}_0| \gg |\mathbf{r}|$, using Taylor expansion of the Green's function $G(\mathbf{r}; \mathbf{r}_0)$ and its gradient $\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)$, the perturbation potential reads
+
+$$\begin{aligned}
   E(\mathbf{r}_0) \varphi(\mathbf{r}_0) 
-  &amp; = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) - \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) = \\
-  &amp; \simeq - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0 - \mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] \varphi(\mathbf{r}) - \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{r} \varphi(\mathbf{r}) \left[ - \frac{1}{2 \pi} \ln |\mathbf{r}_0| + \mathbf{r} \cdot \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} \right] = \\
-  &amp; = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0 - \mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] \varphi(\mathbf{r}) - \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) \left[ \mathbf{r} \cdot \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} \right] = \\
-\end{aligned}\end{split}\]</div>
-<p class="sd-card-text">if the <strong>surface</strong> <span class="math notranslate nohighlight">\(S_b\)</span> is <strong>closed</strong>, and there’s no net mass flow through it, <span class="math notranslate nohighlight">\(\oint_{S_b} \hat{\mathbf{n}} \cdot \mathbf{u} = \oint_{S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) = \mathbf{0}\)</span>.</p>
-<p class="sd-card-text">Thus the perturbation potential as <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg 1\)</span> goes with</p>
+  & = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) - \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) = \\
+  & \simeq - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0 - \mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] \varphi(\mathbf{r}) - \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{r} \varphi(\mathbf{r}) \left[ - \frac{1}{2 \pi} \ln |\mathbf{r}_0| + \mathbf{r} \cdot \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} \right] = \\
+  & = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0 - \mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] \varphi(\mathbf{r}) - \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) \left[ \mathbf{r} \cdot \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} \right] = \\
+\end{aligned}$$
+
+if the **surface** $S_b$ is **closed**, and there's no net mass flow through it, $\oint_{S_b} \hat{\mathbf{n}} \cdot \mathbf{u} = \oint_{S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) = \mathbf{0}$.
+-->
+<p class="sd-card-text">The first term in the second integral is proportional to the mass flux <span class="math notranslate nohighlight">\(\dot{m}\)</span> across <span class="math notranslate nohighlight">\(S_b\)</span>, and so it’s identically zero if <span class="math notranslate nohighlight">\(\int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi = 0\)</span>, as in the case of solid boundaries. The first term in the first integral is proportional to the circulation <span class="math notranslate nohighlight">\(\boldsymbol\Gamma\)</span> (<strong>todo</strong> <em>Prove it</em>), thus the asymptotic behavior of the perturbation velocity as <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg |\mathbf{r}|\)</span> reads</p>
 <div class="math notranslate nohighlight">
-\[\varphi(\mathbf{r}_0) \sim \frac{1}{|\mathbf{r}_0|} \ ,\]</div>
-<p class="sd-card-text">and the perturbation velocity goes with</p>
-<div class="math notranslate nohighlight">
-\[|\mathbf{u}'(\mathbf{r}_0)| = \nabla_{\mathbf{r}_0} \varphi(\mathbf{r}_0) \sim \frac{1}{|\mathbf{r}_0|^2} \ .\]</div>
-<p class="sd-card-text">Circulation reads</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
- \Gamma 
- &amp; = \oint_{S} \hat{\mathbf{t}} \cdot \mathbf{u} = \\
- &amp; = \oint_{S} \hat{\mathbf{t}} \cdot \mathbf{u}' = \\
- &amp; = \oint_{S} \hat{\mathbf{t}} \cdot \nabla \varphi = 
-\end{aligned}\end{split}\]</div>
+\[\mathbf{u}'(\mathbf{r}_0) \simeq
+ \frac{1}{2 \pi} \boldsymbol\Gamma \times \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + 
+ \frac{1}{2 \pi} \dot{m} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + O\left( \frac{1}{|\mathbf{r}_0|^2} \right)
+\]</div>
 </div>
 </details></div>
 <div class="section" id="id1">
