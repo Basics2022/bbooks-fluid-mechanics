@@ -348,7 +348,7 @@ $$G(\mathbf{r}; \mathbf{r}_0) = \frac{1}{4\pi} \frac{1}{|\mathbf{r} - \mathbf{r}
 
 *No physical wake in 2-dimensional steady flows*
 
-```{dropdwon} Wake in steady 2-dimensional flows
+```{dropdown} Wake in steady 2-dimensional flows
 :open:
 
 In 2-dimensional steady flows there's no physical wake, i.e. there's no jump in physical quantities like velocity or pressure across it. Anyways, for lifting bodies, for which $\Gamma \ne 0$ (see Kutta-Joukowski theorem), there's the need to introduce a cut/branch in the domain in order to geta single-valued potential function $\varphi$.
@@ -357,7 +357,7 @@ In 2-dimensional steady flows there's no physical wake, i.e. there's no jump in 
 
 Evaluating the circulation along a path winding around the airfoil, expressing the perturbation velocity as the gradient of the perturbation potential, a relation between the circulation and the potential jump across the wake is readily found
 
-$$\Gamma = \oint_{\ell} \mathbf{u} \cdot \hat{\mathbf{t}} = \oint_{\ell} \hat{\mathbf{t}} \cdot \nabla \varphi = \int_{w^+}_{w^-} d \varphi = \varphi_{w^+} - \varphi_{w^-} = \Delta \varphi_w \ .$$
+$$\Gamma = \oint_{\ell} \mathbf{u} \cdot \hat{\mathbf{t}} = \oint_{\ell} \hat{\mathbf{t}} \cdot \nabla \varphi = \int_{w^+}^{w^-} d \varphi = \varphi_{w^+} - \varphi_{w^-} = \Delta \varphi_w \ .$$
 
 ```
 
