@@ -849,7 +849,20 @@ if the **surface** $S_b$ is **closed**, and there's no net mass flow through it,
 <h2><span class="section-number">8.1.3. </span>Wake and the shape of the domain<a class="headerlink" href="#wake-and-the-shape-of-the-domain" title="Permalink to this heading">#</a></h2>
 <p><em>Physical conditions, with jump conditions</em></p>
 <p><em>No physical wake in 2-dimensional steady flows</em></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Wake in steady 2-dimensional flows<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">In 2-dimensional steady flows there’s no physical wake, i.e. there’s no jump in physical quantities like velocity or pressure across it. Anyways, for lifting bodies, for which <span class="math notranslate nohighlight">\(\Gamma \ne 0\)</span> (see Kutta-Joukowski theorem), there’s the need to introduce a cut/branch in the domain in order to geta single-valued potential function <span class="math notranslate nohighlight">\(\varphi\)</span>.</p>
+<p class="sd-card-text">…</p>
+<p class="sd-card-text">Evaluating the circulation along a path winding around the airfoil, expressing the perturbation velocity as the gradient of the perturbation potential, a relation between the circulation and the potential jump across the wake is readily found</p>
+<div class="math notranslate nohighlight">
+\[\Gamma = \oint_{\ell} \mathbf{u} \cdot \hat{\mathbf{t}} = \oint_{\ell} \hat{\mathbf{t}} \cdot \nabla \varphi = \int_{w^+}^{w^-} d \varphi = \varphi_{w^+} - \varphi_{w^-} = \Delta \varphi_w \ .\]</div>
 </div>
+</details></div>
 <div class="section" id="theorems">
 <h2><span class="section-number">8.1.4. </span>Theorems<a class="headerlink" href="#theorems" title="Permalink to this heading">#</a></h2>
 <div class="section" id="kutta-joukowski-theorem">
