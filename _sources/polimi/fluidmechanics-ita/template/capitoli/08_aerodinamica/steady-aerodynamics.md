@@ -306,11 +306,18 @@ For $|\mathbf{r}_0| \gg |\mathbf{r}|$, using Taylor expansion of the Green's fun
 
 $$\begin{aligned}
   \mathbf{u}'(\mathbf{r}_0) 
-  & = - \int_{\mathbf{r}\in S_b} \left[ \hat{\mathbf{n}}(\mathbf{r}) \times \nabla \mu(\mathbf{r} ) \right] \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)
-      + \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
-  & \simeq - \int_{\mathbf{r}\in S_b} \left[ \hat{\mathbf{n}}(\mathbf{r}) \times \nabla \mu(\mathbf{r}) \right] \times \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} - \frac{1}{2 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] 
-           + \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} - \frac{1}{2 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] = \\
+  & = \int_{\mathbf{r}\in S_b} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)
+      + \int_{\mathbf{r} \in S_b} \sigma(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+  & \simeq \int_{\mathbf{r}\in S_b} \boldsymbol\gamma(\mathbf{r}) \times \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} - \frac{1}{2 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] + \\ 
+   & \quad  + \int_{\mathbf{r} \in S_b} \sigma(\mathbf{r}) \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} - \frac{1}{2 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] \ .
 \end{aligned}$$
+
+The first term in the second integral is proportional to the mass flux $\dot{m} = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \mathbf{u}$ across $S_b$, and so it's identically zero if $\dot{m} = 0$, as in the case of solid boundaries. The first term in the first integral is proportional to the "vector" circulation $\boldsymbol\Gamma = \Gamma \hat{\mathbf{z}} = \oint_{\mathbf{r} \in \partial S_b} \boldsymbol\gamma(\mathbf{r})$ (**todo** *Prove it*), thus the asymptotic behavior of the perturbation velocity as $|\mathbf{r}_0| \gg |\mathbf{r}|$ reads
+
+$$\mathbf{u}'(\mathbf{r}_0) \simeq
+ \frac{1}{2 \pi} \boldsymbol\Gamma \times \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + 
+ \frac{1}{2 \pi} \dot{m} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + O\left( \frac{1}{|\mathbf{r}_0|^2} \right)
+$$
 
 <!--
 For $|\mathbf{r}_0| \gg |\mathbf{r}|$, using Taylor expansion of the Green's function $G(\mathbf{r}; \mathbf{r}_0)$ and its gradient $\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)$, the perturbation potential reads
@@ -324,14 +331,6 @@ $$\begin{aligned}
 
 if the **surface** $S_b$ is **closed**, and there's no net mass flow through it, $\oint_{S_b} \hat{\mathbf{n}} \cdot \mathbf{u} = \oint_{S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) = \mathbf{0}$.
 -->
-
-The first term in the second integral is proportional to the mass flux $\dot{m}$ across $S_b$, and so it's identically zero if $\int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi = 0$, as in the case of solid boundaries. The first term in the first integral is proportional to the circulation $\boldsymbol\Gamma$ (**todo** *Prove it*), thus the asymptotic behavior of the perturbation velocity as $|\mathbf{r}_0| \gg |\mathbf{r}|$ reads
-
-$$\mathbf{u}'(\mathbf{r}_0) \simeq
- \frac{1}{2 \pi} \boldsymbol\Gamma \times \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + 
- \frac{1}{2 \pi} \dot{m} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + O\left( \frac{1}{|\mathbf{r}_0|^2} \right)
-$$
-
 
 ```
 
@@ -348,6 +347,19 @@ $$G(\mathbf{r}; \mathbf{r}_0) = \frac{1}{4\pi} \frac{1}{|\mathbf{r} - \mathbf{r}
 *Physical conditions, with jump conditions*
 
 *No physical wake in 2-dimensional steady flows*
+
+```{dropdwon} Wake in steady 2-dimensional flows
+:open:
+
+In 2-dimensional steady flows there's no physical wake, i.e. there's no jump in physical quantities like velocity or pressure across it. Anyways, for lifting bodies, for which $\Gamma \ne 0$ (see Kutta-Joukowski theorem), there's the need to introduce a cut/branch in the domain in order to geta single-valued potential function $\varphi$.
+
+...
+
+Evaluating the circulation along a path winding around the airfoil, expressing the perturbation velocity as the gradient of the perturbation potential, a relation between the circulation and the potential jump across the wake is readily found
+
+$$\Gamma = \oint_{\ell} \mathbf{u} \cdot \hat{\mathbf{t}} = \oint_{\ell} \hat{\mathbf{t}} \cdot \nabla \varphi = \int_{w^+}_{w^-} d \varphi = \varphi_{w^+} - \varphi_{w^-} = \Delta \varphi_w \ .$$
+
+```
 
 ## Theorems
 
@@ -432,14 +444,26 @@ having used the properties of the Ricci symbols, $\varepsilon_{ijk} = \varepsilo
 
 ```
 
+### D'Alembert paradox - 2 dimensional flow
 
-If a set of Cartesian coordinates is used and the free-stream velocity is aligned with the $\hat{\mathbf{x}}$ unit vector, the lift reads
+Lift and drag are defined as the components of the aerodynamic force orthogonal and parallel to the free-stream velocity $\mathbf{U}_\infty = U_\infty \hat{\mathbf{x}}$. Being $\mathbf{F}$ the aerodynamic foce acting on the body,
 
 $$\begin{aligned}
-  L = \hat{\mathbf{y}} \cdot \mathbf{F} 
+  \mathbf{F} 
+  & = \rho \mathbf{U}_\infty \times \boldsymbol\Gamma = \\
+  & = \rho \left( U_\infty \hat{\mathbf{x}} \right) \times \left( \Gamma \hat{\mathbf{z}} \right) = \\
+  & = - \rho U_\infty \Gamma \hat{\mathbf{y}} \ ,
 \end{aligned}$$
 
-### D'Alembert paradox - 2 dimensional flow
+the lift and drag are
+
+$$\begin{aligned}
+  L & = F_y = - \rho U_{\infty} \Gamma && \text{(Kutta-Joukowski theorem)} \\
+  D & = F_x = 0                        && \text{(D'Alembert paradox)} \ .
+\end{aligned}$$
+
+
+
 
 
 
