@@ -226,15 +226,75 @@ In 2-dimensional steady problems there's no physical wake, i.e. no velocity disc
 
 $$\begin{aligned}
   \mathbf{u}'(\mathbf{r}_0) 
-  & = - \int_{\mathbf{r}\in S_b} \left[ \hat{\mathbf{n}}(\mathbf{r}) \times \nabla \mu(\mathbf{r} ) \right] \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) 
-      + \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+  & =   \int_{\mathbf{r} \in S_b} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) 
+      + \int_{\mathbf{r} \in S_b} \sigma(\mathbf{r}_0) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) \ ,
 \end{aligned}$$
+
+having defined vortex intensity $\boldsymbol\gamma(\mathbf{r}) := - \hat{\mathbf{n}} \times \nabla \mu(\mathbf{r})$, and the source intensity $\sigma(\mathbf{r}) := \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \varphi(\mathbf{r})$.
 
 Circulation along a line $\ell_0$ is defined as
 
 $$\Gamma_{\ell_0} = \oint_{\ell_0} \mathbf{u}'(\mathbf{r}_0) \cdot \hat{\mathbf{t}}(\mathbf{r}_0) \ ,$$
 
-...
+Focusing on 2-dimensional problems, the surface $S_b$ becomes a line $\ell_b$. Let's deal here with closed surfaces: thus the integral over closed surface (line, in 2D) $\ell_b$ becomes $\oint_{\ell_b}$. The contribution to circulation of the source term is identically zero, as
+
+$$\begin{aligned}
+ \Gamma_{\ell_0}^{\sigma}
+ & = \oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}(\mathbf{r}_0) \cdot \oint_{\mathbf{r} \in \ell_b} \sigma(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+ & = \oint_{\mathbf{r} \in \ell_b} \sigma(\mathbf{r}) \oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}(\mathbf{r}_0) \cdot \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+ & = \oint_{\mathbf{r} \in \ell_b} \sigma(\mathbf{r}) \oint_{\mathbf{r}_0 \in \ell_0} d_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+ & = 0 \ .
+\end{aligned}$$
+
+Thus, the contribution to circulation comes from vortex term only. Manipulating this contribution, it's possible to get an expression for the circulation as a function of the vortex intensity,
+
+$$\begin{aligned}
+  \Gamma_{\ell_0} = \Gamma_{\ell_0}^{\gamma}
+  & = \oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}(\mathbf{r}_0) \cdot \oint_{\mathbf{r} \in \ell_b} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+  & = - \oint_{\mathbf{r} \in \ell_b} \boldsymbol\gamma(\mathbf{r}) \cdot \oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}(\mathbf{r}_0) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+\end{aligned}$$
+
+The integral over $\ell_0$ is equal to $-\hat{\mathbf{z}}$ (see below), and thus
+
+$$\Gamma_{\ell_0} = \oint_{\mathbf{r} \in \ell_b} \gamma_z(\mathbf{r}) \ .$$
+
+```
+
+
+```{dropdown} $\oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}_0 \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)$
+:open:
+
+**Method 1 - Using Green's lemma.** In a 2-dimensional plane, using Cartesian coordinates, $\mathbf{r} = x \hat{\mathbf{x}} + y \hat{\mathbf{y}}$, and [Green's lemma](https://basics2022.github.io/bbooks-math-miscellanea/ch/multivariable/intro.html#green-s-lemma) in the plane on a **simple domain**, the integral becomes
+
+$$\begin{aligned}
+  \oint_{\mathbf{r} \in \ell} \hat{\mathbf{t}} \times \nabla G(\mathbf{r}; \mathbf{r}_0)
+  & = \hat{\mathbf{z}} \oint_{\mathbf{r} \in \ell} \left\{ t_x \partial_y G - t_y \partial_x G \right\} = && \text{(Green's lemma)} \\
+  & = - \hat{\mathbf{z}} \int_{\mathbf{r} \in S_\ell} \left\{ \partial_{yy} G + \partial_{xx} G \right\} = \\
+  & = - \hat{\mathbf{z}} \int_{\mathbf{r} \in S_\ell} \nabla^2 G(\mathbf{r}; \mathbf{r}_0) = \\
+  & = 0 \ , 
+\end{aligned}$$
+
+if the singular point $\mathbf{r}_0$ of $G(\mathbf{r}; \mathbf{r}_0)$ is outside $S_{\ell}$, as $-\nabla^2 G(\mathbf{r}; \mathbf{r}_0) = \delta(\mathbf{r}-\mathbf{r}_0)$, and $\int_{\mathbf{r} \in S_\ell} \delta(\mathbf{r}_0 - \mathbf{r}) f(\mathbf{r}) = E_{S_\ell}(\mathbf{r}_0) f(\mathbf{r}_0)$.
+
+In a **non-simply connected domain**, it's possible to introduce a cut in the domain. If the cut is geometrical and not physical - i.e. w/o any discontinuity of the functions across it -, the value of the integral is independent from the path, given a path winding around the hole in the domain the same number of times (**todo** *Add a link to some materia in [(Not so) Mathematics Basics](https://basics2022.github.io/bbooks-math-miscellanea/intro.html)*),
+
+$$\oint_{\mathbf{r} \in \ell_1} \hat{\mathbf{t}} \times \nabla G(\mathbf{r}; \mathbf{r}_0) = \oint_{\mathbf{r} \in \ell_2} \hat{\mathbf{t}} \times \nabla G(\mathbf{r}; \mathbf{r}_0) \ .$$
+
+Exploiting this path-independence, the value of the integral can be evaluated on a circle encolsing $\mathbf{r}_0$,
+
+$$\begin{aligned}
+ \oint_{\mathbf{r} \in \ell_1} \hat{\mathbf{t}} \times \nabla G(\mathbf{r}; \mathbf{r}_0) 
+ & = \oint_{\mathbf{r} \in C} \hat{\mathbf{t}} \times \nabla G(\mathbf{r}; \mathbf{r}_0) = \\
+ & = \int_{\theta = 0}^{2 \pi} \hat{\boldsymbol\theta} \times \frac{1}{2 \pi} \frac{\hat{\mathbf{r}}}{|\mathbf{r}|} |\mathbf{r}| d \theta = \\
+ & = - \hat{\mathbf{z}} \ .
+\end{aligned}$$
+
+<!--
+Thus, the circulation reads
+
+$$\Gamma_{\ell_0} = \oint_{\mathbf{r} \in \ell_b} \gamma_z(\mathbf{r}) \ .$$
+-->
+
 
 ```
 
