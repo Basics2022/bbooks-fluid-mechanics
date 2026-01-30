@@ -738,15 +738,68 @@ Relationship between doublet/vortex distribution and the circulation - 2-dimensi
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">In 2-dimensional steady problems there’s no physical wake, i.e. no velocity discontinuities. For closed surfaces <span class="math notranslate nohighlight">\(|\partial S_b| = 0\)</span>, and thus the velocity field reads (with the unit normal vector pointing into the fluid domain, reversed w.r.t. the original expression at the beginning of this section),</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
+\[\begin{aligned}
   \mathbf{u}'(\mathbf{r}_0) 
-  &amp; = - \int_{\mathbf{r}\in S_b} \left[ \hat{\mathbf{n}}(\mathbf{r}) \times \nabla \mu(\mathbf{r} ) \right] \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) 
-      + \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
-\end{aligned}\end{split}\]</div>
+  &amp; =   \int_{\mathbf{r} \in S_b} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) 
+      + \int_{\mathbf{r} \in S_b} \sigma(\mathbf{r}_0) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) \ ,
+\end{aligned}\]</div>
+<p class="sd-card-text">having defined vortex intensity <span class="math notranslate nohighlight">\(\boldsymbol\gamma(\mathbf{r}) := - \hat{\mathbf{n}} \times \nabla \mu(\mathbf{r})\)</span>, and the source intensity <span class="math notranslate nohighlight">\(\sigma(\mathbf{r}) := \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \varphi(\mathbf{r})\)</span>.</p>
 <p class="sd-card-text">Circulation along a line <span class="math notranslate nohighlight">\(\ell_0\)</span> is defined as</p>
 <div class="math notranslate nohighlight">
 \[\Gamma_{\ell_0} = \oint_{\ell_0} \mathbf{u}'(\mathbf{r}_0) \cdot \hat{\mathbf{t}}(\mathbf{r}_0) \ ,\]</div>
-<p class="sd-card-text">…</p>
+<p class="sd-card-text">Focusing on 2-dimensional problems, the surface <span class="math notranslate nohighlight">\(S_b\)</span> becomes a line <span class="math notranslate nohighlight">\(\ell_b\)</span>. Let’s deal here with closed surfaces: thus the integral over closed surface (line, in 2D) <span class="math notranslate nohighlight">\(\ell_b\)</span> becomes <span class="math notranslate nohighlight">\(\oint_{\ell_b}\)</span>. The contribution to circulation of the source term is identically zero, as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ \Gamma_{\ell_0}^{\sigma}
+ &amp; = \oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}(\mathbf{r}_0) \cdot \oint_{\mathbf{r} \in \ell_b} \sigma(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+ &amp; = \oint_{\mathbf{r} \in \ell_b} \sigma(\mathbf{r}) \oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}(\mathbf{r}_0) \cdot \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+ &amp; = \oint_{\mathbf{r} \in \ell_b} \sigma(\mathbf{r}) \oint_{\mathbf{r}_0 \in \ell_0} d_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+ &amp; = 0 \ .
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Thus, the contribution to circulation comes from vortex term only. Manipulating this contribution, it’s possible to get an expression for the circulation as a function of the vortex intensity,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \Gamma_{\ell_0} = \Gamma_{\ell_0}^{\gamma}
+  &amp; = \oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}(\mathbf{r}_0) \cdot \oint_{\mathbf{r} \in \ell_b} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+  &amp; = - \oint_{\mathbf{r} \in \ell_b} \boldsymbol\gamma(\mathbf{r}) \cdot \oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}(\mathbf{r}_0) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">The integral over <span class="math notranslate nohighlight">\(\ell_0\)</span> is equal to <span class="math notranslate nohighlight">\(-\hat{\mathbf{z}}\)</span> (see below), and thus</p>
+<div class="math notranslate nohighlight">
+\[\Gamma_{\ell_0} = \oint_{\mathbf{r} \in \ell_b} \gamma_z(\mathbf{r}) \ .\]</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="math notranslate nohighlight">\(\oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}_0 \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)\)</span><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Method 1 - Using Green’s lemma.</strong> In a 2-dimensional plane, using Cartesian coordinates, <span class="math notranslate nohighlight">\(\mathbf{r} = x \hat{\mathbf{x}} + y \hat{\mathbf{y}}\)</span>, and <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/multivariable/intro.html#green-s-lemma">Green’s lemma</a> in the plane on a <strong>simple domain</strong>, the integral becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \oint_{\mathbf{r} \in \ell} \hat{\mathbf{t}} \times \nabla G(\mathbf{r}; \mathbf{r}_0)
+  &amp; = \hat{\mathbf{z}} \oint_{\mathbf{r} \in \ell} \left\{ t_x \partial_y G - t_y \partial_x G \right\} = &amp;&amp; \text{(Green's lemma)} \\
+  &amp; = - \hat{\mathbf{z}} \int_{\mathbf{r} \in S_\ell} \left\{ \partial_{yy} G + \partial_{xx} G \right\} = \\
+  &amp; = - \hat{\mathbf{z}} \int_{\mathbf{r} \in S_\ell} \nabla^2 G(\mathbf{r}; \mathbf{r}_0) = \\
+  &amp; = 0 \ , 
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">if the singular point <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> of <span class="math notranslate nohighlight">\(G(\mathbf{r}; \mathbf{r}_0)\)</span> is outside <span class="math notranslate nohighlight">\(S_{\ell}\)</span>, as <span class="math notranslate nohighlight">\(-\nabla^2 G(\mathbf{r}; \mathbf{r}_0) = \delta(\mathbf{r}-\mathbf{r}_0)\)</span>, and <span class="math notranslate nohighlight">\(\int_{\mathbf{r} \in S_\ell} \delta(\mathbf{r}_0 - \mathbf{r}) f(\mathbf{r}) = E_{S_\ell}(\mathbf{r}_0) f(\mathbf{r}_0)\)</span>.</p>
+<p class="sd-card-text">In a <strong>non-simply connected domain</strong>, it’s possible to introduce a cut in the domain. If the cut is geometrical and not physical - i.e. w/o any discontinuity of the functions across it -, the value of the integral is independent from the path, given a path winding around the hole in the domain the same number of times (<strong>todo</strong> <em>Add a link to some materia in <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/intro.html">(Not so) Mathematics Basics</a></em>),</p>
+<div class="math notranslate nohighlight">
+\[\oint_{\mathbf{r} \in \ell_1} \hat{\mathbf{t}} \times \nabla G(\mathbf{r}; \mathbf{r}_0) = \oint_{\mathbf{r} \in \ell_2} \hat{\mathbf{t}} \times \nabla G(\mathbf{r}; \mathbf{r}_0) \ .\]</div>
+<p class="sd-card-text">Exploiting this path-independence, the value of the integral can be evaluated on a circle encolsing <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ \oint_{\mathbf{r} \in \ell_1} \hat{\mathbf{t}} \times \nabla G(\mathbf{r}; \mathbf{r}_0) 
+ &amp; = \oint_{\mathbf{r} \in C} \hat{\mathbf{t}} \times \nabla G(\mathbf{r}; \mathbf{r}_0) = \\
+ &amp; = \int_{\theta = 0}^{2 \pi} \hat{\boldsymbol\theta} \times \frac{1}{2 \pi} \frac{\hat{\mathbf{r}}}{|\mathbf{r}|} |\mathbf{r}| d \theta = \\
+ &amp; = - \hat{\mathbf{z}} \ .
+\end{aligned}\end{split}\]</div>
+<!--
+Thus, the circulation reads
+
+$$\Gamma_{\ell_0} = \oint_{\mathbf{r} \in \ell_b} \gamma_z(\mathbf{r}) \ .$$
+-->
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
