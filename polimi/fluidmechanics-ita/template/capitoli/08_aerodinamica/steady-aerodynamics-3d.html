@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8.1. Steady Aerodynamics &#8212; Fluid Mechanics</title>
+    <title>8.1.6. Steady Aerodynamics - 3-dimensional flows &#8212; Fluid Mechanics</title>
   
   
   
@@ -68,11 +68,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-3d';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
-    <link rel="next" title="8.1.5. Steady Aerodynamics - 2-dimensional flows" href="steady-aerodynamics-2d.html" />
-    <link rel="prev" title="8. Incompressible Aerodynamics" href="08teoria.html" />
+    <link rel="next" title="8.1.7. Weissinger method" href="../../../../../code/notebooks/weissinger.html" />
+    <link rel="prev" title="8.1.5. Steady Aerodynamics - 2-dimensional flows" href="steady-aerodynamics-2d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -270,9 +270,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="08teoria.html">8. Incompressible Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">8.1. Steady Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="steady-aerodynamics.html">8.1. Steady Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-2d.html">8.1.5. Steady Aerodynamics - 2-dimensional flows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-3d.html">8.1.6. Steady Aerodynamics - 3-dimensional flows</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">8.1.6. Steady Aerodynamics - 3-dimensional flows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.1.7. Weissinger method</a></li>
 </ul>
 </li>
@@ -367,7 +367,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-3d.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -384,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fpolimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fpolimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-3d.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -414,7 +414,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics.md" target="_blank"
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-3d.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -498,7 +498,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Steady Aerodynamics</h1>
+    <h1>Steady Aerodynamics - 3-dimensional flows</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -508,12 +508,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.1.1. Mathematical model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method">8.1.2. Green’s function method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.1.3. Wake and the shape of the domain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.1.4. Theorems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-joukowski-theorem">8.1.4.1. Kutta-Joukowski theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-alembert-paradox-2-dimensional-flow">8.1.4.2. D’Alembert paradox - 2 dimensional flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.1.6.1. Mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method">8.1.6.2. Green’s function method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-problems">8.1.6.2.1. 3-dimensional problems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.1.6.3. Wake and the shape of the domain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.1.6.4. Theorems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-joukowski-theorem">8.1.6.4.1. Kutta-Joukowski theorem</a></li>
 </ul>
 </li>
 </ul>
@@ -527,10 +529,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="steady-aerodynamics">
-<span id="fluid-mechanics-aerodynamics-steady"></span><h1><span class="section-number">8.1. </span>Steady Aerodynamics<a class="headerlink" href="#steady-aerodynamics" title="Permalink to this heading">#</a></h1>
-<p><span class="xref myst"><strong>2-dimensional flows</strong></span></p>
-<p><a class="reference internal" href="steady-aerodynamics-3d.html#fluid-mechanics-aerodynamics-steady-3d"><span class="std std-ref"><strong>3-dimensional flows</strong></span></a></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="steady-aerodynamics-3-dimensional-flows">
+<span id="fluid-mechanics-aerodynamics-steady-3d"></span><h1><span class="section-number">8.1.6. </span>Steady Aerodynamics - 3-dimensional flows<a class="headerlink" href="#steady-aerodynamics-3-dimensional-flows" title="Permalink to this heading">#</a></h1>
 <div class="warning admonition">
 <p class="admonition-title"><strong>todo</strong></p>
 <ul class="simple">
@@ -544,45 +544,99 @@ document.write(`
 </ul>
 </div>
 <div class="section" id="mathematical-model">
-<h2><span class="section-number">8.1.1. </span>Mathematical model<a class="headerlink" href="#mathematical-model" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.1.6.1. </span>Mathematical model<a class="headerlink" href="#mathematical-model" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
  - \Delta \phi &amp; = 0  &amp;&amp; \mathbf{r} \in \Omega \\
  \hat{\mathbf{n}} \cdot \boldsymbol\nabla \phi &amp; = 0 &amp;&amp; \mathbf{r} \in S_{body} \\
- \phi &amp; = \dots &amp;&amp; \mathbf{r} \in S_{\infty}
 \end{aligned}\end{split}\]</div>
-<p>In order to build a domain where the flow is irrotational, wake regions must be cut from the domain: both sides of these regions become part of the boundary of the domain. As shown below, there’s no physical wake for 2-dimensional steady flows, while wakes exist in 3-dimensional flows.</p>
+<p>In order to build a domain where the flow is irrotational, wake regions must be cut from the domain: both sides of these regions become part of the boundary of the domain. In an open domain, the boundary of the domain of the mathematical problem for the kinetic potential is the set union of body boundaries <span class="math notranslate nohighlight">\(S_b\)</span>, wakes sides <span class="math notranslate nohighlight">\(S_{w^+}\)</span>, <span class="math notranslate nohighlight">\(S_{w^-}\)</span>, and a surface at the infinity <span class="math notranslate nohighlight">\(S_{\infty}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\partial \Omega = S_b \cup S_{w^+} \cup S_{w^-} \cup S_{\infty} \ .\]</div>
+<p>Boundary conditions on both sides of the <span class="xref myst"><strong>wakes</strong></span> follow from <em>jump conditions</em> of mass and momentum across a wake. Boundary conditions at the boundary <strong>at the infinity</strong> <span class="math notranslate nohighlight">\(S_{\infty}\)</span> follow from the <span class="xref myst"><em>asymptotic behavior</em></span> of velocity and kinetic potential fields.</p>
+<p>…</p>
 </div>
 <div class="section" id="green-s-function-method">
-<h2><span class="section-number">8.1.2. </span>Green’s function method<a class="headerlink" href="#green-s-function-method" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.1.6.2. </span>Green’s function method<a class="headerlink" href="#green-s-function-method" title="Permalink to this heading">#</a></h2>
+<p><strong>Green’s function.</strong> <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/bem-poisson-helmholtz-waves.html#poisson-equation">Green’s function of a 3-dimensional Poisson problem</a></p>
+<div class="math notranslate nohighlight">
+\[G(\mathbf{r}; \mathbf{r}_0) = \frac{1}{4\pi |\mathbf{r} - \mathbf{r}_0|} \ .\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Derivation of the Green’s function for the Poisson problem<div class="sd-summary-down docutils">
+Derivation of the Green’s function for 2-dimensional Poisson problem.<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">…</p>
+<p class="sd-card-text"><em>…see reference above…</em></p>
 </div>
 </details><p><strong>Solution.</strong></p>
-<p>…</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  E(\mathbf{r}_0) \phi(\mathbf{r}_0) 
+  &amp; = \int_{\mathbf{r}\in\Omega} \delta(\mathbf{r}-\mathbf{r}_0) \phi(\mathbf{r}) = \\
+  &amp; = - \int_{\mathbf{r}\in\Omega} \nabla^2_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \phi(\mathbf{r}) = \\
+  &amp; = - \int_{\mathbf{r}\in\Omega} \nabla_\mathbf{r} \cdot \left( \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \phi(\mathbf{r}) -  G(\mathbf{r}; \mathbf{r}_0)  \nabla_{\mathbf{r}} \phi(\mathbf{r}) \right) - \int_{\mathbf{r}\in\Omega} G(\mathbf{r};\mathbf{r}_0) \underbrace{\nabla^2_{\mathbf{r}} \phi(\mathbf{r})}_{=0 \text{ , Poisson eq}} = \\
+  &amp; = - \int_{\mathbf{r}\in \partial \Omega} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \phi(\mathbf{r}) -  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \phi(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \right\}  \ .
+\end{aligned}\end{split}\]</div>
+<p>For the perturbation potential, <span class="math notranslate nohighlight">\(\varphi := \phi - \phi_\infty = \phi - \mathbf{U}_\infty \cdot \mathbf{r}\)</span>, with <span class="math notranslate nohighlight">\(\varphi|_{S_\infty} = 0\)</span> (<strong>todo</strong> prove it! And find the trend <span class="math notranslate nohighlight">\(\propto r^{\alpha}\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  E(\mathbf{r}_0) \varphi(\mathbf{r}_0) 
+  &amp; = - \int_{\mathbf{r}\in \partial \Omega} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) -  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \right\} = \\
+  &amp; = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) + \int_{\mathbf{r} \in S_b} \underbrace{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \varphi(\mathbf{r})}_{= - \hat{\mathbf{n}} \cdot \mathbf{U}_\infty \text{ , from b.c.}} G(\mathbf{r}; \mathbf{r}_0) + \\
+  &amp; \quad - \int_{\mathbf{r}\in S_w} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \, \underbrace{ \Delta \varphi(\mathbf{r})}_{ = \Delta \varphi_{TE} \text{ , from wake c.} }  + \\
+  &amp; \quad - \int_{\mathbf{r}\in S_\infty} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \Delta \varphi(\mathbf{r}) + \int_{\mathbf{r} \in S_\infty} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \varphi(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0) \ .
+\end{aligned}\end{split}\]</div>
+<p>This equation can be recast as an <strong>integro-differential equation</strong> for the perturbation potential on the surface of the body <span class="math notranslate nohighlight">\(\mathbf{r}_0 \in S_{b}\)</span> that can be solved by collocation, as an example using <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/bem.html"><strong>boundary element methods</strong></a>. Once this problem is solved, the perturbation potential on <span class="math notranslate nohighlight">\(S_b\)</span> is known, and the perturbation potential can be computed in every point of the domain.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="math notranslate nohighlight">\(E(\mathbf{r}_0)\)</span><div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">…</p>
+<p class="sd-card-text">The term <span class="math notranslate nohighlight">\(E(\mathbf{r}_0)\)</span> comes from the computation of the integral with the Dirac delta.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}E(\mathbf{r}_0) = \begin{cases} 1 &amp;&amp; \mathbf{r}_0 \in \Omega \\ \frac{1}{2} &amp;&amp; \mathbf{r}_0 \in \partial \Omega \\ 0 &amp;&amp; \mathbf{r}_0 \notin \Omega \cup \partial \Omega \end{cases}\end{split}\]</div>
+<p class="sd-card-text">The value <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> is a particular case indeed, if the point <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> is on a locally flat - no sharp angles - of the boundary. If the point is at a sharp angle - being <span class="math notranslate nohighlight">\(\Theta\)</span> the solid angle outside the domain - <span class="math notranslate nohighlight">\(E(\mathbf{r}_0) = \frac{\Theta}{4 \pi}\)</span>.</p>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 Asymptotic behavior of the perturbation velocity<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">…</p>
+<p class="sd-card-text">For <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg |\mathbf{r}|\)</span>, Taylor expansion of the Green’s function <span class="math notranslate nohighlight">\(G(\mathbf{r}; \mathbf{r}_0)\)</span> and its gradient <span class="math notranslate nohighlight">\(\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)\)</span> read</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ G(\mathbf{r}; \mathbf{r}_0)
+ &amp; \simeq G(\mathbf{r}; \mathbf{r}_0)|_{\mathbf{r} = \mathbf{0}} + \mathbf{r} \cdot \nabla_{\mathbf{r}} G(\mathbf{r}, \mathbf{r}_0)|_{\mathbf{r} = \mathbf{0}} = \\
+ &amp; = \frac{1}{4 \pi}\frac{1}{|\mathbf{r}_0|} +  \frac{1}{4 \pi} \mathbf{r} \cdot \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} \ .
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ \boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)
+ &amp; \simeq \boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)|_{\mathbf{r} = \mathbf{0}} + \mathbf{r} \cdot \nabla_{\mathbf{r}} \nabla_{\mathbf{r}} G(\mathbf{r}, \mathbf{r}_0)|_{\mathbf{r} = \mathbf{0}} = \\
+ &amp; = \frac{1}{4 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} + \frac{1}{4\pi} \left[ - \dfrac{\mathbf{r}}{|\mathbf{r}_0|^3} + 3 \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^5} \right] = \\
+ &amp; = \frac{1}{4 \pi} \frac{\mathbf{r}_0 - \mathbf{r}}{|\mathbf{r}_0|^3} + \frac{3}{4 \pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^5} \ .
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">First and second space derivatives of the Green’s function read</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \nabla_{\mathbf{r}} |\mathbf{r}_0 - \mathbf{r}|^{-1} 
+  &amp; = \mathbf{\hat{x}}_i \dfrac{\partial}{\partial x_i} | \mathbf{r}_0 - \mathbf{r} |^{-1} = \\
+  &amp; = - \mathbf{\hat{x}}_i \frac{x_{i} - x_{0,i}}{| \mathbf{r}_0 - \mathbf{r} |^3} = \\
+  &amp; = - \frac{\mathbf{r} - \mathbf{r}_0}{| \mathbf{r}_0 - \mathbf{r} |^3} \ .
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  - \nabla_{\mathbf{r}} \frac{\mathbf{r} - \mathbf{r}_0}{| \mathbf{r}_0 - \mathbf{r} |^3} 
+  &amp; = - \mathbf{\hat{x}}_k \dfrac{\partial}{\partial x_k} \left( \mathbf{\hat{x}}_i \frac{x_{i} - x_{0,i}}{| \mathbf{r}_0 - \mathbf{r} |^3} \right) = \\
+  &amp; = - \mathbf{\hat{x}}_k \mathbf{\hat{x}}_i \left[ \dfrac{\delta_{ij} |\mathbf{r}_0 - \mathbf{r}|^3 - 3 (x_i - x_{0,i})(x_k - x_{0,k})| \mathbf{r}_0 - \mathbf{r} | }{| \mathbf{r}_0 - \mathbf{r} |^6} \right] = \\ 
+  &amp; = - \frac{1}{| \mathbf{r}_0 - \mathbf{r} |^3} \, \mathbb{I} + 3 \frac{(\mathbf{r}-\mathbf{r}_{0}) \otimes (\mathbf{r}-\mathbf{r}_{0})}{| \mathbf{r}_0 - \mathbf{r} |^5} \ .
+\end{aligned}\end{split}\]</div>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -591,27 +645,74 @@ Doublet/vortex equivalence<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">…</p>
+<p class="sd-card-text">A continuous distribution of doublets over a surface <span class="math notranslate nohighlight">\(S\)</span> is equivalent to the sum of a surface distribution of vortices over <span class="math notranslate nohighlight">\(S\)</span> and a line distribution of vortices over <span class="math notranslate nohighlight">\(\partial S\)</span>. The perturbation potential in <span class="math notranslate nohighlight">\(\mathbf{r}_0 \notin S\)</span> generated by a surface distribution of doublets with intensity <span class="math notranslate nohighlight">\(\mu(\mathbf{r})\)</span> on <span class="math notranslate nohighlight">\(S\)</span> reads</p>
+<div class="math notranslate nohighlight">
+\[\varphi(\mathbf{r}_0) = \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \, \mu(\mathbf{r}) \ .\]</div>
+<p class="sd-card-text">Exploiting the properties, <span class="math notranslate nohighlight">\(\nabla G = - \nabla_0 G\)</span>, the potential can be recast as</p>
+<div class="math notranslate nohighlight">
+\[\varphi(\mathbf{r}_0) = - \nabla_0 \cdot \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \, \mu(\mathbf{r}) \ ,\]</div>
+<p class="sd-card-text">so that the velocity reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbf{u}(\mathbf{r}_0) 
+  &amp; = \nabla_0 \varphi(\mathbf{r}_0) = \\
+  &amp; = - \nabla_0 \left( \nabla_0 \cdot \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \, \mu(\mathbf{r}) \right) = \\
+  &amp; = - \nabla_0^2 \left( \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \, \mu(\mathbf{r}) \right) - \nabla_0 \times \nabla_0 \times \left( \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \, \mu(\mathbf{r}) \right) = \\ 
+  &amp; = - \nabla_0 \times \nabla_0 \times \left( \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \, \mu(\mathbf{r}) \right) = \\ 
+  &amp; = - \nabla_0 \times \left( \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) \, \mu(\mathbf{r}) \right) = \\ 
+  &amp; = \nabla_0 \times \boldsymbol\psi(\mathbf{r}_0) \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">having introduced the definition of vector potential - or stream function - <span class="math notranslate nohighlight">\(\boldsymbol\psi(\mathbf{r}_0)\)</span>, and
+having used the vector identity, <span class="math notranslate nohighlight">\(\nabla^2 \mathbf{v} = \nabla ( \nabla \cdot \mathbf{v} ) - \nabla \times \nabla \times \mathbf{v}\)</span>, and the definition of the Green’s function for Poisson equation to see the first integral is identically zero,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \nabla_0^2 \left( \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \, \mu(\mathbf{r}) \right)
+  &amp; = \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) \nabla_0^2 G(\mathbf{r}; \mathbf{r}_0) \, \mu(\mathbf{r})  = \\
+  &amp; = - \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) \delta(\mathbf{r}-\mathbf{r}_0) \, \mu(\mathbf{r})  = \\
+  &amp; = \mathbf{0} \ , \quad \text{for $\mathbf{r}_0 \notin S$} \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">and having exploited the relations <span class="math notranslate nohighlight">\(\nabla \times ( \mathbf{a} f(\mathbf{r}) ) = \mathbf{a} \times \nabla f(\mathbf{r})\)</span>, <span class="math notranslate nohighlight">\(\nabla^2 (\mathbf{a} f(\mathbf{r}) = \mathbf{a} \nabla^2 f(\mathbf{r})\)</span>, for constant <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>.</p>
+<p class="sd-card-text">The expression of the vector potential can be rearranged using integration by parts (be careful about the domain of the functions, and the differential operators. See below),</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\boldsymbol\psi(\mathbf{r}_0) 
+  &amp; = - \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) \, \mu(\mathbf{r}) = \\
+  &amp; =   \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) \times \nabla   G(\mathbf{r}; \mathbf{r}_0) \, \mu(\mathbf{r}) = \\
+  &amp; =   \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) \times \nabla \left( G(\mathbf{r}; \mathbf{r}_0) \, \mu(\mathbf{r}) \right)
+      - \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) \times \nabla^s \mu(\mathbf{r} ) \, G(\mathbf{r}; \mathbf{r}_0)  = \\
+  &amp; =  \oint_{\mathbf{r}\in \partial S} \hat{\mathbf{t}}(\mathbf{r}) \, \mu(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0)
+      - \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) \times \nabla^s \mu(\mathbf{r} ) \, G(\mathbf{r}; \mathbf{r}_0)  = \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">so that a doublet distribution of intensity <span class="math notranslate nohighlight">\(\mu\)</span> over surface <span class="math notranslate nohighlight">\(S\)</span> is equivalent to the sum of a vortex distribution of intensity <span class="math notranslate nohighlight">\(-\hat{\mathbf{n}}(\mathbf{r}) \times \nabla^s \mu(\mathbf{r})\)</span> over surface <span class="math notranslate nohighlight">\(S\)</span> and a vortex distribution of intensity <span class="math notranslate nohighlight">\(\mu(\mathbf{r}) \hat{\mathbf{t}}(\mathbf{r})\)</span> over the boundary <span class="math notranslate nohighlight">\(\partial S\)</span> of the surface, being <span class="math notranslate nohighlight">\(\nabla^s \mu(\mathbf{r})\)</span> the <em>surface gradient</em>, defined for function on a surface with coordinates <span class="math notranslate nohighlight">\(q^i\)</span>, <span class="math notranslate nohighlight">\(i=1:2\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\nabla^s f = \mathbf{b}^i \frac{\partial f}{\partial q^i} \ ,\]</div>
+<p class="sd-card-text">that can be defined for functions defined not only on the surface as the projection of the gradient on the surface,</p>
+<div class="math notranslate nohighlight">
+\[\nabla^s = \left( \mathbb{I} - \hat{\mathbf{n}} \otimes \hat{\mathbf{n}} \right) \cdot \nabla \ ,\]</div>
+<p class="sd-card-text">so that <span class="math notranslate nohighlight">\(\nabla^s f = \nabla f - \hat{\mathbf{n}} \hat{\mathbf{n}} \cdot \nabla f \ .\)</span></p>
+<p class="sd-card-text">In the manipulation of the expression of the vector potential, a <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/tensor-algebra-calculus/calculus-euclidean.html#two-useful-lemmas">vector identity, see the second of the two useful lemmas in vector calculus</a> is used to transform the first integral, in Cartesian components</p>
+<div class="math notranslate nohighlight">
+\[\oint_{\partial S} A t_l = \int_S n_i \varepsilon_{ijk} \partial_j ( A \delta_{kl} ) = \int_S n_i \varepsilon_{ijl} \partial_j A \]</div>
+<p class="sd-card-text">or in vector formalism</p>
+<div class="math notranslate nohighlight">
+\[\oint_{\partial S} A \hat{\mathbf{t}} \cdot \hat{\mathbf{e}}_l = \int_S \hat{\mathbf{n}} \cdot \nabla ( A \hat{\mathbf{e}}_l ) = \int_S \hat{\mathbf{n}} \times \nabla A \cdot \hat{\mathbf{e}}_l \ , \]</div>
+<p class="sd-card-text">or, without projecting on the constant unit vector <span class="math notranslate nohighlight">\(\hat{\mathbf{e}}_l\)</span> the first and the last expressions,</p>
+<div class="math notranslate nohighlight">
+\[\oint_{\partial S} A \hat{\mathbf{t}} = \int_S \hat{\mathbf{n}} \times \nabla A \ .\]</div>
+<p class="sd-card-text">The perturbation velocity is retrieved from the vector potential as <span class="math notranslate nohighlight">\(\mathbf{u}(\mathbf{r}_0) = \nabla_0 \times \boldsymbol\psi(\mathbf{r}_0)\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbf{u}'(\mathbf{r}_0)
+  &amp; = \nabla_0 \times \boldsymbol\psi(\mathbf{r}_0) = \\
+  &amp; = \nabla_0 \times \left[ 
+       \oint_{\mathbf{r}\in \partial S} \mu(\mathbf{r}) \hat{\mathbf{t}}(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0)
+      - \int_{\mathbf{r}\in S} \hat{\mathbf{n}}(\mathbf{r}) \times \nabla^s \mu(\mathbf{r} ) \, G(\mathbf{r}; \mathbf{r}_0)  = \\
+    \right] = \\
+  &amp; = \oint_{\mathbf{r}\in \partial S} \mu(\mathbf{r}) \hat{\mathbf{t}}(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)
+     - \int_{\mathbf{r}\in S} \left[ \hat{\mathbf{n}}(\mathbf{r}) \times \nabla^s \mu(\mathbf{r} ) \right] \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) \ .
+\end{aligned}\end{split}\]</div>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Zero wake vorticity in steady 2-dimensional problems<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">…</p>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Details in integration by parts on surface in doublet/vortex equivalence<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">…</p>
-</div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 Relationship between doublet/vortex distribution and the circulation - 2-dimensional steady problems<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -620,7 +721,7 @@ Relationship between doublet/vortex distribution and the circulation - 2-dimensi
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">…</p>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="math notranslate nohighlight">\(\oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}_0 \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)\)</span><div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -629,21 +730,53 @@ Relationship between doublet/vortex distribution and the circulation - 2-dimensi
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">…</p>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 Asymptotic behavior of the perturbation potential<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">…</p>
+<p class="sd-card-text">For <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg |\mathbf{r}|\)</span>, using Taylor expansion of the Green’s function <span class="math notranslate nohighlight">\(G(\mathbf{r}; \mathbf{r}_0)\)</span> and its gradient <span class="math notranslate nohighlight">\(\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)\)</span>, the perturbation velocity reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbf{u}'(\mathbf{r}_0) 
+  &amp; = \int_{\mathbf{r}\in S_b} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)
+      + \int_{\mathbf{r} \in S_b} \sigma(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+  &amp; \simeq \int_{\mathbf{r}\in S_b} \boldsymbol\gamma(\mathbf{r}) \times \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} - \frac{1}{2 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] + \\ 
+   &amp; \quad  + \int_{\mathbf{r} \in S_b} \sigma(\mathbf{r}) \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} - \frac{1}{2 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] \ .
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">The first term in the second integral is proportional to the mass flux <span class="math notranslate nohighlight">\(\dot{m} = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \mathbf{u}\)</span> across <span class="math notranslate nohighlight">\(S_b\)</span>, and so it’s identically zero if <span class="math notranslate nohighlight">\(\dot{m} = 0\)</span>, as in the case of solid boundaries. The first term in the first integral is proportional to the «vector» circulation <span class="math notranslate nohighlight">\(\boldsymbol\Gamma = \Gamma \hat{\mathbf{z}} = \oint_{\mathbf{r} \in \partial S_b} \boldsymbol\gamma(\mathbf{r})\)</span> (<strong>todo</strong> <em>Prove it</em>), thus the asymptotic behavior of the perturbation velocity as <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg |\mathbf{r}|\)</span> reads</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{u}'(\mathbf{r}_0) \simeq
+ \frac{1}{2 \pi} \boldsymbol\Gamma \times \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + 
+ \frac{1}{2 \pi} \dot{m} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + O\left( \frac{1}{|\mathbf{r}_0|^2} \right)
+\]</div>
+<!--
+For $|\mathbf{r}_0| \gg |\mathbf{r}|$, using Taylor expansion of the Green's function $G(\mathbf{r}; \mathbf{r}_0)$ and its gradient $\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)$, the perturbation potential reads
+
+$$\begin{aligned}
+  E(\mathbf{r}_0) \varphi(\mathbf{r}_0) 
+  & = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) - \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) = \\
+  & \simeq - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0 - \mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] \varphi(\mathbf{r}) - \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{r} \varphi(\mathbf{r}) \left[ - \frac{1}{2 \pi} \ln |\mathbf{r}_0| + \mathbf{r} \cdot \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} \right] = \\
+  & = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0 - \mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] \varphi(\mathbf{r}) - \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) \left[ \mathbf{r} \cdot \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} \right] = \\
+\end{aligned}$$
+
+if the **surface** $S_b$ is **closed**, and there's no net mass flow through it, $\oint_{S_b} \hat{\mathbf{n}} \cdot \mathbf{u} = \oint_{S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) = \mathbf{0}$.
+-->
 </div>
-</details></div>
+</details><div class="section" id="dimensional-problems">
+<h3><span class="section-number">8.1.6.2.1. </span>3-dimensional problems<a class="headerlink" href="#dimensional-problems" title="Permalink to this heading">#</a></h3>
+<p><strong>Green’s function</strong> <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/bem-poisson-helmholtz-waves.html#poisson-equation">Green’s function of a 3-dimensional Poisson problem</a> reads</p>
+<div class="math notranslate nohighlight">
+\[G(\mathbf{r}; \mathbf{r}_0) = \frac{1}{4\pi} \frac{1}{|\mathbf{r} - \mathbf{r}_0|} \ .\]</div>
+<p><strong>Solution</strong></p>
+</div>
+</div>
 <div class="section" id="wake-and-the-shape-of-the-domain">
-<h2><span class="section-number">8.1.3. </span>Wake and the shape of the domain<a class="headerlink" href="#wake-and-the-shape-of-the-domain" title="Permalink to this heading">#</a></h2>
-<p><em>Physical conditions, with jump conditions</em></p>
-<p><em>No physical wake in 2-dimensional steady flows</em></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<h2><span class="section-number">8.1.6.3. </span>Wake and the shape of the domain<a class="headerlink" href="#wake-and-the-shape-of-the-domain" title="Permalink to this heading">#</a></h2>
+<p><em>Physical conditions: jump conditions, transport</em></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 Wake in steady 2-dimensional flows<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -654,9 +787,9 @@ Wake in steady 2-dimensional flows<div class="sd-summary-down docutils">
 </div>
 </details></div>
 <div class="section" id="theorems">
-<h2><span class="section-number">8.1.4. </span>Theorems<a class="headerlink" href="#theorems" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.1.6.4. </span>Theorems<a class="headerlink" href="#theorems" title="Permalink to this heading">#</a></h2>
 <div class="section" id="kutta-joukowski-theorem">
-<h3><span class="section-number">8.1.4.1. </span>Kutta-Joukowski theorem<a class="headerlink" href="#kutta-joukowski-theorem" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.1.6.4.1. </span>Kutta-Joukowski theorem<a class="headerlink" href="#kutta-joukowski-theorem" title="Permalink to this heading">#</a></h3>
 <p>…</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -678,12 +811,6 @@ Circulation in Kutta-Joukowski theorem<div class="sd-summary-down docutils">
 <p class="sd-card-text">…</p>
 </div>
 </details></div>
-<div class="section" id="d-alembert-paradox-2-dimensional-flow">
-<h3><span class="section-number">8.1.4.2. </span>D’Alembert paradox - 2 dimensional flow<a class="headerlink" href="#d-alembert-paradox-2-dimensional-flow" title="Permalink to this heading">#</a></h3>
-<p>…</p>
-</div>
-</div>
-<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -718,20 +845,20 @@ Circulation in Kutta-Joukowski theorem<div class="sd-summary-down docutils">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="08teoria.html"
+       href="steady-aerodynamics-2d.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Incompressible Aerodynamics</p>
+        <p class="prev-next-title"><span class="section-number">8.1.5. </span>Steady Aerodynamics - 2-dimensional flows</p>
       </div>
     </a>
     <a class="right-next"
-       href="steady-aerodynamics-2d.html"
+       href="../../../../../code/notebooks/weissinger.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">8.1.5. </span>Steady Aerodynamics - 2-dimensional flows</p>
+        <p class="prev-next-title"><span class="section-number">8.1.7. </span>Weissinger method</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -750,12 +877,14 @@ Circulation in Kutta-Joukowski theorem<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.1.1. Mathematical model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method">8.1.2. Green’s function method</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.1.3. Wake and the shape of the domain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.1.4. Theorems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-joukowski-theorem">8.1.4.1. Kutta-Joukowski theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-alembert-paradox-2-dimensional-flow">8.1.4.2. D’Alembert paradox - 2 dimensional flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.1.6.1. Mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method">8.1.6.2. Green’s function method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-problems">8.1.6.2.1. 3-dimensional problems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.1.6.3. Wake and the shape of the domain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.1.6.4. Theorems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-joukowski-theorem">8.1.6.4.1. Kutta-Joukowski theorem</a></li>
 </ul>
 </li>
 </ul>
