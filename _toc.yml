@@ -90,7 +90,10 @@ parts:
   - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/08teoria
     sections:
     - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics
-    - file: code/notebooks/weissinger
+      sections:
+      - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-2d
+      - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-3d
+      - file: code/notebooks/weissinger
     - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/exercises
       sections:
       - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/0807in 
