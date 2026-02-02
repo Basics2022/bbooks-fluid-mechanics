@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Fluid Mechanics</title>
+    <title>8.1. Theorems about vorticity &#8212; Fluid Mechanics</title>
   
   
   
@@ -68,9 +68,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0401Scia';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/theorems';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
+    <link rel="next" title="8.2. Steady Aerodynamics" href="steady-aerodynamics.html" />
+    <link rel="prev" title="8. Incompressible Aerodynamics" href="08teoria.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -174,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Incompressible Fluid Mechanics</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01_statica/02teoria.html">1. Statics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../01_statica/exercises.html">1.8. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../01_statica/0201in.html">1.8.1. Exercise 1.1 <!--Archimede's law and Buoyancy--></a></li>
@@ -206,24 +208,24 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="04teoria.html">4. Balance equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="0410in.html">4.16. Approfondimenti su alcuni bilanci</a></li>
-<li class="toctree-l2"><a class="reference internal" href="0412in.html">4.17. Introduction to exercises</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">4.18. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="0406in.html">4.18.1. Exercise 4.1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0407in.html">4.18.2. Exercise 4.2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0402in.html">4.18.3. Exercise 4.3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0409in.html">4.18.4. Exercise 4.4</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0403in.html">4.18.5. Exercise 4.5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0404in.html">4.18.6. Exercise 4.6</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0405in.html">4.18.7. Exercise 4.7</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0408in.html">4.18.8. Exercise 4.8</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0401in.html">4.18.9. Exercise 4.9</a></li>
-<li class="toctree-l3"><a class="reference internal" href="0401SciaExp.html">4.18.10. Exercise 4.9 - Experiment: wake defect</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04ma01in.html">4.18.11. Exercise 4.10</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04e01in.html">4.18.12. Exercise 4.11</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04e02in.html">4.18.13. Exercise 4.12</a></li>
-<li class="toctree-l3"><a class="reference internal" href="04e03in.html">4.18.14. Exercise 4.13</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_bilanci/04teoria.html">4. Balance equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_bilanci/0410in.html">4.16. Approfondimenti su alcuni bilanci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_bilanci/0412in.html">4.17. Introduction to exercises</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../04_bilanci/exercises.html">4.18. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0406in.html">4.18.1. Exercise 4.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0407in.html">4.18.2. Exercise 4.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0402in.html">4.18.3. Exercise 4.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0409in.html">4.18.4. Exercise 4.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0403in.html">4.18.5. Exercise 4.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0404in.html">4.18.6. Exercise 4.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0405in.html">4.18.7. Exercise 4.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0408in.html">4.18.8. Exercise 4.8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0401in.html">4.18.9. Exercise 4.9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0401SciaExp.html">4.18.10. Exercise 4.9 - Experiment: wake defect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04ma01in.html">4.18.11. Exercise 4.10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04e01in.html">4.18.12. Exercise 4.11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04e02in.html">4.18.13. Exercise 4.12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04e03in.html">4.18.14. Exercise 4.13</a></li>
 </ul>
 </li>
 </ul>
@@ -267,15 +269,15 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Incompressible Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../08_aerodinamica/theorems.html">8.1. Theorems about vorticity</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../08_aerodinamica/steady-aerodynamics.html">8.2. Steady Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../08_aerodinamica/steady-aerodynamics-2d.html">8.2.5. Steady Aerodynamics - 2-dimensional flows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../08_aerodinamica/steady-aerodynamics-3d.html">8.2.6. Steady Aerodynamics - 3-dimensional flows</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="08teoria.html">8. Incompressible Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.1. Theorems about vorticity</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="steady-aerodynamics.html">8.2. Steady Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-2d.html">8.2.5. Steady Aerodynamics - 2-dimensional flows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-3d.html">8.2.6. Steady Aerodynamics - 3-dimensional flows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.2.7. Weissinger method</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../08_aerodinamica/exercises.html">8.3. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">8.3. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -366,7 +368,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0401Scia.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/theorems.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +385,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fpolimi/fluidmechanics-ita/template/capitoli/04_bilanci/0401Scia.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fpolimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/theorems.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -413,7 +415,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0401Scia.md" target="_blank"
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/theorems.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -497,7 +499,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Theorems about vorticity</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -506,9 +508,10 @@ document.write(`
                 <h2> Contenuti </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kelvin-s-theorem">8.1.1. Kelvin’s theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-s-theorems">8.1.2. Helmholtz’s theorems</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -519,138 +522,119 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p><strong>Esercizi per il corso di Fluidodinamica</strong></p>
-<p>+:———————————:+:———————————:+
-| Calcolare la resistenza di un     | <img alt="image" src="polimi/fluidmechanics-ita/template/capitoli/04_bilanci/fig/airfoil.eps" />{width |
-| profilo immerso in una corrente   | =»90%»}                           |
-| stazionaria con velocità          |                                   |
-| asintotica <span class="math notranslate nohighlight">\({\bm{V}}_\infty\)</span>,     |                                   |
-| sapendo la distribuzione della    |                                   |
-| componente di velocità <span class="math notranslate nohighlight">\(u(y)\)</span>     |                                   |
-| parallela a <span class="math notranslate nohighlight">\({\bm{V}}_\infty\)</span> a   |                                   |
-| valle del profilo e assumendo     |                                   |
-| che:                              |                                   |
-|                                   |                                   |
-| -   la pressione statica sul      |                                   |
-|     contorno del volume di        |                                   |
-|     controllo sia costante e pari |                                   |
-|     a quella della corrente       |                                   |
-|     indisturbata a monte del      |                                   |
-|     profilo;                      |                                   |
-|                                   |                                   |
-| -   sul lato superiore e          |                                   |
-|     inferiore del volume di       |                                   |
-|     controllo sia possibile       |                                   |
-|     trascurare la componente      |                                   |
-|     lungo l’asse <span class="math notranslate nohighlight">\(x\)</span> della        |                                   |
-|     perturbazione della velocità  |                                   |
-|     dovuta alla presenza del      |                                   |
-|     profilo:                      |                                   |
-|     <span class="math notranslate nohighlight">\(\bm{V} = (V_{\infty}+u,v) \s |                                   |
-| imeq (V_{\infty},v).\)</span>             |                                   |
-|                                   |                                   |
-| (<span class="math notranslate nohighlight">\(R = \int_0^{ H}\rho \, u(y) [V_ |                                   |
-| {\infty}-u(y)] dy.\)</span>)              |                                   |
-+———————————–+———————————–+</p>
-<p>Bilanci integrali di massa e quantità di moto. Equazioni di equilibrio
-(equazioni fondamentali della dinamica classica). Principio di azione e
-reazione. Integrale della normale su una superficie chiusa è
-identicamente nullo. Esperienza in laboratorio sul <em>difetto di scia</em>.</p>
-<p>Vengono scritti i bilanci integrali di massa e quantità di moto,
-opportunamente semplificati (ipotesi di stazionarietà
-<span class="math notranslate nohighlight">\(\frac{d}{dt} \equiv 0\)</span>, densità costante <span class="math notranslate nohighlight">\(\rho = \bar{\rho}\)</span>, ipotesi
-sulle condizioni sul bordo esterno del dominio); all’interno dei bilanci
-si possono riconoscere i termini legati alle azioni scambiate dal fluido
-con il profilo (l’incognita del problema); si sfrutta infine la
-geometria rettangolare del contorno esterno e le ipotesi su di esso per
-ottenere una forma ulteriormente semplificata dei bilanci e trovare la
-soluzione del problema.</p>
-<ul>
-<li><p>Scrittura e semplificazione dei bilanci di massa e quantità di moto.
-$<span class="math notranslate nohighlight">\(\begin{cases}
-       \frac{d}{d t} \int_{\Omega} \rho + \oint_{\partial \Omega} \rho \bm{u} \cdot \hat{\bm{n}} = 0 &amp; \qquad \text{(massa)} \\
-       \frac{d}{d t} \int_{\Omega} \rho \bm{u} + \oint_{\partial \Omega} \rho \bm{u} \bm{u} \cdot \hat{\bm{n}} +
-        \oint_{\partial \Omega} p \hat{\bm{n}} - \oint_{\partial \Omega} \bm{s_n} = 0  
-        &amp; \qquad \text{(quantità di moto)}  %\Rb^{ext}
-      \end{cases}\)</span>$</p>
-<p>Nel problema, il controno del dominio fluido <span class="math notranslate nohighlight">\(\partial \Omega\)</span> è
-costituito dal bordo rettangolare <span class="math notranslate nohighlight">\(\gamma_\infty\)</span> lontano dal
-profilo e dal bordo <span class="math notranslate nohighlight">\(\gamma_p\)</span> coincidente con il profilo stesso. La
-forza <span class="math notranslate nohighlight">\(\bm{F}\)</span> agente sul profilo è l’integrale degli sforzi
-generati dal fluido (uguali e contrari agli sforzi agenti sul
-fluido) sul contorno del profilo. Inoltre si può fare l’ipotesi di
-sforzi viscosi nulli e pressione costante sul bordo esterno:
-l’integrale sul dominio esterno si riduce all’integrale della
-normale su una superficie chiusa ed è quindi nullo. Si può dunque
-scrivere:
-$<span class="math notranslate nohighlight">\(\oint_{\partial \Omega} (-p \hat{\bm{n}} + \bm{s_n}) = \oint_{\partial \Omega} \bm{t_n} = \underbrace{\oint_{\gamma_p} \bm{t_n}}_{=-\bm{F}} + \underbrace{\oint_{\gamma_\infty} \bm{t_n}}_{=0} = -\bm{F}\)</span>$</p>
-<p><em>Osservazione. A differenza di quanto fatto in classe, non è stata
-fatta l’ipotesi di fluido non viscoso; il contributo all’infinito si
-annulla con l’ipotesi di pressione costante all’infinito e sforzi
-viscosi trascurabili. Per ritrovarsi con gli appunti, sostituire
-<span class="math notranslate nohighlight">\(\bm{t_n}\)</span> con <span class="math notranslate nohighlight">\(-p\bm{\hat{n}}\)</span></em>.</p>
-<p>Dopo aver fatto l’ipotesi di stazionarietà e aver inserito la
-definizione di <span class="math notranslate nohighlight">\(\bm{F}\)</span> appena data, le equazioni di bilancio
-possono essere scritte come: $<span class="math notranslate nohighlight">\(\begin{cases}
-      &amp; \oint_{\partial \Omega} \rho \bm{u} \cdot \hat{\bm{n}} = 0  \\
-      &amp; \bm{F} = - \oint_{\partial \Omega} \rho \bm{u} \bm{u} \cdot \hat{\bm{n}} 
-      \end{cases}
-    \label{eqn:airfoil_bil_int}\)</span>$</p>
-<p>Il bilancio di quantità di moto può essere scritto esplicitando e
-separando le componenti vettoriali. $<span class="math notranslate nohighlight">\(\begin{aligned}
-       F_x\bm{\hat{x}} + F_y\bm{\hat{y}} 
-&amp; = - \oint_{\partial \Omega} \rho (u \bm{x} + v \bm{y}) \bm{u} \cdot \hat{\bm{n}} \\
-&amp; =       - \bm{\hat{x}} \oint_{\partial \Omega} \rho u \bm{u} \cdot \hat{\bm{n}} -  \bm{\hat{y}} \oint_{\partial \Omega} \rho v  \bm{u} \cdot \hat{\bm{n}}
-    \end{aligned}\)</span>$</p>
-</li>
-<li><p>Scrittura delle equazioni di bilancio in componenti (sfruttando la
-geometria rettangolare del bordo esterno: <span class="math notranslate nohighlight">\(\gamma_1\)</span> indica il bordo
-di sinistra, <span class="math notranslate nohighlight">\(\gamma_2\)</span> il bordo inferiore, <span class="math notranslate nohighlight">\(\gamma_3\)</span> quello di
-destra, <span class="math notranslate nohighlight">\(\gamma_4\)</span> quello superiore).</p>
-<p><em>Attenzione: la normale è quella uscente dal dominio fluido. Sul
-contorno del profilo, la normale è entrante nel profilo. In più: non
-fare confusione tra azioni del profilo agenti sul fluido e azioni
-del fluido agenti sul profilo!</em> $<span class="math notranslate nohighlight">\(\begin{cases}
-      &amp; 0 = \oint_{\partial \Omega} \rho \bm{u} \cdot \hat{\bm{n}} = -\int_{\gamma_1} \rho u
-      -\int_{\gamma_2} \rho v +\int_{\gamma_3} \rho u +\int_{\gamma_4} \rho v \\
-      &amp; F_x = +\int_{\gamma_1} \rho u^2 +\int_{\gamma_2} \rho u v -\int_{\gamma_3} \rho u^2 -\int_{\gamma_4} \rho u v \\
-      &amp; F_y = +\int_{\gamma_1} \rho u v +\int_{\gamma_2} \rho v^2 -\int_{\gamma_3} \rho u v -\int_{\gamma_4} \rho v^2
-     \end{cases}\)</span>$</p>
-</li>
-<li><p>Ipotesi sulla velocità sui lati orizzontali
-(<span class="math notranslate nohighlight">\(u|_{\gamma_2} = u|_{\gamma_4} = V_\infty\)</span> costante), per poter
-ulteriormente semplificare il risultato. $<span class="math notranslate nohighlight">\(\begin{cases}
-        \int_{\gamma_2} \rho v  -\int_{\gamma_4} \rho v = -\int_{\gamma_1} \rho u+\int_{\gamma_3} \rho u\\
-       F_x = +\int_{\gamma_1} \rho u^2 -\int_{\gamma_3} \rho u^2 + V_\infty \left[ \int_{\gamma_2} \rho v  -\int_{\gamma_4} \rho v \right]
-     \end{cases}\)</span><span class="math notranslate nohighlight">\( E inserendo la prima nella seconda:
-\)</span><span class="math notranslate nohighlight">\(\begin{aligned}
-       F_x  &amp; = \int_{\gamma_1} \rho u^2 -\int_{\gamma_3} \rho u^2 + V_\infty \left[-\int_{\gamma_1} \rho u+\int_{\gamma_3} \rho u \right] = \\
-       &amp; = \int_{\gamma_1} \rho u (u-V_\infty) + \int_{\gamma_3} \rho u (V_\infty-u) = \quad \text{(\)</span>u|<em>{\gamma_1} = V</em>\infty  \Rightarrow <span class="math notranslate nohighlight">\( il primo integrale è nullo)} \\
-       &amp; = \int_{\gamma_3} \rho u (V_\infty-u) = \\
-       &amp; = \int_{0}^{H} \rho u(y) (V_\infty - u(y)) dy
-  \end{aligned}
-\label{eqn:difetto_scia}\)</span>$</p></li>
-</ul>
-<p><strong>Osservazioni.</strong> Tramite la misura del campo di velocità in galleria è
-possibile stimare la resistenza del corpo. Le condizioni di «aria
-libera» e in galleria sono diverse. In generale, in galleria il fluido è
-confinato dalle pareti di galleria, maggiormente «vincolato». Inoltre
-sulle pareti della galleria esiste una condizione di adesione,
-<span class="math notranslate nohighlight">\(\bm{u}=\bm{0}\)</span>: per la conservazione della massa, il rallentamento del
-fluido in corrispondenza delle pareti della galleria viene compensato da
-un incremento della velocità nella regione «più lontana» dalla parete,
-rispetto a un corpo in aria libera. Per tenere conto di effetti di
-<strong>bloccaggio</strong> dovuti al confinamento in galleria, è necessario compiere
-delle correzioni delle misure sperimentali. Agli effetti di bloccaggio,
-vanno aggiunti gli effetti di <strong>galleggiamento</strong> dovuti al gradiente di
-pressione lungo la galleria, che danno un effetto di resistenza
-aggiuntiva. Inoltre è importante che la dimensione del corpo rispetto
-alla dimensione della galleria non sia né «troppo grosso» (per problemi
-di “bloccaggio”), né, di solito, «troppo piccolo» (per motivi di
-similitudine; ma sarà argomento di puntate successive del corso…). É
-importante avere in mente la necessità di prestare attenzione a questi
-aspetti, quando vengono svolte attività sperimentali. Ma questo sarà
-argomento di altri capitoli o di altri corsi…</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="theorems-about-vorticity">
+<span id="fluid-mechanics-aerodynamics-vortex-theorems"></span><h1><span class="section-number">8.1. </span>Theorems about vorticity<a class="headerlink" href="#theorems-about-vorticity" title="Permalink to this heading">#</a></h1>
+<div class="section" id="kelvin-s-theorem">
+<h2><span class="section-number">8.1.1. </span>Kelvin’s theorem<a class="headerlink" href="#kelvin-s-theorem" title="Permalink to this heading">#</a></h2>
+<div class="proof theorem admonition" id="theorem-0">
+<p class="admonition-title"><span class="caption-number">Theorem 8.1 </span> (Kelvin’s theorem)</p>
+<div class="theorem-content section" id="proof-content">
+<p>In a barotropic or constant density flow, with negligible viscosity effects, the circulation on a material line <span class="math notranslate nohighlight">\(\ell(t)\)</span> is constant in time,</p>
+<div class="math notranslate nohighlight">
+\[0 = \frac{d \Gamma_{\ell(t)}}{dt} = \dfrac{d}{dt} \oint_{\ell(t)} \mathbf{u} \cdot \hat{\mathbf{t}} \ .\]</div>
+</div>
+</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Proof 1, using time derivative over time dependent domains<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Using the expression of the time derivative over a <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/tensor-algebra-calculus/time-derivative-of-integrals.html#work-line-integral-along-a-line">work line integral</a>, over a closed line with no discontinuity in the functions so that <span class="math notranslate nohighlight">\(\mathbf{f}(\mathbf{r}_B) \cdot \mathbf{v}_B - \mathbf{f}(\mathbf{r}_A) \cdot \mathbf{v}_A = 0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \dfrac{d}{dt} \oint_{\ell(t)} \mathbf{u} \cdot \hat{\mathbf{t}} 
+  &amp; = \oint_{\ell(t)} \partial_t \mathbf{u} \cdot \hat{\mathbf{t}} + \oint_{\ell(t)} \nabla \times \mathbf{u} \cdot \mathbf{u}_b \times \hat{\mathbf{t}} = &amp;&amp; (1) \\
+  &amp; = \oint_{\ell(t)} \hat{\mathbf{t}} \cdot \left\{ \partial_t \mathbf{u} + \boldsymbol\omega \times \mathbf{u} \right\} = &amp;&amp; (2) \\
+  &amp; = \oint_{\ell(t)} \hat{\mathbf{t}} \cdot \left\{ \partial_t \mathbf{u} + \mathbf{u} \cdot \nabla \mathbf{u} - \nabla \frac{|\mathbf{u}|^2}{2} \right\} = &amp;&amp; (3) \\
+  &amp; = - \oint_{\ell(t)} \hat{\mathbf{t}} \cdot \nabla \left\{ \nabla \Pi + \nabla \chi + \frac{|\mathbf{u}|^2}{2} \right\} + \oint_{\ell(t)} \nu \hat{\mathbf{t}} \cdot \nabla^2 \mathbf{u} = &amp;&amp; (4) \\
+  &amp; = \oint_{\ell(t)} \nu \hat{\mathbf{t}} \cdot \nabla^2 \mathbf{u} = &amp;&amp; (5) \\
+  &amp; = 0 \qquad \text{if $\nu = 0$} \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">with <span class="math notranslate nohighlight">\((1)\)</span> <span class="math notranslate nohighlight">\(\mathbf{u}_b = \mathbf{u}\)</span> for material lines, and <span class="math notranslate nohighlight">\(\boldsymbol\omega = \nabla \times \mathbf{u}\)</span>, and using the properties of the mixed vector product <span class="math notranslate nohighlight">\(\mathbf{a} \cdot \mathbf{b} \times \mathbf{c} = \mathbf{b} \cdot \mathbf{c} \times \mathbf{a}\)</span>, <span class="math notranslate nohighlight">\((2)\)</span> <span class="math notranslate nohighlight">\(\mathbf{u} \cdot \nabla \mathbf{u} = \boldsymbol\omega \times \mathbf{u} + \nabla \frac{|\mathbf{u}|^2}{2}\)</span>, <span class="math notranslate nohighlight">\((3)\)</span> from the momentum equation <span class="math notranslate nohighlight">\(D_t \mathbf{u} = \mathbf{g} + \nu \nabla^2 \mathbf{u} - \nabla \Pi\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{g} = - \nabla \chi\)</span>, and <span class="math notranslate nohighlight">\((4)\)</span> <span class="math notranslate nohighlight">\(\oint_{\ell(t)} \hat{\mathbf{t}} \cdot \nabla \Phi = \oint_{\ell(t)} d \Phi = 0\)</span>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Proof 2, using material coordinates<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details></div>
+<div class="section" id="helmholtz-s-theorems">
+<h2><span class="section-number">8.1.2. </span>Helmholtz’s theorems<a class="headerlink" href="#helmholtz-s-theorems" title="Permalink to this heading">#</a></h2>
+<p>A <strong>vortex line</strong> is defined as a line everywhere tangent to the vorticity vector field <span class="math notranslate nohighlight">\(\boldsymbol\omega(\mathbf{r})\)</span>. A <strong>vortex tube</strong> is a 3-dimensional region of space with a lateral surface that is delimited by a set of vortex lines, and thus whose normal vector is orthogonal to the vorticity field, <span class="math notranslate nohighlight">\(\hat{\mathbf{n}} \cdot \boldsymbol\omega = 0\)</span> on <span class="math notranslate nohighlight">\(S_{lat}\)</span>. It immediately follows first Helmholtz’s theorem.</p>
+<div class="proof theorem admonition" id="theorem-1">
+<p class="admonition-title"><span class="caption-number">Theorem 8.2 </span> (First Helmholtz’s theorem)</p>
+<div class="theorem-content section" id="proof-content">
+<p>The flux of the vorticity field is constant across all the sections of a vortex tube, at a given time.</p>
+</div>
+</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Proof<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">As the vorticity is the curl of the velocity field, <span class="math notranslate nohighlight">\(\boldsymbol = \nabla \times \mathbf{u}\)</span>, it’s divergence is identically zero, <span class="math notranslate nohighlight">\(\nabla \cdot \boldsymbol\omega = 0\)</span>. Integrating over a volume delimited by the lateral surface of a vortex tube and 2 sections, and applying divergence theorem and the definition of the vortex tube,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0
+  &amp; = \int_V \nabla \cdot \boldsymbol\omega = \\
+  &amp; = \oint_{\partial V} \hat{\mathbf{n}} \cdot \boldsymbol\omega = \\
+  &amp; = \int_{S_1    } \hat{\mathbf{n}}_1 \cdot \boldsymbol\omega + 
+      \int_{S_2    } \hat{\mathbf{n}}_2 \cdot \boldsymbol\omega + 
+      \int_{S_{lat}} \underbrace{\hat{\mathbf{n}} \cdot \boldsymbol\omega}_{=0} = \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Reversing the unit normal on surface <span class="math notranslate nohighlight">\(S_1\)</span> in order to get an «oriented» vortex tube, with <span class="math notranslate nohighlight">\(\hat{\mathbf{n}}|_{S_1} = - \hat{\mathbf{n}}_1\)</span> pointing inward, and  <span class="math notranslate nohighlight">\(\hat{\mathbf{n}}|_{S_2} = \hat{\mathbf{n}}_2\)</span>, the theorem is proved,</p>
+<div class="math notranslate nohighlight">
+\[\int_{S_1} \hat{\mathbf{n}} \cdot \boldsymbol\omega = \int_{S_2} \hat{\mathbf{n}} \cdot \boldsymbol\omega \ .\]</div>
+</div>
+</details><div class="proof theorem admonition" id="theorem-2">
+<p class="admonition-title"><span class="caption-number">Theorem 8.3 </span> (Second Helmholtz’s theorem)</p>
+<div class="theorem-content section" id="proof-content">
+<p>Vortex lines are material lines.</p>
+</div>
+</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Proof.<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Let’s take two points on a vortex line,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ &amp; \mathbf{r}_1(t)  \\
+ &amp; \mathbf{r}_2(t) = \mathbf{r}_1(t) + \Delta \ell(t) \hat{\mathbf{t}}(t) + o(\Delta \ell(t)) \ , 
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">with <span class="math notranslate nohighlight">\(\boldsymbol\omega(\mathbf{r}_1(t), t) = \omega(\mathbf{r}_1(t), t) \hat{\mathbf{t}}(t)\)</span>. At time <span class="math notranslate nohighlight">\(t + \Delta t\)</span>, the position of the two material points reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbf{r}_1(t + \Delta t) &amp; = \mathbf{r}_1(t) + \mathbf{u}(\mathbf{r}_1(t), t) \Delta t + o (\Delta t) \\
+  \mathbf{r}_2(t + \Delta t) &amp; = \mathbf{r}_2(t) + \mathbf{u}(\mathbf{r}_2(t), t) \Delta t \\
+                             &amp; = \mathbf{r}_2(t) + \left[ \mathbf{u}(\mathbf{r}_1(t), t) + \Delta \mathbf{r}_{12}(t) \cdot \nabla \mathbf{u}(\mathbf{r}_1(t), t) + o(|\Delta \mathbf{r}_{12}(t)|) \right] \Delta t + o(\Delta t) \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">so that</p>
+<div class="math notranslate nohighlight">
+\[\Delta \mathbf{r}_{12}(t + \Delta t) = \Delta \mathbf{r}_{12}(t) + \Delta \mathbf{r}_{12}(t) \cdot \mathbf{u}(\mathbf{r}_1(t),t) \Delta t + o(|\Delta \mathbf{r}_{12}(t)| \Delta t + o(\Delta t) \ .\]</div>
+<p class="sd-card-text">Now, using the vorticity equation for inviscid flows</p>
+<div class="math notranslate nohighlight">
+\[D_t \boldsymbol\omega = ( \boldsymbol\omega \cdot \nabla ) \mathbf{u} \ ,\]</div>
+<p class="sd-card-text">the vorticity in <span class="math notranslate nohighlight">\(\mathbf{r}_1(t+\Delta t)\)</span> at time <span class="math notranslate nohighlight">\(t+\Delta t\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \boldsymbol\omega(\mathbf{r}_1(t+\Delta t), t+\Delta t)
+  &amp; = \boldsymbol\omega(\mathbf{r}_1(t), t) + D_t \boldsymbol\omega (\mathbf{r}_1(t), t) \, \Delta t + o(\Delta t) = \\
+  &amp; = \boldsymbol\omega(\mathbf{r}_1(t), t) + \boldsymbol\omega (\mathbf{r}_1(t), t) \cdot \nabla \mathbf{u}(\mathbf{r}_1(t), t) \, \Delta t + o(\Delta t)  \ .
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Comparing the evolution of the material segment <span class="math notranslate nohighlight">\(\Delta \mathbf{r}_{12}\)</span> and the vorticity vector in <span class="math notranslate nohighlight">\(\mathbf{r}_1\)</span>, it’s immediate to realize that they have the same evolution, namely for <span class="math notranslate nohighlight">\(\Delta t \rightarrow 0\)</span></p>
+<div class="math notranslate nohighlight">
+\[d_t \mathbf{v} = \mathbf{v} \cdot \nabla \mathbf{u}(\mathbf{r}_1(t),t) \ .\]</div>
+</div>
+</details></div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -665,7 +649,7 @@ argomento di altri capitoli o di altri corsi…</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./polimi/fluidmechanics-ita/template/capitoli/04_bilanci"
+            path: "./polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica"
         },
         predefinedOutput: true
     }
@@ -682,6 +666,24 @@ argomento di altri capitoli o di altri corsi…</p>
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="08teoria.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">precedente</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Incompressible Aerodynamics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="steady-aerodynamics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">successivo</p>
+        <p class="prev-next-title"><span class="section-number">8.2. </span>Steady Aerodynamics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -696,9 +698,10 @@ argomento di altri capitoli o di altri corsi…</p>
     <i class="fa-solid fa-list"></i> Contenuti
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kelvin-s-theorem">8.1.1. Kelvin’s theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-s-theorems">8.1.2. Helmholtz’s theorems</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

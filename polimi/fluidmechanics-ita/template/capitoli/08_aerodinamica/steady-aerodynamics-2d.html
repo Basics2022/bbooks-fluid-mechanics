@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8.1.5. Steady Aerodynamics - 2-dimensional flows &#8212; Fluid Mechanics</title>
+    <title>8.2.5. Steady Aerodynamics - 2-dimensional flows &#8212; Fluid Mechanics</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-2d';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
-    <link rel="next" title="8.1.6. Steady Aerodynamics - 3-dimensional flows" href="steady-aerodynamics-3d.html" />
-    <link rel="prev" title="8.1. Steady Aerodynamics" href="steady-aerodynamics.html" />
+    <link rel="next" title="8.2.6. Steady Aerodynamics - 3-dimensional flows" href="steady-aerodynamics-3d.html" />
+    <link rel="prev" title="8.2. Steady Aerodynamics" href="steady-aerodynamics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -270,13 +270,14 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="08teoria.html">8. Incompressible Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="steady-aerodynamics.html">8.1. Steady Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">8.1.5. Steady Aerodynamics - 2-dimensional flows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-3d.html">8.1.6. Steady Aerodynamics - 3-dimensional flows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.1.7. Weissinger method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theorems.html">8.1. Theorems about vorticity</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="steady-aerodynamics.html">8.2. Steady Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">8.2.5. Steady Aerodynamics - 2-dimensional flows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-3d.html">8.2.6. Steady Aerodynamics - 3-dimensional flows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.2.7. Weissinger method</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">8.2. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">8.3. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -508,16 +509,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.1.5.1. Mathematical model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method">8.1.5.2. Green’s function method</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-problems">8.1.5.2.1. 2-dimensional problems</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.1.5.2.2. 3-dimensional problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.2.5.1. Mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method">8.2.5.2. Green’s function method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-problems">8.2.5.2.1. 2-dimensional problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.2.5.2.2. 3-dimensional problems</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.1.5.3. Wake and the shape of the domain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.1.5.4. Theorems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-joukowski-theorem">8.1.5.4.1. Kutta-Joukowski theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-alembert-paradox-2-dimensional-flow">8.1.5.4.2. D’Alembert paradox - 2 dimensional flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.2.5.3. Wake and the shape of the domain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.2.5.4. Theorems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-joukowski-theorem">8.2.5.4.1. Kutta-Joukowski theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-alembert-paradox-2-dimensional-flow">8.2.5.4.2. D’Alembert paradox - 2 dimensional flow</a></li>
 </ul>
 </li>
 </ul>
@@ -532,7 +533,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="steady-aerodynamics-2-dimensional-flows">
-<span id="fluid-mechanics-aerodynamics-steady-2d"></span><h1><span class="section-number">8.1.5. </span>Steady Aerodynamics - 2-dimensional flows<a class="headerlink" href="#steady-aerodynamics-2-dimensional-flows" title="Permalink to this heading">#</a></h1>
+<span id="fluid-mechanics-aerodynamics-steady-2d"></span><h1><span class="section-number">8.2.5. </span>Steady Aerodynamics - 2-dimensional flows<a class="headerlink" href="#steady-aerodynamics-2-dimensional-flows" title="Permalink to this heading">#</a></h1>
 <div class="warning admonition">
 <p class="admonition-title"><strong>todo</strong></p>
 <ul class="simple">
@@ -546,7 +547,7 @@ document.write(`
 </ul>
 </div>
 <div class="section" id="mathematical-model">
-<h2><span class="section-number">8.1.5.1. </span>Mathematical model<a class="headerlink" href="#mathematical-model" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.2.5.1. </span>Mathematical model<a class="headerlink" href="#mathematical-model" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
  - \Delta \phi &amp; = 0  &amp;&amp; \mathbf{r} \in \Omega \\
@@ -556,9 +557,9 @@ document.write(`
 <p>In order to build a domain where the flow is irrotational, wake regions must be cut from the domain: both sides of these regions become part of the boundary of the domain. As shown below, there’s no physical wake for 2-dimensional steady flows, while wakes exist in 3-dimensional flows.</p>
 </div>
 <div class="section" id="green-s-function-method">
-<h2><span class="section-number">8.1.5.2. </span>Green’s function method<a class="headerlink" href="#green-s-function-method" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.2.5.2. </span>Green’s function method<a class="headerlink" href="#green-s-function-method" title="Permalink to this heading">#</a></h2>
 <div class="section" id="dimensional-problems">
-<h3><span class="section-number">8.1.5.2.1. </span>2-dimensional problems<a class="headerlink" href="#dimensional-problems" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.2.5.2.1. </span>2-dimensional problems<a class="headerlink" href="#dimensional-problems" title="Permalink to this heading">#</a></h3>
 <p><strong>Green’s function.</strong> Green’s function of a 2-dimensional Poisson problem reads</p>
 <div class="math notranslate nohighlight">
 \[G(\mathbf{r}; \mathbf{r}_0) = - \frac{1}{2\pi} \ln |\mathbf{r} - \mathbf{r}_0| \ .\]</div>
@@ -866,7 +867,7 @@ if the **surface** $S_b$ is **closed**, and there's no net mass flow through it,
 </div>
 </details></div>
 <div class="section" id="id1">
-<h3><span class="section-number">8.1.5.2.2. </span>3-dimensional problems<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.2.5.2.2. </span>3-dimensional problems<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p><strong>Green’s function</strong> <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/bem-poisson-helmholtz-waves.html#poisson-equation">Green’s function of a 3-dimensional Poisson problem</a> reads</p>
 <div class="math notranslate nohighlight">
 \[G(\mathbf{r}; \mathbf{r}_0) = \frac{1}{4\pi} \frac{1}{|\mathbf{r} - \mathbf{r}_0|} \ .\]</div>
@@ -874,7 +875,7 @@ if the **surface** $S_b$ is **closed**, and there's no net mass flow through it,
 </div>
 </div>
 <div class="section" id="wake-and-the-shape-of-the-domain">
-<h2><span class="section-number">8.1.5.3. </span>Wake and the shape of the domain<a class="headerlink" href="#wake-and-the-shape-of-the-domain" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.2.5.3. </span>Wake and the shape of the domain<a class="headerlink" href="#wake-and-the-shape-of-the-domain" title="Permalink to this heading">#</a></h2>
 <p><em>Physical conditions, with jump conditions</em></p>
 <p><em>No physical wake in 2-dimensional steady flows</em></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
@@ -892,9 +893,9 @@ Wake in steady 2-dimensional flows<div class="sd-summary-down docutils">
 </div>
 </details></div>
 <div class="section" id="theorems">
-<h2><span class="section-number">8.1.5.4. </span>Theorems<a class="headerlink" href="#theorems" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.2.5.4. </span>Theorems<a class="headerlink" href="#theorems" title="Permalink to this heading">#</a></h2>
 <div class="section" id="kutta-joukowski-theorem">
-<h3><span class="section-number">8.1.5.4.1. </span>Kutta-Joukowski theorem<a class="headerlink" href="#kutta-joukowski-theorem" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.2.5.4.1. </span>Kutta-Joukowski theorem<a class="headerlink" href="#kutta-joukowski-theorem" title="Permalink to this heading">#</a></h3>
 <p><strong>2-dimensional flows.</strong> Circulation along a path <span class="math notranslate nohighlight">\(\gamma\)</span> is defined as the integral</p>
 <div class="math notranslate nohighlight">
 \[\Gamma = \oint_{\gamma} \mathbf{u} \cdot \hat{\mathbf{t}} \ .\]</div>
@@ -973,7 +974,7 @@ Circulation in Kutta-Joukowski theorem<div class="sd-summary-down docutils">
 </div>
 </details></div>
 <div class="section" id="d-alembert-paradox-2-dimensional-flow">
-<h3><span class="section-number">8.1.5.4.2. </span>D’Alembert paradox - 2 dimensional flow<a class="headerlink" href="#d-alembert-paradox-2-dimensional-flow" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.2.5.4.2. </span>D’Alembert paradox - 2 dimensional flow<a class="headerlink" href="#d-alembert-paradox-2-dimensional-flow" title="Permalink to this heading">#</a></h3>
 <p>Lift and drag are defined as the components of the aerodynamic force orthogonal and parallel to the free-stream velocity <span class="math notranslate nohighlight">\(\mathbf{U}_\infty = U_\infty \hat{\mathbf{x}}\)</span>. Being <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> the aerodynamic foce acting on the body,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -1028,7 +1029,7 @@ Circulation in Kutta-Joukowski theorem<div class="sd-summary-down docutils">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">8.1. </span>Steady Aerodynamics</p>
+        <p class="prev-next-title"><span class="section-number">8.2. </span>Steady Aerodynamics</p>
       </div>
     </a>
     <a class="right-next"
@@ -1036,7 +1037,7 @@ Circulation in Kutta-Joukowski theorem<div class="sd-summary-down docutils">
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">8.1.6. </span>Steady Aerodynamics - 3-dimensional flows</p>
+        <p class="prev-next-title"><span class="section-number">8.2.6. </span>Steady Aerodynamics - 3-dimensional flows</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1055,16 +1056,16 @@ Circulation in Kutta-Joukowski theorem<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.1.5.1. Mathematical model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method">8.1.5.2. Green’s function method</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-problems">8.1.5.2.1. 2-dimensional problems</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.1.5.2.2. 3-dimensional problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.2.5.1. Mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method">8.2.5.2. Green’s function method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensional-problems">8.2.5.2.1. 2-dimensional problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.2.5.2.2. 3-dimensional problems</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.1.5.3. Wake and the shape of the domain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.1.5.4. Theorems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-joukowski-theorem">8.1.5.4.1. Kutta-Joukowski theorem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-alembert-paradox-2-dimensional-flow">8.1.5.4.2. D’Alembert paradox - 2 dimensional flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.2.5.3. Wake and the shape of the domain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.2.5.4. Theorems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kutta-joukowski-theorem">8.2.5.4.1. Kutta-Joukowski theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-alembert-paradox-2-dimensional-flow">8.2.5.4.2. D’Alembert paradox - 2 dimensional flow</a></li>
 </ul>
 </li>
 </ul>

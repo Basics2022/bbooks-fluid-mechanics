@@ -7,6 +7,7 @@ In many situations in aeronautics, the flow of interest can be modelled as irrot
 
 [^thin-bl-high-Re]: As an example, the relation between thickness of boundary layer flows and Reynolds number in this book is shown with [Prandtl equations for the laminar boundary layer](), $\delta(x) \sim x \text{Re}_x^{-\frac{1}{2}}$, **todo** *add examples with turbulent flows*.
 
+**Theorems.** Kelvin's theorem and Helmholtz's theorems.
 
 **Steady aerodynamics.**
 
