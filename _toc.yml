@@ -89,6 +89,7 @@ parts:
       - file: polimi/fluidmechanics-ita/template/capitoli/07_similitudine/0707in
   - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/08teoria
     sections:
+    - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/theorems
     - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics
       sections:
       - file: polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-2d

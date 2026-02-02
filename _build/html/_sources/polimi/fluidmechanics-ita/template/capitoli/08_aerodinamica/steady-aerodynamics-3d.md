@@ -193,10 +193,72 @@ $$\begin{aligned}
 ```
 
 
-```{dropdown} Relationship between doublet/vortex distribution and the circulation - 2-dimensional steady problems
+```{dropdown} Vorticity field from the velocity field
 :open:
 
-...
+Given the velocity field
+
+$$\mathbf{u}(\mathbf{r}_0) = \nabla_0 \times \boldsymbol\psi(\mathbf{r}_0) + \nabla_0 \varphi(\mathbf{r}_0) \ ,$$
+
+the vorticity field reads
+
+$$\begin{aligned}
+  \boldsymbol\omega(\mathbf{r}_0)
+  & = \nabla_0 \times \mathbf{u}(\mathbf{r}_0) = \\
+  & = \nabla_0 \times \left[ \nabla_0 \times \boldsymbol\psi(\mathbf{r}_0) + \nabla_0 \varphi(\mathbf{r}_0) \right] = \\
+  & = \nabla_0 \times \left( \nabla_0 \times \boldsymbol\psi(\mathbf{r}_0) \right) = \\
+  & = \nabla_0 \left( \nabla_0 \cdot \boldsymbol\psi(\mathbf{r}_0) \right) - \nabla^2_0 \boldsymbol\psi(\mathbf{r}_0) \ ,
+\end{aligned}$$
+
+with the vector identity $\nabla^2 \mathbf{v} = \nabla (\nabla \cdot \mathbf{v}) - \nabla \times \nabla \times \mathbf{v}$. With uniform free-stream the vorticity can be evaluated using perturbation velocity,
+
+$$\begin{aligned}
+  \boldsymbol\omega(\mathbf{r}_0)
+  & = \nabla_0 \times \mathbf{u}_{\gamma}(\mathbf{r}_0) = \\
+  & = \nabla_0 \times \left[
+      \oint_{\mathbf{r}\in \partial S_{b,w,\infty}} \mu(\mathbf{r}) \hat{\mathbf{t}}(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)
+     - \int_{\mathbf{r}\in S_{b,w,\infty}} \left[ \hat{\mathbf{n}}(\mathbf{r}) \times \nabla^s \mu(\mathbf{r} ) \right] \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) \right] = \\
+  & = \nabla_0 \times \left[
+      \oint_{\mathbf{r}\in \partial S_{b,w,\infty}} \boldsymbol\Gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)
+    + \int_{\mathbf{r}\in S_{b,w,\infty}} \boldsymbol\gamma(\mathbf{r})  \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) \right] = \\
+\end{aligned}$$
+
+
+**todo** Provide the meaning of $\boldsymbol\Gamma$, $\boldsymbol\gamma$ as (impulsive) vorticity distribution on lines and surfaces, using
+
+- identity 
+
+   $$\begin{aligned}
+     \nabla \times ( \mathbf{a} \times \nabla f(\mathbf{r}) ) 
+     & = \hat{\mathbf{x}}_i \varepsilon_{ijk} \partial_j \varepsilon_{klm} a_l \partial_m f = \\
+     & = \hat{\mathbf{x}}_i \left( \delta_{il} \delta_{jm} - \delta_{im} \delta_{jl} \right) a_l \partial_{jm} f = \\
+     & = \hat{\mathbf{x}}_i \left( a_i \partial_{ll} f - a_l \partial_{il} f \right) = \\
+     & = \mathbf{a} \nabla^2 f(\mathbf{r}) - ( \mathbf{a} \cdot \nabla ) \nabla f(\mathbf{r}) = \\
+     & = \mathbf{a} \nabla^2 f(\mathbf{r}) - \nabla ( \mathbf{a} \cdot \nabla f(\mathbf{r}) ) \ ,
+   \end{aligned}$$
+   
+   for $\mathbf{a}$ constant.
+
+- $- \nabla_0^2 G(\mathbf{r}; \mathbf{r}_0) = \delta(\mathbf{r} - \mathbf{r}_0)$
+
+-  ...
+
+    $$\begin{aligned}
+      \nabla_0 \cdot \left( \nabla_0 G(\mathbf{r}; \mathbf{r}_0) \right)
+      & = \frac{\partial}{\partial x^0_i} \left[ \frac{x_i - x_i^0)}{|\mathbf{r}-\mathbf{r}_0|^3} \right] = \\
+      & = \frac{-3}{|\mathbf{r}-\mathbf{r}_0|^3} + 3 \frac{( x_i - x^0_i)(x_i - x^0_i)}{|\mathbf{r}-\mathbf{r}_0|^5} = 0 \ ,
+    \end{aligned}$$
+
+    when $\mathbf{r} \ne \mathbf{r}_0$.
+
+- ...
+
+    $$\begin{aligned}
+      4 \pi \nabla_0 \left( \mathbf{a} \cdot \nabla_0 G(\mathbf{r}; \mathbf{r}_0) \right)
+      & = \nabla_0 \left( \mathbf{a} \cdot \frac{\mathbf{r}-\mathbf{r}_0}{|\mathbf{r}-\mathbf{r}_0|^3} \right) = \\
+      & = \hat{\mathbf{x}}^0_i \frac{\partial}{\partial x^0_i} \left[ \frac{a_k(x_k - x_k^0)}{|\mathbf{r}-\mathbf{r}_0|^3} \right] = \\
+      & = \hat{\mathbf{x}}^0_i \left[ \frac{ - a_k \delta_{ik} }{|\mathbf{r}-\mathbf{r}_0|^3} + 3 \frac{\mathbf{a}\cdot(\mathbf{r}-\mathbf{r}_0)( x_i - x^0_i)}{|\mathbf{r}-\mathbf{r}_0|^5} \right] = \\
+    \end{aligned}$$
 
 ```
 
@@ -216,10 +278,10 @@ For $|\mathbf{r}_0| \gg |\mathbf{r}|$, using Taylor expansion of the Green's fun
 
 $$\begin{aligned}
   \mathbf{u}'(\mathbf{r}_0) 
-  & = \int_{\mathbf{r}\in S_b} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)
-      + \int_{\mathbf{r} \in S_b} \sigma(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
-  & \simeq \int_{\mathbf{r}\in S_b} \boldsymbol\gamma(\mathbf{r}) \times \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} - \frac{1}{2 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] + \\ 
-   & \quad  + \int_{\mathbf{r} \in S_b} \sigma(\mathbf{r}) \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} - \frac{1}{2 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] \ .
+  & = \int_{\mathbf{r}\in S_b, S_w, S_\infty} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)
+      + \int_{\mathbf{r} \in S_b, S_w, S_\infty} \sigma(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+  & \simeq \int_{\mathbf{r}\in S_b, S_w, S_\infty} \boldsymbol\gamma(\mathbf{r}) \times \left[ \frac{1}{4 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} - \frac{1}{4 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^3} + \frac{3}{4\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^5}  \right] + \\ 
+   & \quad  + \int_{\mathbf{r} \in S_b, S_w, S_\infty} \sigma(\mathbf{r}) \left[ \frac{1}{4 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} - \frac{1}{4 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^3} + \frac{3}{4\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^5}  \right] \ .
 \end{aligned}$$
 
 The first term in the second integral is proportional to the mass flux $\dot{m} = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \mathbf{u}$ across $S_b$, and so it's identically zero if $\dot{m} = 0$, as in the case of solid boundaries. The first term in the first integral is proportional to the "vector" circulation $\boldsymbol\Gamma = \Gamma \hat{\mathbf{z}} = \oint_{\mathbf{r} \in \partial S_b} \boldsymbol\gamma(\mathbf{r})$ (**todo** *Prove it*), thus the asymptotic behavior of the perturbation velocity as $|\mathbf{r}_0| \gg |\mathbf{r}|$ reads
@@ -229,43 +291,79 @@ $$\mathbf{u}'(\mathbf{r}_0) \simeq
  \frac{1}{2 \pi} \dot{m} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + O\left( \frac{1}{|\mathbf{r}_0|^2} \right)
 $$
 
-<!--
-For $|\mathbf{r}_0| \gg |\mathbf{r}|$, using Taylor expansion of the Green's function $G(\mathbf{r}; \mathbf{r}_0)$ and its gradient $\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)$, the perturbation potential reads
-
-$$\begin{aligned}
-  E(\mathbf{r}_0) \varphi(\mathbf{r}_0) 
-  & = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) - \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) = \\
-  & \simeq - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0 - \mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] \varphi(\mathbf{r}) - \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{r} \varphi(\mathbf{r}) \left[ - \frac{1}{2 \pi} \ln |\mathbf{r}_0| + \mathbf{r} \cdot \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} \right] = \\
-  & = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \left[ \frac{1}{2 \pi} \frac{\mathbf{r}_0 - \mathbf{r}}{|\mathbf{r}_0|^2} + \frac{1}{\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^4}  \right] \varphi(\mathbf{r}) - \int_{\mathbf{r} \in S_b}  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) \left[ \mathbf{r} \cdot \frac{1}{2 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} \right] = \\
-\end{aligned}$$
-
-if the **surface** $S_b$ is **closed**, and there's no net mass flow through it, $\oint_{S_b} \hat{\mathbf{n}} \cdot \mathbf{u} = \oint_{S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) = \mathbf{0}$.
--->
 
 ```
-
-### 3-dimensional problems
-
-**Green's function** [Green's function of a 3-dimensional Poisson problem](https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/bem-poisson-helmholtz-waves.html#poisson-equation) reads
-
-$$G(\mathbf{r}; \mathbf{r}_0) = \frac{1}{4\pi} \frac{1}{|\mathbf{r} - \mathbf{r}_0|} \ .$$
-
-**Solution**
 
 ## Wake and the shape of the domain
 
+**Jump conditions.** Jump conditions across the wake read
+
+- for mass
+
+    $$\left[ \rho u_n^{rel} \right] = 0 \ .$$
+
+- for momentum, with negligible viscosity so that $\mathbf{t}_{\mathbf{n}} = - P \hat{\mathbf{n}}$
+
+    $$\left[ \rho \mathbf{u} u_n^{rel} + P \hat{\mathbf{n}} \right] = \mathbf{0} \ .$$
+
+As the wake is (**todo** *Prove or justify*) a contact discontinuity, with no mass flux through it, $\dot{m} = \rho u_n^{rel} = 0$ (a stricter condition w.r.t. to no jump in mass flux across the surface), the momentum jump condition across the wake reads
+
+$$[ P \hat{\mathbf{n}} ] = 0 \ ,$$
+
+i.e. the vector condition contains a non-trivial 1-dimensional information, along the normal direction only $\left[ P \right] = 0$.
+
+Using second Bernoulli theorem, connecting a pair of points on the two sides of the wake (if needed, do an intermediate step connecting each one of these points with a point at infinity) gives 
+
+$$P^+ + \frac{1}{2} \rho \left| \mathbf{u}^+ \right|^2 = P^- + \frac{1}{2} \rho \left| \mathbf{u}^- \right|^2 \ .$$
+
+Using the relation between the velocity on each side of the wake, the average velocity, the velocity jump and the intensity of vortex sheet of the wake,
+
+$$\begin{aligned}
+  \mathbf{u}^+ & = \mathbf{u} + \frac{\Delta \mathbf{u}}{2} \\
+  \mathbf{u}^- & = \mathbf{u} - \frac{\Delta \mathbf{u}}{2} \\
+  \Delta \mathbf{u} & = - \hat{\mathbf{n}} \times \boldsymbol\gamma \ ,
+\end{aligned}$$
+
+gives
+
+$$\begin{aligned}
+  0 = \left[ P \right] = \\
+  & = P^+ - P^- = \\
+  & = \frac{1}{2} \rho \left[
+    |\mathbf{u}|^2 + \frac{|\Delta \mathbf{u}|^2}{4} + \mathbf{u} \cdot \Delta \mathbf{u}
+  - |\mathbf{u}|^2 - \frac{|\Delta \mathbf{u}|^2}{4} + \mathbf{u} \cdot \Delta \mathbf{u}
+  \right] = \\
+  & = \mathbf{u} \cdot \Delta \mathbf{u} = \\
+  & = - \mathbf{u} \cdot \hat{\mathbf{n}} \times \boldsymbol\gamma = \\
+  & = \hat{\mathbf{n}} \cdot \mathbf{u} \times \boldsymbol\gamma \ .
+\end{aligned}$$
+
+As (**todo** *discuss*) $\mathbf{u}$ and $\boldsymbol\gamma$ are everywhere orthogonal to $\hat{\mathbf{n}}$, and thus tangent to the wake surface, it follows that 
+
+$$\mathbf{u} \times \boldsymbol\gamma = \mathbf{0} \ ,$$
+
+or, equivalently,
+
+$$
+\boldsymbol\gamma \parallel \mathbf{u}
+\qquad \text{or} \qquad
+\begin{aligned}
+  \boldsymbol\gamma & = \gamma \hat{\mathbf{t}} \\
+  \mathbf{u}        & = u \hat{\mathbf{t}} \ .
+\end{aligned}
+$$
+
+
 *Physical conditions: jump conditions, transport*
-
-
-```{dropdown} Wake in steady 2-dimensional flows
-:open:
 
 ...
 
-```
 
 ## Theorems
 
+*Lift and drag*
+
+<!--
 ### Kutta-Joukowski theorem
 
 ...
@@ -283,4 +381,5 @@ $$G(\mathbf{r}; \mathbf{r}_0) = \frac{1}{4\pi} \frac{1}{|\mathbf{r} - \mathbf{r}
 ...
 
 ```
+-->
 
