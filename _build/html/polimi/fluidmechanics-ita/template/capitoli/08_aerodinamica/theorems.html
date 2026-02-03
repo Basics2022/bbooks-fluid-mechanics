@@ -533,7 +533,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[0 = \frac{d \Gamma_{\ell(t)}}{dt} = \dfrac{d}{dt} \oint_{\ell(t)} \mathbf{u} \cdot \hat{\mathbf{t}} \ .\]</div>
 </div>
-</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Proof 1, using time derivative over time dependent domains<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -553,7 +553,7 @@ Proof 1, using time derivative over time dependent domains<div class="sd-summary
 \end{aligned}\end{split}\]</div>
 <p class="sd-card-text">with <span class="math notranslate nohighlight">\((1)\)</span> <span class="math notranslate nohighlight">\(\mathbf{u}_b = \mathbf{u}\)</span> for material lines, and <span class="math notranslate nohighlight">\(\boldsymbol\omega = \nabla \times \mathbf{u}\)</span>, and using the properties of the mixed vector product <span class="math notranslate nohighlight">\(\mathbf{a} \cdot \mathbf{b} \times \mathbf{c} = \mathbf{b} \cdot \mathbf{c} \times \mathbf{a}\)</span>, <span class="math notranslate nohighlight">\((2)\)</span> <span class="math notranslate nohighlight">\(\mathbf{u} \cdot \nabla \mathbf{u} = \boldsymbol\omega \times \mathbf{u} + \nabla \frac{|\mathbf{u}|^2}{2}\)</span>, <span class="math notranslate nohighlight">\((3)\)</span> from the momentum equation <span class="math notranslate nohighlight">\(D_t \mathbf{u} = \mathbf{g} + \nu \nabla^2 \mathbf{u} - \nabla \Pi\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{g} = - \nabla \chi\)</span>, and <span class="math notranslate nohighlight">\((4)\)</span> <span class="math notranslate nohighlight">\(\oint_{\ell(t)} \hat{\mathbf{t}} \cdot \nabla \Phi = \oint_{\ell(t)} d \Phi = 0\)</span>.</p>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Proof 2, using material coordinates<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -570,7 +570,7 @@ Proof 2, using material coordinates<div class="sd-summary-down docutils">
 <div class="theorem-content section" id="proof-content">
 <p>The flux of the vorticity field is constant across all the sections of a vortex tube, at a given time.</p>
 </div>
-</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Proof<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -596,7 +596,7 @@ Proof<div class="sd-summary-down docutils">
 <div class="theorem-content section" id="proof-content">
 <p>Vortex lines are material lines.</p>
 </div>
-</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Proof.<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -633,7 +633,30 @@ Proof.<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \[d_t \mathbf{v} = \mathbf{v} \cdot \nabla \mathbf{u}(\mathbf{r}_1(t),t) \ .\]</div>
 </div>
-</details></div>
+</details><p>A vortex tube with a section collapsing to zero, can be modeled as a zero section<a class="footnote-reference brackets" href="#filament-section" id="id1">1</a>, infinite vorticity <strong>vortex filament</strong> <span class="math notranslate nohighlight">\(\ell_\Gamma\)</span>, so that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\lim_{\begin{aligned} S &amp; \rightarrow 0 \\ |\boldsymbol\omega| &amp; \rightarrow +\infty \end{aligned}} \int_{S} \hat{\mathbf{n}} \cdot \boldsymbol\omega = \Gamma \ .\end{split}\]</div>
+<p>Vorticity in a irrotational 3-dimensional domain, <span class="math notranslate nohighlight">\(\mathbf{r} \in V\)</span>, containing a vortex filament, <span class="math notranslate nohighlight">\(\mathbf{r}_\Gamma \in \ell_\Gamma\)</span>, can be modelled using an impulsive <em>two-dimensional</em><a class="footnote-reference brackets" href="#dirac-delta-dimension" id="id2">2</a> Dirac’s delta function</p>
+<div class="math notranslate nohighlight">
+\[\boldsymbol\omega(\mathbf{r},t) = \boldsymbol\Gamma(\mathbf{r}_\Gamma,t) \delta_{2}(\mathbf{r} - \mathbf{r}_\Gamma) \ ,\]</div>
+<p>with <span class="math notranslate nohighlight">\(\mathbf{r}_\Gamma \in \ell_\Gamma\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol\Gamma = \Gamma \hat{\mathbf{t}}\)</span>, with <span class="math notranslate nohighlight">\(\hat{\mathbf{t}}\)</span> the unit vector tangent to the axis of the filament.</p>
+<p>Circulation on a line winding once around a vortex filament with intensity <span class="math notranslate nohighlight">\(\Gamma\)</span> reads <span class="math notranslate nohighlight">\(\oint_{\ell} \mathbf{u} \cdot \hat{\mathbf{t}} = \Gamma\)</span>.</p>
+<hr class="docutils" />
+<p><strong>todo</strong></p>
+<p>A <strong>vortex surface</strong> …</p>
+<p>Across a vortex surface the tangential velocity has a jump</p>
+<div class="math notranslate nohighlight">
+\[\Delta \mathbf{u} = \dots\]</div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="filament-section"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>A filament can be cut with a section orthogonal to its axis or with a generic angle w.r.t. it. Orthogonal cut gives the minimum area of the section <span class="math notranslate nohighlight">\(S_0\)</span>, a generic cut with unit normal <span class="math notranslate nohighlight">\(\hat{\mathbf{n}}\)</span> gives <span class="math notranslate nohighlight">\(S\)</span> so that <span class="math notranslate nohighlight">\(S_0 = \hat{\mathbf{n}} \cdot \hat{\mathbf{t}} S\)</span>.</p>
+</dd>
+<dt class="label" id="dirac-delta-dimension"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>The 2-dimensional Dirac’s delta <span class="math notranslate nohighlight">\(\delta_2(\mathbf{r}-\mathbf{r}_\Gamma)\)</span> has physical dimensions <span class="math notranslate nohighlight">\(\left[ \delta_2 \right] = L^{-2}\)</span>, and it gives the value of the function in <span class="math notranslate nohighlight">\(\mathbf{r}_\Gamma\)</span> from the integral on a 2-dimensional surface <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(\int_{\mathbf{r} \in S} f(\mathbf{r}) \delta_2(\mathbf{r}-\mathbf{r}_\Gamma) = f(\mathbf{r}_\Gamma)\)</span>, if <span class="math notranslate nohighlight">\(\mathbf{r}_\Gamma \in S\)</span>.</p>
+</dd>
+</dl>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

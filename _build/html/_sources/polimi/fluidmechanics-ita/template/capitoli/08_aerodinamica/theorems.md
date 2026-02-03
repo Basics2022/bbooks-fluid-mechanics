@@ -12,7 +12,6 @@ $$0 = \frac{d \Gamma_{\ell(t)}}{dt} = \dfrac{d}{dt} \oint_{\ell(t)} \mathbf{u} \
 ```
 
 ```{dropdown} Proof 1, using time derivative over time dependent domains
-:open:
 
 Using the expression of the time derivative over a [work line integral](https://basics2022.github.io/bbooks-math-miscellanea/ch/tensor-algebra-calculus/time-derivative-of-integrals.html#work-line-integral-along-a-line), over a closed line with no discontinuity in the functions so that $\mathbf{f}(\mathbf{r}_B) \cdot \mathbf{v}_B - \mathbf{f}(\mathbf{r}_A) \cdot \mathbf{v}_A = 0$,
 
@@ -31,7 +30,6 @@ with $(1)$ $\mathbf{u}_b = \mathbf{u}$ for material lines, and $\boldsymbol\omeg
 ```
 
 ```{dropdown} Proof 2, using material coordinates
-:open:
 
 ```
 
@@ -47,7 +45,6 @@ The flux of the vorticity field is constant across all the sections of a vortex 
 ```
 
 ```{dropdown} Proof
-:open:
 
 As the vorticity is the curl of the velocity field, $\boldsymbol = \nabla \times \mathbf{u}$, it's divergence is identically zero, $\nabla \cdot \boldsymbol\omega = 0$. Integrating over a volume delimited by the lateral surface of a vortex tube and 2 sections, and applying divergence theorem and the definition of the vortex tube,
 
@@ -73,7 +70,6 @@ Vortex lines are material lines.
 ```
 
 ```{dropdown} Proof.
-:open:
 
 Let's take two points on a vortex line,
 
@@ -112,4 +108,28 @@ $$d_t \mathbf{v} = \mathbf{v} \cdot \nabla \mathbf{u}(\mathbf{r}_1(t),t) \ .$$
 
 ```
 
+A vortex tube with a section collapsing to zero, can be modeled as a zero section[^filament-section], infinite vorticity **vortex filament** $\ell_\Gamma$, so that
 
+[^filament-section]: A filament can be cut with a section orthogonal to its axis or with a generic angle w.r.t. it. Orthogonal cut gives the minimum area of the section $S_0$, a generic cut with unit normal $\hat{\mathbf{n}}$ gives $S$ so that $S_0 = \hat{\mathbf{n}} \cdot \hat{\mathbf{t}} S$.
+
+$$\lim_{\begin{aligned} S & \rightarrow 0 \\ |\boldsymbol\omega| & \rightarrow +\infty \end{aligned}} \int_{S} \hat{\mathbf{n}} \cdot \boldsymbol\omega = \Gamma \ .$$
+
+Vorticity in a irrotational 3-dimensional domain, $\mathbf{r} \in V$, containing a vortex filament, $\mathbf{r}_\Gamma \in \ell_\Gamma$, can be modelled using an impulsive *two-dimensional*[^dirac-delta-dimension] Dirac's delta function 
+
+[^dirac-delta-dimension]: The 2-dimensional Dirac's delta $\delta_2(\mathbf{r}-\mathbf{r}_\Gamma)$ has physical dimensions $\left[ \delta_2 \right] = L^{-2}$, and it gives the value of the function in $\mathbf{r}_\Gamma$ from the integral on a 2-dimensional surface $S$, $\int_{\mathbf{r} \in S} f(\mathbf{r}) \delta_2(\mathbf{r}-\mathbf{r}_\Gamma) = f(\mathbf{r}_\Gamma)$, if $\mathbf{r}_\Gamma \in S$.
+
+$$\boldsymbol\omega(\mathbf{r},t) = \boldsymbol\Gamma(\mathbf{r}_\Gamma,t) \delta_{2}(\mathbf{r} - \mathbf{r}_\Gamma) \ ,$$
+
+with $\mathbf{r}_\Gamma \in \ell_\Gamma$, and $\boldsymbol\Gamma = \Gamma \hat{\mathbf{t}}$, with $\hat{\mathbf{t}}$ the unit vector tangent to the axis of the filament.
+
+Circulation on a line winding once around a vortex filament with intensity $\Gamma$ reads $\oint_{\ell} \mathbf{u} \cdot \hat{\mathbf{t}} = \Gamma$.
+
+---
+
+**todo**
+
+A **vortex surface** ...
+
+Across a vortex surface the tangential velocity has a jump
+
+$$\Delta \mathbf{u} = \dots$$
