@@ -15,18 +15,32 @@
 
 Helmholtz's decomposition of the velocity field reads
 
-$$\mathbf{u} = \mathbf{u}_\phi + \mathbf{u}_{\boldsymbol\psi} = \nabla \phi + \nabla \times \boldsymbol\psi \ ,$$
+$$\mathbf{u}(\mathbf{r}) = \mathbf{u}_\phi(\mathbf{r}) + \mathbf{u}_{\boldsymbol\psi}(\mathbf{r}) = \nabla \phi(\mathbf{r}) + \nabla \times \boldsymbol\psi(\mathbf{r}) \ ,$$
 
 with $\mathbf{u}_\phi$ the irrotational part and $\mathbf{u}_{\boldsymbol\psi}$ the incompressible part, that can be written in terms of a kinetic potential $\phi$ and a vector potential $\boldsymbol\psi$ (or the vector stream function). With a meaningful irrotational free-stream velocity $\mathbf{U}_\infty$, Helmholtz's decomposition becomes
 
-$$\mathbf{u} = \mathbf{U}_\infty + \nabla \varphi + \nabla \times \boldsymbol\psi \ ,$$
+$$\mathbf{u}(\mathbf{r}) = \mathbf{U}_\infty + \nabla \varphi(\mathbf{r}) + \nabla \times \boldsymbol\psi(\mathbf{r}) \ ,$$
 
-having introduced the perturbation kinetic potential $\varphi$
+having introduced the perturbation kinetic potential $\varphi$. For an **incompressible flow**, the divergence of the velocity field is identically zero, while the curl of the velocity field is the definition of the vorticity,
 
+$$\begin{aligned}
+  \nabla \cdot \mathbf{u} & = 0 \\
+  \nabla \times \mathbf{u} & = \boldsymbol\omega \ .
+\end{aligned}$$
+
+Introducing the expression of teh velocity field and exploiting vector identities $\nabla \cdot \nabla \times \mathbf{a} = 0$, $\nabla \times \nabla a = \mathbf{0}$, $\nabla \cdot \nabla a = \nabla^2 a$, $\nabla^2 \mathbf{a} = \nabla ( \nabla \cdot \mathbf{a} ) - \nabla \times \nabla\times \mathbf{a}$, two Poisson equations for $\varphi(\mathbf{r})$ and $\boldsymbol\psi(\mathbf{r})$ appear
+
+$$\begin{aligned}
+  - \nabla^2 \varphi & = 0 \\
+  - \nabla^2 \boldsymbol\psi & = \boldsymbol\omega \ ,
+\end{aligned}$$
+
+provided that $\boldsymbol\psi$ is divergence free[^psi-div]. This equations are defined in the whole 3-dimensional space $V$ as a domain, without any jump in viscous flows (finite thickness of boundary layers and wakes); in the limit of infinite $\text{Re}$, with boundary layers and wakes collapsing in votex surfaces with infinitesimal thickness, the vorticity field contains impulsive contributions from boundary layers and wakes. These equations must be supplied with proper **boundary conditions**. **todo** *discuss*
+
+[^psi-div]: The stream-function $\boldsymbol\psi(\mathbf{r})$ is uniquely defined up to an additive gradient of a scalar function, as $\mathbf{u}_\psi = \nabla \times \widetilde{\boldsymbol\psi} = \nabla \times \left( \boldsymbol\psi + \nabla f ) = \nabla \times \boldsymbol\psi$. This arbitrariety can be exploited to get a divergence-free stream function from a non-divergence-free stream function.
 
 
 ```{dropdown} Only potential, with jumps across rotational regions
-:open:
 
 $$\begin{aligned}
  - \Delta \phi & = 0  && \mathbf{r} \in \Omega \\
@@ -42,40 +56,21 @@ Boundary conditions on both sides of the [**wakes**]() follow from *jump conditi
 ...
 ```
 
-## Green's function method
+## Green's function method, for solving Poisson equations
 
-**Green's function.** [Green's function of a 3-dimensional Poisson problem](https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/bem-poisson-helmholtz-waves.html#poisson-equation)
+Poisson equations can be recast as *boundary problem* and solved with a *boundary element method*, e.g. exploiting Green's function properties. The Green's function of a 3-dimensional Poisson problem reads
 
-$$G(\mathbf{r}; \mathbf{r}_0) = \frac{1}{4\pi |\mathbf{r} - \mathbf{r}_0|} \ .$$
+$$G(\mathbf{r}; \mathbf{r}_0) = \frac{1}{4\pi |\mathbf{r} - \mathbf{r}_0|} \ ,$$
 
-
-```{dropdown} Derivation of the Green's function for 2-dimensional Poisson problem.
-
-*...see reference above...*
-
-```
-
-**Solution.**
+so that the integral boundary value problems read
 
 $$\begin{aligned}
-  E(\mathbf{r}_0) \phi(\mathbf{r}_0) 
-  & = \int_{\mathbf{r}\in\Omega} \delta(\mathbf{r}-\mathbf{r}_0) \phi(\mathbf{r}) = \\
-  & = - \int_{\mathbf{r}\in\Omega} \nabla^2_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \phi(\mathbf{r}) = \\
-  & = - \int_{\mathbf{r}\in\Omega} \nabla_\mathbf{r} \cdot \left( \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \phi(\mathbf{r}) -  G(\mathbf{r}; \mathbf{r}_0)  \nabla_{\mathbf{r}} \phi(\mathbf{r}) \right) - \int_{\mathbf{r}\in\Omega} G(\mathbf{r};\mathbf{r}_0) \underbrace{\nabla^2_{\mathbf{r}} \phi(\mathbf{r})}_{=0 \text{ , Poisson eq}} = \\
-  & = - \int_{\mathbf{r}\in \partial \Omega} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \phi(\mathbf{r}) -  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \phi(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \right\}  \ .
+  E(\mathbf{r}_0) \varphi(\mathbf{r}_0) & = - \oint_{\partial V} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \, \varphi(\mathbf{r}) - \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \varphi(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0) \right\} \\
+  E(\mathbf{r}_0) \boldsymbol\psi(\mathbf{r}_0) & = - \oint_{\partial V} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \, \boldsymbol\psi(\mathbf{r}) - \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \boldsymbol\psi(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0) \right\} - \int_{V} G(\mathbf{r}; \mathbf{r}_0) \, \boldsymbol\omega(\mathbf{r}) \ .
 \end{aligned}$$
 
-For the perturbation potential, $\varphi := \phi - \phi_\infty = \phi - \mathbf{U}_\infty \cdot \mathbf{r}$, with $\varphi|_{S_\infty} = 0$ (**todo** prove it! And find the trend $\propto r^{\alpha}$)
+The volume contribution of vorticity field is a function of the vorticity on the body **todo** *see wake. Discuss and add details about this statement. For a given shape of the wake, the problem is linear: only the vorticity field, related to the stream function with linear dependence, is unkown; for a free-wake the problem becomes non-linear, as the shape of the wake - i.e. the position of its points - is unknown: this makes the problem non-linear, as the shape of the wake is determined by the condition of not-loaded wake*.
 
-$$\begin{aligned}
-  E(\mathbf{r}_0) \varphi(\mathbf{r}_0) 
-  & = - \int_{\mathbf{r}\in \partial \Omega} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) -  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \right\} = \\
-  & = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) + \int_{\mathbf{r} \in S_b} \underbrace{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \varphi(\mathbf{r})}_{= - \hat{\mathbf{n}} \cdot \mathbf{U}_\infty \text{ , from b.c.}} G(\mathbf{r}; \mathbf{r}_0) + \\
-  & \quad - \int_{\mathbf{r}\in S_w} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \, \underbrace{ \Delta \varphi(\mathbf{r})}_{ = \Delta \varphi_{TE} \text{ , from wake c.} }  + \\
-  & \quad - \int_{\mathbf{r}\in S_\infty} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \Delta \varphi(\mathbf{r}) + \int_{\mathbf{r} \in S_\infty} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \varphi(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0) \ .
-\end{aligned}$$
-
-This equation can be recast as an **integro-differential equation** for the perturbation potential on the surface of the body $\mathbf{r}_0 \in S_{b}$ that can be solved by collocation, as an example using [**boundary element methods**](https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/bem.html). Once this problem is solved, the perturbation potential on $S_b$ is known, and the perturbation potential can be computed in every point of the domain.
 
 ```{dropdown} $E(\mathbf{r}_0)$
 :open:
@@ -87,6 +82,18 @@ $$E(\mathbf{r}_0) = \begin{cases} 1 && \mathbf{r}_0 \in \Omega \\ \frac{1}{2} &&
 The value $\frac{1}{2}$ is a particular case indeed, if the point $\mathbf{r}_0$ is on a locally flat - no sharp angles - of the boundary. If the point is at a sharp angle - being $\Theta$ the solid angle outside the domain - $E(\mathbf{r}_0) = \frac{\Theta}{4 \pi}$.
 
 ```
+
+Once the value of the potential $\varphi$ and the free-stream function $\boldsymbol\psi$ is known, it's possible to evaluate the value of the potential and the free-stream function in every point of the domain, $\mathbf{r}_0 \in V$
+
+$$\begin{aligned}
+  \mathbf{u}_\varphi(\mathbf{r}_0) = \nabla_0 \varphi(\mathbf{r}_0) 
+  & =  \\
+  \mathbf{u}_{\boldsymbol\psi}(\mathbf{r}_0)  = \nabla_0 \times \boldsymbol\psi(\mathbf{r}_0) 
+  & =  \\ 
+\end{aligned}$$
+
+
+
 
 ```{dropdown} Asymptotic behavior of the perturbation velocity
 :open:

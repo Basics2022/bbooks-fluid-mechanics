@@ -510,7 +510,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.2.6.1. Mathematical model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method">8.2.6.2. Green’s function method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method-for-solving-poisson-equations">8.2.6.2. Green’s function method, for solving Poisson equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.2.6.3. Wake and the shape of the domain</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.2.6.4. Theorems</a></li>
 </ul>
@@ -542,12 +542,24 @@ document.write(`
 <h2><span class="section-number">8.2.6.1. </span>Mathematical model<a class="headerlink" href="#mathematical-model" title="Permalink to this heading">#</a></h2>
 <p>Helmholtz’s decomposition of the velocity field reads</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{u} = \mathbf{u}_\phi + \mathbf{u}_{\boldsymbol\psi} = \nabla \phi + \nabla \times \boldsymbol\psi \ ,\]</div>
+\[\mathbf{u}(\mathbf{r}) = \mathbf{u}_\phi(\mathbf{r}) + \mathbf{u}_{\boldsymbol\psi}(\mathbf{r}) = \nabla \phi(\mathbf{r}) + \nabla \times \boldsymbol\psi(\mathbf{r}) \ ,\]</div>
 <p>with <span class="math notranslate nohighlight">\(\mathbf{u}_\phi\)</span> the irrotational part and <span class="math notranslate nohighlight">\(\mathbf{u}_{\boldsymbol\psi}\)</span> the incompressible part, that can be written in terms of a kinetic potential <span class="math notranslate nohighlight">\(\phi\)</span> and a vector potential <span class="math notranslate nohighlight">\(\boldsymbol\psi\)</span> (or the vector stream function). With a meaningful irrotational free-stream velocity <span class="math notranslate nohighlight">\(\mathbf{U}_\infty\)</span>, Helmholtz’s decomposition becomes</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{u} = \mathbf{U}_\infty + \nabla \varphi + \nabla \times \boldsymbol\psi \ ,\]</div>
-<p>having introduced the perturbation kinetic potential <span class="math notranslate nohighlight">\(\varphi\)</span></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+\[\mathbf{u}(\mathbf{r}) = \mathbf{U}_\infty + \nabla \varphi(\mathbf{r}) + \nabla \times \boldsymbol\psi(\mathbf{r}) \ ,\]</div>
+<p>having introduced the perturbation kinetic potential <span class="math notranslate nohighlight">\(\varphi\)</span>. For an <strong>incompressible flow</strong>, the divergence of the velocity field is identically zero, while the curl of the velocity field is the definition of the vorticity,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \nabla \cdot \mathbf{u} &amp; = 0 \\
+  \nabla \times \mathbf{u} &amp; = \boldsymbol\omega \ .
+\end{aligned}\end{split}\]</div>
+<p>Introducing the expression of teh velocity field and exploiting vector identities <span class="math notranslate nohighlight">\(\nabla \cdot \nabla \times \mathbf{a} = 0\)</span>, <span class="math notranslate nohighlight">\(\nabla \times \nabla a = \mathbf{0}\)</span>, <span class="math notranslate nohighlight">\(\nabla \cdot \nabla a = \nabla^2 a\)</span>, <span class="math notranslate nohighlight">\(\nabla^2 \mathbf{a} = \nabla ( \nabla \cdot \mathbf{a} ) - \nabla \times \nabla\times \mathbf{a}\)</span>, two Poisson equations for <span class="math notranslate nohighlight">\(\varphi(\mathbf{r})\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol\psi(\mathbf{r})\)</span> appear</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  - \nabla^2 \varphi &amp; = 0 \\
+  - \nabla^2 \boldsymbol\psi &amp; = \boldsymbol\omega \ ,
+\end{aligned}\end{split}\]</div>
+<p>provided that <span class="math notranslate nohighlight">\(\boldsymbol\psi\)</span> is divergence free<a class="footnote-reference brackets" href="#psi-div" id="id1">1</a>. This equations are defined in the whole 3-dimensional space <span class="math notranslate nohighlight">\(V\)</span> as a domain, without any jump in viscous flows (finite thickness of boundary layers and wakes); in the limit of infinite <span class="math notranslate nohighlight">\(\text{Re}\)</span>, with boundary layers and wakes collapsing in votex surfaces with infinitesimal thickness, the vorticity field contains impulsive contributions from boundary layers and wakes. These equations must be supplied with proper <strong>boundary conditions</strong>. <strong>todo</strong> <em>discuss</em></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Only potential, with jumps across rotational regions<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -566,39 +578,18 @@ Only potential, with jumps across rotational regions<div class="sd-summary-down 
 <p class="sd-card-text">…</p>
 </div>
 </details></div>
-<div class="section" id="green-s-function-method">
-<h2><span class="section-number">8.2.6.2. </span>Green’s function method<a class="headerlink" href="#green-s-function-method" title="Permalink to this heading">#</a></h2>
-<p><strong>Green’s function.</strong> <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/bem-poisson-helmholtz-waves.html#poisson-equation">Green’s function of a 3-dimensional Poisson problem</a></p>
+<div class="section" id="green-s-function-method-for-solving-poisson-equations">
+<h2><span class="section-number">8.2.6.2. </span>Green’s function method, for solving Poisson equations<a class="headerlink" href="#green-s-function-method-for-solving-poisson-equations" title="Permalink to this heading">#</a></h2>
+<p>Poisson equations can be recast as <em>boundary problem</em> and solved with a <em>boundary element method</em>, e.g. exploiting Green’s function properties. The Green’s function of a 3-dimensional Poisson problem reads</p>
 <div class="math notranslate nohighlight">
-\[G(\mathbf{r}; \mathbf{r}_0) = \frac{1}{4\pi |\mathbf{r} - \mathbf{r}_0|} \ .\]</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Derivation of the Green’s function for 2-dimensional Poisson problem.<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><em>…see reference above…</em></p>
-</div>
-</details><p><strong>Solution.</strong></p>
+\[G(\mathbf{r}; \mathbf{r}_0) = \frac{1}{4\pi |\mathbf{r} - \mathbf{r}_0|} \ ,\]</div>
+<p>so that the integral boundary value problems read</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-  E(\mathbf{r}_0) \phi(\mathbf{r}_0) 
-  &amp; = \int_{\mathbf{r}\in\Omega} \delta(\mathbf{r}-\mathbf{r}_0) \phi(\mathbf{r}) = \\
-  &amp; = - \int_{\mathbf{r}\in\Omega} \nabla^2_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \phi(\mathbf{r}) = \\
-  &amp; = - \int_{\mathbf{r}\in\Omega} \nabla_\mathbf{r} \cdot \left( \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \phi(\mathbf{r}) -  G(\mathbf{r}; \mathbf{r}_0)  \nabla_{\mathbf{r}} \phi(\mathbf{r}) \right) - \int_{\mathbf{r}\in\Omega} G(\mathbf{r};\mathbf{r}_0) \underbrace{\nabla^2_{\mathbf{r}} \phi(\mathbf{r})}_{=0 \text{ , Poisson eq}} = \\
-  &amp; = - \int_{\mathbf{r}\in \partial \Omega} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \phi(\mathbf{r}) -  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \phi(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \right\}  \ .
+  E(\mathbf{r}_0) \varphi(\mathbf{r}_0) &amp; = - \oint_{\partial V} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \, \varphi(\mathbf{r}) - \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \varphi(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0) \right\} \\
+  E(\mathbf{r}_0) \boldsymbol\psi(\mathbf{r}_0) &amp; = - \oint_{\partial V} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \, \boldsymbol\psi(\mathbf{r}) - \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \boldsymbol\psi(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0) \right\} - \int_{V} G(\mathbf{r}; \mathbf{r}_0) \, \boldsymbol\omega(\mathbf{r}) \ .
 \end{aligned}\end{split}\]</div>
-<p>For the perturbation potential, <span class="math notranslate nohighlight">\(\varphi := \phi - \phi_\infty = \phi - \mathbf{U}_\infty \cdot \mathbf{r}\)</span>, with <span class="math notranslate nohighlight">\(\varphi|_{S_\infty} = 0\)</span> (<strong>todo</strong> prove it! And find the trend <span class="math notranslate nohighlight">\(\propto r^{\alpha}\)</span>)</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  E(\mathbf{r}_0) \varphi(\mathbf{r}_0) 
-  &amp; = - \int_{\mathbf{r}\in \partial \Omega} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) -  \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} \varphi(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) \right\} = \\
-  &amp; = - \int_{\mathbf{r}\in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) + \int_{\mathbf{r} \in S_b} \underbrace{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \varphi(\mathbf{r})}_{= - \hat{\mathbf{n}} \cdot \mathbf{U}_\infty \text{ , from b.c.}} G(\mathbf{r}; \mathbf{r}_0) + \\
-  &amp; \quad - \int_{\mathbf{r}\in S_w} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \, \underbrace{ \Delta \varphi(\mathbf{r})}_{ = \Delta \varphi_{TE} \text{ , from wake c.} }  + \\
-  &amp; \quad - \int_{\mathbf{r}\in S_\infty} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0) \Delta \varphi(\mathbf{r}) + \int_{\mathbf{r} \in S_\infty} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \varphi(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0) \ .
-\end{aligned}\end{split}\]</div>
-<p>This equation can be recast as an <strong>integro-differential equation</strong> for the perturbation potential on the surface of the body <span class="math notranslate nohighlight">\(\mathbf{r}_0 \in S_{b}\)</span> that can be solved by collocation, as an example using <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/bem.html"><strong>boundary element methods</strong></a>. Once this problem is solved, the perturbation potential on <span class="math notranslate nohighlight">\(S_b\)</span> is known, and the perturbation potential can be computed in every point of the domain.</p>
+<p>The volume contribution of vorticity field is a function of the vorticity on the body <strong>todo</strong> <em>see wake. Discuss and add details about this statement. For a given shape of the wake, the problem is linear: only the vorticity field, related to the stream function with linear dependence, is unkown; for a free-wake the problem becomes non-linear, as the shape of the wake - i.e. the position of its points - is unknown: this makes the problem non-linear, as the shape of the wake is determined by the condition of not-loaded wake</em>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 <span class="math notranslate nohighlight">\(E(\mathbf{r}_0)\)</span><div class="sd-summary-down docutils">
@@ -611,7 +602,15 @@ Derivation of the Green’s function for 2-dimensional Poisson problem.<div clas
 \[\begin{split}E(\mathbf{r}_0) = \begin{cases} 1 &amp;&amp; \mathbf{r}_0 \in \Omega \\ \frac{1}{2} &amp;&amp; \mathbf{r}_0 \in \partial \Omega \\ 0 &amp;&amp; \mathbf{r}_0 \notin \Omega \cup \partial \Omega \end{cases}\end{split}\]</div>
 <p class="sd-card-text">The value <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> is a particular case indeed, if the point <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> is on a locally flat - no sharp angles - of the boundary. If the point is at a sharp angle - being <span class="math notranslate nohighlight">\(\Theta\)</span> the solid angle outside the domain - <span class="math notranslate nohighlight">\(E(\mathbf{r}_0) = \frac{\Theta}{4 \pi}\)</span>.</p>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+</details><p>Once the value of the potential <span class="math notranslate nohighlight">\(\varphi\)</span> and the free-stream function <span class="math notranslate nohighlight">\(\boldsymbol\psi\)</span> is known, it’s possible to evaluate the value of the potential and the free-stream function in every point of the domain, <span class="math notranslate nohighlight">\(\mathbf{r}_0 \in V\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbf{u}_\varphi(\mathbf{r}_0) = \nabla_0 \varphi(\mathbf{r}_0) 
+  &amp; =  \\
+  \mathbf{u}_{\boldsymbol\psi}(\mathbf{r}_0)  = \nabla_0 \times \boldsymbol\psi(\mathbf{r}_0) 
+  &amp; =  \\ 
+\end{aligned}\end{split}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
 Asymptotic behavior of the perturbation velocity<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -899,6 +898,12 @@ Asymptotic behavior of the perturbation potential<div class="sd-summary-down doc
 
 ```
 -->
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="psi-div"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>The stream-function <span class="math notranslate nohighlight">\(\boldsymbol\psi(\mathbf{r})\)</span> is uniquely defined up to an additive gradient of a scalar function, as <span class="math notranslate nohighlight">\(\mathbf{u}_\psi = \nabla \times \widetilde{\boldsymbol\psi} = \nabla \times \left( \boldsymbol\psi + \nabla f ) = \nabla \times \boldsymbol\psi\)</span>. This arbitrariety can be exploited to get a divergence-free stream function from a non-divergence-free stream function.</p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -966,7 +971,7 @@ Asymptotic behavior of the perturbation potential<div class="sd-summary-down doc
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.2.6.1. Mathematical model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method">8.2.6.2. Green’s function method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method-for-solving-poisson-equations">8.2.6.2. Green’s function method, for solving Poisson equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.2.6.3. Wake and the shape of the domain</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.2.6.4. Theorems</a></li>
 </ul>
