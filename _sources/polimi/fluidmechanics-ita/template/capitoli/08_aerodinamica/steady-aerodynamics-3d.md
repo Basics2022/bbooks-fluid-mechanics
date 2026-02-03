@@ -13,6 +13,21 @@
 
 ## Mathematical model
 
+Helmholtz's decomposition of the velocity field reads
+
+$$\mathbf{u} = \mathbf{u}_\phi + \mathbf{u}_{\boldsymbol\psi} = \nabla \phi + \nabla \times \boldsymbol\psi \ ,$$
+
+with $\mathbf{u}_\phi$ the irrotational part and $\mathbf{u}_{\boldsymbol\psi}$ the incompressible part, that can be written in terms of a kinetic potential $\phi$ and a vector potential $\boldsymbol\psi$ (or the vector stream function). With a meaningful irrotational free-stream velocity $\mathbf{U}_\infty$, Helmholtz's decomposition becomes
+
+$$\mathbf{u} = \mathbf{U}_\infty + \nabla \varphi + \nabla \times \boldsymbol\psi \ ,$$
+
+having introduced the perturbation kinetic potential $\varphi$
+
+
+
+```{dropdown} Only potential, with jumps across rotational regions
+:open:
+
 $$\begin{aligned}
  - \Delta \phi & = 0  && \mathbf{r} \in \Omega \\
  \hat{\mathbf{n}} \cdot \boldsymbol\nabla \phi & = 0 && \mathbf{r} \in S_{body} \\
@@ -25,7 +40,7 @@ $$\partial \Omega = S_b \cup S_{w^+} \cup S_{w^-} \cup S_{\infty} \ .$$
 Boundary conditions on both sides of the [**wakes**]() follow from *jump conditions* of mass and momentum across a wake. Boundary conditions at the boundary **at the infinity** $S_{\infty}$ follow from the [*asymptotic behavior*]() of velocity and kinetic potential fields.
 
 ...
-
+```
 
 ## Green's function method
 

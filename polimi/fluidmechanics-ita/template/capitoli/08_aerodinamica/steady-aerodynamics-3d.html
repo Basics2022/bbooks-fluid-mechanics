@@ -540,17 +540,32 @@ document.write(`
 </div>
 <div class="section" id="mathematical-model">
 <h2><span class="section-number">8.2.6.1. </span>Mathematical model<a class="headerlink" href="#mathematical-model" title="Permalink to this heading">#</a></h2>
+<p>Helmholtz’s decomposition of the velocity field reads</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{u} = \mathbf{u}_\phi + \mathbf{u}_{\boldsymbol\psi} = \nabla \phi + \nabla \times \boldsymbol\psi \ ,\]</div>
+<p>with <span class="math notranslate nohighlight">\(\mathbf{u}_\phi\)</span> the irrotational part and <span class="math notranslate nohighlight">\(\mathbf{u}_{\boldsymbol\psi}\)</span> the incompressible part, that can be written in terms of a kinetic potential <span class="math notranslate nohighlight">\(\phi\)</span> and a vector potential <span class="math notranslate nohighlight">\(\boldsymbol\psi\)</span> (or the vector stream function). With a meaningful irrotational free-stream velocity <span class="math notranslate nohighlight">\(\mathbf{U}_\infty\)</span>, Helmholtz’s decomposition becomes</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{u} = \mathbf{U}_\infty + \nabla \varphi + \nabla \times \boldsymbol\psi \ ,\]</div>
+<p>having introduced the perturbation kinetic potential <span class="math notranslate nohighlight">\(\varphi\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Only potential, with jumps across rotational regions<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
  - \Delta \phi &amp; = 0  &amp;&amp; \mathbf{r} \in \Omega \\
  \hat{\mathbf{n}} \cdot \boldsymbol\nabla \phi &amp; = 0 &amp;&amp; \mathbf{r} \in S_{body} \\
 \end{aligned}\end{split}\]</div>
-<p>In order to build a domain where the flow is irrotational, wake regions must be cut from the domain: both sides of these regions become part of the boundary of the domain. In an open domain, the boundary of the domain of the mathematical problem for the kinetic potential is the set union of body boundaries <span class="math notranslate nohighlight">\(S_b\)</span>, wakes sides <span class="math notranslate nohighlight">\(S_{w^+}\)</span>, <span class="math notranslate nohighlight">\(S_{w^-}\)</span>, and a surface at the infinity <span class="math notranslate nohighlight">\(S_{\infty}\)</span>,</p>
+<p class="sd-card-text">In order to build a domain where the flow is irrotational, wake regions must be cut from the domain: both sides of these regions become part of the boundary of the domain. In an open domain, the boundary of the domain of the mathematical problem for the kinetic potential is the set union of body boundaries <span class="math notranslate nohighlight">\(S_b\)</span>, wakes sides <span class="math notranslate nohighlight">\(S_{w^+}\)</span>, <span class="math notranslate nohighlight">\(S_{w^-}\)</span>, and a surface at the infinity <span class="math notranslate nohighlight">\(S_{\infty}\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\partial \Omega = S_b \cup S_{w^+} \cup S_{w^-} \cup S_{\infty} \ .\]</div>
-<p>Boundary conditions on both sides of the <span class="xref myst"><strong>wakes</strong></span> follow from <em>jump conditions</em> of mass and momentum across a wake. Boundary conditions at the boundary <strong>at the infinity</strong> <span class="math notranslate nohighlight">\(S_{\infty}\)</span> follow from the <span class="xref myst"><em>asymptotic behavior</em></span> of velocity and kinetic potential fields.</p>
-<p>…</p>
+<p class="sd-card-text">Boundary conditions on both sides of the <span class="xref myst"><strong>wakes</strong></span> follow from <em>jump conditions</em> of mass and momentum across a wake. Boundary conditions at the boundary <strong>at the infinity</strong> <span class="math notranslate nohighlight">\(S_{\infty}\)</span> follow from the <span class="xref myst"><em>asymptotic behavior</em></span> of velocity and kinetic potential fields.</p>
+<p class="sd-card-text">…</p>
 </div>
+</details></div>
 <div class="section" id="green-s-function-method">
 <h2><span class="section-number">8.2.6.2. </span>Green’s function method<a class="headerlink" href="#green-s-function-method" title="Permalink to this heading">#</a></h2>
 <p><strong>Green’s function.</strong> <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/bem-poisson-helmholtz-waves.html#poisson-equation">Green’s function of a 3-dimensional Poisson problem</a></p>
