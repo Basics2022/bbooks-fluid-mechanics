@@ -108,6 +108,11 @@ $$d_t \mathbf{v} = \mathbf{v} \cdot \nabla \mathbf{u}(\mathbf{r}_1(t),t) \ .$$
 
 ```
 
+As a consequence of Helmholtz's theorems, vortex tubes are either closed or start and end at solid surfaces (production/destruction of vorticity, due to viscous term).
+
+**todo** *discuss using vorticity equation*
+
+
 A vortex tube with a section collapsing to zero, can be modeled as a zero section[^filament-section], infinite vorticity **vortex filament** $\ell_\Gamma$, so that
 
 [^filament-section]: A filament can be cut with a section orthogonal to its axis or with a generic angle w.r.t. it. Orthogonal cut gives the minimum area of the section $S_0$, a generic cut with unit normal $\hat{\mathbf{n}}$ gives $S$ so that $S_0 = \hat{\mathbf{n}} \cdot \hat{\mathbf{t}} S$.
