@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8.2.7. Weissinger method &#8212; Fluid Mechanics</title>
+    <title>8.3.7. Weissinger method &#8212; Fluid Mechanics</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'code/notebooks/weissinger';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="8.3. Exercises" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/exercises.html" />
-    <link rel="prev" title="8.2.6. Steady Aerodynamics - 3-dimensional flows" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-3d.html" />
+    <link rel="next" title="8.4. Exercises" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/exercises.html" />
+    <link rel="prev" title="8.3.6. Steady Aerodynamics - 3-dimensional flows" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-3d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -271,13 +271,14 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/08teoria.html">8. Incompressible Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/theorems.html">8.1. Theorems about vorticity</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics.html">8.2. Steady Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-2d.html">8.2.5. Steady Aerodynamics - 2-dimensional flows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-3d.html">8.2.6. Steady Aerodynamics - 3-dimensional flows</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">8.2.7. Weissinger method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/singularities.html">8.2. Singularities in Poisson equation</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics.html">8.3. Steady Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-2d.html">8.3.5. Steady Aerodynamics - 2-dimensional flows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-3d.html">8.3.6. Steady Aerodynamics - 3-dimensional flows</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">8.3.7. Weissinger method</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/exercises.html">8.3. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/exercises.html">8.4. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -540,24 +541,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-and-possible-future-development">8.2.7.1. Project and (possible) future development</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">8.2.7.2. Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">8.2.7.3. Libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">8.2.7.4. Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-wing-and-prescribed-wake">8.2.7.4.1. Geometry: wing and prescribed wake</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aerodynamic-influence-coefficients-aic-and-linear-system">8.2.7.4.2. Aerodynamic Influence Coefficients (AIC) and Linear System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-and-possible-future-development">8.3.7.1. Project and (possible) future development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">8.3.7.2. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">8.3.7.3. Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">8.3.7.4. Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-wing-and-prescribed-wake">8.3.7.4.1. Geometry: wing and prescribed wake</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aerodynamic-influence-coefficients-aic-and-linear-system">8.3.7.4.2. Aerodynamic Influence Coefficients (AIC) and Linear System</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">8.2.7.5. Simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-geometry">8.2.7.5.1. Build geometry</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-system">8.2.7.5.2. Linear system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">8.3.7.5. Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-geometry">8.3.7.5.1. Build geometry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-system">8.3.7.5.2. Linear system</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-processing-and-results">8.2.7.6. Post-processing and results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loads">8.2.7.6.1. Loads</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-and-pressure-at-ground">8.2.7.6.2. Velocity and pressure at ground</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-pressure-at-ground-along-a-line">8.2.7.6.3. Local pressure at ground along a line</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trefftz-like-plane">8.2.7.6.4. Trefftz-like plane</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-processing-and-results">8.3.7.6. Post-processing and results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loads">8.3.7.6.1. Loads</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-and-pressure-at-ground">8.3.7.6.2. Velocity and pressure at ground</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-pressure-at-ground-along-a-line">8.3.7.6.3. Local pressure at ground along a line</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trefftz-like-plane">8.3.7.6.4. Trefftz-like plane</a></li>
 </ul>
 </li>
 </ul>
@@ -572,10 +573,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="weissinger-method">
-<h1><span class="section-number">8.2.7. </span>Weissinger method<a class="headerlink" href="#weissinger-method" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">8.3.7. </span>Weissinger method<a class="headerlink" href="#weissinger-method" title="Permalink to this heading">#</a></h1>
 <p>The present implementation focuses on <strong>steady flows</strong>, first with prescribed wake and later with free wake. Vortex lattice or panel methods are an extension of Weissinger method, with surface discretization of geometries.</p>
 <div class="section" id="project-and-possible-future-development">
-<h2><span class="section-number">8.2.7.1. </span>Project and (possible) future development<a class="headerlink" href="#project-and-possible-future-development" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.3.7.1. </span>Project and (possible) future development<a class="headerlink" href="#project-and-possible-future-development" title="Permalink to this heading">#</a></h2>
 <p>A reasonable path towards a simple potential aerodynamic 3-dimensional code for streamlined bodies are:</p>
 <ul class="simple">
 <li><p>geometry definition</p></li>
@@ -592,7 +593,7 @@ document.write(`
 </ul>
 </div>
 <div class="section" id="summary">
-<h2><span class="section-number">8.2.7.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.3.7.2. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <p><strong>Import libraries.</strong></p>
 <p><strong>Functions:</strong> build geometry, to compute aerodynamic influence coefficients and build the linear system to be solved.</p>
 <p><strong>Simulation:</strong></p>
@@ -610,7 +611,7 @@ document.write(`
 </ul>
 </div>
 <div class="section" id="libraries">
-<h2><span class="section-number">8.2.7.3. </span>Libraries<a class="headerlink" href="#libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.3.7.3. </span>Libraries<a class="headerlink" href="#libraries" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -623,10 +624,10 @@ document.write(`
 </div>
 </div>
 <div class="section" id="functions">
-<h2><span class="section-number">8.2.7.4. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.3.7.4. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
 <p>Some useful functions</p>
 <div class="section" id="geometry-wing-and-prescribed-wake">
-<h3><span class="section-number">8.2.7.4.1. </span>Geometry: wing and prescribed wake<a class="headerlink" href="#geometry-wing-and-prescribed-wake" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.3.7.4.1. </span>Geometry: wing and prescribed wake<a class="headerlink" href="#geometry-wing-and-prescribed-wake" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_wing_geometry</span><span class="p">(</span> <span class="n">acs</span><span class="p">,</span> <span class="n">chords</span><span class="p">,</span> <span class="n">alphas</span><span class="p">,</span> <span class="n">nspans</span><span class="p">,</span> <span class="n">sym</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -778,7 +779,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="aerodynamic-influence-coefficients-aic-and-linear-system">
-<h3><span class="section-number">8.2.7.4.2. </span>Aerodynamic Influence Coefficients (AIC) and Linear System<a class="headerlink" href="#aerodynamic-influence-coefficients-aic-and-linear-system" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.3.7.4.2. </span>Aerodynamic Influence Coefficients (AIC) and Linear System<a class="headerlink" href="#aerodynamic-influence-coefficients-aic-and-linear-system" title="Permalink to this heading">#</a></h3>
 <p>At each control point <span class="math notranslate nohighlight">\(i\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{u}_b(\mathbf{r}_i) \cdot \hat{\mathbf{n}}_i = \mathbf{u}(\mathbf{r}_i) \cdot \hat{\mathbf{n}}_i \ ,\]</div>
@@ -868,7 +869,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="simulation">
-<h2><span class="section-number">8.2.7.5. </span>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.3.7.5. </span>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Parameters</span>
@@ -887,7 +888,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="build-geometry">
-<h3><span class="section-number">8.2.7.5.1. </span>Build geometry<a class="headerlink" href="#build-geometry" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.3.7.5.1. </span>Build geometry<a class="headerlink" href="#build-geometry" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Build geometry</span>
@@ -971,7 +972,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="linear-system">
-<h3><span class="section-number">8.2.7.5.2. </span>Linear system<a class="headerlink" href="#linear-system" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.3.7.5.2. </span>Linear system<a class="headerlink" href="#linear-system" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Test induce velocity</span>
@@ -1004,9 +1005,9 @@ document.write(`
 </div>
 </div>
 <div class="section" id="post-processing-and-results">
-<h2><span class="section-number">8.2.7.6. </span>Post-processing and results<a class="headerlink" href="#post-processing-and-results" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">8.3.7.6. </span>Post-processing and results<a class="headerlink" href="#post-processing-and-results" title="Permalink to this heading">#</a></h2>
 <div class="section" id="loads">
-<h3><span class="section-number">8.2.7.6.1. </span>Loads<a class="headerlink" href="#loads" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.3.7.6.1. </span>Loads<a class="headerlink" href="#loads" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Retrive loads</span>
@@ -1070,7 +1071,7 @@ cl_alpha: 220.41616662940893
 </div>
 </div>
 <div class="section" id="velocity-and-pressure-at-ground">
-<h3><span class="section-number">8.2.7.6.2. </span>Velocity and pressure at ground<a class="headerlink" href="#velocity-and-pressure-at-ground" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.3.7.6.2. </span>Velocity and pressure at ground<a class="headerlink" href="#velocity-and-pressure-at-ground" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Evaluate velocity and pressure in desired points (probe points)</span>
@@ -1178,7 +1179,7 @@ cl_alpha: 220.41616662940893
 </div>
 </div>
 <div class="section" id="local-pressure-at-ground-along-a-line">
-<h3><span class="section-number">8.2.7.6.3. </span>Local pressure at ground along a line<a class="headerlink" href="#local-pressure-at-ground-along-a-line" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.3.7.6.3. </span>Local pressure at ground along a line<a class="headerlink" href="#local-pressure-at-ground-along-a-line" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">RegularGridInterpolator</span>
@@ -1233,7 +1234,7 @@ cl_alpha: 220.41616662940893
 </div>
 </div>
 <div class="section" id="trefftz-like-plane">
-<h3><span class="section-number">8.2.7.6.4. </span>Trefftz-like plane<a class="headerlink" href="#trefftz-like-plane" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">8.3.7.6.4. </span>Trefftz-like plane<a class="headerlink" href="#trefftz-like-plane" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt; Wake ~ &quot;Trefftz&quot;-like plane</span>
@@ -1335,7 +1336,7 @@ cl_alpha: 220.41616662940893
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">8.2.6. </span>Steady Aerodynamics - 3-dimensional flows</p>
+        <p class="prev-next-title"><span class="section-number">8.3.6. </span>Steady Aerodynamics - 3-dimensional flows</p>
       </div>
     </a>
     <a class="right-next"
@@ -1343,7 +1344,7 @@ cl_alpha: 220.41616662940893
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">8.3. </span>Exercises</p>
+        <p class="prev-next-title"><span class="section-number">8.4. </span>Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1362,24 +1363,24 @@ cl_alpha: 220.41616662940893
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-and-possible-future-development">8.2.7.1. Project and (possible) future development</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">8.2.7.2. Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">8.2.7.3. Libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">8.2.7.4. Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-wing-and-prescribed-wake">8.2.7.4.1. Geometry: wing and prescribed wake</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aerodynamic-influence-coefficients-aic-and-linear-system">8.2.7.4.2. Aerodynamic Influence Coefficients (AIC) and Linear System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-and-possible-future-development">8.3.7.1. Project and (possible) future development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">8.3.7.2. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libraries">8.3.7.3. Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">8.3.7.4. Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometry-wing-and-prescribed-wake">8.3.7.4.1. Geometry: wing and prescribed wake</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aerodynamic-influence-coefficients-aic-and-linear-system">8.3.7.4.2. Aerodynamic Influence Coefficients (AIC) and Linear System</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">8.2.7.5. Simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-geometry">8.2.7.5.1. Build geometry</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-system">8.2.7.5.2. Linear system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">8.3.7.5. Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-geometry">8.3.7.5.1. Build geometry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-system">8.3.7.5.2. Linear system</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-processing-and-results">8.2.7.6. Post-processing and results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loads">8.2.7.6.1. Loads</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-and-pressure-at-ground">8.2.7.6.2. Velocity and pressure at ground</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-pressure-at-ground-along-a-line">8.2.7.6.3. Local pressure at ground along a line</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trefftz-like-plane">8.2.7.6.4. Trefftz-like plane</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-processing-and-results">8.3.7.6. Post-processing and results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loads">8.3.7.6.1. Loads</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-and-pressure-at-ground">8.3.7.6.2. Velocity and pressure at ground</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-pressure-at-ground-along-a-line">8.3.7.6.3. Local pressure at ground along a line</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trefftz-like-plane">8.3.7.6.4. Trefftz-like plane</a></li>
 </ul>
 </li>
 </ul>

@@ -1,4 +1,4 @@
-(fluid-mechanics:aerodynamics:steady_2d)=
+(fluid-mechanics:aerodynamics:steady:2d)=
 # Steady Aerodynamics - 2-dimensional flows
 
 ```{admonition} **todo**

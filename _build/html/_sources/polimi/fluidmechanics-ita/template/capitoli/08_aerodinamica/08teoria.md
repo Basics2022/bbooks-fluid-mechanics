@@ -5,11 +5,17 @@
 
 In many situations in aeronautics, the flow of interest can be modelled as irrotational in the whole domain, except for very thin regions where vorticity and viscous effects are lumped. This is the case of **high-$\text{Re}$** flows, with uniform free-stream velocity (so that incoming vorticity is zero), around **streamlined bodies** with small angles between their "longitudinal" direction and the free-stream velocity: if all these conditions are met, it's likely no large separation and recirculation regions occur and the vorticity and viscosity effects are only relevant in the thin **boundary layer** at the solid surface of the body and in thin **wakes** shed downstream[^thin-bl-high-Re].
 
+Under these circumstances, the governing equations can be recast as **Poisson problems** for the kinetic potential $\phi(\mathbf{r})$, or for the vector potential $\boldsymbol\psi(\mathbf{r})$. Being the problem *linear* - for a wake with given shape - *principle of superposition of causes and effects* holds: the solution of the problem can be written as the linear combination of - usually simpler - solutions of the problem. This strategy naturally arises solving the Poisson problem with Green's function method, that produces a boundary problem and whose solution is the superposition of distributions of *sources*, *doublets*, and *vortices*. These solutions are simple, but *singular*, requiring the need of some caution and some introduction and discussion of their properties, before using them into problems in aerodynamics.
+
+Poisson problems for $\phi(\mathbf{r})$, and $\boldsymbol\psi(\mathbf{r})$ are somehow dual, if jumps in these potential fields are allowed. The problem can be approached without the need for jumps in potentials, by exploiting Helmholtz's decomposition of the velocity field $\mathbf{u} = \nabla \phi + \nabla \times \boldsymbol\psi$ and solving two Poisson equations supplemented with proper boundary conditions and regularity conditions.
+
 [^thin-bl-high-Re]: As an example, the relation between thickness of boundary layer flows and Reynolds number in this book is shown with [Prandtl equations for the laminar boundary layer](), $\delta(x) \sim x \text{Re}_x^{-\frac{1}{2}}$, **todo** *add examples with turbulent flows*.
 
-**Theorems.** Kelvin's theorem and Helmholtz's theorems.
+[**Theorems.**](fluid-mechanics:aerodynamics:vortex-theorems) Kelvin's theorem and Helmholtz's theorems.
 
-**Steady aerodynamics.**
+[**Singularities.**](fluid-mechanics:aerodynamics:singularities) Introduction of source, doublet and vortex sngularities as solution of Poisson eqautions, and discussion of their properties.
+
+[**Steady aerodynamics.**](fluid-mechanics:aerodynamics:steady)
 
 **Unsteady aerodynamics.**
 

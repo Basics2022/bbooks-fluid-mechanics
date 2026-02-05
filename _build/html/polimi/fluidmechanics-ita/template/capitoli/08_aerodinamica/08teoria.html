@@ -271,13 +271,14 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">8. Incompressible Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="theorems.html">8.1. Theorems about vorticity</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="steady-aerodynamics.html">8.2. Steady Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-2d.html">8.2.5. Steady Aerodynamics - 2-dimensional flows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-3d.html">8.2.6. Steady Aerodynamics - 3-dimensional flows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.2.7. Weissinger method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="singularities.html">8.2. Singularities in Poisson equation</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="steady-aerodynamics.html">8.3. Steady Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-2d.html">8.3.5. Steady Aerodynamics - 2-dimensional flows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-3d.html">8.3.6. Steady Aerodynamics - 3-dimensional flows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.3.7. Weissinger method</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">8.3. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">8.4. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -515,8 +516,11 @@ document.write(`
 <span id="fluid-mechanics-aerodynamics"></span><h1><span class="section-number">8. </span>Incompressible Aerodynamics<a class="headerlink" href="#incompressible-aerodynamics" title="Permalink to this heading">#</a></h1>
 <p><strong>todo</strong> <em>Update the introduction</em></p>
 <p>In many situations in aeronautics, the flow of interest can be modelled as irrotational in the whole domain, except for very thin regions where vorticity and viscous effects are lumped. This is the case of <strong>high-<span class="math notranslate nohighlight">\(\text{Re}\)</span></strong> flows, with uniform free-stream velocity (so that incoming vorticity is zero), around <strong>streamlined bodies</strong> with small angles between their «longitudinal» direction and the free-stream velocity: if all these conditions are met, it’s likely no large separation and recirculation regions occur and the vorticity and viscosity effects are only relevant in the thin <strong>boundary layer</strong> at the solid surface of the body and in thin <strong>wakes</strong> shed downstream<a class="footnote-reference brackets" href="#thin-bl-high-re" id="id1">1</a>.</p>
-<p><strong>Theorems.</strong> Kelvin’s theorem and Helmholtz’s theorems.</p>
-<p><strong>Steady aerodynamics.</strong></p>
+<p>Under these circumstances, the governing equations can be recast as <strong>Poisson problems</strong> for the kinetic potential <span class="math notranslate nohighlight">\(\phi(\mathbf{r})\)</span>, or for the vector potential <span class="math notranslate nohighlight">\(\boldsymbol\psi(\mathbf{r})\)</span>. Being the problem <em>linear</em> - for a wake with given shape - <em>principle of superposition of causes and effects</em> holds: the solution of the problem can be written as the linear combination of - usually simpler - solutions of the problem. This strategy naturally arises solving the Poisson problem with Green’s function method, that produces a boundary problem and whose solution is the superposition of distributions of <em>sources</em>, <em>doublets</em>, and <em>vortices</em>. These solutions are simple, but <em>singular</em>, requiring the need of some caution and some introduction and discussion of their properties, before using them into problems in aerodynamics.</p>
+<p>Poisson problems for <span class="math notranslate nohighlight">\(\phi(\mathbf{r})\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol\psi(\mathbf{r})\)</span> are somehow dual, if jumps in these potential fields are allowed. The problem can be approached without the need for jumps in potentials, by exploiting Helmholtz’s decomposition of the velocity field <span class="math notranslate nohighlight">\(\mathbf{u} = \nabla \phi + \nabla \times \boldsymbol\psi\)</span> and solving two Poisson equations supplemented with proper boundary conditions and regularity conditions.</p>
+<p><a class="reference internal" href="theorems.html#fluid-mechanics-aerodynamics-vortex-theorems"><span class="std std-ref"><strong>Theorems.</strong></span></a> Kelvin’s theorem and Helmholtz’s theorems.</p>
+<p><a class="reference internal" href="singularities.html#fluid-mechanics-aerodynamics-singularities"><span class="std std-ref"><strong>Singularities.</strong></span></a> Introduction of source, doublet and vortex sngularities as solution of Poisson eqautions, and discussion of their properties.</p>
+<p><a class="reference internal" href="steady-aerodynamics.html#fluid-mechanics-aerodynamics-steady"><span class="std std-ref"><strong>Steady aerodynamics.</strong></span></a></p>
 <p><strong>Unsteady aerodynamics.</strong></p>
 <ul class="simple">
 <li><p><em>Deal with equations, wakes and shape and connection of the domain</em></p></li>

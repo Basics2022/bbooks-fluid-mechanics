@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8.2.6. Steady Aerodynamics - 3-dimensional flows &#8212; Fluid Mechanics</title>
+    <title>8.3.6. Steady Aerodynamics - 3-dimensional flows &#8212; Fluid Mechanics</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/steady-aerodynamics-3d';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
-    <link rel="next" title="8.2.7. Weissinger method" href="../../../../../code/notebooks/weissinger.html" />
-    <link rel="prev" title="8.2.5. Steady Aerodynamics - 2-dimensional flows" href="steady-aerodynamics-2d.html" />
+    <link rel="next" title="8.3.7. Weissinger method" href="../../../../../code/notebooks/weissinger.html" />
+    <link rel="prev" title="8.3.5. Steady Aerodynamics - 2-dimensional flows" href="steady-aerodynamics-2d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -271,13 +271,14 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="08teoria.html">8. Incompressible Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="theorems.html">8.1. Theorems about vorticity</a></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="steady-aerodynamics.html">8.2. Steady Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-2d.html">8.2.5. Steady Aerodynamics - 2-dimensional flows</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">8.2.6. Steady Aerodynamics - 3-dimensional flows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.2.7. Weissinger method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="singularities.html">8.2. Singularities in Poisson equation</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="steady-aerodynamics.html">8.3. Steady Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-2d.html">8.3.5. Steady Aerodynamics - 2-dimensional flows</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">8.3.6. Steady Aerodynamics - 3-dimensional flows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.3.7. Weissinger method</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">8.3. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">8.4. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -509,10 +510,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.2.6.1. Mathematical model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method-for-solving-poisson-equations">8.2.6.2. Green’s function method, for solving Poisson equations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.2.6.3. Wake and the shape of the domain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.2.6.4. Theorems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.3.6.1. Mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method-for-solving-poisson-equations">8.3.6.2. Green’s function method, for solving Poisson equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.3.6.3. Wake and the shape of the domain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerodynamic-forces">8.3.6.4. Aerodynamic forces</a></li>
 </ul>
             </nav>
         </div>
@@ -525,61 +526,48 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="steady-aerodynamics-3-dimensional-flows">
-<span id="fluid-mechanics-aerodynamics-steady-3d"></span><h1><span class="section-number">8.2.6. </span>Steady Aerodynamics - 3-dimensional flows<a class="headerlink" href="#steady-aerodynamics-3-dimensional-flows" title="Permalink to this heading">#</a></h1>
+<span id="fluid-mechanics-aerodynamics-steady-3d"></span><h1><span class="section-number">8.3.6. </span>Steady Aerodynamics - 3-dimensional flows<a class="headerlink" href="#steady-aerodynamics-3-dimensional-flows" title="Permalink to this heading">#</a></h1>
 <div class="warning admonition">
 <p class="admonition-title"><strong>todo</strong></p>
 <ul class="simple">
 <li><p>Some remarks, using vorticity dynamics:</p>
 <ul>
 <li><p>the starting vortex: when were vorticity and circulation generated?</p></li>
-<li><p>vortex intensity of the wake: <span class="math notranslate nohighlight">\(\boldsymbol\gamma_w(\mathbf{r}_w(\mathbf{r}_TE)) = \Delta \boldsymbol\gamma(\mathbf{r}_TE)\)</span>, from integral balance of vorticity in a stream-tube (<strong>todo</strong> <em>check it and add details</em>)</p></li>
-<li><p>wake dynamics: transport of vorticity + vortex stretching; using vorticity equation, the shape of the wake <span class="math notranslate nohighlight">\(\mathbf{r}_w(\mathbf{r}_TE)\)</span> and its intensity <span class="math notranslate nohighlight">\(\gamma(\mathbf{r}_w)\)</span> can be computed (<strong>todo</strong> <em>check it and add details</em>) - or use Helmholtz’s vortex theorem + Kelvin’s circulation theorem (<strong>todo</strong> <em>Add sections in the vorticity dynamics, or add a section here in Aerodynamics chapter, under the assumptions of almost-everywhere irrotational flow and negliglible viscosity effects.</em>)</p></li>
+<li><p>vortex intensity of the wake: <span class="math notranslate nohighlight">\(\boldsymbol\gamma_w(\mathbf{r}_w(\mathbf{r}_{TE})) = \Delta \boldsymbol\gamma(\mathbf{r}_{TE})\)</span>, from integral balance of vorticity in a stream-tube (<strong>todo</strong> <em>check it and add details</em>)</p></li>
+<li><p>wake dynamics: transport of vorticity + vortex stretching; using vorticity equation, the shape of the wake <span class="math notranslate nohighlight">\(\mathbf{r}_w(\mathbf{r}_{TE})\)</span> and its intensity <span class="math notranslate nohighlight">\(\boldsymbol\gamma(\mathbf{r}_w)\)</span> can be computed (<strong>todo</strong> <em>check it and add details</em>) - or use Helmholtz’s vortex theorem + Kelvin’s circulation theorem (<strong>todo</strong> <em>Add sections in the vorticity dynamics, or add a section here in Aerodynamics chapter, under the assumptions of almost-everywhere irrotational flow and negliglible viscosity effects.</em>)</p></li>
 </ul>
 </li>
 </ul>
 </div>
+<p>See <span class="math notranslate nohighlight">\(\texttt{steady-aerodynamics-3d.md.bak}\)</span> file for the old version of these notes.</p>
 <div class="section" id="mathematical-model">
-<h2><span class="section-number">8.2.6.1. </span>Mathematical model<a class="headerlink" href="#mathematical-model" title="Permalink to this heading">#</a></h2>
-<p>Helmholtz’s decomposition of the velocity field reads</p>
-<div class="math notranslate nohighlight">
-\[\mathbf{u}(\mathbf{r}) = \mathbf{u}_\phi(\mathbf{r}) + \mathbf{u}_{\boldsymbol\psi}(\mathbf{r}) = \nabla \phi(\mathbf{r}) + \nabla \times \boldsymbol\psi(\mathbf{r}) \ ,\]</div>
-<p>with <span class="math notranslate nohighlight">\(\mathbf{u}_\phi\)</span> the irrotational part and <span class="math notranslate nohighlight">\(\mathbf{u}_{\boldsymbol\psi}\)</span> the incompressible part, that can be written in terms of a kinetic potential <span class="math notranslate nohighlight">\(\phi\)</span> and a vector potential <span class="math notranslate nohighlight">\(\boldsymbol\psi\)</span> (or the vector stream function). With a meaningful irrotational free-stream velocity <span class="math notranslate nohighlight">\(\mathbf{U}_\infty\)</span>, Helmholtz’s decomposition becomes</p>
-<div class="math notranslate nohighlight">
-\[\mathbf{u}(\mathbf{r}) = \mathbf{U}_\infty + \nabla \varphi(\mathbf{r}) + \nabla \times \boldsymbol\psi(\mathbf{r}) \ ,\]</div>
-<p>having introduced the perturbation kinetic potential <span class="math notranslate nohighlight">\(\varphi\)</span>. For an <strong>incompressible flow</strong>, the divergence of the velocity field is identically zero, while the curl of the velocity field is the definition of the vorticity,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  \nabla \cdot \mathbf{u} &amp; = 0 \\
-  \nabla \times \mathbf{u} &amp; = \boldsymbol\omega \ .
-\end{aligned}\end{split}\]</div>
-<p>Introducing the expression of teh velocity field and exploiting vector identities <span class="math notranslate nohighlight">\(\nabla \cdot \nabla \times \mathbf{a} = 0\)</span>, <span class="math notranslate nohighlight">\(\nabla \times \nabla a = \mathbf{0}\)</span>, <span class="math notranslate nohighlight">\(\nabla \cdot \nabla a = \nabla^2 a\)</span>, <span class="math notranslate nohighlight">\(\nabla^2 \mathbf{a} = \nabla ( \nabla \cdot \mathbf{a} ) - \nabla \times \nabla\times \mathbf{a}\)</span>, two Poisson equations for <span class="math notranslate nohighlight">\(\varphi(\mathbf{r})\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol\psi(\mathbf{r})\)</span> appear</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  - \nabla^2 \varphi &amp; = 0 \\
-  - \nabla^2 \boldsymbol\psi &amp; = \boldsymbol\omega \ ,
-\end{aligned}\end{split}\]</div>
-<p>provided that <span class="math notranslate nohighlight">\(\boldsymbol\psi\)</span> is divergence free<a class="footnote-reference brackets" href="#psi-div" id="id1">1</a>. This equations are defined in the whole 3-dimensional space <span class="math notranslate nohighlight">\(V\)</span> as a domain, without any jump in viscous flows (finite thickness of boundary layers and wakes); in the limit of infinite <span class="math notranslate nohighlight">\(\text{Re}\)</span>, with boundary layers and wakes collapsing in votex surfaces with infinitesimal thickness, the vorticity field contains impulsive contributions from boundary layers and wakes. These equations must be supplied with proper <strong>boundary conditions</strong>. <strong>todo</strong> <em>discuss</em></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Only potential, with jumps across rotational regions<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<span id="fluid-mechanics-aerodynamics-steady-3d-laplace"></span><h2><span class="section-number">8.3.6.1. </span>Mathematical model<a class="headerlink" href="#mathematical-model" title="Permalink to this heading">#</a></h2>
+<p>The governing equations of incompressible flows with negligible viscosity and almost everywhere irrotational can be recast as a Laplace equation, supplemented with the proper boundary conditions. In this model, the thin regions of the space where vorticity is non-negligible - namely boundary layers and wakes - need to be cut-out from the domain of the mathematical problem: boundary layers coincide with surfaces of solid bodies, while additional cuts must be introduced in the domain to represent wakes. These regions are represented by a (double-layer of) doublets or - by the doublet/vortex analogy - vortices. As shown in the section about <a class="reference internal" href="singularities.html#fluid-mechanics-aerodynamics-singularities"><span class="std std-ref">singularities in incompressible aerodynamics</span></a> <strong>todo</strong>, the potential is discontinuous across layers of doublets, the normal component of the velocity is continuous (for jump conditions), and the jump in tangential velocity can be related to the intensity of the vortex sheet, <span class="math notranslate nohighlight">\(\Delta \mathbf{u} = - \hat{\mathbf{n}} \times \boldsymbol\gamma\)</span>.</p>
+<p>Let the velocity field be <span class="math notranslate nohighlight">\(\mathbf{u}(\mathbf{r}) = \nabla \phi(\mathbf{r})\)</span> in the regions where the flow is irrotational, the governing equation and the no-penetration boundary conditions on surface of solid bodies at rest read</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
  - \Delta \phi &amp; = 0  &amp;&amp; \mathbf{r} \in \Omega \\
  \hat{\mathbf{n}} \cdot \boldsymbol\nabla \phi &amp; = 0 &amp;&amp; \mathbf{r} \in S_{body} \\
 \end{aligned}\end{split}\]</div>
-<p class="sd-card-text">In order to build a domain where the flow is irrotational, wake regions must be cut from the domain: both sides of these regions become part of the boundary of the domain. In an open domain, the boundary of the domain of the mathematical problem for the kinetic potential is the set union of body boundaries <span class="math notranslate nohighlight">\(S_b\)</span>, wakes sides <span class="math notranslate nohighlight">\(S_{w^+}\)</span>, <span class="math notranslate nohighlight">\(S_{w^-}\)</span>, and a surface at the infinity <span class="math notranslate nohighlight">\(S_{\infty}\)</span>,</p>
+<p>In order to build a domain where the flow is irrotational, wake regions must be cut from the domain: both sides of these regions become part of the boundary of the domain. In an open domain, the boundary of the domain of the mathematical problem for the kinetic potential is the set union of body boundaries <span class="math notranslate nohighlight">\(S_b\)</span>, wakes sides <span class="math notranslate nohighlight">\(S_{w^+}\)</span>, <span class="math notranslate nohighlight">\(S_{w^-}\)</span>, and a surface at the infinity <span class="math notranslate nohighlight">\(S_{\infty}\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\partial \Omega = S_b \cup S_{w^+} \cup S_{w^-} \cup S_{\infty} \ .\]</div>
-<p class="sd-card-text">Boundary conditions on both sides of the <span class="xref myst"><strong>wakes</strong></span> follow from <em>jump conditions</em> of mass and momentum across a wake. Boundary conditions at the boundary <strong>at the infinity</strong> <span class="math notranslate nohighlight">\(S_{\infty}\)</span> follow from the <span class="xref myst"><em>asymptotic behavior</em></span> of velocity and kinetic potential fields.</p>
-<p class="sd-card-text">…</p>
+<p>Boundary conditions at the <a class="reference internal" href="#fluid-mechanics-aerodynamics-steady-3d-wake"><span class="std std-ref"><strong>wakes</strong></span></a> follow from <strong>jump conditions</strong> of mass and momentum across a wake, the balance of vorticity at trailing edges (<strong>Kutta condition</strong>) and the <strong>transport of vorticity</strong>, resulting from Helmholtz’s theorems. Boundary conditions at the boundary <strong>at the infinity</strong> <span class="math notranslate nohighlight">\(S_{\infty}\)</span> follow from the <strong>asymptotic behavior</strong> of the fields generated by <a class="reference internal" href="singularities.html#fluid-mechanics-aerodynamics-singularities"><span class="std std-ref">singularities</span></a>.</p>
+<p>Usually the problem is written in terms of perturbation potential <span class="math notranslate nohighlight">\(\varphi(\mathbf{r})\)</span>, separating the effects of bodies and wakes from the free-stream flow,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbf{u}(\mathbf{r}) &amp; = \mathbf{U}_{\infty} + \mathbf{u}'(\mathbf{r}) \\
+        \phi(\mathbf{r}) &amp; = \mathbf{U}_{\infty} \cdot \mathbf{r} +       \varphi(\mathbf{r}) \ ,
+\end{aligned}\end{split}\]</div>
+<p>so that Laplace equation and boundary conditions on <span class="math notranslate nohighlight">\(S_{body}\)</span> read</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ - \Delta \varphi &amp; = 0  &amp;&amp; \mathbf{r} \in \Omega \\
+ \hat{\mathbf{n}} \cdot \boldsymbol\nabla \varphi &amp; = - \hat{\mathbf{n}} \cdot \mathbf{U}_{\infty} &amp;&amp; \mathbf{r} \in S_{body} \\
+\end{aligned}\end{split}\]</div>
 </div>
-</details></div>
 <div class="section" id="green-s-function-method-for-solving-poisson-equations">
-<h2><span class="section-number">8.2.6.2. </span>Green’s function method, for solving Poisson equations<a class="headerlink" href="#green-s-function-method-for-solving-poisson-equations" title="Permalink to this heading">#</a></h2>
+<span id="fluid-mechanics-aerodynamics-steady-3d-green-fun"></span><h2><span class="section-number">8.3.6.2. </span>Green’s function method, for solving Poisson equations<a class="headerlink" href="#green-s-function-method-for-solving-poisson-equations" title="Permalink to this heading">#</a></h2>
 <p>Poisson equations can be recast as <em>boundary problem</em> and solved with a <em>boundary element method</em>, e.g. exploiting Green’s function properties. The Green’s function of a 3-dimensional Poisson problem reads</p>
 <div class="math notranslate nohighlight">
 \[G(\mathbf{r}; \mathbf{r}_0) = \frac{1}{4\pi |\mathbf{r} - \mathbf{r}_0|} \ ,\]</div>
@@ -587,7 +575,6 @@ Only potential, with jumps across rotational regions<div class="sd-summary-down 
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   E(\mathbf{r}_0) \varphi(\mathbf{r}_0) &amp; = - \oint_{\partial V} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \, \varphi(\mathbf{r}) - \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \varphi(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0) \right\} \\
-  E(\mathbf{r}_0) \boldsymbol\psi(\mathbf{r}_0) &amp; = - \oint_{\partial V} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \, \boldsymbol\psi(\mathbf{r}) - \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \boldsymbol\psi(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0) \right\} - \int_{V} G(\mathbf{r}; \mathbf{r}_0) \, \boldsymbol\omega(\mathbf{r}) \ .
 \end{aligned}\end{split}\]</div>
 <p>The volume contribution of vorticity field is a function of the vorticity on the body <strong>todo</strong> <em>see wake. Discuss and add details about this statement. For a given shape of the wake, the problem is linear: only the vorticity field, related to the stream function with linear dependence, is unkown; for a free-wake the problem becomes non-linear, as the shape of the wake - i.e. the position of its points - is unknown: this makes the problem non-linear, as the shape of the wake is determined by the condition of not-loaded wake</em>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
@@ -602,17 +589,51 @@ Only potential, with jumps across rotational regions<div class="sd-summary-down 
 \[\begin{split}E(\mathbf{r}_0) = \begin{cases} 1 &amp;&amp; \mathbf{r}_0 \in \Omega \\ \frac{1}{2} &amp;&amp; \mathbf{r}_0 \in \partial \Omega \\ 0 &amp;&amp; \mathbf{r}_0 \notin \Omega \cup \partial \Omega \end{cases}\end{split}\]</div>
 <p class="sd-card-text">The value <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> is a particular case indeed, if the point <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> is on a locally flat - no sharp angles - of the boundary. If the point is at a sharp angle - being <span class="math notranslate nohighlight">\(\Theta\)</span> the solid angle outside the domain - <span class="math notranslate nohighlight">\(E(\mathbf{r}_0) = \frac{\Theta}{4 \pi}\)</span>.</p>
 </div>
-</details><p>Once the value of the potential <span class="math notranslate nohighlight">\(\varphi\)</span> and the free-stream function <span class="math notranslate nohighlight">\(\boldsymbol\psi\)</span> is known, it’s possible to evaluate the value of the potential and the free-stream function in every point of the domain, <span class="math notranslate nohighlight">\(\mathbf{r}_0 \in V\)</span></p>
+</details><p>Using the boundary conditions on <span class="math notranslate nohighlight">\(S_b\)</span>, wake conditions on the <span class="math notranslate nohighlight">\(S_{w^+}\)</span> and <span class="math notranslate nohighlight">\(S_{w^-}\)</span> - collapsed in a single surface with normal pointing in the same direction of <span class="math notranslate nohighlight">\(S_{w^+}\)</span> - and asymptotic conditions on <span class="math notranslate nohighlight">\(S_{\infty}\)</span>, the problem is recast as an integro-differential problem with unkown value of the potential <span class="math notranslate nohighlight">\(\varphi(\mathbf{r})\)</span> on<a class="footnote-reference brackets" href="#surface-varphi" id="id1">1</a> the surface of the body <span class="math notranslate nohighlight">\(S_b\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-  \mathbf{u}_\varphi(\mathbf{r}_0) = \nabla_0 \varphi(\mathbf{r}_0) 
-  &amp; =  \\
-  \mathbf{u}_{\boldsymbol\psi}(\mathbf{r}_0)  = \nabla_0 \times \boldsymbol\psi(\mathbf{r}_0) 
-  &amp; =  \\ 
+  &amp; E(\mathbf{r}_0) \varphi(\mathbf{r}_0) + \int_{S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) = \\
+  &amp; = - \int_{S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \mathbf{U}_\infty G(\mathbf{r}; \mathbf{r}_0) - \int_{S_w} \hat{\mathbf{n}} \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \Delta \varphi_w \ ,
 \end{aligned}\end{split}\]</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<p>being the contributions on <span class="math notranslate nohighlight">\(S_{\infty}\)</span> equal to zero, and the jump of the potential across the wake a function of the jump at the trailing edge where the vortex line of the wake originates</p>
+<div class="math notranslate nohighlight">
+\[\Delta \varphi(\mathbf{r}_w) = \Delta \varphi(\mathbf{r}_{TE}(\mathbf{r}_w)) \ .\]</div>
+<p><strong>Mathematical problem: prescribed wake.</strong> If the shape of the wake is known, the problem can thus be recast as a linear problem</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  E(\mathbf{r}_0) \varphi(\mathbf{r}_0) + \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) + \int_{\mathbf{r}_w \in S_w} \hat{\mathbf{n}} \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \Delta \varphi(\mathbf{r}_{TE}(\mathbf{r}_w)) 
+  = - \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \mathbf{U}_\infty G(\mathbf{r}; \mathbf{r}_0) \ ,
+\end{aligned}\]</div>
+<p>or in a discrete form</p>
+<div class="math notranslate nohighlight">
+\[\left[ \mathbf{E} - \mathbf{D}_{bb} - \mathbf{D}_{bw} \mathbf{T}_{wb} \right] \boldsymbol\varphi_b = \mathbf{S}_{bb} \boldsymbol\sigma_b \ ,\]</div>
+<p>being <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> a multiple of the identity matrix, <span class="math notranslate nohighlight">\(\mathbf{D}_{bb}\)</span> the matrix containing the influence coefficients of body doublets on body collocation points, <span class="math notranslate nohighlight">\(\mathbf{D}_{bw}\)</span> the matrix containing the IC of the wake doubles on body collocation points, <span class="math notranslate nohighlight">\(\mathbf{T}_{wb}\)</span> the connectivity matrix relating the intensity of  the wake to the jump of potential at the trailing edge, <span class="math notranslate nohighlight">\(\mathbf{S}_{bb}\)</span> the matrix containing the influence coefficients of body sources on body collocation points, with <span class="math notranslate nohighlight">\(\left\{ \boldsymbol\sigma_b \right\}_i = - \hat{\mathbf{n}}_i \cdot \mathbf{U}_\infty\)</span> the intensity of the body sources.</p>
+<p><strong>Mathematical problem: free wake.</strong> If the shape of the wake is unkown, the problem above must be supplemented with the conditions of not-loaded wake <span class="math notranslate nohighlight">\(\mathbf{u}(\mathbf{r}_w) \times \boldsymbol\gamma(\mathbf{r}_w) = \mathbf{0}\)</span>. The problem becomes non-linear, so an iterative method is required.</p>
+<p><strong>Note.</strong> The problem is usually solved numerically by collocation. As the intensity of a vortex line - or a section of the vortex sheed representing the wake - is determined by a balance of vorticity at the trailing edge, only 2 components of the vector are effectively free. The transport of the wake occurs with the mean velocity <span class="math notranslate nohighlight">\(\mathbf{u}(\mathbf{r}_w)\)</span>, and this velocity is aligned with the intensity of the vortex sheet <span class="math notranslate nohighlight">\(\boldsymbol\gamma(\mathbf{r}_w) \parallel \mathbf{u}(\mathbf{r}_w)\)</span>. Being the free-stream velocity <span class="math notranslate nohighlight">\(\mathbf{U}_\infty = U_\infty \hat{\mathbf{x}}\)</span>, the shape of the wake can be determined by the coordinates <span class="math notranslate nohighlight">\((y_w, z_w)\)</span> of the points of the wake on different planes with given values of <span class="math notranslate nohighlight">\(x_w\)</span>.</p>
+<p>Once the problem is solved and the potential <span class="math notranslate nohighlight">\(\varphi(\mathbf{r})\)</span> is known on solid surfaces <span class="math notranslate nohighlight">\(\mathbf{r} \in S_b\)</span> - and the shape of the wake, if unknown - it’s possible to retrieve the value of the potential and the velocity field in every point <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> of the domain,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \varphi(\mathbf{r}_0)
+  &amp; = \int_{S_b} \sigma(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) - \int_{S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) - \int_{S_w} \hat{\mathbf{n}} \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \Delta \varphi_w \\
+  \mathbf{u}'(\mathbf{r}_0)
+  &amp; = \nabla_0 \varphi(\mathbf{r}_0) = \\
+  &amp; = \nabla_0 \left\{ \int_{S_b} \sigma(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) - \int_{S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) - \int_{S_w} \hat{\mathbf{n}} \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \Delta \varphi_w \right\} = \\
+  &amp; = \int_{S_b} \sigma(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) - \nabla_0 \int_{S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) - \int_{S_w} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) \ ,
+\end{aligned}\end{split}\]</div>
+<p>having used the doublet/vortex analogy, where the line contributions are zero - <span class="math notranslate nohighlight">\((a)\)</span> contributions at trailing edge of the body and the wake are opposite, <span class="math notranslate nohighlight">\((b)\)</span> intensity of a wake goes to zero at its lateral boundaries, <span class="math notranslate nohighlight">\((c)\)</span> <strong>todo</strong> what’s the contribution of the starting vortex? is the starting vortex part of the domain? <em>Discuss</em></p>
+<!--
+Once the value of the potential $\varphi$ and the free-stream function $\boldsymbol\psi$ is known, it's possible to evaluate the value of the potential and the free-stream function in every point of the domain, $\mathbf{r}_0 \in V$
+
+$$\begin{aligned}
+  \mathbf{u}_\varphi(\mathbf{r}_0) = \nabla_0 \varphi(\mathbf{r}_0) 
+  & =  \\
+  \mathbf{u}_{\boldsymbol\psi}(\mathbf{r}_0)  = \nabla_0 \times \boldsymbol\psi(\mathbf{r}_0) 
+  & =  \\ 
+\end{aligned}$$
+-->
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Asymptotic behavior of the perturbation velocity<div class="sd-summary-down docutils">
+Asymptotic behavior of the Green’s function - todo: move to section about singularities<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -721,9 +742,9 @@ having used the vector identity, <span class="math notranslate nohighlight">\(\n
      - \int_{\mathbf{r}\in S} \left[ \hat{\mathbf{n}}(\mathbf{r}) \times \nabla^s \mu(\mathbf{r} ) \right] \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) \ .
 \end{aligned}\end{split}\]</div>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Vorticity field from the velocity field<div class="sd-summary-down docutils">
+Vorticity field from the velocity field - (todo? Trash?)<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -787,41 +808,46 @@ Vorticity field from the velocity field<div class="sd-summary-down docutils">
 </li>
 </ul>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<span class="math notranslate nohighlight">\(\oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}_0 \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)\)</span><div class="sd-summary-down docutils">
+<span class="math notranslate nohighlight">\(\oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}_0 \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)\)</span> - (todo? Trash?)<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">…</p>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Asymptotic behavior of the perturbation potential<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">For <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg |\mathbf{r}|\)</span>, using Taylor expansion of the Green’s function <span class="math notranslate nohighlight">\(G(\mathbf{r}; \mathbf{r}_0)\)</span> and its gradient <span class="math notranslate nohighlight">\(\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)\)</span>, the perturbation velocity reads</p>
+<p class="sd-card-text"><strong>Body.</strong> For <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg |\mathbf{r}|\)</span>, using Taylor expansion of the Green’s function <span class="math notranslate nohighlight">\(G(\mathbf{r}; \mathbf{r}_0)\)</span> and its gradient <span class="math notranslate nohighlight">\(\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)\)</span>, the contribution of the body to perturbation velocity reads</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-  \mathbf{u}'(\mathbf{r}_0) 
-  &amp; = \int_{\mathbf{r}\in S_b, S_w, S_\infty} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)
-      + \int_{\mathbf{r} \in S_b, S_w, S_\infty} \sigma(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
-  &amp; \simeq \int_{\mathbf{r}\in S_b, S_w, S_\infty} \boldsymbol\gamma(\mathbf{r}) \times \left[ \frac{1}{4 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} - \frac{1}{4 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^3} + \frac{3}{4\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^5}  \right] + \\ 
-   &amp; \quad  + \int_{\mathbf{r} \in S_b, S_w, S_\infty} \sigma(\mathbf{r}) \left[ \frac{1}{4 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} - \frac{1}{4 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^3} + \frac{3}{4\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^5}  \right] \ .
+  \mathbf{u}'_b(\mathbf{r}_0) 
+  &amp; = \int_{\mathbf{r}\in S_b} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)
+      + \int_{\mathbf{r} \in S_b} \sigma(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+  &amp; \simeq \int_{\mathbf{r}\in S_b} \boldsymbol\gamma(\mathbf{r}) \times \left[ \frac{1}{4 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} - \frac{1}{4 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^3} + \frac{3}{4\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^5}  \right] + \\ 
+   &amp; \quad  + \int_{\mathbf{r} \in S_b} \sigma(\mathbf{r}) \left[ \frac{1}{4 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} - \frac{1}{4 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^3} + \frac{3}{4\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^5}  \right] \ .
 \end{aligned}\end{split}\]</div>
-<p class="sd-card-text">The first term in the second integral is proportional to the mass flux <span class="math notranslate nohighlight">\(\dot{m} = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \mathbf{u}\)</span> across <span class="math notranslate nohighlight">\(S_b\)</span>, and so it’s identically zero if <span class="math notranslate nohighlight">\(\dot{m} = 0\)</span>, as in the case of solid boundaries. The first term in the first integral is proportional to the «vector» circulation <span class="math notranslate nohighlight">\(\boldsymbol\Gamma = \Gamma \hat{\mathbf{z}} = \oint_{\mathbf{r} \in \partial S_b} \boldsymbol\gamma(\mathbf{r})\)</span> (<strong>todo</strong> <em>Prove it</em>), thus the asymptotic behavior of the perturbation velocity as <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg |\mathbf{r}|\)</span> reads</p>
+<p class="sd-card-text">The first term in the second integral is proportional to the mass flux <span class="math notranslate nohighlight">\(\dot{m} = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \mathbf{u}\)</span> across <span class="math notranslate nohighlight">\(S_b\)</span>, and so it’s identically zero if <span class="math notranslate nohighlight">\(\dot{m} = 0\)</span>, as in the case of solid boundaries.
+The asymptotic behavior of the perturbation velocity due to the body as <span class="math notranslate nohighlight">\(|\mathbf{r}_0| \gg |\mathbf{r}|\)</span> reads</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{u}'(\mathbf{r}_0) \simeq
- \frac{1}{2 \pi} \boldsymbol\Gamma \times \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + 
- \frac{1}{2 \pi} \dot{m} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + O\left( \frac{1}{|\mathbf{r}_0|^2} \right)
+\[\mathbf{u}'_b(\mathbf{r}_0) \simeq
+ \frac{1}{4 \pi} \boldsymbol\Gamma \times \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} + 
+ \frac{1}{4 \pi} \dot{m} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} + O\left( \frac{1}{|\mathbf{r}_0|^3} \right)
 \]</div>
+<!--
+The first term in the first integral is proportional to the "vector" circulation $\boldsymbol\Gamma = \Gamma \hat{\mathbf{z}} = \oint_{\mathbf{r} \in \partial S_b} \boldsymbol\gamma(\mathbf{r})$ (**todo** *Prove it*), thus
+-->
+<p class="sd-card-text"><strong>Wake.</strong></p>
 </div>
 </details></div>
 <div class="section" id="wake-and-the-shape-of-the-domain">
-<h2><span class="section-number">8.2.6.3. </span>Wake and the shape of the domain<a class="headerlink" href="#wake-and-the-shape-of-the-domain" title="Permalink to this heading">#</a></h2>
+<span id="fluid-mechanics-aerodynamics-steady-3d-wake"></span><h2><span class="section-number">8.3.6.3. </span>Wake and the shape of the domain<a class="headerlink" href="#wake-and-the-shape-of-the-domain" title="Permalink to this heading">#</a></h2>
 <p><strong>Jump conditions.</strong> Jump conditions across the wake read</p>
 <ul>
 <li><p>for mass</p>
@@ -869,39 +895,20 @@ Asymptotic behavior of the perturbation potential<div class="sd-summary-down doc
 \boldsymbol\gamma \parallel \mathbf{u}
 \qquad \text{or} \qquad
 \begin{aligned}
-  \boldsymbol\gamma &amp; = \gamma \hat{\mathbf{t}} \\
-  \mathbf{u}        &amp; = u \hat{\mathbf{t}} \ .
+  \boldsymbol\gamma &amp; = \gamma \, \hat{\mathbf{t}} \\
+  \mathbf{u}        &amp; = u \, \hat{\mathbf{t}} \ .
 \end{aligned}
 \end{split}\]</div>
 <p><em>Physical conditions: jump conditions, transport</em></p>
 <p>…</p>
 </div>
-<div class="section" id="theorems">
-<h2><span class="section-number">8.2.6.4. </span>Theorems<a class="headerlink" href="#theorems" title="Permalink to this heading">#</a></h2>
+<div class="section" id="aerodynamic-forces">
+<span id="fluid-mechanics-aerodynamics-steady-3d-forces"></span><h2><span class="section-number">8.3.6.4. </span>Aerodynamic forces<a class="headerlink" href="#aerodynamic-forces" title="Permalink to this heading">#</a></h2>
 <p><em>Lift and drag</em></p>
-<!--
-### Kutta-Joukowski theorem
-
-...
-
-```{dropdown} Details
-
-...
-
-```
-...
-
-
-```{dropdown} Circulation in Kutta-Joukowski theorem
-
-...
-
-```
--->
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="psi-div"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>The stream-function <span class="math notranslate nohighlight">\(\boldsymbol\psi(\mathbf{r})\)</span> is uniquely defined up to an additive gradient of a scalar function, as <span class="math notranslate nohighlight">\(\mathbf{u}_\psi = \nabla \times \widetilde{\boldsymbol\psi} = \nabla \times \left( \boldsymbol\psi + \nabla f ) = \nabla \times \boldsymbol\psi\)</span>. This arbitrariety can be exploited to get a divergence-free stream function from a non-divergence-free stream function.</p>
+<dt class="label" id="surface-varphi"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>What does the value of the potential on a surface doublet mean, when it’s not continuous there? Different equivalent approaches can be used. It’s possible to take a point <span class="math notranslate nohighlight">\((a)\)</span> «just above» the surface, s.t. <span class="math notranslate nohighlight">\(E(\mathbf{r}_0) = 1\)</span> and the singular part of the doublet integral reads <span class="math notranslate nohighlight">\(\frac{1}{2} \varphi(\mathbf{r}_0)\)</span>, <span class="math notranslate nohighlight">\((b)\)</span> «just below» the surface s.t. <span class="math notranslate nohighlight">\(E(\mathbf{r}_0) = 0\)</span> and the singular part of the doublet integral reads <span class="math notranslate nohighlight">\(-\frac{1}{2} \varphi(\mathbf{r}_0)\)</span>, or <span class="math notranslate nohighlight">\((c)\)</span> «on» the surface s.t. <span class="math notranslate nohighlight">\(E(\mathbf{r}_0) = \frac{1}{2}\)</span> and the singular part of the doublet integral reads <span class="math notranslate nohighlight">\(0\)</span> by regularization.</p>
 </dd>
 </dl>
 </div>
@@ -943,7 +950,7 @@ Asymptotic behavior of the perturbation potential<div class="sd-summary-down doc
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">8.2.5. </span>Steady Aerodynamics - 2-dimensional flows</p>
+        <p class="prev-next-title"><span class="section-number">8.3.5. </span>Steady Aerodynamics - 2-dimensional flows</p>
       </div>
     </a>
     <a class="right-next"
@@ -951,7 +958,7 @@ Asymptotic behavior of the perturbation potential<div class="sd-summary-down doc
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">8.2.7. </span>Weissinger method</p>
+        <p class="prev-next-title"><span class="section-number">8.3.7. </span>Weissinger method</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -970,10 +977,10 @@ Asymptotic behavior of the perturbation potential<div class="sd-summary-down doc
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.2.6.1. Mathematical model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method-for-solving-poisson-equations">8.2.6.2. Green’s function method, for solving Poisson equations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.2.6.3. Wake and the shape of the domain</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">8.2.6.4. Theorems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-model">8.3.6.1. Mathematical model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-function-method-for-solving-poisson-equations">8.3.6.2. Green’s function method, for solving Poisson equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wake-and-the-shape-of-the-domain">8.3.6.3. Wake and the shape of the domain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerodynamic-forces">8.3.6.4. Aerodynamic forces</a></li>
 </ul>
   </nav></div>
 
