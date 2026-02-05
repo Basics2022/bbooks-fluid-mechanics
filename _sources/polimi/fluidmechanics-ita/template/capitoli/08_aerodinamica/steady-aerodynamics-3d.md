@@ -6,41 +6,20 @@
 
 - Some remarks, using vorticity dynamics:
   - the starting vortex: when were vorticity and circulation generated?
-  - vortex intensity of the wake: $\boldsymbol\gamma_w(\mathbf{r}_w(\mathbf{r}_TE)) = \Delta \boldsymbol\gamma(\mathbf{r}_TE)$, from integral balance of vorticity in a stream-tube (**todo** *check it and add details*)
-  - wake dynamics: transport of vorticity + vortex stretching; using vorticity equation, the shape of the wake $\mathbf{r}_w(\mathbf{r}_TE)$ and its intensity $\gamma(\mathbf{r}_w)$ can be computed (**todo** *check it and add details*) - or use Helmholtz's vortex theorem + Kelvin's circulation theorem (**todo** *Add sections in the vorticity dynamics, or add a section here in Aerodynamics chapter, under the assumptions of almost-everywhere irrotational flow and negliglible viscosity effects.*)
+  - vortex intensity of the wake: $\boldsymbol\gamma_w(\mathbf{r}_w(\mathbf{r}_{TE})) = \Delta \boldsymbol\gamma(\mathbf{r}_{TE})$, from integral balance of vorticity in a stream-tube (**todo** *check it and add details*)
+  - wake dynamics: transport of vorticity + vortex stretching; using vorticity equation, the shape of the wake $\mathbf{r}_w(\mathbf{r}_{TE})$ and its intensity $\boldsymbol\gamma(\mathbf{r}_w)$ can be computed (**todo** *check it and add details*) - or use Helmholtz's vortex theorem + Kelvin's circulation theorem (**todo** *Add sections in the vorticity dynamics, or add a section here in Aerodynamics chapter, under the assumptions of almost-everywhere irrotational flow and negliglible viscosity effects.*)
 
 ```
 
+See $\texttt{steady-aerodynamics-3d.md.bak}$ file for the old version of these notes.
+
+
+(fluid-mechanics:aerodynamics:steady:3d:laplace)=
 ## Mathematical model
 
-Helmholtz's decomposition of the velocity field reads
+The governing equations of incompressible flows with negligible viscosity and almost everywhere irrotational can be recast as a Laplace equation, supplemented with the proper boundary conditions. In this model, the thin regions of the space where vorticity is non-negligible - namely boundary layers and wakes - need to be cut-out from the domain of the mathematical problem: boundary layers coincide with surfaces of solid bodies, while additional cuts must be introduced in the domain to represent wakes. These regions are represented by a (double-layer of) doublets or - by the doublet/vortex analogy - vortices. As shown in the section about [singularities in incompressible aerodynamics](fluid-mechanics:aerodynamics:singularities) **todo**, the potential is discontinuous across layers of doublets, the normal component of the velocity is continuous (for jump conditions), and the jump in tangential velocity can be related to the intensity of the vortex sheet, $\Delta \mathbf{u} = - \hat{\mathbf{n}} \times \boldsymbol\gamma$.
 
-$$\mathbf{u}(\mathbf{r}) = \mathbf{u}_\phi(\mathbf{r}) + \mathbf{u}_{\boldsymbol\psi}(\mathbf{r}) = \nabla \phi(\mathbf{r}) + \nabla \times \boldsymbol\psi(\mathbf{r}) \ ,$$
-
-with $\mathbf{u}_\phi$ the irrotational part and $\mathbf{u}_{\boldsymbol\psi}$ the incompressible part, that can be written in terms of a kinetic potential $\phi$ and a vector potential $\boldsymbol\psi$ (or the vector stream function). With a meaningful irrotational free-stream velocity $\mathbf{U}_\infty$, Helmholtz's decomposition becomes
-
-$$\mathbf{u}(\mathbf{r}) = \mathbf{U}_\infty + \nabla \varphi(\mathbf{r}) + \nabla \times \boldsymbol\psi(\mathbf{r}) \ ,$$
-
-having introduced the perturbation kinetic potential $\varphi$. For an **incompressible flow**, the divergence of the velocity field is identically zero, while the curl of the velocity field is the definition of the vorticity,
-
-$$\begin{aligned}
-  \nabla \cdot \mathbf{u} & = 0 \\
-  \nabla \times \mathbf{u} & = \boldsymbol\omega \ .
-\end{aligned}$$
-
-Introducing the expression of teh velocity field and exploiting vector identities $\nabla \cdot \nabla \times \mathbf{a} = 0$, $\nabla \times \nabla a = \mathbf{0}$, $\nabla \cdot \nabla a = \nabla^2 a$, $\nabla^2 \mathbf{a} = \nabla ( \nabla \cdot \mathbf{a} ) - \nabla \times \nabla\times \mathbf{a}$, two Poisson equations for $\varphi(\mathbf{r})$ and $\boldsymbol\psi(\mathbf{r})$ appear
-
-$$\begin{aligned}
-  - \nabla^2 \varphi & = 0 \\
-  - \nabla^2 \boldsymbol\psi & = \boldsymbol\omega \ ,
-\end{aligned}$$
-
-provided that $\boldsymbol\psi$ is divergence free[^psi-div]. This equations are defined in the whole 3-dimensional space $V$ as a domain, without any jump in viscous flows (finite thickness of boundary layers and wakes); in the limit of infinite $\text{Re}$, with boundary layers and wakes collapsing in votex surfaces with infinitesimal thickness, the vorticity field contains impulsive contributions from boundary layers and wakes. These equations must be supplied with proper **boundary conditions**. **todo** *discuss*
-
-[^psi-div]: The stream-function $\boldsymbol\psi(\mathbf{r})$ is uniquely defined up to an additive gradient of a scalar function, as $\mathbf{u}_\psi = \nabla \times \widetilde{\boldsymbol\psi} = \nabla \times \left( \boldsymbol\psi + \nabla f ) = \nabla \times \boldsymbol\psi$. This arbitrariety can be exploited to get a divergence-free stream function from a non-divergence-free stream function.
-
-
-```{dropdown} Only potential, with jumps across rotational regions
+Let the velocity field be $\mathbf{u}(\mathbf{r}) = \nabla \phi(\mathbf{r})$ in the regions where the flow is irrotational, the governing equation and the no-penetration boundary conditions on surface of solid bodies at rest read
 
 $$\begin{aligned}
  - \Delta \phi & = 0  && \mathbf{r} \in \Omega \\
@@ -51,11 +30,23 @@ In order to build a domain where the flow is irrotational, wake regions must be 
 
 $$\partial \Omega = S_b \cup S_{w^+} \cup S_{w^-} \cup S_{\infty} \ .$$
 
-Boundary conditions on both sides of the [**wakes**]() follow from *jump conditions* of mass and momentum across a wake. Boundary conditions at the boundary **at the infinity** $S_{\infty}$ follow from the [*asymptotic behavior*]() of velocity and kinetic potential fields.
+Boundary conditions at the [**wakes**](fluid-mechanics:aerodynamics:steady:3d:wake) follow from **jump conditions** of mass and momentum across a wake, the balance of vorticity at trailing edges (**Kutta condition**) and the **transport of vorticity**, resulting from Helmholtz's theorems. Boundary conditions at the boundary **at the infinity** $S_{\infty}$ follow from the **asymptotic behavior** of the fields generated by [singularities](fluid-mechanics:aerodynamics:singularities).
 
-...
-```
+Usually the problem is written in terms of perturbation potential $\varphi(\mathbf{r})$, separating the effects of bodies and wakes from the free-stream flow,
 
+$$\begin{aligned}
+  \mathbf{u}(\mathbf{r}) & = \mathbf{U}_{\infty} + \mathbf{u}'(\mathbf{r}) \\
+        \phi(\mathbf{r}) & = \mathbf{U}_{\infty} \cdot \mathbf{r} +       \varphi(\mathbf{r}) \ ,
+\end{aligned}$$
+
+so that Laplace equation and boundary conditions on $S_{body}$ read
+
+$$\begin{aligned}
+ - \Delta \varphi & = 0  && \mathbf{r} \in \Omega \\
+ \hat{\mathbf{n}} \cdot \boldsymbol\nabla \varphi & = - \hat{\mathbf{n}} \cdot \mathbf{U}_{\infty} && \mathbf{r} \in S_{body} \\
+\end{aligned}$$
+
+(fluid-mechanics:aerodynamics:steady:3d:green-fun)=
 ## Green's function method, for solving Poisson equations
 
 Poisson equations can be recast as *boundary problem* and solved with a *boundary element method*, e.g. exploiting Green's function properties. The Green's function of a 3-dimensional Poisson problem reads
@@ -66,7 +57,6 @@ so that the integral boundary value problems read
 
 $$\begin{aligned}
   E(\mathbf{r}_0) \varphi(\mathbf{r}_0) & = - \oint_{\partial V} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \, \varphi(\mathbf{r}) - \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \varphi(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0) \right\} \\
-  E(\mathbf{r}_0) \boldsymbol\psi(\mathbf{r}_0) & = - \oint_{\partial V} \left\{ \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \, \boldsymbol\psi(\mathbf{r}) - \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla \boldsymbol\psi(\mathbf{r}) \, G(\mathbf{r}; \mathbf{r}_0) \right\} - \int_{V} G(\mathbf{r}; \mathbf{r}_0) \, \boldsymbol\omega(\mathbf{r}) \ .
 \end{aligned}$$
 
 The volume contribution of vorticity field is a function of the vorticity on the body **todo** *see wake. Discuss and add details about this statement. For a given shape of the wake, the problem is linear: only the vorticity field, related to the stream function with linear dependence, is unkown; for a free-wake the problem becomes non-linear, as the shape of the wake - i.e. the position of its points - is unknown: this makes the problem non-linear, as the shape of the wake is determined by the condition of not-loaded wake*.
@@ -83,6 +73,50 @@ The value $\frac{1}{2}$ is a particular case indeed, if the point $\mathbf{r}_0$
 
 ```
 
+Using the boundary conditions on $S_b$, wake conditions on the $S_{w^+}$ and $S_{w^-}$ - collapsed in a single surface with normal pointing in the same direction of $S_{w^+}$ - and asymptotic conditions on $S_{\infty}$, the problem is recast as an integro-differential problem with unkown value of the potential $\varphi(\mathbf{r})$ on[^surface-varphi] the surface of the body $S_b$,
+
+[^surface-varphi]: What does the value of the potential on a surface doublet mean, when it's not continuous there? Different equivalent approaches can be used. It's possible to take a point $(a)$ "just above" the surface, s.t. $E(\mathbf{r}_0) = 1$ and the singular part of the doublet integral reads $\frac{1}{2} \varphi(\mathbf{r}_0)$, $(b)$ "just below" the surface s.t. $E(\mathbf{r}_0) = 0$ and the singular part of the doublet integral reads $-\frac{1}{2} \varphi(\mathbf{r}_0)$, or $(c)$ "on" the surface s.t. $E(\mathbf{r}_0) = \frac{1}{2}$ and the singular part of the doublet integral reads $0$ by regularization.
+
+$$\begin{aligned}
+  & E(\mathbf{r}_0) \varphi(\mathbf{r}_0) + \int_{S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) = \\
+  & = - \int_{S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \mathbf{U}_\infty G(\mathbf{r}; \mathbf{r}_0) - \int_{S_w} \hat{\mathbf{n}} \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \Delta \varphi_w \ ,
+\end{aligned}$$
+
+being the contributions on $S_{\infty}$ equal to zero, and the jump of the potential across the wake a function of the jump at the trailing edge where the vortex line of the wake originates
+
+$$\Delta \varphi(\mathbf{r}_w) = \Delta \varphi(\mathbf{r}_{TE}(\mathbf{r}_w)) \ .$$
+
+**Mathematical problem: prescribed wake.** If the shape of the wake is known, the problem can thus be recast as a linear problem
+
+$$\begin{aligned}
+  E(\mathbf{r}_0) \varphi(\mathbf{r}_0) + \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) + \int_{\mathbf{r}_w \in S_w} \hat{\mathbf{n}} \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \Delta \varphi(\mathbf{r}_{TE}(\mathbf{r}_w)) 
+  = - \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \mathbf{U}_\infty G(\mathbf{r}; \mathbf{r}_0) \ ,
+\end{aligned}$$
+
+or in a discrete form
+
+$$\left[ \mathbf{E} - \mathbf{D}_{bb} - \mathbf{D}_{bw} \mathbf{T}_{wb} \right] \boldsymbol\varphi_b = \mathbf{S}_{bb} \boldsymbol\sigma_b \ ,$$
+
+being $\mathbf{E}$ a multiple of the identity matrix, $\mathbf{D}_{bb}$ the matrix containing the influence coefficients of body doublets on body collocation points, $\mathbf{D}_{bw}$ the matrix containing the IC of the wake doubles on body collocation points, $\mathbf{T}_{wb}$ the connectivity matrix relating the intensity of  the wake to the jump of potential at the trailing edge, $\mathbf{S}_{bb}$ the matrix containing the influence coefficients of body sources on body collocation points, with $\left\{ \boldsymbol\sigma_b \right\}_i = - \hat{\mathbf{n}}_i \cdot \mathbf{U}_\infty$ the intensity of the body sources.
+
+**Mathematical problem: free wake.** If the shape of the wake is unkown, the problem above must be supplemented with the conditions of not-loaded wake $\mathbf{u}(\mathbf{r}_w) \times \boldsymbol\gamma(\mathbf{r}_w) = \mathbf{0}$. The problem becomes non-linear, so an iterative method is required.
+
+**Note.** The problem is usually solved numerically by collocation. As the intensity of a vortex line - or a section of the vortex sheed representing the wake - is determined by a balance of vorticity at the trailing edge, only 2 components of the vector are effectively free. The transport of the wake occurs with the mean velocity $\mathbf{u}(\mathbf{r}_w)$, and this velocity is aligned with the intensity of the vortex sheet $\boldsymbol\gamma(\mathbf{r}_w) \parallel \mathbf{u}(\mathbf{r}_w)$. Being the free-stream velocity $\mathbf{U}_\infty = U_\infty \hat{\mathbf{x}}$, the shape of the wake can be determined by the coordinates $(y_w, z_w)$ of the points of the wake on different planes with given values of $x_w$.
+
+Once the problem is solved and the potential $\varphi(\mathbf{r})$ is known on solid surfaces $\mathbf{r} \in S_b$ - and the shape of the wake, if unknown - it's possible to retrieve the value of the potential and the velocity field in every point $\mathbf{r}_0$ of the domain,
+
+$$\begin{aligned}
+  \varphi(\mathbf{r}_0)
+  & = \int_{S_b} \sigma(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) - \int_{S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) - \int_{S_w} \hat{\mathbf{n}} \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \Delta \varphi_w \\
+  \mathbf{u}'(\mathbf{r}_0)
+  & = \nabla_0 \varphi(\mathbf{r}_0) = \\
+  & = \nabla_0 \left\{ \int_{S_b} \sigma(\mathbf{r}) G(\mathbf{r}; \mathbf{r}_0) - \int_{S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) - \int_{S_w} \hat{\mathbf{n}} \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \Delta \varphi_w \right\} = \\
+  & = \int_{S_b} \sigma(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) - \nabla_0 \int_{S_b} \hat{\mathbf{n}}(\mathbf{r}) \cdot \nabla G(\mathbf{r}; \mathbf{r}_0) \varphi(\mathbf{r}) - \int_{S_w} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0) \ ,
+\end{aligned}$$
+
+having used the doublet/vortex analogy, where the line contributions are zero - $(a)$ contributions at trailing edge of the body and the wake are opposite, $(b)$ intensity of a wake goes to zero at its lateral boundaries, $(c)$ **todo** what's the contribution of the starting vortex? is the starting vortex part of the domain? *Discuss*
+
+<!--
 Once the value of the potential $\varphi$ and the free-stream function $\boldsymbol\psi$ is known, it's possible to evaluate the value of the potential and the free-stream function in every point of the domain, $\mathbf{r}_0 \in V$
 
 $$\begin{aligned}
@@ -91,12 +125,11 @@ $$\begin{aligned}
   \mathbf{u}_{\boldsymbol\psi}(\mathbf{r}_0)  = \nabla_0 \times \boldsymbol\psi(\mathbf{r}_0) 
   & =  \\ 
 \end{aligned}$$
+-->
 
 
 
-
-```{dropdown} Asymptotic behavior of the perturbation velocity
-:open:
+```{dropdown} Asymptotic behavior of the Green's function - todo: move to section about singularities
 
 For $|\mathbf{r}_0| \gg |\mathbf{r}|$, Taylor expansion of the Green's function $G(\mathbf{r}; \mathbf{r}_0)$ and its gradient $\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)$ read
 
@@ -215,8 +248,7 @@ $$\begin{aligned}
 ```
 
 
-```{dropdown} Vorticity field from the velocity field
-:open:
+```{dropdown} Vorticity field from the velocity field - (todo? Trash?)
 
 Given the velocity field
 
@@ -285,8 +317,7 @@ $$\begin{aligned}
 ```
 
 
-```{dropdown} $\oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}_0 \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)$
-:open:
+```{dropdown} $\oint_{\mathbf{r}_0 \in \ell_0} \hat{\mathbf{t}}_0 \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)$ - (todo? Trash?)
 
 ...
 
@@ -294,28 +325,34 @@ $$\begin{aligned}
 
 
 ```{dropdown} Asymptotic behavior of the perturbation potential
-:open:
 
-For $|\mathbf{r}_0| \gg |\mathbf{r}|$, using Taylor expansion of the Green's function $G(\mathbf{r}; \mathbf{r}_0)$ and its gradient $\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)$, the perturbation velocity reads
+**Body.** For $|\mathbf{r}_0| \gg |\mathbf{r}|$, using Taylor expansion of the Green's function $G(\mathbf{r}; \mathbf{r}_0)$ and its gradient $\boldsymbol\nabla_{\mathbf{r}} G(\mathbf{r}; \mathbf{r}_0)$, the contribution of the body to perturbation velocity reads
 
 $$\begin{aligned}
-  \mathbf{u}'(\mathbf{r}_0) 
-  & = \int_{\mathbf{r}\in S_b, S_w, S_\infty} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)
-      + \int_{\mathbf{r} \in S_b, S_w, S_\infty} \sigma(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
-  & \simeq \int_{\mathbf{r}\in S_b, S_w, S_\infty} \boldsymbol\gamma(\mathbf{r}) \times \left[ \frac{1}{4 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} - \frac{1}{4 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^3} + \frac{3}{4\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^5}  \right] + \\ 
-   & \quad  + \int_{\mathbf{r} \in S_b, S_w, S_\infty} \sigma(\mathbf{r}) \left[ \frac{1}{4 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} - \frac{1}{4 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^3} + \frac{3}{4\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^5}  \right] \ .
+  \mathbf{u}'_b(\mathbf{r}_0) 
+  & = \int_{\mathbf{r}\in S_b} \boldsymbol\gamma(\mathbf{r}) \times \nabla_0 G(\mathbf{r}; \mathbf{r}_0)
+      + \int_{\mathbf{r} \in S_b} \sigma(\mathbf{r}) \nabla_0 G(\mathbf{r}; \mathbf{r}_0) = \\
+  & \simeq \int_{\mathbf{r}\in S_b} \boldsymbol\gamma(\mathbf{r}) \times \left[ \frac{1}{4 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} - \frac{1}{4 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^3} + \frac{3}{4\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^5}  \right] + \\ 
+   & \quad  + \int_{\mathbf{r} \in S_b} \sigma(\mathbf{r}) \left[ \frac{1}{4 \pi} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} - \frac{1}{4 \pi} \frac{\mathbf{r}}{|\mathbf{r}_0|^3} + \frac{3}{4\pi} \mathbf{r} \cdot \mathbf{r}_0 \frac{\mathbf{r}_0}{|\mathbf{r}_0|^5}  \right] \ .
 \end{aligned}$$
 
-The first term in the second integral is proportional to the mass flux $\dot{m} = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \mathbf{u}$ across $S_b$, and so it's identically zero if $\dot{m} = 0$, as in the case of solid boundaries. The first term in the first integral is proportional to the "vector" circulation $\boldsymbol\Gamma = \Gamma \hat{\mathbf{z}} = \oint_{\mathbf{r} \in \partial S_b} \boldsymbol\gamma(\mathbf{r})$ (**todo** *Prove it*), thus the asymptotic behavior of the perturbation velocity as $|\mathbf{r}_0| \gg |\mathbf{r}|$ reads
+The first term in the second integral is proportional to the mass flux $\dot{m} = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \nabla_{\mathbf{r}} \varphi = \int_{\mathbf{r} \in S_b} \hat{\mathbf{n}} \cdot \mathbf{u}$ across $S_b$, and so it's identically zero if $\dot{m} = 0$, as in the case of solid boundaries. 
+The asymptotic behavior of the perturbation velocity due to the body as $|\mathbf{r}_0| \gg |\mathbf{r}|$ reads
 
-$$\mathbf{u}'(\mathbf{r}_0) \simeq
- \frac{1}{2 \pi} \boldsymbol\Gamma \times \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + 
- \frac{1}{2 \pi} \dot{m} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^2} + O\left( \frac{1}{|\mathbf{r}_0|^2} \right)
+$$\mathbf{u}'_b(\mathbf{r}_0) \simeq
+ \frac{1}{4 \pi} \boldsymbol\Gamma \times \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} + 
+ \frac{1}{4 \pi} \dot{m} \frac{\mathbf{r}_0}{|\mathbf{r}_0|^3} + O\left( \frac{1}{|\mathbf{r}_0|^3} \right)
 $$
 
+<!--
+The first term in the first integral is proportional to the "vector" circulation $\boldsymbol\Gamma = \Gamma \hat{\mathbf{z}} = \oint_{\mathbf{r} \in \partial S_b} \boldsymbol\gamma(\mathbf{r})$ (**todo** *Prove it*), thus
+-->
+
+**Wake.**
 
 ```
 
+(fluid-mechanics:aerodynamics:steady:3d:wake)=
 ## Wake and the shape of the domain
 
 **Jump conditions.** Jump conditions across the wake read
@@ -370,8 +407,8 @@ $$
 \boldsymbol\gamma \parallel \mathbf{u}
 \qquad \text{or} \qquad
 \begin{aligned}
-  \boldsymbol\gamma & = \gamma \hat{\mathbf{t}} \\
-  \mathbf{u}        & = u \hat{\mathbf{t}} \ .
+  \boldsymbol\gamma & = \gamma \, \hat{\mathbf{t}} \\
+  \mathbf{u}        & = u \, \hat{\mathbf{t}} \ .
 \end{aligned}
 $$
 
@@ -380,28 +417,8 @@ $$
 
 ...
 
-
-## Theorems
+(fluid-mechanics:aerodynamics:steady:3d:forces)=
+## Aerodynamic forces
 
 *Lift and drag*
-
-<!--
-### Kutta-Joukowski theorem
-
-...
-
-```{dropdown} Details
-
-...
-
-```
-...
-
-
-```{dropdown} Circulation in Kutta-Joukowski theorem
-
-...
-
-```
--->
 
