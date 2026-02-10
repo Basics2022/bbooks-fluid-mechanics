@@ -1,0 +1,766 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="it" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.20. Fluid dynamics in a non-inertial reference frame &#8212; Fluid Mechanics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../../../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/non-inertial';</script>
+    <link rel="index" title="Indice" href="../../../../../genindex.html" />
+    <link rel="search" title="Cerca" href="../../../../../search.html" />
+    <link rel="next" title="4.21. Exercises" href="exercises.html" />
+    <link rel="prev" title="4.19. Uniformly accelerated reference frame" href="uniformly-accelerated.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="it"/>
+  </head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESMWKL80JZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ESMWKL80JZ');
+</script>
+
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/logo.svg" class="logo__image only-light" alt="Fluid Mechanics - Home"/>
+    <script>document.write(`<img src="../../../../../_static/logo-dark.svg" class="logo__image only-dark" alt="Fluid Mechanics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Incompressible Fluid Mechanics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_statica/02teoria.html">1. Statics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../01_statica/exercises.html">1.8. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../01_statica/0201in.html">1.8.1. Exercise 1.1 <!--Archimede's law and Buoyancy--></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01_statica/0202in.html">1.8.2. Exercise 1.2 <!--Stevino' law: pressure in a vessel--></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01_statica/0203in.html">1.8.3. Exercise 1.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01_statica/0204in.html">1.8.4. Exercise 1.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01_statica/0205in.html">1.8.5. Exercise 1.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01_statica/0206in.html">1.8.6. Exercise 1.6</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_tensSup/03teoria.html">2. Surface Tension</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../02_tensSup/exercises.html">2.3. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../02_tensSup/0301in.html">2.3.1. Exercise 2.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_tensSup/0302in.html">2.3.2. Exercise 2.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_tensSup/0303in.html">2.3.3. Exercise 2.3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_cinematica/12teoria.html">3. Kinematics</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../03_cinematica/exercises.html">3.5. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../03_cinematica/1202in.html">3.5.1. Exercise 3.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_cinematica/1201in.html">3.5.2. Exercise 3.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_cinematica/1204in_hints.html">3.5.3. Exercise 3.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_cinematica/1203in_hints.html">3.5.4. Exercise 3.4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="04teoria.html">4. Balance equations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="0410in.html">4.16. Approfondimenti su alcuni bilanci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="0412in.html">4.17. Introduction to exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="galilean-relativity.html">4.18. Galilean relativity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uniformly-accelerated.html">4.19. Uniformly accelerated reference frame</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.20. Fluid dynamics in a non-inertial reference frame</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">4.21. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="0406in.html">4.21.1. Exercise 4.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0407in.html">4.21.2. Exercise 4.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0402in.html">4.21.3. Exercise 4.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0409in.html">4.21.4. Exercise 4.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0403in.html">4.21.5. Exercise 4.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0404in.html">4.21.6. Exercise 4.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0405in.html">4.21.7. Exercise 4.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0408in.html">4.21.8. Exercise 4.8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0401in.html">4.21.9. Exercise 4.9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="0401SciaExp.html">4.21.10. Exercise 4.9 - Experiment: wake defect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04ma01in.html">4.21.11. Exercise 4.10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04e01in.html">4.21.12. Exercise 4.11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04e02in.html">4.21.13. Exercise 4.12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04e03in.html">4.21.14. Exercise 4.13</a></li>
+<li class="toctree-l3"><a class="reference internal" href="weighting-bird.html">4.21.15. Weighting a hidden bird</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sailing-cart-rest.html">4.21.16. Sailing cart at rest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sailing-cart.html">4.21.17. Sailing cart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05_bernoulli/05teoria.html">5. Bernoulli theorems and vorticity dynamics</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../05_bernoulli/exercises.html">5.5. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../05_bernoulli/0503in.html">5.5.1. Exercise 5.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_bernoulli/0501in.html">5.5.2. Exercise 5.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_bernoulli/0502in.html">5.5.3. Exercise 5.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_bernoulli/0504in.html">5.5.4. Exercise 5.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_bernoulli/0506in.html">5.5.5. Exercise 5.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_bernoulli/0507in.html">5.5.6. Exercise 5.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_bernoulli/0508in.html">5.5.7. Exercise 5.7</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06_slnEsatte/0600in.html">6. Exact solutions of Navier-Stokes equations</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../06_slnEsatte/exercises.html">6.5. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../06_slnEsatte/0604in.html">6.5.1. Exercise 6.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_slnEsatte/0607in.html">6.5.2. Exercise 6.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_slnEsatte/0609in.html">6.5.3. Exercise 6.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_slnEsatte/0603in.html">6.5.4. Exercise 6.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_slnEsatte/0605in.html">6.5.5. Exercise 6.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_slnEsatte/0601in.html">6.5.6. Exercise 6.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_slnEsatte/0606in.html">6.5.7. Exercise 6.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_slnEsatte/0608in.html">6.5.8. Exercise 6.8</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_similitudine/07teoria.html">7. Similitude</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../07_similitudine/exercises.html">7.14. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0703in.html">7.14.1. Exercise 7.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0701in.html">7.14.2. Exercise 7.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0702in.html">7.14.3. Exercise 7.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0704in.html">7.14.4. Exercise 7.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0706in.html">7.14.5. Exercise 7.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07_similitudine/0707in.html">7.14.6. Exercise 7.6</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_aerodinamica/08teoria.html">8. Incompressible Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08_aerodinamica/theorems.html">8.1. Theorems about vorticity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_aerodinamica/singularities.html">8.2. Singularities in Poisson equation</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../08_aerodinamica/steady-aerodynamics.html">8.3. Steady Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../08_aerodinamica/steady-aerodynamics-2d.html">8.3.5. Steady Aerodynamics - 2-dimensional flows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_aerodinamica/steady-aerodynamics-3d.html">8.3.6. Steady Aerodynamics - 3-dimensional flows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.3.7. Weissinger method</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../08_aerodinamica/exercises.html">8.4. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_bl/09teoria.html">9. Boundary layer</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_bl/exercises.html">9.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_turbolenza/10teoria.html">10. Instability and turbulence</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/rans_energy.html">10.1. RANS and energy equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/kolmogorov.html">10.2. Scales of turbulence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/boundary_layers.html">10.3. Boundary layer flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_turbolenza/exercises.html">10.4. Exercises</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Compressible Fluid Mechanics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ch/compressible/bernoulli.html">11. Bernoulli’s theorem in compressible fluid mechanics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Repository di origine"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/non-inertial.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fpolimi/fluidmechanics-ita/template/capitoli/04_bilanci/non-inertial.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Apri un problema"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Scarica questa pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/polimi/fluidmechanics-ita/template/capitoli/04_bilanci/non-inertial.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Scarica il file sorgente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Stampa in PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modalità schermo intero"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Cerca" aria-label="Cerca" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fluid dynamics in a non-inertial reference frame</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">4.20.1. Differential equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneity-and-isotropy">4.20.1.1. Homogeneity and isotropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#galilean-relativity">4.20.1.2. Galilean relativity</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-equations">4.20.2. Integral equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.20.2.1. Galilean relativity</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="fluid-dynamics-in-a-non-inertial-reference-frame">
+<span id="fluid-mechanics-balances-non-inertial"></span><h1><span class="section-number">4.20. </span>Fluid dynamics in a non-inertial reference frame<a class="headerlink" href="#fluid-dynamics-in-a-non-inertial-reference-frame" title="Permalink to this heading">#</a></h1>
+<p>Following the same approach as <a class="reference external" href="https://basics2022.github.io/bbooks-physics-mechanics/ch/kinematics-relative.html">Mechanics:Relative Kinematics:Point</a>, the position of a point <span class="math notranslate nohighlight">\(P\)</span> is determined by the position vectors w.r.t. an inertial reference frame - here defined by an origin and a set oc Cartesian coordinates - <span class="math notranslate nohighlight">\(I: \, (O, x, y, z)\)</span>, and w.r.t. a generic reference frame - <span class="math notranslate nohighlight">\(G: \, (O_1, x_1, y_1, z_1)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  (P - O) &amp; = (O_1 - O) + (P - O_1) \\
+  \mathbf{r}_{P/O} &amp; = \mathbf{r}_{O_1/O} + \mathbf{r}_{P/O_1}
+\end{aligned}\end{split}\]</div>
+<p>The unit vectors of the generic basis can be projected on the inertial basis as</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{e}}^1_i = \hat{\mathbf{e}}^1_i \cdot \hat{\mathbf{e}}_k \hat{\mathbf{e}}_k = \mathbb{R}^{\rightarrow 1} \cdot \hat{\mathbf{e}}_i \ ,\]</div>
+<p>and their time derivatives read</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{d}{dt}\hat{\mathbf{e}}^1_i = \boldsymbol\omega_{1/} \times \hat{\mathbf{e}}^1_i \ .\]</div>
+<p><strong>Time derivatives.</strong> Time is the same in every referenece frame - in classical mechanics, time is absolute. Here the time derivative <strong>as seen by an observer at rest with a reference frame</strong> is defined and discussed.</p>
+<p>…</p>
+<p>Time derivative for an observer at rest with a reference frame is defined for vectors and tensors as the mathematical object expressed in the basis of the reference frame with time derivative of the components only.</p>
+<p>…</p>
+<p>The velocity of a point reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbf{u}^I_{P/O} 
+  &amp; := \dfrac{{}^I d}{d t} \mathbf{r}_{P/O} = \\
+  &amp; = \mathbf{u}^I_{O_1/O} + \dfrac{{}^I d}{dt} \left( r^1_{P/O_1, \, k} \hat{\mathbf{e}}^1_k \right) = \\
+  &amp; = \mathbf{u}^I_{O_1/O} + \mathbf{u}^G_{P/O_1} + \boldsymbol\omega_{G/I} \times \mathbf{r}_{P/O_1} \ .
+\end{aligned}\end{split}\]</div>
+<div class="section" id="differential-equations">
+<h2><span class="section-number">4.20.1. </span>Differential equations<a class="headerlink" href="#differential-equations" title="Permalink to this heading">#</a></h2>
+<p><strong>Mass.</strong> Conservative form of differential mass equation reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0 
+  &amp; = \partial_t \rho + \nabla \cdot \left( \rho \mathbf{u} \right) = \\
+\end{aligned}\end{split}\]</div>
+<div class="section" id="homogeneity-and-isotropy">
+<h3><span class="section-number">4.20.1.1. </span>Homogeneity and isotropy<a class="headerlink" href="#homogeneity-and-isotropy" title="Permalink to this heading">#</a></h3>
+</div>
+<div class="section" id="galilean-relativity">
+<h3><span class="section-number">4.20.1.2. </span>Galilean relativity<a class="headerlink" href="#galilean-relativity" title="Permalink to this heading">#</a></h3>
+<p>With <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> constant in time and independent from position in space</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+\mathbf{r} = \mathbf{r}' + \mathbf{v} t \\
+t = t'
+\end{cases}
+\qquad , \qquad
+\begin{cases}
+\mathbf{r}' = \mathbf{r} - \mathbf{v} t \\
+t' = t
+\end{cases}
+\end{split}\]</div>
+<p>and thus, the velocity of a point whose position in function of time <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{u} = \mathbf{u}' + \mathbf{v} \\
+\end{split}\]</div>
+<p>Using derivatives of composite functions</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \partial_t &amp; = \partial_{t'} - \mathbf{v} \cdot \nabla' \\
+  \nabla     &amp; = \nabla'
+\end{aligned}\end{split}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Details<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \partial_t f(\mathbf{r},t)
+  &amp; = \partial_t f'(\mathbf{r}'(\mathbf{r},t), t'(\mathbf{r},t)) = \\
+  &amp; = \partial_t \mathbf{r}' \cdot \partial_{\mathbf{r}'} f' + \partial_t t' \, \partial_{t'} f' = \\
+  &amp; = - \mathbf{v} \cdot \nabla' f' + \partial_{t'} f'  \ .
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  \nabla = \dots = \nabla' 
+\end{aligned}\]</div>
+</div>
+</details><p><strong>Mass.</strong> Conservative form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0 
+  &amp; = \partial_t \rho + \nabla \cdot \left( \rho \mathbf{u} \right) = \\
+  &amp; = \partial_{t'} \rho - \mathbf{v} \cdot \nabla' \rho + \nabla' \cdot \left( \rho \left( \mathbf{u}' + \mathbf{v} \right) \right) = \\
+  &amp; = \partial_{t'} \rho - \mathbf{v} \cdot \nabla' \rho + \nabla' \cdot \left( \rho \mathbf{u}' \right) + \mathbf{v} \cdot \nabla' \rho  = \\
+  &amp; = \partial_{t'} \rho + \nabla' \cdot \left( \rho \mathbf{u}' \right) \ .
+\end{aligned}\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="integral-equations">
+<h2><span class="section-number">4.20.2. </span>Integral equations<a class="headerlink" href="#integral-equations" title="Permalink to this heading">#</a></h2>
+<div class="section" id="id1">
+<h3><span class="section-number">4.20.2.1. </span>Galilean relativity<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./polimi/fluidmechanics-ita/template/capitoli/04_bilanci"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="uniformly-accelerated.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">precedente</p>
+        <p class="prev-next-title"><span class="section-number">4.19. </span>Uniformly accelerated reference frame</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exercises.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">successivo</p>
+        <p class="prev-next-title"><span class="section-number">4.21. </span>Exercises</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-equations">4.20.1. Differential equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneity-and-isotropy">4.20.1.1. Homogeneity and isotropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#galilean-relativity">4.20.1.2. Galilean relativity</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-equations">4.20.2. Integral equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.20.2.1. Galilean relativity</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Di basics
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
