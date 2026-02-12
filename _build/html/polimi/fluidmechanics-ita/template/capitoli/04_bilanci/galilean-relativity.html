@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/galilean-relativity';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
-    <link rel="next" title="4.19. Uniformly accelerated reference frame" href="uniformly-accelerated.html" />
+    <link rel="next" title="4.19. Generic transformation - ALE" href="uniformly-accelerated.html" />
     <link rel="prev" title="4.17. Introduction to exercises" href="0412in.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
@@ -212,7 +212,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="0410in.html">4.16. Approfondimenti su alcuni bilanci</a></li>
 <li class="toctree-l2"><a class="reference internal" href="0412in.html">4.17. Introduction to exercises</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.18. Galilean relativity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uniformly-accelerated.html">4.19. Uniformly accelerated reference frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uniformly-accelerated.html">4.19. Generic transformation - ALE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="non-inertial.html">4.20. Fluid dynamics in a non-inertial reference frame</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">4.21. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="0406in.html">4.21.1. Exercise 4.1</a></li>
@@ -540,8 +540,8 @@ document.write(`
 <p>with <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> constant and independent from position in space. Derivative of composite functions gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-  \partial_t = \partial_{t'} + \mathbf{v} \cdot \nabla' \\
-  \nabla = \nabla'
+  \partial_t &amp; = \partial_{t'} + \mathbf{v} \cdot \nabla' \\
+  \nabla     &amp; = \nabla'
 \end{aligned}\end{split}\]</div>
 <div class="section" id="differential-equations">
 <h2><span class="section-number">4.18.1. </span>Differential equations<a class="headerlink" href="#differential-equations" title="Permalink to this heading">#</a></h2>
@@ -569,10 +569,10 @@ document.write(`
 <p><strong>Total energy.</strong> Total energy can be written as the sum of internal and kinetic energy <span class="math notranslate nohighlight">\(e^t = e + \frac{|\mathbf{u}|^2}{2}\)</span>. Internal energy is independent from a change of reference frame, being a scalar quantity quantifying the microscopic dynamics w.r.t. the macroscopic average motion. Total energy equation reads</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
- \nabla \cdot \left( \mathbb{T} \cdot \mathbf{u} \right) + \rho \mathbf{g} \cdot \mathbf{u}
+ - \nabla \cdot \mathbf{q} + \nabla \cdot \left( \mathbb{T} \cdot \mathbf{u} \right) + \rho \mathbf{g} \cdot \mathbf{u}
   &amp; = \partial_t \left( \rho e^t \right) + \nabla \cdot \left( \rho e^t \mathbf{u} \right) \ ,
 \end{aligned}\]</div>
-<p>Contributions of the kinetic energy transform as shown below for the kinetic energy equation. Power of stress and terms with internal energy become</p>
+<p>Contributions of the kinetic energy transform as shown below for the kinetic energy equation. Heat flux contribution is independent from the refernece frame. Power of stress and terms with internal energy become</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   \nabla \cdot \left( \mathbb{T} \cdot \mathbf{u} \right)
@@ -606,9 +606,39 @@ document.write(`
 <div class="section" id="integral-equations">
 <h2><span class="section-number">4.18.2. </span>Integral equations<a class="headerlink" href="#integral-equations" title="Permalink to this heading">#</a></h2>
 <p><strong>Mass.</strong></p>
+<div class="math notranslate nohighlight">
+\[0 = \dfrac{d}{dt} \int_{V_t} \rho + \oint_{V_t} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} \ .\]</div>
+<p>Mass equation doesn’t change as relative velocity (velocity of the continuum w.r.t. the points of boundary of the volume <span class="math notranslate nohighlight">\(V_t\)</span>) is independent from the reference frame.</p>
 <p><strong>Momentum.</strong></p>
-<p><strong>Total energy.</strong></p>
+<div class="math notranslate nohighlight">
+\[\dfrac{d}{dt} \int_{V_t} \rho \mathbf{u} + \oint_{V_t} \rho \mathbf{u} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{V_t} \rho \mathbf{g} + \oint_{\partial V_t} \mathbf{t}_{\hat{\mathbf{n}}}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{u} = \mathbf{u}' + \mathbf{v}\)</span>, with <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> independent from space and time. The first two terms become</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \dfrac{d}{dt} \int_{V_t} \rho \mathbf{u}' + \mathbf{v} \dfrac{d}{dt} \int_{V_t} \rho + \oint_{V_t} \rho \mathbf{u}' \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} + \mathbf{v} \oint_{V_t} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \\
+  &amp; \quad \dfrac{d}{dt} \int_{V_t} \rho \mathbf{u}' + \oint_{V_t} \rho \mathbf{u}' \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} + \mathbf{v} \underbrace{\left[ \dfrac{d}{dt} \int_{V_t} \rho + \oint_{V_t} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} \right]}_{ = 0 \, \text{mass eq.}} \ .
+\end{aligned}\end{split}\]</div>
 <p><strong>Kinetic energy.</strong></p>
+<div class="math notranslate nohighlight">
+\[\dfrac{d}{dt} \int_{V_t} \rho \frac{|\mathbf{u}|^2}{2} + \oint_{V_t} \rho \frac{|\mathbf{u}|^2}{2} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{V_t} \rho \mathbf{g} \cdot \mathbf{u} + \oint_{\partial V_t} \mathbf{t}_{\hat{\mathbf{n}}} \cdot \mathbf{u} - \int_{V_t} \nabla \mathbf{u} : \mathbb{T} \ .\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \dfrac{d}{dt} \int_{V_t} \rho \frac{|\mathbf{u}|^2}{2}
+  &amp; = \dfrac{d}{dt} \int_{V_t} \rho \frac{|\mathbf{u}'|^2}{2} + \mathbf{v} \cdot \dfrac{d}{dt} \int_{V_t} \rho \mathbf{u}' + \frac{|\mathbf{v}|^2}{2} \dfrac{d}{dt} \int_{V_t} \rho \\
+  \oint_{V_t} \rho \frac{|\mathbf{u}|^2}{2} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}}
+  &amp; =  \oint_{V_t} \rho \frac{|\mathbf{u}'|^2}{2} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} + \mathbf{v} \cdot \oint_{V_t} \rho \mathbf{u}'\mathbf{u}^{rel} \cdot \hat{\mathbf{n}} + \frac{|\mathbf{v}|^2}{2} \oint_{V_t} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}}  \\
+  \int_{V_t} \rho \mathbf{g} \cdot \mathbf{u} 
+  &amp; = \int_{V_t} \rho \mathbf{g} \cdot \mathbf{u}' + \mathbf{v} \cdot \int_{V_t} \rho \mathbf{g} \\
+  \oint_{\partial V_t} \mathbf{t}_{\hat{\mathbf{n}}} \cdot \mathbf{u} 
+  &amp; = \oint_{\partial V_t} \mathbf{t}_{\hat{\mathbf{n}}} \cdot \mathbf{u}' + \mathbf{v} \cdot \oint_{\partial V_t} \mathbf{t}_{\hat{\mathbf{n}}} \\
+  - \int_{V_t} \nabla \mathbf{u} : \mathbb{T}
+  &amp; = - \int_{V_t} \nabla \mathbf{u}' : \mathbb{T}
+\end{aligned}\end{split}\]</div>
+<p>Terms <span class="math notranslate nohighlight">\(\mathbf{v} \cdot \)</span> multiply momentum equation, and terms <span class="math notranslate nohighlight">\(\frac{|\mathbf{v}|^2}{2}\)</span> multiply mass equation, and thus sum up to zero.</p>
+<p><strong>Total energy.</strong></p>
+<div class="math notranslate nohighlight">
+\[\dfrac{d}{dt} \int_{V_t} \rho e^t + \oint_{V_t} \rho e^t \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{V_t} \rho \mathbf{g} \cdot \mathbf{u} + \oint_{\partial V_t} \mathbf{t}_{\hat{\mathbf{n}}} \cdot \mathbf{u} - \oint_{\partial V_t} \hat{\mathbf{n}} \cdot \mathbf{q}\]</div>
+<p>The contributions of the internal energy are independent from the reference frame. Other terms transform as shown above in the section about the kinetic energy equation. The conclusion is that the expression of the total energy equation is independent from the inertial frame.</p>
 </div>
 </div>
 
@@ -656,7 +686,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">4.19. </span>Uniformly accelerated reference frame</p>
+        <p class="prev-next-title"><span class="section-number">4.19. </span>Generic transformation - ALE</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

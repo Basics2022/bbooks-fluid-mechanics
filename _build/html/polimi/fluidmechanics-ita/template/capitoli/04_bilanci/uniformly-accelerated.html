@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.19. Uniformly accelerated reference frame &#8212; Fluid Mechanics</title>
+    <title>4.19. Generic transformation - ALE &#8212; Fluid Mechanics</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/uniformly-accelerated';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
@@ -210,7 +212,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="0410in.html">4.16. Approfondimenti su alcuni bilanci</a></li>
 <li class="toctree-l2"><a class="reference internal" href="0412in.html">4.17. Introduction to exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="galilean-relativity.html">4.18. Galilean relativity</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.19. Uniformly accelerated reference frame</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.19. Generic transformation - ALE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="non-inertial.html">4.20. Fluid dynamics in a non-inertial reference frame</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">4.21. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="0406in.html">4.21.1. Exercise 4.1</a></li>
@@ -504,7 +506,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Uniformly accelerated reference frame</h1>
+    <h1>Generic transformation - ALE</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -527,10 +529,31 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="uniformly-accelerated-reference-frame">
-<span id="fluid-mechanics-balances-uniformly-accelerated"></span><h1><span class="section-number">4.19. </span>Uniformly accelerated reference frame<a class="headerlink" href="#uniformly-accelerated-reference-frame" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="generic-transformation-ale">
+<span id="fluid-mechanics-balances-uniformly-accelerated"></span><h1><span class="section-number">4.19. </span>Generic transformation - ALE<a class="headerlink" href="#generic-transformation-ale" title="Permalink to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+  \mathbf{r}' = \mathbf{r}'\left( \mathbf{r}, t \right) \\
+  t' = t
+\end{cases}\end{split}\]</div>
+<p>Derivative of composite functions give</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \partial_t
+  &amp; = \partial_{t} t' \partial_{t'} + \partial_t \mathbf{r}' \cdot \partial_{\mathbf{r}'} \\
+  &amp; = \partial_{t'} + \mathbf{v}(\mathbf{r}, t) \cdot \nabla' \\
+  \nabla &amp;  = \nabla' \ ,
+\end{aligned}\end{split}\]</div>
+<p>being <span class="math notranslate nohighlight">\(\mathbf{v}(\mathbf{r}, t) := \left.\frac{\partial \mathbf{r}'}{\partial t}\right|_{\mathbf{r}}\)</span> the velocity of the point with constant cordinate <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> w.r.t. the new reference frame. Here the partial derivative <span class="math notranslate nohighlight">\(\partial_{t'}\)</span> is performed at constant <span class="math notranslate nohighlight">\(\mathbf{r}'\)</span> position vector.</p>
+<p>Let</p>
 <div class="section" id="differential-equations">
 <h2><span class="section-number">4.19.1. </span>Differential equations<a class="headerlink" href="#differential-equations" title="Permalink to this heading">#</a></h2>
+<p><strong>Mass.</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  0 
+  &amp; = \partial_t \rho + \nabla \cdot \left( \rho \mathbf{u} \right) =
+\end{aligned}\]</div>
 </div>
 <div class="section" id="integral-equations">
 <h2><span class="section-number">4.19.2. </span>Integral equations<a class="headerlink" href="#integral-equations" title="Permalink to this heading">#</a></h2>

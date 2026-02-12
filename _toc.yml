@@ -39,8 +39,8 @@ parts:
     - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0410in 
     - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0412in
     - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/galilean-relativity
-    - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/uniformly-accelerated
     - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/non-inertial
+#   - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/ale
     - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/exercises
       sections:
       - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/0406in

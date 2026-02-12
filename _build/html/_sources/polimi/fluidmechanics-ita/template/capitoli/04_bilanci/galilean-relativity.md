@@ -11,8 +11,8 @@ $$\begin{cases}
 with $\mathbf{v}$ constant and independent from position in space. Derivative of composite functions gives
 
 $$\begin{aligned}
-  \partial_t = \partial_{t'} + \mathbf{v} \cdot \nabla' \\
-  \nabla = \nabla'
+  \partial_t & = \partial_{t'} + \mathbf{v} \cdot \nabla' \\
+  \nabla     & = \nabla'
 \end{aligned}$$
 
 
@@ -45,11 +45,11 @@ with the stress tensor and the volume force independent from Galilean transforma
 **Total energy.** Total energy can be written as the sum of internal and kinetic energy $e^t = e + \frac{|\mathbf{u}|^2}{2}$. Internal energy is independent from a change of reference frame, being a scalar quantity quantifying the microscopic dynamics w.r.t. the macroscopic average motion. Total energy equation reads 
 
 $$\begin{aligned}
- \nabla \cdot \left( \mathbb{T} \cdot \mathbf{u} \right) + \rho \mathbf{g} \cdot \mathbf{u}
+ - \nabla \cdot \mathbf{q} + \nabla \cdot \left( \mathbb{T} \cdot \mathbf{u} \right) + \rho \mathbf{g} \cdot \mathbf{u}
   & = \partial_t \left( \rho e^t \right) + \nabla \cdot \left( \rho e^t \mathbf{u} \right) \ ,
 \end{aligned}$$
 
-Contributions of the kinetic energy transform as shown below for the kinetic energy equation. Power of stress and terms with internal energy become
+Contributions of the kinetic energy transform as shown below for the kinetic energy equation. Heat flux contribution is independent from the refernece frame. Power of stress and terms with internal energy become
 
 $$\begin{aligned}
   \nabla \cdot \left( \mathbb{T} \cdot \mathbf{u} \right)
@@ -86,12 +86,46 @@ Terms $\text{q.x}$ make the kinetic energy equation in the new reference frame, 
 
 **Mass.**
 
+$$0 = \dfrac{d}{dt} \int_{V_t} \rho + \oint_{V_t} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} \ .$$
+
+Mass equation doesn't change as relative velocity (velocity of the continuum w.r.t. the points of boundary of the volume $V_t$) is independent from the reference frame.
+
 **Momentum.**
 
-**Total energy.**
+$$\dfrac{d}{dt} \int_{V_t} \rho \mathbf{u} + \oint_{V_t} \rho \mathbf{u} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{V_t} \rho \mathbf{g} + \oint_{\partial V_t} \mathbf{t}_{\hat{\mathbf{n}}}$$
+
+Let $\mathbf{u} = \mathbf{u}' + \mathbf{v}$, with $\mathbf{v}$ independent from space and time. The first two terms become
+
+$$\begin{aligned}
+  & \dfrac{d}{dt} \int_{V_t} \rho \mathbf{u}' + \mathbf{v} \dfrac{d}{dt} \int_{V_t} \rho + \oint_{V_t} \rho \mathbf{u}' \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} + \mathbf{v} \oint_{V_t} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \\
+  & \quad \dfrac{d}{dt} \int_{V_t} \rho \mathbf{u}' + \oint_{V_t} \rho \mathbf{u}' \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} + \mathbf{v} \underbrace{\left[ \dfrac{d}{dt} \int_{V_t} \rho + \oint_{V_t} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} \right]}_{ = 0 \, \text{mass eq.}} \ .
+\end{aligned}$$
+
 
 **Kinetic energy.**
 
+$$\dfrac{d}{dt} \int_{V_t} \rho \frac{|\mathbf{u}|^2}{2} + \oint_{V_t} \rho \frac{|\mathbf{u}|^2}{2} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{V_t} \rho \mathbf{g} \cdot \mathbf{u} + \oint_{\partial V_t} \mathbf{t}_{\hat{\mathbf{n}}} \cdot \mathbf{u} - \int_{V_t} \nabla \mathbf{u} : \mathbb{T} \ .$$
 
+
+$$\begin{aligned}
+  \dfrac{d}{dt} \int_{V_t} \rho \frac{|\mathbf{u}|^2}{2}
+  & = \dfrac{d}{dt} \int_{V_t} \rho \frac{|\mathbf{u}'|^2}{2} + \mathbf{v} \cdot \dfrac{d}{dt} \int_{V_t} \rho \mathbf{u}' + \frac{|\mathbf{v}|^2}{2} \dfrac{d}{dt} \int_{V_t} \rho \\
+  \oint_{V_t} \rho \frac{|\mathbf{u}|^2}{2} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}}
+  & =  \oint_{V_t} \rho \frac{|\mathbf{u}'|^2}{2} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} + \mathbf{v} \cdot \oint_{V_t} \rho \mathbf{u}'\mathbf{u}^{rel} \cdot \hat{\mathbf{n}} + \frac{|\mathbf{v}|^2}{2} \oint_{V_t} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}}  \\
+  \int_{V_t} \rho \mathbf{g} \cdot \mathbf{u} 
+  & = \int_{V_t} \rho \mathbf{g} \cdot \mathbf{u}' + \mathbf{v} \cdot \int_{V_t} \rho \mathbf{g} \\
+  \oint_{\partial V_t} \mathbf{t}_{\hat{\mathbf{n}}} \cdot \mathbf{u} 
+  & = \oint_{\partial V_t} \mathbf{t}_{\hat{\mathbf{n}}} \cdot \mathbf{u}' + \mathbf{v} \cdot \oint_{\partial V_t} \mathbf{t}_{\hat{\mathbf{n}}} \\
+  - \int_{V_t} \nabla \mathbf{u} : \mathbb{T}
+  & = - \int_{V_t} \nabla \mathbf{u}' : \mathbb{T}
+\end{aligned}$$
+
+Terms $\mathbf{v} \cdot $ multiply momentum equation, and terms $\frac{|\mathbf{v}|^2}{2}$ multiply mass equation, and thus sum up to zero.
+
+**Total energy.**
+
+$$\dfrac{d}{dt} \int_{V_t} \rho e^t + \oint_{V_t} \rho e^t \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{V_t} \rho \mathbf{g} \cdot \mathbf{u} + \oint_{\partial V_t} \mathbf{t}_{\hat{\mathbf{n}}} \cdot \mathbf{u} - \oint_{\partial V_t} \hat{\mathbf{n}} \cdot \mathbf{q}$$
+
+The contributions of the internal energy are independent from the reference frame. Other terms transform as shown above in the section about the kinetic energy equation. The conclusion is that the expression of the total energy equation is independent from the inertial frame.
 
 

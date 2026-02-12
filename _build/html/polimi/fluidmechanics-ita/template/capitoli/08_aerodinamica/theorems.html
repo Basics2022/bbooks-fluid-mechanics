@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/08_aerodinamica/theorems';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
-    <link rel="next" title="8.2. Steady Aerodynamics" href="steady-aerodynamics.html" />
+    <link rel="next" title="8.2. Singularities in Poisson equation" href="singularities.html" />
     <link rel="prev" title="8. Incompressible Aerodynamics" href="08teoria.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
@@ -211,21 +211,27 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../04_bilanci/04teoria.html">4. Balance equations</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../04_bilanci/0410in.html">4.16. Approfondimenti su alcuni bilanci</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04_bilanci/0412in.html">4.17. Introduction to exercises</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../04_bilanci/exercises.html">4.18. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0406in.html">4.18.1. Exercise 4.1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0407in.html">4.18.2. Exercise 4.2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0402in.html">4.18.3. Exercise 4.3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0409in.html">4.18.4. Exercise 4.4</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0403in.html">4.18.5. Exercise 4.5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0404in.html">4.18.6. Exercise 4.6</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0405in.html">4.18.7. Exercise 4.7</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0408in.html">4.18.8. Exercise 4.8</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0401in.html">4.18.9. Exercise 4.9</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0401SciaExp.html">4.18.10. Exercise 4.9 - Experiment: wake defect</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04ma01in.html">4.18.11. Exercise 4.10</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04e01in.html">4.18.12. Exercise 4.11</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04e02in.html">4.18.13. Exercise 4.12</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04e03in.html">4.18.14. Exercise 4.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_bilanci/galilean-relativity.html">4.18. Galilean relativity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_bilanci/uniformly-accelerated.html">4.19. Generic transformation - ALE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_bilanci/non-inertial.html">4.20. Fluid dynamics in a non-inertial reference frame</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../04_bilanci/exercises.html">4.21. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0406in.html">4.21.1. Exercise 4.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0407in.html">4.21.2. Exercise 4.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0402in.html">4.21.3. Exercise 4.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0409in.html">4.21.4. Exercise 4.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0403in.html">4.21.5. Exercise 4.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0404in.html">4.21.6. Exercise 4.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0405in.html">4.21.7. Exercise 4.7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0408in.html">4.21.8. Exercise 4.8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0401in.html">4.21.9. Exercise 4.9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/0401SciaExp.html">4.21.10. Exercise 4.9 - Experiment: wake defect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04ma01in.html">4.21.11. Exercise 4.10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04e01in.html">4.21.12. Exercise 4.11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04e02in.html">4.21.13. Exercise 4.12</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/04e03in.html">4.21.14. Exercise 4.13</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/weighting-bird.html">4.21.15. Weighting a hidden bird</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/sailing-cart-rest.html">4.21.16. Sailing cart at rest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_bilanci/sailing-cart.html">4.21.17. Sailing cart</a></li>
 </ul>
 </li>
 </ul>
@@ -271,13 +277,14 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="08teoria.html">8. Incompressible Aerodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">8.1. Theorems about vorticity</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="steady-aerodynamics.html">8.2. Steady Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-2d.html">8.2.5. Steady Aerodynamics - 2-dimensional flows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-3d.html">8.2.6. Steady Aerodynamics - 3-dimensional flows</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.2.7. Weissinger method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="singularities.html">8.2. Singularities in Poisson equation</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="steady-aerodynamics.html">8.3. Steady Aerodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-2d.html">8.3.5. Steady Aerodynamics - 2-dimensional flows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="steady-aerodynamics-3d.html">8.3.6. Steady Aerodynamics - 3-dimensional flows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../code/notebooks/weissinger.html">8.3.7. Weissinger method</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">8.3. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l2 has-children"><a class="reference internal" href="exercises.html">8.4. Exercises</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -701,11 +708,11 @@ Proof.<div class="sd-summary-down docutils">
       </div>
     </a>
     <a class="right-next"
-       href="steady-aerodynamics.html"
+       href="singularities.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">8.2. </span>Steady Aerodynamics</p>
+        <p class="prev-next-title"><span class="section-number">8.2. </span>Singularities in Poisson equation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
