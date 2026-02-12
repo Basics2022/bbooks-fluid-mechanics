@@ -10,11 +10,138 @@ $$\begin{aligned}
 
 The unit vectors of the generic basis can be projected on the inertial basis as
 
-$$\hat{\mathbf{e}}^1_i = \hat{\mathbf{e}}^1_i \cdot \hat{\mathbf{e}}_k \hat{\mathbf{e}}_k = \mathbb{R}^{\rightarrow 1} \cdot \hat{\mathbf{e}}_i \ ,$$
+$$\hat{\mathbf{e}}^1_i = \hat{\mathbf{e}}^1_i \cdot \hat{\mathbf{e}}_k \hat{\mathbf{e}}_k = \mathbb{R}^{0 \rightarrow 1} \cdot \hat{\mathbf{e}}_i \ ,$$
 
 and their time derivatives read
 
 $$\dfrac{d}{dt}\hat{\mathbf{e}}^1_i = \boldsymbol\omega_{1/} \times \hat{\mathbf{e}}^1_i \ .$$
+
+Vector $\mathbf{r}_{P/O}$ is written as $\mathbf{r}$ for bervity, and $\mathbf{r}_{P/O_1}$ is written as a reference rotated vector, so that
+
+$$\mathbf{r} = \mathbf{r}_{O_1/O} + \mathbb{R}^{0\rightarrow 1} \cdot \mathbf{r}' \ ,$$
+
+or explicitly writing the dependence from time and the material coordinates - label - along with the relation prescribing absolute time for every observer, to get the transformation $(\mathbf{r},t)(\mathbf{r}',t')$
+
+$$\begin{aligned}
+  & \mathbf{r}(\mathbf{r}_m, t) = \mathbf{r}_{O_1/O}(t) + \mathbb{R}^{0\rightarrow 1}(t) \cdot \mathbf{r}'(\mathbf{r}_m, t) \\
+  & t = t' \ .
+\end{aligned}$$
+
+$$\begin{aligned}
+  & \mathbf{r}'(\mathbf{r}_m, t) = \mathbb{R}^T(t) \cdot \left[ \mathbf{r}(\mathbf{r}_m, t) - \mathbf{r}_{O_1}(t) \right] \\
+  & t' = t \ .
+\end{aligned}$$
+
+**Rule of differentiation of composite functions.**
+
+$$\begin{aligned}
+  \partial_{t'} \_         
+  & = \partial_{t'} t \, \partial_t \_ + \partial_{t'} \mathbf{r} \cdot \partial_{\mathbf{r}} \_ \\
+  & = \partial_t \_ + \left[ \mathbf{v}_{O_1} + \dot{\mathbb{R}} \cdot \mathbf{r}' + \mathbb{R} \cdot \mathbf{v}' \right] \cdot \partial_{\mathbf{r}} \_ \\
+  \partial_{\mathbf{r}'} \_ 
+  & = \partial_{\mathbf{r}'} t \, \partial_t \_ +  \partial_{\mathbf{r}'} \mathbf{r} \cdot \partial_{\mathbf{r}} \_ \\
+  & = \mathbb{R}^T \cdot \partial_{\mathbf{r}} \_
+\end{aligned}$$
+
+$$\begin{aligned}
+  \partial_{t} \_         
+  & = \partial_{t} t' \, \partial_{t'} \_ + \partial_t \mathbf{r'} \cdot \partial_{\mathbf{r'}} \_ \\
+  & = \partial_{t'} \_ + \left[ \dot{\mathbb{R}}^T \cdot \left( \mathbf{r} - \mathbf{r}_{O_1} \right) - \mathbb{R}^T \cdot \mathbf{v}_{O_1} \right] \cdot \partial_{\mathbf{r}} \_ \\
+  \partial_{\mathbf{r}} \_ 
+  & = \partial_{\mathbf{r}} t \, \partial_t \_ +  \partial_{\mathbf{r}} \mathbf{r}' \cdot \partial_{\mathbf{r}'} \_ \\
+  & = \mathbb{R} \cdot \partial_{\mathbf{r}'} \_
+\end{aligned}$$
+
+```{dropdown} Gradient of $\ \mathbf{v}(\mathbf{r}) = \mathbb{R} \cdot \mathbf{r}$, $\ \nabla \mathbf{v} = \mathbb{R}^T$.
+
+$$\mathbf{v}(\mathbf{r}) = \mathbb{R} \cdot \mathbf{u}(\mathbf{r}) = \mathbf{u}(\mathbf{r}) \cdot \mathbb{R}^T$$
+
+and using Cartesian coordinates, $\mathbf{r} = x^i \hat{\mathbf{e}}_i$
+
+$$\mathbf{v} = v^i \hat{\mathbf{e}}_i = R^{ij} \hat{\mathbf{e}}_i \hat{\mathbf{e}}_j \cdot \left( x^k \hat{\mathbf{e}}_k \right) = R^{ij} x^j \hat{\mathbf{e}}_i$$
+
+so that the gradient becomes
+
+$$\partial_{\mathbf{r}} \mathbf{v} = \hat{\mathbf{e}}_i \partial_{x^{i}} \left( v^k(\mathbf{r}) \hat{\mathbf{e}}_k \right) = \partial_{x^i} v^k \hat{\mathbf{e}}_i \, \hat{\mathbf{e}}_k
+= \partial_{x^i} \left( R^{kj} x^j \right) \hat{\mathbf{e}}_i \, \hat{\mathbf{e}}_k
+= \left( R^{kj} \delta^{ij} \right) \hat{\mathbf{e}}_i \, \hat{\mathbf{e}}_k
+=  R^{ki} \, \hat{\mathbf{e}}_i \, \hat{\mathbf{e}}_k = \mathbb{R}^T \ .
+$$
+
+```
+
+```{dropdown} ...
+:open:
+
+$$\mathbf{v}(\mathbf{r}) = \mathbb{R} \cdot \mathbf{r} = \mathbf{r} \cdot \mathbb{R}^T$$
+
+and using Cartesian coordinates, $\mathbf{r} = x^i \hat{\mathbf{e}}_i$
+
+$$\mathbf{v} = v^i \hat{\mathbf{e}}_i = R^{ij} \hat{\mathbf{e}}_i \hat{\mathbf{e}}_j \cdot \left( u^k(\mathbf{r}) \hat{\mathbf{e}}_k \right) = R^{ij} u^j(\mathbf{r}) \hat{\mathbf{e}}_i$$
+
+so that the gradient becomes
+
+$$\partial_{\mathbf{r}} \mathbf{v} = \hat{\mathbf{e}}_i \partial_{x^{i}} \left( v^k(\mathbf{r}) \hat{\mathbf{e}}_k \right) = \partial_{x^i} v^k \hat{\mathbf{e}}_i \, \hat{\mathbf{e}}_k
+= \partial_{x^i} \left( R^{kj} u^j(x^\ell) \right) \hat{\mathbf{e}}_i \, \hat{\mathbf{e}}_k
+= \left( R^{kj} \partial_i u^j \right) \hat{\mathbf{e}}_i \, \hat{\mathbf{e}}_k
+=  \nabla \mathbf{u} \cdot \mathbb{R}^T \ .
+$$
+
+
+$$\mathbf{a} \cdot \partial_{\mathbf{r}} \mathbf{v} = a^m \hat{\mathbf{e}}_m \cdot \hat{\mathbf{e}}_i \partial_{x^{i}} \left( v^k(\mathbf{r}) \hat{\mathbf{e}}_k \right) = \partial_{x^m} v^k \, \hat{\mathbf{e}}_k
+= a^m \partial_{x^m} \left( R^{kj} u^j(x^\ell) \right) \, \hat{\mathbf{e}}_k
+= a^m \left( R^{kj} \partial_m u^j \right) \, \hat{\mathbf{e}}_k
+=  \mathbf{a} \cdot \nabla \mathbf{u} \cdot \mathbb{R}
+= \mathbb{R} \cdot \left( \mathbf{a} \cdot \nabla \mathbf{u} \right).
+$$
+
+
+```
+
+**Velocity.** Velocity of a material point reads
+
+$$\begin{aligned}
+\mathbf{u}(\mathbf{r}(\mathbf{r}_m,t), t) 
+& := \left.\partial_t \mathbf{r}\right|_{\mathbf{r}_m} = \\
+&  = \mathbf{v}_{O_1} + \dot{\mathbb{R}} \cdot \mathbf{r}' + \mathbb{R} \cdot \partial_{t} \mathbf{r}'|_{\mathbf{r}_m} = \\
+&  = \mathbf{v}_{O_1} + \dot{\mathbb{R}} \cdot \mathbf{r}' + \mathbb{R} \cdot \mathbf{v}' = \\
+\end{aligned}$$
+
+**Acceleration.**
+
+$$\begin{aligned}
+  \mathbf{a}
+  & = \left.\partial_t \mathbf{u}\right|_{\mathbf{r}_m} = \\
+  & = \left.\partial_t \mathbf{u}\right|_{\mathbf{r}} + \partial_{t} \mathbf{r}|_{\mathbf{r}_m} \cdot \partial_{\mathbf{r}} \mathbf{u} = \\
+  & = \left.\partial_t \mathbf{u}\right|_{\mathbf{r}} + \mathbf{u} \cdot \partial_{\mathbf{r}} \mathbf{u} \\
+\end{aligned}$$
+
+Using diffferentiation rules for composite functions, the advection operator becomes
+
+
+$$\begin{aligned}
+  \partial_t|_{\mathbf{r}} + \mathbf{u} \cdot \partial_{\mathbf{r}}
+  & = \partial_{t'} + \left[ \left( \mathbf{r} - \mathbf{r}_{O_1} \right) \cdot \dot{\mathbb{R}} - \mathbf{v}_{O_1} \cdot \mathbb{R} \right] \cdot \partial_{\mathbf{r}'} + \left[ \mathbf{v}_{O_1} + \mathbf{r}' \cdot \dot{\mathbb{R}}^T + \mathbf{v}' \cdot \mathbb{R}^T \right] \cdot \mathbb{R} \cdot \partial_{\mathbf{r}'} = \\
+  & = \partial_{t'} + \underbrace{\left[ (\mathbf{r}-\mathbf{r}_{O_1}) - \mathbf{r}' \cdot \mathbb{R}^T \right]}_{ = \mathbf{0} } \cdot \dot{\mathbb{R}} \cdot \partial_{\mathbf{r}'} + \mathbf{v}' \cdot \partial_{\mathbf{r}'} = \\
+  & = \left.\partial_{t'}\right|_{\mathbf{r}'} + \mathbf{v}' \cdot \partial_{\mathbf{r}'} \ ,
+\end{aligned}$$
+
+and thus
+
+$$\begin{aligned}
+  \left[ \partial_{t'}|_{\mathbf{r}'} + \mathbf{v}' \cdot \partial_{\mathbf{r}'} \right] \mathbf{u} 
+  & = \left[ \partial_{t'}|_{\mathbf{r}'} + \mathbf{v}' \cdot \partial_{\mathbf{r}'} \right] \left( \mathbf{v}_{O_1}(t) + \dot{\mathbb{R}}(t') \cdot \mathbf{r}' + \mathbb{R}(t) \cdot \mathbf{v}'(\mathbf{r}', t') \right)  \\
+  & = \left[ \partial_{t'}|_{\mathbf{r}'} + \mathbf{v}' \cdot \partial_{\mathbf{r}'} \right] \left( \mathbf{v}_{O_1}(t) + \boldsymbol\omega_\times(t') \cdot \mathbb{R}(t') \cdot \mathbf{r}' + \mathbb{R}(t) \cdot \mathbf{v}'(\mathbf{r}', t') \right)  \\
+  & = \mathbf{a}_{O_1} + \boldsymbol\alpha_\times \cdot \mathbb{R} \cdot \mathbf{r}' + \boldsymbol\omega_\times \cdot \boldsymbol\omega_\times \cdot \mathbb{R} \cdot \mathbf{r}' + 2 \boldsymbol\omega_\times \cdot \mathbb{R} \cdot \mathbf{v}' + \mathbb{R} \cdot \partial_{t'} \mathbf{v}' + \mathbf{v}' \cdot \partial_{\mathbf{r}'} \left( \mathbb{R} \cdot \mathbf{v}' \right) = \\ 
+  & = \mathbf{a}_{O_1} + \boldsymbol\alpha_\times \cdot \mathbb{R} \cdot \mathbf{r}' + \boldsymbol\omega_\times \cdot \boldsymbol\omega_\times \cdot \mathbb{R} \cdot \mathbf{r}' + 2 \boldsymbol\omega_\times \cdot \mathbb{R} \cdot \mathbf{v}' + \mathbb{R} \cdot \left[ \partial_{t'} \mathbf{v}' + \mathbf{v}' \cdot \partial_{\mathbf{r}'} \mathbf{v}' \right] = \\ 
+  & = \mathbf{a}_{O_1} + \boldsymbol\alpha_\times \cdot \mathbb{R} \cdot \mathbf{r}' + \boldsymbol\omega_\times \cdot \boldsymbol\omega_\times \cdot \mathbb{R} \cdot \mathbf{r}' + 2 \boldsymbol\omega_\times \cdot \mathbb{R} \cdot \mathbf{v}' + \mathbb{R} \cdot \underbrace{\left[ \partial_{t'} \mathbf{v}' + \mathbf{v}' \cdot \nabla' \mathbf{v}' \right]}_{ =: \mathbf{a}'} \ ,
+\end{aligned}$$
+
+having defined the acceleration of the material particles $\mathbf{a}'(\mathbf{r}', t)$ as seen by the non-inertial observer.
+Multiplying by $\mathbb{R}^T \cdot$, all the terms are written w.r.t. the reference coordinates of the non-inertial reference frame. The very same procedure applies to the transformation ov balance equations.
+
+
+<!--
 
 **Time derivatives.** Time is the same in every referenece frame - in classical mechanics, time is absolute. Here the time derivative **as seen by an observer at rest with a reference frame** is defined and discussed.
 
@@ -34,6 +161,8 @@ $$\begin{aligned}
   & = \mathbf{u}^I_{O_1/O} + \mathbf{u}^G_{P/O_1} + \boldsymbol\omega_{G/I} \times \mathbf{r}_{P/O_1} \ .
 \end{aligned}$$
 
+-->
+
 ## Differential equations
 
 **Mass.** Conservative form of differential mass equation reads
@@ -41,6 +170,25 @@ $$\begin{aligned}
 $$\begin{aligned}
   0 
   & = \partial_t \rho + \nabla \cdot \left( \rho \mathbf{u} \right) = \\
+  & = \partial_t \rho + \mathbf{u} \cdot \nabla \rho + \rho \nabla \cdot \mathbf{u} = \\
+  & = \partial_{t'} \rho + \mathbf{v}' \cdot \nabla' \rho + \rho \nabla \cdot \mathbf{u} \ ,
+\end{aligned}$$
+
+Since 
+
+$$\begin{aligned}
+\nabla \cdot \mathbf{u} 
+& = \nabla \cdot \left( \mathbf{v}_{O_1} + \dot{\mathbb{R}} \cdot \mathbf{r}' + \mathbb{R} \cdot \mathbf{v}' \right) = \\
+& = \dots = \\
+& = \nabla' \cdot \mathbf{v}' \ .
+\end{aligned}$$
+
+the mass equation in the non-inertial reference frame has the very same expression as the mass equation in the inertial reference frame,
+
+$$\begin{aligned}
+  0 
+  & = \partial_{t'} \rho + \mathbf{v}' \cdot \nabla' \rho + \rho \nabla' \cdot \mathbf{v}' = \\
+  & = \partial_{t'} \rho + \nabla' \cdot \left( \rho \mathbf{v}' \right)  \  .
 \end{aligned}$$
 
 ### Homogeneity and isotropy
