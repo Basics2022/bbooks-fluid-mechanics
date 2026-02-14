@@ -44,7 +44,7 @@ equilibrando il peso e la derivata nel tempo della quantità di moto.
 
 $$\mathbf{F}_0 = - m_0 \mathbf{g} - m_c \mathbf{g} - \rho_a (V_a + V_b) \mathbf{g} \ ,$$
 
-e quindi la risultante della bilancia può essere riscritta come
+con il volume della gabbia $V_c$ uguale alla somma del volume del volatile $V_b$ e quello occupato dall'aria $V_a$, $V_c = V_a + V_b$. La risultante della bilancia può essere riscritta come
 
 $$\begin{aligned}
   \mathbf{R}^{ext}
@@ -62,6 +62,8 @@ $$\begin{aligned}
   & = m_a \mathbf{u}^g_a + m_b \mathbf{u}_b = \\
   & = m_a \dot{\mathbf{r}}^g_a + m_b \dot{\mathbf{r}}_b \ ,
 \end{aligned}$$
+
+poiché il centro geometrico del volume di aria e il suo centro di massa coincidono nell'ipotesi di fluido a densità uniforme, e quindi anche le loro velocità, $\mathbf{u}^g_a = \mathbf{u}_a$.
 
 Usando il secondo principio della dinamica con le espressioni della quantità di moto e della risultante delle forze esterne, si ricava l'espressione della lettura della bilancia $\Delta \mathbf{F}$, in funzione delle proprietà di inerzia di aria e volatile e dello stato di moto del volatile (e dell'aria),
 
@@ -86,13 +88,13 @@ $$\begin{aligned}
 
 **Forza aerodinamica agente sul volatile.** 
 
-$$\dot{Q}_b = \mathbf{R}^{ext,b} = \mathbf{F}^{aero} + \mathbf{P}_b \ .$$
+$$\dot{\mathbf{Q}}_b = \mathbf{R}^{ext,b} = \mathbf{F}^{aero} + \mathbf{P}_b \ .$$
 
 Una volta calcolata la massa del volatile $m_b$ da una lettura costante della bilancia, in seguito risulta possibile (immediato nel caso di densità uniforme del volatile, invertendo la formula) misurare l'accelerazione del volatile $\ddot{\mathbf{r}}_b$ dalla lettura della bilancia $\Delta \mathbf{F}$. Risulta quindi possibile misurare la forza aerodinamica agente sul volatile
 
 $$\begin{aligned}
   \mathbf{F}^{aero} 
-  & = \dot{Q}_b - \mathbf{P}_b = \\
+  & = \dot{\mathbf{Q}}_b - \mathbf{P}_b = \\
   & = m_b \left( \ddot{\mathbf{r}}_b(\Delta \mathbf{F}) - \mathbf{g} \right) \ .
 \end{aligned}$$
 
