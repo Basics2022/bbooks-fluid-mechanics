@@ -71,7 +71,7 @@ $$\Delta \mathbf{F} = - m_b \mathbf{g} +  m_b \ddot{\mathbf{r}}_b + m_a \ddot{\m
 
 La lettura della bilancia è quindi influenzata dal moto del volatile e dell'aria all'interno della gabbia. Nel caso in cui il volatile vola a quota costante, la lettura della bilancia concide esattamente con il peso del volatile (meno il peso di un volume d'aria uguale al volume del volatile, che veniva pesato durante l'operazione di tara definita sopra). Nel caso in cui la massa dell'aria sia trascurabile rispetto alla massa dell'uccello, e la densità media minore $\rho_a \ll \rho_b$, si ottiene $\Delta \mathbf{F} = m_b \left( - \mathbf{g} + \ddot{\mathbf{r}}_b \right)$, o la componente verticale $F_z = m_b \left(g + a_{z,b} \right)$.
 
-**Ma si può trascurare il moto dell'aria?** L'ipotesi di massa dell'aria trascurabile rispetto alla massa del volatile va comunque verificata: una gabbia cubica di lato $50 \, \text{cm}$ contiene circa $150 \text{kg}$ di aria, un fringuello pesa circa $30 \, \text{kg}$, un piccione circa $300 \, \text{kg}$.
+**Ma si può trascurare il moto dell'aria?** L'ipotesi di massa dell'aria trascurabile rispetto alla massa del volatile va comunque verificata: una gabbia cubica di lato $50 \, \text{cm}$ contiene circa $150 \text{g}$ di aria, un fringuello pesa circa $30 \, \text{g}$, un piccione circa $300 \, \text{g}$.
 
 **Caso particolare: uccello di densità uniforme.** Nel caso di densità uniforme del volatile, la sua massa può essere espressa come prodotto di volume e densità, $m_b = \rho_b V_b$, e il centro di massa del volatile coincide con il suo centro geometrico (vedi sotto); si può esprimere l'accelerazione del centro geometrico del volume d'aria in funzione del centro di massa del volatile,
 
