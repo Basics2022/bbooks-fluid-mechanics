@@ -58,8 +58,8 @@ parts:
       - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04e02in
       - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/04e03in
       - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/weighting-bird
-      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/sailing-cart-rest
-      - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/sailing-cart
+        # - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/sailing-cart-rest
+        # - file: polimi/fluidmechanics-ita/template/capitoli/04_bilanci/sailing-cart
   - file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/05teoria
     sections:
     - file: polimi/fluidmechanics-ita/template/capitoli/05_bernoulli/exercises

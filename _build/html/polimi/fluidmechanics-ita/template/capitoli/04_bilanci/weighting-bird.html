@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'polimi/fluidmechanics-ita/template/capitoli/04_bilanci/weighting-bird';</script>
     <link rel="index" title="Indice" href="../../../../../genindex.html" />
     <link rel="search" title="Cerca" href="../../../../../search.html" />
-    <link rel="next" title="4.20.16. Sailing cart at rest" href="sailing-cart-rest.html" />
+    <link rel="next" title="5. Bernoulli theorems and vorticity dynamics" href="../05_bernoulli/05teoria.html" />
     <link rel="prev" title="4.20.14. Exercise 4.13" href="04e03in.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
@@ -229,8 +229,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="04e02in.html">4.20.13. Exercise 4.12</a></li>
 <li class="toctree-l3"><a class="reference internal" href="04e03in.html">4.20.14. Exercise 4.13</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">4.20.15. Weighting a hidden bird</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sailing-cart-rest.html">4.20.16. Sailing cart at rest</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sailing-cart.html">4.20.17. Sailing cart</a></li>
 </ul>
 </li>
 </ul>
@@ -557,7 +555,7 @@ Exercise 4.11</div>
 <p><strong>Una stima più dettagliata.</strong> Assumendo di aver fatto la tara in assenza del volatile nella gabbia, la reazione della bilancia di riferimento si ottiene dalle condizione di equilibrio</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{F}_0 = - m_0 \mathbf{g} - m_c \mathbf{g} - \rho_a (V_a + V_b) \mathbf{g} \ ,\]</div>
-<p>e quindi la risultante della bilancia può essere riscritta come</p>
+<p>con il volume della gabbia <span class="math notranslate nohighlight">\(V_c\)</span> uguale alla somma del volume del volatile <span class="math notranslate nohighlight">\(V_b\)</span> e quello occupato dall’aria <span class="math notranslate nohighlight">\(V_a\)</span>, <span class="math notranslate nohighlight">\(V_c = V_a + V_b\)</span>. La risultante della bilancia può essere riscritta come</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   \mathbf{R}^{ext}
@@ -574,6 +572,7 @@ Exercise 4.11</div>
   &amp; = m_a \mathbf{u}^g_a + m_b \mathbf{u}_b = \\
   &amp; = m_a \dot{\mathbf{r}}^g_a + m_b \dot{\mathbf{r}}_b \ ,
 \end{aligned}\end{split}\]</div>
+<p>poiché il centro geometrico del volume di aria e il suo centro di massa coincidono nell’ipotesi di fluido a densità uniforme, e quindi anche le loro velocità, <span class="math notranslate nohighlight">\(\mathbf{u}^g_a = \mathbf{u}_a\)</span>.</p>
 <p>Usando il secondo principio della dinamica con le espressioni della quantità di moto e della risultante delle forze esterne, si ricava l’espressione della lettura della bilancia <span class="math notranslate nohighlight">\(\Delta \mathbf{F}\)</span>, in funzione delle proprietà di inerzia di aria e volatile e dello stato di moto del volatile (e dell’aria),</p>
 <div class="math notranslate nohighlight">
 \[\Delta \mathbf{F} = - m_b \mathbf{g} +  m_b \ddot{\mathbf{r}}_b + m_a \ddot{\mathbf{r}}^g_a + \rho_a V_b \mathbf{g} \ .\]</div>
@@ -592,12 +591,12 @@ Exercise 4.11</div>
 \end{aligned}\end{split}\]</div>
 <p><strong>Forza aerodinamica agente sul volatile.</strong></p>
 <div class="math notranslate nohighlight">
-\[\dot{Q}_b = \mathbf{R}^{ext,b} = \mathbf{F}^{aero} + \mathbf{P}_b \ .\]</div>
+\[\dot{\mathbf{Q}}_b = \mathbf{R}^{ext,b} = \mathbf{F}^{aero} + \mathbf{P}_b \ .\]</div>
 <p>Una volta calcolata la massa del volatile <span class="math notranslate nohighlight">\(m_b\)</span> da una lettura costante della bilancia, in seguito risulta possibile (immediato nel caso di densità uniforme del volatile, invertendo la formula) misurare l’accelerazione del volatile <span class="math notranslate nohighlight">\(\ddot{\mathbf{r}}_b\)</span> dalla lettura della bilancia <span class="math notranslate nohighlight">\(\Delta \mathbf{F}\)</span>. Risulta quindi possibile misurare la forza aerodinamica agente sul volatile</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   \mathbf{F}^{aero} 
-  &amp; = \dot{Q}_b - \mathbf{P}_b = \\
+  &amp; = \dot{\mathbf{Q}}_b - \mathbf{P}_b = \\
   &amp; = m_b \left( \ddot{\mathbf{r}}_b(\Delta \mathbf{F}) - \mathbf{g} \right) \ .
 \end{aligned}\end{split}\]</div>
 <p>Nel caso di volatile posato sul pavimento o in volo con centro di massa in quiete, la forza aerodinamica equilibra il peso, <span class="math notranslate nohighlight">\(\mathbf{F}^{aero} = - \mathbf{P}_b\)</span>.</p>
@@ -694,11 +693,11 @@ Tara e risultante delle forze di pressione<div class="sd-summary-down docutils">
       </div>
     </a>
     <a class="right-next"
-       href="sailing-cart-rest.html"
+       href="../05_bernoulli/05teoria.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">4.20.16. </span>Sailing cart at rest</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Bernoulli theorems and vorticity dynamics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
