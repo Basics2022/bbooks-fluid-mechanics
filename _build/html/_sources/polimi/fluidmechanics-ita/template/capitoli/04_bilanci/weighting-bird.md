@@ -22,6 +22,8 @@ Si consideri il fluido incomprimibile di densità costante e uniforme $\rho_a$ a
 
 ::::
 
+**TL;DR.** La bilancia misura il peso del volatile anche quando in volo, ma anche l'accelerazione in direzione verticale del volatile e il moto dell'aria all'interno della gabbia.
+
 **Soluzione.** Si considera il sistema chiuso formato dal piatto della bilancia, dalla gabbia, e dall'aria e dall'uccello contenuti in essa. Il secondo principio della dinamica per questo sistema chiuso mette in relazione la derivata della quantità di moto $\mathbf{Q}$ del sistema e la risultante delle forze esterne $\mathbf{R}^{ext}$ agenti su di esso,
 
 $$\dfrac{d \mathbf{Q}}{dt} = \mathbf{R}^{ext} \ .$$
