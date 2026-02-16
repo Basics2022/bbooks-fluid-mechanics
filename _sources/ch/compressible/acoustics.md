@@ -51,9 +51,115 @@ $$\begin{cases}
 $$\begin{cases}
  \partial_t \rho + \nabla \cdot \left( \rho \mathbf{u} \right) = 0 \\
  \partial_t \left( \rho \mathbf{u} \right) + \nabla \cdot \left( \rho \mathbf{u} \mathbf{u} + p \mathbb{I} \right) = \rho \mathbf{g} \\
- \partial_t \left( \rho e^t \right) + \nabla \cdot \left( \rho e^t \mathbf{u} + p \mathbf{u} \right) = \rho \mathbf{g} \cdot \mathbf{u}
+ \partial_t \left( \rho e^t \right) + \nabla \cdot \left( \rho h^t \mathbf{u} \right) = \rho \mathbf{g} \cdot \mathbf{u}
 \end{cases}$$
 
 **todo** *discuss the hyperbolic mathematical nature of Euler equations, and link to [Math:PDEs:Hyperbolic equations](https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/hyperbolic.html)*
+
+- Convective form...
+
+$$\begin{cases}
+ D_t \rho + \rho \nabla \cdot \mathbf{u} = 0 \\
+ \rho D_t \mathbf{u} + \nabla p = \rho \mathbf{g} \\
+ \rho D_t e^t + \nabla \cdot ( p \mathbf{u} ) = \rho \mathbf{g} \cdot \mathbf{u}
+\end{cases}$$
+
+- Alternative sets of equations, if differential equations hold (no discontinuities: no shocks,...): internal energy instead of total energy, entropy,...
+
+   - internal energy, differente of total energy and kinetic energy (momentum equation $\cdot \mathbf{u}$):
+
+      $$\rho D_t e + p \nabla \cdot \mathbf{u} = 0$$
+
+   - entropy, from the 1-st principle of theromdynamics $de = T ds + \frac{p}{\rho^2} d \rho$
+
+      $$\begin{aligned}
+        \rho D_t s
+        & = \frac{\rho}{T} \left[ D_t e - \frac{p}{\rho^2} D_t \rho \right] = \\
+        & = \frac{\rho}{T} \left[ - \frac{p}{\rho} \nabla \cdot \mathbf{u} - \frac{p}{\rho^2} \left( - \rho \nabla \cdot \mathbf{u} \right)  \right] = 0 \ ,
+      \end{aligned}$$
+
+      i.e.
+
+      $$D_t s = 0$$
+
+      **todo** *$1)$ entropy and shocks, $2)$ entropy and vorticity,...*
+
+(compressible:acoustics:linearized-euler)=
+## Linearized Euler equations
+
+Linearization around a reference state
+
+...
+
+### Uniform and steady reference state
+
+$\overline{\rho}, \overline{\mathbf{u}}, \overline{s}$. Time and space derivatives of the reference state are identically zero, thus Euler equations in convective form
+
+$$\begin{aligned}
+  & \partial_t \rho + \mathbf{u} \cdot \nabla \rho + \rho \nabla \cdot \mathbf{u} = 0 \\
+  & \rho \partial_t \mathbf{u} + \rho \mathbf{u} \cdot \nabla \mathbf{u} + \nabla p = \rho \mathbf{g} \\
+  & \partial_t s + \mathbf{u} \cdot \nabla s = 0
+\end{aligned}$$
+
+are linearized as
+
+$$\begin{aligned}
+  & \partial_t \rho' + \mathbf{u} \cdot \nabla \rho' + \rho \nabla \cdot \mathbf{u}' = 0 \\
+  & \rho \partial_t \mathbf{u}' + \rho \mathbf{u} \cdot \nabla \mathbf{u}' + \nabla p' = \rho' \mathbf{g} \\
+  & \partial_t s' + \mathbf{u} \cdot \nabla s' = 0
+\end{aligned}$$
+
+If the entropy is uniform everywhere (also at the boundary, so that no entropy enters from it), its perturbation is identically zero $s' = 0$, $s(\mathbf{r},t) = \overline{s}$. Thus, for any thermodynamic variable written as function of density and entropy as the pair of independent variable, e.g. pressure $p(\rho, s)$, its differential is a function of the differential of the density only, being $ds = 0$
+
+$$\begin{aligned}
+  dp
+  & = \left( \frac{\partial p}{\partial \rho} \right)_s d \rho + \left( \frac{\partial p}{\partial s} \right)_\rho \underbrace{d s}_{=0} = \\
+  & = \left( \frac{\partial p}{\partial \rho} \right)_s d \rho = \\
+  & = c^2(\rho, s) \, d\rho \ .
+\end{aligned}$$
+
+Now, for negligible volume forces $\mathbf{g} = \mathbf{0}$, and writing $\nabla p = c^2 \nabla \rho$, mass and momentum linearized equations read
+
+$$\begin{aligned}
+  & \partial_t \rho' + \overline{\mathbf{u}} \cdot \nabla \rho' + \overline{\rho} \nabla \cdot \mathbf{u}' = 0 \\
+  & \overline{\rho} \partial_t \mathbf{u}' + \overline{\rho} \overline{\mathbf{u}} \cdot \nabla \mathbf{u}' + c^2(\overline{\rho}, \overline{s}) \nabla \rho' = \mathbf{0} \ .
+\end{aligned}$$
+
+$$\begin{aligned}
+  & D^{\overline{\mathbf{u}}}_t \rho' + \overline{\rho} \nabla \cdot \mathbf{u}' = 0 \\
+  & \overline{\rho} D^{\overline{\mathbf{u}}}_t \mathbf{u}' + \overline{c}^2 \nabla \rho' = \mathbf{0} \ .
+\end{aligned}$$
+
+being $D^{\overline{\mathbf{u}}}_t$ the material time derivative with the reference velocity field,
+
+$$D^{\overline{\mathbf{u}}}_t = \partial_t + \overline{\mathbf{u}} \cdot \nabla \ .$$
+
+
+### Wave equations
+A wave equation for density perturbation $\rho'(\mathbf{r},t)$ is obtained taking the difference of time derivative of the mass equation and the divergence of momentum equation,
+
+$$\begin{aligned}
+  & D^{\overline{\mathbf{u}}}_{tt} \rho' + \overline{\rho} D^{\overline{\mathbf{u}}}_{t} \nabla \cdot \mathbf{u}' = 0 \\
+  & \overline{\rho} \nabla \cdot D^{\overline{\mathbf{u}}}_t \mathbf{u}' + \overline{c}^2 \nabla^2 \rho' = 0 \ ,
+\end{aligned}$$
+
+it follows
+
+$$\frac{1}{\overline{c}^2} D^{\overline{\mathbf{u}}}_{tt} \rho'- \nabla^2 \rho' = 0 \ .$$
+
+A wave equation for velocity perturbation $\mathbf{u}'(\mathbf{r},t)$ is obtained taking the difference of time gradient of the mass equation and the time derivative of momentum equation,
+
+$$\begin{aligned}
+  & \nabla D^{\overline{\mathbf{u}}}_{t} \rho' + \overline{\rho} \nabla \left( \nabla \cdot \mathbf{u}' \right) = 0 \\
+  & \overline{\rho} D^{\overline{\mathbf{u}}}_{tt} \mathbf{u}' + \overline{c}^2 D^{\overline{\mathbf{u}}}_{t} \nabla  \rho' = \mathbf{0} \ ,
+\end{aligned}$$
+
+and using vector identity $\nabla^2 \mathbf{v} = \nabla \left( \nabla \cdot \mathbf{v} \right) - \nabla \times \nabla \times \mathbf{v}$, it follows
+
+$$\frac{1}{\overline{c}^2} D^{\overline{\mathbf{u}}}_{tt} \mathbf{u}' - \nabla^2 \mathbf{u}' - \nabla \times \boldsymbol\omega' = \mathbf{0} \ ,$$
+
+being $\boldsymbol\omega' = \nabla \times \mathbf{u}'$ the vorticity of the velocity perturbation.
+
+For isentropic flows, differential of density perturbation $d \rho'$ can be related to differential of pressure perturbation, $d \rho' = \frac{1}{\overline{c}^2} dp'$, so that pressure perturbation field is governed by a wave equation as well.
 
 

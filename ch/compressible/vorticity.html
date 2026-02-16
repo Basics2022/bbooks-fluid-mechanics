@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>13. Quasi-1-dimensional flows &#8212; Fluid Mechanics</title>
+    <title>12. Vorticity equation &#8212; Fluid Mechanics</title>
   
   
   
@@ -66,11 +66,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/quasi-1d';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/vorticity';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="14. Steady 2-dimensional flows" href="steady-2d.html" />
-    <link rel="prev" title="12. Vorticity equation" href="vorticity.html" />
+    <link rel="next" title="13. Quasi-1-dimensional flows" href="quasi-1d.html" />
+    <link rel="prev" title="11. Bernoulli’s theorem in compressible fluid mechanics" href="bernoulli.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -299,8 +301,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Compressible Fluid Mechanics</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">11. Bernoulli’s theorem in compressible fluid mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vorticity.html">12. Vorticity equation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Vorticity equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quasi-1d.html">13. Quasi-1-dimensional flows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="steady-2d.html">14. Steady 2-dimensional flows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="acoustics.html">15. Acoustics</a></li>
 </ul>
@@ -374,7 +376,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/ch/compressible/quasi-1d.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/ch/compressible/vorticity.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -391,7 +393,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fch/compressible/quasi-1d.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fch/compressible/vorticity.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -421,7 +423,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/compressible/quasi-1d.md" target="_blank"
+      <li><a href="../../_sources/ch/compressible/vorticity.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -492,9 +494,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -505,19 +505,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quasi-1-dimensional flows</h1>
+    <h1>Vorticity equation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contenuti </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-flows">13.1. Steady flows</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -527,14 +519,66 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="quasi-1-dimensional-flows">
-<span id="compressible-quasi-1d"></span><h1><span class="section-number">13. </span>Quasi-1-dimensional flows<a class="headerlink" href="#quasi-1-dimensional-flows" title="Permalink to this heading">#</a></h1>
-<p><strong>Assumptions.</strong> Whenever no explict assumption is made in this section, the following assumptions are made: cylindrical symmetry of streamtube; negligible radial velocity component; no azimuthal component; uniform properties on each section of the stream tube; negligible viscous and conductivity;…</p>
-<div class="section" id="steady-flows">
-<span id="compressible-quasi-1d-steady"></span><h2><span class="section-number">13.1. </span>Steady flows<a class="headerlink" href="#steady-flows" title="Permalink to this heading">#</a></h2>
-<p><strong>Differential equations.</strong></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="vorticity-equation">
+<span id="compressible-vorticity"></span><h1><span class="section-number">12. </span>Vorticity equation<a class="headerlink" href="#vorticity-equation" title="Permalink to this heading">#</a></h1>
+<p>A differential equation governing vorticity can be derived starting from the momentum equation. Starting from the convective form of the momentum equation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \partial_t \mathbf{u} + \left( \mathbf{u} \cdot \nabla \right) \mathbf{u} 
+  &amp; = \mathbf{g} + \dfrac{1}{\rho} \nabla \cdot \left[ - p \mathbb{I} + 2 \mu \mathbb{D} + \lambda \left( \nabla \cdot \mathbf{u} \right) \mathbb{I} \right] = \\
+  &amp; = \mathbf{g} - \dfrac{1}{\rho} \nabla p + \frac{1}{\rho} \left[ 2 \mu \nabla^2 \mathbf{u} + \left( \mu + \lambda \right) \nabla \left( \nabla \cdot \mathbf{u} \right) \right] \ .
+\end{aligned}\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  2 \nabla \cdot \mathbb{D} &amp; = \partial_i \left( \partial_i u_j + \partial_j u_i \right) = u_{j/ji} + u_{i/jj} = \nabla \left( \nabla \cdot \mathbf{u} \right) + \nabla^2 \mathbf{u} \\
+  \nabla \cdot \left( \nabla \cdot \mathbf{u} \mathbb{I} \right) &amp; = \partial_{k} \left( u_{l/l} \delta_{ki} \right) = u_{l/li} = \nabla \left( \nabla \cdot \mathbf{u} \right) \ .
+\end{aligned}\end{split}\]</div>
+<p>Taking the curl of the momentum equation above,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\partial_t \boldsymbol\omega + \nabla \times \left( \boldsymbol\omega \times \mathbf{u} \right) &amp; = - \nabla \times \frac{\nabla p}{\rho} + \dots \\
+\partial_t \boldsymbol\omega + \nabla \times \left( \boldsymbol\omega \times \mathbf{u} \right) &amp; = \frac{1}{\rho^2}  \nabla \rho \times \nabla p + \dots 
+\end{aligned}\end{split}\]</div>
+<p><strong>todo</strong> <em>Manipulate second term</em></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-kebab-horizontal" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M6 12a2 2 0 11-4 0 2 2 0 014 0zm8 0a2 2 0 11-4 0 2 2 0 014 0zm6 2a2 2 0 100-4 2 2 0 000 4z"></path></svg><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>todo</strong> <em>Uncomment</em></p>
+<!--
+$$\nabla \left( \mathbf{a} \cdot \mathbf{b} \right) = a_{i/j} b_i + a_i b_{i/j}$$
+
+$$\begin{aligned}
+  \left(\nabla \times \mathbf{a} \right) \times \mathbf{b} 
+  & = \varepsilon_{ijk} \varepsilon_{jlm} \partial_l a_m b_k = \\
+  & = \left( \delta_{kl} \delta_{im} - \delta_{km} \delta_{il} \right) \partial_l a_m b_k = \\
+  & = a_{i/k} b_k - a_{k/i} b_k = \mathbf{b} \cdot \nabla \mathbf{a} - \nabla \mathbf{a} \cdot \mathbf{b} 
+\end{aligned}$$
+
+$$\begin{aligned}
+  \nabla \times \left( \mathbf{a} \times \mathbf{b} \right)  
+  & = \varepsilon_{ijk} \partial_j \varepsilon_{klm} a_l b_m = \\
+  & = \left( \delta_{il} \delta_{jm} - \delta_{im} \delta_{jl} \right) \partial_j a_l b_m = \\
+  & = a_{i/j} b_j - a_{j/j} b_i = \mathbf{b} \cdot \nabla \mathbf{a} - \mathbf{b} \nabla \cdot \mathbf{a} 
+\end{aligned}$$
+
+$$\begin{aligned}
+  \left(\nabla \times \mathbf{a} \right) \times \mathbf{b} 
+  & = \varepsilon_{ijk} \varepsilon_{jlm} \partial_l a_m b_k = \\
+  & = \left( \delta_{kl} \delta_{im} - \delta_{km} \delta_{il} \right) \partial_l a_m b_k = \\
+  & = \omega_{i/k} u_k - u_{k/i} \omega_k = \mathbf{u} \cdot \nabla \boldsymbol\omega - \nabla \mathbf{a} \cdot \mathbf{b} 
+\end{aligned}$$
+
+$$\nabla \times \left[ \left( \mathbf{u} \cdot \nabla \right) \mathbf{u} \right] = \nabla \times \left[ \boldsymbol\omega \times \mathbf{u} + \nabla \frac{|\mathbf{u}|^2}{2} \right]$$
+
+$$\nabla \times \left( a \mathbf{v} \right) = \varepsilon_{ijk} \partial_j ( a v_k ) =  \varepsilon_{ijk} \left( a_{/j} v_k + a v_{k/j} \right) = \nabla a \times \mathbf{v} + a \nabla \times \mathbf{v} \ .$$
+-->
 </div>
-</div>
+</details></div>
 
     <script type="text/x-thebe-config">
     {
@@ -567,20 +611,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="vorticity.html"
+       href="bernoulli.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>Vorticity equation</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Bernoulli’s theorem in compressible fluid mechanics</p>
       </div>
     </a>
     <a class="right-next"
-       href="steady-2d.html"
+       href="quasi-1d.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Steady 2-dimensional flows</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Quasi-1-dimensional flows</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -590,20 +634,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contenuti
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-flows">13.1. Steady flows</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
