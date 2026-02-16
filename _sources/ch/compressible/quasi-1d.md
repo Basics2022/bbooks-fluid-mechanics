@@ -6,5 +6,9 @@
 (compressible:quasi-1d:steady)=
 ## Steady flows
 
+**Differential equations.**
+
+
+
 
 
