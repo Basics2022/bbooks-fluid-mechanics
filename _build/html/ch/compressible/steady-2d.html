@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>11. Bernoulli’s theorem in compressible fluid mechanics &#8212; Fluid Mechanics</title>
+    <title>13. Steady 2-dimensional flows &#8212; Fluid Mechanics</title>
   
   
   
@@ -66,13 +66,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/bernoulli';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/steady-2d';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="12. Quasi-1-dimensional flows" href="quasi-1d.html" />
-    <link rel="prev" title="10.4. Exercises" href="../../polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/exercises.html" />
+    <link rel="next" title="14. Acoustics" href="acoustics.html" />
+    <link rel="prev" title="12. Quasi-1-dimensional flows" href="quasi-1d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -300,9 +298,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Compressible Fluid Mechanics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Bernoulli’s theorem in compressible fluid mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bernoulli.html">11. Bernoulli’s theorem in compressible fluid mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quasi-1d.html">12. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">13. Steady 2-dimensional flows</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Steady 2-dimensional flows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="acoustics.html">14. Acoustics</a></li>
 </ul>
 
@@ -375,7 +373,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/ch/compressible/bernoulli.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/ch/compressible/steady-2d.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +390,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fch/compressible/bernoulli.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fch/compressible/steady-2d.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -422,7 +420,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/compressible/bernoulli.md" target="_blank"
+      <li><a href="../../_sources/ch/compressible/steady-2d.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -493,7 +491,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -504,11 +504,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Bernoulli’s theorem in compressible fluid mechanics</h1>
+    <h1>Steady 2-dimensional flows</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shock-waves">13.1. Shock waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal">13.1.1. Orthogonal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique">13.1.2. Oblique</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rarefaction-fans">13.2. Rarefaction fans</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -518,57 +531,21 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="bernoulli-s-theorem-in-compressible-fluid-mechanics">
-<span id="compressible-bernoulli"></span><h1><span class="section-number">11. </span>Bernoulli’s theorem in compressible fluid mechanics<a class="headerlink" href="#bernoulli-s-theorem-in-compressible-fluid-mechanics" title="Permalink to this heading">#</a></h1>
-<p>Assuming no discontinuity occurs in physical quantities (reasonable for viscous and diffusive fluids?), the differential form of governing equations holds.
-Starting from governing equations of compressible fluids,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  &amp; \dfrac{D \rho}{D t} = - \rho \nabla \cdot \mathbf{u} \\
-  &amp; \rho \dfrac{D \mathbf{u}}{D t} = \rho \mathbf{g} + \nabla \cdot \mathbb{T} \\
-  &amp; \rho \dfrac{D e^t}{D t} = \rho \mathbf{g} \cdot \mathbf{u} + \nabla \cdot (\mathbb{T} \cdot \mathbf{u}) - \nabla \cdot \mathbf{q} \\
-\end{cases}\end{split}\]</div>
-<p>with the stress tensor sum of a pressure and viscous contribution, <span class="math notranslate nohighlight">\(\mathbb{T} = - p \mathbb{I} + \mathbb{S}\)</span>. For Newtonian fluids, viscous stress tensor can be written as</p>
-<div class="math notranslate nohighlight">
-\[\mathbb{S} = 2 \mu \mathbb{D} + \lambda \left( \nabla \cdot \mathbf{u} \right) \mathbb{I} \ .\]</div>
-<p>Total energy per unit mass <span class="math notranslate nohighlight">\(e^t\)</span> is the sum of internal and kinetic energy, <span class="math notranslate nohighlight">\(e^t = e + \frac{|\mathbf{u}|^2}{2}\)</span>. Total derivative operator reads</p>
-<div class="math notranslate nohighlight">
-\[\dfrac{D}{Dt} = \dfrac{\partial }{\partial t} + \mathbf{u} \cdot \nabla \]</div>
-<p>Total energy equation can be recast as</p>
-<div class="math notranslate nohighlight">
-\[\rho \mathbf{u} \cdot \left[ \nabla e^t - \mathbf{g} - \frac{1}{\rho} \nabla \cdot \mathbb{T} \right] = - \rho \dfrac{\partial e^t}{\partial t} + \nabla \mathbf{u} : \mathbb{T} - \nabla \cdot \mathbf{q} \]</div>
-<p>Keeping only conservative (pressure) contributions to stress on the LHS</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  \rho \mathbf{u} \cdot \left[ \nabla e^t - \mathbf{g} + \frac{1}{\rho} \nabla P \right] &amp; = - \rho \dfrac{\partial e^t}{\partial t} + \mathbf{u} \cdot \nabla \cdot \mathbb{S} - P \, \nabla \cdot \mathbf{u} + \nabla \mathbf{u} : \mathbb{S} - \nabla \cdot \mathbf{q} \\
-  \rho \mathbf{u} \cdot \left[ \nabla  e^t + \nabla \chi + \frac{1}{\rho} \nabla P \right] &amp; = - \rho \dfrac{\partial e^t}{\partial t} + \mathbf{u} \cdot \nabla \cdot \mathbb{S} + \dfrac{P}{\rho} \dfrac{D \rho}{D t} + \nabla \mathbf{u} : \mathbb{S} - \nabla \cdot \mathbf{q} \\
-  \rho \mathbf{u} \cdot \left[ \nabla  e^t + \nabla \chi + \frac{1}{\rho} \nabla P \right] &amp; = - \rho \dfrac{\partial e^t}{\partial t} + \mathbf{u} \cdot \nabla \cdot \mathbb{S} + \dfrac{P}{\rho} \dfrac{\partial \rho}{\partial t} + \dfrac{P}{\rho} \mathbf{u} \cdot \nabla \rho + \nabla \mathbf{u} : \mathbb{S} - \nabla \cdot \mathbf{q} \\
-  \rho \mathbf{u} \cdot \nabla \left[ e^t + \chi + \frac{P}{\rho} \right] &amp; = - \rho \dfrac{\partial e^t}{\partial t} + \dfrac{P}{\rho} \dfrac{\partial \rho}{\partial t} + \nabla \cdot \left( \mathbb{S} \cdot \mathbf{u} \right) - \nabla \cdot \mathbf{q} \\
-  \rho \mathbf{u} \cdot \nabla \left[ e^t + \chi + \frac{P}{\rho} \right] &amp; = - \rho \dfrac{\partial e^t}{\partial t} + \underbrace{\dfrac{P}{\rho} \dfrac{\partial \rho}{\partial t} - \rho \dfrac{\partial P}{\partial t}}_{= - \rho \frac{\partial }{\partial t} \left( \frac{P}{\rho} \right)} + \rho \dfrac{\partial P}{\partial t} + \nabla \cdot \left( \mathbb{S} \cdot \mathbf{u} \right) - \nabla \cdot \mathbf{q} \\
-  \rho \mathbf{u} \cdot \nabla \left[ e^t + \chi + \frac{P}{\rho} \right] &amp; = - \rho \dfrac{\partial }{\partial t} \left( e^t + \dfrac{P}{\rho} \right) + \rho \dfrac{\partial P}{\partial t} + \nabla \cdot \left( \mathbb{S} \cdot \mathbf{u} \right) - \nabla \cdot \mathbf{q} \\
-\end{aligned}\end{split}\]</div>
-<div class="proof theorem admonition" id="theorem-0">
-<p class="admonition-title"><span class="caption-number">Theorem 11.1 </span> (Bernoulli’s theorem for compressible flow on streamlines)</p>
-<div class="theorem-content section" id="proof-content">
-<p>Now, for steady flows <span class="math notranslate nohighlight">\(\frac{\partial }{\partial t} \equiv 0\)</span>, with negligible viscous stress <span class="math notranslate nohighlight">\(\mathbb{S} \equiv \mathbb{0}\)</span> and heat conduction <span class="math notranslate nohighlight">\(\mathbf{q} \equiv 0\)</span>, <strong>Bernoulli’s polynomial is constant for every point of a streamline</strong>, as</p>
-<div class="math notranslate nohighlight">
-\[\rho \mathbf{u} \cdot \nabla \left[ e + \dfrac{|\mathbf{u}|^2}{2} + \frac{P}{\rho} + \chi \right] = 0 \ .\]</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="steady-2-dimensional-flows">
+<span id="compressible-steady-2d"></span><h1><span class="section-number">13. </span>Steady 2-dimensional flows<a class="headerlink" href="#steady-2-dimensional-flows" title="Permalink to this heading">#</a></h1>
+<div class="section" id="shock-waves">
+<h2><span class="section-number">13.1. </span>Shock waves<a class="headerlink" href="#shock-waves" title="Permalink to this heading">#</a></h2>
+<div class="section" id="orthogonal">
+<h3><span class="section-number">13.1.1. </span>Orthogonal<a class="headerlink" href="#orthogonal" title="Permalink to this heading">#</a></h3>
 </div>
-</div><div class="proof theorem admonition" id="theorem-1">
-<p class="admonition-title"><span class="caption-number">Theorem 11.2 </span> (Dynamical equation for total enthalpy)</p>
-<div class="theorem-content section" id="proof-content">
-<p>Governing equations of fluid mechanics can be recast to get a dynamical equation for the total enthaply <span class="math notranslate nohighlight">\(h^t = e^t + \frac{P}{\rho}\)</span>, whose convective form reads</p>
-<div class="math notranslate nohighlight">
-\[\rho \dfrac{D h^t}{D t} = - \rho \mathbf{u} \cdot \nabla \chi + \rho \dfrac{\partial P}{\partial t} + \nabla \cdot \left( \mathbb{S} \cdot \mathbf{u} - \mathbf{q} \right) \ . \]</div>
+<div class="section" id="oblique">
+<h3><span class="section-number">13.1.2. </span>Oblique<a class="headerlink" href="#oblique" title="Permalink to this heading">#</a></h3>
 </div>
-</div><div class="proof theorem admonition" id="theorem-2">
-<p class="admonition-title"><span class="caption-number">Theorem 11.3 </span> (Dynamical equation for Bernoulli’s polynomial)</p>
-<div class="theorem-content section" id="proof-content">
-<p>If the conservative force field per unit mass <span class="math notranslate nohighlight">\(\mathbf{g} = - \nabla \chi\)</span> has no explicit dependence on time, <span class="math notranslate nohighlight">\(\partial_t \chi = 0\)</span> and <span class="math notranslate nohighlight">\(D_t \chi = \mathbf{u} \cdot \nabla \chi\)</span>, it’s possible to write a dynamical equation for the Bernoulli’s polynomial, <span class="math notranslate nohighlight">\(B = h^t + \chi\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[\rho \dfrac{D B}{D t} = \rho \dfrac{\partial P}{\partial t} + \nabla \cdot \left( \mathbb{S} \cdot \mathbf{u} - \mathbf{q} \right) \ , \]</div>
 </div>
-</div></div>
+<div class="section" id="rarefaction-fans">
+<h2><span class="section-number">13.2. </span>Rarefaction fans<a class="headerlink" href="#rarefaction-fans" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -601,20 +578,20 @@ Starting from governing equations of compressible fluids,</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../polimi/fluidmechanics-ita/template/capitoli/10_turbolenza/exercises.html"
+       href="quasi-1d.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">10.4. </span>Exercises</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Quasi-1-dimensional flows</p>
       </div>
     </a>
     <a class="right-next"
-       href="quasi-1d.html"
+       href="acoustics.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>Quasi-1-dimensional flows</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Acoustics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -624,6 +601,25 @@ Starting from governing equations of compressible fluids,</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shock-waves">13.1. Shock waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal">13.1.1. Orthogonal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique">13.1.2. Oblique</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rarefaction-fans">13.2. Rarefaction fans</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
