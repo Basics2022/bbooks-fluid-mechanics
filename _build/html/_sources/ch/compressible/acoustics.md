@@ -25,6 +25,7 @@ need
 
    $$\mathbf{q} = - k \nabla T \ .$$
 
+
 - **state equations**, for relating thermodynamic variables appearing in constitutive laws with *dynamic variables*. Using constitutive laws for Newtonian fluids and Fourier's law, there's a need for state equations relating pressure, temperature and - if not possible to model as constant - viscosity coefficients and heat conductivity,
 
    $$\begin{aligned}
@@ -32,12 +33,16 @@ need
      T & = T(\rho, \mathbf{m}, E_t) \\
        & ...
    \end{aligned}$$
+   
+   Usually internal energy is used in state equations. Mass density of total energy is defined as the sum of internal energy and kinetic energy
+
+   $$e^t = e + \frac{|\mathbf{u}|^2}{2} \ .$$
 
 Introducing the constitutive laws and the state equations in Navier-Stokes equations and collecting terms with 1-st order and 2-nd order space derivatives,
 
 $$\begin{cases}
  \partial_t \rho + \nabla \cdot \left( \rho \mathbf{u} \right) = 0 \\
- \partial_t \left( \rho \mathbf{u} \right) + \nabla \cdot \left( \rho \mathbf{u} \mathbf{u} + p \right) = \rho \mathbf{g} + \nabla \cdot \mathbb{S} \\
+ \partial_t \left( \rho \mathbf{u} \right) + \nabla \cdot \left( \rho \mathbf{u} \mathbf{u} + p \mathbb{I} \right) = \rho \mathbf{g} + \nabla \cdot \mathbb{S} \\
  \partial_t \left( \rho e^t \right) + \nabla \cdot \left( \rho e^t \mathbf{u} + p \mathbf{u} \right) = \rho \mathbf{g} \cdot \mathbf{u} + \nabla \cdot \left( \mathbb{S} \cdot \mathbf{u} \right) - \nabla \cdot \mathbf{q}
 \end{cases}$$
 
@@ -45,7 +50,7 @@ $$\begin{cases}
 
 $$\begin{cases}
  \partial_t \rho + \nabla \cdot \left( \rho \mathbf{u} \right) = 0 \\
- \partial_t \left( \rho \mathbf{u} \right) + \nabla \cdot \left( \rho \mathbf{u} \mathbf{u} + p \right) = \rho \mathbf{g} \\
+ \partial_t \left( \rho \mathbf{u} \right) + \nabla \cdot \left( \rho \mathbf{u} \mathbf{u} + p \mathbb{I} \right) = \rho \mathbf{g} \\
  \partial_t \left( \rho e^t \right) + \nabla \cdot \left( \rho e^t \mathbf{u} + p \mathbf{u} \right) = \rho \mathbf{g} \cdot \mathbf{u}
 \end{cases}$$
 

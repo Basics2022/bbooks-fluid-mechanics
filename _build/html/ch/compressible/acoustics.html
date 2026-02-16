@@ -544,20 +544,23 @@ document.write(`
      T &amp; = T(\rho, \mathbf{m}, E_t) \\
        &amp; ...
    \end{aligned}\end{split}\]</div>
+<p>Usually internal energy is used in state equations. Mass density of total energy is defined as the sum of internal energy and kinetic energy</p>
+<div class="math notranslate nohighlight">
+\[e^t = e + \frac{|\mathbf{u}|^2}{2} \ .\]</div>
 </li>
 </ul>
 <p>Introducing the constitutive laws and the state equations in Navier-Stokes equations and collecting terms with 1-st order and 2-nd order space derivatives,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
  \partial_t \rho + \nabla \cdot \left( \rho \mathbf{u} \right) = 0 \\
- \partial_t \left( \rho \mathbf{u} \right) + \nabla \cdot \left( \rho \mathbf{u} \mathbf{u} + p \right) = \rho \mathbf{g} + \nabla \cdot \mathbb{S} \\
+ \partial_t \left( \rho \mathbf{u} \right) + \nabla \cdot \left( \rho \mathbf{u} \mathbf{u} + p \mathbb{I} \right) = \rho \mathbf{g} + \nabla \cdot \mathbb{S} \\
  \partial_t \left( \rho e^t \right) + \nabla \cdot \left( \rho e^t \mathbf{u} + p \mathbf{u} \right) = \rho \mathbf{g} \cdot \mathbf{u} + \nabla \cdot \left( \mathbb{S} \cdot \mathbf{u} \right) - \nabla \cdot \mathbf{q}
 \end{cases}\end{split}\]</div>
 <p><strong>Euler equations</strong> immediately follow by setting equal to zero the contribution of viscosity and heat conduction, i.e. the terms collecting the 2-nd order space derivatives, those ones that have diffusive nature,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
  \partial_t \rho + \nabla \cdot \left( \rho \mathbf{u} \right) = 0 \\
- \partial_t \left( \rho \mathbf{u} \right) + \nabla \cdot \left( \rho \mathbf{u} \mathbf{u} + p \right) = \rho \mathbf{g} \\
+ \partial_t \left( \rho \mathbf{u} \right) + \nabla \cdot \left( \rho \mathbf{u} \mathbf{u} + p \mathbb{I} \right) = \rho \mathbf{g} \\
  \partial_t \left( \rho e^t \right) + \nabla \cdot \left( \rho e^t \mathbf{u} + p \mathbf{u} \right) = \rho \mathbf{g} \cdot \mathbf{u}
 \end{cases}\end{split}\]</div>
 <p><strong>todo</strong> <em>discuss the hyperbolic mathematical nature of Euler equations, and link to <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/hyperbolic.html">Math:PDEs:Hyperbolic equations</a></em></p>
