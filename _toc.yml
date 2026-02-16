@@ -118,6 +118,7 @@ parts:
   numbered: true
   chapters:
   - file: ch/compressible/bernoulli
+  - file: ch/compressible/vorticity
   - file: ch/compressible/quasi-1d
   - file: ch/compressible/steady-2d
   - file: ch/compressible/acoustics

@@ -8,7 +8,7 @@ $$\begin{aligned}
   & \dfrac{D \rho}{D t} = - \rho \nabla \cdot \mathbf{u} \\
   & \rho \dfrac{D \mathbf{u}}{D t} = \rho \mathbf{g} + \nabla \cdot \mathbb{T} \\
   & \rho \dfrac{D e^t}{D t} = \rho \mathbf{g} \cdot \mathbf{u} + \nabla \cdot (\mathbb{T} \cdot \mathbf{u}) - \nabla \cdot \mathbf{q} \\
-\end{cases}$$
+\end{aligned}$$
 
 with the stress tensor sum of a pressure and viscous contribution, $\mathbb{T} = - p \mathbb{I} + \mathbb{S}$. For Newtonian fluids, viscous stress tensor can be written as
 
