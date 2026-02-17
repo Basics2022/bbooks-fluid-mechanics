@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/vorticity';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="13. Quasi-1-dimensional flows" href="quasi-1d.html" />
+    <link rel="next" title="13. Entropy equation" href="entropy.html" />
     <link rel="prev" title="11. Bernoulli’s theorem in compressible fluid mechanics" href="bernoulli.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
@@ -302,9 +302,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">11. Bernoulli’s theorem in compressible fluid mechanics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Vorticity equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quasi-1d.html">13. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">14. Steady 2-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acoustics.html">15. Acoustics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html">13. Entropy equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quasi-1d.html">14. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">15. Steady 2-dimensional flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acoustics.html">16. Acoustics</a></li>
 </ul>
 
     </div>
@@ -494,7 +495,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -510,6 +513,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vorticity-and-entropy">12.1. Vorticity and entropy</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -532,53 +543,97 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   2 \nabla \cdot \mathbb{D} &amp; = \partial_i \left( \partial_i u_j + \partial_j u_i \right) = u_{j/ji} + u_{i/jj} = \nabla \left( \nabla \cdot \mathbf{u} \right) + \nabla^2 \mathbf{u} \\
-  \nabla \cdot \left( \nabla \cdot \mathbf{u} \mathbb{I} \right) &amp; = \partial_{k} \left( u_{l/l} \delta_{ki} \right) = u_{l/li} = \nabla \left( \nabla \cdot \mathbf{u} \right) \ .
+  \nabla \cdot \left( \left( \nabla \cdot \mathbf{u} \right) \mathbb{I} \right) &amp; = \partial_{k} \left( u_{l/l} \delta_{ki} \right) = u_{l/li} = \nabla \left( \nabla \cdot \mathbf{u} \right) \ .
 \end{aligned}\end{split}\]</div>
-<p>Taking the curl of the momentum equation above,</p>
+<p>Taking the curl of the momentum equation above, vorticity equation follows</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 \partial_t \boldsymbol\omega + \nabla \times \left( \boldsymbol\omega \times \mathbf{u} \right) &amp; = - \nabla \times \frac{\nabla p}{\rho} + \dots \\
-\partial_t \boldsymbol\omega + \nabla \times \left( \boldsymbol\omega \times \mathbf{u} \right) &amp; = \frac{1}{\rho^2}  \nabla \rho \times \nabla p + \dots 
+\partial_t \boldsymbol\omega + \mathbf{u} \cdot \nabla \boldsymbol\omega - \boldsymbol\omega \cdot \nabla \mathbf{u} + \boldsymbol\omega \, \nabla \cdot \mathbf{u} &amp; = \frac{1}{\rho^2}  \nabla \rho \times \nabla p + \dots  \ ,
 \end{aligned}\end{split}\]</div>
-<p><strong>todo</strong> <em>Manipulate second term</em></p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<p>or, highlighting the material derivative,</p>
+<div class="math notranslate nohighlight">
+\[
+  D_t \boldsymbol\omega = \boldsymbol\omega \cdot \nabla \mathbf{u} - \boldsymbol\omega \, \nabla \cdot \mathbf{u} + \frac{1}{\rho^2}  \nabla \rho \times \nabla p + \dots  \ .
+\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-kebab-horizontal" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M6 12a2 2 0 11-4 0 2 2 0 014 0zm8 0a2 2 0 11-4 0 2 2 0 014 0zm6 2a2 2 0 100-4 2 2 0 000 4z"></path></svg><div class="sd-summary-down docutils">
+Vector caluclus identities<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><strong>todo</strong> <em>Uncomment</em></p>
-<!--
-$$\nabla \left( \mathbf{a} \cdot \mathbf{b} \right) = a_{i/j} b_i + a_i b_{i/j}$$
-
-$$\begin{aligned}
+<div class="math notranslate nohighlight">
+\[\nabla \left( \mathbf{a} \cdot \mathbf{b} \right) = a_{i/j} b_i + a_i b_{i/j}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
   \left(\nabla \times \mathbf{a} \right) \times \mathbf{b} 
-  & = \varepsilon_{ijk} \varepsilon_{jlm} \partial_l a_m b_k = \\
-  & = \left( \delta_{kl} \delta_{im} - \delta_{km} \delta_{il} \right) \partial_l a_m b_k = \\
-  & = a_{i/k} b_k - a_{k/i} b_k = \mathbf{b} \cdot \nabla \mathbf{a} - \nabla \mathbf{a} \cdot \mathbf{b} 
-\end{aligned}$$
-
-$$\begin{aligned}
+  &amp; = \varepsilon_{ijk} \varepsilon_{jlm} \partial_l a_m b_k = \\
+  &amp; = \left( \delta_{kl} \delta_{im} - \delta_{km} \delta_{il} \right) \partial_l a_m b_k = \\
+  &amp; = a_{i/k} b_k - a_{k/i} b_k = \mathbf{b} \cdot \nabla \mathbf{a} - \nabla \mathbf{a} \cdot \mathbf{b} 
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Thus, <span class="math notranslate nohighlight">\(\left(\nabla \times \mathbf{u}\right) \times \mathbf{u}\)</span> can be written as</p>
+<div class="math notranslate nohighlight">
+\[\left(\nabla \times \mathbf{u}\right) \times \mathbf{u} = \mathbf{u} \cdot \nabla \mathbf{u} - \nabla \mathbf{u} \cdot \mathbf{u} =  \mathbf{u} \cdot \nabla \mathbf{u} - \nabla \frac{|\mathbf{u}|^2}{2} \ ,\]</div>
+<p class="sd-card-text">so that the advective term can be recast as <span class="math notranslate nohighlight">\(\mathbf{u} \cdot \nabla \mathbf{u} = \boldsymbol\omega \times \mathbf{u} - \nabla \frac{|\mathbf{u}|^2}{2} \ ,\)</span></p>
+<p class="sd-card-text">being <span class="math notranslate nohighlight">\(\boldsymbol\omega = \nabla \times \mathbf{u}\)</span> the vorticity field. Using vector calculus identity</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
   \nabla \times \left( \mathbf{a} \times \mathbf{b} \right)  
-  & = \varepsilon_{ijk} \partial_j \varepsilon_{klm} a_l b_m = \\
-  & = \left( \delta_{il} \delta_{jm} - \delta_{im} \delta_{jl} \right) \partial_j a_l b_m = \\
-  & = a_{i/j} b_j - a_{j/j} b_i = \mathbf{b} \cdot \nabla \mathbf{a} - \mathbf{b} \nabla \cdot \mathbf{a} 
-\end{aligned}$$
-
-$$\begin{aligned}
-  \left(\nabla \times \mathbf{a} \right) \times \mathbf{b} 
-  & = \varepsilon_{ijk} \varepsilon_{jlm} \partial_l a_m b_k = \\
-  & = \left( \delta_{kl} \delta_{im} - \delta_{km} \delta_{il} \right) \partial_l a_m b_k = \\
-  & = \omega_{i/k} u_k - u_{k/i} \omega_k = \mathbf{u} \cdot \nabla \boldsymbol\omega - \nabla \mathbf{a} \cdot \mathbf{b} 
-\end{aligned}$$
-
-$$\nabla \times \left[ \left( \mathbf{u} \cdot \nabla \right) \mathbf{u} \right] = \nabla \times \left[ \boldsymbol\omega \times \mathbf{u} + \nabla \frac{|\mathbf{u}|^2}{2} \right]$$
-
-$$\nabla \times \left( a \mathbf{v} \right) = \varepsilon_{ijk} \partial_j ( a v_k ) =  \varepsilon_{ijk} \left( a_{/j} v_k + a v_{k/j} \right) = \nabla a \times \mathbf{v} + a \nabla \times \mathbf{v} \ .$$
--->
+  &amp; = \varepsilon_{ijk} \partial_j \varepsilon_{klm} \left( a_l b_m \right) = \\
+  &amp; = \left( \delta_{il} \delta_{jm} - \delta_{im} \delta_{jl} \right) \partial_j \left( a_l b_m \right) = \\
+  &amp; = a_{i/j} b_j + a_i b_{j/j} - a_{j/j} b_i - a_j b_{i/j} = \\
+  &amp; = \mathbf{b} \cdot \nabla \mathbf{a} + \mathbf{a} \, \nabla \cdot \mathbf{b} - \mathbf{b} \nabla \cdot \mathbf{a} - \mathbf{a} \cdot \nabla \mathbf{b} \ .
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">and recalling that the curl of a gradient is identically zero, the curl of the advective term reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \nabla \times \left[ \left( \mathbf{u} \cdot \nabla \right) \mathbf{u} \right] 
+  &amp; = \nabla \times \left[ \boldsymbol\omega \times \mathbf{u} + \nabla \frac{|\mathbf{u}|^2}{2} \right] = \\
+  &amp; = \mathbf{u} \cdot \nabla \boldsymbol\omega + \boldsymbol\omega \nabla \cdot \mathbf{u} - \mathbf{u} \underbrace{\nabla \cdot \boldsymbol\omega}_{ = \mathbf{0} \, \text{div  curl}\equiv\mathbf{0}} - \boldsymbol\omega \cdot \nabla \mathbf{u} \ .
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">The curl of a Laplacian reads</p>
+<div class="math notranslate nohighlight">
+\[\left\{ \nabla \times \nabla^2 \mathbf{u} \right\}_i = \varepsilon_{ijk} \partial_j \partial_{ll} u_k = \partial_{ll} \left( \varepsilon_{ijk} \partial_j u_k \right) = \nabla^2 \left( \nabla \times \mathbf{u} \right) \ .\]</div>
+<p class="sd-card-text">The curl of the product of a scalar and vector field reads</p>
+<div class="math notranslate nohighlight">
+\[\nabla \times \left( a \mathbf{v} \right) = \varepsilon_{ijk} \partial_j ( a v_k ) =  \varepsilon_{ijk} \left( a_{/j} v_k + a v_{k/j} \right) = \nabla a \times \mathbf{v} + a \nabla \times \mathbf{v} \ .\]</div>
 </div>
-</details></div>
+</details><div class="section" id="vorticity-and-entropy">
+<h2><span class="section-number">12.1. </span>Vorticity and entropy<a class="headerlink" href="#vorticity-and-entropy" title="Permalink to this heading">#</a></h2>
+<p>Starting from the potentials, and <span class="math notranslate nohighlight">\(dh = d \left( e + \frac{p}{\rho} \right) = de + \frac{d p}{\rho} - \frac{p}{\rho^2} d\rho\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  de &amp; = T ds + \frac{p}{\rho^2} d \rho \\
+  dh &amp; = T ds + \frac{d p}{\rho}
+\end{aligned}\end{split}\]</div>
+<p>and taking the gradient,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\nabla p}{\rho} = \nabla h - T \nabla s \ .\]</div>
+<p>Using the momentum equation to replace the first term,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \frac{\nabla p}{\rho}
+  &amp; = - D_t \mathbf{u} + \mathbf{g} + \frac{1}{\rho} \nabla \cdot \mathbb{S} = \\
+  &amp; = - \partial_t \mathbf{u} - \boldsymbol\omega \times \mathbf{u} - \nabla \frac{|\mathbf{u}|^2}{2} - \nabla \chi + \frac{1}{\rho} \nabla \cdot \mathbb{S} \ ,
+\end{aligned}\end{split}\]</div>
+<p>it follows</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{0} = \partial_t \mathbf{u} + \boldsymbol\omega \times \mathbf{u} + \nabla \left[ h + \frac{|\mathbf{u}|^2}{2} + \chi \right] + \frac{1}{\rho} \nabla \cdot \mathbb{S} - T \nabla s\]</div>
+<p><strong>Steady condition, inviscid flows.</strong> If <span class="math notranslate nohighlight">\(\partial_t \equiv 0\)</span> and <span class="math notranslate nohighlight">\(\mathbb{S} \equiv \mathbb{0}\)</span>, it follows</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{0} = \boldsymbol\omega \times \mathbf{u} + \nabla \left[ h + \frac{|\mathbf{u}|^2}{2} + \chi \right]- T \nabla s \ .\]</div>
+<p><strong>todo</strong> <em>Rotational flow behind an oblique shock</em></p>
+<p><strong>Scalar multiplication by <span class="math notranslate nohighlight">\(\rho \mathbf{u} \cdot\)</span></strong> and transforming back the gradient of the entropy field as a function of the gradient of the internal energy and density,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0
+  &amp; = \rho \partial_t \frac{|\mathbf{u}|^2}{2} + \rho \mathbf{u} \cdot \nabla \left[ h^t + \chi \right] + \mathbf{u} \cdot \nabla \cdot \mathbb{S} - T \rho \mathbf{u} \cdot \nabla s  = \\
+  &amp; = \dots
+\end{aligned}\end{split}\]</div>
+<p><strong>todo</strong> <em>Going back to Bernoulli…</em></p>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -620,11 +675,11 @@ $$\nabla \times \left( a \mathbf{v} \right) = \varepsilon_{ijk} \partial_j ( a v
       </div>
     </a>
     <a class="right-next"
-       href="quasi-1d.html"
+       href="entropy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Quasi-1-dimensional flows</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Entropy equation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -634,6 +689,20 @@ $$\nabla \times \left( a \mathbf{v} \right) = \varepsilon_{ijk} \partial_j ( a v
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vorticity-and-entropy">12.1. Vorticity and entropy</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
