@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>18. Acoustics &#8212; Fluid Mechanics</title>
+    <title>15. Jump conditions &#8212; Fluid Mechanics</title>
   
   
   
@@ -68,10 +68,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/acoustics';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/jump-conditions';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="prev" title="17. Steady 2-dimensional flows" href="steady-2d.html" />
+    <link rel="next" title="16. Characteristics" href="characteristics.html" />
+    <link rel="prev" title="14. Quasi-1-dimensional flows" href="quasi-1d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -303,10 +304,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="vorticity.html">12. Vorticity equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entropy.html">13. Entropy equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quasi-1d.html">14. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">15. Jump conditions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Jump conditions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="characteristics.html">16. Characteristics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="steady-2d.html">17. Steady 2-dimensional flows</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">18. Acoustics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acoustics.html">18. Acoustics</a></li>
 </ul>
 
     </div>
@@ -378,7 +379,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/ch/compressible/acoustics.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/ch/compressible/jump-conditions.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -395,7 +396,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fch/compressible/acoustics.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fch/compressible/jump-conditions.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -425,7 +426,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/compressible/acoustics.md" target="_blank"
+      <li><a href="../../_sources/ch/compressible/jump-conditions.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -496,9 +497,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -509,23 +508,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Acoustics</h1>
+    <h1>Jump conditions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contenuti </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-euler-equations">18.1. Linearized Euler equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-and-steady-reference-state">18.1.1. Uniform and steady reference state</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-equations">18.1.2. Wave equations</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -535,160 +522,67 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="acoustics">
-<span id="compressible-acoustics"></span><h1><span class="section-number">18. </span>Acoustics<a class="headerlink" href="#acoustics" title="Permalink to this heading">#</a></h1>
-<p>Assuming negligible viscosity and conductivity, Navier-Stokes equations for compressible fluids become Euler equations<a class="footnote-reference brackets" href="#ns-to-euler" id="id1">1</a></p>
-<p>The conservative form of Navier-Stokes equations</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{cases}
- \partial_t \rho + \nabla \cdot \left( \rho \mathbf{u} \right) = 0 \\
- \partial_t \left( \rho \mathbf{u} \right) + \nabla \cdot \left( \rho \mathbf{u} \mathbf{u} \right) = \rho \mathbf{g} + \nabla \cdot \mathbb{T} \\
- \partial_t \left( \rho e^t \right) + \nabla \cdot \left( \rho e^t \mathbf{u} \right) = \rho \mathbf{g} \cdot \mathbf{u} + \nabla \cdot \left( \mathbb{T} \cdot \mathbf{u} \right) - \nabla \cdot \mathbf{q}
-\end{cases}\end{split}\]</div>
-<p>need</p>
-<ul>
-<li><p>boundary conditions</p></li>
-<li><p><strong>constitutive laws</strong> for relating stress tensor <span class="math notranslate nohighlight">\(\mathbb{T}\)</span> and conductive heat flux <span class="math notranslate nohighlight">\(\mathbf{q}\)</span> to <em>dynamic variables</em> <span class="math notranslate nohighlight">\(\rho\)</span>, <span class="math notranslate nohighlight">\(\mathbf{m} := \rho \mathbf{u}\)</span>, <span class="math notranslate nohighlight">\(E^t := \rho e^t\)</span>. As a common example, stress tensor for <em>Newtonian fluids</em> is the sum of pressure and viscosity stress, and this latter contribution is linear and isotropic w.r.t. first order spatial derivatives of the velocity field<a class="footnote-reference brackets" href="#newton-fluid" id="id2">2</a>,</p>
-<div class="math notranslate nohighlight">
-\[\mathbb{T} = - p \mathbb{I} + \mathbb{S} = - p \mathbb{I} + 2 \mu \mathbb{D} + \lambda \left( \nabla \cdot \mathbf{u} \right) \mathbb{I} \ ,\]</div>
-<p>being <span class="math notranslate nohighlight">\(p\)</span> the pressure field, <span class="math notranslate nohighlight">\(\mathbb{D} = \frac{1}{2} \left[ \nabla \mathbf{u} + \nabla^T \mathbf{u} \right]\)</span> the deformation velocity tensor and <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(\lambda\)</span> the viscosity coefficients. <em>Fourier’s law</em> provides a linear isotropic relation between the conductive heat flux and the temperature gradient</p>
-<div class="math notranslate nohighlight">
-\[\mathbf{q} = - k \nabla T \ .\]</div>
-</li>
-<li><p><strong>state equations</strong>, for relating thermodynamic variables appearing in constitutive laws with <em>dynamic variables</em>. Using constitutive laws for Newtonian fluids and Fourier’s law, there’s a need for state equations relating pressure, temperature and - if not possible to model as constant - viscosity coefficients and heat conductivity,</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="jump-conditions">
+<span id="compressible-jump-conditions"></span><h1><span class="section-number">15. </span>Jump conditions<a class="headerlink" href="#jump-conditions" title="Permalink to this heading">#</a></h1>
+<p>Starting from integral equations</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-     p &amp; = p(\rho, \mathbf{m}, E_t) \\
-     T &amp; = T(\rho, \mathbf{m}, E_t) \\
-       &amp; ...
+  &amp; \dfrac{d}{dt} \int_{v_t} \rho + \oint_{\partial v_t} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = 0 \\
+  &amp; \dfrac{d}{dt} \int_{v_t} \rho \mathbf{u} + \oint_{\partial v_t} \rho \mathbf{u} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{v_t} \rho \mathbf{g}  + \oint_{\partial v_t} \mathbf{t}_{\mathbf{n}} \\
+  &amp; \dfrac{d}{dt} \int_{v_t} \rho e^t + \oint_{\partial v_t} \rho e^t \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{v_t} \rho \mathbf{g} \cdot \mathbf{u}  + \oint_{\partial v_t} \mathbf{t}_{\mathbf{n}} \cdot \mathbf{u} - \oint_{\partial v_t} \mathbf{q} \cdot \hat{\mathbf{n}} \\
+\end{aligned}\end{split}\]</div>
+<p>and collapsing the volume <span class="math notranslate nohighlight">\(v_t\)</span> on one of its dimension, volume contributions become negligible when compared to surface contributions. Jump conditions immeadiately follow, setting <span class="math notranslate nohighlight">\(\hat{\mathbf{n}} = \hat{\mathbf{n}}_2 = - \hat{\mathbf{n}}_1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0          &amp; = [ \rho u^{rel}_n ]  \\
+  \mathbf{0} &amp; = [ \rho \mathbf{u} u^{rel}_n - \mathbf{t}_{\mathbf{n}} ] \\
+  0          &amp; = [ \rho e^t u^{rel}_n + \mathbf{t}_{\mathbf{n}} \cdot \mathbf{u} - \hat{\mathbf{n}} \cdot \mathbf{q} ]  \\
+\end{aligned}\end{split}\]</div>
+<p>Thus <span class="math notranslate nohighlight">\(\rho_1 u_{n,1}^{rel} = \rho_2 u_{n,2}^{rel} = \dot{m}\)</span>, and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0          &amp; = [ \rho u^{rel}_n ]  \\
+  \mathbf{0} &amp; = \dot{m}[ \mathbf{u} ] - [ \mathbf{t}_{\mathbf{n}} ] \\
+  0          &amp; = \dot{m}[ e^t ] + [ \mathbf{t}_{\mathbf{n}} \cdot \mathbf{u} - \hat{\mathbf{n}} \cdot \mathbf{q} ]  \\
+\end{aligned}\end{split}\]</div>
+<p>If viscous streass and conduction heat flux are negligible,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0          &amp; = [ \rho u^{rel}_n ]  \\
+  \mathbf{0} &amp; = \dot{m}[ \mathbf{u} ] + [ p \mathbf{n} ] \\
+  0          &amp; = \dot{m}[ e^t ] + [ p \hat{\mathbf{n}} \cdot \mathbf{u} ] = \\
+             &amp; = \dot{m}[ e^t ] + \left[ \frac{p}{\rho} \underbrace{\hat{\mathbf{n}} \cdot \rho ( \mathbf{u} - \mathbf{u}_s )}_{ \rho u_{n}^{rel} = \dot{m}} + p \hat{\mathbf{n}} \cdot \mathbf{u}_s \right] = \\
+             &amp; = \dot{m} \left[ e^t + \frac{p}{\rho} \right] + [ p \hat{\mathbf{n}} \cdot \mathbf{u}_s ] = \\
+             &amp; = \dot{m} \left[ h^t \right] + \left[ p \right] \, \hat{\mathbf{n}} \cdot \mathbf{u}_s  \\
+\end{aligned}\end{split}\]</div>
+<p>Two main cases are determined by the value of the mass flow <span class="math notranslate nohighlight">\(\dot{m}\)</span>:</p>
+<ul>
+<li><p>if <span class="math notranslate nohighlight">\(\dot{m} = 0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+     &amp; \dot{m} = 0 \\
+     &amp; [ p ] = 0 \ ,
    \end{aligned}\end{split}\]</div>
-<p>Usually internal energy is used in state equations. Mass density of total energy is defined as the sum of internal energy and kinetic energy</p>
+<p>while nothing can be said about the tangential component of the velocity field and the total enthalpy</p>
+</li>
+<li><p>if <span class="math notranslate nohighlight">\(\dot{m} \ne 0\)</span></p>
 <div class="math notranslate nohighlight">
-\[e^t = e + \frac{|\mathbf{u}|^2}{2} \ .\]</div>
+\[\begin{split}\begin{aligned}
+     0 &amp; = [ \dot{m} ] = [ \rho u_{n}^{rel} ]   \\
+     \mathbf{0} &amp; = \dot{m} [ \mathbf{u}_{\mathbf{t}} ]  \\
+     0 &amp; = \dot{m} [ u_n ] + [ \, p \, ]  \\
+     0 &amp; = \dot{m} [ h^t ] + u_{s,n} [ \, p \, ] = \\
+       &amp; = \dot{m} \left[ h^t \right] - u_{s,n} \, \dot{m} \left[ u_n \right] = \\
+       &amp; = \dot{m} \left[ h + \frac{u_n^2 + u_t^2}{2} - u_{s,n} u_n  \right] = \\
+       &amp; = \dot{m} \left[ h + \frac{u_n^2 - 2 u_{s,n} u_n + u_{s,n}^2}{2} - \frac{u_{s,n}^2}{2} + \frac{u_t^2}{2}  \right] = \\
+       &amp; = \dot{m} \left[ h + \frac{(u_n - u_{s,n})^2}{2} - \frac{u_{s,n}^2}{2} + \frac{u_t^2}{2}  \right] = \\
+       &amp; = \dot{m} \left[ h^{t,rel} \right] \ ,
+   \end{aligned}\end{split}\]</div>
+<p>as <span class="math notranslate nohighlight">\(\left[ u_{s,n}^2 \right] = 0\)</span>, and with the definition of the <em>relative total enthalpy</em></p>
+<div class="math notranslate nohighlight">
+\[h^{t,rel} := h + \frac{1}{2} \left( (u_n - u_{s,n})^2 + u_t^2  \right) = h + \frac{1}{2} \left( \left( u_{n}^{rel} \right)^2 + u_t^2 \right) \ . \]</div>
 </li>
 </ul>
-<p>Introducing the constitutive laws and the state equations in Navier-Stokes equations and collecting terms with 1-st order and 2-nd order space derivatives,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{cases}
- \partial_t \rho + \nabla \cdot \left( \rho \mathbf{u} \right) = 0 \\
- \partial_t \left( \rho \mathbf{u} \right) + \nabla \cdot \left( \rho \mathbf{u} \mathbf{u} + p \mathbb{I} \right) = \rho \mathbf{g} + \nabla \cdot \mathbb{S} \\
- \partial_t \left( \rho e^t \right) + \nabla \cdot \left( \rho e^t \mathbf{u} + p \mathbf{u} \right) = \rho \mathbf{g} \cdot \mathbf{u} + \nabla \cdot \left( \mathbb{S} \cdot \mathbf{u} \right) - \nabla \cdot \mathbf{q}
-\end{cases}\end{split}\]</div>
-<p><strong>Euler equations</strong> immediately follow by setting equal to zero the contribution of viscosity and heat conduction, i.e. the terms collecting the 2-nd order space derivatives, those ones that have diffusive nature,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{cases}
- \partial_t \rho + \nabla \cdot \left( \rho \mathbf{u} \right) = 0 \\
- \partial_t \left( \rho \mathbf{u} \right) + \nabla \cdot \left( \rho \mathbf{u} \mathbf{u} + p \mathbb{I} \right) = \rho \mathbf{g} \\
- \partial_t \left( \rho e^t \right) + \nabla \cdot \left( \rho h^t \mathbf{u} \right) = \rho \mathbf{g} \cdot \mathbf{u}
-\end{cases}\end{split}\]</div>
-<p><strong>todo</strong> <em>discuss the hyperbolic mathematical nature of Euler equations, and link to <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/hyperbolic.html">Math:PDEs:Hyperbolic equations</a></em></p>
-<ul class="simple">
-<li><p>Convective form…</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{cases}
- D_t \rho + \rho \nabla \cdot \mathbf{u} = 0 \\
- \rho D_t \mathbf{u} + \nabla p = \rho \mathbf{g} \\
- \rho D_t e^t + \nabla \cdot ( p \mathbf{u} ) = \rho \mathbf{g} \cdot \mathbf{u}
-\end{cases}\end{split}\]</div>
-<ul>
-<li><p>Alternative sets of equations, if differential equations hold (no discontinuities: no shocks,…): internal energy instead of total energy, entropy,…</p>
-<ul>
-<li><p>internal energy, differente of total energy and kinetic energy (momentum equation <span class="math notranslate nohighlight">\(\cdot \mathbf{u}\)</span>):</p>
-<div class="math notranslate nohighlight">
-\[\rho D_t e + p \nabla \cdot \mathbf{u} = 0\]</div>
-</li>
-<li><p>entropy, from the 1-st principle of theromdynamics <span class="math notranslate nohighlight">\(de = T ds + \frac{p}{\rho^2} d \rho\)</span></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-        \rho D_t s
-        &amp; = \frac{\rho}{T} \left[ D_t e - \frac{p}{\rho^2} D_t \rho \right] = \\
-        &amp; = \frac{\rho}{T} \left[ - \frac{p}{\rho} \nabla \cdot \mathbf{u} - \frac{p}{\rho^2} \left( - \rho \nabla \cdot \mathbf{u} \right)  \right] = 0 \ ,
-      \end{aligned}\end{split}\]</div>
-<p>i.e.</p>
-<div class="math notranslate nohighlight">
-\[D_t s = 0\]</div>
-<p><strong>todo</strong> <em><span class="math notranslate nohighlight">\(1)\)</span> entropy and shocks, <span class="math notranslate nohighlight">\(2)\)</span> entropy and vorticity,…</em></p>
-</li>
-</ul>
-</li>
-</ul>
-<div class="section" id="linearized-euler-equations">
-<span id="compressible-acoustics-linearized-euler"></span><h2><span class="section-number">18.1. </span>Linearized Euler equations<a class="headerlink" href="#linearized-euler-equations" title="Permalink to this heading">#</a></h2>
-<p>Linearization around a reference state</p>
-<p>…</p>
-<div class="section" id="uniform-and-steady-reference-state">
-<h3><span class="section-number">18.1.1. </span>Uniform and steady reference state<a class="headerlink" href="#uniform-and-steady-reference-state" title="Permalink to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\(\overline{\rho}, \overline{\mathbf{u}}, \overline{s}\)</span>. Time and space derivatives of the reference state are identically zero, thus Euler equations in convective form</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  &amp; \partial_t \rho + \mathbf{u} \cdot \nabla \rho + \rho \nabla \cdot \mathbf{u} = 0 \\
-  &amp; \rho \partial_t \mathbf{u} + \rho \mathbf{u} \cdot \nabla \mathbf{u} + \nabla p = \rho \mathbf{g} \\
-  &amp; \partial_t s + \mathbf{u} \cdot \nabla s = 0
-\end{aligned}\end{split}\]</div>
-<p>are linearized as</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  &amp; \partial_t \rho' + \mathbf{u} \cdot \nabla \rho' + \rho \nabla \cdot \mathbf{u}' = 0 \\
-  &amp; \rho \partial_t \mathbf{u}' + \rho \mathbf{u} \cdot \nabla \mathbf{u}' + \nabla p' = \rho' \mathbf{g} \\
-  &amp; \partial_t s' + \mathbf{u} \cdot \nabla s' = 0
-\end{aligned}\end{split}\]</div>
-<p>If the entropy is uniform everywhere (also at the boundary, so that no entropy enters from it), its perturbation is identically zero <span class="math notranslate nohighlight">\(s' = 0\)</span>, <span class="math notranslate nohighlight">\(s(\mathbf{r},t) = \overline{s}\)</span>. Thus, for any thermodynamic variable written as function of density and entropy as the pair of independent variable, e.g. pressure <span class="math notranslate nohighlight">\(p(\rho, s)\)</span>, its differential is a function of the differential of the density only, being <span class="math notranslate nohighlight">\(ds = 0\)</span></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  dp
-  &amp; = \left( \frac{\partial p}{\partial \rho} \right)_s d \rho + \left( \frac{\partial p}{\partial s} \right)_\rho \underbrace{d s}_{=0} = \\
-  &amp; = \left( \frac{\partial p}{\partial \rho} \right)_s d \rho = \\
-  &amp; = c^2(\rho, s) \, d\rho \ .
-\end{aligned}\end{split}\]</div>
-<p>Now, for negligible volume forces <span class="math notranslate nohighlight">\(\mathbf{g} = \mathbf{0}\)</span>, and writing <span class="math notranslate nohighlight">\(\nabla p = c^2 \nabla \rho\)</span>, mass and momentum linearized equations read</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  &amp; \partial_t \rho' + \overline{\mathbf{u}} \cdot \nabla \rho' + \overline{\rho} \nabla \cdot \mathbf{u}' = 0 \\
-  &amp; \overline{\rho} \partial_t \mathbf{u}' + \overline{\rho} \overline{\mathbf{u}} \cdot \nabla \mathbf{u}' + c^2(\overline{\rho}, \overline{s}) \nabla \rho' = \mathbf{0} \ .
-\end{aligned}\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  &amp; D^{\overline{\mathbf{u}}}_t \rho' + \overline{\rho} \nabla \cdot \mathbf{u}' = 0 \\
-  &amp; \overline{\rho} D^{\overline{\mathbf{u}}}_t \mathbf{u}' + \overline{c}^2 \nabla \rho' = \mathbf{0} \ .
-\end{aligned}\end{split}\]</div>
-<p>being <span class="math notranslate nohighlight">\(D^{\overline{\mathbf{u}}}_t\)</span> the material time derivative with the reference velocity field,</p>
-<div class="math notranslate nohighlight">
-\[D^{\overline{\mathbf{u}}}_t = \partial_t + \overline{\mathbf{u}} \cdot \nabla \ .\]</div>
-</div>
-<div class="section" id="wave-equations">
-<h3><span class="section-number">18.1.2. </span>Wave equations<a class="headerlink" href="#wave-equations" title="Permalink to this heading">#</a></h3>
-<p>A wave equation for density perturbation <span class="math notranslate nohighlight">\(\rho'(\mathbf{r},t)\)</span> is obtained taking the difference of time derivative of the mass equation and the divergence of momentum equation,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  &amp; D^{\overline{\mathbf{u}}}_{tt} \rho' + \overline{\rho} D^{\overline{\mathbf{u}}}_{t} \nabla \cdot \mathbf{u}' = 0 \\
-  &amp; \overline{\rho} \nabla \cdot D^{\overline{\mathbf{u}}}_t \mathbf{u}' + \overline{c}^2 \nabla^2 \rho' = 0 \ ,
-\end{aligned}\end{split}\]</div>
-<p>it follows</p>
-<div class="math notranslate nohighlight">
-\[\frac{1}{\overline{c}^2} D^{\overline{\mathbf{u}}}_{tt} \rho'- \nabla^2 \rho' = 0 \ .\]</div>
-<p>A wave equation for velocity perturbation <span class="math notranslate nohighlight">\(\mathbf{u}'(\mathbf{r},t)\)</span> is obtained taking the difference of time gradient of the mass equation and the time derivative of momentum equation,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  &amp; \nabla D^{\overline{\mathbf{u}}}_{t} \rho' + \overline{\rho} \nabla \left( \nabla \cdot \mathbf{u}' \right) = 0 \\
-  &amp; \overline{\rho} D^{\overline{\mathbf{u}}}_{tt} \mathbf{u}' + \overline{c}^2 D^{\overline{\mathbf{u}}}_{t} \nabla  \rho' = \mathbf{0} \ ,
-\end{aligned}\end{split}\]</div>
-<p>and using vector identity <span class="math notranslate nohighlight">\(\nabla^2 \mathbf{v} = \nabla \left( \nabla \cdot \mathbf{v} \right) - \nabla \times \nabla \times \mathbf{v}\)</span>, it follows</p>
-<div class="math notranslate nohighlight">
-\[\frac{1}{\overline{c}^2} D^{\overline{\mathbf{u}}}_{tt} \mathbf{u}' - \nabla^2 \mathbf{u}' - \nabla \times \boldsymbol\omega' = \mathbf{0} \ ,\]</div>
-<p>being <span class="math notranslate nohighlight">\(\boldsymbol\omega' = \nabla \times \mathbf{u}'\)</span> the vorticity of the velocity perturbation.</p>
-<p>For isentropic flows, differential of density perturbation <span class="math notranslate nohighlight">\(d \rho'\)</span> can be related to differential of pressure perturbation, <span class="math notranslate nohighlight">\(d \rho' = \frac{1}{\overline{c}^2} dp'\)</span>, so that pressure perturbation field is governed by a wave equation as well.</p>
-<hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="ns-to-euler"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>NS equations are second-order in space due to the diffusive contributions of viscous stress <span class="math notranslate nohighlight">\(\nabla \cdot \mathbb{T} = \nabla \cdot \left[ 2 \mu \nabla^s \mathbf{u} + \lambda \left( \nabla \cdot \mathbf{u} \right) \mathbb{T} \right]\)</span> for Newtonian fluids in momentum equation and heat conduction flux <span class="math notranslate nohighlight">\(-\nabla \cdot \mathbf{q} = \nabla \cdot \left( k \nabla T \right)\)</span> with Fourier law in total energy equation. Boundary conditions needed for the mathematical problem change as well: while NS equations require no-slip boundary conditions apply on solid bodies, <span class="math notranslate nohighlight">\(\mathbf{u} = \mathbf{u}_b\)</span>, Euler equations need only no-penetration boundary conditions <span class="math notranslate nohighlight">\(\mathbf{u} \cdot \hat{\mathbf{n}} = \mathbf{u}_b \cdot \hat{\mathbf{n}}\)</span>.</p>
-</dd>
-<dt class="label" id="newton-fluid"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p><strong>todo</strong> <em>discuss isotropic tensors, or link to <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/tensor-algebra-calculus/algebra-isotropic-tensors.html">Math:Vector and Tensor Algebra and Calculus:Isotropic Tensors</a></em></p>
-</dd>
-</dl>
-</div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -722,13 +616,22 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="steady-2d.html"
+       href="quasi-1d.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">17. </span>Steady 2-dimensional flows</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Quasi-1-dimensional flows</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="characteristics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">successivo</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Characteristics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -736,24 +639,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contenuti
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-euler-equations">18.1. Linearized Euler equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-and-steady-reference-state">18.1.1. Uniform and steady reference state</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-equations">18.1.2. Wave equations</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

@@ -121,6 +121,8 @@ parts:
   - file: ch/compressible/vorticity
   - file: ch/compressible/entropy
   - file: ch/compressible/quasi-1d
+  - file: ch/compressible/jump-conditions
+  - file: ch/compressible/characteristics
   - file: ch/compressible/steady-2d
   - file: ch/compressible/acoustics
 # - caption: Incompressible Fluid Mechanics
