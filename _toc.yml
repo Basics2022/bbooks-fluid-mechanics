@@ -117,10 +117,14 @@ parts:
 - caption: Compressible Fluid Mechanics
   numbered: true
   chapters:
+  - file: ch/compressible/intro
   - file: ch/compressible/bernoulli
   - file: ch/compressible/vorticity
   - file: ch/compressible/entropy
   - file: ch/compressible/quasi-1d
+  - file: ch/compressible/shocks-normal
+  - file: ch/compressible/shocks-oblique
+  - file: ch/compressible/prandtl-meyer
   - file: ch/compressible/jump-conditions
   - file: ch/compressible/characteristics
   - file: ch/compressible/steady-2d

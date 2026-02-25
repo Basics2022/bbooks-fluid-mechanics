@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>18. Characteristics &#8212; Fluid Mechanics</title>
+    <title>Normal shocks &#8212; Fluid Mechanics</title>
   
   
   
@@ -66,13 +66,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/characteristics';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/shock-normal';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="19. Steady 2-dimensional flows" href="steady-2d.html" />
-    <link rel="prev" title="17. Jump conditions" href="jump-conditions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -299,17 +295,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Compressible Fluid Mechanics</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">11. Introduction to Compressible Fluid Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">12. Bernoulli’s theorem in compressible fluid mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vorticity.html">13. Vorticity equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entropy.html">14. Entropy equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quasi-1d.html">15. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="prandtl-meyer.html">16. Expansion fans - Prandtl-Meyer relation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">17. Jump conditions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">18. Characteristics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">19. Steady 2-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acoustics.html">20. Acoustics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">16. Jump conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="characteristics.html">17. Characteristics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">18. Steady 2-dimensional flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acoustics.html">19. Acoustics</a></li>
 </ul>
 
     </div>
@@ -381,7 +376,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/ch/compressible/characteristics.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/ch/compressible/shock-normal.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -398,7 +393,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fch/compressible/characteristics.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fch/compressible/shock-normal.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -428,7 +423,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/compressible/characteristics.md" target="_blank"
+      <li><a href="../../_sources/ch/compressible/shock-normal.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -499,9 +494,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -512,20 +505,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Characteristics</h1>
+    <h1>Normal shocks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contenuti </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady">18.1. Unsteady</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady">18.2. Steady</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -535,99 +519,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="characteristics">
-<span id="compressible-characteristics"></span><h1><span class="section-number">18. </span>Characteristics<a class="headerlink" href="#characteristics" title="Permalink to this heading">#</a></h1>
-<div class="section" id="unsteady">
-<h2><span class="section-number">18.1. </span>Unsteady<a class="headerlink" href="#unsteady" title="Permalink to this heading">#</a></h2>
-<p>Euler equations</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
- 0          &amp; = D_t \rho + \rho \nabla \cdot \mathbf{u}  \\
- \mathbf{0} &amp; = \rho D_t \mathbf{u} + \nabla p  \\
- 0          &amp; = \rho D_t e^t + \nabla \cdot \left( p \mathbf{u} \right)  \ .
-\end{aligned}\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
- 0          &amp; =  \partial_t \rho + \mathbf{u} \cdot \nabla \rho + \rho \nabla \cdot \mathbf{u}  \\
- \mathbf{0} &amp; =  \partial_t \mathbf{u} + \mathbf{u} \cdot \nabla \mathbf{u} + \frac{1}{\rho} \nabla p  \\
- 0          &amp; =  \partial_t e + \mathbf{u} \cdot \nabla e + \frac{p}{\rho} \nabla \cdot \mathbf{u}  \ .
-\end{aligned}\end{split}\]</div>
-<p>with <span class="math notranslate nohighlight">\(p(\rho, e)\)</span>. In Cartesian coordinates</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
- 1     &amp; \cdot &amp; \cdot &amp; \cdot \\
- \cdot &amp; 1     &amp; \cdot &amp; \cdot \\
- \cdot &amp; \cdot &amp; 1     &amp; \cdot \\
- \cdot &amp; \cdot &amp; \cdot &amp; 1     \\
-\end{bmatrix}
-\partial_t \begin{bmatrix} \rho \\ u \\ v \\ e \end{bmatrix} +
-\begin{bmatrix}
-  u &amp; \rho &amp; \cdot &amp; \cdot \\
-  \frac{1}{\rho}\left(\frac{\partial p}{\partial \rho}\right)_e &amp; u     &amp; \cdot &amp; \frac{1}{\rho}\left(\frac{\partial p}{\partial e}\right)_\rho \\
-  \cdot &amp; \cdot &amp; u     &amp; \cdot \\
-  \cdot &amp; \frac{p}{\rho} &amp; \cdot &amp; u     \\
-\end{bmatrix}
-\partial_x \begin{bmatrix} \rho \\ u \\ v \\ e \end{bmatrix} +
-\begin{bmatrix}
-  v &amp; \cdot &amp; \rho &amp; \cdot \\
-  \cdot &amp; v     &amp; \cdot &amp; \cdot \\
-  \frac{1}{\rho}\left(\frac{\partial p}{\partial \rho}\right)_e &amp; \cdot &amp; v     &amp; \frac{1}{\rho}\left(\frac{\partial p}{\partial e}\right)_\rho  \\
-  \cdot &amp; \cdot &amp; \frac{p}{\rho} &amp; v     \\
-\end{bmatrix}
-\partial_y \begin{bmatrix} \rho \\ u \\ v \\ e \end{bmatrix} =
-\begin{bmatrix} 0 \\ 0 \\ 0 \\ 0 \end{bmatrix} \ .
-\end{split}\]</div>
-<p>and looking for curves <span class="math notranslate nohighlight">\(\mathbf{R}(t)\)</span>, s.t. the equations become ODEs, for the function <span class="math notranslate nohighlight">\(\mathbf{U}(t) = \mathbf{u}(\mathbf{R}(s(t)), t)\)</span>. Since</p>
-<div class="math notranslate nohighlight">
-\[d_t \mathbf{U} = \partial_t \mathbf{u} + \frac{d \mathbf{R}}{d s} \frac{d s}{dt} \cdot \nabla \mathbf{u} = \partial_t \mathbf{u} + X'(s) \dot{s} \partial_x \mathbf{u} + Y'(s) \dot{s} \partial_y \mathbf{u} \ ,\]</div>
-<p><strong>todo</strong> <em>Uncomment. Fix and continue</em></p>
-<!--
-it follows
-
-$$\begin{aligned}
-  \mathbf{0}
-  & = \partial_t \mathbf{u}(\mathbf{r},t) + \mathbf{A}_x \partial_x \mathbf{u}(\mathbf{r},t) + \mathbf{A}_y \partial_y \mathbf{u}(\mathbf{r},t) = \\
-  & =  d_t \mathbf{u} + \left[ \mathbf{A}_x - X'(s) \dot{s} \mathbf{I} \right] \partial_x \mathbf{u} + \left[ \mathbf{A}_y - Y'(s) \dot{s} \mathbf{I} \right] \partial_y \mathbf{u} \\
-\end{aligned}$$
-
-$$\begin{aligned}
- \mathbf{0}
- & = \partial_t \mathbf{u} + \mathbf{A}_i \partial_i \mathbf{u} = \\
- & = \partial_t \mathbf{u} + \mathbf{A}_i \hat{\mathbf{e}}_i \cdot \nabla \mathbf{u} = \\
- & = d_t \mathbf{u} - \left[ \dot{\mathbf{R}} - \mathbf{A}_i \hat{\mathbf{e}}_i \right] \cdot \nabla \mathbf{u} = \\
-\end{aligned}$$
-
--->
-</div>
-<div class="section" id="steady">
-<h2><span class="section-number">18.2. </span>Steady<a class="headerlink" href="#steady" title="Permalink to this heading">#</a></h2>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
- 0          &amp; = \mathbf{u} \cdot \nabla \rho + \rho \nabla \cdot \mathbf{u}  \\
- \mathbf{0} &amp; = \mathbf{u} \cdot \nabla \mathbf{u} + \frac{1}{\rho} \nabla p  \\
- 0          &amp; = \mathbf{u} \cdot \nabla e + \frac{p}{\rho} \nabla \cdot \mathbf{u}  \ .
-\end{aligned}\end{split}\]</div>
-<p>with <span class="math notranslate nohighlight">\(p(\rho, e)\)</span>. In Cartesian coordinates</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-  u &amp; \rho &amp; \cdot &amp; \cdot \\
-  \frac{1}{\rho}\left(\frac{\partial p}{\partial \rho}\right)_e &amp; u     &amp; \cdot &amp; \frac{1}{\rho}\left(\frac{\partial p}{\partial e}\right)_\rho \\
-  \cdot &amp; \cdot &amp; u     &amp; \cdot \\
-  \cdot &amp; \frac{p}{\rho} &amp; \cdot &amp; u     \\
-\end{bmatrix}
-\partial_x \begin{bmatrix} \rho \\ u \\ v \\ e \end{bmatrix} +
-\begin{bmatrix}
-  v &amp; \cdot &amp; \rho &amp; \cdot \\
-  \cdot &amp; v     &amp; \cdot &amp; \cdot \\
-  \frac{1}{\rho}\left(\frac{\partial p}{\partial \rho}\right)_e &amp; \cdot &amp; v     &amp; \frac{1}{\rho}\left(\frac{\partial p}{\partial e}\right)_\rho  \\
-  \cdot &amp; \cdot &amp; \frac{p}{\rho} &amp; v     \\
-\end{bmatrix}
-\partial_y \begin{bmatrix} \rho \\ u \\ v \\ e \end{bmatrix} =
-\begin{bmatrix} 0 \\ 0 \\ 0 \\ 0 \end{bmatrix} \ .
-\end{split}\]</div>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="normal-shocks">
+<span id="compressible-shocks-normal"></span><h1>Normal shocks<a class="headerlink" href="#normal-shocks" title="Permalink to this heading">#</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -660,45 +553,12 @@ $$\begin{aligned}
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="jump-conditions.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">17. </span>Jump conditions</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="steady-2d.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">19. </span>Steady 2-dimensional flows</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contenuti
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady">18.1. Unsteady</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady">18.2. Steady</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
