@@ -246,7 +246,38 @@ $$
   \begin{bmatrix} - \rho u \frac{\partial_z A}{A} \\ 0 \\ 0  \end{bmatrix} \ .
 $$
 
+The derivative $(\partial_\rho p)_s = a^2$ is the square of the speed of sound, as its meaning becomes clear in the spectrum of the convection matrix.
 These equations looks like 1-dimensional Euler equations for compressible ideal flows, with the exception that a non-uniform section of the stream-tube acts as a source term in mass equation.
+
+**Spectrum - eigenvalues.**
+
+$$0 = |\mathbf{A}(\mathbf{u}) - s \mathbf{I}| = ( u - s )^3 - ( u - s ) a^2 \ ,$$
+
+i.e.
+
+$$s_{1,3} = u \mp a \quad , \quad s_2 = u \ .$$
+
+**Right eigenvectors**
+
+$$
+\mathbf{R} = 
+\begin{bmatrix}
+ \rho  & \rho  & \rho  \\
+ -a    & \cdot & a     \\
+ \cdot & - \frac{\rho a^2}{(\partial_s p)_{\rho}} & \cdot 
+\end{bmatrix}
+$$
+
+**Left eigenvectors**
+
+$$
+\mathbf{L} = 
+\begin{bmatrix}
+ \frac{1}{2 \rho}  & - \frac{1}{2 a}  &  \frac{(\partial_s p)_\rho}{2 \rho a^2}  \\
+ \cdot             &           \cdot  & -\frac{(\partial_s p)_\rho}{  \rho a^2}  \\
+ \frac{1}{2 \rho}  &   \frac{1}{2 a}  &  \frac{(\partial_s p)_\rho}{2 \rho a^2}  \\
+\end{bmatrix}
+$$
 
 
 ```
