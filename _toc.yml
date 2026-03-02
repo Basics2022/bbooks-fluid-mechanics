@@ -121,10 +121,12 @@ parts:
   - file: ch/compressible/bernoulli
   - file: ch/compressible/vorticity
   - file: ch/compressible/entropy
-  - file: ch/compressible/quasi-1d
-  - file: ch/compressible/shocks-normal
-  - file: ch/compressible/shocks-oblique
-  - file: ch/compressible/prandtl-meyer
+  - file: ch/compressible/canonical-flows
+    sections:
+    - file: ch/compressible/quasi-1d
+    - file: ch/compressible/shock-normal
+    - file: ch/compressible/shock-oblique
+    - file: ch/compressible/prandtl-meyer
   - file: ch/compressible/jump-conditions
   - file: ch/compressible/characteristics
   - file: ch/compressible/steady-2d

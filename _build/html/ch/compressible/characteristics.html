@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>18. Characteristics &#8212; Fluid Mechanics</title>
+    <title>17. Characteristics &#8212; Fluid Mechanics</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/characteristics';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="19. Steady 2-dimensional flows" href="steady-2d.html" />
-    <link rel="prev" title="17. Jump conditions" href="jump-conditions.html" />
+    <link rel="next" title="18. Steady 2-dimensional flows" href="steady-2d.html" />
+    <link rel="prev" title="16. Jump conditions" href="jump-conditions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -304,12 +304,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">12. Bernoulli’s theorem in compressible fluid mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vorticity.html">13. Vorticity equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entropy.html">14. Entropy equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quasi-1d.html">15. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="prandtl-meyer.html">16. Expansion fans - Prandtl-Meyer relation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">17. Jump conditions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">18. Characteristics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">19. Steady 2-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acoustics.html">20. Acoustics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="canonical-flows.html">15. Canonical flows</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">15.1. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">15.2. Expansion fans - Prandtl-Meyer relation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">16. Jump conditions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">17. Characteristics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">18. Steady 2-dimensional flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acoustics.html">19. Acoustics</a></li>
 </ul>
 
     </div>
@@ -522,8 +525,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady">18.1. Unsteady</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady">18.2. Steady</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady">17.1. Unsteady</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady">17.2. Steady</a></li>
 </ul>
             </nav>
         </div>
@@ -536,9 +539,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="characteristics">
-<span id="compressible-characteristics"></span><h1><span class="section-number">18. </span>Characteristics<a class="headerlink" href="#characteristics" title="Permalink to this heading">#</a></h1>
+<span id="compressible-characteristics"></span><h1><span class="section-number">17. </span>Characteristics<a class="headerlink" href="#characteristics" title="Permalink to this heading">#</a></h1>
 <div class="section" id="unsteady">
-<h2><span class="section-number">18.1. </span>Unsteady<a class="headerlink" href="#unsteady" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.1. </span>Unsteady<a class="headerlink" href="#unsteady" title="Permalink to this heading">#</a></h2>
 <p>Euler equations</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -601,7 +604,7 @@ $$\begin{aligned}
 -->
 </div>
 <div class="section" id="steady">
-<h2><span class="section-number">18.2. </span>Steady<a class="headerlink" href="#steady" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">17.2. </span>Steady<a class="headerlink" href="#steady" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
  0          &amp; = \mathbf{u} \cdot \nabla \rho + \rho \nabla \cdot \mathbf{u}  \\
@@ -666,7 +669,7 @@ $$\begin{aligned}
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">17. </span>Jump conditions</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Jump conditions</p>
       </div>
     </a>
     <a class="right-next"
@@ -674,7 +677,7 @@ $$\begin{aligned}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">19. </span>Steady 2-dimensional flows</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>Steady 2-dimensional flows</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -693,8 +696,8 @@ $$\begin{aligned}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady">18.1. Unsteady</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady">18.2. Steady</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady">17.1. Unsteady</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady">17.2. Steady</a></li>
 </ul>
   </nav></div>
 

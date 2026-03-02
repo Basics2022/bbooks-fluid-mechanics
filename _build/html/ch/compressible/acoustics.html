@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>20. Acoustics &#8212; Fluid Mechanics</title>
+    <title>19. Acoustics &#8212; Fluid Mechanics</title>
   
   
   
@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/acoustics';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="prev" title="19. Steady 2-dimensional flows" href="steady-2d.html" />
+    <link rel="prev" title="18. Steady 2-dimensional flows" href="steady-2d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -303,12 +303,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">12. Bernoulli’s theorem in compressible fluid mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vorticity.html">13. Vorticity equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entropy.html">14. Entropy equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quasi-1d.html">15. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="prandtl-meyer.html">16. Expansion fans - Prandtl-Meyer relation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">17. Jump conditions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="characteristics.html">18. Characteristics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">19. Steady 2-dimensional flows</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">20. Acoustics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="canonical-flows.html">15. Canonical flows</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">15.1. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">15.2. Expansion fans - Prandtl-Meyer relation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">16. Jump conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="characteristics.html">17. Characteristics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">18. Steady 2-dimensional flows</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">19. Acoustics</a></li>
 </ul>
 
     </div>
@@ -521,9 +524,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-euler-equations">20.1. Linearized Euler equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-and-steady-reference-state">20.1.1. Uniform and steady reference state</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-equations">20.1.2. Wave equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-euler-equations">19.1. Linearized Euler equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-and-steady-reference-state">19.1.1. Uniform and steady reference state</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-equations">19.1.2. Wave equations</a></li>
 </ul>
 </li>
 </ul>
@@ -538,7 +541,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="acoustics">
-<span id="compressible-acoustics"></span><h1><span class="section-number">20. </span>Acoustics<a class="headerlink" href="#acoustics" title="Permalink to this heading">#</a></h1>
+<span id="compressible-acoustics"></span><h1><span class="section-number">19. </span>Acoustics<a class="headerlink" href="#acoustics" title="Permalink to this heading">#</a></h1>
 <p>Assuming negligible viscosity and conductivity, Navier-Stokes equations for compressible fluids become Euler equations<a class="footnote-reference brackets" href="#ns-to-euler" id="id1">1</a></p>
 <p>The conservative form of Navier-Stokes equations</p>
 <div class="math notranslate nohighlight">
@@ -616,11 +619,11 @@ document.write(`
 </li>
 </ul>
 <div class="section" id="linearized-euler-equations">
-<span id="compressible-acoustics-linearized-euler"></span><h2><span class="section-number">20.1. </span>Linearized Euler equations<a class="headerlink" href="#linearized-euler-equations" title="Permalink to this heading">#</a></h2>
+<span id="compressible-acoustics-linearized-euler"></span><h2><span class="section-number">19.1. </span>Linearized Euler equations<a class="headerlink" href="#linearized-euler-equations" title="Permalink to this heading">#</a></h2>
 <p>Linearization around a reference state</p>
 <p>…</p>
 <div class="section" id="uniform-and-steady-reference-state">
-<h3><span class="section-number">20.1.1. </span>Uniform and steady reference state<a class="headerlink" href="#uniform-and-steady-reference-state" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">19.1.1. </span>Uniform and steady reference state<a class="headerlink" href="#uniform-and-steady-reference-state" title="Permalink to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\overline{\rho}, \overline{\mathbf{u}}, \overline{s}\)</span>. Time and space derivatives of the reference state are identically zero, thus Euler equations in convective form</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -659,7 +662,7 @@ document.write(`
 \[D^{\overline{\mathbf{u}}}_t = \partial_t + \overline{\mathbf{u}} \cdot \nabla \ .\]</div>
 </div>
 <div class="section" id="wave-equations">
-<h3><span class="section-number">20.1.2. </span>Wave equations<a class="headerlink" href="#wave-equations" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">19.1.2. </span>Wave equations<a class="headerlink" href="#wave-equations" title="Permalink to this heading">#</a></h3>
 <p>A wave equation for density perturbation <span class="math notranslate nohighlight">\(\rho'(\mathbf{r},t)\)</span> is obtained taking the difference of time derivative of the mass equation and the divergence of momentum equation,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -729,7 +732,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">19. </span>Steady 2-dimensional flows</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>Steady 2-dimensional flows</p>
       </div>
     </a>
 </div>
@@ -747,9 +750,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-euler-equations">20.1. Linearized Euler equations</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-and-steady-reference-state">20.1.1. Uniform and steady reference state</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-equations">20.1.2. Wave equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-euler-equations">19.1. Linearized Euler equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-and-steady-reference-state">19.1.1. Uniform and steady reference state</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-equations">19.1.2. Wave equations</a></li>
 </ul>
 </li>
 </ul>

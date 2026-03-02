@@ -1,6 +1,10 @@
 (compressible:prandtl-meyer)=
 # Expansion fans - Prandtl-Meyer relation
 
+**todo** *Describe flow domain and conditions: supersonic inflow...*
+
+---
+
 Under the assumptions of:
 
 1. ideal flow - negligible viscosity and heat conduction
@@ -8,6 +12,8 @@ Under the assumptions of:
 3. uniform entropy and zero vorticity at the inflow of the domain
 
 the flow in the whole domain is **homoentropic**, $s(\mathbf{r}, t) = \overline{s}$, and **irrotational**, $\boldsymbol\omega(\mathbf{r},t) = \mathbf{0}$.
+
+Under the additional assumption of steady flow and uniform conditions at inflow, the flow is **homo-total-enthalpic**, i.e. $h^t(\mathbf{r}) = \overline{h}^t$.
 
 ```{dropdown} Entropy
 
@@ -55,6 +61,35 @@ This equation is formally the same as the vorticity equation for incompressible 
 
 ```
 
+```{dropdown} Total enthalpy - steady flow
+
+The differential form of total energy equation reads
+
+$$\rho \partial_t e^t + \rho \mathbf{u} \cdot \nabla e^t = \rho \mathbf{g} \cdot \mathbf{u} + \nabla \cdot \left( \mathbb{T} \cdot \mathbf{u} \right) - \nabla \cdot \mathbf{q} \ ,$$
+
+with the stress tensor of a Newtonian fluid $\mathbb{T} = - p \mathbb{I} + \mathbb{S}$, and the viscous stress tensor $\mathbb{S} = 2 \mu \mathbb{D} + \lambda \left( \nabla \cdot \mathbf{u} \right) \mathbb{I}$. For an ideal flow, $\mathbb{S} = \mathbb{0}$, $\mathbf{q} = \mathbf{0}$. If volume force is negligible, $\mathbf{g}=\mathbf{0}$. Under these assumptions, 
+
+$$\begin{aligned}
+  \rho \partial_t e^t + \rho \mathbf{u} \cdot \nabla e^t
+  & = - \nabla \cdot ( p \mathbf{u} ) = \\
+  & = - \mathbf{u} \cdot \nabla p - p \nabla \cdot \mathbf{u} = \\
+  & = - \rho \mathbf{u} \cdot \frac{ \nabla p }{\rho} - \frac{p}{\rho} \left( - \partial_t \rho - \mathbf{u} \cdot \nabla \rho \right) = \\
+  & = \frac{p}{\rho} \partial_t \rho - \rho \mathbf{u} \cdot \left[ \frac{\nabla p}{\rho} - \frac{p}{\rho^2} \nabla \rho \right] = \\ 
+  & = \frac{p}{\rho} \partial_t \rho - \rho \mathbf{u} \cdot \nabla \left( \frac{p}{\rho} \right) \ ,
+\end{aligned}$$
+
+or
+
+$$-\rho \left[ \partial_t e^t - \frac{p}{\rho^2} \partial_t \rho \right] = \rho \mathbf{u} \cdot \nabla h^t \ ,$$
+
+with the total enthalpy $h^t = e^t + \frac{p}{\rho}$. Under steady conditons, $\partial_t \equiv 0$, it follows that
+
+$$ \rho \mathbf{u} \cdot \nabla h^t = 0 \ ,$$
+
+i.e. the total enthalpy is constant on every trajectory. If the physical quantities are uniform at the inflow, total enthalpy is uniform in the whole domain, and not only on every individual trajectory, i.e. the flow is **homo-total-enthalpic**.
+
+```
+
 Under these assumptions, the governing equations of the flow are the homoentropic Euler equations, i.e. in convective form using $\rho, \mathbf{u}$ as the dynamical variables
 
 $$\begin{aligned}
@@ -62,9 +97,10 @@ $$\begin{aligned}
   & \rho D_t \mathbf{u} + a^2(\rho, \overline{s}) \nabla \rho = \mathbf{0} \ ,
 \end{aligned}$$
 
-with the constraint $s(\mathbf{r}, t) = \mathbf{0}$, and a constitutive equation to write the speed of sound as a function of the independent thermodynamic variables. As the entropy is uniform, it can be treated as a parameter, so that there's need for only one independent thermodynamic variable, here $\rho$. All the other thermodynamic variables can be evaluated a posteriori, once the density field is known as $f(\mathbf{r},t) = f(\rho(\mathbf{r},t), \overline{s})$, with the notational abuse of using $f$ for the same physical quantity, but for functions with different arguments.
+with the constraint $s(\mathbf{r}, t) = \overline{s}$, and a constitutive equation to write the speed of sound as a function of the independent thermodynamic variables. As the entropy is uniform, it can be treated as a parameter, so that there's need for only one independent thermodynamic variable, here $\rho$. All the other thermodynamic variables can be evaluated a posteriori, once the density field is known as $f(\mathbf{r},t) = f(\rho(\mathbf{r},t), \overline{s})$, with the notational abuse of using $f$ for the same physical quantity, but for functions with different arguments.
 
-```{prf:example} Perfect ideal gas
+```{prf:example} Speed of sound - Perfect ideal gas
+:class: dropdown
 
 For a perfect ideal gas,
 
@@ -92,7 +128,9 @@ $$\begin{aligned}
 
 so that the speed of sound is 
 
-$$a^2(\rho, s) = \left( \frac{\partial p}{\partial \rho} \right)_s = \gamma R T(\rho, s) \ .$$
+$$a^2(\rho, s) = \left( \frac{\partial p}{\partial \rho} \right)_s = \gamma R T(\rho, s) = \gamma R \rho^{\gamma-1} e^{\frac{s}{c_v}} \frac{T_0}{\rho_0^{\gamma-1}} e^{-\frac{s_0}{c_v}} \ ,$$
+
+having used the relations derived below for a perfect ideal gas.
 
 Meyer relation and heat coefficient ratio used above are
 
@@ -107,12 +145,81 @@ $$\begin{aligned}
   \frac{c_v}{R} & = \frac{1}{\gamma - 1} \\
   \frac{c_p}{R} & = \frac{\gamma}{\gamma - 1} \\
 \end{aligned}$$
+
+Dividing the expression of the differential of pressure $dp(s, \rho)$ by $p$, and using the equation of state of ideal gas with constant heat coefficients, 
+
+$$\frac{dp}{p} = \frac{1}{c_v} d s + \gamma \frac{d \rho}{\rho} \ ,$$
+
+and after integration w.r.t. a reference state $0$
+
+$$\begin{aligned}
+  \ln \frac{p}{p_0} & = \frac{1}{c_v} \left( s - s_0 \right) + \gamma \ln \frac{\rho}{\rho_0} \\
+  \ln \left\{ \left( \frac{p}{p_0} \right) \left( \frac{\rho}{\rho_0} \right)^{-\gamma} \right\} & = \frac{s - s_0}{c_v} \\
+  \frac{p \rho^{-\gamma}}{p_0 \rho_0^{-\gamma}} & = e^{ \frac{s-s_0}{c_v} } \\
+\end{aligned}$$
+
+or with $p = \rho R T$
+
+$$\begin{aligned}
+  \frac{T \rho^{1-\gamma}}{T_0 \rho_0^{1-\gamma}} & = e^{ \frac{s-s_0}{c_v} } \\
+  \frac{T}{T_0} & = \left(\frac{\rho}{\rho_0}\right)^{\gamma-1} e^{ \frac{s-s_0}{c_v} } \\
+  T(\rho, s) & = \rho^{\gamma-1} e^{\frac{s}{c_v}} \frac{T_0}{\rho_0^{\gamma-1}} e^{-\frac{s_0}{c_v}}
+\end{aligned}$$
+
+
+
+
+
 ```
+
+
+## Method of characteristics
 
 - Link to [Method of characteristics:Homoentropic inviscid compressible flows - 2d](https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/characteristics.html#euler-equations-for-homoentropic-inviscid-compressible-flows-2d)
 
+A steady expansion fan at a sharp corner connects two regions of the domain with supersonic flow and homogeneous characteristics. Let $1$ be the inflow homogeneous region and $2$ the outflow homogeneous region.
 
+In a 2-dimensional domain there are three families of characteristic lines.
 
+...
 
-A steady expansion fan at a sharp corner connects to regions of the domain with homogeneous properties, with supersonic flows.
+**todo** *Direction of characteristic lines...*
+
+On characteristic lines the following compatibility equations hold
+
+$$\begin{aligned}
+  & \ell_{1,3}: \ \frac{\sqrt{M^2-1}}{M^2} \frac{\partial_{\tau} \rho}{\rho} \mp \partial_{\tau} \theta \\
+  & \ell_{2  }: \ \frac{1}{\rho} \partial_{\tau} p + \partial_{\tau} \frac{V^2}{2} \ ,
+\end{aligned}$$
+
+being $V = |\mathbf{u}|$. Some characteristic lines of family $1$ and $2$ start from inflow homogeneous region and reach outflow homogeneous region. The compatibility equation on characteristic lines of family $2$ is nothing but the directional derivative of the total enthalpy along streamlines.
+
+```{dropdown} $d h$
+:open:
+
+$$\begin{aligned}
+  d h = T ds + \frac{d p }{\rho}
+  & = T ds + \frac{1}{\rho} \left[ (\partial_\rho p)_s d \rho + (\partial_s p)_\rho d s \right] = \\
+  & = \frac{a^2}{\rho} d \rho + \left( T + \frac{1}{\rho} (\partial_s p)_\rho \right) ds \ ,
+\end{aligned}$$
+
+and for homoentropic flows, 
+
+$$d h = \frac{dp}{\rho} = \frac{a^2}{\rho} d \rho \ .$$
+
+```
+
+```{dropdown} Total enthalpy on streamlines, or $\, \ell_2 \,$ characteristic lines
+:open:
+
+If $h^t(\mathbf{r}) = \overline{h^t}$ uniform, then
+
+$$\mathbf{0} = \nabla h^t = \nabla h + V \nabla V = \left( \partial_\rho h \right)_s \nabla \rho + \left( \partial_s h \right)_\rho \nabla s + V \nabla V \ ,$$
+
+and for homoentropic flows, $\nabla s = 0$,
+
+$$\mathbf{0} = \nabla h^t = \frac{\nabla p}{\rho} + V \nabla V = \frac{a^2}{\rho} \nabla \rho + V \nabla V \ . $$
+
+```
+
 

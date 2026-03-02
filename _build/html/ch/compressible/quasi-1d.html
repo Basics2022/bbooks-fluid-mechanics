@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15. Quasi-1-dimensional flows &#8212; Fluid Mechanics</title>
+    <title>15.1. Quasi-1-dimensional flows &#8212; Fluid Mechanics</title>
   
   
   
@@ -66,11 +66,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/quasi-1d';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="16. Jump conditions" href="jump-conditions.html" />
-    <link rel="prev" title="14. Entropy equation" href="entropy.html" />
+    <link rel="next" title="15.2. Normal shocks" href="shock-normal.html" />
+    <link rel="prev" title="15. Canonical flows" href="canonical-flows.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -302,7 +304,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">12. Bernoulli’s theorem in compressible fluid mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vorticity.html">13. Vorticity equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entropy.html">14. Entropy equation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="canonical-flows.html">15. Canonical flows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.1. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-normal.html">15.2. Normal shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">15.3. Oblique shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">15.4. Expansion fans - Prandtl-Meyer relation</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">16. Jump conditions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="characteristics.html">17. Characteristics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="steady-2d.html">18. Steady 2-dimensional flows</a></li>
@@ -519,7 +527,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-flows">15.1. Steady flows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-flow">15.1.1. Steady flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mach-dependence">15.1.1.1. Mach dependence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady-flow">15.1.2. Unsteady flow</a></li>
 </ul>
             </nav>
         </div>
@@ -532,12 +544,257 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="quasi-1-dimensional-flows">
-<span id="compressible-quasi-1d"></span><h1><span class="section-number">15. </span>Quasi-1-dimensional flows<a class="headerlink" href="#quasi-1-dimensional-flows" title="Permalink to this heading">#</a></h1>
-<p><strong>Assumptions.</strong> Whenever no explict assumption is made in this section, the following assumptions are made: cylindrical symmetry of streamtube; negligible radial velocity component; no azimuthal component; uniform properties on each section of the stream tube; negligible viscous and conductivity;…</p>
-<div class="section" id="steady-flows">
-<span id="compressible-quasi-1d-steady"></span><h2><span class="section-number">15.1. </span>Steady flows<a class="headerlink" href="#steady-flows" title="Permalink to this heading">#</a></h2>
-<p><strong>Differential equations.</strong></p>
+<span id="compressible-quasi-1d"></span><h1><span class="section-number">15.1. </span>Quasi-1-dimensional flows<a class="headerlink" href="#quasi-1-dimensional-flows" title="Permalink to this heading">#</a></h1>
+<p><strong>Assumptions.</strong> Whenever no explict assumption is made in this section, the following assumptions are made:</p>
+<ul class="simple">
+<li><p>uniform properties on each section of the stream tube</p></li>
+<li><p>negligible viscous and conductivity (non-ideal flows: friction-dominated (Fanno), with heat transfer (Rayleigh))</p></li>
+<li><p>negligible radial velocity component</p></li>
+<li><p>no azimuthal component</p></li>
+<li><p><em>cylindrical symmetry of streamtube</em></p></li>
+</ul>
+<div class="section" id="steady-flow">
+<span id="compressible-quasi-1d-steady"></span><h2><span class="section-number">15.1.1. </span>Steady flow<a class="headerlink" href="#steady-flow" title="Permalink to this heading">#</a></h2>
+<p><strong>Integral balance equations.</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \dfrac{d}{dt} \int_{v_t} \rho + \oint_{\partial v_t} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = 0 \\
+  &amp; \dfrac{d}{dt} \int_{v_t} \rho \mathbf{u} + \oint_{\partial v_t} \rho \mathbf{u} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{v_t} \rho \mathbf{g}  + \oint_{\partial v_t} \mathbf{t}_{\mathbf{n}} \\
+  &amp; \dfrac{d}{dt} \int_{v_t} \rho e^t + \oint_{\partial v_t} \rho e^t \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{v_t} \rho \mathbf{g} \cdot \mathbf{u}  + \oint_{\partial v_t} \mathbf{t}_{\mathbf{n}} \cdot \mathbf{u} - \oint_{\partial v_t} \mathbf{q} \cdot \hat{\mathbf{n}} \\
+\end{aligned}\end{split}\]</div>
+<p>For a control volume <span class="math notranslate nohighlight">\(v_t = V\)</span> at rest, <span class="math notranslate nohighlight">\(\mathbf{u}_b = \mathbf{0}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{u}^{rel} = \mathbf{u}\)</span>. Neglecting the volume force <span class="math notranslate nohighlight">\(\mathbf{g} = \mathbf{0}\)</span>, and integrating over an elementary control volume <span class="math notranslate nohighlight">\(\Delta V\)</span> cutting a streamtube at coordinates <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(z + \Delta z\)</span>, under steady conditions</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \oint_{\partial \Delta V} \rho \mathbf{u} \cdot \hat{\mathbf{n}} = 0 \\
+  &amp; \oint_{\partial \Delta V} \rho \mathbf{u} \mathbf{u} \cdot \hat{\mathbf{n}} = \oint_{\partial \Delta V} \mathbf{t}_{\mathbf{n}} \\
+  &amp; \oint_{\partial \Delta V} \rho e^t \mathbf{u} \cdot \hat{\mathbf{n}} = \oint_{\partial \Delta V} \mathbf{t}_{\mathbf{n}} \cdot \mathbf{u}
+\end{aligned}\end{split}\]</div>
+<p><strong>Differential equations.</strong>
+Assuming uniform properties on each section,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \dfrac{d}{dz} \left( \rho u A \right) = 0 \\
+  &amp; \dfrac{d}{dz} \left( \rho u^2 A + p A \right) - p A' = 0 \\
+  &amp; \dfrac{d}{dz} \left[ \rho \left( e^t + \frac{p}{\rho} \right) u A \right] = 0 \ .
+\end{aligned}\end{split}\]</div>
+<p>Thus, momentum equation can be recast as</p>
+<div class="math notranslate nohighlight">
+\[0 = \left( \rho u^2 A \right)' + p' A \ .\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Momentum equation<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbf{0} 
+  &amp; = \oint_{\partial \Delta V} \rho \mathbf{u} \mathbf{u} \cdot \hat{\mathbf{n}} - \oint_{\partial \Delta V} \mathbf{t}_{\mathbf{n}} = \\
+  &amp; = \int_{A(z)} \rho \mathbf{u} \mathbf{u} \cdot \hat{\mathbf{n}} + p \hat{\mathbf{n}} + \int_{A(z+\Delta z)} \rho \mathbf{u} \mathbf{u} \cdot \hat{\mathbf{n}} + p \hat{\mathbf{n}} + \int_{\Delta A^{lat}} p \hat{\mathbf{n}} \ .
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">For 2-dimensional flows,</p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{z}} \cdot \int_{\Delta A^{lat}} p \hat{\mathbf{n}} = - \Delta z \int_{\ell^{lat}} p \hat{\mathbf{n}} \cdot \hat{\mathbf{z}} \simeq - \Delta z \, p \, \frac{A'(z) \Delta z}{\Delta z} = - p(z) A'(z) \Delta z \ . \]</div>
+<p class="sd-card-text">For 3-dimensional flows,…</p>
 </div>
+</details><p>Using mass equation, <span class="math notranslate nohighlight">\(( \rho u A )' = 0\)</span>, <span class="math notranslate nohighlight">\(\rho u A =: \dot{m}\)</span>, momentum and total energy equations become</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \rho u A u' + p' A = 0 \\
+  &amp; \rho u A h^{t \, '} = 0 \ ,
+\end{aligned}\end{split}\]</div>
+<p>or, simplifying momentum equation for the area of the section of the stream-tube and total energy equation for a mass flux <span class="math notranslate nohighlight">\(\dot{m} \ne 0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \rho u u' + p' = 0 \\
+  &amp; h^{t \, '} = 0 \ .
+\end{aligned}\end{split}\]</div>
+<div class="section" id="mach-dependence">
+<h3><span class="section-number">15.1.1.1. </span>Mach dependence<a class="headerlink" href="#mach-dependence" title="Permalink to this heading">#</a></h3>
+<p>Subsonic and supersonic flows show different behavior. If the differential equations hold (no shock, homoentropic flow, <span class="math notranslate nohighlight">\(ds = 0\)</span>), pressure derivative is proportional to density derivative through the square of the speed of sound,</p>
+<div class="math notranslate nohighlight">
+\[d p = a^2(\rho, \overline{s}) d \rho \ .\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \frac{A'}{A}
+  &amp; = \left( M^2 - 1 \right) \frac{u'}{u}         \\
+  &amp; = - \frac{ M^2 - 1 }{M^2} \frac{\rho'}{\rho}  \\
+\end{aligned}\end{split}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Details<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Thus,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0 &amp; = \rho u u' + a^2 \rho' &amp;&amp; \text{(momentum)} \\
+  0 &amp; = \frac{\rho'}{\rho} + \frac{u'}{u} + \frac{A'}{A} &amp;&amp; \text{(mass)} \\
+    &amp; = - \frac{u u'}{a^2} + \frac{u'}{u} + \frac{A'}{A} \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">and thus</p>
+<ul>
+<li><p class="sd-card-text"><strong>velocity</strong></p>
+<div class="math notranslate nohighlight">
+\[\left( M^2 - 1 \right) \frac{u'}{u} = \frac{A'}{A} \ .\]</div>
+<p class="sd-card-text">Thus,</p>
+<ul class="simple">
+<li><p class="sd-card-text">in a subsonic   flow <span class="math notranslate nohighlight">\(M &lt; 1\)</span>, velocity increases as the section of the stream-tube decreases</p></li>
+<li><p class="sd-card-text">in a supersonic flow <span class="math notranslate nohighlight">\(M &gt; 1\)</span>, velocity increases as the section of the stream-tube increases</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>density</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+     \frac{\rho'}{\rho} &amp; = - \frac{u^2}{a^2} \frac{u'}{u} \\
+     - \frac{M^2 - 1}{M^2} \frac{\rho'}{\rho} &amp; = - \frac{A'}{A} \\
+   \end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Thus,</p>
+<ul class="simple">
+<li><p class="sd-card-text">in a subsonic   flow <span class="math notranslate nohighlight">\(M &lt; 1\)</span>, density decreases as the section of the stream-tube decreases</p></li>
+<li><p class="sd-card-text">in a supersonic flow <span class="math notranslate nohighlight">\(M &gt; 1\)</span>, density decreases as the section of the stream-tube increases</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>pressure</strong></p>
+<p class="sd-card-text">…</p>
+</li>
+<li><p class="sd-card-text"><strong>temperature</strong></p>
+<p class="sd-card-text">…</p>
+</li>
+</ul>
+</div>
+</details></div>
+</div>
+<div class="section" id="unsteady-flow">
+<span id="compressible-quasi-1d-unsteady"></span><h2><span class="section-number">15.1.2. </span>Unsteady flow<a class="headerlink" href="#unsteady-flow" title="Permalink to this heading">#</a></h2>
+<p><strong>todo</strong> <em>For a generic control volume <span class="math notranslate nohighlight">\(v_t\)</span>… It could be useful for mechanical/multi-field system dynamics…</em></p>
+<p><strong>Integral equations.</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \dfrac{d}{dt} \int_{v_t} \rho + \oint_{\partial v_t} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = 0 \\
+  &amp; \dfrac{d}{dt} \int_{v_t} \rho \mathbf{u} + \oint_{\partial v_t} \rho \mathbf{u} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{v_t} \rho \mathbf{g}  + \oint_{\partial v_t} \mathbf{t}_{\mathbf{n}} \\
+  &amp; \dfrac{d}{dt} \int_{v_t} \rho e^t + \oint_{\partial v_t} \rho e^t \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{v_t} \rho \mathbf{g} \cdot \mathbf{u}  + \oint_{\partial v_t} \mathbf{t}_{\mathbf{n}} \cdot \mathbf{u} - \oint_{\partial v_t} \mathbf{q} \cdot \hat{\mathbf{n}} \\
+\end{aligned}\end{split}\]</div>
+<p>For a control volume <span class="math notranslate nohighlight">\(v_t = V\)</span> at rest, <span class="math notranslate nohighlight">\(\mathbf{u}_b = \mathbf{0}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{u}^{rel} = \mathbf{u}\)</span>. Neglecting the volume force <span class="math notranslate nohighlight">\(\mathbf{g} = \mathbf{0}\)</span>, and integrating over an elementary control volume <span class="math notranslate nohighlight">\(\Delta V\)</span> cutting a streamtube at coordinates <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(z + \Delta z\)</span>, under steady conditions</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \frac{d}{dt} \int_{\Delta V} \rho + \oint_{\partial \Delta V} \rho \mathbf{u} \cdot \hat{\mathbf{n}} = 0 \\
+  &amp; \frac{d}{dt} \int_{\Delta V} \rho \mathbf{u} + \oint_{\partial \Delta V} \rho \mathbf{u} \mathbf{u} \cdot \hat{\mathbf{n}} = \oint_{\partial \Delta V} \mathbf{t}_{\mathbf{n}} \\
+  &amp; \frac{d}{dt} \int_{\Delta V} \rho e^t + \oint_{\partial \Delta V} \rho e^t \mathbf{u} \cdot \hat{\mathbf{n}} = \oint_{\partial \Delta V} \mathbf{t}_{\mathbf{n}} \cdot \mathbf{u}
+\end{aligned}\end{split}\]</div>
+<p><strong>Differential equations.</strong>
+Assuming uniform properties on each section,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \partial_t \left( \rho A \right) + \partial_z \left( \rho u A \right) = 0 \\
+  &amp; \partial_t \left( \rho u A \right) + \partial_z \left[ \left( \rho u^2  + p \right) A \right] - p \partial_z A = 0 \\
+  &amp; \partial_t \left( \rho e^t A \right) + \partial_z \left[ \rho \left( e^t + \frac{p}{\rho} \right) u A \right] = 0 \ .
+\end{aligned}\end{split}\]</div>
+<p>Assuming here rigid stream-tube with <strong>known section <span class="math notranslate nohighlight">\(A(z)\)</span></strong>, <strong>constant in time <span class="math notranslate nohighlight">\(\partial_t A(z,t) = 0\)</span></strong>, the differential equations can be recast as a set of PDE, with primary unknowns <span class="math notranslate nohighlight">\((\rho A, m A, E^t A)\)</span> whose</p>
+<ul>
+<li><p>conservative form reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+     \partial_t \begin{bmatrix} \rho A \\ \rho u A \\ \rho e^t A \end{bmatrix} +
+     \partial_z \begin{bmatrix} \rho u A \\ \frac{( \rho u A )^2}{\rho A} + p A \\ \frac{ (\rho e^t A + p A) (\rho u A) }{ \rho A }  \end{bmatrix} 
+     = \begin{bmatrix} 0 \\ p \partial_z A \\ 0 \end{bmatrix}
+   \end{split}\]</div>
+</li>
+<li><p>conservative quasi-linear form reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+     \partial_t \begin{bmatrix} \rho A \\ \rho u A \\ \rho e^t A \end{bmatrix} +
+     \begin{bmatrix}
+       \cdot  &amp; 1 &amp; \cdot \\
+       - \frac{(\rho u A)^2}{(\rho A)^2} + \partial_{\rho A} (pA) &amp; 2 \frac{\rho u A}{\rho A} + \partial_{\rho u A} (pA) &amp; \partial_{\rho e^t A} (pA) \\
+       - \frac{(\rho h^t A)(\rho u A)}{(\rho A)^2} + \partial_{\rho A} (pA) \frac{\rho u A}{\rho A} &amp; \frac{\rho h^t A}{\rho A} + \partial_{\rho u A} ( \rho h^t A ) \frac{\rho u A}{\rho A} &amp; \frac{\rho u A}{\rho A} \left( 1 + \partial_{\rho e^t} ( pA ) \right)
+     \end{bmatrix}
+     \partial_z \begin{bmatrix} \rho A \\ \rho u A \\ \rho e^t A \end{bmatrix}
+     = \begin{bmatrix} 0 \\ p \partial_z A \\ 0 \end{bmatrix}
+   \end{split}\]</div>
+</li>
+<li><p>convective form reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+     A \partial_t \rho + A ( \rho \partial_z u + u \partial_z \rho ) = - \rho u \partial_z A \\
+     \rho A \partial_t u + \rho A u \partial_z u + A \partial_z p = 0 \\
+     \rho A \partial_t e^t + \rho A u \partial_z e^t + A \left( u \partial_z p + p \partial_z u \right) = - p u \partial_z A \ .
+   \end{cases}\end{split}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+     \partial_t \rho + \rho \partial_z u + u \partial_z \rho = - \rho u \frac{\partial_z A}{A} \\
+     \partial_t u + u \partial_z u + \frac{ \partial_z p }{\rho} = 0 \\
+     \partial_t e^t + u \partial_z e^t + \frac{u}{\rho} \partial_z p + \frac{p}{\rho} \partial_z u  = - \frac{p u}{\rho} \frac{\partial_z A}{A} \ .
+   \end{cases}\end{split}\]</div>
+</li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Internal energy equation<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \partial_t e 
+  &amp; = \partial_t e^t - \partial_t \frac{u^2}{2} = \\
+  &amp; = -u \partial_z e^t - \frac{u}{\rho}\partial_z p - \frac{p}{\rho} \partial_z u - \frac{pu}{\rho} \frac{\partial_z A}{A} + u \partial_z \frac{u^2}{2} + \frac{u}{\rho} \partial_z p = \\
+  &amp; = -u \partial_z e - \frac{p}{\rho} \partial_z u - \frac{pu}{\rho} \frac{\partial_z A}{A} \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">i.e.</p>
+<div class="math notranslate nohighlight">
+\[ \partial_t e + u \partial_z e = - \frac{p}{\rho} \partial_z u - \frac{pu}{\rho} \frac{\partial_z A}{A} \ .\]</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Entropy equation<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  T D_t s 
+  &amp; = D_t e - \frac{p}{\rho^2} D_t \rho = \\
+  &amp; = - \frac{p}{\rho} \partial_z u - \frac{pu}{\rho} \frac{\partial_z A}{A} - \frac{p}{\rho^2} \left( - \rho \partial_z u - \rho u \frac{\partial_z A}{A}  \right) = \\
+  &amp; = 0 \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">or, as <span class="math notranslate nohighlight">\(T &gt; 0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0
+  &amp; = D_t s = \\
+  &amp; = \partial_t s + u \partial_z s \ .
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text"><strong>todo</strong> <em>Discuss homoentropic flow, if no shock occurs</em></p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Characteristics<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Quasi linear form with mass, momentum and entropy equation and <span class="math notranslate nohighlight">\((\rho, u, s)\)</span> primary variables reads</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \partial_t \begin{bmatrix} \rho \\ u \\ s \end{bmatrix} +
+  \begin{bmatrix}
+    u &amp; \rho &amp; \cdot \\
+    \frac{1}{\rho}\left( \partial_\rho p \right)_s &amp; u &amp; \frac{1}{\rho}\left( \partial_s p \right)_\rho \\
+    \cdot &amp; \cdot &amp; u
+  \end{bmatrix}
+  \partial_z \begin{bmatrix} \rho \\ u \\ s \end{bmatrix} =
+  \begin{bmatrix} - \rho u \frac{\partial_z A}{A} \\ 0 \\ 0  \end{bmatrix} \ .
+\end{split}\]</div>
+<p class="sd-card-text">These equations looks like 1-dimensional Euler equations for compressible ideal flows, with the exception that a non-uniform section of the stream-tube acts as a source term in mass equation.</p>
+</div>
+</details></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -571,20 +828,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="entropy.html"
+       href="canonical-flows.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Entropy equation</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Canonical flows</p>
       </div>
     </a>
     <a class="right-next"
-       href="jump-conditions.html"
+       href="shock-normal.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">16. </span>Jump conditions</p>
+        <p class="prev-next-title"><span class="section-number">15.2. </span>Normal shocks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -603,7 +860,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-flows">15.1. Steady flows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-flow">15.1.1. Steady flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mach-dependence">15.1.1.1. Mach dependence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady-flow">15.1.2. Unsteady flow</a></li>
 </ul>
   </nav></div>
 
