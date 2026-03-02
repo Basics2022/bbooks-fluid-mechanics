@@ -300,12 +300,16 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Compressible Fluid Mechanics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/bernoulli.html">11. Bernoulli’s theorem in compressible fluid mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/vorticity.html">12. Vorticity equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/entropy.html">13. Entropy equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/quasi-1d.html">14. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/steady-2d.html">15. Steady 2-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/acoustics.html">16. Acoustics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/intro.html">11. Introduction to Compressible Fluid Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/bernoulli.html">12. Bernoulli’s theorem in compressible fluid mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/vorticity.html">13. Vorticity equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/entropy.html">14. Entropy equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/quasi-1d.html">15. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/prandtl-meyer.html">16. Expansion fans - Prandtl-Meyer relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/jump-conditions.html">17. Jump conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/characteristics.html">18. Characteristics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/steady-2d.html">19. Steady 2-dimensional flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ch/compressible/acoustics.html">20. Acoustics</a></li>
 </ul>
 
     </div>
@@ -1070,7 +1074,7 @@ cl  :  0.13428520791585555
 cl_alpha: 220.41616662940893
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_70336/4289016219.py:32: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_38582/4289016219.py:32: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
   fig.show()
 </pre></div>
 </div>
@@ -1172,11 +1176,11 @@ cl_alpha: 220.41616662940893
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max WW:  9.71445146547012e-17
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_70336/162280788.py:7: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_38582/162280788.py:7: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
   fig.show()
-/tmp/ipykernel_70336/162280788.py:20: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
+/tmp/ipykernel_38582/162280788.py:20: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
   fig.show()
-/tmp/ipykernel_70336/162280788.py:30: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
+/tmp/ipykernel_38582/162280788.py:30: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
   fig.show()
 </pre></div>
 </div>
@@ -1229,7 +1233,7 @@ cl_alpha: 220.41616662940893
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_70336/1289699379.py:35: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_38582/1289699379.py:35: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
   fig.show()
 </pre></div>
 </div>
@@ -1297,7 +1301,7 @@ cl_alpha: 220.41616662940893
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_70336/2078332749.py:5: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_38582/2078332749.py:5: UserWarning: Matplotlib is currently using module://matplotlib_inline.backend_inline, which is a non-GUI backend, so cannot show the figure.
   fig.show()
 </pre></div>
 </div>

@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>16. Expansion fans - Prandtl-Meyer relation &#8212; Fluid Mechanics</title>
+    <title>15.4. Expansion fans - Prandtl-Meyer relation &#8212; Fluid Mechanics</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/prandtl-meyer';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="17. Jump conditions" href="jump-conditions.html" />
-    <link rel="prev" title="15. Quasi-1-dimensional flows" href="quasi-1d.html" />
+    <link rel="next" title="16. Jump conditions" href="jump-conditions.html" />
+    <link rel="prev" title="15.3. Oblique shocks" href="shock-oblique.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -304,12 +304,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">12. Bernoulli’s theorem in compressible fluid mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vorticity.html">13. Vorticity equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entropy.html">14. Entropy equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quasi-1d.html">15. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. Expansion fans - Prandtl-Meyer relation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">17. Jump conditions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="characteristics.html">18. Characteristics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">19. Steady 2-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acoustics.html">20. Acoustics</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="canonical-flows.html">15. Canonical flows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">15.1. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-normal.html">15.2. Normal shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">15.3. Oblique shocks</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.4. Expansion fans - Prandtl-Meyer relation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">16. Jump conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="characteristics.html">17. Characteristics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">18. Steady 2-dimensional flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acoustics.html">19. Acoustics</a></li>
 </ul>
 
     </div>
@@ -499,7 +504,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -515,6 +522,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-characteristics">15.4.1. Method of characteristics</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -525,7 +540,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="expansion-fans-prandtl-meyer-relation">
-<span id="compressible-prandtl-meyer"></span><h1><span class="section-number">16. </span>Expansion fans - Prandtl-Meyer relation<a class="headerlink" href="#expansion-fans-prandtl-meyer-relation" title="Permalink to this heading">#</a></h1>
+<span id="compressible-prandtl-meyer"></span><h1><span class="section-number">15.4. </span>Expansion fans - Prandtl-Meyer relation<a class="headerlink" href="#expansion-fans-prandtl-meyer-relation" title="Permalink to this heading">#</a></h1>
+<p><strong>todo</strong> <em>Describe flow domain and conditions: supersonic inflow…</em></p>
+<hr class="docutils" />
 <p>Under the assumptions of:</p>
 <ol class="arabic simple">
 <li><p>ideal flow - negligible viscosity and heat conduction</p></li>
@@ -533,6 +550,7 @@ document.write(`
 <li><p>uniform entropy and zero vorticity at the inflow of the domain</p></li>
 </ol>
 <p>the flow in the whole domain is <strong>homoentropic</strong>, <span class="math notranslate nohighlight">\(s(\mathbf{r}, t) = \overline{s}\)</span>, and <strong>irrotational</strong>, <span class="math notranslate nohighlight">\(\boldsymbol\omega(\mathbf{r},t) = \mathbf{0}\)</span>.</p>
+<p>Under the additional assumption of steady flow and uniform conditions at inflow, the flow is <strong>homo-total-enthalpic</strong>, i.e. <span class="math notranslate nohighlight">\(h^t(\mathbf{r}) = \overline{h}^t\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Entropy<div class="sd-summary-down docutils">
@@ -583,15 +601,43 @@ Vorticity<div class="sd-summary-down docutils">
 <li><p class="sd-card-text">if it’s zero at a set of points where material points enter the domain (inflow), it’s equal to zero on all the trajectories originating from those points. If every trajectory in the domain originates in a irrotational region of the flow, and there’s no shock in the domain so that the differential equation holds, the flow is irrotational in the whole domain.</p></li>
 </ul>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Total enthalpy - steady flow<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The differential form of total energy equation reads</p>
+<div class="math notranslate nohighlight">
+\[\rho \partial_t e^t + \rho \mathbf{u} \cdot \nabla e^t = \rho \mathbf{g} \cdot \mathbf{u} + \nabla \cdot \left( \mathbb{T} \cdot \mathbf{u} \right) - \nabla \cdot \mathbf{q} \ ,\]</div>
+<p class="sd-card-text">with the stress tensor of a Newtonian fluid <span class="math notranslate nohighlight">\(\mathbb{T} = - p \mathbb{I} + \mathbb{S}\)</span>, and the viscous stress tensor <span class="math notranslate nohighlight">\(\mathbb{S} = 2 \mu \mathbb{D} + \lambda \left( \nabla \cdot \mathbf{u} \right) \mathbb{I}\)</span>. For an ideal flow, <span class="math notranslate nohighlight">\(\mathbb{S} = \mathbb{0}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{q} = \mathbf{0}\)</span>. If volume force is negligible, <span class="math notranslate nohighlight">\(\mathbf{g}=\mathbf{0}\)</span>. Under these assumptions,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \rho \partial_t e^t + \rho \mathbf{u} \cdot \nabla e^t
+  &amp; = - \nabla \cdot ( p \mathbf{u} ) = \\
+  &amp; = - \mathbf{u} \cdot \nabla p - p \nabla \cdot \mathbf{u} = \\
+  &amp; = - \rho \mathbf{u} \cdot \frac{ \nabla p }{\rho} - \frac{p}{\rho} \left( - \partial_t \rho - \mathbf{u} \cdot \nabla \rho \right) = \\
+  &amp; = \frac{p}{\rho} \partial_t \rho - \rho \mathbf{u} \cdot \left[ \frac{\nabla p}{\rho} - \frac{p}{\rho^2} \nabla \rho \right] = \\ 
+  &amp; = \frac{p}{\rho} \partial_t \rho - \rho \mathbf{u} \cdot \nabla \left( \frac{p}{\rho} \right) \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">or</p>
+<div class="math notranslate nohighlight">
+\[-\rho \left[ \partial_t e^t - \frac{p}{\rho^2} \partial_t \rho \right] = \rho \mathbf{u} \cdot \nabla h^t \ ,\]</div>
+<p class="sd-card-text">with the total enthalpy <span class="math notranslate nohighlight">\(h^t = e^t + \frac{p}{\rho}\)</span>. Under steady conditons, <span class="math notranslate nohighlight">\(\partial_t \equiv 0\)</span>, it follows that</p>
+<div class="math notranslate nohighlight">
+\[ \rho \mathbf{u} \cdot \nabla h^t = 0 \ ,\]</div>
+<p class="sd-card-text">i.e. the total enthalpy is constant on every trajectory. If the physical quantities are uniform at the inflow, total enthalpy is uniform in the whole domain, and not only on every individual trajectory, i.e. the flow is <strong>homo-total-enthalpic</strong>.</p>
+</div>
 </details><p>Under these assumptions, the governing equations of the flow are the homoentropic Euler equations, i.e. in convective form using <span class="math notranslate nohighlight">\(\rho, \mathbf{u}\)</span> as the dynamical variables</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   &amp; D_t \rho + \rho \nabla \cdot \mathbf{u} = 0 \\
   &amp; \rho D_t \mathbf{u} + a^2(\rho, \overline{s}) \nabla \rho = \mathbf{0} \ ,
 \end{aligned}\end{split}\]</div>
-<p>with the constraint <span class="math notranslate nohighlight">\(s(\mathbf{r}, t) = \mathbf{0}\)</span>, and a constitutive equation to write the speed of sound as a function of the independent thermodynamic variables. As the entropy is uniform, it can be treated as a parameter, so that there’s need for only one independent thermodynamic variable, here <span class="math notranslate nohighlight">\(\rho\)</span>. All the other thermodynamic variables can be evaluated a posteriori, once the density field is known as <span class="math notranslate nohighlight">\(f(\mathbf{r},t) = f(\rho(\mathbf{r},t), \overline{s})\)</span>, with the notational abuse of using <span class="math notranslate nohighlight">\(f\)</span> for the same physical quantity, but for functions with different arguments.</p>
-<div class="proof example admonition" id="example-0">
-<p class="admonition-title"><span class="caption-number">Example 16.1 </span> (Perfect ideal gas)</p>
+<p>with the constraint <span class="math notranslate nohighlight">\(s(\mathbf{r}, t) = \overline{s}\)</span>, and a constitutive equation to write the speed of sound as a function of the independent thermodynamic variables. As the entropy is uniform, it can be treated as a parameter, so that there’s need for only one independent thermodynamic variable, here <span class="math notranslate nohighlight">\(\rho\)</span>. All the other thermodynamic variables can be evaluated a posteriori, once the density field is known as <span class="math notranslate nohighlight">\(f(\mathbf{r},t) = f(\rho(\mathbf{r},t), \overline{s})\)</span>, with the notational abuse of using <span class="math notranslate nohighlight">\(f\)</span> for the same physical quantity, but for functions with different arguments.</p>
+<div class="proof example dropdown admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 15.1 </span> (Speed of sound - Perfect ideal gas)</p>
 <div class="example-content section" id="proof-content">
 <p>For a perfect ideal gas,</p>
 <div class="math notranslate nohighlight">
@@ -615,7 +661,8 @@ Vorticity<div class="sd-summary-down docutils">
 \end{aligned}\end{split}\]</div>
 <p>so that the speed of sound is</p>
 <div class="math notranslate nohighlight">
-\[a^2(\rho, s) = \left( \frac{\partial p}{\partial \rho} \right)_s = \gamma R T(\rho, s) \ .\]</div>
+\[a^2(\rho, s) = \left( \frac{\partial p}{\partial \rho} \right)_s = \gamma R T(\rho, s) = \gamma R \rho^{\gamma-1} e^{\frac{s}{c_v}} \frac{T_0}{\rho_0^{\gamma-1}} e^{-\frac{s_0}{c_v}} \ ,\]</div>
+<p>having used the relations derived below for a perfect ideal gas.</p>
 <p>Meyer relation and heat coefficient ratio used above are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -628,11 +675,72 @@ Vorticity<div class="sd-summary-down docutils">
   \frac{c_v}{R} &amp; = \frac{1}{\gamma - 1} \\
   \frac{c_p}{R} &amp; = \frac{\gamma}{\gamma - 1} \\
 \end{aligned}\end{split}\]</div>
+<p>Dividing the expression of the differential of pressure <span class="math notranslate nohighlight">\(dp(s, \rho)\)</span> by <span class="math notranslate nohighlight">\(p\)</span>, and using the equation of state of ideal gas with constant heat coefficients,</p>
+<div class="math notranslate nohighlight">
+\[\frac{dp}{p} = \frac{1}{c_v} d s + \gamma \frac{d \rho}{\rho} \ ,\]</div>
+<p>and after integration w.r.t. a reference state <span class="math notranslate nohighlight">\(0\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \ln \frac{p}{p_0} &amp; = \frac{1}{c_v} \left( s - s_0 \right) + \gamma \ln \frac{\rho}{\rho_0} \\
+  \ln \left\{ \left( \frac{p}{p_0} \right) \left( \frac{\rho}{\rho_0} \right)^{-\gamma} \right\} &amp; = \frac{s - s_0}{c_v} \\
+  \frac{p \rho^{-\gamma}}{p_0 \rho_0^{-\gamma}} &amp; = e^{ \frac{s-s_0}{c_v} } \\
+\end{aligned}\end{split}\]</div>
+<p>or with <span class="math notranslate nohighlight">\(p = \rho R T\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \frac{T \rho^{1-\gamma}}{T_0 \rho_0^{1-\gamma}} &amp; = e^{ \frac{s-s_0}{c_v} } \\
+  \frac{T}{T_0} &amp; = \left(\frac{\rho}{\rho_0}\right)^{\gamma-1} e^{ \frac{s-s_0}{c_v} } \\
+  T(\rho, s) &amp; = \rho^{\gamma-1} e^{\frac{s}{c_v}} \frac{T_0}{\rho_0^{\gamma-1}} e^{-\frac{s_0}{c_v}}
+\end{aligned}\end{split}\]</div>
 </div>
-</div><ul class="simple">
+</div><div class="section" id="method-of-characteristics">
+<h2><span class="section-number">15.4.1. </span>Method of characteristics<a class="headerlink" href="#method-of-characteristics" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
 <li><p>Link to <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/characteristics.html#euler-equations-for-homoentropic-inviscid-compressible-flows-2d">Method of characteristics:Homoentropic inviscid compressible flows - 2d</a></p></li>
 </ul>
-<p>A steady expansion fan at a sharp corner connects to regions of the domain with homogeneous properties, with supersonic flows.</p>
+<p>A steady expansion fan at a sharp corner connects two regions of the domain with supersonic flow and homogeneous characteristics. Let <span class="math notranslate nohighlight">\(1\)</span> be the inflow homogeneous region and <span class="math notranslate nohighlight">\(2\)</span> the outflow homogeneous region.</p>
+<p>In a 2-dimensional domain there are three families of characteristic lines.</p>
+<p>…</p>
+<p><strong>todo</strong> <em>Direction of characteristic lines…</em></p>
+<p>On characteristic lines the following compatibility equations hold</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \ell_{1,3}: \ \frac{\sqrt{M^2-1}}{M^2} \frac{\partial_{\tau} \rho}{\rho} \mp \partial_{\tau} \theta \\
+  &amp; \ell_{2  }: \ \frac{1}{\rho} \partial_{\tau} p + \partial_{\tau} \frac{V^2}{2} \ ,
+\end{aligned}\end{split}\]</div>
+<p>being <span class="math notranslate nohighlight">\(V = |\mathbf{u}|\)</span>. Some characteristic lines of family <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> start from inflow homogeneous region and reach outflow homogeneous region. The compatibility equation on characteristic lines of family <span class="math notranslate nohighlight">\(2\)</span> is nothing but the directional derivative of the total enthalpy along streamlines.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="math notranslate nohighlight">\(d h\)</span><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  d h = T ds + \frac{d p }{\rho}
+  &amp; = T ds + \frac{1}{\rho} \left[ (\partial_\rho p)_s d \rho + (\partial_s p)_\rho d s \right] = \\
+  &amp; = \frac{a^2}{\rho} d \rho + \left( T + \frac{1}{\rho} (\partial_s p)_\rho \right) ds \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">and for homoentropic flows,</p>
+<div class="math notranslate nohighlight">
+\[d h = \frac{dp}{\rho} = \frac{a^2}{\rho} d \rho \ .\]</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Total enthalpy on streamlines, or <span class="math notranslate nohighlight">\(\, \ell_2 \,\)</span> characteristic lines<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If <span class="math notranslate nohighlight">\(h^t(\mathbf{r}) = \overline{h^t}\)</span> uniform, then</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{0} = \nabla h^t = \nabla h + V \nabla V = \left( \partial_\rho h \right)_s \nabla \rho + \left( \partial_s h \right)_\rho \nabla s + V \nabla V \ ,\]</div>
+<p class="sd-card-text">and for homoentropic flows, <span class="math notranslate nohighlight">\(\nabla s = 0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{0} = \nabla h^t = \frac{\nabla p}{\rho} + V \nabla V = \frac{a^2}{\rho} \nabla \rho + V \nabla V \ . \]</div>
+</div>
+</details></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -666,12 +774,12 @@ Vorticity<div class="sd-summary-down docutils">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="quasi-1d.html"
+       href="shock-oblique.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>Quasi-1-dimensional flows</p>
+        <p class="prev-next-title"><span class="section-number">15.3. </span>Oblique shocks</p>
       </div>
     </a>
     <a class="right-next"
@@ -679,7 +787,7 @@ Vorticity<div class="sd-summary-down docutils">
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">17. </span>Jump conditions</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>Jump conditions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -689,6 +797,20 @@ Vorticity<div class="sd-summary-down docutils">
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-characteristics">15.4.1. Method of characteristics</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

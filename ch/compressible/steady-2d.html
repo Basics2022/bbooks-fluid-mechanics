@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>19. Steady 2-dimensional flows &#8212; Fluid Mechanics</title>
+    <title>18. Steady 2-dimensional flows &#8212; Fluid Mechanics</title>
   
   
   
@@ -69,8 +69,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/steady-2d';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="20. Acoustics" href="acoustics.html" />
-    <link rel="prev" title="18. Characteristics" href="characteristics.html" />
+    <link rel="next" title="19. Acoustics" href="acoustics.html" />
+    <link rel="prev" title="17. Characteristics" href="characteristics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -302,12 +302,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">12. Bernoulli’s theorem in compressible fluid mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vorticity.html">13. Vorticity equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entropy.html">14. Entropy equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quasi-1d.html">15. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="prandtl-meyer.html">16. Expansion fans - Prandtl-Meyer relation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">17. Jump conditions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="characteristics.html">18. Characteristics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">19. Steady 2-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acoustics.html">20. Acoustics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="canonical-flows.html">15. Canonical flows</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">15.1. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">15.2. Expansion fans - Prandtl-Meyer relation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">16. Jump conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="characteristics.html">17. Characteristics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">18. Steady 2-dimensional flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acoustics.html">19. Acoustics</a></li>
 </ul>
 
     </div>
@@ -520,12 +523,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shock-waves">19.1. Shock waves</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal">19.1.1. Normal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique">19.1.2. Oblique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shock-waves">18.1. Shock waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal">18.1.1. Normal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique">18.1.2. Oblique</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rarefaction-fans">19.2. Rarefaction fans</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rarefaction-fans">18.2. Rarefaction fans</a></li>
 </ul>
             </nav>
         </div>
@@ -538,22 +541,22 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="steady-2-dimensional-flows">
-<span id="compressible-steady-2d"></span><h1><span class="section-number">19. </span>Steady 2-dimensional flows<a class="headerlink" href="#steady-2-dimensional-flows" title="Permalink to this heading">#</a></h1>
+<span id="compressible-steady-2d"></span><h1><span class="section-number">18. </span>Steady 2-dimensional flows<a class="headerlink" href="#steady-2-dimensional-flows" title="Permalink to this heading">#</a></h1>
 <p><strong>todo</strong> Jump conditions hold in non-steady conditions as well</p>
 <div class="section" id="shock-waves">
-<h2><span class="section-number">19.1. </span>Shock waves<a class="headerlink" href="#shock-waves" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.1. </span>Shock waves<a class="headerlink" href="#shock-waves" title="Permalink to this heading">#</a></h2>
 <p>…</p>
 <div class="section" id="normal">
-<h3><span class="section-number">19.1.1. </span>Normal<a class="headerlink" href="#normal" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.1.1. </span>Normal<a class="headerlink" href="#normal" title="Permalink to this heading">#</a></h3>
 <p>…</p>
 </div>
 <div class="section" id="oblique">
-<h3><span class="section-number">19.1.2. </span>Oblique<a class="headerlink" href="#oblique" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.1.2. </span>Oblique<a class="headerlink" href="#oblique" title="Permalink to this heading">#</a></h3>
 <p>…</p>
 </div>
 </div>
 <div class="section" id="rarefaction-fans">
-<h2><span class="section-number">19.2. </span>Rarefaction fans<a class="headerlink" href="#rarefaction-fans" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.2. </span>Rarefaction fans<a class="headerlink" href="#rarefaction-fans" title="Permalink to this heading">#</a></h2>
 </div>
 </div>
 
@@ -593,7 +596,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">18. </span>Characteristics</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>Characteristics</p>
       </div>
     </a>
     <a class="right-next"
@@ -601,7 +604,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">20. </span>Acoustics</p>
+        <p class="prev-next-title"><span class="section-number">19. </span>Acoustics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -620,12 +623,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shock-waves">19.1. Shock waves</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal">19.1.1. Normal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique">19.1.2. Oblique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shock-waves">18.1. Shock waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal">18.1.1. Normal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique">18.1.2. Oblique</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rarefaction-fans">19.2. Rarefaction fans</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rarefaction-fans">18.2. Rarefaction fans</a></li>
 </ul>
   </nav></div>
 

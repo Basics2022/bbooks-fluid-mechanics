@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15.3. Oblique shocks &#8212; Fluid Mechanics</title>
+    <title>15. Canonical flows &#8212; Fluid Mechanics</title>
   
   
   
@@ -66,11 +66,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/shock-oblique';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/canonical-flows';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="15.4. Expansion fans - Prandtl-Meyer relation" href="prandtl-meyer.html" />
-    <link rel="prev" title="15.2. Normal shocks" href="shock-normal.html" />
+    <link rel="next" title="15.1. Quasi-1-dimensional flows" href="quasi-1d.html" />
+    <link rel="prev" title="14. Entropy equation" href="entropy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -302,10 +302,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">12. Bernoulli’s theorem in compressible fluid mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vorticity.html">13. Vorticity equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entropy.html">14. Entropy equation</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="canonical-flows.html">15. Canonical flows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">15. Canonical flows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">15.1. Quasi-1-dimensional flows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shock-normal.html">15.2. Normal shocks</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">15.3. Oblique shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">15.3. Oblique shocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">15.4. Expansion fans - Prandtl-Meyer relation</a></li>
 </ul>
 </li>
@@ -384,7 +384,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/ch/compressible/shock-oblique.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/ch/compressible/canonical-flows.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -401,7 +401,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fch/compressible/shock-oblique.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fch/compressible/canonical-flows.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -431,7 +431,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/compressible/shock-oblique.md" target="_blank"
+      <li><a href="../../_sources/ch/compressible/canonical-flows.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -513,7 +513,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Oblique shocks</h1>
+    <h1>Canonical flows</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -527,9 +527,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="oblique-shocks">
-<span id="compressible-shocks-oblique"></span><h1><span class="section-number">15.3. </span>Oblique shocks<a class="headerlink" href="#oblique-shocks" title="Permalink to this heading">#</a></h1>
-<p><a class="reference internal" href="jump-conditions.html#compressible-jump-conditions"><span class="std std-ref">Jump conditions</span></a></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="canonical-flows">
+<span id="compressible-canonical-flows"></span><h1><span class="section-number">15. </span>Canonical flows<a class="headerlink" href="#canonical-flows" title="Permalink to this heading">#</a></h1>
+<p><strong><a class="reference internal" href="quasi-1d.html#compressible-quasi-1d"><span class="std std-ref">Quasi 1-dimensional flows</span></a>.</strong></p>
+<p><strong>1-dimensional flows.</strong> Non-ideal flows:</p>
+<ul class="simple">
+<li><p>friction dominated (Fanno)</p></li>
+<li><p>with heat transfer (Rayleigh)</p></li>
+</ul>
+<p><strong>n-dimensional flows.</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="shock-normal.html#compressible-shocks-normal"><span class="std std-ref">Normal shocks</span></a></p></li>
+<li><p><a class="reference internal" href="shock-oblique.html#compressible-shocks-oblique"><span class="std std-ref">Oblique shocks</span></a></p></li>
+<li><p><a class="reference internal" href="prandtl-meyer.html#compressible-prandtl-meyer"><span class="std std-ref">Prandtl-Meyer expansion fan </span></a> (2-dimensionnal, steady)</p></li>
+</ul>
+<p><strong>todo</strong> <em>Cylindrical symmetry?…</em></p>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -563,20 +577,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="shock-normal.html"
+       href="entropy.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">15.2. </span>Normal shocks</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Entropy equation</p>
       </div>
     </a>
     <a class="right-next"
-       href="prandtl-meyer.html"
+       href="quasi-1d.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">15.4. </span>Expansion fans - Prandtl-Meyer relation</p>
+        <p class="prev-next-title"><span class="section-number">15.1. </span>Quasi-1-dimensional flows</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
