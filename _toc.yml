@@ -118,8 +118,10 @@ parts:
   numbered: true
   chapters:
   - file: ch/compressible/intro
+  - file: ch/compressible/governing-equations
   - file: ch/compressible/bernoulli
   - file: ch/compressible/vorticity
+  - file: ch/compressible/potential-equation
   - file: ch/compressible/entropy
   - file: ch/compressible/canonical-flows
     sections:
