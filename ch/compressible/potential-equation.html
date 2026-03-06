@@ -506,7 +506,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -522,6 +524,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenuti </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homoentropic-flows">15.1. Homoentropic flows</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -536,12 +546,58 @@ document.write(`
 <p>Under the assumption of irrotational flow<a class="footnote-reference brackets" href="#irrotational-flow-hp" id="id1">1</a>, the velocity field <span class="math notranslate nohighlight">\(\mathbf{u}(\mathbf{r},t)\)</span> can be written as a gradient of a scalar potential <span class="math notranslate nohighlight">\(\phi(\mathbf{r},t)\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\nabla \times \mathbf{u} = \mathbf{0} \quad \rightarrow \quad \mathbf{u} = \nabla \phi \ .\]</div>
-<hr class="footnotes docutils" />
+<p>Euler equations in convective form with independent variables <span class="math notranslate nohighlight">\((\rho, \mathbf{u}, s)\)</span> read<a class="footnote-reference brackets" href="#advective-term" id="id2">2</a></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \partial_t \rho + \mathbf{u} \cdot \nabla \rho + \rho \nabla \cdot \mathbf{u} = 0 \\
+  &amp; \partial_t \mathbf{u} + \nabla \frac{|\mathbf{u}|^2}{2} + \frac{\nabla p}{\rho} = \mathbf{0} \\
+  &amp; \partial_t s + \mathbf{u} \cdot \nabla s = 0 \ .
+\end{aligned}\end{split}\]</div>
+<div class="section" id="homoentropic-flows">
+<span id="compressible-irrotational-potential-equation-homoentropic"></span><h2><span class="section-number">15.1. </span>Homoentropic flows<a class="headerlink" href="#homoentropic-flows" title="Permalink to this heading">#</a></h2>
+<p>If no shock occurs and the inflow is uniform, the flow is homoentropic, <span class="math notranslate nohighlight">\(s(\mathbf{r},t) = \overline{s}\)</span>. Mass and momentum equations become</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \partial_t \rho + \nabla \phi \cdot \nabla \rho + \rho \nabla^2 \phi = 0 \\
+  &amp; \partial_t \nabla \phi + \nabla \frac{|\nabla \phi|^2}{2} + a^2(\rho, \overline{s}) \frac{\nabla \rho}{\rho} = \mathbf{0} \ ,
+\end{aligned}\end{split}\]</div>
+<p>being <span class="math notranslate nohighlight">\(a^2(\rho, \overline{s}) = \left( \frac{\partial p}{\partial \rho} \right)_s\)</span> the square of the speed of sound.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Bernoulli<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Momentum equation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \mathbf{0}
+  &amp; = \partial_t \mathbf{u} + \nabla \frac{|\mathbf{u}|^2}{2} + \frac{\nabla p}{\rho} = \\
+  &amp; = \partial_t \nabla \phi + \nabla \frac{|\nabla \phi|^2}{2} + \frac{\nabla p}{\rho} = \\
+  &amp; = \partial_t \nabla \phi + \nabla \frac{|\nabla \phi|^2}{2} + \nabla h(\rho, \overline{s})  = \\
+  &amp; = \nabla \left[ \partial_t \phi + \frac{|\nabla \phi|^2}{2} + h(\rho, \overline{s}) \right] \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">and thus</p>
+<div class="math notranslate nohighlight">
+\[\partial_t \phi + \frac{|\nabla \phi|^2}{2} + h(\rho, \overline{s}) = C(t) \ ,\]</div>
+<p class="sd-card-text">for <strong>homoentropic flows</strong> <span class="math notranslate nohighlight">\(\nabla s = 0\)</span>, as the relation (<strong>todo</strong> <em>add link to thermodynamics</em>)</p>
+<div class="math notranslate nohighlight">
+\[d h = T ds + \frac{dp}{\rho} \ ,\]</div>
+<p class="sd-card-text">produces</p>
+<div class="math notranslate nohighlight">
+\[d h = \frac{dp}{\rho} \quad , \quad \nabla h = \frac{\nabla p}{\rho} \ .\]</div>
+</div>
+</details><hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="irrotational-flow-hp"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Vorticity is confined in thin layers, like boundary layers and wakes, modelled as tangential velocity discontinuities.</p>
 </dd>
+<dt class="label" id="advective-term"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p><span class="math notranslate nohighlight">\(\mathbf{u} \cdot \nabla \mathbf{u} = \nabla \frac{|\mathbf{u}|^2}{2} + \boldsymbol\omega \times \mathbf{u}\)</span>, with <span class="math notranslate nohighlight">\(\boldsymbol = \nabla \times \mathbf{u} = \mathbf{0}\)</span> in irrotational flows.</p>
+</dd>
 </dl>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -598,6 +654,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenuti
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homoentropic-flows">15.1. Homoentropic flows</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
