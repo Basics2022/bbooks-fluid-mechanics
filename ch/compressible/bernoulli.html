@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>12. Bernoulli’s theorem in compressible fluid mechanics &#8212; Fluid Mechanics</title>
+    <title>13. Bernoulli’s theorem in compressible fluid mechanics &#8212; Fluid Mechanics</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/bernoulli';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="13. Vorticity equation" href="vorticity.html" />
-    <link rel="prev" title="11. Introduction to Compressible Fluid Mechanics" href="intro.html" />
+    <link rel="next" title="14. Vorticity equation" href="vorticity.html" />
+    <link rel="prev" title="12. Governing equations" href="governing-equations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -301,11 +301,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Compressible Fluid Mechanics</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">11. Introduction to Compressible Fluid Mechanics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Bernoulli’s theorem in compressible fluid mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vorticity.html">13. Vorticity equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entropy.html">14. Entropy equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quasi-1d.html">15. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="prandtl-meyer.html">16. Expansion fans - Prandtl-Meyer relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="governing-equations.html">12. Governing equations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Bernoulli’s theorem in compressible fluid mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vorticity.html">14. Vorticity equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html">15. Entropy equation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="canonical-flows.html">16. Canonical flows</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">16.1. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-normal.html">16.2. Normal shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">16.3. Oblique shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">16.4. Expansion fans - Prandtl-Meyer relation</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">17. Jump conditions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="characteristics.html">18. Characteristics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="steady-2d.html">19. Steady 2-dimensional flows</a></li>
@@ -525,7 +531,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="bernoulli-s-theorem-in-compressible-fluid-mechanics">
-<span id="compressible-bernoulli"></span><h1><span class="section-number">12. </span>Bernoulli’s theorem in compressible fluid mechanics<a class="headerlink" href="#bernoulli-s-theorem-in-compressible-fluid-mechanics" title="Permalink to this heading">#</a></h1>
+<span id="compressible-bernoulli"></span><h1><span class="section-number">13. </span>Bernoulli’s theorem in compressible fluid mechanics<a class="headerlink" href="#bernoulli-s-theorem-in-compressible-fluid-mechanics" title="Permalink to this heading">#</a></h1>
 <p>Assuming no discontinuity occurs in physical quantities (reasonable for viscous and diffusive fluids?), the differential form of governing equations holds.
 Starting from governing equations of compressible fluids,</p>
 <div class="math notranslate nohighlight">
@@ -554,21 +560,21 @@ Starting from governing equations of compressible fluids,</p>
   \rho \mathbf{u} \cdot \nabla \left[ e^t + \chi + \frac{P}{\rho} \right] &amp; = - \rho \dfrac{\partial }{\partial t} \left( e^t + \dfrac{P}{\rho} \right) + \rho \dfrac{\partial P}{\partial t} + \nabla \cdot \left( \mathbb{S} \cdot \mathbf{u} \right) - \nabla \cdot \mathbf{q} \\
 \end{aligned}\end{split}\]</div>
 <div class="proof theorem admonition" id="theorem-0">
-<p class="admonition-title"><span class="caption-number">Theorem 12.1 </span> (Bernoulli’s theorem for compressible flow on streamlines)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 13.1 </span> (Bernoulli’s theorem for compressible flow on streamlines)</p>
 <div class="theorem-content section" id="proof-content">
 <p>Now, for steady flows <span class="math notranslate nohighlight">\(\frac{\partial }{\partial t} \equiv 0\)</span>, with negligible viscous stress <span class="math notranslate nohighlight">\(\mathbb{S} \equiv \mathbb{0}\)</span> and heat conduction <span class="math notranslate nohighlight">\(\mathbf{q} \equiv 0\)</span>, <strong>Bernoulli’s polynomial is constant for every point of a streamline</strong>, as</p>
 <div class="math notranslate nohighlight">
 \[\rho \mathbf{u} \cdot \nabla \left[ e + \dfrac{|\mathbf{u}|^2}{2} + \frac{P}{\rho} + \chi \right] = 0 \ .\]</div>
 </div>
 </div><div class="proof theorem admonition" id="theorem-1">
-<p class="admonition-title"><span class="caption-number">Theorem 12.2 </span> (Dynamical equation for total enthalpy)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 13.2 </span> (Dynamical equation for total enthalpy)</p>
 <div class="theorem-content section" id="proof-content">
 <p>Governing equations of fluid mechanics can be recast to get a dynamical equation for the total enthaply <span class="math notranslate nohighlight">\(h^t = e^t + \frac{P}{\rho}\)</span>, whose convective form reads</p>
 <div class="math notranslate nohighlight">
 \[\rho \dfrac{D h^t}{D t} = - \rho \mathbf{u} \cdot \nabla \chi + \rho \dfrac{\partial P}{\partial t} + \nabla \cdot \left( \mathbb{S} \cdot \mathbf{u} - \mathbf{q} \right) \ . \]</div>
 </div>
 </div><div class="proof theorem admonition" id="theorem-2">
-<p class="admonition-title"><span class="caption-number">Theorem 12.3 </span> (Dynamical equation for Bernoulli’s polynomial)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 13.3 </span> (Dynamical equation for Bernoulli’s polynomial)</p>
 <div class="theorem-content section" id="proof-content">
 <p>If the conservative force field per unit mass <span class="math notranslate nohighlight">\(\mathbf{g} = - \nabla \chi\)</span> has no explicit dependence on time, <span class="math notranslate nohighlight">\(\partial_t \chi = 0\)</span> and <span class="math notranslate nohighlight">\(D_t \chi = \mathbf{u} \cdot \nabla \chi\)</span>, it’s possible to write a dynamical equation for the Bernoulli’s polynomial, <span class="math notranslate nohighlight">\(B = h^t + \chi\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -607,12 +613,12 @@ Starting from governing equations of compressible fluids,</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="governing-equations.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Introduction to Compressible Fluid Mechanics</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Governing equations</p>
       </div>
     </a>
     <a class="right-next"
@@ -620,7 +626,7 @@ Starting from governing equations of compressible fluids,</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Vorticity equation</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Vorticity equation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

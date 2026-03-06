@@ -257,7 +257,7 @@ i.e.
 
 $$s_{1,3} = u \mp a \quad , \quad s_2 = u \ .$$
 
-**Right eigenvectors**
+**Right eigenvectors.**
 
 $$
 \mathbf{R} = 
@@ -268,7 +268,7 @@ $$
 \end{bmatrix}
 $$
 
-**Left eigenvectors**
+**Left eigenvectors.**
 
 $$
 \mathbf{L} = 
