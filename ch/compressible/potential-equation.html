@@ -529,7 +529,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homoentropic-flows">15.1. Homoentropic flows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homoentropic-flows">15.1. Homoentropic flows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-equation">15.1.1. Linearized equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-steady-potential-equation-prandtl-glauert-transformation">15.1.2. Linearized steady potential equation - Prandtl-Glauert transformation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nature-of-the-equation">15.1.2.1. Nature of the equation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure-coefficient">15.1.3. Pressure coefficient</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -562,14 +570,14 @@ document.write(`
   &amp; \partial_t \nabla \phi + \nabla \frac{|\nabla \phi|^2}{2} + a^2(\rho, \overline{s}) \frac{\nabla \rho}{\rho} = \mathbf{0} \ ,
 \end{aligned}\end{split}\]</div>
 <p>being <span class="math notranslate nohighlight">\(a^2(\rho, \overline{s}) = \left( \frac{\partial p}{\partial \rho} \right)_s\)</span> the square of the speed of sound.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Bernoulli<div class="sd-summary-down docutils">
+Momentum equation <div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Momentum equation</p>
+<p class="sd-card-text">Momentum equation can be manipulated as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   \mathbf{0}
@@ -587,8 +595,169 @@ Bernoulli<div class="sd-summary-down docutils">
 <p class="sd-card-text">produces</p>
 <div class="math notranslate nohighlight">
 \[d h = \frac{dp}{\rho} \quad , \quad \nabla h = \frac{\nabla p}{\rho} \ .\]</div>
+<p class="sd-card-text"><strong>todo</strong></p>
+<ul>
+<li><p class="sd-card-text">Discuss if and why the function <span class="math notranslate nohighlight">\(C(t)\)</span> can be included in the definition of «<span class="math notranslate nohighlight">\(\phi(\mathbf{r},t) = \phi(\mathbf{r},t) + C(t)\)</span>».</p></li>
+<li><p class="sd-card-text">or With homogeneous and steady inflow,</p>
+<div class="math notranslate nohighlight">
+\[\partial_t \phi(\mathbf{r},t) + \frac{|\nabla \phi(\mathbf{r},t)|^2}{2} + h(\rho(\mathbf{r},t), \overline{s}) = \frac{|\mathbf{u}_\infty|^2}{2} + h_\infty \ .\]</div>
+</li>
+</ul>
+<p class="sd-card-text">Taking partial derivative in time</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0
+  &amp; = \partial_{tt} \phi + \partial_t \frac{|\nabla \phi|^2}{2} + \partial_t h = \\
+  &amp; = \partial_{tt} \phi + \partial_t \frac{|\nabla \phi|^2}{2} + \left( \frac{\partial h}{\partial \rho} \right)_s \partial_t \rho = \\
+  &amp; = \partial_{tt} \phi + \partial_t \frac{|\nabla \phi|^2}{2} + \frac{a^2(\rho,\overline{s})}{\rho} \partial_t \rho  \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">as</p>
+<div class="math notranslate nohighlight">
+\[\left( \frac{\partial h}{\partial \rho} \right)_s = \frac{1}{\rho} \left( \frac{\partial p}{\partial \rho} \right)_s = \frac{a^2(\rho, \overline{s})}{\rho} \ .\]</div>
 </div>
-</details><hr class="footnotes docutils" />
+</details><div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ 0
+ &amp; = \partial_{tt} \phi + \partial_t \frac{|\nabla \phi|^2}{2} + \frac{a^2}{\rho} \partial_t \rho &amp;&amp; \left( \text{mass:} \ \partial_t \rho = - \rho \nabla^2 \phi - \nabla \rho \cdot \nabla \phi \right) \\
+ &amp; = \partial_{tt} \phi + \partial_t \frac{|\nabla \phi|^2}{2} - \frac{a^2}{\rho} \left\{ \nabla \phi \cdot \nabla \rho + \rho \nabla^2 \phi \right\} = &amp;&amp; \left( \text{momentum:} \ a^2 \frac{\nabla \rho}{\rho} = - \left( \partial_t \nabla \phi + \nabla \frac{|\nabla \phi|^2}{2} \right) \right) \\ 
+ &amp; = \partial_{tt} \phi + \partial_t \frac{|\nabla \phi|^2}{2} - a^2 \nabla^2 \phi + \nabla \phi \cdot \left( \partial_t \nabla \phi + \nabla \frac{|\nabla \phi|^2}{2} \right) \ ,
+\end{aligned}\end{split}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[0 = \partial_{tt} \phi - a^2 \nabla^2 \phi + \partial_t |\nabla \phi|^2 + \nabla \phi \cdot \nabla \frac{|\nabla \phi|^2}{2} \ .\]</div>
+<div class="section" id="linearized-equation">
+<span id="compressible-irrotational-potential-equation-homoentropic-linearized"></span><h3><span class="section-number">15.1.1. </span>Linearized equation<a class="headerlink" href="#linearized-equation" title="Permalink to this heading">#</a></h3>
+<p>Assuming small perturbation of the asymptotic flow, with velocity <span class="math notranslate nohighlight">\(\mathbf{u}_\infty\)</span> and thermodynamic state <span class="math notranslate nohighlight">\(\text{TD}_{\infty}\)</span> with speed of sound <span class="math notranslate nohighlight">\(a^2_\infty\)</span>, the velocity field can be written as</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{u}(\mathbf{r},t) \sim \mathbf{u}_\infty + \mathbf{u}'(\mathbf{r},t) \ ,\]</div>
+<p>the potential as</p>
+<div class="math notranslate nohighlight">
+\[\phi(\mathbf{r},t) \sim \mathbf{u}_\infty \cdot \mathbf{r} + \varphi(\mathbf{r},t) \ ,\]</div>
+<p>and all the thermodynamic variables their linear Taylor expansion around the reference state</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \rho &amp; = \rho_\infty + \rho' \\
+       &amp; \dots
+\end{aligned}\end{split}\]</div>
+<p>Linearization of the potential equation gives</p>
+<div class="math notranslate nohighlight">
+\[D^{\mathbf{u}_\infty}_{tt} \varphi - a^2_\infty \nabla^2 \varphi = 0 \ ,\]</div>
+<p>with the differential operator - here applied twice<a class="footnote-reference brackets" href="#dt-dt" id="id3">3</a> - <span class="math notranslate nohighlight">\(D^{\mathbf{u}_\infty}_t = \partial_t + \mathbf{u}_\infty \cdot \nabla\)</span> representing advection with the free-stream velocity field <span class="math notranslate nohighlight">\(\mathbf{u}_\infty\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Details<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0
+  &amp; = \partial_{tt} \phi - a^2 \nabla^2 \phi + \partial_t |\nabla \phi|^2 + \nabla \phi \cdot \nabla \frac{|\nabla \phi|^2}{2} = \\
+  &amp; = \partial_{tt} \varphi - ( a^2_\infty + {a'}^2 ) \nabla^2 \varphi + 2 \partial_t ( \nabla \phi \cdot \mathbf{u}_\infty + \dots ) + \mathbf{u}_\infty \cdot \nabla \left( \mathbf{u}_\infty \cdot \nabla \varphi + \dots \right) \simeq \\
+  &amp; = \partial_{tt} \varphi - a^2_{\infty} \nabla^2 \varphi + 2 \mathbf{u}_\infty \cdot \partial_t \nabla \phi + \mathbf{u}_\infty \cdot \nabla ( \mathbf{u}_\infty \cdot \nabla \varphi ) \ .
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">Introducing the <em>linear</em> differential operator</p>
+<div class="math notranslate nohighlight">
+\[D^{\mathbf{u}_\infty}_t := \partial_t + \mathbf{u}_\infty \ ,\]</div>
+<p class="sd-card-text">the linearized equation can be re-written as</p>
+<div class="math notranslate nohighlight">
+\[D^{\mathbf{u}_\infty}_{tt} \varphi - a^2_\infty \nabla^2 \varphi = 0 \ ,\]</div>
+<p class="sd-card-text">being <span class="math notranslate nohighlight">\(D^{\mathbf{u}_\infty}_{tt}\)</span> the operator applied twice, <span class="math notranslate nohighlight">\(D^{\mathbf{u}_\infty}_{tt} = D^{\mathbf{u}_\infty}_{t}D^{\mathbf{u}_\infty}_{t}\)</span>.</p>
+</div>
+</details><p>Introducing a set of Cartesian coordinates with the <span class="math notranslate nohighlight">\(\hat{\mathbf{x}}\)</span>-axis aligned with the free-stream velocity <span class="math notranslate nohighlight">\(\mathbf{u}_\infty = U_{\infty} \hat{\mathbf{x}}\)</span>, the differential operator can be written as</p>
+<div class="math notranslate nohighlight">
+\[D_t^{\mathbf{u}_\infty} = \partial_t + U_\infty \partial_x \ ,\]</div>
+<p>and the linearized equation of the potential becomes</p>
+<div class="math notranslate nohighlight">
+\[\varphi_{tt} + 2 U_\infty \partial_{xt} \varphi + U_\infty^2 \varphi_{xx} - a_\infty^2 \left( \varphi_{xx} + \varphi_{yy} + \varphi_{zz} \right) = 0 \ .\]</div>
+</div>
+<div class="section" id="linearized-steady-potential-equation-prandtl-glauert-transformation">
+<h3><span class="section-number">15.1.2. </span>Linearized steady potential equation - Prandtl-Glauert transformation<a class="headerlink" href="#linearized-steady-potential-equation-prandtl-glauert-transformation" title="Permalink to this heading">#</a></h3>
+<p>Steady equation becomes</p>
+<div class="math notranslate nohighlight">
+\[(1-M_\infty^2) \varphi_{xx} + \varphi_{yy} + \varphi_{zz} = 0 \ .\]</div>
+<p>This equation can be transformed into a Laplace equation (the same equation governing the potential for incompressible flows) with a transformation of coordinates</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ \widetilde{x} &amp; = \frac{ x }{ \sqrt{1 - M_\infty^2} } \\
+ \widetilde{y} &amp; = y                       \\
+ \widetilde{z} &amp; = z                       \\
+\end{aligned}\end{split}\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \widetilde{x}}{\partial x} = \frac{1}{ \sqrt{1 - M^2} } \ ,\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\varphi_{\widetilde{x} \widetilde{x}} + \varphi_{\widetilde{y} \widetilde{y}} + \varphi_{\widetilde{z} \widetilde{z}} = 0 \ .\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Details<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">With</p>
+<div class="math notranslate nohighlight">
+\[\widetilde{x} = \beta x \ ,\]</div>
+<p class="sd-card-text">it follows</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial}{\partial x} = \frac{\partial \widetilde{x}}{\partial x}\frac{\partial}{\partial \widetilde{x}} = \beta \frac{\partial}{\partial \widetilde{x}} \ ,\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2}{\partial x^2} = \beta^2 \frac{\partial^2}{\partial \widetilde{x}^2} \ ,\]</div>
+<p class="sd-card-text">so that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0
+  &amp; = \left( 1 - M_\infty^2 \right) \varphi_{xx} + \varphi_{yy} + \varphi_{zz} = \\
+  &amp; = \left( 1 - M_\infty^2 \right) \beta^2 \varphi_{\widetilde{x} \widetilde{x}} + \varphi_{yy} + \varphi_{zz} = \\
+  &amp; = \varphi_{\widetilde{x} \widetilde{x}} + \varphi_{yy} + \varphi_{zz} \ ,
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">if <span class="math notranslate nohighlight">\(\beta = \frac{1}{\sqrt{1-M^2_\infty}}\)</span>.</p>
+</div>
+</details><div class="section" id="nature-of-the-equation">
+<h4><span class="section-number">15.1.2.1. </span>Nature of the equation<a class="headerlink" href="#nature-of-the-equation" title="Permalink to this heading">#</a></h4>
+<p><em>Discussion with 2-dimensional equation first</em></p>
+<ul class="simple">
+<li><p>If the free-stream is <strong>subsonic</strong>, <span class="math notranslate nohighlight">\(M_\infty \in [0,1)\)</span><a class="footnote-reference brackets" href="#subsonic-flow" id="id4">4</a>, the differential equation is <strong>elliptic</strong></p></li>
+<li><p>If the free-stream is <strong>supersonic</strong>, <span class="math notranslate nohighlight">\(M_\infty &gt; 1\)</span> (and no shock occurs? Or how to treat them? How strong can they be?) the differential equation is <strong>hyperbolic</strong>. <em>Method of characteristics…</em></p></li>
+</ul>
+<p><strong>todo</strong> 3-dimensional equation</p>
+</div>
+</div>
+<div class="section" id="pressure-coefficient">
+<h3><span class="section-number">15.1.3. </span>Pressure coefficient<a class="headerlink" href="#pressure-coefficient" title="Permalink to this heading">#</a></h3>
+<p>Pressure coefficient is defined as</p>
+<div class="math notranslate nohighlight">
+\[c_p = \frac{p-p_\infty}{\frac{1}{2}\rho_\infty U_\infty^2}\]</div>
+<p><strong>Subsonic flow.</strong> Linearizing momentum equation for homoentropic flows,</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  h - h_\infty 
+  = \frac{U_\infty^2}{2} - \frac{(\mathbf{u}_\infty + \mathbf{u}') \cdot (\mathbf{u}_\infty + \mathbf{u}')}{2}
+  \simeq - \mathbf{u}_\infty \cdot \mathbf{u}' \ .
+\end{aligned}\]</div>
+<p>Using <span class="math notranslate nohighlight">\(dh = T ds + \frac{dp}{\rho}\)</span> for homoentropic flows, <span class="math notranslate nohighlight">\(ds = 0\)</span>, <span class="math notranslate nohighlight">\(dp = \rho dh\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[p' = p - p_\infty \simeq \rho_\infty ( h' - h_\infty ) = - \rho_\infty \mathbf{u}_\infty \cdot \mathbf{u}' \ ,\]</div>
+<p>so that the linearized pressure coefficient reads</p>
+<div class="math notranslate nohighlight">
+\[c_p = - \frac{2 \mathbf{u}_\infty \cdot \mathbf{u}'}{U_\infty^2} \ .\]</div>
+<p>With the assumption of <span class="math notranslate nohighlight">\(\mathbf{u}_\infty = U_\infty \hat{\mathbf{x}}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[c_p = - \frac{2}{U_\infty} \frac{\partial \varphi}{\partial x} \ .\]</div>
+<p>Now, the pressure coefficient for compressible flow can be compared with the pressure coefficient for incompressible flow <span class="math notranslate nohighlight">\(c_p^{inc}\)</span> in the same domain (e.g. with the same geometry of solid bodies).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  c_p(x,y,z)
+  &amp; = - \frac{2}{U_\infty} \frac{\partial \varphi(x,y,z)}{\partial x} = &amp;&amp; \widetilde{\varphi}(\widetilde{x},y,z) = \varphi(x(\widetilde{x}),y,z) \\
+  &amp; = - \frac{2}{U_\infty} \frac{\partial \widetilde{x}}{\partial x} \frac{\partial \widetilde{\varphi}(\widetilde{x},y,z)}{\partial \widetilde{x}} = \\
+  &amp; = - \frac{1}{\sqrt{1 - M^2_{\infty}}} \frac{2}{U_\infty} \frac{\partial \widetilde{\varphi}}{\partial \widetilde{x}}(\widetilde{x},y,z \ ,
+\end{aligned}\end{split}\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight">
+\[c_p(x,y,z) = \frac{c_p^{inc}(\widetilde{x},y,z)}{\sqrt{1-M_\infty^2}} \ .\]</div>
+<hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="irrotational-flow-hp"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Vorticity is confined in thin layers, like boundary layers and wakes, modelled as tangential velocity discontinuities.</p>
@@ -596,7 +765,14 @@ Bernoulli<div class="sd-summary-down docutils">
 <dt class="label" id="advective-term"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p><span class="math notranslate nohighlight">\(\mathbf{u} \cdot \nabla \mathbf{u} = \nabla \frac{|\mathbf{u}|^2}{2} + \boldsymbol\omega \times \mathbf{u}\)</span>, with <span class="math notranslate nohighlight">\(\boldsymbol = \nabla \times \mathbf{u} = \mathbf{0}\)</span> in irrotational flows.</p>
 </dd>
+<dt class="label" id="dt-dt"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p><span class="math notranslate nohighlight">\(D^{\mathbf{u}_\infty}_{tt} \varphi := D^{\mathbf{u}_\infty}_{t} \left( D^{\mathbf{u}_\infty}_{t} \varphi \right)\)</span> <span class="math notranslate nohighlight">\(= (\partial_t + \mathbf{u}_\infty \cdot \nabla) (\partial_t \varphi + \mathbf{u}_\infty \cdot \nabla \varphi)\)</span> <span class="math notranslate nohighlight">\(= \partial_{tt} \varphi + 2 \mathbf{u} \cdot \partial_t \nabla \varphi + \mathbf{u}_\infty \cdot \nabla ( \mathbf{u}_\infty \cdot \nabla \varphi)\)</span>.</p>
+</dd>
+<dt class="label" id="subsonic-flow"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>In order to get a subsonic flow in the whole domain, the free-stream velocity should be smaller than the speed of sound enough to avoid local supersonic regions in the flow.</p>
+</dd>
 </dl>
+</div>
 </div>
 </div>
 
@@ -663,7 +839,15 @@ Bernoulli<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homoentropic-flows">15.1. Homoentropic flows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homoentropic-flows">15.1. Homoentropic flows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-equation">15.1.1. Linearized equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-steady-potential-equation-prandtl-glauert-transformation">15.1.2. Linearized steady potential equation - Prandtl-Glauert transformation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nature-of-the-equation">15.1.2.1. Nature of the equation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure-coefficient">15.1.3. Pressure coefficient</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
