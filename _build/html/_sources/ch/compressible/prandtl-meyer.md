@@ -1,7 +1,11 @@
 (compressible:prandtl-meyer)=
 # Expansion fans - Prandtl-Meyer relation
 
-**todo** *Describe flow domain and conditions: supersonic inflow...*
+A Prandtl-Meyer expansion fan is a continuous centering of Mach waves that occurs when a **supersonic flow** is turned "away" from itself, such as around a convex corner. The flow is homoentropic, and the flow properties (density, pressure, temperature, velocity,...) vary smoothly across the fan while the Mach number increases. The fan connects two regions of the domain with uniform properties.
+
+**todo** 
+- *Figure*
+- *Script with Euler solver in 2-dimensional domains. To be written, so far only 1-d solver on GDrive*
 
 ---
 
@@ -167,35 +171,41 @@ $$\begin{aligned}
 \end{aligned}$$
 
 
-
-
-
 ```
 
-
-## Method of characteristics
+(compressible:prandtl-meyer:characteristics)=
+## Characteristic lines and compatibility equations
 
 - Link to [Method of characteristics:Homoentropic inviscid compressible flows - 2d](https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/characteristics.html#euler-equations-for-homoentropic-inviscid-compressible-flows-2d)
 
 A steady expansion fan at a sharp corner connects two regions of the domain with supersonic flow and homogeneous characteristics. Let $1$ be the inflow homogeneous region and $2$ the outflow homogeneous region.
 
-In a 2-dimensional domain there are three families of characteristic lines.
+In a 2-dimensional domain there are three families of characteristic lines. Characteristic lines (or surfaces in 3-dimensional problems) are defined as those lines orthogonal to the directions $\hat{\mathbf{n}}_i$ that makes the eigenvalue $s_i$ of the matrix $\mathbf{A}_{\mathbf{n}}$ equal to zero. The eigenvalues of the matrix $\mathbf{A}_{\mathbf{n}}$ are
 
-...
+$$\begin{aligned}
+  s_{1,3} & = \mathbf{u} \cdot \hat{\mathbf{n}} \mp a \\
+  s_{2}   & = \mathbf{u} \cdot \hat{\mathbf{n}} \ .
+\end{aligned}$$
 
-**todo** *Direction of characteristic lines...*
+Thus, 
+
+$$\begin{aligned}
+  \hat{\mathbf{u}} \cdot \hat{\mathbf{n}}_{1,3} & = \pm \frac{1}{M} \\
+  \hat{\mathbf{u}} \cdot \hat{\mathbf{n}}_{1,3} & = 0 \ . 
+\end{aligned}$$
 
 On characteristic lines the following compatibility equations hold
 
 $$\begin{aligned}
-  & \ell_{1,3}: \ \frac{\sqrt{M^2-1}}{M^2} \frac{\partial_{\tau} \rho}{\rho} \mp \partial_{\tau} \theta \\
-  & \ell_{2  }: \ \frac{1}{\rho} \partial_{\tau} p + \partial_{\tau} \frac{V^2}{2} \ ,
+  \ell_{1,3}: \ 0 & = \frac{\sqrt{M^2-1}}{M^2} \frac{\partial_{\tau} \rho}{\rho} \mp \partial_{\tau} \theta \\
+  \ell_{2  }: \ 0 & = \frac{1}{\rho} \partial_{\tau} p + \partial_{\tau} \frac{V^2}{2} \ ,
 \end{aligned}$$
 
-being $V = |\mathbf{u}|$. Some characteristic lines of family $1$ and $2$ start from inflow homogeneous region and reach outflow homogeneous region. The compatibility equation on characteristic lines of family $2$ is nothing but the directional derivative of the total enthalpy along streamlines.
+being $V = |\mathbf{u}|$. Some characteristic lines of family $1$ and $2$ start from inflow homogeneous region and reach outflow homogeneous region. The compatibility equation on characteristic lines of family $2$ is nothing but the directional derivative of the total enthalpy along streamlines, and thus it's identically satisfied.
 
 ```{dropdown} $d h$
-:open:
+
+The differential of enthalpy $h(p(\rho,s), s)$ reads
 
 $$\begin{aligned}
   d h = T ds + \frac{d p }{\rho}
@@ -203,14 +213,15 @@ $$\begin{aligned}
   & = \frac{a^2}{\rho} d \rho + \left( T + \frac{1}{\rho} (\partial_s p)_\rho \right) ds \ ,
 \end{aligned}$$
 
-and for homoentropic flows, 
+and for homoentropic flows becomes 
 
-$$d h = \frac{dp}{\rho} = \frac{a^2}{\rho} d \rho \ .$$
+$$d h = \frac{dp}{\rho} = \frac{a^2}{\rho} d \rho \ ,$$
+
+with $a^2(\rho,s) = \left( \frac{\partial p}{\partial \rho} \right)_s(\rho,s)$ the square of the local speed of sound.
 
 ```
 
 ```{dropdown} Total enthalpy on streamlines, or $\, \ell_2 \,$ characteristic lines
-:open:
 
 If $h^t(\mathbf{r}) = \overline{h^t}$ uniform, then
 
@@ -218,7 +229,66 @@ $$\mathbf{0} = \nabla h^t = \nabla h + V \nabla V = \left( \partial_\rho h \righ
 
 and for homoentropic flows, $\nabla s = 0$,
 
-$$\mathbf{0} = \nabla h^t = \frac{\nabla p}{\rho} + V \nabla V = \frac{a^2}{\rho} \nabla \rho + V \nabla V \ . $$
+$$\mathbf{0} = \nabla h^t = \frac{\nabla p}{\rho} + V \nabla V = \frac{a^2}{\rho} \nabla \rho + \nabla \frac{V^2}{2} \ . $$
+
+As the relation $\Delta h^t = 0$ holds, the compatibility equations on characteristic lines $\ell_2$ is identically satisfied, being the directional derivative of $h^t$ along the local direction of the velocity field, $\partial_{\mathbf{u}} h^t = \hat{\mathbf{u}} \cdot \nabla h^t \equiv 0$.
+
+```
+
+(compressible:prandtl-meyer:M-theta)=
+## Relation between Mach number and flow deflection
+
+First the relation between $d\rho$ and $d M$ is evalauted in the whole domain of the homo-total-enthaplic flow
+
+$$\begin{aligned}
+  0 = d h^t 
+  & = dh + V d V = \\
+  & = \frac{d p}{\rho} + M a d ( M a ) = \\
+  & = a^2\frac{d \rho}{\rho} + M a^2 d M + M^2 a d a = \\
+  & = a^2\frac{d \rho}{\rho} + M a^2 d M + \frac{1}{2} M^2 d a^2 = \\
+  & = a^2\frac{d \rho}{\rho} + M a^2 d M + \frac{1}{2} M^2 \left( \frac{\partial a^2}{\partial \rho} \right)_s d \rho \ ,
+\end{aligned}$$
+
+i.e.
+
+$$\frac{d \rho}{\rho} = - \frac{M^2}{1 + \frac{1}{2} M^2 \frac{\rho}{a^2} \left( \frac{\partial a^2}{\partial \rho} \right)_s}  \frac{dM}{M} \ ,$$
+
+and then this relation is inserted in the compatibility equation on $\ell_1$ - connecting the two uniform regions - in terms of $d \rho$, $d \theta$ to get
+
+$$\begin{aligned}
+ \partial_{\tau_1} \theta
+ & = - \frac{\sqrt{M^2-1}}{1 + \frac{1}{2} M^2 \frac{\rho}{a^2} \left( \frac{\partial a^2}{\partial \rho} \right)_s}\frac{\partial_{\tau_1} M}{M} \ .
+\end{aligned}$$
+
+```{dropdown} Details
+
+$$\begin{aligned}
+ \partial_{\tau_1} \theta
+ & = \frac{\sqrt{M^2-1}}{M^2} \frac{\partial_{\tau_1} \rho}{\rho} = \\
+ & = - \frac{\sqrt{M^2-1}}{M^2} \frac{M^2}{1 + \frac{1}{2} M^2 \frac{\rho}{a^2} \left( \frac{\partial a^2}{\partial \rho} \right)_s}\frac{\partial_{\tau_1} M}{M} = \\
+ & = - \frac{\sqrt{M^2-1}}{1 + \frac{1}{2} M^2 \frac{\rho}{a^2} \left( \frac{\partial a^2}{\partial \rho} \right)_s}\frac{\partial_{\tau_1} M}{M} \ .
+\end{aligned}$$
+
+```
+
+```{prf:example} Perfect Ideal Gas
+
+Equation of state of perfect ideal gas... in a homoentropic flow, $p \rho^{-\gamma} = p_0 \rho_0^{-\gamma}$,
+
+$$\left( \frac{\partial a^2}{\partial \rho} \right)_s = \left( \frac{\partial^2 p}{\partial^2 \rho} \right)_s = \gamma ( \gamma - 1) p_0 \left( \frac{\rho}{\rho_0}  \right)^{\gamma} \rho^{-2} = \gamma ( \gamma - 1 ) p \rho^{-2} $$
+
+so that the denominator reads
+
+$$1 + \frac{M^2}{2} \frac{\rho}{\gamma \frac{p}{\rho}} \gamma ( \gamma - 1 ) \frac{p}{\rho^2} = 1 + \frac{\gamma - 1}{2} M^2 \ ,$$
+
+and the relation between flow deflection and Mach number becomes
+
+$$\begin{aligned}
+ \partial_{\tau_1} \theta
+ & = - \frac{\sqrt{M^2-1}}{1 + \frac{\gamma - 1}{2} M^2}\frac{\partial_{\tau_1} M}{M} \ .
+\end{aligned}$$
+
+
 
 ```
 
