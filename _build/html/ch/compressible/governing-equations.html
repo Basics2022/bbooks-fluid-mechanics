@@ -304,8 +304,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Governing equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">13. Bernoulli’s theorem in compressible fluid mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vorticity.html">14. Vorticity equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="potential-equation.html">15. Potential equation for irrotational compressible flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entropy.html">16. Entropy equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html">15. Entropy equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="potential-equation.html">16. Potential equation for irrotational compressible flows</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="canonical-flows.html">17. Canonical flows</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">17.1. Quasi-1-dimensional flows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shock-normal.html">17.2. Normal shocks</a></li>
@@ -531,7 +531,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compressible-navier-stokes-equations">12.1. Compressible Navier-Stokes equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-equations">12.2. Euler equations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-flow">12.3. Ideal flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compressible-governing-equations-ideal">12.3. Ideal flow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-form-of-the-governing-equations">12.4. Other form of the governing equations</a></li>
 </ul>
             </nav>
@@ -626,15 +626,13 @@ Constitutive equations and equations of state<div class="sd-summary-down docutil
 \[p(\rho, e) \ ,\]</div>
 <p>while other dependent theromdynamic variables (fields), like temperature <span class="math notranslate nohighlight">\(T\)</span>, can be retrieved a posteriori once the problem is solved.</p>
 </div>
-<div class="section" id="ideal-flow">
-<h2><span class="section-number">12.3. </span>Ideal flow<a class="headerlink" href="#ideal-flow" title="Permalink to this heading">#</a></h2>
+<div class="section" id="compressible-governing-equations-ideal">
+<span id="ideal-flow"></span><h2><span class="section-number">12.3. </span>Ideal flow<a class="headerlink" href="#compressible-governing-equations-ideal" title="Permalink to this heading">#</a></h2>
 <p>The definition of an ideal flow immediately follows from the <a class="reference internal" href="entropy.html#compressible-entropy"><span class="std std-ref">entropy equation</span></a>: in a fluid with negligible viscosity and heat conduction, where no shock occurs (and thus where differential equations hold in the whole domain), the entropy of each material particle is constant.</p>
 </div>
 <div class="section" id="other-form-of-the-governing-equations">
-<h2><span class="section-number">12.4. </span>Other form of the governing equations<a class="headerlink" href="#other-form-of-the-governing-equations" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="potential-equation.html#compressible-irrotational-potential-equation"><span class="std std-ref">Potential equation for irrotational compressible flows</span></a>. Some flow of interest - e.g. in aeronautics - are irrotational flow. It can be proved with <a class="reference internal" href="vorticity.html#compressible-vorticity"><span class="std std-ref">vorticity equation</span></a> that an irrotational inflow produces irrotational flow in the whole domain, if viscoisty effects are negligible and no oblique shock occurs.</p></li>
-</ul>
+<span id="compressible-governing-equations-other"></span><h2><span class="section-number">12.4. </span>Other form of the governing equations<a class="headerlink" href="#other-form-of-the-governing-equations" title="Permalink to this heading">#</a></h2>
+<p><a class="reference internal" href="potential-equation.html#compressible-irrotational-potential-equation"><span class="std std-ref"><strong>Potential equation for irrotational compressible flows</strong></span></a>. Some flow of interest - e.g. in aeronautics - are irrotational flow. It can be proved with <a class="reference internal" href="vorticity.html#compressible-vorticity"><span class="std std-ref">vorticity equation</span></a> that an irrotational inflow produces irrotational flow in the whole domain, if viscoisty effects are negligible and no oblique shock occurs.</p>
 </div>
 </div>
 
@@ -703,7 +701,7 @@ Constitutive equations and equations of state<div class="sd-summary-down docutil
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compressible-navier-stokes-equations">12.1. Compressible Navier-Stokes equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-equations">12.2. Euler equations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-flow">12.3. Ideal flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compressible-governing-equations-ideal">12.3. Ideal flow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-form-of-the-governing-equations">12.4. Other form of the governing equations</a></li>
 </ul>
   </nav></div>

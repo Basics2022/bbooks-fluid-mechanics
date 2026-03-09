@@ -72,9 +72,11 @@ $$p(\rho, e) \ ,$$
 
 while other dependent theromdynamic variables (fields), like temperature $T$, can be retrieved a posteriori once the problem is solved.
 
+(compressible:governing-equations:ideal)=
 ## Ideal flow
 The definition of an ideal flow immediately follows from the [entropy equation](compressible:entropy): in a fluid with negligible viscosity and heat conduction, where no shock occurs (and thus where differential equations hold in the whole domain), the entropy of each material particle is constant.
 
+(compressible:governing-equations:other)=
 ## Other form of the governing equations
 
-* [Potential equation for irrotational compressible flows](compressible:irrotational:potential-equation). Some flow of interest - e.g. in aeronautics - are irrotational flow. It can be proved with [vorticity equation](compressible:vorticity) that an irrotational inflow produces irrotational flow in the whole domain, if viscoisty effects are negligible and no oblique shock occurs.
+[**Potential equation for irrotational compressible flows**](compressible:irrotational:potential-equation). Some flow of interest - e.g. in aeronautics - are irrotational flow. It can be proved with [vorticity equation](compressible:vorticity) that an irrotational inflow produces irrotational flow in the whole domain, if viscoisty effects are negligible and no oblique shock occurs. 

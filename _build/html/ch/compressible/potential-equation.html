@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15. Potential equation for irrotational compressible flows &#8212; Fluid Mechanics</title>
+    <title>16. Potential equation for irrotational compressible flows &#8212; Fluid Mechanics</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/potential-equation';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="16. Entropy equation" href="entropy.html" />
-    <link rel="prev" title="14. Vorticity equation" href="vorticity.html" />
+    <link rel="next" title="17. Canonical flows" href="canonical-flows.html" />
+    <link rel="prev" title="15. Entropy equation" href="entropy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -304,8 +304,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="governing-equations.html">12. Governing equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">13. Bernoulli’s theorem in compressible fluid mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vorticity.html">14. Vorticity equation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">15. Potential equation for irrotational compressible flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entropy.html">16. Entropy equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html">15. Entropy equation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. Potential equation for irrotational compressible flows</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="canonical-flows.html">17. Canonical flows</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">17.1. Quasi-1-dimensional flows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shock-normal.html">17.2. Normal shocks</a></li>
@@ -529,13 +529,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homoentropic-flows">15.1. Homoentropic flows</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-equation">15.1.1. Linearized equation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-steady-potential-equation-prandtl-glauert-transformation">15.1.2. Linearized steady potential equation - Prandtl-Glauert transformation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nature-of-the-equation">15.1.2.1. Nature of the equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homoentropic-flows">16.1. Homoentropic flows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-equation">16.1.1. Linearized equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-steady-potential-equation-prandtl-glauert-transformation">16.1.2. Linearized steady potential equation - Prandtl-Glauert transformation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nature-of-the-equation">16.1.2.1. Nature of the equation</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure-coefficient">15.1.3. Pressure coefficient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure-coefficient">16.1.3. Pressure coefficient</a></li>
 </ul>
 </li>
 </ul>
@@ -550,7 +550,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="potential-equation-for-irrotational-compressible-flows">
-<span id="compressible-irrotational-potential-equation"></span><h1><span class="section-number">15. </span>Potential equation for irrotational compressible flows<a class="headerlink" href="#potential-equation-for-irrotational-compressible-flows" title="Permalink to this heading">#</a></h1>
+<span id="compressible-irrotational-potential-equation"></span><h1><span class="section-number">16. </span>Potential equation for irrotational compressible flows<a class="headerlink" href="#potential-equation-for-irrotational-compressible-flows" title="Permalink to this heading">#</a></h1>
 <p>Under the assumption of irrotational flow<a class="footnote-reference brackets" href="#irrotational-flow-hp" id="id1">1</a>, the velocity field <span class="math notranslate nohighlight">\(\mathbf{u}(\mathbf{r},t)\)</span> can be written as a gradient of a scalar potential <span class="math notranslate nohighlight">\(\phi(\mathbf{r},t)\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\nabla \times \mathbf{u} = \mathbf{0} \quad \rightarrow \quad \mathbf{u} = \nabla \phi \ .\]</div>
@@ -562,7 +562,7 @@ document.write(`
   &amp; \partial_t s + \mathbf{u} \cdot \nabla s = 0 \ .
 \end{aligned}\end{split}\]</div>
 <div class="section" id="homoentropic-flows">
-<span id="compressible-irrotational-potential-equation-homoentropic"></span><h2><span class="section-number">15.1. </span>Homoentropic flows<a class="headerlink" href="#homoentropic-flows" title="Permalink to this heading">#</a></h2>
+<span id="compressible-irrotational-potential-equation-homoentropic"></span><h2><span class="section-number">16.1. </span>Homoentropic flows<a class="headerlink" href="#homoentropic-flows" title="Permalink to this heading">#</a></h2>
 <p>If no shock occurs and the inflow is uniform, the flow is homoentropic, <span class="math notranslate nohighlight">\(s(\mathbf{r},t) = \overline{s}\)</span>. Mass and momentum equations become</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -626,7 +626,7 @@ Momentum equation <div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \[0 = \partial_{tt} \phi - a^2 \nabla^2 \phi + \partial_t |\nabla \phi|^2 + \nabla \phi \cdot \nabla \frac{|\nabla \phi|^2}{2} \ .\]</div>
 <div class="section" id="linearized-equation">
-<span id="compressible-irrotational-potential-equation-homoentropic-linearized"></span><h3><span class="section-number">15.1.1. </span>Linearized equation<a class="headerlink" href="#linearized-equation" title="Permalink to this heading">#</a></h3>
+<span id="compressible-irrotational-potential-equation-homoentropic-linearized"></span><h3><span class="section-number">16.1.1. </span>Linearized equation<a class="headerlink" href="#linearized-equation" title="Permalink to this heading">#</a></h3>
 <p>Assuming small perturbation of the asymptotic flow, with velocity <span class="math notranslate nohighlight">\(\mathbf{u}_\infty\)</span> and thermodynamic state <span class="math notranslate nohighlight">\(\text{TD}_{\infty}\)</span> with speed of sound <span class="math notranslate nohighlight">\(a^2_\infty\)</span>, the velocity field can be written as</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{u}(\mathbf{r},t) \sim \mathbf{u}_\infty + \mathbf{u}'(\mathbf{r},t) \ ,\]</div>
@@ -673,7 +673,7 @@ Details<div class="sd-summary-down docutils">
 \[\varphi_{tt} + 2 U_\infty \partial_{xt} \varphi + U_\infty^2 \varphi_{xx} - a_\infty^2 \left( \varphi_{xx} + \varphi_{yy} + \varphi_{zz} \right) = 0 \ .\]</div>
 </div>
 <div class="section" id="linearized-steady-potential-equation-prandtl-glauert-transformation">
-<h3><span class="section-number">15.1.2. </span>Linearized steady potential equation - Prandtl-Glauert transformation<a class="headerlink" href="#linearized-steady-potential-equation-prandtl-glauert-transformation" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.1.2. </span>Linearized steady potential equation - Prandtl-Glauert transformation<a class="headerlink" href="#linearized-steady-potential-equation-prandtl-glauert-transformation" title="Permalink to this heading">#</a></h3>
 <p>Steady equation becomes</p>
 <div class="math notranslate nohighlight">
 \[(1-M_\infty^2) \varphi_{xx} + \varphi_{yy} + \varphi_{zz} = 0 \ .\]</div>
@@ -716,7 +716,7 @@ Details<div class="sd-summary-down docutils">
 <p class="sd-card-text">if <span class="math notranslate nohighlight">\(\beta = \frac{1}{\sqrt{1-M^2_\infty}}\)</span>.</p>
 </div>
 </details><div class="section" id="nature-of-the-equation">
-<h4><span class="section-number">15.1.2.1. </span>Nature of the equation<a class="headerlink" href="#nature-of-the-equation" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">16.1.2.1. </span>Nature of the equation<a class="headerlink" href="#nature-of-the-equation" title="Permalink to this heading">#</a></h4>
 <p><em>Discussion with 2-dimensional equation first</em></p>
 <ul class="simple">
 <li><p>If the free-stream is <strong>subsonic</strong>, <span class="math notranslate nohighlight">\(M_\infty \in [0,1)\)</span><a class="footnote-reference brackets" href="#subsonic-flow" id="id4">4</a>, the differential equation is <strong>elliptic</strong></p></li>
@@ -726,7 +726,7 @@ Details<div class="sd-summary-down docutils">
 </div>
 </div>
 <div class="section" id="pressure-coefficient">
-<h3><span class="section-number">15.1.3. </span>Pressure coefficient<a class="headerlink" href="#pressure-coefficient" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">16.1.3. </span>Pressure coefficient<a class="headerlink" href="#pressure-coefficient" title="Permalink to this heading">#</a></h3>
 <p>Pressure coefficient is defined as</p>
 <div class="math notranslate nohighlight">
 \[c_p = \frac{p-p_\infty}{\frac{1}{2}\rho_\infty U_\infty^2}\]</div>
@@ -807,20 +807,20 @@ Details<div class="sd-summary-down docutils">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="vorticity.html"
+       href="entropy.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">14. </span>Vorticity equation</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Entropy equation</p>
       </div>
     </a>
     <a class="right-next"
-       href="entropy.html"
+       href="canonical-flows.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">16. </span>Entropy equation</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>Canonical flows</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -839,13 +839,13 @@ Details<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homoentropic-flows">15.1. Homoentropic flows</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-equation">15.1.1. Linearized equation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-steady-potential-equation-prandtl-glauert-transformation">15.1.2. Linearized steady potential equation - Prandtl-Glauert transformation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nature-of-the-equation">15.1.2.1. Nature of the equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homoentropic-flows">16.1. Homoentropic flows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-equation">16.1.1. Linearized equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearized-steady-potential-equation-prandtl-glauert-transformation">16.1.2. Linearized steady potential equation - Prandtl-Glauert transformation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nature-of-the-equation">16.1.2.1. Nature of the equation</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure-coefficient">15.1.3. Pressure coefficient</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure-coefficient">16.1.3. Pressure coefficient</a></li>
 </ul>
 </li>
 </ul>

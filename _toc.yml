@@ -121,11 +121,12 @@ parts:
   - file: ch/compressible/governing-equations
   - file: ch/compressible/bernoulli
   - file: ch/compressible/vorticity
-  - file: ch/compressible/potential-equation
   - file: ch/compressible/entropy
+  - file: ch/compressible/potential-equation
   - file: ch/compressible/canonical-flows
     sections:
     - file: ch/compressible/quasi-1d
+    - file: ch/compressible/quasi-1d-non-ideal
     - file: ch/compressible/shock-normal
     - file: ch/compressible/shock-oblique
     - file: ch/compressible/prandtl-meyer
