@@ -530,7 +530,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-characteristics">17.5.1. Method of characteristics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-lines-and-compatibility-equations">17.5.1. Characteristic lines and compatibility equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-between-mach-number-and-flow-deflection">17.5.2. Relation between Mach number and flow deflection</a></li>
 </ul>
             </nav>
         </div>
@@ -544,7 +545,12 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="expansion-fans-prandtl-meyer-relation">
 <span id="compressible-prandtl-meyer"></span><h1><span class="section-number">17.5. </span>Expansion fans - Prandtl-Meyer relation<a class="headerlink" href="#expansion-fans-prandtl-meyer-relation" title="Permalink to this heading">#</a></h1>
-<p><strong>todo</strong> <em>Describe flow domain and conditions: supersonic inflow…</em></p>
+<p>A Prandtl-Meyer expansion fan is a continuous centering of Mach waves that occurs when a <strong>supersonic flow</strong> is turned «away» from itself, such as around a convex corner. The flow is homoentropic, and the flow properties (density, pressure, temperature, velocity,…) vary smoothly across the fan while the Mach number increases. The fan connects two regions of the domain with uniform properties.</p>
+<p><strong>todo</strong></p>
+<ul class="simple">
+<li><p><em>Figure</em></p></li>
+<li><p><em>Script with Euler solver in 2-dimensional domains. To be written, so far only 1-d solver on GDrive</em></p></li>
+</ul>
 <hr class="docutils" />
 <p>Under the assumptions of:</p>
 <ol class="arabic simple">
@@ -696,40 +702,51 @@ Total enthalpy - steady flow<div class="sd-summary-down docutils">
   T(\rho, s) &amp; = \rho^{\gamma-1} e^{\frac{s}{c_v}} \frac{T_0}{\rho_0^{\gamma-1}} e^{-\frac{s_0}{c_v}}
 \end{aligned}\end{split}\]</div>
 </div>
-</div><div class="section" id="method-of-characteristics">
-<h2><span class="section-number">17.5.1. </span>Method of characteristics<a class="headerlink" href="#method-of-characteristics" title="Permalink to this heading">#</a></h2>
+</div><div class="section" id="characteristic-lines-and-compatibility-equations">
+<span id="compressible-prandtl-meyer-characteristics"></span><h2><span class="section-number">17.5.1. </span>Characteristic lines and compatibility equations<a class="headerlink" href="#characteristic-lines-and-compatibility-equations" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Link to <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/characteristics.html#euler-equations-for-homoentropic-inviscid-compressible-flows-2d">Method of characteristics:Homoentropic inviscid compressible flows - 2d</a></p></li>
 </ul>
 <p>A steady expansion fan at a sharp corner connects two regions of the domain with supersonic flow and homogeneous characteristics. Let <span class="math notranslate nohighlight">\(1\)</span> be the inflow homogeneous region and <span class="math notranslate nohighlight">\(2\)</span> the outflow homogeneous region.</p>
-<p>In a 2-dimensional domain there are three families of characteristic lines.</p>
-<p>…</p>
-<p><strong>todo</strong> <em>Direction of characteristic lines…</em></p>
+<p>In a 2-dimensional domain there are three families of characteristic lines. Characteristic lines (or surfaces in 3-dimensional problems) are defined as those lines orthogonal to the directions <span class="math notranslate nohighlight">\(\hat{\mathbf{n}}_i\)</span> that makes the eigenvalue <span class="math notranslate nohighlight">\(s_i\)</span> of the matrix <span class="math notranslate nohighlight">\(\mathbf{A}_{\mathbf{n}}\)</span> equal to zero. The eigenvalues of the matrix <span class="math notranslate nohighlight">\(\mathbf{A}_{\mathbf{n}}\)</span> are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  s_{1,3} &amp; = \mathbf{u} \cdot \hat{\mathbf{n}} \mp a \\
+  s_{2}   &amp; = \mathbf{u} \cdot \hat{\mathbf{n}} \ .
+\end{aligned}\end{split}\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \hat{\mathbf{u}} \cdot \hat{\mathbf{n}}_{1,3} &amp; = \pm \frac{1}{M} \\
+  \hat{\mathbf{u}} \cdot \hat{\mathbf{n}}_{1,3} &amp; = 0 \ . 
+\end{aligned}\end{split}\]</div>
 <p>On characteristic lines the following compatibility equations hold</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-  &amp; \ell_{1,3}: \ \frac{\sqrt{M^2-1}}{M^2} \frac{\partial_{\tau} \rho}{\rho} \mp \partial_{\tau} \theta \\
-  &amp; \ell_{2  }: \ \frac{1}{\rho} \partial_{\tau} p + \partial_{\tau} \frac{V^2}{2} \ ,
+  \ell_{1,3}: \ 0 &amp; = \frac{\sqrt{M^2-1}}{M^2} \frac{\partial_{\tau} \rho}{\rho} \mp \partial_{\tau} \theta \\
+  \ell_{2  }: \ 0 &amp; = \frac{1}{\rho} \partial_{\tau} p + \partial_{\tau} \frac{V^2}{2} \ ,
 \end{aligned}\end{split}\]</div>
-<p>being <span class="math notranslate nohighlight">\(V = |\mathbf{u}|\)</span>. Some characteristic lines of family <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> start from inflow homogeneous region and reach outflow homogeneous region. The compatibility equation on characteristic lines of family <span class="math notranslate nohighlight">\(2\)</span> is nothing but the directional derivative of the total enthalpy along streamlines.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<p>being <span class="math notranslate nohighlight">\(V = |\mathbf{u}|\)</span>. Some characteristic lines of family <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> start from inflow homogeneous region and reach outflow homogeneous region. The compatibility equation on characteristic lines of family <span class="math notranslate nohighlight">\(2\)</span> is nothing but the directional derivative of the total enthalpy along streamlines, and thus it’s identically satisfied.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="math notranslate nohighlight">\(d h\)</span><div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The differential of enthalpy <span class="math notranslate nohighlight">\(h(p(\rho,s), s)\)</span> reads</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
   d h = T ds + \frac{d p }{\rho}
   &amp; = T ds + \frac{1}{\rho} \left[ (\partial_\rho p)_s d \rho + (\partial_s p)_\rho d s \right] = \\
   &amp; = \frac{a^2}{\rho} d \rho + \left( T + \frac{1}{\rho} (\partial_s p)_\rho \right) ds \ ,
 \end{aligned}\end{split}\]</div>
-<p class="sd-card-text">and for homoentropic flows,</p>
+<p class="sd-card-text">and for homoentropic flows becomes</p>
 <div class="math notranslate nohighlight">
-\[d h = \frac{dp}{\rho} = \frac{a^2}{\rho} d \rho \ .\]</div>
+\[d h = \frac{dp}{\rho} = \frac{a^2}{\rho} d \rho \ ,\]</div>
+<p class="sd-card-text">with <span class="math notranslate nohighlight">\(a^2(\rho,s) = \left( \frac{\partial p}{\partial \rho} \right)_s(\rho,s)\)</span> the square of the local speed of sound.</p>
 </div>
-</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Total enthalpy on streamlines, or <span class="math notranslate nohighlight">\(\, \ell_2 \,\)</span> characteristic lines<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -741,9 +758,63 @@ Total enthalpy on streamlines, or <span class="math notranslate nohighlight">\(\
 \[\mathbf{0} = \nabla h^t = \nabla h + V \nabla V = \left( \partial_\rho h \right)_s \nabla \rho + \left( \partial_s h \right)_\rho \nabla s + V \nabla V \ ,\]</div>
 <p class="sd-card-text">and for homoentropic flows, <span class="math notranslate nohighlight">\(\nabla s = 0\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{0} = \nabla h^t = \frac{\nabla p}{\rho} + V \nabla V = \frac{a^2}{\rho} \nabla \rho + V \nabla V \ . \]</div>
+\[\mathbf{0} = \nabla h^t = \frac{\nabla p}{\rho} + V \nabla V = \frac{a^2}{\rho} \nabla \rho + \nabla \frac{V^2}{2} \ . \]</div>
+<p class="sd-card-text">As the relation <span class="math notranslate nohighlight">\(\Delta h^t = 0\)</span> holds, the compatibility equations on characteristic lines <span class="math notranslate nohighlight">\(\ell_2\)</span> is identically satisfied, being the directional derivative of <span class="math notranslate nohighlight">\(h^t\)</span> along the local direction of the velocity field, <span class="math notranslate nohighlight">\(\partial_{\mathbf{u}} h^t = \hat{\mathbf{u}} \cdot \nabla h^t \equiv 0\)</span>.</p>
 </div>
 </details></div>
+<div class="section" id="relation-between-mach-number-and-flow-deflection">
+<span id="compressible-prandtl-meyer-m-theta"></span><h2><span class="section-number">17.5.2. </span>Relation between Mach number and flow deflection<a class="headerlink" href="#relation-between-mach-number-and-flow-deflection" title="Permalink to this heading">#</a></h2>
+<p>First the relation between <span class="math notranslate nohighlight">\(d\rho\)</span> and <span class="math notranslate nohighlight">\(d M\)</span> is evalauted in the whole domain of the homo-total-enthaplic flow</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  0 = d h^t 
+  &amp; = dh + V d V = \\
+  &amp; = \frac{d p}{\rho} + M a d ( M a ) = \\
+  &amp; = a^2\frac{d \rho}{\rho} + M a^2 d M + M^2 a d a = \\
+  &amp; = a^2\frac{d \rho}{\rho} + M a^2 d M + \frac{1}{2} M^2 d a^2 = \\
+  &amp; = a^2\frac{d \rho}{\rho} + M a^2 d M + \frac{1}{2} M^2 \left( \frac{\partial a^2}{\partial \rho} \right)_s d \rho \ ,
+\end{aligned}\end{split}\]</div>
+<p>i.e.</p>
+<div class="math notranslate nohighlight">
+\[\frac{d \rho}{\rho} = - \frac{M^2}{1 + \frac{1}{2} M^2 \frac{\rho}{a^2} \left( \frac{\partial a^2}{\partial \rho} \right)_s}  \frac{dM}{M} \ ,\]</div>
+<p>and then this relation is inserted in the compatibility equation on <span class="math notranslate nohighlight">\(\ell_1\)</span> - connecting the two uniform regions - in terms of <span class="math notranslate nohighlight">\(d \rho\)</span>, <span class="math notranslate nohighlight">\(d \theta\)</span> to get</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+ \partial_{\tau_1} \theta
+ &amp; = - \frac{\sqrt{M^2-1}}{1 + \frac{1}{2} M^2 \frac{\rho}{a^2} \left( \frac{\partial a^2}{\partial \rho} \right)_s}\frac{\partial_{\tau_1} M}{M} \ .
+\end{aligned}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Details<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ \partial_{\tau_1} \theta
+ &amp; = \frac{\sqrt{M^2-1}}{M^2} \frac{\partial_{\tau_1} \rho}{\rho} = \\
+ &amp; = - \frac{\sqrt{M^2-1}}{M^2} \frac{M^2}{1 + \frac{1}{2} M^2 \frac{\rho}{a^2} \left( \frac{\partial a^2}{\partial \rho} \right)_s}\frac{\partial_{\tau_1} M}{M} = \\
+ &amp; = - \frac{\sqrt{M^2-1}}{1 + \frac{1}{2} M^2 \frac{\rho}{a^2} \left( \frac{\partial a^2}{\partial \rho} \right)_s}\frac{\partial_{\tau_1} M}{M} \ .
+\end{aligned}\end{split}\]</div>
+</div>
+</details><div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 17.2 </span> (Perfect Ideal Gas)</p>
+<div class="example-content section" id="proof-content">
+<p>Equation of state of perfect ideal gas… in a homoentropic flow, <span class="math notranslate nohighlight">\(p \rho^{-\gamma} = p_0 \rho_0^{-\gamma}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\left( \frac{\partial a^2}{\partial \rho} \right)_s = \left( \frac{\partial^2 p}{\partial^2 \rho} \right)_s = \gamma ( \gamma - 1) p_0 \left( \frac{\rho}{\rho_0}  \right)^{\gamma} \rho^{-2} = \gamma ( \gamma - 1 ) p \rho^{-2} \]</div>
+<p>so that the denominator reads</p>
+<div class="math notranslate nohighlight">
+\[1 + \frac{M^2}{2} \frac{\rho}{\gamma \frac{p}{\rho}} \gamma ( \gamma - 1 ) \frac{p}{\rho^2} = 1 + \frac{\gamma - 1}{2} M^2 \ ,\]</div>
+<p>and the relation between flow deflection and Mach number becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+ \partial_{\tau_1} \theta
+ &amp; = - \frac{\sqrt{M^2-1}}{1 + \frac{\gamma - 1}{2} M^2}\frac{\partial_{\tau_1} M}{M} \ .
+\end{aligned}\]</div>
+</div>
+</div></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -809,7 +880,8 @@ Total enthalpy on streamlines, or <span class="math notranslate nohighlight">\(\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-characteristics">17.5.1. Method of characteristics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristic-lines-and-compatibility-equations">17.5.1. Characteristic lines and compatibility equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-between-mach-number-and-flow-deflection">17.5.2. Relation between Mach number and flow deflection</a></li>
 </ul>
   </nav></div>
 
