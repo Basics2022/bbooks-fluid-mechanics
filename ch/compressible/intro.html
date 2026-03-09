@@ -305,17 +305,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">13. Bernoulli’s theorem in compressible fluid mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vorticity.html">14. Vorticity equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entropy.html">15. Entropy equation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="canonical-flows.html">16. Canonical flows</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">16.1. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shock-normal.html">16.2. Normal shocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">16.3. Oblique shocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">16.4. Expansion fans - Prandtl-Meyer relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="potential-equation.html">16. Potential equation for irrotational compressible flows</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="canonical-flows.html">17. Canonical flows</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">17.1. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quasi-1d-non-ideal.html">17.2. Non-ideal quasi-1 dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-normal.html">17.3. Normal shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">17.4. Oblique shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">17.5. Expansion fans - Prandtl-Meyer relation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">17. Jump conditions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="characteristics.html">18. Characteristics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">19. Steady 2-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acoustics.html">20. Acoustics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">18. Jump conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="characteristics.html">19. Characteristics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">20. Steady 2-dimensional flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acoustics.html">21. Acoustics</a></li>
 </ul>
 
     </div>
@@ -532,24 +534,96 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-compressible-fluid-mechanics">
 <span id="compressible-intro"></span><h1><span class="section-number">11. </span>Introduction to Compressible Fluid Mechanics<a class="headerlink" href="#introduction-to-compressible-fluid-mechanics" title="Permalink to this heading">#</a></h1>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<a class="reference internal" href="governing-equations.html#compressible-governing-equations"><span class="std std-ref">Governing Equations</span></a><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
-<li><p><strong>Governing Equations</strong></p></li>
-<li><p><strong>Vorticity, entropy and Bernoulli theorems.</strong></p></li>
-<li><p><strong>Canonical flows</strong>:</p>
+<li><p class="sd-card-text">From compressible <a class="reference internal" href="governing-equations.html#compressible-governing-equations-navier-stokes"><span class="std std-ref"><strong>Navier-Stokes equations</strong></span></a>, to <a class="reference internal" href="governing-equations.html#compressible-governing-equations-euler"><span class="std std-ref"><strong>Euler equations</strong></span></a> for compressible fluids with negligible viscosity and heat conduction effects. Under these assumptions, the diffusive parts of the equations disappear, and discontinuities (e.g. <a class="reference internal" href="shock-normal.html#compressible-shocks-normal"><span class="std std-ref">normal shocks</span></a>, <a class="reference internal" href="shock-oblique.html#compressible-shocks-oblique"><span class="std std-ref">oblique shocks</span></a>, or <span class="xref myst">contact discontinuities</span>) may appear in the field: as fields are not differentiable and not even continuous across a discontinuity, differential equations fail and <a class="reference internal" href="jump-conditions.html#compressible-jump-conditions"><span class="std std-ref">jump conditions</span></a> from integral equations are required to connect 2 regions of smooth fields.</p></li>
+<li><p class="sd-card-text">The definition of <a class="reference internal" href="governing-equations.html#compressible-governing-equations-ideal"><span class="std std-ref"><strong>ideal flow</strong></span></a> requires the additional assumption of absence of shocks, beside negligible viscosity and heat conduction. Without shocks, differential equations hold in the whole domain and <a class="reference internal" href="entropy.html#compressible-entropy"><span class="std std-ref">entropy equation</span></a> shows that the flow is homoentropic, <span class="math notranslate nohighlight">\(s(\mathbf{r},t) = \overline{s}\)</span>, if the inflow is uniform.</p></li>
+<li><p class="sd-card-text">If the flow is also irrotational, the governing equations can be written as a PDE for <a class="reference internal" href="potential-equation.html#compressible-irrotational-potential-equation"><span class="std std-ref">kinetic potential</span></a>. Without shocks, differential equations hold in the whole domain and <a class="reference internal" href="vorticity.html#compressible-vorticity"><span class="std std-ref">vorticity equation</span></a> shows that the flow is irrotational in the whole domain if the inflow is irrotational.</p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="acoustics.html#compressible-acoustics"><span class="std std-ref">Acoustics</span></a> …linearized equations…</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Vorticity, entropy and Bernoulli theorems<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Vorticity equation and entropy equation are discussed in detail in order to use them and their conclusions in different models of a flow.</p>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="vorticity.html#compressible-vorticity"><span class="std std-ref">Vorticity equation</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="entropy.html#compressible-entropy"><span class="std std-ref">Entropy equation</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="bernoulli.html#compressible-bernoulli"><span class="std std-ref">Bernoulli equation</span></a></p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Mathematical nature of equations of physics<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The (local) mathematical nature of the problem depends on the (local) value of the Mach number. As an example, for Euler equations<a class="footnote-reference brackets" href="#ns-math" id="id1">1</a> and derived models</p>
+<ul class="simple">
+<li><p class="sd-card-text">in subsonic regions:</p>
 <ul>
-<li><p>introduction to hyperbolic problems: mathematical nature of the physics. Link to Math jbook: hyperbolic problems, method of characteristics, integral balance, jumps,…</p></li>
-<li><p>1-dimensional, quasi 1-dimensional flows, non-ideal flows (w/ friction (Fanno), w/ heat transfer (Rayleigh))</p></li>
-<li><p>2-dimensional flows:</p>
+<li><p class="sd-card-text">in steady condition, the governing equations are elliptic</p></li>
+<li><p class="sd-card-text">in unsteady condition, the governing equations are hyperbolic</p></li>
+</ul>
+</li>
+<li><p class="sd-card-text">in supersonic regions:</p>
 <ul>
-<li><p>shocks: normal and oblique (<span class="math notranslate nohighlight">\(\theta - \beta - M \)</span>)</p></li>
-<li><p>rarefaction waves: Prandtl-Meyer</p></li>
-<li><p>discontituities</p></li>
+<li><p class="sd-card-text">in steady contditions, the governing equations are hyperbolic</p></li>
+<li><p class="sd-card-text">in unsteady conditions, the governing equations are hyperbolic</p></li>
 </ul>
 </li>
 </ul>
-</li>
-<li><p><strong>Acoustics</strong></p></li>
+<p class="sd-card-text">Introduction to hyperbolic problems:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Link to Math jbook: hyperbolic problems, method of characteristics, integral balance, jumps,…</p></li>
+<li><p class="sd-card-text">include script avaiable on GDrive in <span class="math notranslate nohighlight">\(\texttt{fvm}\)</span> folder</p></li>
 </ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<a class="reference internal" href="canonical-flows.html#compressible-canonical-flows"><span class="std std-ref">Canonical flows</span></a><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">1-dimensional ideal flow</p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="quasi-1d.html#compressible-quasi-1d"><span class="std std-ref">quasi 1-dimensional flows</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="quasi-1d-non-ideal.html#compressible-quasi-1d-non-ideal"><span class="std std-ref">(quasi) 1-dimensional non-ideal flows</span></a>: with friction (Fanno), and with heat flux (Rayleigh)</p></li>
+<li><p class="sd-card-text">2-dimensional flows:</p>
+<ul>
+<li><p class="sd-card-text">shocks: <a class="reference internal" href="shock-normal.html#compressible-shocks-normal"><span class="std std-ref">normal shocks</span></a> and <a class="reference internal" href="shock-oblique.html#compressible-shocks-oblique"><span class="std std-ref">oblique shocks</span></a> (<span class="math notranslate nohighlight">\(\theta - \beta - M \)</span>)</p></li>
+<li><p class="sd-card-text">rarefaction waves: <a class="reference internal" href="prandtl-meyer.html#compressible-prandtl-meyer"><span class="std std-ref">Prandtl-Meyer exapnsion</span></a></p></li>
+<li><p class="sd-card-text">discontituities</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+<a class="reference internal" href="acoustics.html#compressible-acoustics"><span class="std std-ref">Acoustics</span></a><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details><hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="ns-math"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Dissipative terms make Navier-Stokes equations elliptic in steady conditions and parabolic in unsteady conditions.</p>
+</dd>
+</dl>
 </div>
 
     <script type="text/x-thebe-config">
