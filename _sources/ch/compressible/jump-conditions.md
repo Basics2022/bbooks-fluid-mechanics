@@ -1,6 +1,27 @@
 (compressible:jump-conditions)=
 # Jump conditions
 
+**Continuous medium.** Jump conditions for a continuous medium read
+
+$$\begin{aligned}
+  0          & = [ \rho u^{rel}_n ]  \\
+  \mathbf{0} & = \dot{m}[ \mathbf{u} ] - [ \mathbf{t}_{\mathbf{n}} ] \\
+  0          & = \dot{m}[ e^t ] + [ \mathbf{t}_{\mathbf{n}} \cdot \mathbf{u} - \hat{\mathbf{n}} \cdot \mathbf{q} ]  \ ,
+\end{aligned}$$
+
+being $\dot{m} = \rho_1 u^{rel}_{n,1} = \rho_2 u^{rel}_{n,2}$. 
+
+**Inviscid flows, w/o heat conduction (Euler equations).** If viscous stress and heat conduction are negligible (as they're in Euler equations), jump conditions become
+
+$$\begin{aligned}
+  0          & = [ \rho u^{rel}_n ]  \\
+  \mathbf{0} & = \dot{m}[ \mathbf{u} ] + [ p \mathbf{n} ] \\
+  0          & = \dot{m}[ h^t ] + [ p ] \hat{\mathbf{n}} \cdot \mathbf{u}_s  \ .
+\end{aligned}$$
+
+
+```{dropdown} Details
+
 Starting from integral equations
 
 $$\begin{aligned}
@@ -36,6 +57,8 @@ $$\begin{aligned}
              & = \dot{m} \left[ h^t \right] + \left[ p \right] \, \hat{\mathbf{n}} \cdot \mathbf{u}_s  \\
 \end{aligned}$$
 
+```
+
 Two main cases are determined by the value of the mass flow $\dot{m}$:
 - if $\dot{m} = 0$,
 
@@ -44,23 +67,41 @@ Two main cases are determined by the value of the mass flow $\dot{m}$:
      & [ p ] = 0 \ ,
    \end{aligned}$$
 
-   while nothing can be said about the tangential component of the velocity field and the total enthalpy
+   while nothing can be said about the tangential component of the velocity field and the total enthalpy. These conditions hold **contact discontinuities**.
 
 - if $\dot{m} \ne 0$
 
    $$\begin{aligned}
      0 & = [ \dot{m} ] = [ \rho u_{n}^{rel} ]   \\
      \mathbf{0} & = \dot{m} [ \mathbf{u}_{\mathbf{t}} ]  \\
-     0 & = \dot{m} [ u_n ] + [ \, p \, ]  \\
-     0 & = \dot{m} [ h^t ] + u_{s,n} [ \, p \, ] = \\
-       & = \dot{m} \left[ h^t \right] - u_{s,n} \, \dot{m} \left[ u_n \right] = \\
-       & = \dot{m} \left[ h + \frac{u_n^2 + u_t^2}{2} - u_{s,n} u_n  \right] = \\
-       & = \dot{m} \left[ h + \frac{u_n^2 - 2 u_{s,n} u_n + u_{s,n}^2}{2} - \frac{u_{s,n}^2}{2} + \frac{u_t^2}{2}  \right] = \\
-       & = \dot{m} \left[ h + \frac{(u_n - u_{s,n})^2}{2} - \frac{u_{s,n}^2}{2} + \frac{u_t^2}{2}  \right] = \\
-       & = \dot{m} \left[ h^{t,rel} \right] \ ,
+     0 & = \dot{m} [ u_n ] + [ \, p \, ] = \dot{m} [ u_n^{rel} ] + [ \, p \, ]  \\
+     0 & = \dot{m} [ h^{t,rel} ] = \dot{m} [ h^{t,rel}_n ] 
    \end{aligned}$$
 
-   as $\left[ u_{s,n}^2 \right] = 0$, and with the definition of the *relative total enthalpy*
+   These conditions hold for **shocks** (usually compression shocks, e.g. for PIG, but for heavy fluids expansion shocks may exist as well).
 
-   $$h^{t,rel} := h + \frac{1}{2} \left( (u_n - u_{s,n})^2 + u_t^2  \right) = h + \frac{1}{2} \left( \left( u_{n}^{rel} \right)^2 + u_t^2 \right) \ . $$
 
+```{dropdown} Details
+
+$$\begin{aligned}
+  0 & = [ \dot{m} ] = [ \rho u_{n}^{rel} ]   \\
+  \mathbf{0} & = \dot{m} [ \mathbf{u}_{\mathbf{t}} ]  \\
+  0 & = \dot{m} [ u_n ] + [ \, p \, ] =  && ([u_s] = 0) \\
+    & = \dot{m} [ u_n - u_s ] + [ \, p \, ] = \\
+    & = \dot{m} [ u_n^{rel} ] + [ \, p \, ]  \\
+  0 & = \dot{m} [ h^t ] + u_{s,n} [ \, p \, ] = \\
+    & = \dot{m} \left[ h^t \right] - u_{s,n} \, \dot{m} \left[ u_n \right] = \\
+    & = \dot{m} \left[ h + \frac{u_n^2 + u_t^2}{2} - u_{s,n} u_n  \right] = \\
+    & = \dot{m} \left[ h + \frac{u_n^2 - 2 u_{s,n} u_n + u_{s,n}^2}{2} - \frac{u_{s,n}^2}{2} + \frac{u_t^2}{2}  \right] = \\
+    & = \dot{m} \left[ h + \frac{(u_n - u_{s,n})^2}{2} - \frac{u_{s,n}^2}{2} + \frac{u_t^2}{2}  \right] = \\
+    & = \dot{m} \left[ h^{t,rel} \right] = \\
+    & = \dot{m} \left[ h^{t,rel}_n \right] \ ,
+\end{aligned}$$
+
+as $\left[ u_{s,n}^2 \right] = 0$ being $u_{s,n}$ the velocity of the "discontinuity" surface, $[ \mathbf{u}_t ] = 0$ from the tangential component of the momentum equation, and with the definition of the *relative total enthalpy*
+
+$$h^{t,rel} := h + \frac{1}{2} \left( (u_n - u_{s,n})^2 + u_t^2  \right) = h + \frac{1}{2} \left( \left( u_{n}^{rel} \right)^2 + u_t^2 \right) \ , $$
+
+and $h^{t,rel}_n$ the relative total enthalpy built with the normal component of the relative velocity only.
+
+```

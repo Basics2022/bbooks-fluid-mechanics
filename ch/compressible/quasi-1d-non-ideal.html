@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>17.2. Non-ideal quasi-1 dimensional flows &#8212; Fluid Mechanics</title>
+    <title>19.2. Non-ideal quasi-1 dimensional flows &#8212; Fluid Mechanics</title>
   
   
   
@@ -66,11 +66,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/quasi-1d-non-ideal';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="17.3. Normal shocks" href="shock-normal.html" />
-    <link rel="prev" title="17.1. Quasi-1-dimensional flows" href="quasi-1d.html" />
+    <link rel="next" title="19.3. Normal shocks" href="shock-normal.html" />
+    <link rel="prev" title="19.1. Quasi-1-dimensional flows" href="quasi-1d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -300,22 +302,27 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">11. Introduction to Compressible Fluid Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="governing-equations.html">12. Governing equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bernoulli.html">13. Bernoulli’s theorem in compressible fluid mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vorticity.html">14. Vorticity equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entropy.html">15. Entropy equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="potential-equation.html">16. Potential equation for irrotational compressible flows</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="canonical-flows.html">17. Canonical flows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">17.1. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">17.2. Non-ideal quasi-1 dimensional flows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shock-normal.html">17.3. Normal shocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">17.4. Oblique shocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">17.5. Expansion fans - Prandtl-Meyer relation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="thermodynamics.html">13. Thermodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="pig.html">13.1. Perfect Ideal Gas (PIG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vdw.html">13.2. Real Gas - Van der Waals</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">18. Jump conditions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="characteristics.html">19. Characteristics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">20. Steady 2-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acoustics.html">21. Acoustics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">14. Jump conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bernoulli.html">15. Bernoulli’s theorem in compressible fluid mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vorticity.html">16. Vorticity equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html">17. Entropy equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="potential-equation.html">18. Potential equation for irrotational compressible flows</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="canonical-flows.html">19. Canonical flows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">19.1. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">19.2. Non-ideal quasi-1 dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-normal.html">19.3. Normal shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">19.4. Oblique shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">19.5. Expansion fans - Prandtl-Meyer relation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="characteristics.html">20. Characteristics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">21. Steady 2-dimensional flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acoustics.html">22. Acoustics</a></li>
 </ul>
 
     </div>
@@ -528,8 +535,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fanno">17.2.1. Fanno</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rayleigh">17.2.2. Rayleigh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fanno">19.2.1. Fanno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rayleigh">19.2.2. Rayleigh</a></li>
 </ul>
             </nav>
         </div>
@@ -542,12 +549,71 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="non-ideal-quasi-1-dimensional-flows">
-<span id="compressible-quasi-1d-non-ideal"></span><h1><span class="section-number">17.2. </span>Non-ideal quasi-1 dimensional flows<a class="headerlink" href="#non-ideal-quasi-1-dimensional-flows" title="Permalink to this heading">#</a></h1>
-<div class="section" id="fanno">
-<span id="compressible-quasi-1d-non-ideal-fanno"></span><h2><span class="section-number">17.2.1. </span>Fanno<a class="headerlink" href="#fanno" title="Permalink to this heading">#</a></h2>
+<span id="compressible-quasi-1d-non-ideal"></span><h1><span class="section-number">19.2. </span>Non-ideal quasi-1 dimensional flows<a class="headerlink" href="#non-ideal-quasi-1-dimensional-flows" title="Permalink to this heading">#</a></h1>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Details<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>3-dimensional flows.</strong> Equations for a generic volume <span class="math notranslate nohighlight">\(v_t\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \dfrac{d}{dt} \int_{v_t} \rho + \oint_{\partial v_t} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = 0 \\
+  &amp; \dfrac{d}{dt} \int_{v_t} \rho \mathbf{u} + \oint_{\partial v_t} \rho \mathbf{u} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{v_t} \rho \mathbf{g}  + \oint_{\partial v_t} \mathbf{t}_{\mathbf{n}} \\
+  &amp; \dfrac{d}{dt} \int_{v_t} \rho e^t + \oint_{\partial v_t} \rho e^t \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{v_t} \rho \mathbf{g} \cdot \mathbf{u}  + \oint_{\partial v_t} \mathbf{t}_{\mathbf{n}} \cdot \mathbf{u} - \oint_{\partial v_t} \mathbf{q} \cdot \hat{\mathbf{n}} + \int_{v_t} \rho r \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">For a volume <span class="math notranslate nohighlight">\(V\)</span> at rest, <span class="math notranslate nohighlight">\(\mathbf{u}^{rel} = \mathbf{u}\)</span>.</p>
+<p class="sd-card-text"><strong>Quasi-1 dimensional approximation.</strong> Introducing the quasi-1 dimensional model, the contributions of heat conduction through lateral walls and heat source can be collected in one term,</p>
+<div class="math notranslate nohighlight">
+\[-\int_{\partial \Delta S^{lat}} \hat{\mathbf{n}} \cdot \mathbf{q} + \int_{\Delta V} \rho r = \rho r A \Delta z \ ,\]</div>
+<p class="sd-card-text">while the conduction along the axis of the stream-tube reads</p>
+<div class="math notranslate nohighlight">
+\[-\int_{\partial A(z)} \hat{\mathbf{n}} \cdot \mathbf{q} - \int_{\partial A(z+\Delta z)} \hat{\mathbf{n}} \cdot \mathbf{q} \simeq 
+A(z) q(z) - A(z+\Delta z) q(z+\Delta z) = - \partial_{z} ( q A ) \Delta z + o(\Delta z) \ .\]</div>
+<p class="sd-card-text">With a hydraulic approximation<a class="footnote-reference brackets" href="#hydraulic-re" id="id1">1</a>, the contribution of viscous stress in the momentum equation can be written as</p>
+<div class="math notranslate nohighlight">
+\[\oint_{\partial v_t} \mathbf{s}_{\mathbf{n}} = - \frac{f_d A}{2 D_h} \rho \mathbf{u} |\mathbf{u}|\]</div>
+<p class="sd-card-text"><strong>Quasi-1 dimensional model: differential equations.</strong> The conservative form of governing equations of compressible flows with friction and heat coduction reads</p>
+<div class="math notranslate nohighlight">
+\[\partial_t \mathbf{u} + \partial_z \mathbf{F}(\mathbf{u}) + \partial_z \mathbf{F}^d(\mathbf{u}) = \mathbf{s} \ ,\]</div>
+<p class="sd-card-text">or explicitly</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \partial_t \begin{bmatrix} \rho A \\ \rho u A \\ \rho e^t A \end{bmatrix}
++ \partial_z \begin{bmatrix} \rho u A \\ \rho u^2 A + p A \\ \rho u h^t \end{bmatrix}  
++ \partial_z \begin{bmatrix} 0 \\ 0 \\ - q A \end{bmatrix}  
+= \begin{bmatrix} 0 \\ p \partial_z A - \frac{f A}{2 D_h} \rho u |u| \\ \rho r A  \end{bmatrix}  \ ,
+\end{split}\]</div>
+<p class="sd-card-text">where the axial heat conduction is logically serapated from the «convective» flux, as it’s usually a <strong>diffusive term</strong> containing 2-nd order spatial derivative of primary variables, and changing the mathematical nature of the equations. As an example, using Fourier’s law, <span class="math notranslate nohighlight">\(q = -k \partial_z T\)</span>, this term becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} 0 \\ 0 \\ \partial_z ( k \partial_z T ) \end{bmatrix} \ .\end{split}\]</div>
+<p class="sd-card-text">If axial conduction is negligible if compared to convection and heat conduction through the walls of the streamtube, this contribution can be set to zero.</p>
+</div>
+</details><div class="section" id="fanno">
+<span id="compressible-quasi-1d-non-ideal-fanno"></span><h2><span class="section-number">19.2.1. </span>Fanno<a class="headerlink" href="#fanno" title="Permalink to this heading">#</a></h2>
+<p>With non-negligible friction…</p>
+<p><strong>todo</strong></p>
+<ul class="simple">
+<li><p>analytical solution and diagrams for steady flows</p></li>
+<li><p>simulation for unsteady flows</p></li>
+</ul>
 </div>
 <div class="section" id="rayleigh">
-<span id="compressible-quasi-1d-non-ideal-rayleigh"></span><h2><span class="section-number">17.2.2. </span>Rayleigh<a class="headerlink" href="#rayleigh" title="Permalink to this heading">#</a></h2>
+<span id="compressible-quasi-1d-non-ideal-rayleigh"></span><h2><span class="section-number">19.2.2. </span>Rayleigh<a class="headerlink" href="#rayleigh" title="Permalink to this heading">#</a></h2>
+<p>With non-negligible heat conduction through lateral walls…</p>
+<p><strong>todo</strong></p>
+<ul class="simple">
+<li><p>analytical solution and diagrams for steady flows</p></li>
+<li><p>simulation for unsteady flows</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="hydraulic-re"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>This is a high-Reynolds model, with viscous stress proportional to dynamic pressure through a friction coefficient and the ration of the area of the section and the hydraulic diameter, <span class="math notranslate nohighlight">\(\frac{A}{D_h}\)</span>. As a reference see chapter about <a class="reference internal" href="../../polimi/fluidmechanics-ita/template/capitoli/07_similitudine/07teoria.html#fluid-mechanics-similitude"><span class="std std-ref">Similitude</span></a> and in particular the exexricse and the discussion about <a class="reference internal" href="../../polimi/fluidmechanics-ita/template/capitoli/07_similitudine/0706in.html#fluid-mechanics-similitude-moody"><span class="std std-ref">Moody’s diagram</span></a>.</p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -587,7 +653,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">17.1. </span>Quasi-1-dimensional flows</p>
+        <p class="prev-next-title"><span class="section-number">19.1. </span>Quasi-1-dimensional flows</p>
       </div>
     </a>
     <a class="right-next"
@@ -595,7 +661,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">17.3. </span>Normal shocks</p>
+        <p class="prev-next-title"><span class="section-number">19.3. </span>Normal shocks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -614,8 +680,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fanno">17.2.1. Fanno</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rayleigh">17.2.2. Rayleigh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fanno">19.2.1. Fanno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rayleigh">19.2.2. Rayleigh</a></li>
 </ul>
   </nav></div>
 

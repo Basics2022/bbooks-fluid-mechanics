@@ -288,8 +288,6 @@ $$\begin{aligned}
  & = - \frac{\sqrt{M^2-1}}{1 + \frac{\gamma - 1}{2} M^2}\frac{\partial_{\tau_1} M}{M} \ .
 \end{aligned}$$
 
-
-
 ```
 
 

@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>17.1. Quasi-1-dimensional flows &#8212; Fluid Mechanics</title>
+    <title>19.1. Quasi-1-dimensional flows &#8212; Fluid Mechanics</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/quasi-1d';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="17.2. Normal shocks" href="shock-normal.html" />
-    <link rel="prev" title="17. Canonical flows" href="canonical-flows.html" />
+    <link rel="next" title="19.2. Non-ideal quasi-1 dimensional flows" href="quasi-1d-non-ideal.html" />
+    <link rel="prev" title="19. Canonical flows" href="canonical-flows.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -302,21 +302,27 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">11. Introduction to Compressible Fluid Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="governing-equations.html">12. Governing equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bernoulli.html">13. Bernoulli’s theorem in compressible fluid mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vorticity.html">14. Vorticity equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="potential-equation.html">15. Potential equation for irrotational compressible flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entropy.html">16. Entropy equation</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="canonical-flows.html">17. Canonical flows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">17.1. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shock-normal.html">17.2. Normal shocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">17.3. Oblique shocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">17.4. Expansion fans - Prandtl-Meyer relation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="thermodynamics.html">13. Thermodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="pig.html">13.1. Perfect Ideal Gas (PIG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vdw.html">13.2. Real Gas - Van der Waals</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">18. Jump conditions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="characteristics.html">19. Characteristics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">20. Steady 2-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acoustics.html">21. Acoustics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">14. Jump conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bernoulli.html">15. Bernoulli’s theorem in compressible fluid mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vorticity.html">16. Vorticity equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html">17. Entropy equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="potential-equation.html">18. Potential equation for irrotational compressible flows</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="canonical-flows.html">19. Canonical flows</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">19.1. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quasi-1d-non-ideal.html">19.2. Non-ideal quasi-1 dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-normal.html">19.3. Normal shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">19.4. Oblique shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">19.5. Expansion fans - Prandtl-Meyer relation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="characteristics.html">20. Characteristics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">21. Steady 2-dimensional flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acoustics.html">22. Acoustics</a></li>
 </ul>
 
     </div>
@@ -529,11 +535,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-flow">17.1.1. Steady flow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mach-dependence">17.1.1.1. Mach dependence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-flow">19.1.1. Steady flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mach-dependence">19.1.1.1. Mach dependence</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady-flow">17.1.2. Unsteady flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady-flow">19.1.2. Unsteady flow</a></li>
 </ul>
             </nav>
         </div>
@@ -546,7 +552,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="quasi-1-dimensional-flows">
-<span id="compressible-quasi-1d"></span><h1><span class="section-number">17.1. </span>Quasi-1-dimensional flows<a class="headerlink" href="#quasi-1-dimensional-flows" title="Permalink to this heading">#</a></h1>
+<span id="compressible-quasi-1d"></span><h1><span class="section-number">19.1. </span>Quasi-1-dimensional flows<a class="headerlink" href="#quasi-1-dimensional-flows" title="Permalink to this heading">#</a></h1>
 <p><strong>Assumptions.</strong> Whenever no explict assumption is made in this section, the following assumptions are made:</p>
 <ul class="simple">
 <li><p>uniform properties on each section of the stream tube</p></li>
@@ -556,7 +562,7 @@ document.write(`
 <li><p><em>cylindrical symmetry of streamtube</em></p></li>
 </ul>
 <div class="section" id="steady-flow">
-<span id="compressible-quasi-1d-steady"></span><h2><span class="section-number">17.1.1. </span>Steady flow<a class="headerlink" href="#steady-flow" title="Permalink to this heading">#</a></h2>
+<span id="compressible-quasi-1d-steady"></span><h2><span class="section-number">19.1.1. </span>Steady flow<a class="headerlink" href="#steady-flow" title="Permalink to this heading">#</a></h2>
 <p><strong>Integral balance equations.</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -613,7 +619,7 @@ Momentum equation<div class="sd-summary-down docutils">
   &amp; h^{t \, '} = 0 \ .
 \end{aligned}\end{split}\]</div>
 <div class="section" id="mach-dependence">
-<h3><span class="section-number">17.1.1.1. </span>Mach dependence<a class="headerlink" href="#mach-dependence" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">19.1.1.1. </span>Mach dependence<a class="headerlink" href="#mach-dependence" title="Permalink to this heading">#</a></h3>
 <p>Subsonic and supersonic flows show different behavior. If the differential equations hold (no shock, homoentropic flow, <span class="math notranslate nohighlight">\(ds = 0\)</span>), pressure derivative is proportional to density derivative through the square of the speed of sound,</p>
 <div class="math notranslate nohighlight">
 \[d p = a^2(\rho, \overline{s}) d \rho \ .\]</div>
@@ -671,7 +677,7 @@ Details<div class="sd-summary-down docutils">
 </details></div>
 </div>
 <div class="section" id="unsteady-flow">
-<span id="compressible-quasi-1d-unsteady"></span><h2><span class="section-number">17.1.2. </span>Unsteady flow<a class="headerlink" href="#unsteady-flow" title="Permalink to this heading">#</a></h2>
+<span id="compressible-quasi-1d-unsteady"></span><h2><span class="section-number">19.1.2. </span>Unsteady flow<a class="headerlink" href="#unsteady-flow" title="Permalink to this heading">#</a></h2>
 <p><strong>todo</strong> <em>For a generic control volume <span class="math notranslate nohighlight">\(v_t\)</span>… It could be useful for mechanical/multi-field system dynamics…</em></p>
 <p><strong>Integral equations.</strong></p>
 <div class="math notranslate nohighlight">
@@ -862,15 +868,15 @@ These equations looks like 1-dimensional Euler equations for compressible ideal 
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">17. </span>Canonical flows</p>
+        <p class="prev-next-title"><span class="section-number">19. </span>Canonical flows</p>
       </div>
     </a>
     <a class="right-next"
-       href="shock-normal.html"
+       href="quasi-1d-non-ideal.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">17.2. </span>Normal shocks</p>
+        <p class="prev-next-title"><span class="section-number">19.2. </span>Non-ideal quasi-1 dimensional flows</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -889,11 +895,11 @@ These equations looks like 1-dimensional Euler equations for compressible ideal 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-flow">17.1.1. Steady flow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mach-dependence">17.1.1.1. Mach dependence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-flow">19.1.1. Steady flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mach-dependence">19.1.1.1. Mach dependence</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady-flow">17.1.2. Unsteady flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady-flow">19.1.2. Unsteady flow</a></li>
 </ul>
   </nav></div>
 

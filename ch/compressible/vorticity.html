@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>14. Vorticity equation &#8212; Fluid Mechanics</title>
+    <title>16. Vorticity equation &#8212; Fluid Mechanics</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/vorticity';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="15. Potential equation for irrotational compressible flows" href="potential-equation.html" />
-    <link rel="prev" title="13. Bernoulli’s theorem in compressible fluid mechanics" href="bernoulli.html" />
+    <link rel="next" title="17. Entropy equation" href="entropy.html" />
+    <link rel="prev" title="15. Bernoulli’s theorem in compressible fluid mechanics" href="bernoulli.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -302,21 +302,27 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">11. Introduction to Compressible Fluid Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="governing-equations.html">12. Governing equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bernoulli.html">13. Bernoulli’s theorem in compressible fluid mechanics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Vorticity equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="potential-equation.html">15. Potential equation for irrotational compressible flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entropy.html">16. Entropy equation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="canonical-flows.html">17. Canonical flows</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">17.1. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shock-normal.html">17.2. Normal shocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">17.3. Oblique shocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">17.4. Expansion fans - Prandtl-Meyer relation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="thermodynamics.html">13. Thermodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="pig.html">13.1. Perfect Ideal Gas (PIG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vdw.html">13.2. Real Gas - Van der Waals</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">18. Jump conditions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="characteristics.html">19. Characteristics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">20. Steady 2-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acoustics.html">21. Acoustics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">14. Jump conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bernoulli.html">15. Bernoulli’s theorem in compressible fluid mechanics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">16. Vorticity equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html">17. Entropy equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="potential-equation.html">18. Potential equation for irrotational compressible flows</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="canonical-flows.html">19. Canonical flows</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">19.1. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quasi-1d-non-ideal.html">19.2. Non-ideal quasi-1 dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-normal.html">19.3. Normal shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">19.4. Oblique shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">19.5. Expansion fans - Prandtl-Meyer relation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="characteristics.html">20. Characteristics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">21. Steady 2-dimensional flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acoustics.html">22. Acoustics</a></li>
 </ul>
 
     </div>
@@ -529,7 +535,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vorticity-and-entropy">14.1. Vorticity and entropy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vorticity-and-entropy">16.1. Vorticity and entropy</a></li>
 </ul>
             </nav>
         </div>
@@ -542,7 +548,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="vorticity-equation">
-<span id="compressible-vorticity"></span><h1><span class="section-number">14. </span>Vorticity equation<a class="headerlink" href="#vorticity-equation" title="Permalink to this heading">#</a></h1>
+<span id="compressible-vorticity"></span><h1><span class="section-number">16. </span>Vorticity equation<a class="headerlink" href="#vorticity-equation" title="Permalink to this heading">#</a></h1>
 <p>A differential equation governing vorticity can be derived starting from the momentum equation. Starting from the convective form of the momentum equation</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -611,7 +617,7 @@ Vector caluclus identities<div class="sd-summary-down docutils">
 \[\nabla \times \left( a \mathbf{v} \right) = \varepsilon_{ijk} \partial_j ( a v_k ) =  \varepsilon_{ijk} \left( a_{/j} v_k + a v_{k/j} \right) = \nabla a \times \mathbf{v} + a \nabla \times \mathbf{v} \ .\]</div>
 </div>
 </details><div class="section" id="vorticity-and-entropy">
-<h2><span class="section-number">14.1. </span>Vorticity and entropy<a class="headerlink" href="#vorticity-and-entropy" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">16.1. </span>Vorticity and entropy<a class="headerlink" href="#vorticity-and-entropy" title="Permalink to this heading">#</a></h2>
 <p>Starting from the potentials, and <span class="math notranslate nohighlight">\(dh = d \left( e + \frac{p}{\rho} \right) = de + \frac{d p}{\rho} - \frac{p}{\rho^2} d\rho\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -682,15 +688,15 @@ Vector caluclus identities<div class="sd-summary-down docutils">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Bernoulli’s theorem in compressible fluid mechanics</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Bernoulli’s theorem in compressible fluid mechanics</p>
       </div>
     </a>
     <a class="right-next"
-       href="potential-equation.html"
+       href="entropy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>Potential equation for irrotational compressible flows</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>Entropy equation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -709,7 +715,7 @@ Vector caluclus identities<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vorticity-and-entropy">14.1. Vorticity and entropy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vorticity-and-entropy">16.1. Vorticity and entropy</a></li>
 </ul>
   </nav></div>
 

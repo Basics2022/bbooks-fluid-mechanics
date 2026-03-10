@@ -12,6 +12,8 @@
 
 * [Acoustics](compressible:acoustics) ...linearized equations...
 
+Integral and differential form of the governing equations are provided, along with [**jump conditions**](compressible:jump-conditions): jump conditions play a crucial role in compressible inviscid flows governed by Euler equations where discontinuities (shocks and contact discontinuities) appear as a result of vanishing diffusion terms, in the limit of negligible viscous stress and heat conduction.
+
 ```
 
 ```{dropdown} Vorticity, entropy and Bernoulli theorems
@@ -39,6 +41,10 @@ The (local) mathematical nature of the problem depends on the (local) value of t
   * in unsteady conditions, the governing equations are hyperbolic
 
 [^ns-math]: Dissipative terms make Navier-Stokes equations elliptic in steady conditions and parabolic in unsteady conditions.
+
+As an example, the mathematical nature of governing equations of steady flows naturally apperas as a function of the (local) Mach number $M$:
+- in the potential equation for irrotational homo-entropic flows. The (global) nature of the [linearized potential equation](compressible:irrotational:potential-equation:homoentropic:linearized:steady) depends on the Mach number of the reference flow $M_{\infty}$;
+- in the characteristic method for steady compressible flows (**todo** *collect all the material, now here and there, e.g. in Math:PDE:hyperbolic equations*): in a d-dimensional domain, $d+2$ families of characteristic surfaces exist in supersonic regions, while only $d$ families exist in subsonic flows. Thus, it's not possible to use the method of characteristics: the solution in a point $P$ is not function of the values of $d+2$ variables on the $d+2$ characteristic lines through $P$, but depends on the solution in its neighborhood (typical condition for elliptic equations).
 
 Introduction to hyperbolic problems:
 - Link to Math jbook: hyperbolic problems, method of characteristics, integral balance, jumps,...
