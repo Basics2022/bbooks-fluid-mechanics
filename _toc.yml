@@ -135,6 +135,10 @@ parts:
     - file: ch/compressible/shock-normal
     - file: ch/compressible/shock-oblique
     - file: ch/compressible/prandtl-meyer
+  - file: ch/compressible/riemann-problem
+    sections:
+    - file: ch/compressible/riemann-problem-psys
+    - file: ch/compressible/riemann-problem-euler
   - file: ch/compressible/characteristics
   - file: ch/compressible/steady-2d
   - file: ch/compressible/acoustics

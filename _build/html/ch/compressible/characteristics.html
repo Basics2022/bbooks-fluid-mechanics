@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>20. Characteristics &#8212; Fluid Mechanics</title>
+    <title>21. Characteristics &#8212; Fluid Mechanics</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/characteristics';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="21. Steady 2-dimensional flows" href="steady-2d.html" />
-    <link rel="prev" title="19.5. Expansion fans - Prandtl-Meyer relation" href="prandtl-meyer.html" />
+    <link rel="next" title="22. Steady 2-dimensional flows" href="steady-2d.html" />
+    <link rel="prev" title="20.2. Euler equations" href="riemann-problem-euler.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -320,9 +320,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">19.5. Expansion fans - Prandtl-Meyer relation</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">20. Characteristics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">21. Steady 2-dimensional flows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acoustics.html">22. Acoustics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="riemann-problem.html">20. Riemann problem</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-22"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="riemann-problem-psys.html">20.1. P-system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="riemann-problem-euler.html">20.2. Euler equations</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">21. Characteristics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="steady-2d.html">22. Steady 2-dimensional flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acoustics.html">23. Acoustics</a></li>
 </ul>
 
     </div>
@@ -535,8 +540,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady">20.1. Unsteady</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady">20.2. Steady</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady">21.1. Unsteady</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady">21.2. Steady</a></li>
 </ul>
             </nav>
         </div>
@@ -549,9 +554,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="characteristics">
-<span id="compressible-characteristics"></span><h1><span class="section-number">20. </span>Characteristics<a class="headerlink" href="#characteristics" title="Permalink to this heading">#</a></h1>
+<span id="compressible-characteristics"></span><h1><span class="section-number">21. </span>Characteristics<a class="headerlink" href="#characteristics" title="Permalink to this heading">#</a></h1>
 <div class="section" id="unsteady">
-<h2><span class="section-number">20.1. </span>Unsteady<a class="headerlink" href="#unsteady" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">21.1. </span>Unsteady<a class="headerlink" href="#unsteady" title="Permalink to this heading">#</a></h2>
 <p>Euler equations</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
@@ -614,7 +619,7 @@ $$\begin{aligned}
 -->
 </div>
 <div class="section" id="steady">
-<h2><span class="section-number">20.2. </span>Steady<a class="headerlink" href="#steady" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">21.2. </span>Steady<a class="headerlink" href="#steady" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
  0          &amp; = \mathbf{u} \cdot \nabla \rho + \rho \nabla \cdot \mathbf{u}  \\
@@ -674,12 +679,12 @@ $$\begin{aligned}
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="prandtl-meyer.html"
+       href="riemann-problem-euler.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">19.5. </span>Expansion fans - Prandtl-Meyer relation</p>
+        <p class="prev-next-title"><span class="section-number">20.2. </span>Euler equations</p>
       </div>
     </a>
     <a class="right-next"
@@ -687,7 +692,7 @@ $$\begin{aligned}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">21. </span>Steady 2-dimensional flows</p>
+        <p class="prev-next-title"><span class="section-number">22. </span>Steady 2-dimensional flows</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -706,8 +711,8 @@ $$\begin{aligned}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady">20.1. Unsteady</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady">20.2. Steady</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsteady">21.1. Unsteady</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steady">21.2. Steady</a></li>
 </ul>
   </nav></div>
 
