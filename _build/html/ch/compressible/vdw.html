@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>14. Jump conditions &#8212; Fluid Mechanics</title>
+    <title>13.2. Real Gas - Van der Waals &#8212; Fluid Mechanics</title>
   
   
   
@@ -66,13 +66,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/jump-conditions';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch/compressible/vdw';</script>
     <link rel="index" title="Indice" href="../../genindex.html" />
     <link rel="search" title="Cerca" href="../../search.html" />
-    <link rel="next" title="15. Bernoulli’s theorem in compressible fluid mechanics" href="bernoulli.html" />
-    <link rel="prev" title="13.2. Real Gas - Van der Waals" href="vdw.html" />
+    <link rel="next" title="14. Jump conditions" href="jump-conditions.html" />
+    <link rel="prev" title="13.1. Perfect Ideal Gas (PIG)" href="pig.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
@@ -302,12 +300,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">11. Introduction to Compressible Fluid Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="governing-equations.html">12. Governing equations</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="thermodynamics.html">13. Thermodynamics</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="thermodynamics.html">13. Thermodynamics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="pig.html">13.1. Perfect Ideal Gas (PIG)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vdw.html">13.2. Real Gas - Van der Waals</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.2. Real Gas - Van der Waals</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Jump conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">14. Jump conditions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bernoulli.html">15. Bernoulli’s theorem in compressible fluid mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vorticity.html">16. Vorticity equation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entropy.html">17. Entropy equation</a></li>
@@ -394,7 +392,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/ch/compressible/jump-conditions.md" target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/edit/master/ch/compressible/vdw.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -411,7 +409,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fch/compressible/jump-conditions.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Basics2022/bbooks-fluid-mechanics/issues/new?title=Issue%20on%20page%20%2Fch/compressible/vdw.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Apri un problema"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -441,7 +439,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/ch/compressible/jump-conditions.md" target="_blank"
+      <li><a href="../../_sources/ch/compressible/vdw.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Scarica il file sorgente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -523,7 +521,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Jump conditions</h1>
+    <h1>Real Gas - Van der Waals</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -537,111 +535,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="jump-conditions">
-<span id="compressible-jump-conditions"></span><h1><span class="section-number">14. </span>Jump conditions<a class="headerlink" href="#jump-conditions" title="Permalink to this heading">#</a></h1>
-<p><strong>Continuous medium.</strong> Jump conditions for a continuous medium read</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  0          &amp; = [ \rho u^{rel}_n ]  \\
-  \mathbf{0} &amp; = \dot{m}[ \mathbf{u} ] - [ \mathbf{t}_{\mathbf{n}} ] \\
-  0          &amp; = \dot{m}[ e^t ] + [ \mathbf{t}_{\mathbf{n}} \cdot \mathbf{u} - \hat{\mathbf{n}} \cdot \mathbf{q} ]  \ ,
-\end{aligned}\end{split}\]</div>
-<p>being <span class="math notranslate nohighlight">\(\dot{m} = \rho_1 u^{rel}_{n,1} = \rho_2 u^{rel}_{n,2}\)</span>.</p>
-<p><strong>Inviscid flows, w/o heat conduction (Euler equations).</strong> If viscous stress and heat conduction are negligible (as they’re in Euler equations), jump conditions become</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  0          &amp; = [ \rho u^{rel}_n ]  \\
-  \mathbf{0} &amp; = \dot{m}[ \mathbf{u} ] + [ p \mathbf{n} ] \\
-  0          &amp; = \dot{m}[ h^t ] + [ p ] \hat{\mathbf{n}} \cdot \mathbf{u}_s  \ .
-\end{aligned}\end{split}\]</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Details<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Starting from integral equations</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  &amp; \dfrac{d}{dt} \int_{v_t} \rho + \oint_{\partial v_t} \rho \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = 0 \\
-  &amp; \dfrac{d}{dt} \int_{v_t} \rho \mathbf{u} + \oint_{\partial v_t} \rho \mathbf{u} \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{v_t} \rho \mathbf{g}  + \oint_{\partial v_t} \mathbf{t}_{\mathbf{n}} \\
-  &amp; \dfrac{d}{dt} \int_{v_t} \rho e^t + \oint_{\partial v_t} \rho e^t \mathbf{u}^{rel} \cdot \hat{\mathbf{n}} = \int_{v_t} \rho \mathbf{g} \cdot \mathbf{u}  + \oint_{\partial v_t} \mathbf{t}_{\mathbf{n}} \cdot \mathbf{u} - \oint_{\partial v_t} \mathbf{q} \cdot \hat{\mathbf{n}} \\
-\end{aligned}\end{split}\]</div>
-<p class="sd-card-text">and collapsing the volume <span class="math notranslate nohighlight">\(v_t\)</span> on one of its dimension, volume contributions become negligible when compared to surface contributions. Jump conditions immeadiately follow, setting <span class="math notranslate nohighlight">\(\hat{\mathbf{n}} = \hat{\mathbf{n}}_2 = - \hat{\mathbf{n}}_1\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  0          &amp; = [ \rho u^{rel}_n ]  \\
-  \mathbf{0} &amp; = [ \rho \mathbf{u} u^{rel}_n - \mathbf{t}_{\mathbf{n}} ] \\
-  0          &amp; = [ \rho e^t u^{rel}_n + \mathbf{t}_{\mathbf{n}} \cdot \mathbf{u} - \hat{\mathbf{n}} \cdot \mathbf{q} ]  \\
-\end{aligned}\end{split}\]</div>
-<p class="sd-card-text">Thus <span class="math notranslate nohighlight">\(\rho_1 u_{n,1}^{rel} = \rho_2 u_{n,2}^{rel} = \dot{m}\)</span>, and</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  0          &amp; = [ \rho u^{rel}_n ]  \\
-  \mathbf{0} &amp; = \dot{m}[ \mathbf{u} ] - [ \mathbf{t}_{\mathbf{n}} ] \\
-  0          &amp; = \dot{m}[ e^t ] + [ \mathbf{t}_{\mathbf{n}} \cdot \mathbf{u} - \hat{\mathbf{n}} \cdot \mathbf{q} ]  \\
-\end{aligned}\end{split}\]</div>
-<p class="sd-card-text">If viscous streass and conduction heat flux are negligible,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  0          &amp; = [ \rho u^{rel}_n ]  \\
-  \mathbf{0} &amp; = \dot{m}[ \mathbf{u} ] + [ p \mathbf{n} ] \\
-  0          &amp; = \dot{m}[ e^t ] + [ p \hat{\mathbf{n}} \cdot \mathbf{u} ] = \\
-             &amp; = \dot{m}[ e^t ] + \left[ \frac{p}{\rho} \underbrace{\hat{\mathbf{n}} \cdot \rho ( \mathbf{u} - \mathbf{u}_s )}_{ \rho u_{n}^{rel} = \dot{m}} + p \hat{\mathbf{n}} \cdot \mathbf{u}_s \right] = \\
-             &amp; = \dot{m} \left[ e^t + \frac{p}{\rho} \right] + [ p \hat{\mathbf{n}} \cdot \mathbf{u}_s ] = \\
-             &amp; = \dot{m} \left[ h^t \right] + \left[ p \right] \, \hat{\mathbf{n}} \cdot \mathbf{u}_s  \\
-\end{aligned}\end{split}\]</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="real-gas-van-der-waals">
+<span id="compressible-vdw"></span><h1><span class="section-number">13.2. </span>Real Gas - Van der Waals<a class="headerlink" href="#real-gas-van-der-waals" title="Permalink to this heading">#</a></h1>
 </div>
-</details><p>Two main cases are determined by the value of the mass flow <span class="math notranslate nohighlight">\(\dot{m}\)</span>:</p>
-<ul>
-<li><p>if <span class="math notranslate nohighlight">\(\dot{m} = 0\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-     &amp; \dot{m} = 0 \\
-     &amp; [ p ] = 0 \ ,
-   \end{aligned}\end{split}\]</div>
-<p>while nothing can be said about the tangential component of the velocity field and the total enthalpy. These conditions hold <strong>contact discontinuities</strong>.</p>
-</li>
-<li><p>if <span class="math notranslate nohighlight">\(\dot{m} \ne 0\)</span></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-     0 &amp; = [ \dot{m} ] = [ \rho u_{n}^{rel} ]   \\
-     \mathbf{0} &amp; = \dot{m} [ \mathbf{u}_{\mathbf{t}} ]  \\
-     0 &amp; = \dot{m} [ u_n ] + [ \, p \, ] = \dot{m} [ u_n^{rel} ] + [ \, p \, ]  \\
-     0 &amp; = \dot{m} [ h^{t,rel} ] = \dot{m} [ h^{t,rel}_n ] 
-   \end{aligned}\end{split}\]</div>
-<p>These conditions hold for <strong>shocks</strong> (usually compression shocks, e.g. for PIG, but for heavy fluids expansion shocks may exist as well).</p>
-</li>
-</ul>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Details<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-  0 &amp; = [ \dot{m} ] = [ \rho u_{n}^{rel} ]   \\
-  \mathbf{0} &amp; = \dot{m} [ \mathbf{u}_{\mathbf{t}} ]  \\
-  0 &amp; = \dot{m} [ u_n ] + [ \, p \, ] =  &amp;&amp; ([u_s] = 0) \\
-    &amp; = \dot{m} [ u_n - u_s ] + [ \, p \, ] = \\
-    &amp; = \dot{m} [ u_n^{rel} ] + [ \, p \, ]  \\
-  0 &amp; = \dot{m} [ h^t ] + u_{s,n} [ \, p \, ] = \\
-    &amp; = \dot{m} \left[ h^t \right] - u_{s,n} \, \dot{m} \left[ u_n \right] = \\
-    &amp; = \dot{m} \left[ h + \frac{u_n^2 + u_t^2}{2} - u_{s,n} u_n  \right] = \\
-    &amp; = \dot{m} \left[ h + \frac{u_n^2 - 2 u_{s,n} u_n + u_{s,n}^2}{2} - \frac{u_{s,n}^2}{2} + \frac{u_t^2}{2}  \right] = \\
-    &amp; = \dot{m} \left[ h + \frac{(u_n - u_{s,n})^2}{2} - \frac{u_{s,n}^2}{2} + \frac{u_t^2}{2}  \right] = \\
-    &amp; = \dot{m} \left[ h^{t,rel} \right] = \\
-    &amp; = \dot{m} \left[ h^{t,rel}_n \right] \ ,
-\end{aligned}\end{split}\]</div>
-<p class="sd-card-text">as <span class="math notranslate nohighlight">\(\left[ u_{s,n}^2 \right] = 0\)</span> being <span class="math notranslate nohighlight">\(u_{s,n}\)</span> the velocity of the «discontinuity» surface, <span class="math notranslate nohighlight">\([ \mathbf{u}_t ] = 0\)</span> from the tangential component of the momentum equation, and with the definition of the <em>relative total enthalpy</em></p>
-<div class="math notranslate nohighlight">
-\[h^{t,rel} := h + \frac{1}{2} \left( (u_n - u_{s,n})^2 + u_t^2  \right) = h + \frac{1}{2} \left( \left( u_{n}^{rel} \right)^2 + u_t^2 \right) \ , \]</div>
-<p class="sd-card-text">and <span class="math notranslate nohighlight">\(h^{t,rel}_n\)</span> the relative total enthalpy built with the normal component of the relative velocity only.</p>
-</div>
-</details></div>
 
     <script type="text/x-thebe-config">
     {
@@ -674,20 +570,20 @@ Details<div class="sd-summary-down docutils">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="vdw.html"
+       href="pig.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">precedente</p>
-        <p class="prev-next-title"><span class="section-number">13.2. </span>Real Gas - Van der Waals</p>
+        <p class="prev-next-title"><span class="section-number">13.1. </span>Perfect Ideal Gas (PIG)</p>
       </div>
     </a>
     <a class="right-next"
-       href="bernoulli.html"
+       href="jump-conditions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">successivo</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>Bernoulli’s theorem in compressible fluid mechanics</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Jump conditions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

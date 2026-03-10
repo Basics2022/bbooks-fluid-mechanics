@@ -119,6 +119,11 @@ parts:
   chapters:
   - file: ch/compressible/intro
   - file: ch/compressible/governing-equations
+  - file: ch/compressible/thermodynamics
+    sections:
+    - file: ch/compressible/pig
+    - file: ch/compressible/vdw
+  - file: ch/compressible/jump-conditions
   - file: ch/compressible/bernoulli
   - file: ch/compressible/vorticity
   - file: ch/compressible/entropy
@@ -130,7 +135,6 @@ parts:
     - file: ch/compressible/shock-normal
     - file: ch/compressible/shock-oblique
     - file: ch/compressible/prandtl-meyer
-  - file: ch/compressible/jump-conditions
   - file: ch/compressible/characteristics
   - file: ch/compressible/steady-2d
   - file: ch/compressible/acoustics

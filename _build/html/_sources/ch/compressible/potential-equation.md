@@ -141,6 +141,7 @@ and the linearized equation of the potential becomes
 
 $$\varphi_{tt} + 2 U_\infty \partial_{xt} \varphi + U_\infty^2 \varphi_{xx} - a_\infty^2 \left( \varphi_{xx} + \varphi_{yy} + \varphi_{zz} \right) = 0 \ .$$
 
+(compressible:irrotational:potential-equation:homoentropic:linearized:steady)=
 ### Linearized steady potential equation - Prandtl-Glauert transformation
 
 Steady equation becomes

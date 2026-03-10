@@ -302,19 +302,19 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Introduction to Compressible Fluid Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="governing-equations.html">12. Governing equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bernoulli.html">13. Bernoulli’s theorem in compressible fluid mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vorticity.html">14. Vorticity equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entropy.html">15. Entropy equation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="potential-equation.html">16. Potential equation for irrotational compressible flows</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="canonical-flows.html">17. Canonical flows</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">17.1. Quasi-1-dimensional flows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quasi-1d-non-ideal.html">17.2. Non-ideal quasi-1 dimensional flows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shock-normal.html">17.3. Normal shocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">17.4. Oblique shocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">17.5. Expansion fans - Prandtl-Meyer relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">13. Jump conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bernoulli.html">14. Bernoulli’s theorem in compressible fluid mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vorticity.html">15. Vorticity equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entropy.html">16. Entropy equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="potential-equation.html">17. Potential equation for irrotational compressible flows</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="canonical-flows.html">18. Canonical flows</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="quasi-1d.html">18.1. Quasi-1-dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quasi-1d-non-ideal.html">18.2. Non-ideal quasi-1 dimensional flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-normal.html">18.3. Normal shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shock-oblique.html">18.4. Oblique shocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prandtl-meyer.html">18.5. Expansion fans - Prandtl-Meyer relation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="jump-conditions.html">18. Jump conditions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="characteristics.html">19. Characteristics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="steady-2d.html">20. Steady 2-dimensional flows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="acoustics.html">21. Acoustics</a></li>
@@ -547,6 +547,7 @@ document.write(`
 <li><p class="sd-card-text">If the flow is also irrotational, the governing equations can be written as a PDE for <a class="reference internal" href="potential-equation.html#compressible-irrotational-potential-equation"><span class="std std-ref">kinetic potential</span></a>. Without shocks, differential equations hold in the whole domain and <a class="reference internal" href="vorticity.html#compressible-vorticity"><span class="std std-ref">vorticity equation</span></a> shows that the flow is irrotational in the whole domain if the inflow is irrotational.</p></li>
 <li><p class="sd-card-text"><a class="reference internal" href="acoustics.html#compressible-acoustics"><span class="std std-ref">Acoustics</span></a> …linearized equations…</p></li>
 </ul>
+<p class="sd-card-text">Integral and differential form of the governing equations are provided, along with <a class="reference internal" href="jump-conditions.html#compressible-jump-conditions"><span class="std std-ref"><strong>jump conditions</strong></span></a>: jump conditions play a crucial role in compressible inviscid flows governed by Euler equations where discontinuities (shocks and contact discontinuities) appear as a result of vanishing diffusion terms, in the limit of negligible viscous stress and heat conduction.</p>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
@@ -583,6 +584,11 @@ Mathematical nature of equations of physics<div class="sd-summary-down docutils"
 <li><p class="sd-card-text">in unsteady conditions, the governing equations are hyperbolic</p></li>
 </ul>
 </li>
+</ul>
+<p class="sd-card-text">As an example, the mathematical nature of governing equations of steady flows naturally apperas as a function of the (local) Mach number <span class="math notranslate nohighlight">\(M\)</span>:</p>
+<ul class="simple">
+<li><p class="sd-card-text">in the potential equation for irrotational homo-entropic flows. The (global) nature of the <a class="reference internal" href="potential-equation.html#compressible-irrotational-potential-equation-homoentropic-linearized-steady"><span class="std std-ref">linearized potential equation</span></a> depends on the Mach number of the reference flow <span class="math notranslate nohighlight">\(M_{\infty}\)</span>;</p></li>
+<li><p class="sd-card-text">in the characteristic method for steady compressible flows (<strong>todo</strong> <em>collect all the material, now here and there, e.g. in Math:PDE:hyperbolic equations</em>): in a d-dimensional domain, <span class="math notranslate nohighlight">\(d+2\)</span> families of characteristic surfaces exist in supersonic regions, while only <span class="math notranslate nohighlight">\(d\)</span> families exist in subsonic flows. Thus, it’s not possible to use the method of characteristics: the solution in a point <span class="math notranslate nohighlight">\(P\)</span> is not function of the values of <span class="math notranslate nohighlight">\(d+2\)</span> variables on the <span class="math notranslate nohighlight">\(d+2\)</span> characteristic lines through <span class="math notranslate nohighlight">\(P\)</span>, but depends on the solution in its neighborhood (typical condition for elliptic equations).</p></li>
 </ul>
 <p class="sd-card-text">Introduction to hyperbolic problems:</p>
 <ul class="simple">
