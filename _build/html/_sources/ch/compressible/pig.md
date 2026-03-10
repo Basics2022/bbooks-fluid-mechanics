@@ -75,7 +75,33 @@ $$\begin{aligned}
   & = c_p \ln \left( \frac{T}{T_0} \right) - R   \ln \left( \frac{   p}{   p_0} \right) \ ,
 \end{aligned}$$
 
-**Speed of sound.**
+**Speed of sound.** The speed of sound in a medium is defined as[^speed-of-sound-acoustics]
+
+[^speed-of-sound-acoustics]: The definition of the speed of sound naturally appears in [acoustics]() and in the method of characteristic for hyperbolic problems, like unsteady Euler equations...
+
+$$a^2 = \left( \dfrac{\partial p}{\partial \rho} \right)_s \ .$$
+
+For a PIG, relation (**todo** *Add ref*) links pressure, density and entropy. This relation can be recast as
+
+$$\frac{p}{p_0}(\rho, s; \rho_0, s_0) = \frac{\rho^\gamma}{\rho_0^\gamma} e^{ (\gamma-1) \frac{s-s_0}{R} } \ .$$
+
+Direct evaluation of the partial derivative at constant $s$ gives the expression of speed of sound for a PIG
 
 $$a^2 = \gamma R T = \gamma \frac{p}{\rho} $$
+
+```{dropdown} Details
+:open:
+
+$$\begin{aligned}
+  a^2
+  & = \left( \dfrac{\partial p}{\partial \rho} \right)_s = \\
+  & = \left( \dfrac{\partial}{\partial \rho} \right)_s \frac{\rho^{\gamma}}{\rho_0^{\gamma}} e^{(\gamma-1)\frac{s-s_0}{R}} = \\
+  & = \gamma \rho^{-1} \frac{\rho^{\gamma}}{\rho_0^{\gamma}} e^{(\gamma-1)\frac{s-s_0}{R}} = \\
+  & = \gamma \frac{p}{\rho} = \\
+  & = \gamma R T \ .
+\end{aligned}$$
+
+
+
+```
 
