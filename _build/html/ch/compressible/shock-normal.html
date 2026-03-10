@@ -587,30 +587,34 @@ Across a shock wave, the flow undergoes a discontinuous change. For a steady, ad
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p><strong>Pressure</strong></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{p_2}{p_1}       =\)</span> …</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{p_2}{p_1}       = \frac{1 + \gamma M_1^2}{1 + \gamma M_2^2}\)</span></p></td>
 <td class="text-left"><p>…</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><strong>Density</strong></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{\rho_2}{\rho_1} =\)</span> …</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{\rho_2}{\rho_1} = \frac{M_1^2}{M_2^2} \frac{1 + \gamma M_2^2}{1+ \gamma M_1^2}\)</span> …</p></td>
 <td class="text-left"><p>…</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><strong>Temperature</strong></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{T_2}{T_1}       =\)</span> …</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{T_2}{T_1}       = \left( \frac{1 + \gamma M_1^2}{1 + \gamma M_2^2} \right)^2 \frac{M_2^2}{M_1^2}\)</span></p></td>
 <td class="text-left"><p>…</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><strong>Velocity</strong></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{u_2}{u_1}       =\)</span> …</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{u_2}{u_1}       = \frac{M_2^2}{M_1^2} \frac{1 + \gamma M_1^2}{1 + \gamma M_2^2}\)</span></p></td>
 <td class="text-left"><p>…</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><strong>Speed of sound</strong></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{a_2}{a_1}       =\)</span> …</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{a_2}{a_1}       = \sqrt{\frac{T_2}{T_1}}\)</span></p></td>
 <td class="text-left"><p>…</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Stagnation pressure</strong></p></td>
+<tr class="row-odd"><td class="text-left"><p><strong>Entropy</strong></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(s_2 - s_1             = \frac{R}{\gamma-1} \ln \left\{ \left( \frac{1+ \gamma M_1^2}{1 + \gamma M_2^2} \right)^{1+\gamma} \left( \frac{M_2^2}{M_1^2} \right)^{\gamma} \right\}\)</span></p></td>
+<td class="text-left"><p>…</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Stagnation pressure</strong></p></td>
 <td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{p_{02}}{p_{01}} =\)</span> …</p></td>
 <td class="text-left"><p>…</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><strong>Other stag quantities</strong></p></td>
+<tr class="row-odd"><td class="text-left"><p><strong>Other stag quantities</strong></p></td>
 <td class="text-left"><p>…</p></td>
 <td class="text-left"><p>…</p></td>
 </tr>
@@ -730,11 +734,11 @@ $$\frac{M_2^2}{M_1^2} = \frac{\frac{1}{M_1^2} + \frac{\gamma-1}{2}}{\gamma M_1^2
     &amp; = \frac{- 1 - \frac{2}{\gamma-1} }{\left( \dots \right)^2} = \\
     &amp; = - \frac{\gamma+1}{\gamma-1} \left( 2 \gamma M_1^2 - (\gamma - 1) \right)^{-2} &lt; 0 \ ,
   \end{aligned}\end{split}\]</div>
-<p>and thus if <span class="math notranslate nohighlight">\(M_1^2 &gt; 1\)</span>, then <span class="math notranslate nohighlight">\(M_2^2 &lt; 1\)</span>, and viceversa. <strong>Entropy condition</strong> <span class="math notranslate nohighlight">\(s_2 - s_1 \ge 0\)</span> defines the feasible shocks: for a PIG, feasible shocks have <span class="math notranslate nohighlight">\(M_1 &gt; 1\)</span> and <span class="math notranslate nohighlight">\(M_2 &lt; 1\)</span>, i.e. supersonic flow becomes subsonic after a normal shock.</p>
+<p>and thus if <span class="math notranslate nohighlight">\(M_1^2 &gt; 1\)</span>, then <span class="math notranslate nohighlight">\(M_2^2 &lt; 1\)</span>, and viceversa. <strong>Entropy condition</strong> <span class="math notranslate nohighlight">\(s_2 - s_1 \ge 0\)</span> defines the feasible shocks: <strong>for a PIG, feasible shocks have <span class="math notranslate nohighlight">\(M_1 &gt; 1\)</span> and <span class="math notranslate nohighlight">\(M_2 &lt; 1\)</span></strong>, i.e. supersonic flow becomes subsonic after a normal shock.</p>
 </li>
-<li><p>the function is singular for <span class="math notranslate nohighlight">\(M_1^2 = \frac{\gamma-1}{2\gamma}\)</span></p></li>
+<li><p>the function is singular for <span class="math notranslate nohighlight">\(M_1^2 = \frac{\gamma-1}{2\gamma}\)</span>. This condition only occurs for <span class="math notranslate nohighlight">\(M_1 &lt; 1\)</span>, i.e. it never happens for physical shocks.</p></li>
 </ul>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Entropy condition - PIG<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -783,42 +787,54 @@ Entropy condition - PIG<div class="sd-summary-down docutils">
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-left head"><p>Property</p></th>
-<th class="text-left head"><p>…</p></th>
-<th class="text-left head"><p>…</p></th>
+<th class="text-left head"><p></p></th>
+<th class="text-left head"><p></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p><strong>Pressure</strong></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{p_2}{p_1}       =\)</span> …</p></td>
-<td class="text-left"><p>…</p></td>
+<tr class="row-even"><td class="text-left"><p><strong>Entropy</strong></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(s_2 - s_1 = \frac{R}{\gamma - 1} \ln \left\{ \frac{ 2 \gamma M_1^2 - \gamma + 1}{(\gamma + 1)^{\gamma+1}} \frac{(2 + ( \gamma - 1 ) M_1^2)^{\gamma}}{M_1^{2 \gamma}} \right\}\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\( \ge 0 \)</span></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Density</strong></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{\rho_2}{\rho_1} =\)</span> …</p></td>
-<td class="text-left"><p>…</p></td>
+<tr class="row-odd"><td class="text-left"><p><strong>Inflow  Mach number</strong></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(M_1\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\( \ge 1 \)</span></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><strong>Temperature</strong></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{T_2}{T_1}       =\)</span> …</p></td>
-<td class="text-left"><p>…</p></td>
+<tr class="row-even"><td class="text-left"><p><strong>Outflow Mach number</strong></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(M_2 = \frac{M_1^2 + \frac{2}{\gamma-1}}{\frac{2\gamma}{\gamma-1}M_1^2 - 1} \)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\( \le 1 \)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Pressure</strong></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{p_2}{p_1}       = 1 + \frac{2 \gamma}{\gamma + 1} ( M_1^2 - 1 )\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\( \ge 1 \)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Density</strong></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{\rho_2}{\rho_1} = \left[ 1 - \frac{2}{\gamma+1}\frac{ M_1^2 - 1 }{M_1^2} \right]^{-1} \)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\( \ge 1 \)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><strong>Velocity</strong></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{u_2}{u_1}       =\)</span> …</p></td>
-<td class="text-left"><p>…</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{u_2}{u_1}       = 1 - \frac{2}{\gamma+1}\frac{ M_1^2 - 1 }{M_1^2}\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\( \le 1 \)</span></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><strong>Speed of sound</strong></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{a_2}{a_1}       =\)</span> …</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\left(\frac{a_2}{a_1}\right)^2    = \left( 1 + \frac{2 \gamma}{\gamma + 1} ( M_1^2 - 1 ) \right) \left( 1 - \frac{2}{\gamma+1}\frac{ M_1^2 - 1 }{M_1^2}  \right)\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\( \ge 1 \)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Temperature</strong></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{T_2}{T_1}       = \left(\frac{a_2}{a_1}\right)^2 \)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\( \ge 1 \)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><strong>Stagnation pressure</strong></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{p_{02}}{p_{01}} = \)</span></p></td>
 <td class="text-left"><p>…</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Stagnation pressure</strong></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(\frac{p_{02}}{p_{01}} =\)</span> …</p></td>
-<td class="text-left"><p>…</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p><strong>Other stag quantities</strong></p></td>
-<td class="text-left"><p>…</p></td>
+<tr class="row-odd"><td class="text-left"><p><strong>Other stag quantities</strong></p></td>
+<td class="text-left"><p></p></td>
 <td class="text-left"><p>…</p></td>
 </tr>
 </tbody>
 </table>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Details<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -859,13 +875,18 @@ Details<div class="sd-summary-down docutils">
 \end{aligned}\end{split}\]</div>
 <p class="sd-card-text"><strong>Speed of sound.</strong></p>
 <div class="math notranslate nohighlight">
-\[\frac{a_2^2}{a_1^2} = \frac{\frac{p_2}{p_1}}{ \frac{\rho_2}{\rho_1} } = \left( 1 + \frac{2 \gamma}{\gamma + 1} ( M_1^2 - 1 ) \right) \left( 1 - \frac{2}{\gamma+1}\frac{ M_1^2 - 1 }{M_1^2}  \right) \]</div>
+\[\begin{split}\begin{aligned}
+  \frac{a_2^2}{a_1^2} 
+  &amp; = \frac{\frac{p_2}{p_1}}{ \frac{\rho_2}{\rho_1} } = \\
+  &amp; = \left( 1 + \frac{2 \gamma}{\gamma + 1} ( M_1^2 - 1 ) \right) \left( 1 - \frac{2}{\gamma+1}\frac{ M_1^2 - 1 }{M_1^2}  \right) = \\
+  &amp; = 1 + \frac{2}{(\gamma+1) M_1^2} \left( \gamma M_1^2 - 1 \right) \left( M_1^2 - 1 \right) + \gamma \left( \frac{2}{\gamma+1} \right)^2 \left( \frac{M_1^2 - 1}{M_1} \right)^2
+\end{aligned}\end{split}\]</div>
 <p class="sd-card-text"><strong>Temperature.</strong></p>
 <div class="math notranslate nohighlight">
 \[\frac{T_2}{T_1} = \frac{a_2^2}{a_1^2}\]</div>
 <p class="sd-card-text"><strong>Entropy.</strong></p>
 <div class="math notranslate nohighlight">
-\[s_2 - s_1 = \]</div>
+\[s_2 - s_1 = \ln \left\{ \frac{ 2 \gamma M_1^2 - \gamma + 1}{(\gamma + 1)^{\gamma+1}} \frac{(2 + ( \gamma - 1 ) M_1^2)^{\gamma}}{M_1^{2 \gamma}} \right\}\]</div>
 </div>
 </details><!--
 
