@@ -29,15 +29,16 @@ $$\begin{cases}
          \frac{u_1^2}{2} + h_1 =        \frac{u_2^2}{2} + h_2 \\
 \end{cases}$$
 
-**Quantities as a function of Mach numbers $M_1$, $M_2$**
+### Quantities as a function of Mach numbers $M_1$, $M_2$
 
 | Property | ... | ... |
 | :--- | :--- | :--- |
-| **Pressure**              | $\frac{p_2}{p_1}       =$ ... | ... |
-| **Density**               | $\frac{\rho_2}{\rho_1} =$ ... | ... |
-| **Temperature**           | $\frac{T_2}{T_1}       =$ ... | ... |
-| **Velocity**              | $\frac{u_2}{u_1}       =$ ... | ... |
-| **Speed of sound**        | $\frac{a_2}{a_1}       =$ ... | ... |
+| **Pressure**              | $\frac{p_2}{p_1}       = \frac{1 + \gamma M_1^2}{1 + \gamma M_2^2}$  | ... |
+| **Density**               | $\frac{\rho_2}{\rho_1} = \frac{M_1^2}{M_2^2} \frac{1 + \gamma M_2^2}{1+ \gamma M_1^2}$ ... | ... |
+| **Temperature**           | $\frac{T_2}{T_1}       = \left( \frac{1 + \gamma M_1^2}{1 + \gamma M_2^2} \right)^2 \frac{M_2^2}{M_1^2}$  | ... |
+| **Velocity**              | $\frac{u_2}{u_1}       = \frac{M_2^2}{M_1^2} \frac{1 + \gamma M_1^2}{1 + \gamma M_2^2}$ | ... |
+| **Speed of sound**        | $\frac{a_2}{a_1}       = \sqrt{\frac{T_2}{T_1}}$  | ... |
+| **Entropy**               | $s_2 - s_1             = \frac{R}{\gamma-1} \ln \left\{ \left( \frac{1+ \gamma M_1^2}{1 + \gamma M_2^2} \right)^{1+\gamma} \left( \frac{M_2^2}{M_1^2} \right)^{\gamma} \right\}$  | ... |
 | **Stagnation pressure**   | $\frac{p_{02}}{p_{01}} =$ ... | ... |
 | **Other stag quantities** |                           ... | ... |
 
@@ -114,7 +115,7 @@ Entropy determines a condition for feasible shocks, i.e. increasing entropy, $s_
 
 ```
 
-**Mach number**
+### Relation between Mach numbers $M_1$, $M_2$
 
 $$M_2^2 = \frac{M_1^2 + \frac{2}{\gamma-1}}{\frac{2\gamma}{\gamma-1}M_1^2 - 1}$$
 
@@ -139,30 +140,97 @@ $$\left( \frac{1 + \gamma M_1^2}{1 + \gamma M_2^2} \right)^2 \frac{M_2^2}{M_1^2}
 ...**todo** *do all the required algebra, to solve the equation. Be smart and gather binomial $M_1^2 - M_2^2$ and simplify*
 
 ```
+<!--
+$$\begin{aligned}
+  M_2^2 
+  & = \frac{(\gamma-1) M_1^2 + 2}{2 \gamma M_1^2 - (\gamma - 1)} = \\
+  & = M_1^2 \left[ \frac{(\gamma-1) + \frac{2}{M_1^2} }{2 \gamma M_1^2 - (\gamma - 1)}  \right] \\ 
+\end{aligned}$$
 
-**Quantities as a function of Mach numbers $M_1$.**
+$$\frac{M_2^2}{M_1^2} = \frac{\frac{1}{M_1^2} + \frac{\gamma-1}{2}}{\gamma M_1^2 - \frac{\gamma-1}{2}}$$
+-->
 
-| Property | ... | ... |
+**Remarks.**
+* $M_2(M_1 = 1) = 1$
+* the derivative reads
+
+  $$\begin{aligned}
+    \frac{d M_2^2}{d M_1^2}
+    & = \frac{\frac{2 \gamma}{\gamma-1}M_1^2 - 1 - \frac{2 \gamma}{\gamma-1} \left( M_1^2 + \frac{2}{\gamma-1} \right)}{\left( \dots \right)^2} = \\
+    & = \frac{- 1 - \frac{2}{\gamma-1} }{\left( \dots \right)^2} = \\
+    & = - \frac{\gamma+1}{\gamma-1} \left( 2 \gamma M_1^2 - (\gamma - 1) \right)^{-2} < 0 \ ,
+  \end{aligned}$$
+
+  and thus if $M_1^2 > 1$, then $M_2^2 < 1$, and viceversa. **Entropy condition** $s_2 - s_1 \ge 0$ defines the feasible shocks: **for a PIG, feasible shocks have $M_1 > 1$ and $M_2 < 1$**, i.e. supersonic flow becomes subsonic after a normal shock.
+
+* the function is singular for $M_1^2 = \frac{\gamma-1}{2\gamma}$. This condition only occurs for $M_1 < 1$, i.e. it never happens for physical shocks.
+
+```{dropdown} Entropy condition - PIG
+
+$$\begin{aligned}
+ \frac{\gamma-1}{R} (s_2 - s_1)
+ & = \ln \left\{ \left( \frac{1+ \gamma M_1^2}{1 + \gamma M_2^2} \right)^{1+\gamma} \left( \frac{M_2^2}{M_1^2} \right)^{\gamma} \right\} = \\
+ & = \ln \left\{ \left(\frac{ 2 \gamma M_1^2 - \gamma + 1}{\gamma + 1} \right)^{\gamma+1} \left( \frac{2 + ( \gamma - 1 ) M_1^2}{2 \gamma M_1^2 - \gamma + 1}  \right)^{\gamma} M_1^{-2 \gamma} \right\} = \\
+ & = \ln \left\{ \frac{ 2 \gamma M_1^2 - \gamma + 1}{(\gamma + 1)^{\gamma+1}} \frac{(2 + ( \gamma - 1 ) M_1^2)^{\gamma}}{M_1^{2 \gamma}} \right\} \ ,
+\end{aligned}$$
+
+**Remarks.**
+
+* For $M_1 = 1$, $x(M_1) = \{ \dots \}$
+  
+  $$\{ \dots \}(M_1=1) = \frac{(\gamma+1) (\gamma+1)^{\gamma+1}}{(\gamma+1)^{\gamma+1}} = 1 \ ,$$ 
+
+  and thus
+
+  $$s_2 - s_1 \propto \ln \{ \dots \} = 0 \ .$$
+
+* the derivative w.r.t. $M_1^2$ reads
+
+  $$\begin{aligned}
+    & \frac{(\gamma+1)^{\gamma+1}}{2 \gamma M_1^2 - \gamma + 1} \frac{2 \gamma}{(\gamma+1)^{\gamma+1}} + \frac{M_1^{2 \gamma}}{(2 + (\gamma-1)M_1^2)^ \gamma } \left( \gamma (2 +(\gamma-1)M_1^2)^{\gamma-1} (\gamma-1) M_1^{-2\gamma} - (\dots) \gamma M_1^{2(\gamma-1)}  \right) = \\
+    & = \frac{2 \gamma}{2 \gamma M_1^2 - \gamma + 1} + \frac{\gamma (\gamma-1)}{2 + (\gamma-1) M_1^2} - \frac{\gamma}{M_1^2} = \\
+    & = \dots \text{(see below)} =  \\ 
+    & = \frac{2 \gamma (\gamma-1) (M_1^2 - 1)^2}{(2 \gamma M_1^2 - \gamma + 1)(2 + (\gamma-1) M_1^2) M_1^2} \ .
+  \end{aligned}$$
+
+  The derivative is **always non-negative** and thus **the entropy condition $s_2 - s_1 \ge 0$ is satisfied only for $M_1 \ge 1$**, i.e. for supersonic inflow becoming subsonic (see above) after a normal shock.
+
+$$\begin{aligned}
+  & 4 \gamma M_1^2 + 2 \gamma (\gamma - 1) M_1^4 + \\
+  & \quad + \underbrace{2 \gamma^2 (\gamma-1) M_1^4}_{1} - \underbrace{\gamma (\gamma-1)^2 M_1^2}_{0} + \\
+  & \quad - 4 \gamma^2 M_1^2 - \underbrace{2 \gamma^2 ( \gamma - 1 ) M_1^4}_{1} + 2 \gamma ( \gamma - 1 ) + \underbrace{\gamma ( \gamma - 1 )^2 M_1^2}_{0} = \\
+  & = 2 \gamma ( \gamma - 1 ) - M_1^2 4 \gamma ( \gamma - 1 ) + 2 \gamma ( \gamma - 1 ) M_1^4 = \\
+  & = 2 \gamma ( \gamma - 1 ) ( M_1^2 - 1 )^2 \ .
+\end{aligned}$$
+
+
+```
+
+
+### Quantities as a function of Mach numbers $M_1$
+
+| Property |  |  |
 | :--- | :--- | :--- |
-| **Pressure**              | $\frac{p_2}{p_1}       =$ ... | ... |
-| **Density**               | $\frac{\rho_2}{\rho_1} =$ ... | ... |
-| **Temperature**           | $\frac{T_2}{T_1}       =$ ... | ... |
-| **Velocity**              | $\frac{u_2}{u_1}       =$ ... | ... |
-| **Speed of sound**        | $\frac{a_2}{a_1}       =$ ... | ... |
-| **Stagnation pressure**   | $\frac{p_{02}}{p_{01}} =$ ... | ... |
-| **Other stag quantities** |                           ... | ... |
+| **Entropy** | $s_2 - s_1 = \frac{R}{\gamma - 1} \ln \left\{ \frac{ 2 \gamma M_1^2 - \gamma + 1}{(\gamma + 1)^{\gamma+1}} \frac{(2 + ( \gamma - 1 ) M_1^2)^{\gamma}}{M_1^{2 \gamma}} \right\}$ | $ \ge 0 $  |
+| **Inflow  Mach number**   | $M_1$                                                                                          | $ \ge 1 $ |
+| **Outflow Mach number**   | $M_2 = \frac{M_1^2 + \frac{2}{\gamma-1}}{\frac{2\gamma}{\gamma-1}M_1^2 - 1} $                  | $ \le 1 $ |
+| **Pressure**              | $\frac{p_2}{p_1}       = 1 + \frac{2 \gamma}{\gamma + 1} ( M_1^2 - 1 )$                        | $ \ge 1 $ |
+| **Density**               | $\frac{\rho_2}{\rho_1} = \left[ 1 - \frac{2}{\gamma+1}\frac{ M_1^2 - 1 }{M_1^2} \right]^{-1} $ | $ \ge 1 $ |
+| **Velocity**              | $\frac{u_2}{u_1}       = 1 - \frac{2}{\gamma+1}\frac{ M_1^2 - 1 }{M_1^2}$                      | $ \le 1 $ |
+| **Speed of sound**        | $\left(\frac{a_2}{a_1}\right)^2    = \left( 1 + \frac{2 \gamma}{\gamma + 1} ( M_1^2 - 1 ) \right) \left( 1 - \frac{2}{\gamma+1}\frac{ M_1^2 - 1 }{M_1^2}  \right)$  | $ \ge 1 $ |
+| **Temperature**           | $\frac{T_2}{T_1}       = \left(\frac{a_2}{a_1}\right)^2 $  | $ \ge 1 $ |
+| **Stagnation pressure**   | $\frac{p_{02}}{p_{01}} = $  | ... |
+| **Other stag quantities** |                             | ... |
 
 ```{dropdown} Details
-:open:
 
 Mach number $M_2$ can be recast as
 
 $$M_2^2 = \frac{2 + (\gamma-1)M_1^2}{2 \gamma M_1^2 - (\gamma-1)}$$
 
-Let's evaluate the two ratios of functions of Mach numbers apeparing in ratios of physical quantities
+Let's evaluate the ratio of functions of Mach numbers apeparing in ratios of physical quantities
 
 $$\begin{aligned}
-  \frac{M_2}{M_1} & = \\
   \frac{1 + \gamma M_1^2}{1 + \gamma M_2^2}
   & = \frac{1 + \gamma M_1^2}{1 + \gamma \frac{2 + (\gamma-1)M_1^2}{2 \gamma M_1^2 - (\gamma-1)}} = \\
   & = \frac{(1+\gamma M_1^2)(2 \gamma M_1^2 - \gamma + 1)}{2 \gamma M_1^2 - \gamma + 1 + 2 \gamma + \gamma ( \gamma - 1 )M_1^2 } = \\
@@ -174,27 +242,42 @@ $$\begin{aligned}
 
 **Pressure.**
 
-$$\frac{p_2}{p_1} = 1 + \frac{2 \gamma ( M_1^2 - 1 )}{\gamma + 1}$$
+$$\frac{p_2}{p_1} = 1 + \frac{2 \gamma}{\gamma + 1} ( M_1^2 - 1 )$$
 
 **Velocity.**
 
-$$\frac{u_2}{u_1} = $$
+$$\begin{aligned}
+  \frac{u_2}{u_1}
+  & = \frac{M_2^2}{M_1^2} \frac{1+ \gamma M_1^2}{1+\gamma M_2^2} = \\
+  & = \frac{2 + (\gamma-1) M_1^2}{(\gamma + 1)M_1^2} = \\
+  & = \frac{2 + (\gamma+1) M_1^2 - 2 M_1^2}{(\gamma + 1)M_1^2} = \\
+  & = 1 - \frac{2}{\gamma+1}\frac{ M_1^2 - 1 }{M_1^2} \ .
+\end{aligned}$$
 
 **Density.**
 
-$$\frac{\rho_2}{\rho_1} = $$
+$$\begin{aligned}
+  \frac{\rho_2}{\rho_1}
+  & = \frac{u_1}{u_2} = \left[ 1 - \frac{2}{\gamma+1}\frac{ M_1^2 - 1 }{M_1^2} \right]^{-1} \\
+\end{aligned}$$
+
 
 **Speed of sound.**
 
-$$\frac{a_2}{a_1} = $$
+$$\begin{aligned}
+  \frac{a_2^2}{a_1^2} 
+  & = \frac{\frac{p_2}{p_1}}{ \frac{\rho_2}{\rho_1} } = \\
+  & = \left( 1 + \frac{2 \gamma}{\gamma + 1} ( M_1^2 - 1 ) \right) \left( 1 - \frac{2}{\gamma+1}\frac{ M_1^2 - 1 }{M_1^2}  \right) = \\
+  & = 1 + \frac{2}{(\gamma+1) M_1^2} \left( \gamma M_1^2 - 1 \right) \left( M_1^2 - 1 \right) + \gamma \left( \frac{2}{\gamma+1} \right)^2 \left( \frac{M_1^2 - 1}{M_1} \right)^2
+\end{aligned}$$
 
 **Temperature.**
 
-$$\frac{T_2}{T_1} = $$
+$$\frac{T_2}{T_1} = \frac{a_2^2}{a_1^2}$$
 
 **Entropy.**
 
-$$s_2 - s_1 = $$
+$$s_2 - s_1 = \ln \left\{ \frac{ 2 \gamma M_1^2 - \gamma + 1}{(\gamma + 1)^{\gamma+1}} \frac{(2 + ( \gamma - 1 ) M_1^2)^{\gamma}}{M_1^{2 \gamma}} \right\}$$
 
 
 
