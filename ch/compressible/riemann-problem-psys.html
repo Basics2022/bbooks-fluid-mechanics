@@ -76,6 +76,15 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESMWKL80JZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ESMWKL80JZ');
+</script>
+
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -586,8 +595,8 @@ Solution of the Riemann problem<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">For simple and low-dimensional problems like P-sys, an analytical solution is feasible</p>
-<p class="sd-card-text"><strong>Case 1. 1:shock, 2:shock.</strong> For the entropy condition, <span class="math notranslate nohighlight">\(u_A \ge u_1 \ge u_R\)</span>.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<p class="sd-card-text"><strong>Case 1. 1: shock, 2: shock.</strong> For the entropy condition, <span class="math notranslate nohighlight">\(u_A \ge u_1 \ge u_B\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Details<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -609,18 +618,107 @@ Details<div class="sd-summary-down docutils">
   &amp; \sqrt{\frac{\rho_1}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_1}} \ge 0 \quad \rightarrow \quad \rho_1 \ge \rho_A \\
   &amp; \sqrt{\frac{\rho_B}{\rho_1}} - \sqrt{\frac{\rho_1}{\rho_B}} \le 0 \quad \rightarrow \quad \rho_1 \ge \rho_B \\
 \end{aligned}\end{split}\]</div>
-<p class="sd-card-text">and thus <span class="math notranslate nohighlight">\(\rho_1 \ge \max\{ \rho_A, \rho_B \}\)</span></p>
+<p class="sd-card-text">and thus <span class="math notranslate nohighlight">\(\rho_1 \ge \max\{ \rho_A, \rho_B \}\)</span>.</p>
 <p class="sd-card-text"><strong>Limiting cases.</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-  u_A - u_B = a \left( \sqrt{\frac{\rho_1}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_1}} - \sqrt{\frac{\rho_B}{\rho_1}} + \sqrt{\frac{\rho_1}{\rho_B}}  \right) 
+  u_A - u_B = a \left( \sqrt{\frac{\rho_1}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_1}} - \sqrt{\frac{\rho_B}{\rho_1}} + \sqrt{\frac{\rho_1}{\rho_B}}  \right)  \qquad (\ge 0)
 \end{aligned}\]</div>
+<p class="sd-card-text">This is an increasing functon in <span class="math notranslate nohighlight">\(\rho_1\)</span>.</p>
+<p class="sd-card-text">If <span class="math notranslate nohighlight">\(\rho_A \ge \rho_B\)</span>, the limiting case is <span class="math notranslate nohighlight">\(\rho_1 = \rho_A\)</span>, i.e.</p>
+<div class="math notranslate nohighlight">
+\[u_A - u_B \ge \left( u_A - u_B \right)_{\rho_1 = \rho_A} = a \left( \sqrt{\frac{\rho_A}{\rho_B}} - \sqrt{\frac{\rho_B}{\rho_A}} \right)\]</div>
+<p class="sd-card-text">If <span class="math notranslate nohighlight">\(\rho_B \ge \rho_A\)</span>, the limiting case is <span class="math notranslate nohighlight">\(\rho_1 = \rho_B\)</span>, i.e.</p>
+<div class="math notranslate nohighlight">
+\[u_A - u_B \ge \left( u_A - u_B \right)_{\rho_1 = \rho_B} = a \left( \sqrt{\frac{\rho_B}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_B}} \right)\]</div>
+<p class="sd-card-text"><strong>Intermediate state.</strong> RH equations are solved for <span class="math notranslate nohighlight">\((\rho_1, u_1)\)</span>.</p>
+<p class="sd-card-text">…</p>
+</div>
+</details><p class="sd-card-text"><strong>Case 2. 1: rarefaction, 2: shock.</strong> For the entropy condition, <span class="math notranslate nohighlight">\(u_A \le u_1\)</span>, and <span class="math notranslate nohighlight">\(u_1 \ge u_B\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Details<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  u_1 - u_A &amp; = - a \ln \frac{\rho_1}{\rho_A} \\
+  u_B - u_1 &amp; =   a \left( \sqrt{\frac{\rho_B}{\rho_1}} - \sqrt{\frac{\rho_1}{\rho_B}} \right) \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  u_A &amp; = u_1 + a \ln \frac{\rho_1}{\rho_A}                                                  &amp;&amp; \le u_1 \\
+  u_B &amp; = u_1 + a \left( \sqrt{\frac{\rho_B}{\rho_1}} - \sqrt{\frac{\rho_1}{\rho_B}} \right) &amp;&amp; \le u_1 \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+        \frac{\rho_1}{\rho_A}  \le 1                                \quad &amp; \rightarrow \quad \rho_1 \le \rho_A \\
+  \sqrt{\frac{\rho_B}{\rho_1}} - \sqrt{\frac{\rho_1}{\rho_B}} \le 0 \quad &amp; \rightarrow \quad \rho_1 \ge \rho_B \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">and thus <span class="math notranslate nohighlight">\(\rho_1 \in [\rho_B, \rho_A]\)</span>.</p>
+<p class="sd-card-text"><strong>Limiting cases.</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  u_A - u_B = a \left( \ln \frac{\rho_1}{\rho_A}  - \sqrt{\frac{\rho_B}{\rho_1}} + \sqrt{\frac{\rho_1}{\rho_B}}  \right) 
+\end{aligned}\]</div>
+<p class="sd-card-text">This an increasing function in <span class="math notranslate nohighlight">\(\rho_1\)</span>.</p>
+<p class="sd-card-text">At the lower bound, <span class="math notranslate nohighlight">\(\rho_1 = \rho_B\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  u_A - u_B \ge \left( u_A - u_B \right)_{\rho_1 = \rho_B } = a \ln \frac{\rho_B}{\rho_A} 
+\end{aligned}\]</div>
+<p class="sd-card-text">At the upper bound, <span class="math notranslate nohighlight">\(\rho_1 = \rho_A\)</span></p>
+<div class="math notranslate nohighlight">
+\[u_A - u_B \le \left( u_A - u_B \right)_{\rho_1 = \rho_A} = a \left( \sqrt{\frac{\rho_A}{\rho_B}} - \sqrt{\frac{\rho_B}{\rho_A}} \right)\]</div>
+<p class="sd-card-text"><strong>Intermediate state.</strong> RH equations are solved for <span class="math notranslate nohighlight">\((\rho_1, u_1)\)</span>.</p>
+<p class="sd-card-text">…</p>
+</div>
+</details><p class="sd-card-text"><strong>Case 3. 1: shock, 2: rarefaction.</strong> Symmetric w.r.t. case 2. For the entropy condition <span class="math notranslate nohighlight">\(u_A \ge u_1\)</span>, and <span class="math notranslate nohighlight">\(u_1 \le u_B\)</span>.</p>
+<p class="sd-card-text"><strong>Case 4. 1: rarefaction, 2: rarefaction.</strong> For the entropy condition <span class="math notranslate nohighlight">\(u_A \le u_1 \le u_B\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Details<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  u_1 - u_A &amp; = - a \ln \frac{\rho_1}{\rho_A} \\
+  u_B - u_1 &amp; =   a \ln \frac{\rho_B}{\rho_1}
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  u_A &amp; = u_1 + a \ln \frac{\rho_1}{\rho_A}  &amp;&amp; \le u_1 \\
+  u_B &amp; = u_1 + a \ln \frac{\rho_B}{\rho_1}  &amp;&amp; \ge u_1 \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  \frac{\rho_1}{\rho_A} \le 1  \quad &amp; \rightarrow \quad \rho_1 \le \rho_A \\
+  \frac{\rho_B}{\rho_1} \ge 1  \quad &amp; \rightarrow \quad \rho_1 \le \rho_B \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">and thus <span class="math notranslate nohighlight">\(\rho_1 \le \min\{\rho_A, \rho_B\}\)</span>.</p>
+<p class="sd-card-text"><strong>Limiting cases.</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  u_A - u_B = a \left( \ln \frac{\rho_1}{\rho_A} - \ln \frac{\rho_B}{\rho_1}  \right) 
+\end{aligned}\]</div>
+<p class="sd-card-text">This an increasing function in <span class="math notranslate nohighlight">\(\rho_1\)</span>.</p>
+<p class="sd-card-text">If <span class="math notranslate nohighlight">\(\rho_A \le \rho_B\)</span>, the limiting case is <span class="math notranslate nohighlight">\(\rho_1 = \rho_A\)</span>, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  u_A - u_B \le \left( u_A - u_B \right)_{\rho_1 = \rho_A } = - a \ln \frac{\rho_B}{\rho_A}  = a \ln \frac{\rho_A}{\rho_B}
+\end{aligned}\]</div>
+<p class="sd-card-text">If <span class="math notranslate nohighlight">\(\rho_B \le \rho_A\)</span>, the limiting case is <span class="math notranslate nohighlight">\(\rho_1 = \rho_B\)</span>, i.e.</p>
+<div class="math notranslate nohighlight">
+\[
+  u_A - u_B \le \left( u_A - u_B \right)_{\rho_1 = \rho_B } = a \ln \frac{\rho_B}{\rho_A} 
+\]</div>
 <p class="sd-card-text"><strong>Intermediate state.</strong> RH equations are solved for <span class="math notranslate nohighlight">\((\rho_1, u_1)\)</span>.</p>
 </div>
-</details><p class="sd-card-text"><strong>Case 2. 1:rarefaction, 2:shock.</strong> For the entropy condition, <span class="math notranslate nohighlight">\(u_A &lt; u_1\)</span>, and <span class="math notranslate nohighlight">\(u_1 &gt; u_R\)</span>.</p>
-<p class="sd-card-text"><strong>Case 3. 1:shock, 2: rarefaction.</strong> Symmetric w.r.t. case 2. For the entropy condition <span class="math notranslate nohighlight">\(u_A &gt; u_1\)</span>, and <span class="math notranslate nohighlight">\(u_1 &lt; u_R\)</span>.</p>
-<p class="sd-card-text"><strong>Case 4. 1;rarefaction, 2:rarefaction.</strong> For the entropy condition <span class="math notranslate nohighlight">\(u_A &lt; u_1 &lt; u_R\)</span>.</p>
-</div>
+</details></div>
 </details><p><strong>Differential equations.</strong> In conservative form</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}

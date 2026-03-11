@@ -41,10 +41,9 @@ The eigenvalues of the P-sys are $s_{1,2} = u \mp a$. Entropy condition can be s
 
 For simple and low-dimensional problems like P-sys, an analytical solution is feasible
 
-**Case 1. 1:shock, 2:shock.** For the entropy condition, $u_A \ge u_1 \ge u_R$.
+**Case 1. 1: shock, 2: shock.** For the entropy condition, $u_A \ge u_1 \ge u_B$.
 
 ```{dropdown} Details
-:open:
 
 $$\begin{aligned}
   u_1 - u_A & = - a \left( \sqrt{\frac{\rho_1}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_1}} \right) \\
@@ -61,26 +60,123 @@ $$\begin{aligned}
   & \sqrt{\frac{\rho_B}{\rho_1}} - \sqrt{\frac{\rho_1}{\rho_B}} \le 0 \quad \rightarrow \quad \rho_1 \ge \rho_B \\
 \end{aligned}$$
 
-and thus $\rho_1 \ge \max\{ \rho_A, \rho_B \}$
+and thus $\rho_1 \ge \max\{ \rho_A, \rho_B \}$.
 
 **Limiting cases.**
 
 $$\begin{aligned}
-  u_A - u_B = a \left( \sqrt{\frac{\rho_1}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_1}} - \sqrt{\frac{\rho_B}{\rho_1}} + \sqrt{\frac{\rho_1}{\rho_B}}  \right) 
+  u_A - u_B = a \left( \sqrt{\frac{\rho_1}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_1}} - \sqrt{\frac{\rho_B}{\rho_1}} + \sqrt{\frac{\rho_1}{\rho_B}}  \right)  \qquad (\ge 0)
 \end{aligned}$$
 
+This is an increasing functon in $\rho_1$.
+
+If $\rho_A \ge \rho_B$, the limiting case is $\rho_1 = \rho_A$, i.e.
+
+$$u_A - u_B \ge \left( u_A - u_B \right)_{\rho_1 = \rho_A} = a \left( \sqrt{\frac{\rho_A}{\rho_B}} - \sqrt{\frac{\rho_B}{\rho_A}} \right)$$
+
+If $\rho_B \ge \rho_A$, the limiting case is $\rho_1 = \rho_B$, i.e.
+
+$$u_A - u_B \ge \left( u_A - u_B \right)_{\rho_1 = \rho_B} = a \left( \sqrt{\frac{\rho_B}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_B}} \right)$$
 
 **Intermediate state.** RH equations are solved for $(\rho_1, u_1)$.
 
+...
 
 
 ```
 
-**Case 2. 1:rarefaction, 2:shock.** For the entropy condition, $u_A < u_1$, and $u_1 > u_R$.
+**Case 2. 1: rarefaction, 2: shock.** For the entropy condition, $u_A \le u_1$, and $u_1 \ge u_B$.
 
-**Case 3. 1:shock, 2: rarefaction.** Symmetric w.r.t. case 2. For the entropy condition $u_A > u_1$, and $u_1 < u_R$.
+```{dropdown} Details
 
-**Case 4. 1;rarefaction, 2:rarefaction.** For the entropy condition $u_A < u_1 < u_R$.
+$$\begin{aligned}
+  u_1 - u_A & = - a \ln \frac{\rho_1}{\rho_A} \\
+  u_B - u_1 & =   a \left( \sqrt{\frac{\rho_B}{\rho_1}} - \sqrt{\frac{\rho_1}{\rho_B}} \right) \\
+\end{aligned}$$
+
+$$\begin{aligned}
+  u_A & = u_1 + a \ln \frac{\rho_1}{\rho_A}                                                  && \le u_1 \\
+  u_B & = u_1 + a \left( \sqrt{\frac{\rho_B}{\rho_1}} - \sqrt{\frac{\rho_1}{\rho_B}} \right) && \le u_1 \\
+\end{aligned}$$
+
+$$\begin{aligned}
+        \frac{\rho_1}{\rho_A}  \le 1                                \quad & \rightarrow \quad \rho_1 \le \rho_A \\
+  \sqrt{\frac{\rho_B}{\rho_1}} - \sqrt{\frac{\rho_1}{\rho_B}} \le 0 \quad & \rightarrow \quad \rho_1 \ge \rho_B \\
+\end{aligned}$$
+
+and thus $\rho_1 \in [\rho_B, \rho_A]$.
+
+**Limiting cases.**
+
+$$\begin{aligned}
+  u_A - u_B = a \left( \ln \frac{\rho_1}{\rho_A}  - \sqrt{\frac{\rho_B}{\rho_1}} + \sqrt{\frac{\rho_1}{\rho_B}}  \right) 
+\end{aligned}$$
+
+This an increasing function in $\rho_1$.
+
+At the lower bound, $\rho_1 = \rho_B$
+
+$$\begin{aligned}
+  u_A - u_B \ge \left( u_A - u_B \right)_{\rho_1 = \rho_B } = a \ln \frac{\rho_B}{\rho_A} 
+\end{aligned}$$
+
+At the upper bound, $\rho_1 = \rho_A$
+
+$$u_A - u_B \le \left( u_A - u_B \right)_{\rho_1 = \rho_A} = a \left( \sqrt{\frac{\rho_A}{\rho_B}} - \sqrt{\frac{\rho_B}{\rho_A}} \right)$$
+
+**Intermediate state.** RH equations are solved for $(\rho_1, u_1)$.
+
+...
+
+```
+
+**Case 3. 1: shock, 2: rarefaction.** Symmetric w.r.t. case 2. For the entropy condition $u_A \ge u_1$, and $u_1 \le u_B$.
+
+**Case 4. 1: rarefaction, 2: rarefaction.** For the entropy condition $u_A \le u_1 \le u_B$.
+
+```{dropdown} Details
+:open:
+
+$$\begin{aligned}
+  u_1 - u_A & = - a \ln \frac{\rho_1}{\rho_A} \\
+  u_B - u_1 & =   a \ln \frac{\rho_B}{\rho_1}
+\end{aligned}$$
+
+$$\begin{aligned}
+  u_A & = u_1 + a \ln \frac{\rho_1}{\rho_A}  && \le u_1 \\
+  u_B & = u_1 + a \ln \frac{\rho_B}{\rho_1}  && \ge u_1 \\
+\end{aligned}$$
+
+$$\begin{aligned}
+  \frac{\rho_1}{\rho_A} \le 1  \quad & \rightarrow \quad \rho_1 \le \rho_A \\
+  \frac{\rho_B}{\rho_1} \ge 1  \quad & \rightarrow \quad \rho_1 \le \rho_B \\
+\end{aligned}$$
+
+and thus $\rho_1 \le \min\{\rho_A, \rho_B\}$.
+
+**Limiting cases.**
+
+$$\begin{aligned}
+  u_A - u_B = a \left( \ln \frac{\rho_1}{\rho_A} - \ln \frac{\rho_B}{\rho_1}  \right) 
+\end{aligned}$$
+
+This an increasing function in $\rho_1$.
+
+If $\rho_A \le \rho_B$, the limiting case is $\rho_1 = \rho_A$, i.e.
+
+$$\begin{aligned}
+  u_A - u_B \le \left( u_A - u_B \right)_{\rho_1 = \rho_A } = - a \ln \frac{\rho_B}{\rho_A}  = a \ln \frac{\rho_A}{\rho_B}
+\end{aligned}$$
+
+If $\rho_B \le \rho_A$, the limiting case is $\rho_1 = \rho_B$, i.e.
+
+$$
+  u_A - u_B \le \left( u_A - u_B \right)_{\rho_1 = \rho_B } = a \ln \frac{\rho_B}{\rho_A} 
+$$
+
+**Intermediate state.** RH equations are solved for $(\rho_1, u_1)$.
+
+```
 
 ````
 
