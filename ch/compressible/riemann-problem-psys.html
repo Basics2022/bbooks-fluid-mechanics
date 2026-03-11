@@ -76,15 +76,6 @@ const thebe_selector_output = ".output, .cell_output"
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="it"/>
   </head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESMWKL80JZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ESMWKL80JZ');
-</script>
-
   
   
   <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
@@ -545,29 +536,92 @@ document.write(`
   <div class="tex2jax_ignore mathjax_ignore section" id="p-system">
 <span id="compressible-riemann-problem-psys"></span><h1><span class="section-number">20.1. </span>P-system<a class="headerlink" href="#p-system" title="Permalink to this heading">#</a></h1>
 <p><strong>Riemann problem in the P-sys.</strong> 1-dimensional P-sys is a <strong>two</strong>-variable hyperbolic system. Riemann problem for the P-sys aims at finding the <strong>two</strong> waves (either shock or expansion waves), connecting the uniform regions with conservative variables <span class="math notranslate nohighlight">\(\mathbf{u}_L\)</span>, <span class="math notranslate nohighlight">\(\mathbf{u}_R\)</span> on the left and the right of the discontinuity respectively, through <strong>one</strong> intermediate state <span class="math notranslate nohighlight">\(\mathbf{u}_1\)</span> to be determined as a part of the solution of the Riemann problem.</p>
-<p>Depending on the value of the intermediate state <span class="math notranslate nohighlight">\(\mathbf{u}_1\)</span>,</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Details of the Riemann problem<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Depending on the value of the intermediate state <span class="math notranslate nohighlight">\(\mathbf{u}_1\)</span>,</p>
 <ul class="simple">
-<li><p>the <strong>left wave</strong> is</p>
+<li><p class="sd-card-text">the <strong>left wave</strong> is</p>
 <ul>
-<li><p>a rarefaction wave if <span class="math notranslate nohighlight">\(u_L &lt; u_1\)</span></p></li>
-<li><p>a shock wave if <span class="math notranslate nohighlight">\(u_L &gt; u_1\)</span></p></li>
+<li><p class="sd-card-text">a rarefaction wave if <span class="math notranslate nohighlight">\(u_L &lt; u_1\)</span></p></li>
+<li><p class="sd-card-text">a shock wave if <span class="math notranslate nohighlight">\(u_L &gt; u_1\)</span></p></li>
 </ul>
 </li>
-<li><p>the <strong>right wave</strong> is</p>
+<li><p class="sd-card-text">the <strong>right wave</strong> is</p>
 <ul>
-<li><p>a rarefaction wave if <span class="math notranslate nohighlight">\(u_1 &lt; u_R\)</span></p></li>
-<li><p>a shock wave if <span class="math notranslate nohighlight">\(u_1 &gt; u_R\)</span></p></li>
+<li><p class="sd-card-text">a rarefaction wave if <span class="math notranslate nohighlight">\(u_1 &lt; u_R\)</span></p></li>
+<li><p class="sd-card-text">a shock wave if <span class="math notranslate nohighlight">\(u_1 &gt; u_R\)</span></p></li>
 </ul>
 </li>
 </ul>
-<p>For two states connected by a shock wave, Rankine-Hugoniot relation holds</p>
+<p class="sd-card-text">For two states connected by a <strong>shock wave</strong>, <strong>Rankine-Hugoniot</strong> relation holds</p>
 <div class="math notranslate nohighlight">
-\[\left( u_B - u_A \right)_{1,2} = \mp \frac{a} \left( \sqrt{\frac{\rho_B}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_B}} \right)\ .\]</div>
-<p>For two states connected by an expansion wave, the following relation holds</p>
+\[\left( u_B - u_A \right)_{1,2} = \mp a \left( \sqrt{\frac{\rho_B}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_B}} \right) \  .\]</div>
+<p class="sd-card-text">For two states connected by an <strong>expansion wave</strong>, the following relation holds</p>
 <div class="math notranslate nohighlight">
 \[(u_B- u_A)_{1,2} = \mp a \ln \frac{\rho_B}{\rho_A} \ .\]</div>
-<p><strong>Entropy condition?</strong> …</p>
-<p><strong>Differential equations.</strong> In conservative form</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Entropy condition<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The eigenvalues of the P-sys are <span class="math notranslate nohighlight">\(s_{1,2} = u \mp a\)</span>. Entropy condition can be summarized as:</p>
+<ul class="simple">
+<li><p class="sd-card-text">characteristic lines enters a shocks</p></li>
+<li><p class="sd-card-text">diverging characteristic lines of are connected by an exapansion fan, with a smooth solution</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Solution of the Riemann problem<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">For simple and low-dimensional problems like P-sys, an analytical solution is feasible</p>
+<p class="sd-card-text"><strong>Case 1. 1:shock, 2:shock.</strong> For the entropy condition, <span class="math notranslate nohighlight">\(u_A \ge u_1 \ge u_R\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Details<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  u_1 - u_A &amp; = - a \left( \sqrt{\frac{\rho_1}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_1}} \right) \\
+  u_B - u_1 &amp; =   a \left( \sqrt{\frac{\rho_B}{\rho_1}} - \sqrt{\frac{\rho_1}{\rho_B}} \right) \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  u_A &amp; = u_1 + a \left( \sqrt{\frac{\rho_1}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_1}} \right) \ge u_1 \\
+  u_B &amp; = u_1 + a \left( \sqrt{\frac{\rho_B}{\rho_1}} - \sqrt{\frac{\rho_1}{\rho_B}} \right) \le u_1 \\
+\end{aligned}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+  &amp; \sqrt{\frac{\rho_1}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_1}} \ge 0 \quad \rightarrow \quad \rho_1 \ge \rho_A \\
+  &amp; \sqrt{\frac{\rho_B}{\rho_1}} - \sqrt{\frac{\rho_1}{\rho_B}} \le 0 \quad \rightarrow \quad \rho_1 \ge \rho_B \\
+\end{aligned}\end{split}\]</div>
+<p class="sd-card-text">and thus <span class="math notranslate nohighlight">\(\rho_1 \ge \max\{ \rho_A, \rho_B \}\)</span></p>
+<p class="sd-card-text"><strong>Limiting cases.</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+  u_A - u_B = a \left( \sqrt{\frac{\rho_1}{\rho_A}} - \sqrt{\frac{\rho_A}{\rho_1}} - \sqrt{\frac{\rho_B}{\rho_1}} + \sqrt{\frac{\rho_1}{\rho_B}}  \right) 
+\end{aligned}\]</div>
+<p class="sd-card-text"><strong>Intermediate state.</strong> RH equations are solved for <span class="math notranslate nohighlight">\((\rho_1, u_1)\)</span>.</p>
+</div>
+</details><p class="sd-card-text"><strong>Case 2. 1:rarefaction, 2:shock.</strong> For the entropy condition, <span class="math notranslate nohighlight">\(u_A &lt; u_1\)</span>, and <span class="math notranslate nohighlight">\(u_1 &gt; u_R\)</span>.</p>
+<p class="sd-card-text"><strong>Case 3. 1:shock, 2: rarefaction.</strong> Symmetric w.r.t. case 2. For the entropy condition <span class="math notranslate nohighlight">\(u_A &gt; u_1\)</span>, and <span class="math notranslate nohighlight">\(u_1 &lt; u_R\)</span>.</p>
+<p class="sd-card-text"><strong>Case 4. 1;rarefaction, 2:rarefaction.</strong> For the entropy condition <span class="math notranslate nohighlight">\(u_A &lt; u_1 &lt; u_R\)</span>.</p>
+</div>
+</details><p><strong>Differential equations.</strong> In conservative form</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \partial_t \begin{bmatrix} \rho \\ m \end{bmatrix} + 
