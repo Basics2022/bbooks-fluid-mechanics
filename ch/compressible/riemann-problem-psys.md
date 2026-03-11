@@ -3,6 +3,7 @@
 
 **Riemann problem in the P-sys.** 1-dimensional P-sys is a **two**-variable hyperbolic system. Riemann problem for the P-sys aims at finding the **two** waves (either shock or expansion waves), connecting the uniform regions with conservative variables $\mathbf{u}_L$, $\mathbf{u}_R$ on the left and the right of the discontinuity respectively, through **one** intermediate state $\mathbf{u}_1$ to be determined as a part of the solution of the Riemann problem.
 
+![Riemann problem phase diagram](./../../media/riemann-psys.png)
 
 ```{dropdown} Details of the Riemann problem
 :open:
