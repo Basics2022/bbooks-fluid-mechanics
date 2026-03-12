@@ -548,7 +548,65 @@ document.write(`
 <p><img alt="Riemann problem phase diagram" src="../../_images/riemann-psys.png" /></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
 <summary class="sd-summary-title sd-card-header">
-Details of the Riemann problem<div class="sd-summary-down docutils">
+Numerical solution of a Riemann problem for P-sys<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Here, the numerical solution evaluated with a 1-dimensional <a class="reference external" href="https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/fvm-hyperbolic-pde.html"><strong>finite volume solver</strong></a>, using <strong>Roe flux</strong> with entropy fix (so far, only low-order flux here, withouth high-order…: the solution is affected by numerical dissipation introduced by the Roe flux, essentially an upwind scheme exploiting the characteristic structure of the system and introducing numerical dissipation…). The speed of sound is set as <span class="math notranslate nohighlight">\(a = 1.\)</span></p>
+<p class="sd-card-text"><strong>todo</strong> <em>Discuss the solutions, in terms of velocity of the rarefaction and shock waves, using characteristic method and spectral decomposition of the advection matrix</em></p>
+<p class="sd-card-text"><strong>Expansion-expansion.</strong> <span class="math notranslate nohighlight">\((\rho_A, u_A) = (1, -.5)\)</span>, <span class="math notranslate nohighlight">\((\rho_B, u_B) = (1, .5)\)</span></p>
+<table class="table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p class="sd-card-text"><img alt="Rieman problem expansion-expansion, u(x,t)" src="../../_images/psys-riemann-ee-uxt.png" /></p></td>
+<td><p class="sd-card-text"><img alt="Rieman problem expansion-expansion, u(x)  " src="../../_images/psys-riemann-ee-ux.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<p class="sd-card-text"><strong>Expansion-shock.</strong> <span class="math notranslate nohighlight">\((\rho_A, u_A) = (2, 0)\)</span>, <span class="math notranslate nohighlight">\((\rho_B, u_B) = (1, 0)\)</span></p>
+<table class="table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p class="sd-card-text"><img alt="Rieman problem expansion-shock, u(x,t)" src="../../_images/psys-riemann-es-uxt.png" /></p></td>
+<td><p class="sd-card-text"><img alt="Rieman problem expansion-shock, u(x)  " src="../../_images/psys-riemann-es-ux.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<p class="sd-card-text"><strong>Shock-shock.</strong> <span class="math notranslate nohighlight">\((\rho_A, u_A) = (1, .5)\)</span>, <span class="math notranslate nohighlight">\((\rho_B, u_B) = (1, -.5)\)</span></p>
+<table class="table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p class="sd-card-text"><img alt="Rieman problem shock-shock, u(x,t)" src="../../_images/psys-riemann-ss-uxt.png" /></p></td>
+<td><p class="sd-card-text"><img alt="Rieman problem shock-shock, u(x)  " src="../../_images/psys-riemann-ss-ux.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<p class="sd-card-text"><strong>Shock-expansion.</strong> <span class="math notranslate nohighlight">\((\rho_A, u_A) = (1, 0)\)</span>, <span class="math notranslate nohighlight">\((\rho_B, u_B) = (2, 0)\)</span></p>
+<table class="table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p class="sd-card-text"><img alt="Rieman problem shock-expansion, u(x,t)" src="../../_images/psys-riemann-se-uxt.png" /></p></td>
+<td><p class="sd-card-text"><img alt="Rieman problem shock-expansion, u(x)  " src="../../_images/psys-riemann-se-ux.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header">
+Introduction to the Riemann problem<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -678,7 +736,7 @@ Details<div class="sd-summary-down docutils">
 </div>
 </details><p class="sd-card-text"><strong>Case 3. 1: shock, 2: rarefaction.</strong> Symmetric w.r.t. case 2. For the entropy condition <span class="math notranslate nohighlight">\(u_A \ge u_1\)</span>, and <span class="math notranslate nohighlight">\(u_1 \le u_B\)</span>.</p>
 <p class="sd-card-text"><strong>Case 4. 1: rarefaction, 2: rarefaction.</strong> For the entropy condition <span class="math notranslate nohighlight">\(u_A \le u_1 \le u_B\)</span>.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Details<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -720,13 +778,20 @@ Details<div class="sd-summary-down docutils">
 <p class="sd-card-text"><strong>Intermediate state.</strong> RH equations are solved for <span class="math notranslate nohighlight">\((\rho_1, u_1)\)</span>.</p>
 </div>
 </details></div>
-</details><p><strong>Differential equations.</strong> In conservative form</p>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Summary of the P-sys<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Differential equations.</strong> In conservative form</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \partial_t \begin{bmatrix} \rho \\ m \end{bmatrix} + 
 \partial_x \begin{bmatrix} m \\ \frac{m^2}{\rho} + a^2 \rho \end{bmatrix} = \mathbf{0} \ ,
 \end{split}\]</div>
-<p>with constant speed of sound <span class="math notranslate nohighlight">\(a\)</span>. Convective form reads</p>
+<p class="sd-card-text">with constant speed of sound <span class="math notranslate nohighlight">\(a\)</span>. Convective form reads</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \partial_t \begin{bmatrix} \rho \\ m \end{bmatrix} + 
@@ -779,19 +844,19 @@ Spectral decomposition - Characteristics<div class="sd-summary-down docutils">
 \[\begin{split}\begin{cases} \dot{X}_{1,2}(t) = a - u(X_{1,2}(t), t) \\ 0 = \dot{V}_{1,2} = \frac{1}{2 R^2 a} \left[ R (a \pm U) \dot{R} \mp R \dot{M} \right] = \frac{1}{2} \left[ \frac{\dot{R}}{R} \mp \frac{\dot{U}}{a} \right] = \frac{1}{2} \frac{d}{dt} \left[ \ln \left( \frac{R}{\rho_0} \right) \mp \frac{U}{a} \right] \end{cases}\end{split}\]</div>
 <p class="sd-card-text">with <span class="math notranslate nohighlight">\(\dot{m} = \dot{\rho} u + \rho \dot{u}\)</span></p>
 </div>
-</details><p><strong>Integral equations.</strong> On a control volume <span class="math notranslate nohighlight">\(V\)</span> at rest</p>
+</details><p class="sd-card-text"><strong>Integral equations.</strong> On a control volume <span class="math notranslate nohighlight">\(V\)</span> at rest</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
  &amp; \dfrac{d}{dt} \int_{V} \rho + \oint_{\partial V} \mathbf{m} \cdot \hat{\mathbf{n}} = 0 \\
  &amp; \dfrac{d}{dt} \int_{V} \mathbf{m} + \oint_{\partial V} \left[ \frac{\mathbf{m} \mathbf{m}}{\rho} + a^2 \rho \mathbb{I} \right] \cdot \hat{\mathbf{n}} = \mathbf{0} \\
 \end{aligned}\end{split}\]</div>
-<p>and for an arbitrary volume <span class="math notranslate nohighlight">\(v_t\)</span></p>
+<p class="sd-card-text">and for an arbitrary volume <span class="math notranslate nohighlight">\(v_t\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
  &amp; \dfrac{d}{dt} \int_{v_t} \rho + \oint_{\partial v_t} \rho ( \mathbf{u} - \mathbf{u}_b ) \cdot \hat{\mathbf{n}} = 0 \\
  &amp; \dfrac{d}{dt} \int_{v_t} \rho \mathbf{u} + \oint_{\partial v_t} \rho \mathbf{u} \left( \mathbf{u} - \mathbf{u}_b \right) \cdot \hat{\mathbf{n}} + \oint_{\partial v_t} \rho a^2 \hat{\mathbf{n}} = \mathbf{0} 
 \end{aligned}\end{split}\]</div>
-<p><strong>Jump conditions.</strong></p>
+<p class="sd-card-text"><strong>Jump conditions.</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
   0 = \left[ \rho u^{rel} \right] \\
@@ -847,7 +912,7 @@ Shocks<div class="sd-summary-down docutils">
   &amp; = u_2 \mp a \sqrt{\frac{\rho_1}{\rho_2}}
 \end{aligned}\end{split}\]</div>
 </div>
-</details><p><strong>Self-similar solutions at a discontinuity in the initial state.</strong></p>
+</details><p class="sd-card-text"><strong>Self-similar solutions at a discontinuity in the initial state.</strong></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Self-similar solution - expansion fan<div class="sd-summary-down docutils">
@@ -929,6 +994,7 @@ Solution of the 1-st order linear non-homogeneous ODE<div class="sd-summary-down
 \[y(x) = a e^{Cx} + A x e^{Cx} \ ,\]</div>
 <p class="sd-card-text">with the integration constant <span class="math notranslate nohighlight">\(a\)</span> that is determined by a condition (initial, final, or whatever).</p>
 </div>
+</details></div>
 </details></div>
 
     <script type="text/x-thebe-config">
