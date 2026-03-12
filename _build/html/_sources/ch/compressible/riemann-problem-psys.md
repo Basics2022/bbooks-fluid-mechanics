@@ -5,7 +5,49 @@
 
 ![Riemann problem phase diagram](./../../media/riemann-psys.png)
 
-```{dropdown} Details of the Riemann problem
+````{dropdown} Numerical solution of a Riemann problem for P-sys
+:open:
+
+Here, the numerical solution evaluated with a 1-dimensional [**finite volume solver**](https://basics2022.github.io/bbooks-math-miscellanea/ch/pde/fvm-hyperbolic-pde.html), using **Roe flux** with entropy fix (so far, only low-order flux here, withouth high-order...: the solution is affected by numerical dissipation introduced by the Roe flux, essentially an upwind scheme exploiting the characteristic structure of the system and introducing numerical dissipation...). The speed of sound is set as $a = 1.$
+
+**todo** *Discuss the solutions, in terms of velocity of the rarefaction and shock waves, using characteristic method and spectral decomposition of the advection matrix*
+
+**Expansion-expansion.** $(\rho_A, u_A) = (1, -.5)$, $(\rho_B, u_B) = (1, .5)$
+
+```{list-table}
+:header-rows: 0
+* - ![Rieman problem expansion-expansion, u(x,t)](./../../media/psys-riemann-ee-uxt.png)
+  - ![Rieman problem expansion-expansion, u(x)  ](./../../media/psys-riemann-ee-ux.png)
+```
+
+**Expansion-shock.** $(\rho_A, u_A) = (2, 0)$, $(\rho_B, u_B) = (1, 0)$
+
+```{list-table}
+:header-rows: 0
+* - ![Rieman problem expansion-shock, u(x,t)](./../../media/psys-riemann-es-uxt.png)
+  - ![Rieman problem expansion-shock, u(x)  ](./../../media/psys-riemann-es-ux.png)
+```
+
+**Shock-shock.** $(\rho_A, u_A) = (1, .5)$, $(\rho_B, u_B) = (1, -.5)$
+
+```{list-table}
+:header-rows: 0
+* - ![Rieman problem shock-shock, u(x,t)](./../../media/psys-riemann-ss-uxt.png)
+  - ![Rieman problem shock-shock, u(x)  ](./../../media/psys-riemann-ss-ux.png)
+```
+
+**Shock-expansion.** $(\rho_A, u_A) = (1, 0)$, $(\rho_B, u_B) = (2, 0)$
+
+```{list-table}
+:header-rows: 0
+* - ![Rieman problem shock-expansion, u(x,t)](./../../media/psys-riemann-se-uxt.png)
+  - ![Rieman problem shock-expansion, u(x)  ](./../../media/psys-riemann-se-ux.png)
+```
+
+
+````
+
+```{dropdown} Introduction to the Riemann problem
 :open:
 
 Depending on the value of the intermediate state $\mathbf{u}_1$,
@@ -136,7 +178,6 @@ $$u_A - u_B \le \left( u_A - u_B \right)_{\rho_1 = \rho_A} = a \left( \sqrt{\fra
 **Case 4. 1: rarefaction, 2: rarefaction.** For the entropy condition $u_A \le u_1 \le u_B$.
 
 ```{dropdown} Details
-:open:
 
 $$\begin{aligned}
   u_1 - u_A & = - a \ln \frac{\rho_1}{\rho_A} \\
@@ -181,6 +222,7 @@ $$
 
 ````
 
+````{dropdown} Summary of the P-sys
 
 **Differential equations.** In conservative form
 
@@ -418,4 +460,6 @@ with the integration constant $a$ that is determined by a condition (initial, fi
 
 
 ```
+
+````
 

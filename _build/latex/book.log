@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2024.9.16)  10 MAR 2026 22:01
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2024.9.16)  12 MAR 2026 17:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1299,7 +1299,15 @@ File: psdextra.def 2020/01/14 v7.00d Hyperref: Additions to PDF string support
 
 
 Writing index file book.idx
-(./book.aux)
+(./book.aux
+LaTeX Info: Redefining \rmfamily on input line 20.
+LaTeX Info: Redefining \sffamily on input line 20.
+LaTeX Info: Redefining \ttfamily on input line 20.
+
+
+LaTeX Warning: Label `eqn:ese:trai' multiply defined.
+
+)
 \openout1 = `book.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
@@ -1380,12 +1388,10 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 96.
 LaTeX Info: Redefining \pageref on input line 96.
 LaTeX Info: Redefining \nameref on input line 96.
+
+(./book.out) (./book.out)
 \@outlinefile=\write6
 \openout6 = `book.out'.
-
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/FreeSerif(0)/m/n on input line 96.
@@ -1597,6 +1603,7 @@ LaTeX Info: Redefining \rmfamily on input line 96.
 LaTeX Info: Redefining \sffamily on input line 96.
 LaTeX Info: Redefining \ttfamily on input line 96.
 Package hyperref Info: Option `pageanchor' set `false' on input line 99.
+
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-ascii-print.def
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
@@ -1635,112 +1642,31 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ] [2
 
 
-]
+] (./book.toc
+LaTeX Info: Redefining \rmfamily on input line 1.
+LaTeX Info: Redefining \sffamily on input line 1.
+LaTeX Info: Redefining \ttfamily on input line 1.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00075pt on input line 4.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line 4.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 4.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 4.
+[1
+
+] [2])
 \tf@toc=\write7
 \openout7 = `book.toc'.
 
- [1
+ [3] [4
 
 ]
-[2
-
-]
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/01_
-statica/02teoria::doc' on page 1 undefined on input line 119.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/02_
-tensSup/03teoria::doc' on page 1 undefined on input line 123.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/03_
-cinematica/12teoria::doc' on page 1 undefined on input line 127.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/04_
-bilanci/04teoria::doc' on page 1 undefined on input line 131.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/05_
-bernoulli/05teoria::doc' on page 1 undefined on input line 135.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/06_
-slnEsatte/0600in::doc' on page 1 undefined on input line 139.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/07_
-similitudine/07teoria::doc' on page 1 undefined on input line 143.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/08_
-aerodinamica/08teoria::doc' on page 1 undefined on input line 147.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/09_
-bl/09teoria::doc' on page 1 undefined on input line 151.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/10_
-turbolenza/10teoria::doc' on page 1 undefined on input line 155.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/intro::doc' on page 1 undefined
- on input line 167.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/governing-equations::doc' on pa
-ge 1 undefined on input line 171.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/thermodynamics::doc' on page 1 
-undefined on input line 175.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/jump-conditions::doc' on page 1
- undefined on input line 179.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/bernoulli::doc' on page 1 undef
-ined on input line 183.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/vorticity::doc' on page 1 undef
-ined on input line 187.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/entropy::doc' on page 1 undefin
-ed on input line 191.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/potential-equation::doc' on pag
-e 1 undefined on input line 195.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/canonical-flows::doc' on page 1
- undefined on input line 199.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/riemann-problem::doc' on page 1
- undefined on input line 203.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/characteristics::doc' on page 1
- undefined on input line 207.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/steady-2d::doc' on page 1 undef
-ined on input line 211.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/acoustics::doc' on page 1 undef
-ined on input line 215.
-
 LaTeX Info: Redefining \rmfamily on input line 223.
 LaTeX Info: Redefining \sffamily on input line 223.
 LaTeX Info: Redefining \ttfamily on input line 223.
-[1]
+ [1]
 LaTeX Info: Redefining \rmfamily on input line 223.
 LaTeX Info: Redefining \sffamily on input line 223.
 LaTeX Info: Redefining \ttfamily on input line 223.
@@ -1748,14 +1674,6 @@ LaTeX Info: Redefining \ttfamily on input line 223.
 
 ] [3] [4]
 Capitolo 1.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 240.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 240.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 240.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 240.
 [5
 
 ]
@@ -3146,11 +3064,6 @@ Missing character: There is no 𝜃 in font [FreeSerifBold.otf]/OT:script=latn;l
 guage=dflt;!
 Missing character: There is no 𝜃 in font [FreeSerifBold.otf]/OT:script=latn;lan
 guage=dflt;!
-
-
-LaTeX Warning: Reference `eqn:stress_vector' on page 141 undefined on input lin
-e 13200.
-
 Missing character: There is no 𝜃 in font [FreeSerifBold.otf]/OT:script=latn;lan
 guage=dflt;!
 Missing character: There is no 𝜃 in font [FreeSerifBold.otf]/OT:script=latn;lan
@@ -3158,7 +3071,7 @@ guage=dflt;!
 LaTeX Info: Redefining \rmfamily on input line 13212.
 LaTeX Info: Redefining \sffamily on input line 13212.
 LaTeX Info: Redefining \ttfamily on input line 13212.
-[141]
+ [141]
 File: slnEsatte-newton-couette.png Graphic file (type bmp)
 <slnEsatte-newton-couette.png>
 LaTeX Info: Redefining \rmfamily on input line 13350.
@@ -3206,7 +3119,8 @@ File: slnEsatte-newton-couette.png Graphic file (type bmp)
 LaTeX Info: Redefining \rmfamily on input line 14054.
 LaTeX Info: Redefining \sffamily on input line 14054.
 LaTeX Info: Redefining \ttfamily on input line 14054.
- [149]
+
+[149]
 LaTeX Info: Redefining \rmfamily on input line 14059.
 LaTeX Info: Redefining \sffamily on input line 14059.
 LaTeX Info: Redefining \ttfamily on input line 14059.
@@ -3226,8 +3140,7 @@ File: slnEsatte-scivolo.png Graphic file (type bmp)
 LaTeX Info: Redefining \rmfamily on input line 14477.
 LaTeX Info: Redefining \sffamily on input line 14477.
 LaTeX Info: Redefining \ttfamily on input line 14477.
-
-[153]
+ [153]
 LaTeX Info: Redefining \rmfamily on input line 14571.
 LaTeX Info: Redefining \sffamily on input line 14571.
 LaTeX Info: Redefining \ttfamily on input line 14571.
@@ -3267,7 +3180,8 @@ guage=dflt;!
 LaTeX Info: Redefining \rmfamily on input line 15404.
 LaTeX Info: Redefining \sffamily on input line 15404.
 LaTeX Info: Redefining \ttfamily on input line 15404.
- [161]
+
+[161]
 File: slnEsatte-taylor-couette.png Graphic file (type bmp)
 <slnEsatte-taylor-couette.png>
 Missing character: There is no 𝜃 in font [FreeSerifBold.otf]/OT:script=latn;lan
@@ -3319,8 +3233,7 @@ LaTeX Info: Redefining \ttfamily on input line 15718.
 LaTeX Info: Redefining \rmfamily on input line 15722.
 LaTeX Info: Redefining \sffamily on input line 15722.
 LaTeX Info: Redefining \ttfamily on input line 15722.
-
-[165]
+ [165]
 LaTeX Info: Redefining \rmfamily on input line 15806.
 LaTeX Info: Redefining \sffamily on input line 15806.
 LaTeX Info: Redefining \ttfamily on input line 15806.
@@ -3704,21 +3617,6 @@ LaTeX Info: Redefining \sffamily on input line 18445.
 LaTeX Info: Redefining \ttfamily on input line 18445.
  [196]
 Capitolo 8.
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/08_
-aerodinamica/theorems:fluid-mechanics-aerodynamics-vortex-theorems' on page 197
- undefined on input line 18464.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/08_
-aerodinamica/singularities:fluid-mechanics-aerodynamics-singularities' on page 
-197 undefined on input line 18467.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/08_
-aerodinamica/steady-aerodynamics:fluid-mechanics-aerodynamics-steady' on page 1
-97 undefined on input line 18470.
-
 [197
 
 ]
@@ -3797,20 +3695,10 @@ LaTeX Info: Redefining \rmfamily on input line 18836.
 LaTeX Info: Redefining \sffamily on input line 18836.
 LaTeX Info: Redefining \ttfamily on input line 18836.
  [202]
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/08_
-aerodinamica/steady-aerodynamics-2d:fluid-mechanics-aerodynamics-steady-2d' on 
-page 203 undefined on input line 18868.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/08_
-aerodinamica/steady-aerodynamics-3d:fluid-mechanics-aerodynamics-steady-3d' on 
-page 203 undefined on input line 18871.
-
 LaTeX Info: Redefining \rmfamily on input line 18897.
 LaTeX Info: Redefining \sffamily on input line 18897.
 LaTeX Info: Redefining \ttfamily on input line 18897.
-[203]
+ [203]
 LaTeX Info: Redefining \rmfamily on input line 18940.
 LaTeX Info: Redefining \sffamily on input line 18940.
 LaTeX Info: Redefining \ttfamily on input line 18940.
@@ -3967,43 +3855,18 @@ LaTeX Info: Redefining \rmfamily on input line 19374.
 LaTeX Info: Redefining \sffamily on input line 19374.
 LaTeX Info: Redefining \ttfamily on input line 19374.
  [212]
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/04_
-bilanci/04teoria:fluid-mechanics-balances' on page 213 undefined on input line 
-19402.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/05_
-bernoulli/05teoria:fluid-mechanics-bernoulli' on page 213 undefined on input li
-ne 19427.
-
 LaTeX Info: Redefining \rmfamily on input line 19450.
 LaTeX Info: Redefining \sffamily on input line 19450.
 LaTeX Info: Redefining \ttfamily on input line 19450.
-[213]
+ [213]
 LaTeX Info: Redefining \rmfamily on input line 19476.
 LaTeX Info: Redefining \sffamily on input line 19476.
 LaTeX Info: Redefining \ttfamily on input line 19476.
  [214]
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/08_
-aerodinamica/singularities:fluid-mechanics-aerodynamics-singularities' on page 
-215 undefined on input line 19531.
-
 LaTeX Info: Redefining \rmfamily on input line 19545.
 LaTeX Info: Redefining \sffamily on input line 19545.
 LaTeX Info: Redefining \ttfamily on input line 19545.
-[215]
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/08_
-aerodinamica/steady-aerodynamics-3d:fluid-mechanics-aerodynamics-steady-3d-wake
-' on page 216 undefined on input line 19547.
-
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/08_
-aerodinamica/singularities:fluid-mechanics-aerodynamics-singularities' on page 
-216 undefined on input line 19547.
-
+ [215]
 ! Extra alignment tab has been changed to \cr.
 <template> ...w@strut \hfil $\relax $\endtemplate 
                                                   
@@ -4780,11 +4643,6 @@ LaTeX Info: Redefining \rmfamily on input line 22307.
 LaTeX Info: Redefining \sffamily on input line 22307.
 LaTeX Info: Redefining \ttfamily on input line 22307.
  [252]
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/10_
-turbolenza/rans_energy:fluid-mechanics-turbulence-rans-energy-turbulence-in-equ
-ilibrium' on page 253 undefined on input line 22308.
-
 ! Missing delimiter (. inserted).
 <to be read again> 
                    {
@@ -4811,95 +4669,13 @@ LaTeX Info: Redefining \ttfamily on input line 22632.
 
 ] [258]
 Capitolo 11.
-
-LaTeX Warning: Hyper reference `ch/compressible/governing-equations:compressibl
-e-governing-equations-navier-stokes' on page 259 undefined on input line 22642.
-
-
-
-LaTeX Warning: Hyper reference `ch/compressible/governing-equations:compressibl
-e-governing-equations-euler' on page 259 undefined on input line 22642.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/shock-normal:compressible-shock
-s-normal' on page 259 undefined on input line 22642.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/shock-oblique:compressible-shoc
-ks-oblique' on page 259 undefined on input line 22642.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/jump-conditions:compressible-ju
-mp-conditions' on page 259 undefined on input line 22642.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/governing-equations:compressibl
-e-governing-equations-ideal' on page 259 undefined on input line 22646.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/entropy:compressible-entropy' o
-n page 259 undefined on input line 22646.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/potential-equation:compressible
--irrotational-potential-equation' on page 259 undefined on input line 22650.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/vorticity:compressible-vorticit
-y' on page 259 undefined on input line 22650.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/acoustics:compressible-acoustic
-s' on page 259 undefined on input line 22654.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/jump-conditions:compressible-ju
-mp-conditions' on page 259 undefined on input line 22659.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/vorticity:compressible-vorticit
-y' on page 259 undefined on input line 22667.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/entropy:compressible-entropy' o
-n page 259 undefined on input line 22671.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/bernoulli:compressible-bernoull
-i' on page 259 undefined on input line 22675.
-
 [259
 
 ]
-
-LaTeX Warning: Hyper reference `ch/compressible/potential-equation:compressible
--irrotational-potential-equation-homoentropic-linearized-steady' on page 260 un
-defined on input line 22722.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/quasi-1d:compressible-quasi-1d'
- on page 260 undefined on input line 22750.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/quasi-1d-non-ideal:compressible
--quasi-1d-non-ideal' on page 260 undefined on input line 22754.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/shock-normal:compressible-shock
-s-normal' on page 260 undefined on input line 22762.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/shock-oblique:compressible-shoc
-ks-oblique' on page 260 undefined on input line 22762.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/prandtl-meyer:compressible-pran
-dtl-meyer' on page 260 undefined on input line 22766.
-
 LaTeX Info: Redefining \rmfamily on input line 22775.
 LaTeX Info: Redefining \sffamily on input line 22775.
 LaTeX Info: Redefining \ttfamily on input line 22775.
-[260]
+ [260]
 LaTeX Info: Redefining \rmfamily on input line 22784.
 LaTeX Info: Redefining \sffamily on input line 22784.
 LaTeX Info: Redefining \ttfamily on input line 22784.
@@ -4916,22 +4692,10 @@ LaTeX Info: Redefining \rmfamily on input line 22879.
 LaTeX Info: Redefining \sffamily on input line 22879.
 LaTeX Info: Redefining \ttfamily on input line 22879.
  [264]
-
-LaTeX Warning: Hyper reference `ch/compressible/entropy:compressible-entropy' o
-n page 265 undefined on input line 22882.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/potential-equation:compressible
--irrotational-potential-equation' on page 265 undefined on input line 22888.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/vorticity:compressible-vorticit
-y' on page 265 undefined on input line 22888.
-
 LaTeX Info: Redefining \rmfamily on input line 22893.
 LaTeX Info: Redefining \sffamily on input line 22893.
 LaTeX Info: Redefining \ttfamily on input line 22893.
-[265]
+ [265]
 LaTeX Info: Redefining \rmfamily on input line 22893.
 LaTeX Info: Redefining \sffamily on input line 22893.
 LaTeX Info: Redefining \ttfamily on input line 22893.
@@ -4939,14 +4703,6 @@ LaTeX Info: Redefining \ttfamily on input line 22893.
 
 ]
 Capitolo 13.
-
-LaTeX Warning: Hyper reference `ch/compressible/pig:compressible-pig' on page 2
-67 undefined on input line 22897.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/vdw:compressible-vdw' on page 2
-67 undefined on input line 22901.
-
 [267]
 LaTeX Info: Redefining \rmfamily on input line 23019.
 LaTeX Info: Redefining \sffamily on input line 23019.
@@ -5043,22 +4799,6 @@ LaTeX Info: Redefining \ttfamily on input line 23688.
 
 ]
 Capitolo 19.
-
-LaTeX Warning: Hyper reference `ch/compressible/quasi-1d:compressible-quasi-1d'
- on page 289 undefined on input line 23691.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/shock-normal:compressible-shock
-s-normal' on page 289 undefined on input line 23711.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/shock-oblique:compressible-shoc
-ks-oblique' on page 289 undefined on input line 23715.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/prandtl-meyer:compressible-pran
-dtl-meyer' on page 289 undefined on input line 23719.
-
 [289]
 LaTeX Info: Redefining \rmfamily on input line 23822.
 LaTeX Info: Redefining \sffamily on input line 23822.
@@ -5068,340 +4808,303 @@ LaTeX Info: Redefining \rmfamily on input line 23908.
 LaTeX Info: Redefining \sffamily on input line 23908.
 LaTeX Info: Redefining \ttfamily on input line 23908.
  [291]
-Overfull \hbox (45.54967pt too wide) detected at line 23968
+LaTeX Info: Redefining \rmfamily on input line 23984.
+LaTeX Info: Redefining \sffamily on input line 23984.
+LaTeX Info: Redefining \ttfamily on input line 23984.
+ [292]
+Overfull \hbox (45.54967pt too wide) detected at line 23999
 []
  []
 
 
-Overfull \hbox (25.0pt too wide) detected at line 23968
+Overfull \hbox (25.0pt too wide) detected at line 23999
 []
  []
 
-LaTeX Info: Redefining \rmfamily on input line 23989.
-LaTeX Info: Redefining \sffamily on input line 23989.
-LaTeX Info: Redefining \ttfamily on input line 23989.
-[292]
-LaTeX Info: Redefining \rmfamily on input line 24075.
-LaTeX Info: Redefining \sffamily on input line 24075.
-LaTeX Info: Redefining \ttfamily on input line 24075.
- [293]
-
-LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/07_
-similitudine/07teoria:fluid-mechanics-similitude' on page 294 undefined on inpu
-t line 24108.
-
+LaTeX Info: Redefining \rmfamily on input line 24053.
+LaTeX Info: Redefining \sffamily on input line 24053.
+LaTeX Info: Redefining \ttfamily on input line 24053.
+[293]
 
 LaTeX Warning: Hyper reference `polimi/fluidmechanics-ita/template/capitoli/07_
 similitudine/0706in:fluid-mechanics-similitude-moody' on page 294 undefined on 
-input line 24108.
+input line 24139.
 
-LaTeX Info: Redefining \rmfamily on input line 24136.
-LaTeX Info: Redefining \sffamily on input line 24136.
-LaTeX Info: Redefining \ttfamily on input line 24136.
+LaTeX Info: Redefining \rmfamily on input line 24144.
+LaTeX Info: Redefining \sffamily on input line 24144.
+LaTeX Info: Redefining \ttfamily on input line 24144.
 [294]
-
-LaTeX Warning: Hyper reference `ch/compressible/jump-conditions:compressible-ju
-mp-conditions' on page 295 undefined on input line 24185.
-
-LaTeX Info: Redefining \rmfamily on input line 24215.
-LaTeX Info: Redefining \sffamily on input line 24215.
-LaTeX Info: Redefining \ttfamily on input line 24215.
-[295]
+LaTeX Info: Redefining \rmfamily on input line 24213.
+LaTeX Info: Redefining \sffamily on input line 24213.
+LaTeX Info: Redefining \ttfamily on input line 24213.
+ [295]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24215.
+(hyperref)                removing `math shift' on input line 24246.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 24215.
+(hyperref)                removing `subscript' on input line 24246.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24215.
+(hyperref)                removing `math shift' on input line 24246.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 24215.
+(hyperref)                removing `subscript' on input line 24246.
 
-LaTeX Info: Redefining \rmfamily on input line 24371.
-LaTeX Info: Redefining \sffamily on input line 24371.
-LaTeX Info: Redefining \ttfamily on input line 24371.
+LaTeX Info: Redefining \rmfamily on input line 24377.
+LaTeX Info: Redefining \sffamily on input line 24377.
+LaTeX Info: Redefining \ttfamily on input line 24377.
 [296]
+LaTeX Info: Redefining \rmfamily on input line 24421.
+LaTeX Info: Redefining \sffamily on input line 24421.
+LaTeX Info: Redefining \ttfamily on input line 24421.
+ [297]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24390.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 24390.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24390.
+(hyperref)                removing `math shift' on input line 24421.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 24390.
-
-LaTeX Info: Redefining \rmfamily on input line 24413.
-LaTeX Info: Redefining \sffamily on input line 24413.
-LaTeX Info: Redefining \ttfamily on input line 24413.
-[297]
-LaTeX Info: Redefining \rmfamily on input line 24478.
-LaTeX Info: Redefining \sffamily on input line 24478.
-LaTeX Info: Redefining \ttfamily on input line 24478.
- [298]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24493.
+(hyperref)                removing `subscript' on input line 24421.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 24493.
+(hyperref)                removing `math shift' on input line 24421.
 
-LaTeX Info: Redefining \rmfamily on input line 24614.
-LaTeX Info: Redefining \sffamily on input line 24614.
-LaTeX Info: Redefining \ttfamily on input line 24614.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 24421.
+
+LaTeX Info: Redefining \rmfamily on input line 24476.
+LaTeX Info: Redefining \sffamily on input line 24476.
+LaTeX Info: Redefining \ttfamily on input line 24476.
+[298]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 24524.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 24524.
+
+LaTeX Info: Redefining \rmfamily on input line 24645.
+LaTeX Info: Redefining \sffamily on input line 24645.
+LaTeX Info: Redefining \ttfamily on input line 24645.
 [299]
-LaTeX Info: Redefining \rmfamily on input line 24677.
-LaTeX Info: Redefining \sffamily on input line 24677.
-LaTeX Info: Redefining \ttfamily on input line 24677.
+LaTeX Info: Redefining \rmfamily on input line 24680.
+LaTeX Info: Redefining \sffamily on input line 24680.
+LaTeX Info: Redefining \ttfamily on input line 24680.
  [300]
+LaTeX Info: Redefining \rmfamily on input line 24739.
+LaTeX Info: Redefining \sffamily on input line 24739.
+LaTeX Info: Redefining \ttfamily on input line 24739.
+ [301]
 
-LaTeX Warning: Hyper reference `ch/compressible/jump-conditions:compressible-ju
-mp-conditions' on page 301 undefined on input line 24686.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 24739.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24708.
+(hyperref)                removing `math shift' on input line 24739.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24708.
+(hyperref)                removing `math shift' on input line 24739.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24708.
+(hyperref)                removing `math shift' on input line 24747.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24716.
+(hyperref)                removing `math shift' on input line 24747.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24716.
+(hyperref)                removing `math shift' on input line 24747.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24716.
-
-LaTeX Info: Redefining \rmfamily on input line 24802.
-LaTeX Info: Redefining \sffamily on input line 24802.
-LaTeX Info: Redefining \ttfamily on input line 24802.
-[301]
-
-LaTeX Warning: Hyper reference `ch/compressible/entropy:compressible-entropy' o
-n page 302 undefined on input line 24864.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/vorticity:compressible-vorticit
-y' on page 302 undefined on input line 24875.
-
-LaTeX Info: Redefining \rmfamily on input line 24898.
-LaTeX Info: Redefining \sffamily on input line 24898.
-LaTeX Info: Redefining \ttfamily on input line 24898.
+LaTeX Info: Redefining \rmfamily on input line 24878.
+LaTeX Info: Redefining \sffamily on input line 24878.
+LaTeX Info: Redefining \ttfamily on input line 24878.
 [302]
-LaTeX Info: Redefining \rmfamily on input line 24958.
-LaTeX Info: Redefining \sffamily on input line 24958.
-LaTeX Info: Redefining \ttfamily on input line 24958.
+LaTeX Info: Redefining \rmfamily on input line 24946.
+LaTeX Info: Redefining \sffamily on input line 24946.
+LaTeX Info: Redefining \ttfamily on input line 24946.
  [303]
-LaTeX Info: Redefining \rmfamily on input line 25018.
-LaTeX Info: Redefining \sffamily on input line 25018.
-LaTeX Info: Redefining \ttfamily on input line 25018.
+LaTeX Info: Redefining \rmfamily on input line 25020.
+LaTeX Info: Redefining \sffamily on input line 25020.
+LaTeX Info: Redefining \ttfamily on input line 25020.
  [304]
-LaTeX Info: Redefining \rmfamily on input line 25076.
-LaTeX Info: Redefining \sffamily on input line 25076.
-LaTeX Info: Redefining \ttfamily on input line 25076.
+LaTeX Info: Redefining \rmfamily on input line 25070.
+LaTeX Info: Redefining \sffamily on input line 25070.
+LaTeX Info: Redefining \ttfamily on input line 25070.
  [305]
-LaTeX Info: Redefining \rmfamily on input line 25136.
-LaTeX Info: Redefining \sffamily on input line 25136.
-LaTeX Info: Redefining \ttfamily on input line 25136.
+LaTeX Info: Redefining \rmfamily on input line 25141.
+LaTeX Info: Redefining \sffamily on input line 25141.
+LaTeX Info: Redefining \ttfamily on input line 25141.
  [306]
-LaTeX Info: Redefining \rmfamily on input line 25171.
-LaTeX Info: Redefining \sffamily on input line 25171.
-LaTeX Info: Redefining \ttfamily on input line 25171.
+LaTeX Info: Redefining \rmfamily on input line 25202.
+LaTeX Info: Redefining \sffamily on input line 25202.
+LaTeX Info: Redefining \ttfamily on input line 25202.
  [307]
-LaTeX Info: Redefining \rmfamily on input line 25171.
-LaTeX Info: Redefining \sffamily on input line 25171.
-LaTeX Info: Redefining \ttfamily on input line 25171.
+LaTeX Info: Redefining \rmfamily on input line 25202.
+LaTeX Info: Redefining \sffamily on input line 25202.
+LaTeX Info: Redefining \ttfamily on input line 25202.
  [308
 
 ]
 Capitolo 20.
-
-LaTeX Warning: Hyper reference `ch/compressible/riemann-problem-psys:compressib
-le-riemann-problem-psys' on page 309 undefined on input line 25177.
-
-
-LaTeX Warning: Hyper reference `ch/compressible/riemann-problem-euler:compressi
-ble-riemann-problem-euler' on page 309 undefined on input line 25180.
-
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.25226 ...{\rho_A}{\rho_B}} \right)\ .\end{split}
-                                                  
-? 
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.25226 ...{\rho_A}{\rho_B}} \right)\ .\end{split}
-                                                  
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.25226 ...{\rho_A}{\rho_B}} \right)\ .\end{split}
-                                                  
-? 
-! Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.25226 ...{\rho_A}{\rho_B}} \right)\ .\end{split}
-                                                  
-? 
-! Extra }, or forgotten \right.
-<recently read> }
-                 
-l.25226 ...{\rho_A}{\rho_B}} \right)\ .\end{split}
-                                                  
-? 
-! Missing } inserted.
-<inserted text> 
-                }
-l.25226 ...{\rho_A}{\rho_B}} \right)\ .\end{split}
-                                                  
-? 
+File: riemann-psys.png Graphic file (type bmp)
+<riemann-psys.png>
 [309]
-LaTeX Info: Redefining \rmfamily on input line 25319.
-LaTeX Info: Redefining \sffamily on input line 25319.
-LaTeX Info: Redefining \ttfamily on input line 25319.
+File: psys-riemann-ee-uxt.png Graphic file (type bmp)
+<psys-riemann-ee-uxt.png>
+File: psys-riemann-ee-ux.png Graphic file (type bmp)
+<psys-riemann-ee-ux.png>
+File: psys-riemann-ee-uxt.png Graphic file (type bmp)
+<psys-riemann-ee-uxt.png>
+File: psys-riemann-ee-ux.png Graphic file (type bmp)
+<psys-riemann-ee-ux.png>
+LaTeX Info: Redefining \rmfamily on input line 25250.
+LaTeX Info: Redefining \sffamily on input line 25250.
+LaTeX Info: Redefining \ttfamily on input line 25250.
  [310]
-LaTeX Info: Redefining \rmfamily on input line 25384.
-LaTeX Info: Redefining \sffamily on input line 25384.
-LaTeX Info: Redefining \ttfamily on input line 25384.
+File: psys-riemann-es-uxt.png Graphic file (type bmp)
+<psys-riemann-es-uxt.png>
+File: psys-riemann-es-ux.png Graphic file (type bmp)
+<psys-riemann-es-ux.png>
+File: psys-riemann-es-uxt.png Graphic file (type bmp)
+<psys-riemann-es-uxt.png>
+File: psys-riemann-es-ux.png Graphic file (type bmp)
+<psys-riemann-es-ux.png>
+File: psys-riemann-ss-uxt.png Graphic file (type bmp)
+<psys-riemann-ss-uxt.png>
+File: psys-riemann-ss-ux.png Graphic file (type bmp)
+<psys-riemann-ss-ux.png>
+File: psys-riemann-ss-uxt.png Graphic file (type bmp)
+<psys-riemann-ss-uxt.png>
+File: psys-riemann-ss-ux.png Graphic file (type bmp)
+<psys-riemann-ss-ux.png>
+File: psys-riemann-se-uxt.png Graphic file (type bmp)
+<psys-riemann-se-uxt.png>
+File: psys-riemann-se-ux.png Graphic file (type bmp)
+<psys-riemann-se-ux.png>
+File: psys-riemann-se-uxt.png Graphic file (type bmp)
+<psys-riemann-se-uxt.png>
+File: psys-riemann-se-ux.png Graphic file (type bmp)
+<psys-riemann-se-ux.png>
+LaTeX Info: Redefining \rmfamily on input line 25343.
+LaTeX Info: Redefining \sffamily on input line 25343.
+LaTeX Info: Redefining \ttfamily on input line 25343.
  [311]
-LaTeX Info: Redefining \rmfamily on input line 25448.
-LaTeX Info: Redefining \sffamily on input line 25448.
-LaTeX Info: Redefining \ttfamily on input line 25448.
+LaTeX Info: Redefining \rmfamily on input line 25414.
+LaTeX Info: Redefining \sffamily on input line 25414.
+LaTeX Info: Redefining \ttfamily on input line 25414.
  [312]
-LaTeX Info: Redefining \rmfamily on input line 25502.
-LaTeX Info: Redefining \sffamily on input line 25502.
-LaTeX Info: Redefining \ttfamily on input line 25502.
+LaTeX Info: Redefining \rmfamily on input line 25476.
+LaTeX Info: Redefining \sffamily on input line 25476.
+LaTeX Info: Redefining \ttfamily on input line 25476.
  [313]
-LaTeX Info: Redefining \rmfamily on input line 25507.
-LaTeX Info: Redefining \sffamily on input line 25507.
-LaTeX Info: Redefining \ttfamily on input line 25507.
+LaTeX Info: Redefining \rmfamily on input line 25540.
+LaTeX Info: Redefining \sffamily on input line 25540.
+LaTeX Info: Redefining \ttfamily on input line 25540.
  [314]
+LaTeX Info: Redefining \rmfamily on input line 25623.
+LaTeX Info: Redefining \sffamily on input line 25623.
+LaTeX Info: Redefining \ttfamily on input line 25623.
+ [315]
+LaTeX Info: Redefining \rmfamily on input line 25681.
+LaTeX Info: Redefining \sffamily on input line 25681.
+LaTeX Info: Redefining \ttfamily on input line 25681.
+ [316]
+LaTeX Info: Redefining \rmfamily on input line 25755.
+LaTeX Info: Redefining \sffamily on input line 25755.
+LaTeX Info: Redefining \ttfamily on input line 25755.
+ [317]
+LaTeX Info: Redefining \rmfamily on input line 25798.
+LaTeX Info: Redefining \sffamily on input line 25798.
+LaTeX Info: Redefining \ttfamily on input line 25798.
+ [318]
 Capitolo 21.
 
-Overfull \hbox (0.69171pt too wide) detected at line 25554
+Overfull \hbox (0.69171pt too wide) detected at line 25845
 []
  []
 
-[315
+[319
 
 ]
-LaTeX Info: Redefining \rmfamily on input line 25598.
-LaTeX Info: Redefining \sffamily on input line 25598.
-LaTeX Info: Redefining \ttfamily on input line 25598.
- [316]
+LaTeX Info: Redefining \rmfamily on input line 25889.
+LaTeX Info: Redefining \sffamily on input line 25889.
+LaTeX Info: Redefining \ttfamily on input line 25889.
+ [320]
 Capitolo 22.
-[317
+[321
 
 ]
-LaTeX Info: Redefining \rmfamily on input line 25627.
-LaTeX Info: Redefining \sffamily on input line 25627.
-LaTeX Info: Redefining \ttfamily on input line 25627.
- [318
+LaTeX Info: Redefining \rmfamily on input line 25918.
+LaTeX Info: Redefining \sffamily on input line 25918.
+LaTeX Info: Redefining \ttfamily on input line 25918.
+ [322
 
 ]
 Capitolo 23.
-[319]
-LaTeX Info: Redefining \rmfamily on input line 25759.
-LaTeX Info: Redefining \sffamily on input line 25759.
-LaTeX Info: Redefining \ttfamily on input line 25759.
- [320]
-LaTeX Info: Redefining \rmfamily on input line 25841.
-LaTeX Info: Redefining \sffamily on input line 25841.
-LaTeX Info: Redefining \ttfamily on input line 25841.
- [321]
-LaTeX Info: Redefining \rmfamily on input line 25852.
-LaTeX Info: Redefining \sffamily on input line 25852.
-LaTeX Info: Redefining \ttfamily on input line 25852.
- [322]
-
-LaTeX Warning: Reference `ch/compressible/pig:example-0' on page 323 undefined 
-on input line 25855.
-
-
-LaTeX Warning: Reference `ch/compressible/prandtl-meyer:example-1' on page 323 
-undefined on input line 25858.
-
-
-LaTeX Warning: Reference `polimi/fluidmechanics-ita/template/capitoli/08_aerodi
-namica/theorems:theorem-0' on page 323 undefined on input line 25861.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25861--25862
+[323]
+LaTeX Info: Redefining \rmfamily on input line 26050.
+LaTeX Info: Redefining \sffamily on input line 26050.
+LaTeX Info: Redefining \ttfamily on input line 26050.
+ [324]
+LaTeX Info: Redefining \rmfamily on input line 26132.
+LaTeX Info: Redefining \sffamily on input line 26132.
+LaTeX Info: Redefining \ttfamily on input line 26132.
+ [325]
+LaTeX Info: Redefining \rmfamily on input line 26143.
+LaTeX Info: Redefining \sffamily on input line 26143.
+LaTeX Info: Redefining \ttfamily on input line 26143.
+ [326]
+Underfull \hbox (badness 10000) in paragraph at lines 26152--26153
 []\TU/FreeMono(0)/m/n/10 theorem-0 \TU/FreeSerif(0)/m/n/10 (\TU/FreeSerif(0)/m/
 it/10 polimi/fluidmechanics-
  []
 
 
-Overfull \hbox (0.9125pt too wide) in paragraph at lines 25861--25862
+Overfull \hbox (0.9125pt too wide) in paragraph at lines 26152--26153
 \TU/FreeSerif(0)/m/it/10 ita/template/capitoli/08_aerodinamica/theorems\TU/Free
 Serif(0)/m/n/10 ),
  []
 
 
-LaTeX Warning: Reference `polimi/fluidmechanics-ita/template/capitoli/08_aerodi
-namica/theorems:theorem-1' on page 323 undefined on input line 25864.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25864--25865
+Underfull \hbox (badness 10000) in paragraph at lines 26155--26156
 []\TU/FreeMono(0)/m/n/10 theorem-1 \TU/FreeSerif(0)/m/n/10 (\TU/FreeSerif(0)/m/
 it/10 polimi/fluidmechanics-
  []
 
 
-Overfull \hbox (0.9125pt too wide) in paragraph at lines 25864--25865
+Overfull \hbox (0.9125pt too wide) in paragraph at lines 26155--26156
 \TU/FreeSerif(0)/m/it/10 ita/template/capitoli/08_aerodinamica/theorems\TU/Free
 Serif(0)/m/n/10 ),
  []
 
 
-LaTeX Warning: Reference `polimi/fluidmechanics-ita/template/capitoli/08_aerodi
-namica/theorems:theorem-2' on page 323 undefined on input line 25867.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25867--25868
+Underfull \hbox (badness 10000) in paragraph at lines 26158--26159
 []\TU/FreeMono(0)/m/n/10 theorem-2 \TU/FreeSerif(0)/m/n/10 (\TU/FreeSerif(0)/m/
 it/10 polimi/fluidmechanics-
  []
 
 
-Overfull \hbox (0.9125pt too wide) in paragraph at lines 25867--25868
+Overfull \hbox (0.9125pt too wide) in paragraph at lines 26158--26159
 \TU/FreeSerif(0)/m/it/10 ita/template/capitoli/08_aerodinamica/theorems\TU/Free
 Serif(0)/m/n/10 ),
  []
 
-[323
+[327
 
 
 
-]
-No file book.ind.
+] (./book.ind)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -5436,39 +5139,33 @@ braces):
 >  {italian/babelname}  =>  {italian}
 >  {italian/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {italian/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 25872.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 25872.
-(./book.aux
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 26163.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 26163.
+ (./book.aux
 LaTeX Info: Redefining \rmfamily on input line 20.
 LaTeX Info: Redefining \sffamily on input line 20.
 LaTeX Info: Redefining \ttfamily on input line 20.
 )
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 25872.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 25872
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 26163.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 26163
 .
+Package rerunfilecheck Info: File `book.out' has not changed.
+(rerunfilecheck)             Checksum: 414A03DFBBFEC1E8278A09CACC9FFDA9;24691.
 
-
-Package rerunfilecheck Warning: File `book.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `book.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  414A03DFBBFEC1E8278A09CACC9FFDA9;24691.
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 43289 strings out of 481789
- 1013678 string characters out of 5937152
+ 43428 strings out of 481789
+ 1016135 string characters out of 5937152
  1887705 words of memory out of 5000000
- 59349 multiletter control sequences out of 15000+600000
+ 59471 multiletter control sequences out of 15000+600000
  543897 words of font info for 159 fonts, out of 8000000 for 9000
  15 hyphenation exceptions out of 8191
  71i,28n,109p,1417b,2284s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on book.pdf (327 pages).
+Output written on book.pdf (333 pages).

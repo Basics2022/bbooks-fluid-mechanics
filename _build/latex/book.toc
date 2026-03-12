@@ -257,38 +257,38 @@
 \contentsline {subsubsection}{Nature of the equation}{286}{subsubsection*.91}%
 \contentsline {subsection}{\numberline {18.1.3}Pressure coefficient}{287}{subsection.18.1.3}%
 \contentsline {chapter}{\numberline {19}Canonical flows}{289}{chapter.19}%
-\contentsline {section}{\numberline {19.1}Quasi\sphinxhyphen {}1\sphinxhyphen {}dimensional flows}{289}{section.19.1}%
+\contentsline {section}{\numberline {19.1}Quasi\sphinxhyphen {}1\sphinxhyphen {}dimensional flows}{290}{section.19.1}%
 \contentsline {subsection}{\numberline {19.1.1}Steady flow}{290}{subsection.19.1.1}%
 \contentsline {subsubsection}{Mach dependence}{291}{subsubsection*.93}%
 \contentsline {subsection}{\numberline {19.1.2}Unsteady flow}{292}{subsection.19.1.2}%
 \contentsline {section}{\numberline {19.2}Non\sphinxhyphen {}ideal quasi\sphinxhyphen {}1 dimensional flows}{294}{section.19.2}%
 \contentsline {subsection}{\numberline {19.2.1}Fanno}{295}{subsection.19.2.1}%
 \contentsline {subsection}{\numberline {19.2.2}Rayleigh}{295}{subsection.19.2.2}%
-\contentsline {section}{\numberline {19.3}Normal shocks}{295}{section.19.3}%
-\contentsline {subsection}{\numberline {19.3.1}Perfect ideal gas}{295}{subsection.19.3.1}%
+\contentsline {section}{\numberline {19.3}Normal shocks}{296}{section.19.3}%
+\contentsline {subsection}{\numberline {19.3.1}Perfect ideal gas}{296}{subsection.19.3.1}%
 \contentsline {subsubsection}{Quantities as a function of Mach numbers \(M_1\), \(M_2\)}{296}{subsubsection*.95}%
-\contentsline {subsubsection}{Relation between Mach numbers \(M_1\), \(M_2\)}{297}{subsubsection*.96}%
-\contentsline {subsubsection}{Quantities as a function of Mach numbers \(M_1\)}{299}{subsubsection*.97}%
+\contentsline {subsubsection}{Relation between Mach numbers \(M_1\), \(M_2\)}{298}{subsubsection*.96}%
+\contentsline {subsubsection}{Quantities as a function of Mach numbers \(M_1\)}{300}{subsubsection*.97}%
 \contentsline {section}{\numberline {19.4}Oblique shocks}{301}{section.19.4}%
 \contentsline {subsection}{\numberline {19.4.1}Normal Component Analysis}{301}{subsection.19.4.1}%
-\contentsline {subsection}{\numberline {19.4.2}The \(\mittheta \)\sphinxhyphen {}\(\mitbeta \)\sphinxhyphen {}\(M\) Relation}{301}{subsection.19.4.2}%
-\contentsline {subsection}{\numberline {19.4.3}Observations from the \(\mittheta \)\sphinxhyphen {}\(\mitbeta \)\sphinxhyphen {}\(M\) function}{301}{subsection.19.4.3}%
+\contentsline {subsection}{\numberline {19.4.2}The \(\mittheta \)\sphinxhyphen {}\(\mitbeta \)\sphinxhyphen {}\(M\) Relation}{302}{subsection.19.4.2}%
+\contentsline {subsection}{\numberline {19.4.3}Observations from the \(\mittheta \)\sphinxhyphen {}\(\mitbeta \)\sphinxhyphen {}\(M\) function}{302}{subsection.19.4.3}%
 \contentsline {section}{\numberline {19.5}Expansion fans \sphinxhyphen {} Prandtl\sphinxhyphen {}Meyer relation}{302}{section.19.5}%
-\contentsline {subsection}{\numberline {19.5.1}Characteristic lines and compatibility equations}{305}{subsection.19.5.1}%
-\contentsline {subsection}{\numberline {19.5.2}Relation between Mach number and flow deflection}{306}{subsection.19.5.2}%
+\contentsline {subsection}{\numberline {19.5.1}Characteristic lines and compatibility equations}{306}{subsection.19.5.1}%
+\contentsline {subsection}{\numberline {19.5.2}Relation between Mach number and flow deflection}{307}{subsection.19.5.2}%
 \contentsline {chapter}{\numberline {20}Riemann problem}{309}{chapter.20}%
 \contentsline {section}{\numberline {20.1}P\sphinxhyphen {}system}{309}{section.20.1}%
-\contentsline {section}{\numberline {20.2}Euler equations}{314}{section.20.2}%
-\contentsline {chapter}{\numberline {21}Characteristics}{315}{chapter.21}%
-\contentsline {section}{\numberline {21.1}Unsteady}{315}{section.21.1}%
-\contentsline {section}{\numberline {21.2}Steady}{316}{section.21.2}%
-\contentsline {chapter}{\numberline {22}Steady 2\sphinxhyphen {}dimensional flows}{317}{chapter.22}%
-\contentsline {section}{\numberline {22.1}Shock waves}{317}{section.22.1}%
-\contentsline {subsection}{\numberline {22.1.1}Normal}{317}{subsection.22.1.1}%
-\contentsline {subsection}{\numberline {22.1.2}Oblique}{317}{subsection.22.1.2}%
-\contentsline {section}{\numberline {22.2}Rarefaction fans}{317}{section.22.2}%
-\contentsline {chapter}{\numberline {23}Acoustics}{319}{chapter.23}%
-\contentsline {section}{\numberline {23.1}Linearized Euler equations}{320}{section.23.1}%
-\contentsline {subsection}{\numberline {23.1.1}Uniform and steady reference state}{321}{subsection.23.1.1}%
-\contentsline {subsection}{\numberline {23.1.2}Wave equations}{321}{subsection.23.1.2}%
-\contentsline {chapter}{Proof Index}{323}{section*.100}%
+\contentsline {section}{\numberline {20.2}Euler equations}{318}{section.20.2}%
+\contentsline {chapter}{\numberline {21}Characteristics}{319}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Unsteady}{319}{section.21.1}%
+\contentsline {section}{\numberline {21.2}Steady}{320}{section.21.2}%
+\contentsline {chapter}{\numberline {22}Steady 2\sphinxhyphen {}dimensional flows}{321}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Shock waves}{321}{section.22.1}%
+\contentsline {subsection}{\numberline {22.1.1}Normal}{321}{subsection.22.1.1}%
+\contentsline {subsection}{\numberline {22.1.2}Oblique}{321}{subsection.22.1.2}%
+\contentsline {section}{\numberline {22.2}Rarefaction fans}{321}{section.22.2}%
+\contentsline {chapter}{\numberline {23}Acoustics}{323}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Linearized Euler equations}{324}{section.23.1}%
+\contentsline {subsection}{\numberline {23.1.1}Uniform and steady reference state}{325}{subsection.23.1.1}%
+\contentsline {subsection}{\numberline {23.1.2}Wave equations}{325}{subsection.23.1.2}%
+\contentsline {chapter}{Proof Index}{327}{section*.100}%

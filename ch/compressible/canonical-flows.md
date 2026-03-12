@@ -14,3 +14,10 @@
 
 **todo** *Cylindrical symmetry?...*
 
+Other examples of compressible flows:
+- ...*some flow governed by potential equation*
+- [Riemann problems](compressible:riemann-problem) of 1-dimensional flows
+- ...*other flows that can be solved with method of characteristics*:
+  - *piston compression/expansion (wall b.c.)*
+  - *open pipes...*
+  - *acoustics*...
